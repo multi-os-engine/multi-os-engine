@@ -27,7 +27,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
- * API-Since: 16.0
+ * API-Since: 16.4
  */
 @Generated
 @Library("VideoSubscriberAccount")
@@ -175,13 +175,6 @@ public class VSUserAccount extends NSObject {
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
     /**
-     * Indicates that the user has deleted their account.
-     */
-    @Generated
-    @Selector("isDeleted")
-    public native boolean isDeleted();
-
-    /**
      * Indicates whether or not the account was registered on the current device.
      * Accounts pulled using VSUserAccountManager may be from other devices signed
      * in to the same iCloud account.
@@ -251,13 +244,6 @@ public class VSUserAccount extends NSObject {
     @Generated
     @Selector("setBillingIdentifier:")
     public native void setBillingIdentifier(@Nullable String value);
-
-    /**
-     * Indicates that the user has deleted their account.
-     */
-    @Generated
-    @Selector("setDeleted:")
-    public native void setDeleted(boolean value);
 
     /**
      * A value opaque to Apple that can be used to uniquely identify the account.
@@ -341,4 +327,23 @@ public class VSUserAccount extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * Indicates if the user has signed out of their account.
+     */
+    @Generated
+    @Selector("isSignedOut")
+    public native boolean isSignedOut();
+
+    /**
+     * Indicates if the user has signed out of their account.
+     */
+    @Generated
+    @Selector("setSignedOut:")
+    public native void setSignedOut(boolean value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -511,4 +511,9 @@ public class CPInterfaceController extends NSObject {
         @Generated
         void call_setRootTemplateAnimatedCompletion(boolean success, @Nullable NSError error);
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

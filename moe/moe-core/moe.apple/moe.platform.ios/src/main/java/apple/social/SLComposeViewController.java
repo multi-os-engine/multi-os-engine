@@ -54,8 +54,6 @@ import org.jetbrains.annotations.Nullable;
  * to set the content return a Boolean value. The methods return NO if the
  * content doesn't fit or if the view was already presented to the user and the
  * content can no longer be changed.
- * 
- * API-Since: 6.0
  */
 @Generated
 @Library("Social")
@@ -281,4 +279,9 @@ public class SLComposeViewController extends UIViewController {
         @Generated
         void call_setCompletionHandler(@NInt long result);
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -39,9 +39,6 @@ import apple.corefoundation.struct.CGRect;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-/**
- * API-Since: 11.0
- */
 @Generated
 @Library("PDFKit")
 @Runtime(ObjCRuntime.class)
@@ -524,6 +521,9 @@ public class PDFAnnotation extends NSObject implements NSCopying, NSCoding {
     public native NSArray<? extends UIBezierPath> paths();
 
     /**
+     * Optional (-[popup] may return nil). Not used with links or widgets, a popup annotation associated with this
+     * annotation. The bounds and open state of the popup indicate the placement and open state of the popup window.
+     * 
      * API-Since: 11.0
      */
     @Nullable
@@ -842,6 +842,9 @@ public class PDFAnnotation extends NSObject implements NSCopying, NSCoding {
     }
 
     /**
+     * Optional (-[popup] may return nil). Not used with links or widgets, a popup annotation associated with this
+     * annotation. The bounds and open state of the popup indicate the placement and open state of the popup window.
+     * 
      * API-Since: 11.0
      */
     @Generated
@@ -1143,4 +1146,17 @@ public class PDFAnnotation extends NSObject implements NSCopying, NSCoding {
     @Generated
     @Selector("widgetStringValue")
     public native String widgetStringValue();
+
+    /**
+     * Returns whether an annotation is a /FreeText or a /Widget with field type /Tx
+     * and the annotation is not hidden or read-only.
+     */
+    @Generated
+    @Selector("isActivatableTextField")
+    public native boolean isActivatableTextField();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

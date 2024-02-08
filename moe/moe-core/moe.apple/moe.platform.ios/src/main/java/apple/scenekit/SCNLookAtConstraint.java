@@ -294,4 +294,9 @@ public class SCNLookAtConstraint extends SCNConstraint {
     @Selector("worldUp")
     @ByValue
     public native SCNVector3 worldUp();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -234,4 +234,9 @@ public class NETunnelProviderSession extends NEVPNConnection {
         @Generated
         void call_sendProviderMessageReturnErrorResponseHandler(@Nullable NSData responseData);
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

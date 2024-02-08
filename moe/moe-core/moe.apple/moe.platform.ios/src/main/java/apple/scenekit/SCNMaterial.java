@@ -836,4 +836,9 @@ public class SCNMaterial extends NSObject implements SCNAnimatable, SCNShadable,
     @IsOptional
     @Selector("setMinimumLanguageVersion:")
     public native void setMinimumLanguageVersion(@Nullable NSNumber value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

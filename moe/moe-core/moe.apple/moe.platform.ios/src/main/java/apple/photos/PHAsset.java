@@ -410,4 +410,9 @@ public class PHAsset extends PHObject {
     @Generated
     @Selector("hasAdjustments")
     public native boolean hasAdjustments();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

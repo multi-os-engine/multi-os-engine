@@ -24,6 +24,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.opaque.dispatch_queue_t;
 
 /**
  * NFCVASReaderSession
@@ -158,7 +159,8 @@ public class NFCVASReaderSession extends NFCReaderSession {
     @Selector("initWithVASCommandConfigurations:delegate:queue:")
     public native NFCVASReaderSession initWithVASCommandConfigurationsDelegateQueue(
             @NotNull NSArray<? extends NFCVASCommandConfiguration> commandConfigurations,
-            @NotNull @Mapped(ObjCObjectMapper.class) NFCVASReaderSessionDelegate delegate, @Nullable NSObject queue);
+            @NotNull @Mapped(ObjCObjectMapper.class) NFCVASReaderSessionDelegate delegate,
+            @Nullable dispatch_queue_t queue);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -211,4 +213,9 @@ public class NFCVASReaderSession extends NFCReaderSession {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

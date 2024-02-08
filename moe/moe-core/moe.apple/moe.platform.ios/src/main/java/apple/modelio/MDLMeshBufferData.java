@@ -236,4 +236,9 @@ public class MDLMeshBufferData extends NSObject implements MDLMeshBuffer {
     @Selector("zone")
     @MappedReturn(ObjCObjectMapper.class)
     public native MDLMeshBufferZone zone();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

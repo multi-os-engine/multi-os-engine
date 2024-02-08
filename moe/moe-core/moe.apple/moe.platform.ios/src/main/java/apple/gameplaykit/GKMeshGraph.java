@@ -44,8 +44,6 @@ import org.jetbrains.annotations.Nullable;
 
 /**
  * A collection of GKGraphNodes that are governed by a mesh formed by the space between a set of GKPolygonObstacles
- * 
- * API-Since: 10.0
  */
 @Generated
 @Library("GameplayKit")
@@ -273,4 +271,9 @@ public class GKMeshGraph<_NodeType> extends GKGraph {
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -503,4 +503,9 @@ public class PKPassLibrary extends NSObject {
         void call_encryptedServiceProviderDataForSecureElementPassCompletion(
                 @Nullable NSDictionary<?, ?> encryptedServiceProviderData, @Nullable NSError error);
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

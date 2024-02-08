@@ -275,4 +275,9 @@ public class UIMenuController extends NSObject {
     @Generated
     @Selector("showMenuFromView:rect:")
     public native void showMenuFromViewRect(@NotNull UIView targetView, @ByValue CGRect targetRect);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

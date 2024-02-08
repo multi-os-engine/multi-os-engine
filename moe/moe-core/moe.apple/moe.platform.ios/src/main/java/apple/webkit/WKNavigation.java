@@ -178,4 +178,9 @@ public class WKNavigation extends NSObject {
     @Selector("effectiveContentMode")
     @NInt
     public native long effectiveContentMode();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -244,4 +244,9 @@ public class AVAudioMixInputParameters extends NSObject implements NSCopying, NS
     @Generated
     @Selector("trackID")
     public native int trackID();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

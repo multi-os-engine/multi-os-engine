@@ -44,8 +44,6 @@ import org.jetbrains.annotations.Nullable;
 
 /**
  * Contains file information, such as the file's location and optional user info
- * 
- * API-Since: 9.0
  */
 @Generated
 @Library("WatchConnectivity")
@@ -174,4 +172,9 @@ public class WCSessionFile extends NSObject {
     @Generated
     @Selector("metadata")
     public native NSDictionary<String, ?> metadata();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

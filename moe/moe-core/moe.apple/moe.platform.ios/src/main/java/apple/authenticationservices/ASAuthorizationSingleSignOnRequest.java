@@ -202,4 +202,9 @@ public class ASAuthorizationSingleSignOnRequest extends ASAuthorizationOpenIDReq
     @Generated
     @Selector("setUserInterfaceEnabled:")
     public native void setUserInterfaceEnabled(boolean value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

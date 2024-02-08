@@ -219,4 +219,9 @@ public class MDLVertexAttributeData extends NSObject {
     @Generated
     @Selector("setBufferSize:")
     public native void setBufferSize(@NUInt long value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

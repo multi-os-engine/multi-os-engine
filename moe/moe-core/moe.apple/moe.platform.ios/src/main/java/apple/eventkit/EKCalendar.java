@@ -45,8 +45,6 @@ import org.jetbrains.annotations.Nullable;
  * EKCalendar
  * 
  * The EKCalendar class represents a calendar for events.
- * 
- * API-Since: 4.0
  */
 @Generated
 @Library("EventKit")
@@ -354,4 +352,9 @@ public class EKCalendar extends EKObject {
     @Selector("type")
     @NInt
     public native long type();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

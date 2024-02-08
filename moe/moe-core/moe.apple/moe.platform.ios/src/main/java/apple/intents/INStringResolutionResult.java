@@ -215,4 +215,9 @@ public class INStringResolutionResult extends INIntentResolutionResult {
     @Generated
     @Selector("unsupportedWithReason:")
     public static native INStringResolutionResult unsupportedWithReason(@NInt long reason);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

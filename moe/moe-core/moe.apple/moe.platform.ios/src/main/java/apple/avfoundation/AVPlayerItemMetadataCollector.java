@@ -41,6 +41,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.opaque.dispatch_queue_t;
 
 /**
  * AVPlayerItemMetadataCollector
@@ -49,6 +50,8 @@ import org.jetbrains.annotations.Nullable;
  * 
  * This class can be used to inform clients of the current set of AVMetadataGroups on an AVPlayerItem, and when new
  * AVMetadataGroups become available - e.g. in a Live HLS stream.
+ * 
+ * Subclasses of this type that are used from Swift must fulfill the requirements of a Sendable type.
  * 
  * API-Since: 9.3
  */
@@ -190,7 +193,7 @@ public class AVPlayerItemMetadataCollector extends AVPlayerItemMediaDataCollecto
     @Nullable
     @Generated
     @Selector("delegateQueue")
-    public native NSObject delegateQueue();
+    public native dispatch_queue_t delegateQueue();
 
     @Generated
     @Selector("init")
@@ -236,5 +239,10 @@ public class AVPlayerItemMetadataCollector extends AVPlayerItemMediaDataCollecto
     @Selector("setDelegate:queue:")
     public native void setDelegateQueue(
             @Nullable @Mapped(ObjCObjectMapper.class) AVPlayerItemMetadataCollectorPushDelegate delegate,
-            @Nullable NSObject delegateQueue);
+            @Nullable dispatch_queue_t delegateQueue);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

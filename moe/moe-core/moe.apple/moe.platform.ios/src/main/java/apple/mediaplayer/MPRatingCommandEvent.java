@@ -168,4 +168,9 @@ public class MPRatingCommandEvent extends MPRemoteCommandEvent {
     @Generated
     @Selector("rating")
     public native float rating();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

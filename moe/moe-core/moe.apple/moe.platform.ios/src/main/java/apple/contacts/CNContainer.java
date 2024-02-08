@@ -50,8 +50,6 @@ import org.jetbrains.annotations.Nullable;
  * An immutable value object representing a container.
  * 
  * CNContainer is thread safe.
- * 
- * API-Since: 9.0
  */
 @Generated
 @Library("Contacts")
@@ -233,4 +231,9 @@ public class CNContainer extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("type")
     @NInt
     public native long type();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -384,4 +384,9 @@ public class VSAccountMetadataRequest extends NSObject {
     @Generated
     @Selector("setApplicationAccountProviders:")
     public native void setApplicationAccountProviders(@Nullable NSArray<? extends VSAccountApplicationProvider> value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

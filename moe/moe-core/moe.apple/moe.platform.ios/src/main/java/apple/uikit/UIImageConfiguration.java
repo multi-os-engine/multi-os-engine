@@ -28,6 +28,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.foundation.NSLocale;
 
 /**
  * API-Since: 13.0
@@ -190,6 +191,9 @@ public class UIImageConfiguration extends NSObject implements NSCopying, NSSecur
         return supportsSecureCoding();
     }
 
+    /**
+     * The configuration's trait collection.
+     */
     @Nullable
     @Generated
     @Selector("traitCollection")
@@ -199,4 +203,48 @@ public class UIImageConfiguration extends NSObject implements NSCopying, NSSecur
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * inserts/applies the locale to this configuration
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("configurationWithLocale:")
+    @NotNull
+    public native UIImageConfiguration configurationWithLocale(@Nullable NSLocale locale);
+
+    /**
+     * Creates a new configuration object with the specified locale.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("configurationWithLocale:")
+    public static native UIImageConfiguration configurationWithLocale_static(@Nullable NSLocale locale);
+
+    /**
+     * Creates a new configuration object with the specified trait collection.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("configurationWithTraitCollection:")
+    public static native UIImageConfiguration configurationWithTraitCollection_static(
+            @Nullable UITraitCollection traitCollection);
+
+    /**
+     * The configuration's locale. If nil/unspecified, the image will be looked up using the current locale.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("locale")
+    @Nullable
+    public native NSLocale locale();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

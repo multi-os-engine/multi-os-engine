@@ -271,4 +271,9 @@ public class VNDetectRectanglesRequest extends VNImageBasedRequest {
     @Generated
     @Selector("results")
     public native NSArray<? extends VNRectangleObservation> results();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

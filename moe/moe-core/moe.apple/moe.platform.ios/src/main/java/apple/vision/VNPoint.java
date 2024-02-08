@@ -263,4 +263,9 @@ public class VNPoint extends NSObject implements NSCopying, NSSecureCoding {
     @Generated
     @Selector("zeroPoint")
     public static native VNPoint zeroPoint();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

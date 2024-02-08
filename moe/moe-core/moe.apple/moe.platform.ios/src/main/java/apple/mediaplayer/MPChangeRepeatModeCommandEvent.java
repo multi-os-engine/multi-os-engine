@@ -175,4 +175,9 @@ public class MPChangeRepeatModeCommandEvent extends MPRemoteCommandEvent {
     @Selector("repeatType")
     @NInt
     public native long repeatType();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -46,8 +46,6 @@ import org.jetbrains.annotations.Nullable;
  * EKReminder
  * 
  * The EKReminder class represents a reminder (task/todo).
- * 
- * API-Since: 6.0
  */
 @Generated
 @Library("EventKit")
@@ -316,4 +314,9 @@ public class EKReminder extends EKCalendarItem {
     @Generated
     @Selector("startDateComponents")
     public native NSDateComponents startDateComponents();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

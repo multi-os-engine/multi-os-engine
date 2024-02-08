@@ -1014,4 +1014,16 @@ public final class Enums {
      * API-Since: 4.0
      */
     @Generated public static final int kCMVideoCodecType_AV1 = 0x61763031;
+    /**
+     * API-Since: 4.0
+     */
+    @Generated public static final int kCMMediaType_TaggedBufferGroup = 0x74626772;
+    /**
+     * API-Since: 17.0
+     */
+    @Generated public static final int kCMTaggedBufferGroupFormatType_TaggedBufferGroup = 0x74626772;
+    /**
+     * API-Since: 17.0
+     */
+    @Generated public static final int kCMMuxedStreamType_EmbeddedDeviceScreenRecording = 0x69737220;
 }

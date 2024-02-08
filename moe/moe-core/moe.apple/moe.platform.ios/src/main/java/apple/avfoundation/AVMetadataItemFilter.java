@@ -41,6 +41,12 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
+ * AVMetadataItemFilter
+ * 
+ * Filters selected information from a metadata item.
+ * 
+ * Subclasses of this type that are used from Swift must fulfill the requirements of a Sendable type.
+ * 
  * API-Since: 7.0
  */
 @Generated
@@ -171,4 +177,9 @@ public class AVMetadataItemFilter extends NSObject {
     @Generated
     @Selector("init")
     public native AVMetadataItemFilter init();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

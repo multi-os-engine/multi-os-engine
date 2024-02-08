@@ -385,7 +385,7 @@ public final class StoreKit {
     public static native String SKStoreProductParameterCustomProductPageIdentifier();
 
     /**
-     * API-Since: 16.0
+     * API-Since: 16.1
      */
     @NotNull
     @Generated
@@ -394,7 +394,7 @@ public final class StoreKit {
     public static native String SKAdNetworkCoarseConversionValueHigh();
 
     /**
-     * API-Since: 16.0
+     * API-Since: 16.1
      */
     @NotNull
     @Generated
@@ -403,7 +403,7 @@ public final class StoreKit {
     public static native String SKAdNetworkCoarseConversionValueMedium();
 
     /**
-     * API-Since: 16.0
+     * API-Since: 16.1
      */
     @NotNull
     @Generated
@@ -412,7 +412,7 @@ public final class StoreKit {
     public static native String SKAdNetworkCoarseConversionValueLow();
 
     /**
-     * API-Since: 16.0
+     * API-Since: 16.1
      */
     @NotNull
     @Generated

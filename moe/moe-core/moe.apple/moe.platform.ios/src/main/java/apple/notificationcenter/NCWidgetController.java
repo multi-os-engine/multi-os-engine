@@ -184,4 +184,9 @@ public class NCWidgetController extends NSObject {
     @Generated
     @Selector("setHasContent:forWidgetWithBundleIdentifier:")
     public native void setHasContentForWidgetWithBundleIdentifier(boolean flag, @NotNull String bundleID);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

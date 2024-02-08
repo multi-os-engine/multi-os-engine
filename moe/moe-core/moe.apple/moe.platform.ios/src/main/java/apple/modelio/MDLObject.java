@@ -429,4 +429,9 @@ public class MDLObject extends NSObject implements MDLNamed {
     @Generated
     @Selector("components")
     public native NSArray<?> components();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

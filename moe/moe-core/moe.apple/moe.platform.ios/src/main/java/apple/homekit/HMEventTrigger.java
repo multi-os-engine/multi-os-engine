@@ -624,4 +624,9 @@ public class HMEventTrigger extends HMTrigger {
         @Generated
         void call_updateRecurrencesCompletionHandler(@Nullable NSError error);
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

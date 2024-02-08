@@ -46,8 +46,6 @@ import org.jetbrains.annotations.Nullable;
 /**
  * A rectangle feature found by a CIDetector
  * All positions are relative to the original image.
- * 
- * API-Since: 8.0
  */
 @Generated
 @Library("CoreImage")
@@ -191,4 +189,9 @@ public class CIRectangleFeature extends CIFeature {
     @Selector("topRight")
     @ByValue
     public native CGPoint topRight();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

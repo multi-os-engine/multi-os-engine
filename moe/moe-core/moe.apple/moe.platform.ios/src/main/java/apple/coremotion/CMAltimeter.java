@@ -44,11 +44,6 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
- * CMAltimeter
- * 
- * Discussion:
- * CMAltimeter provides information about the altitude of the device.
- * 
  * API-Since: 8.0
  */
 @Generated
@@ -274,4 +269,9 @@ public class CMAltimeter extends NSObject {
     @Generated
     @Selector("stopAbsoluteAltitudeUpdates")
     public native void stopAbsoluteAltitudeUpdates();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

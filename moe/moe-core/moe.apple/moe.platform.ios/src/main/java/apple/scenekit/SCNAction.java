@@ -49,6 +49,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.opaque.dispatch_queue_t;
 
 @Generated
 @Library("SceneKit")
@@ -330,7 +331,8 @@ public class SCNAction extends NSObject implements NSCopying, NSSecureCoding {
     @Generated
     @Selector("runBlock:queue:")
     public static native SCNAction runBlockQueue(
-            @NotNull @ObjCBlock(name = "call_runBlockQueue") Block_runBlockQueue block, @NotNull NSObject queue);
+            @NotNull @ObjCBlock(name = "call_runBlockQueue") Block_runBlockQueue block,
+            @NotNull dispatch_queue_t queue);
 
     /**
      * Creates an action that changes the x, y and z scale values of a node by a relative value.
@@ -549,4 +551,9 @@ public class SCNAction extends NSObject implements NSCopying, NSSecureCoding {
         @Generated
         float call_timingFunction_ret(float time);
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

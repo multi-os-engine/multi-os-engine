@@ -377,4 +377,9 @@ public class AVAudioFile extends NSObject {
     @Selector("writeFromBuffer:error:")
     public native boolean writeFromBufferError(@NotNull AVAudioPCMBuffer buffer,
             @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

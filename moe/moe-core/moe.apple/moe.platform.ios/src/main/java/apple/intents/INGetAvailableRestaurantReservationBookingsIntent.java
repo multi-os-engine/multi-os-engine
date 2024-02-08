@@ -260,4 +260,9 @@ public class INGetAvailableRestaurantReservationBookingsIntent extends INIntent 
             @NotNull INRestaurant restaurant, @NUInt long partySize,
             @Nullable NSDateComponents preferredBookingDateComponents, @Nullable NSNumber maximumNumberOfResults,
             @Nullable NSDate earliestBookingDateForResults, @Nullable NSDate latestBookingDateForResults);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

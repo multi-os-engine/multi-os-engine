@@ -292,7 +292,7 @@ public class SCNGeometryElement extends NSObject implements NSSecureCoding {
     /**
      * [@property] primitiveRange
      * 
-     * Specifies the subrange of primitves to render within NSMakeRange(0, primitiveCount). Defaults to
+     * Specifies the subrange of primitives to render within NSMakeRange(0, primitiveCount). Defaults to
      * NSMakeRange(NSNotFound, 0).
      * 
      * When the location of the range is set to NSNotFound, the entire geometry element is rendered.
@@ -340,7 +340,7 @@ public class SCNGeometryElement extends NSObject implements NSSecureCoding {
     /**
      * [@property] primitiveRange
      * 
-     * Specifies the subrange of primitves to render within NSMakeRange(0, primitiveCount). Defaults to
+     * Specifies the subrange of primitives to render within NSMakeRange(0, primitiveCount). Defaults to
      * NSMakeRange(NSNotFound, 0).
      * 
      * When the location of the range is set to NSNotFound, the entire geometry element is rendered.
@@ -368,4 +368,9 @@ public class SCNGeometryElement extends NSObject implements NSSecureCoding {
     public static native SCNGeometryElement geometryElementWithBufferPrimitiveTypePrimitiveCountBytesPerIndex(
             @NotNull @Mapped(ObjCObjectMapper.class) MTLBuffer buffer, @NInt long primitiveType,
             @NInt long primitiveCount, @NInt long bytesPerIndex);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

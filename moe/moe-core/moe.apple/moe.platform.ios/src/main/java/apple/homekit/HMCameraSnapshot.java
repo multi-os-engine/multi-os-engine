@@ -171,4 +171,9 @@ public class HMCameraSnapshot extends HMCameraSource {
     @Generated
     @Selector("init")
     public native HMCameraSnapshot init();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

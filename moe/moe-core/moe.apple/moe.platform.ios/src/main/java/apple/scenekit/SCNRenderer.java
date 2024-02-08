@@ -60,6 +60,7 @@ import apple.corefoundation.struct.CGRect;
 import apple.corefoundation.struct.CGSize;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.coregraphics.opaque.CGColorSpaceRef;
 
 /**
  * SCNRenderer
@@ -567,4 +568,14 @@ public class SCNRenderer extends NSObject implements SCNSceneRenderer, SCNTechni
     @Generated
     @Selector("currentRenderPassDescriptor")
     public native MTLRenderPassDescriptor currentRenderPassDescriptor();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
+
+    @Generated
+    @Selector("workingColorSpace")
+    @NotNull
+    public native CGColorSpaceRef workingColorSpace();
 }

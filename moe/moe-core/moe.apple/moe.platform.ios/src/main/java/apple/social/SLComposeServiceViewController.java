@@ -57,6 +57,10 @@ import apple.uikit.protocol.UIEditMenuInteractionAnimating;
 import apple.corefoundation.struct.CGPoint;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.uikit.UIAction;
+import apple.uikit.UITextItem;
+import apple.uikit.UITextItemMenuConfiguration;
+import apple.uikit.protocol.UIContextMenuInteractionAnimating;
 
 /**
  * API-Since: 8.0
@@ -440,6 +444,7 @@ public class SLComposeServiceViewController extends UIViewController implements 
     public native boolean textViewShouldInteractWithTextAttachmentInRange(@NotNull UITextView textView,
             @NotNull NSTextAttachment textAttachment, @ByValue NSRange characterRange);
 
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("textView:shouldInteractWithTextAttachment:inRange:interaction:")
@@ -453,6 +458,7 @@ public class SLComposeServiceViewController extends UIViewController implements 
     public native boolean textViewShouldInteractWithURLInRange(@NotNull UITextView textView, @NotNull NSURL URL,
             @ByValue NSRange characterRange);
 
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("textView:shouldInteractWithURL:inRange:interaction:")
@@ -528,4 +534,37 @@ public class SLComposeServiceViewController extends UIViewController implements 
     @Selector("textView:willPresentEditMenuWithAnimator:")
     public native void textViewWillPresentEditMenuWithAnimator(@NotNull UITextView textView,
             @NotNull @Mapped(ObjCObjectMapper.class) UIEditMenuInteractionAnimating animator);
+
+    @Generated
+    @IsOptional
+    @Selector("textView:menuConfigurationForTextItem:defaultMenu:")
+    @Nullable
+    public native UITextItemMenuConfiguration textViewMenuConfigurationForTextItemDefaultMenu(
+            @NotNull UITextView textView, @NotNull UITextItem textItem, @NotNull UIMenu defaultMenu);
+
+    @Generated
+    @IsOptional
+    @Selector("textView:primaryActionForTextItem:defaultAction:")
+    @Nullable
+    public native UIAction textViewPrimaryActionForTextItemDefaultAction(@NotNull UITextView textView,
+            @NotNull UITextItem textItem, @NotNull UIAction defaultAction);
+
+    @Generated
+    @IsOptional
+    @Selector("textView:textItemMenuWillDisplayForTextItem:animator:")
+    public native void textViewTextItemMenuWillDisplayForTextItemAnimator(@NotNull UITextView textView,
+            @NotNull UITextItem textItem,
+            @Mapped(ObjCObjectMapper.class) @NotNull UIContextMenuInteractionAnimating animator);
+
+    @Generated
+    @IsOptional
+    @Selector("textView:textItemMenuWillEndForTextItem:animator:")
+    public native void textViewTextItemMenuWillEndForTextItemAnimator(@NotNull UITextView textView,
+            @NotNull UITextItem textItem,
+            @Mapped(ObjCObjectMapper.class) @NotNull UIContextMenuInteractionAnimating animator);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

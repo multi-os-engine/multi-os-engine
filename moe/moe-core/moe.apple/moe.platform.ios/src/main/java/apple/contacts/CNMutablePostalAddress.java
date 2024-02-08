@@ -48,8 +48,6 @@ import org.jetbrains.annotations.Nullable;
  * CNMutablePostalAddress is not thread safe.
  * 
  * [@note] To remove properties when saving a mutable postal address, set string properties to empty values.
- * 
- * API-Since: 9.0
  */
 @Generated
 @Library("Contacts")
@@ -277,4 +275,9 @@ public class CNMutablePostalAddress extends CNPostalAddress {
     @Generated
     @Selector("subLocality")
     public native String subLocality();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -222,4 +222,9 @@ public class AVMediaSelection extends NSObject implements NSCopying, NSMutableCo
     @Selector("selectedMediaOptionInMediaSelectionGroup:")
     public native AVMediaSelectionOption selectedMediaOptionInMediaSelectionGroup(
             @NotNull AVMediaSelectionGroup mediaSelectionGroup);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

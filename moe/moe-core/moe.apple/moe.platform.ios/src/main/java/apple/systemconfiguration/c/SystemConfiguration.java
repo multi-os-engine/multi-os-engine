@@ -16,7 +16,6 @@ limitations under the License.
 
 package apple.systemconfiguration.c;
 
-import apple.NSObject;
 import apple.corefoundation.opaque.CFAllocatorRef;
 import apple.corefoundation.opaque.CFArrayRef;
 import apple.corefoundation.opaque.CFDictionaryRef;
@@ -41,6 +40,7 @@ import org.moe.natj.general.ptr.IntPtr;
 import org.moe.natj.general.ptr.VoidPtr;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.opaque.dispatch_queue_t;
 
 @Generated
 @Library("SystemConfiguration")
@@ -241,7 +241,7 @@ public final class SystemConfiguration {
     @Generated
     @CFunction
     public static native byte SCNetworkReachabilitySetDispatchQueue(@NotNull SCNetworkReachabilityRef target,
-            @Nullable NSObject queue);
+            @Nullable dispatch_queue_t queue);
 
     /**
      * [@function] SCCopyLastError

@@ -27,6 +27,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.network.opaque.nw_endpoint_t;
 
 /**
  * ===========================================================================================================================
@@ -197,7 +198,7 @@ public class DDDevice extends NSObject {
     @Nullable
     @Generated
     @Selector("networkEndpoint")
-    public native NSObject networkEndpoint();
+    public native nw_endpoint_t networkEndpoint();
 
     @Generated
     @Owned
@@ -283,7 +284,7 @@ public class DDDevice extends NSObject {
      */
     @Generated
     @Selector("setNetworkEndpoint:")
-    public native void setNetworkEndpoint(@Nullable NSObject value);
+    public native void setNetworkEndpoint(@Nullable nw_endpoint_t value);
 
     /**
      * Protocol of the device.
@@ -358,4 +359,27 @@ public class DDDevice extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * Whether the device supports grouping with other devices with the same protocol.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("setSupportsGrouping:")
+    public native void setSupportsGrouping(boolean value);
+
+    /**
+     * Whether the device supports grouping with other devices with the same protocol.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("supportsGrouping")
+    public native boolean supportsGrouping();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

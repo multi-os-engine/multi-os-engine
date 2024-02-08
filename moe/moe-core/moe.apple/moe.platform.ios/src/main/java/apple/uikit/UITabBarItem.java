@@ -48,6 +48,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.uikit.protocol.UIPopoverPresentationControllerSourceItem;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.corefoundation.struct.CGRect;
 
 /**
  * API-Since: 2.0
@@ -457,4 +458,14 @@ public class UITabBarItem extends UIBarItem implements UISpringLoadedInteraction
     @Generated
     @Selector("setScrollEdgeAppearance:")
     public native void setScrollEdgeAppearance(@Nullable UITabBarAppearance value);
+
+    @Generated
+    @Selector("frameInView:")
+    @ByValue
+    public native CGRect frameInView(@NotNull UIView referenceView);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

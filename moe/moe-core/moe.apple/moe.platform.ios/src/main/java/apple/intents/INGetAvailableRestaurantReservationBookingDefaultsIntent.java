@@ -199,4 +199,9 @@ public class INGetAvailableRestaurantReservationBookingDefaultsIntent extends IN
     @Selector("initWithRestaurant:")
     public native INGetAvailableRestaurantReservationBookingDefaultsIntent initWithRestaurant(
             @Nullable INRestaurant restaurant);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

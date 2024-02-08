@@ -43,15 +43,13 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.opaque.dispatch_queue_t;
 
 /**
  * CBCentralManager
  * 
  * Entry point to the central role. Commands should only be issued when its state is
  * <code>CBCentralManagerStatePoweredOn</code>.
- * 
- * 
- * API-Since: 5.0
  */
 @Generated
 @Library("CoreBluetooth")
@@ -202,6 +200,7 @@ public class CBCentralManager extends CBManager {
      * @see CBConnectPeripheralOptionNotifyOnNotificationKey
      * @see CBConnectPeripheralOptionEnableTransportBridgingKey
      * @see CBConnectPeripheralOptionRequiresANCS
+     * @see CBConnectPeripheralOptionEnableAutoReconnect
      */
     @Generated
     @Selector("connectPeripheral:options:")
@@ -235,7 +234,8 @@ public class CBCentralManager extends CBManager {
     @Generated
     @Selector("initWithDelegate:queue:")
     public native CBCentralManager initWithDelegateQueue(
-            @Nullable @Mapped(ObjCObjectMapper.class) CBCentralManagerDelegate delegate, @Nullable NSObject queue);
+            @Nullable @Mapped(ObjCObjectMapper.class) CBCentralManagerDelegate delegate,
+            @Nullable dispatch_queue_t queue);
 
     /**
      * initWithDelegate:queue:options:
@@ -256,8 +256,8 @@ public class CBCentralManager extends CBManager {
     @Generated
     @Selector("initWithDelegate:queue:options:")
     public native CBCentralManager initWithDelegateQueueOptions(
-            @Nullable @Mapped(ObjCObjectMapper.class) CBCentralManagerDelegate delegate, @Nullable NSObject queue,
-            @Nullable NSDictionary<String, ?> options);
+            @Nullable @Mapped(ObjCObjectMapper.class) CBCentralManagerDelegate delegate,
+            @Nullable dispatch_queue_t queue, @Nullable NSDictionary<String, ?> options);
 
     /**
      * [@property] isScanning
@@ -407,4 +407,9 @@ public class CBCentralManager extends CBManager {
     @Generated
     @Selector("supportsFeatures:")
     public static native boolean supportsFeatures(@NUInt long features);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -50,6 +50,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.opaque.dispatch_queue_t;
 
 /**
  * API-Since: 8.0
@@ -213,6 +214,7 @@ public class AVSampleBufferDisplayLayer extends CALayer implements AVQueuedSampl
     @Selector("controlTimebase")
     public native CMTimebaseRef controlTimebase();
 
+    @Deprecated
     @Generated
     @Selector("enqueueSampleBuffer:")
     public native void enqueueSampleBuffer(@NotNull CMSampleBufferRef sampleBuffer);
@@ -228,12 +230,16 @@ public class AVSampleBufferDisplayLayer extends CALayer implements AVQueuedSampl
      * property is nil.
      * 
      * API-Since: 8.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Use sampleBufferRenderer's error instead
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("error")
     public native NSError error();
 
+    @Deprecated
     @Generated
     @Selector("flush")
     public native void flush();
@@ -247,7 +253,12 @@ public class AVSampleBufferDisplayLayer extends CALayer implements AVQueuedSampl
      * It is not possible to determine which sample buffers have been decoded,
      * so the next frame passed to enqueueSampleBuffer: should be an IDR frame
      * (also known as a key frame or sync sample).
+     * 
+     * API-Since: 8.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Use sampleBufferRenderer's flushWithRemovalOfDisplayedImage:completionHandler: instead
      */
+    @Deprecated
     @Generated
     @Selector("flushAndRemoveImage")
     public native void flushAndRemoveImage();
@@ -264,13 +275,15 @@ public class AVSampleBufferDisplayLayer extends CALayer implements AVQueuedSampl
     @Selector("initWithLayer:")
     public native AVSampleBufferDisplayLayer initWithLayer(@NotNull @Mapped(ObjCObjectMapper.class) Object layer);
 
+    @Deprecated
     @Generated
     @Selector("isReadyForMoreMediaData")
     public native boolean isReadyForMoreMediaData();
 
+    @Deprecated
     @Generated
     @Selector("requestMediaDataWhenReadyOnQueue:usingBlock:")
-    public native void requestMediaDataWhenReadyOnQueueUsingBlock(@NotNull NSObject queue,
+    public native void requestMediaDataWhenReadyOnQueueUsingBlock(@NotNull dispatch_queue_t queue,
             @NotNull @ObjCBlock(name = "call_requestMediaDataWhenReadyOnQueueUsingBlock") AVQueuedSampleBufferRendering.Block_requestMediaDataWhenReadyOnQueueUsingBlock block);
 
     /**
@@ -324,12 +337,16 @@ public class AVSampleBufferDisplayLayer extends CALayer implements AVQueuedSampl
      * This property is key value observable.
      * 
      * API-Since: 8.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Use sampleBufferRenderer's status instead
      */
+    @Deprecated
     @Generated
     @Selector("status")
     @NInt
     public native long status();
 
+    @Deprecated
     @Generated
     @Selector("stopRequestingMediaData")
     public native void stopRequestingMediaData();
@@ -357,6 +374,7 @@ public class AVSampleBufferDisplayLayer extends CALayer implements AVQueuedSampl
         return supportsSecureCoding();
     }
 
+    @Deprecated
     @NotNull
     @Generated
     @Selector("timebase")
@@ -441,11 +459,15 @@ public class AVSampleBufferDisplayLayer extends CALayer implements AVQueuedSampl
      * This property is not key value observable.
      * 
      * API-Since: 14.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Use sampleBufferRenderer's requiresFlushToResumeDecoding instead
      */
+    @Deprecated
     @Generated
     @Selector("requiresFlushToResumeDecoding")
     public native boolean requiresFlushToResumeDecoding();
 
+    @Deprecated
     @Generated
     @Selector("hasSufficientMediaDataForReliablePlaybackStart")
     public native boolean hasSufficientMediaDataForReliablePlaybackStart();
@@ -474,4 +496,26 @@ public class AVSampleBufferDisplayLayer extends CALayer implements AVQueuedSampl
     @Generated
     @Selector("outputObscuredDueToInsufficientExternalProtection")
     public native boolean outputObscuredDueToInsufficientExternalProtection();
+
+    /**
+     * [@property] sampleBufferRenderer
+     * 
+     * An AVSampleBufferVideoRenderer instance that allows enqueuing sample buffers for rendering.
+     * 
+     * Although AVSampleBufferDisplayLayer conforms to the AVQueuedSampleBufferRendering protocol, the
+     * sampleBufferRenderer should be used to enqueue sample buffers. sampleBufferRenderer allows the client to safely
+     * enqueue sample buffers from a background thread. NOTE: Do not use AVSampleBufferDisplayLayer's
+     * AVQueuedSampleBufferRendering functions when using sampleBufferRenderer.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("sampleBufferRenderer")
+    @NotNull
+    public native AVSampleBufferVideoRenderer sampleBufferRenderer();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

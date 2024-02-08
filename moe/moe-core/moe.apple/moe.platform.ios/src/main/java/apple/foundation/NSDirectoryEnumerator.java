@@ -205,4 +205,9 @@ public class NSDirectoryEnumerator<_ObjectType> extends NSEnumerator<_ObjectType
     @Generated
     @Selector("isEnumeratingDirectoryPostOrder")
     public native boolean isEnumeratingDirectoryPostOrder();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

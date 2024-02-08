@@ -29,6 +29,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.avfaudio.struct.AVAudioVoiceProcessingOtherAudioDuckingConfiguration;
 
 /**
  * AVAudioInputNode
@@ -150,7 +151,7 @@ public class AVAudioInputNode extends AVAudioIONode implements AVAudioMixing {
     /**
      * [@property] voiceProcessingAGCEnabled
      * 
-     * Enable automatic gain control on the processed microphone/uplink
+     * Enable automatic gain control on the processed microphone uplink.
      * signal. Enabled by default.
      * 
      * Querying this property when voice processing is disabled will return false.
@@ -164,7 +165,7 @@ public class AVAudioInputNode extends AVAudioIONode implements AVAudioMixing {
     /**
      * [@property] voiceProcessingBypassed
      * 
-     * Bypass all processing done by the voice processing unit.
+     * Bypass all processing for microphone uplink done by the voice processing unit.
      * 
      * Querying this property when voice processing is disabled will return false.
      * 
@@ -317,7 +318,7 @@ public class AVAudioInputNode extends AVAudioIONode implements AVAudioMixing {
     /**
      * [@property] voiceProcessingAGCEnabled
      * 
-     * Enable automatic gain control on the processed microphone/uplink
+     * Enable automatic gain control on the processed microphone uplink.
      * signal. Enabled by default.
      * 
      * Querying this property when voice processing is disabled will return false.
@@ -331,7 +332,7 @@ public class AVAudioInputNode extends AVAudioIONode implements AVAudioMixing {
     /**
      * [@property] voiceProcessingBypassed
      * 
-     * Bypass all processing done by the voice processing unit.
+     * Bypass all processing for microphone uplink done by the voice processing unit.
      * 
      * Querying this property when voice processing is disabled will return false.
      * 
@@ -375,4 +376,73 @@ public class AVAudioInputNode extends AVAudioIONode implements AVAudioMixing {
     @Generated
     @Selector("volume")
     public native float volume();
+
+    /**
+     * setMutedSpeechActivityEventListener
+     * 
+     * Register a listener to be notified when speech activity event occurs while the input is muted.
+     * 
+     * Continuous presence of or lack of speech activity during mute will not cause redundant notification.
+     * In order to use this API, it's expected to implement the mute via the voiceProcessingInputMuted.
+     * 
+     * API-Since: 17.0
+     * 
+     * @param listenerBlock
+     *                      The block the engine will call when speech activity event occurs while the input is muted.
+     *                      Passing nil will remove an already set block.
+     * @return
+     *         YES for success
+     */
+    @Generated
+    @Selector("setMutedSpeechActivityEventListener:")
+    public native boolean setMutedSpeechActivityEventListener(
+            @ObjCBlock(name = "call_setMutedSpeechActivityEventListener") @Nullable Block_setMutedSpeechActivityEventListener listenerBlock);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_setMutedSpeechActivityEventListener {
+        @Generated
+        void call_setMutedSpeechActivityEventListener(@NInt long event);
+    }
+
+    /**
+     * [@property] voiceProcessingOtherAudioDuckingConfiguration
+     * 
+     * The configuration of ducking other (i.e. non-voice) audio
+     * 
+     * Configures the ducking of other (i.e. non-voice) audio, including advanced ducking enablement and ducking level.
+     * In general, when other audio is played during voice chat, applying a higher level of ducking could increase the
+     * intelligibility of the voice chat.
+     * If not set, the default ducking configuration is to disable advanced ducking, with a ducking level set to
+     * AVAudioVoiceProcessingOtherAudioDuckingLevelDefault.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("setVoiceProcessingOtherAudioDuckingConfiguration:")
+    public native void setVoiceProcessingOtherAudioDuckingConfiguration(
+            @ByValue AVAudioVoiceProcessingOtherAudioDuckingConfiguration value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
+
+    /**
+     * [@property] voiceProcessingOtherAudioDuckingConfiguration
+     * 
+     * The configuration of ducking other (i.e. non-voice) audio
+     * 
+     * Configures the ducking of other (i.e. non-voice) audio, including advanced ducking enablement and ducking level.
+     * In general, when other audio is played during voice chat, applying a higher level of ducking could increase the
+     * intelligibility of the voice chat.
+     * If not set, the default ducking configuration is to disable advanced ducking, with a ducking level set to
+     * AVAudioVoiceProcessingOtherAudioDuckingLevelDefault.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("voiceProcessingOtherAudioDuckingConfiguration")
+    @ByValue
+    public native AVAudioVoiceProcessingOtherAudioDuckingConfiguration voiceProcessingOtherAudioDuckingConfiguration();
 }

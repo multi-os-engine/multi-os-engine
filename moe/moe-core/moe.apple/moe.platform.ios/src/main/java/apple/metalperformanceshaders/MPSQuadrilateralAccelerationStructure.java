@@ -32,7 +32,9 @@ import org.jetbrains.annotations.Nullable;
  * See MPSPolygonAccelerationStructure for more information
  * 
  * API-Since: 13.0
+ * Deprecated-Since: 17.0
  */
+@Deprecated
 @Generated
 @Library("MetalPerformanceShaders")
 @Runtime(ObjCRuntime.class)
@@ -200,4 +202,9 @@ public class MPSQuadrilateralAccelerationStructure extends MPSPolygonAcceleratio
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

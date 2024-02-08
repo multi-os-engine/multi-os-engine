@@ -264,4 +264,9 @@ public class GLKEffectPropertyFog extends GLKEffectProperty {
     @Generated
     @Selector("start")
     public native float start();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -254,4 +254,9 @@ public class UIMutableApplicationShortcutItem extends UIApplicationShortcutItem 
     @Selector("targetContentIdentifier")
     @MappedReturn(ObjCObjectMapper.class)
     public native Object targetContentIdentifier();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

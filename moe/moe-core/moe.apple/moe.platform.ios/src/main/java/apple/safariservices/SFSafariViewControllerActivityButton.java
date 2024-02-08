@@ -31,13 +31,6 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
- * SFSafariViewControllerActivityButton
- * A custom button to show in SFSafariViewController's toolbar. When tapped, it will invoke a Share or Action Extension
- * bundled with your app.
- * 
- * The default VoiceOver description of this button is the `CFBundleDisplayName` set in the extension's Info.plist.
- * To set a different description for VoiceOver to read, set this object's `accessibilityLabel` property.
- * 
  * API-Since: 15.0
  */
 @Generated
@@ -225,4 +218,9 @@ public class SFSafariViewControllerActivityButton extends NSObject implements NS
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

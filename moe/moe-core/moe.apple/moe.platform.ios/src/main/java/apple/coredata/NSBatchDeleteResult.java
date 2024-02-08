@@ -177,4 +177,9 @@ public class NSBatchDeleteResult extends NSPersistentStoreResult {
     @Selector("resultType")
     @NUInt
     public native long resultType();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -24,6 +24,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.opaque.dispatch_queue_t;
 
 /**
  * GCKeyboard is available to an application that links to GameController.framework
@@ -111,7 +112,7 @@ public class GCKeyboard extends NSObject implements GCDevice {
     @NotNull
     @Generated
     @Selector("handlerQueue")
-    public native NSObject handlerQueue();
+    public native dispatch_queue_t handlerQueue();
 
     @Generated
     @Selector("hash")
@@ -182,7 +183,7 @@ public class GCKeyboard extends NSObject implements GCDevice {
 
     @Generated
     @Selector("setHandlerQueue:")
-    public native void setHandlerQueue(@NotNull NSObject value);
+    public native void setHandlerQueue(@NotNull dispatch_queue_t value);
 
     @Generated
     @Selector("setVersion:")
@@ -201,4 +202,9 @@ public class GCKeyboard extends NSObject implements GCDevice {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

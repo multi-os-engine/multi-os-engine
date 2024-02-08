@@ -169,4 +169,9 @@ public class MTLBufferLayoutDescriptorArray extends NSObject {
     @Generated
     @Selector("setObject:atIndexedSubscript:")
     public native void setObjectAtIndexedSubscript(@Nullable MTLBufferLayoutDescriptor bufferDesc, @NUInt long index);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

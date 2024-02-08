@@ -252,4 +252,9 @@ public class AXDataPoint extends NSObject implements NSCopying {
     @Generated
     @Selector("yValue")
     public native AXDataPointValue yValue();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

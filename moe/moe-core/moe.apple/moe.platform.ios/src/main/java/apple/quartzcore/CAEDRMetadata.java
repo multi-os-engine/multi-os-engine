@@ -24,6 +24,11 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.foundation.NSCoder;
+import apple.foundation.protocol.NSCopying;
+import apple.foundation.protocol.NSSecureCoding;
+import org.moe.natj.general.ann.MappedReturn;
+import org.moe.natj.objc.ann.ProtocolClassMethod;
 
 /**
  * API-Since: 16.0
@@ -32,7 +37,7 @@ import org.jetbrains.annotations.Nullable;
 @Library("QuartzCore")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class CAEDRMetadata extends NSObject {
+public class CAEDRMetadata extends NSObject implements NSCopying, NSSecureCoding {
     static {
         NatJ.register();
     }
@@ -221,4 +226,53 @@ public class CAEDRMetadata extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * Initialize with SEI Ambient Viewing Environmnent as defined in ISO/IEC 23002-7:2021
+     * 
+     * `data'
+     * The value is 8 bytes containing a big-endian structure as defined in D.3.39
+     * 
+     * The default metadata attached to Apple captures will typically have
+     * ambient_illuminance = 314,0000 with a D65 background chromaticity
+     * (ambient_light_x = 15,635, ambient_light_y = 16,450) but may change.
+     * As such it should be queried from the movies FormatDescription using the
+     * kCMFormatDescriptionExtension_AmbientViewingEnvironment key.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("HLGMetadataWithAmbientViewingEnvironment:")
+    @NotNull
+    public static native CAEDRMetadata HLGMetadataWithAmbientViewingEnvironment(@NotNull NSData data);
+
+    @Generated
+    @Owned
+    @Selector("copyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    @NotNull
+    public native Object copyWithZone(@Nullable VoidPtr zone);
+
+    @Generated
+    @Selector("encodeWithCoder:")
+    public native void encodeWithCoder(@NotNull NSCoder coder);
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native CAEDRMetadata initWithCoder(@NotNull NSCoder coder);
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

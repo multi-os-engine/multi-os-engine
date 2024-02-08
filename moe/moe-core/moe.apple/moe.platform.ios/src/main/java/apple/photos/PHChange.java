@@ -176,4 +176,9 @@ public class PHChange extends NSObject {
     @Generated
     @Selector("init")
     public native PHChange init();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

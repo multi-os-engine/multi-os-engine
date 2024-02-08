@@ -165,4 +165,9 @@ public class UITextPosition extends NSObject {
     @Generated
     @Selector("init")
     public native UITextPosition init();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

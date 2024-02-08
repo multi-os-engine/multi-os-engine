@@ -177,4 +177,9 @@ public class NSNotificationQueue extends NSObject {
     @Generated
     @Selector("initWithNotificationCenter:")
     public native NSNotificationQueue initWithNotificationCenter(@NotNull NSNotificationCenter notificationCenter);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

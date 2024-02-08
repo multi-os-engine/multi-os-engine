@@ -222,4 +222,79 @@ public class AVSpeechSynthesisMarker extends NSObject implements NSSecureCoding,
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("bookmarkName")
+    @NotNull
+    public native String bookmarkName();
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("initWithBookmarkName:atByteSampleOffset:")
+    public native AVSpeechSynthesisMarker initWithBookmarkNameAtByteSampleOffset(@NotNull String mark,
+            @NInt long byteSampleOffset);
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("initWithParagraphRange:atByteSampleOffset:")
+    public native AVSpeechSynthesisMarker initWithParagraphRangeAtByteSampleOffset(@ByValue NSRange range,
+            @NInt long byteSampleOffset);
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("initWithPhonemeString:atByteSampleOffset:")
+    public native AVSpeechSynthesisMarker initWithPhonemeStringAtByteSampleOffset(@NotNull String phoneme,
+            @NInt long byteSampleOffset);
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("initWithSentenceRange:atByteSampleOffset:")
+    public native AVSpeechSynthesisMarker initWithSentenceRangeAtByteSampleOffset(@ByValue NSRange range,
+            @NInt long byteSampleOffset);
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("initWithWordRange:atByteSampleOffset:")
+    public native AVSpeechSynthesisMarker initWithWordRangeAtByteSampleOffset(@ByValue NSRange range,
+            @NInt long byteSampleOffset);
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("phoneme")
+    @NotNull
+    public native String phoneme();
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("setBookmarkName:")
+    public native void setBookmarkName(@NotNull String value);
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("setPhoneme:")
+    public native void setPhoneme(@NotNull String value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

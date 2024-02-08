@@ -422,4 +422,8 @@ public final class HKWorkoutActivityType {
      * API-Since: 16.0
      */
     @Generated @NUInt public static final long Transition = 0x0000000000000053L;
+    /**
+     * API-Since: 17.0
+     */
+    @Generated @NUInt public static final long UnderwaterDiving = 0x0000000000000054L;
 }

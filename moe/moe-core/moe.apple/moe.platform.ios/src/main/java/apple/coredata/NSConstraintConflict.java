@@ -241,4 +241,9 @@ public class NSConstraintConflict extends NSObject {
             @NotNull NSArray<String> contraint, @Nullable NSManagedObject databaseObject,
             @Nullable NSDictionary<?, ?> databaseSnapshot,
             @NotNull NSArray<? extends NSManagedObject> conflictingObjects, @NotNull NSArray<?> conflictingSnapshots);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

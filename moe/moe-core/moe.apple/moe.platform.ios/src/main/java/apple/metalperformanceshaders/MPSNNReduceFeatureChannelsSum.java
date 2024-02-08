@@ -212,4 +212,9 @@ public class MPSNNReduceFeatureChannelsSum extends MPSNNReduceUnary {
     @Generated
     @Selector("weight")
     public native float weight();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -31,7 +31,7 @@ import org.jetbrains.annotations.Nullable;
  * A @c SHMatch indicates that a Signature matched a reference Signature in the target @c SHCatalog
  * 
  * A @c SHSignature can match many reference Signatures in a catalog and in turn a Signature can map to
- * many @c SHMediaItem. Therefore a match encapsulates the query signature and all of the various @c SHMediaItem it
+ * many @c SHMediaItem. Therefore a match encapsulates the query Signature and all of the various @c SHMediaItem it
  * matched
  * 
  * [@note] @c SHMatch is not intended to be subclassed
@@ -141,9 +141,9 @@ public class SHMatch extends NSObject implements NSSecureCoding {
     /**
      * The @c SHMatchedMediaItem belonging to the instance of @c SHSignature that we matched
      * 
-     * One signature may match multiple @c SHMediaItem, especially in the case of audio that uses samples. The @c
-     * SHMatchedMediaItem
-     * are ordered by the quality of the match. Use the first @c SHMediaItem if you intend to only show one result
+     * One Signature may match multiple @c SHMediaItem, especially in the case of audio that uses samples. The array
+     * of @c SHMatchedMediaItem
+     * is ordered by the quality of the match. Use the first @c SHMatchedMediaItem if you intend to only show one result
      */
     @NotNull
     @Generated
@@ -156,8 +156,8 @@ public class SHMatch extends NSObject implements NSSecureCoding {
     public static native SHMatch new_objc();
 
     /**
-     * The @c SHSignature used to search the @c SHCatalog
-     * [@note] This is Signature is the query Signature, not the reference signature contained in the @c SHCatalog
+     * The @c SHSignature used to query the @c SHCatalog
+     * [@note] This Signature is the query Signature, not the reference Signature contained in the @c SHCatalog
      */
     @NotNull
     @Generated
@@ -194,4 +194,9 @@ public class SHMatch extends NSObject implements NSSecureCoding {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

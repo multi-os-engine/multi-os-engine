@@ -47,6 +47,7 @@ import apple.corefoundation.struct.CGPoint;
 import apple.corefoundation.struct.CGRect;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.coregraphics.opaque.CGColorSpaceRef;
 
 /**
  * [@protocol] SCNSceneRenderer
@@ -683,4 +684,20 @@ public interface SCNSceneRenderer {
     @Generated
     @Selector("currentRenderPassDescriptor")
     MTLRenderPassDescriptor currentRenderPassDescriptor();
+
+    /**
+     * [@property] workingColorSpace
+     * 
+     * Specifies the color space used by the receiver for shading.
+     * 
+     * SceneKit will automatically color match image and color objects (UIImage, UIColor, CGImageRef, CGColorRef, etc.).
+     * When you directly provide color components to shaders, use this property to color match them to the working color
+     * space.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("workingColorSpace")
+    @NotNull
+    CGColorSpaceRef workingColorSpace();
 }

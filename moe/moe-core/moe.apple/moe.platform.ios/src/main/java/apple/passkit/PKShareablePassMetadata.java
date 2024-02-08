@@ -359,4 +359,9 @@ public class PKShareablePassMetadata extends NSObject {
     @Generated
     @Selector("setServerEnvironmentIdentifier:")
     public native void setServerEnvironmentIdentifier(@NotNull String value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

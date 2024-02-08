@@ -445,4 +445,9 @@ public class MPSNDArray extends NSObject {
     @Generated
     @Selector("writeBytes:strideBytes:")
     public native void writeBytesStrideBytes(@NotNull VoidPtr buffer, @Nullable NIntPtr strideBytesPerDimension);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

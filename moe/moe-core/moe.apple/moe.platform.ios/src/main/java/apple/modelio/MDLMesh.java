@@ -756,4 +756,9 @@ public class MDLMesh extends MDLObject {
     @Selector("makeVerticesUniqueAndReturnError:")
     public native boolean makeVerticesUniqueAndReturnError(
             @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

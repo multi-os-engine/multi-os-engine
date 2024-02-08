@@ -236,4 +236,9 @@ public class UILongPressGestureRecognizer extends UIGestureRecognizer {
     @Generated
     @Selector("initWithCoder:")
     public native UILongPressGestureRecognizer initWithCoder(@NotNull NSCoder coder);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

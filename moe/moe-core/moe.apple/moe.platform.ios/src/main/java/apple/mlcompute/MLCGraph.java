@@ -32,7 +32,10 @@ import org.jetbrains.annotations.Nullable;
  * A graph of layers that can be used to build a training or inference graph
  * 
  * API-Since: 14.0
+ * Deprecated-Since: 100000.0
+ * Deprecated-Message: Use Metal Performance Shaders Graph or BNNS instead.
  */
+@Deprecated
 @Generated
 @Library("MLCompute")
 @Runtime(ObjCRuntime.class)
@@ -441,4 +444,9 @@ public class MLCGraph extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

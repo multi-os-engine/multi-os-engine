@@ -309,4 +309,9 @@ public class AVTextStyleRule extends NSObject implements NSCopying {
     @Generated
     @Selector("textSelector")
     public native String textSelector();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

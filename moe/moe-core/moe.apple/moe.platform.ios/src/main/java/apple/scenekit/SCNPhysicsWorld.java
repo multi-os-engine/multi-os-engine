@@ -343,4 +343,9 @@ public class SCNPhysicsWorld extends NSObject implements NSSecureCoding {
     @Generated
     @Selector("updateCollisionPairs")
     public native void updateCollisionPairs();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

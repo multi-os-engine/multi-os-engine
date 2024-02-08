@@ -243,4 +243,9 @@ public class NSUnitFrequency extends NSDimension implements NSSecureCoding {
     @Generated
     @Selector("framesPerSecond")
     public static native NSUnitFrequency framesPerSecond();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

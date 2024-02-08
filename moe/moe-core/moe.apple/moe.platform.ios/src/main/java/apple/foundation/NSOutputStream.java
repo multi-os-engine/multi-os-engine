@@ -229,4 +229,9 @@ public class NSOutputStream extends NSStream {
     @Selector("write:maxLength:")
     @NInt
     public native long writeMaxLength(@NotNull ConstBytePtr buffer, @NUInt long len);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

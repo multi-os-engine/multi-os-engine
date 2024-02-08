@@ -203,4 +203,9 @@ public class SHCustomCatalog extends SHCatalog {
     @Selector("writeToURL:error:")
     public native boolean writeToURLError(@NotNull NSURL destinationURL,
             @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

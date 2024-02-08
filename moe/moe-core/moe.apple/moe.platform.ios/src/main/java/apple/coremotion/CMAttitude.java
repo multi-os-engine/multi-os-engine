@@ -256,4 +256,9 @@ public class CMAttitude extends NSObject implements NSCopying, NSSecureCoding {
     @Generated
     @Selector("yaw")
     public native double yaw();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

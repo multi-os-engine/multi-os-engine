@@ -335,4 +335,9 @@ public class MPSVector extends NSObject {
     @Selector("synchronizeOnCommandBuffer:")
     public native void synchronizeOnCommandBuffer(
             @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

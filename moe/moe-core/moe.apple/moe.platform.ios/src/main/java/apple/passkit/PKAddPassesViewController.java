@@ -44,6 +44,10 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.foundation.NSData;
+import apple.foundation.NSError;
+import org.moe.natj.general.ann.ReferenceInfo;
+import org.moe.natj.general.ptr.Ptr;
 
 /**
  * API-Since: 6.0
@@ -228,4 +232,17 @@ public class PKAddPassesViewController extends UIViewController {
             org.moe.natj.objc.ObjCRuntime.dissociateObjCObject(this, __old);
         }
     }
+
+    /**
+     * API-Since: 16.4
+     */
+    @Generated
+    @Selector("initWithIssuerData:signature:error:")
+    public native PKAddPassesViewController initWithIssuerDataSignatureError(@NotNull NSData issuerData,
+            @NotNull NSData signature, @ReferenceInfo(type = NSError.class) @Nullable Ptr<NSError> error);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -296,4 +296,9 @@ public class MPSCNNPoolingAverageGradient extends MPSCNNPoolingGradient {
     @Selector("zeroPadSizeY")
     @NUInt
     public native long zeroPadSizeY();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

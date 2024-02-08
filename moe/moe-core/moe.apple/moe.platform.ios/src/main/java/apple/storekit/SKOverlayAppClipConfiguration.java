@@ -250,4 +250,9 @@ public class SKOverlayAppClipConfiguration extends SKOverlayConfiguration {
     @Generated
     @Selector("setLatestReleaseID:")
     public native void setLatestReleaseID(@Nullable String value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

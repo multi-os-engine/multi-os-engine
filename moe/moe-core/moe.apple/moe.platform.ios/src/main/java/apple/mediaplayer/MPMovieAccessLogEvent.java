@@ -350,4 +350,9 @@ public class MPMovieAccessLogEvent extends NSObject implements NSCopying {
     @Generated
     @Selector("serverAddress")
     public native String serverAddress();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

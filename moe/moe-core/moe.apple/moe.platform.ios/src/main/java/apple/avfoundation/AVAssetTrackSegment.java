@@ -177,4 +177,9 @@ public class AVAssetTrackSegment extends NSObject {
     @Selector("timeMapping")
     @ByValue
     public native CMTimeMapping timeMapping();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

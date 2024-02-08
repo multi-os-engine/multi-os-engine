@@ -36,4 +36,8 @@ public final class INSendMessageRecipientUnsupportedReason {
      * API-Since: 12.0
      */
     @Generated @NInt public static final long NoHandleForLabel = 0x0000000000000006L;
+    /**
+     * API-Since: 17.0
+     */
+    @Generated @NInt public static final long RequiringInAppAuthentication = 0x0000000000000007L;
 }

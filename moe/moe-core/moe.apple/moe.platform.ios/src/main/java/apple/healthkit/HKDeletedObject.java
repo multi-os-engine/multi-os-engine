@@ -212,4 +212,9 @@ public class HKDeletedObject extends NSObject implements NSSecureCoding {
     @Generated
     @Selector("metadata")
     public native NSDictionary<String, ?> metadata();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

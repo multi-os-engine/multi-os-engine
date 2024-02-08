@@ -183,4 +183,9 @@ public class UIImpactFeedbackGenerator extends UIFeedbackGenerator {
     @Generated
     @Selector("impactOccurredWithIntensity:")
     public native void impactOccurredWithIntensity(@NFloat double intensity);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

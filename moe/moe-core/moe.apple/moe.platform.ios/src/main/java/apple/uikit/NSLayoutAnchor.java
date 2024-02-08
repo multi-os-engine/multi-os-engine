@@ -210,4 +210,9 @@ public class NSLayoutAnchor<_AnchorType> extends NSObject {
     @Generated
     @Selector("init")
     public native NSLayoutAnchor<?> init();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

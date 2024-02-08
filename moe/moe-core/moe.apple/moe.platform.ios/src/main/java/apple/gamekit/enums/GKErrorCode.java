@@ -64,4 +64,6 @@ public final class GKErrorCode {
     @Generated @NInt public static final long FriendListRestricted = 0x0000000000000065L;
     @Generated @NInt public static final long FriendListDenied = 0x0000000000000066L;
     @Generated @NInt public static final long FriendRequestNotAvailable = 0x0000000000000067L;
+    @Generated @NInt public static final long ICloudUnavailable = 0x0000000000000023L;
+    @Generated @NInt public static final long LockdownMode = 0x0000000000000024L;
 }

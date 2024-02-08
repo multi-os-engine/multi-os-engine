@@ -195,4 +195,9 @@ public class NSURLSessionDownloadTask extends NSURLSessionTask {
         @Generated
         void call_cancelByProducingResumeData(@Nullable NSData resumeData);
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

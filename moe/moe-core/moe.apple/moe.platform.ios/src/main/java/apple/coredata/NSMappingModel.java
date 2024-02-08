@@ -227,4 +227,9 @@ public class NSMappingModel extends NSObject {
     @Generated
     @Selector("setEntityMappings:")
     public native void setEntityMappings(NSArray<? extends NSEntityMapping> value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

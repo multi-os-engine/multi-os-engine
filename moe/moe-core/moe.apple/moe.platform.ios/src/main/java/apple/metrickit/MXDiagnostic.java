@@ -212,4 +212,21 @@ public class MXDiagnostic extends NSObject implements NSSecureCoding {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * [@property] signpostData
+     * 
+     * An NSArray representing the list of signpost records.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("signpostData")
+    @Nullable
+    public native NSArray<? extends MXSignpostRecord> signpostData();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

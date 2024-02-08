@@ -44,9 +44,6 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-/**
- * API-Since: 10.0
- */
 @Generated
 @Library("Messages")
 @Runtime(ObjCRuntime.class)
@@ -430,4 +427,9 @@ public class MSConversation extends NSObject {
         @Generated
         void call_sendTextCompletionHandler(@Nullable NSError error);
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

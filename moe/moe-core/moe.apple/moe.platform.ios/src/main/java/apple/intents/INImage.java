@@ -263,4 +263,9 @@ public class INImage extends NSObject implements NSCopying, NSSecureCoding {
     @Generated
     @Selector("systemImageNamed:")
     public static native INImage systemImageNamed(@NotNull String systemImageName);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

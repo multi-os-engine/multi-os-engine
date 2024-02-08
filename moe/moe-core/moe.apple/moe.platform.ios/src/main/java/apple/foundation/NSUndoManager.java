@@ -402,4 +402,9 @@ public class NSUndoManager extends NSObject {
         @Generated
         void call_registerUndoWithTargetHandler(@NotNull @Mapped(ObjCObjectMapper.class) Object target);
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

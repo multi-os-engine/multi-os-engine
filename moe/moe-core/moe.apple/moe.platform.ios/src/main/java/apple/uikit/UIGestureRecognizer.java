@@ -171,7 +171,7 @@ public class UIGestureRecognizer extends NSObject {
     public native void addTargetAction(@NotNull @Mapped(ObjCObjectMapper.class) Object target, @NotNull SEL action);
 
     /**
-     * Array of UIPressTypes as NSNumbers.
+     * Array of UIPressTypes as NSNumbers. The default value is platform dependent.
      * 
      * API-Since: 9.0
      */
@@ -181,7 +181,7 @@ public class UIGestureRecognizer extends NSObject {
     public native NSArray<? extends NSNumber> allowedPressTypes();
 
     /**
-     * Array of UITouchTypes as NSNumbers.
+     * Array of UITouchTypes as NSNumbers. The default value is platform dependent.
      * 
      * API-Since: 9.0
      */
@@ -306,7 +306,7 @@ public class UIGestureRecognizer extends NSObject {
     public native boolean requiresExclusiveTouchType();
 
     /**
-     * Array of UIPressTypes as NSNumbers.
+     * Array of UIPressTypes as NSNumbers. The default value is platform dependent.
      * 
      * API-Since: 9.0
      */
@@ -315,7 +315,7 @@ public class UIGestureRecognizer extends NSObject {
     public native void setAllowedPressTypes(@NotNull NSArray<? extends NSNumber> value);
 
     /**
-     * Array of UITouchTypes as NSNumbers.
+     * Array of UITouchTypes as NSNumbers. The default value is platform dependent.
      * 
      * API-Since: 9.0
      */
@@ -570,4 +570,9 @@ public class UIGestureRecognizer extends NSObject {
     @Generated
     @Selector("shouldReceiveEvent:")
     public native boolean shouldReceiveEvent(@NotNull UIEvent event);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

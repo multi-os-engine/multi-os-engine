@@ -45,6 +45,8 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.foundation.NSURL;
+import apple.opaque.dispatch_queue_t;
 
 /**
  * AVCaptureVideoDataOutput
@@ -290,7 +292,7 @@ public class AVCaptureVideoDataOutput extends AVCaptureOutput {
     @Nullable
     @Generated
     @Selector("sampleBufferCallbackQueue")
-    public native NSObject sampleBufferCallbackQueue();
+    public native dispatch_queue_t sampleBufferCallbackQueue();
 
     /**
      * [@property] sampleBufferDelegate
@@ -377,7 +379,7 @@ public class AVCaptureVideoDataOutput extends AVCaptureOutput {
     @Selector("setSampleBufferDelegate:queue:")
     public native void setSampleBufferDelegateQueue(
             @Nullable @Mapped(ObjCObjectMapper.class) AVCaptureVideoDataOutputSampleBufferDelegate sampleBufferDelegate,
-            @Nullable NSObject sampleBufferCallbackQueue);
+            @Nullable dispatch_queue_t sampleBufferCallbackQueue);
 
     /**
      * [@property] videoSettings
@@ -572,4 +574,60 @@ public class AVCaptureVideoDataOutput extends AVCaptureOutput {
     @Generated
     @Selector("setDeliversPreviewSizedOutputBuffers:")
     public native void setDeliversPreviewSizedOutputBuffers(boolean value);
+
+    /**
+     * recommendedVideoSettingsForVideoCodecType:assetWriterOutputFileType:outputFileURL:
+     * 
+     * Specifies the recommended settings for a particular video codec type with output file URL, to be used with an
+     * AVAssetWriterInput.
+     * 
+     * The value of this property is an NSDictionary containing values for compression settings keys defined in
+     * AVVideoSettings.h. This dictionary is suitable for use as the "outputSettings" parameter when creating an
+     * AVAssetWriterInput, such as,
+     * 
+     * [AVAssetWriterInput assetWriterInputWithMediaType:AVMediaTypeVideo outputSettings:outputSettings
+     * sourceFormatHint:hint];
+     * 
+     * The dictionary returned contains all necessary keys and values needed by AVAssetWriter (see AVAssetWriterInput.h,
+     * -initWithMediaType:outputSettings: for a more in depth discussion). For QuickTime movie and ISO file types, the
+     * recommended video settings will produce output comparable to that of AVCaptureMovieFileOutput.
+     * 
+     * The videoCodecType string provided must be present in the
+     * availableVideoCodecTypesForAssetWriterWithOutputFileType: array, or an NSInvalidArgumentException is thrown.
+     * 
+     * Note that the dictionary of settings is dependent on the current configuration of the receiver's AVCaptureSession
+     * and its inputs. The settings dictionary may change if the session's configuration changes. As such, you should
+     * configure your session first, then query the recommended video settings. As of iOS 8.3, movies produced with
+     * these settings successfully import into the iOS camera roll and sync to and from like devices via iTunes.
+     * 
+     * API-Since: 17.0
+     * 
+     * @param videoCodecType
+     *                       Specifies the desired AVVideoCodecKey to be used for compression (see AVVideoSettings.h).
+     * @param outputFileType
+     *                       Specifies the UTI of the file type to be written (see AVMediaFormat.h for a list of file
+     *                       format UTIs).
+     * @param outputFileURL
+     *                       Specifies the output URL of the file to be written.
+     * 
+     *                       If you wish to capture onto an external storage device get an externalStorageDevice of type
+     *                       AVExternalStorageDevice (as defined in AVExternalStorageDevice.h):
+     *                       [AVExternalStorageDeviceDiscoverySession sharedSession] externalStorageDevices]
+     * 
+     *                       Then use [externalStorageDevice nextAvailableURLsWithPathExtensions:pathExtensions
+     *                       error:&error] to get the output file URL.
+     * 
+     * @return
+     *         A fully populated dictionary of keys and values that are compatible with AVAssetWriter.
+     */
+    @Generated
+    @Selector("recommendedVideoSettingsForVideoCodecType:assetWriterOutputFileType:outputFileURL:")
+    @Nullable
+    public native NSDictionary<String, ?> recommendedVideoSettingsForVideoCodecTypeAssetWriterOutputFileTypeOutputFileURL(
+            @NotNull String videoCodecType, @NotNull String outputFileType, @Nullable NSURL outputFileURL);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

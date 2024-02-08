@@ -240,4 +240,9 @@ public class INGetAvailableRestaurantReservationBookingsIntentResponse extends I
     @Generated
     @Selector("termsAndConditions")
     public native INTermsAndConditions termsAndConditions();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -216,4 +216,9 @@ public class MPSCNNUpsamplingBilinearNode extends MPSNNFilterNode {
     public static native MPSCNNUpsamplingBilinearNode nodeWithSourceIntegerScaleFactorXIntegerScaleFactorYAlignCorners(
             @NotNull MPSNNImageNode sourceNode, @NUInt long integerScaleFactorX, @NUInt long integerScaleFactorY,
             boolean alignCorners);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

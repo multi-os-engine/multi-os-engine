@@ -33,7 +33,7 @@ import org.jetbrains.annotations.Nullable;
 @Library("MetalPerformanceShadersGraph")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class MPSGraphCreateSparseOpDescriptor extends NSObject implements NSCopying {
+public class MPSGraphCreateSparseOpDescriptor extends MPSGraphObject implements NSCopying {
     static {
         NatJ.register();
     }
@@ -89,6 +89,9 @@ public class MPSGraphCreateSparseOpDescriptor extends NSObject implements NSCopy
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(@Nullable VoidPtr zone);
 
+    /**
+     * Defines datatype of sparse tensor.
+     */
     @Generated
     @Selector("dataType")
     public native int dataType();
@@ -101,6 +104,14 @@ public class MPSGraphCreateSparseOpDescriptor extends NSObject implements NSCopy
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * Creates a descriptor for a sparse tensor.
+     * 
+     * - Parameters:
+     * - sparseStorageType: A sparseStorageType.
+     * - dataType: A dataType of sparse tensor.
+     * - Returns: The descriptor.
+     */
     @Generated
     @Selector("descriptorWithStorageType:dataType:")
     public static native MPSGraphCreateSparseOpDescriptor descriptorWithStorageTypeDataType(long sparseStorageType,
@@ -150,10 +161,16 @@ public class MPSGraphCreateSparseOpDescriptor extends NSObject implements NSCopy
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * Defines datatype of sparse tensor.
+     */
     @Generated
     @Selector("setDataType:")
     public native void setDataType(int value);
 
+    /**
+     * Defines storage format of sparse tensor.
+     */
     @Generated
     @Selector("setSparseStorageType:")
     public native void setSparseStorageType(long value);
@@ -162,6 +179,9 @@ public class MPSGraphCreateSparseOpDescriptor extends NSObject implements NSCopy
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * Defines storage format of sparse tensor.
+     */
     @Generated
     @Selector("sparseStorageType")
     public native long sparseStorageType();
@@ -174,4 +194,9 @@ public class MPSGraphCreateSparseOpDescriptor extends NSObject implements NSCopy
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

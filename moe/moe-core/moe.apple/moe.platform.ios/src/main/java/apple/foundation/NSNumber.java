@@ -565,4 +565,9 @@ public class NSNumber extends NSValue implements CKRecordValue, NSFetchRequestRe
     @Generated
     @Selector("valueWithCMVideoDimensions:")
     public static native NSValue valueWithCMVideoDimensions(@ByValue CMVideoDimensions dimensions);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

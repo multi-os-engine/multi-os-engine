@@ -56,7 +56,7 @@ import org.jetbrains.annotations.Nullable;
  * 
  * API-Since: 3.0
  * Deprecated-Since: 7.0
- * Deprecated-Message: Use MCBrowserViewController from the MultipeerConnectivity framework
+ * Deprecated-Message: Use MCBrowserViewController from the MultipeerConnectivity framework.
  */
 @Deprecated
 @Generated
@@ -272,4 +272,9 @@ public class GKPeerPickerController extends NSObject {
     @Generated
     @Selector("show")
     public native void show();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

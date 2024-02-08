@@ -74,7 +74,8 @@ public class AVMutableMovie extends AVMovie {
      * Adds an empty track to the target movie.
      * 
      * The trackID of the newly added track is a property of the returned instance of AVMutableMovieTrack.
-     * This method throws an exception if media type is not equal to the track's media type.
+     * This method throws an exception if media type is not equal to the track's media type, or if any option is
+     * invalid.
      * Note that metadata will not be automatically copied.
      * 
      * @param mediaType
@@ -102,6 +103,7 @@ public class AVMutableMovie extends AVMovie {
      * as track userdata and metadata, width, height, and preferred volume) copied from the source tracks in the
      * existingTracks array. Also, properties involving pairs of tracks (such as track references) are copied from the
      * source tracks to the target tracks.
+     * This method throws an exception if any option is invalid.
      * 
      * @param existingTracks
      *                       An array of AVAssetTrack objects.
@@ -882,4 +884,9 @@ public class AVMutableMovie extends AVMovie {
     @Generated
     @Selector("unusedTrackID")
     public native int unusedTrackID();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

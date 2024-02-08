@@ -44,21 +44,6 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
- * CMPedometer
- * 
- * Discussion:
- * CMPedometer allows access to the user's pedestrian activity. The
- * activity can be retrieved in one of two ways:
- * 
- * 1. Via a query specifying a time range from which the pedometer data is
- * tabulated and returned.
- * (See queryPedometerDataFromDate:toDate:withHandler:)
- * 
- * 2. By providing a block to startPedometerUpdatesFromDate:withHandler:,
- * pedometer updates will be provided on a best effort basis. Pedometer
- * updates can be stopped by calling stopPedometerUpdates.
- * 
- * 
  * API-Since: 8.0
  */
 @Generated
@@ -353,4 +338,9 @@ public class CMPedometer extends NSObject {
     @Selector("authorizationStatus")
     @NInt
     public static native long authorizationStatus();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

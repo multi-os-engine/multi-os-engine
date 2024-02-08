@@ -451,4 +451,9 @@ public class UIKeyCommand extends UICommand {
     @Generated
     @Selector("wantsPriorityOverSystemBehavior")
     public native boolean wantsPriorityOverSystemBehavior();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

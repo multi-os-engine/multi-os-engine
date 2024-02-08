@@ -190,4 +190,9 @@ public class MPMusicPlayerStoreQueueDescriptor extends MPMusicPlayerQueueDescrip
     @Generated
     @Selector("storeIDs")
     public native NSArray<String> storeIDs();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -48,8 +48,6 @@ import org.jetbrains.annotations.Nullable;
  * CBPeripheral
  * 
  * Represents a peripheral.
- * 
- * API-Since: 5.0
  */
 @Generated
 @Library("CoreBluetooth")
@@ -470,4 +468,9 @@ public class CBPeripheral extends CBPeer {
     @Generated
     @Selector("ancsAuthorized")
     public native boolean ancsAuthorized();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

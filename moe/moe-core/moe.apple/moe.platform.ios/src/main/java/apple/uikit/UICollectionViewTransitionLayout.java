@@ -209,4 +209,9 @@ public class UICollectionViewTransitionLayout extends UICollectionViewLayout {
     @Selector("valueForAnimatedKey:")
     @NFloat
     public native double valueForAnimatedKey(@NotNull String key);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

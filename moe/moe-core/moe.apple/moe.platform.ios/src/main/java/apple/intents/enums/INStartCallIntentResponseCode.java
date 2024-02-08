@@ -60,4 +60,8 @@ public final class INStartCallIntentResponseCode {
      * API-Since: 13.0
      */
     @Generated @NInt public static final long FailureCallInProgress = 0x000000000000000BL;
+    /**
+     * API-Since: 17.0
+     */
+    @Generated @NInt public static final long FailureRequiringInAppAuthentication = 0x000000000000000DL;
 }

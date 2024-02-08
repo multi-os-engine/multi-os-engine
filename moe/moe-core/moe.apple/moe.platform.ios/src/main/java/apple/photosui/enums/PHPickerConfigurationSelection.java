@@ -26,4 +26,17 @@ public final class PHPickerConfigurationSelection {
      * API-Since: 15.0
      */
     @Generated @NInt public static final long Ordered = 0x0000000000000001L;
+    /**
+     * Selection can be delivered continuously.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated @NInt public static final long Continuous = 0x0000000000000002L;
+    /**
+     * Selection can be delivered continuously and uses the selection order made by the user. Selected assets are
+     * numbered.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated @NInt public static final long ContinuousAndOrdered = 0x0000000000000003L;
 }

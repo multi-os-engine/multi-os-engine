@@ -58,9 +58,15 @@ public final class NEVPNIKEv2CertificateType {
     }
 
     /**
-     * [@const] NEVPNIKEv2CertificateTypeEd25519 Edwards 25519 curve
+     * [@const] NEVPNIKEv2CertificateTypeEd25519 EdDSA with Edwards Curve25519
      * 
      * API-Since: 13.0
      */
     @Generated @NInt public static final long Ed25519 = 0x0000000000000005L;
+    /**
+     * [@const] NEVPNIKEv2CertificateTypeRSAPSS RSA-PSS
+     * 
+     * API-Since: 17.0
+     */
+    @Generated @NInt public static final long RSAPSS = 0x0000000000000006L;
 }

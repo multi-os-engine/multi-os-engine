@@ -58,6 +58,7 @@ import apple.videotoolbox.opaque.VTPixelRotationSessionRef;
 import apple.videotoolbox.opaque.VTPixelTransferSessionRef;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.coremedia.opaque.CMTaggedBufferGroupRef;
 
 @Generated
 @Library("VideoToolbox")
@@ -3151,4 +3152,348 @@ public final class VideoToolbox {
     @Generated
     @CVariable()
     public static native CFStringRef kVTPixelRotationPropertyKey_FlipVerticalOrientation();
+
+    /**
+     * [@function] VTIsStereoMVHEVCEncodeSupported
+     * 
+     * Indicates whether the current system supports stereo MV-HEVC encode.
+     * 
+     * This call returning true does not guarantee that encode resources will be available at all times.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @CFunction
+    public static native byte VTIsStereoMVHEVCEncodeSupported();
+
+    /**
+     * [@function] VTCompressionSessionEncodeMultiImageFrame
+     * 
+     * Call this function to present a multi-image frame to the compression session.
+     * Encoded frames may or may not be output before the function returns.
+     * 
+     * The client should not modify the pixel data after making this call.
+     * The session and/or encoder will retain the image buffer as long as necessary.
+     * 
+     * @param session
+     *                              The compression session.
+     * @param taggedBufferGroup
+     *                              A CMTaggedBufferGroup containing the multiple images for a video frame to be
+     *                              compressed.
+     * @param presentationTimeStamp
+     *                              The presentation timestamp for this frame, to be attached to the sample buffer.
+     *                              Each presentation timestamp passed to a session must be greater than the previous
+     *                              one.
+     * @param duration
+     *                              The presentation duration for this frame, to be attached to the sample buffer.
+     *                              If you do not have duration information, pass kCMTimeInvalid.
+     * @param frameProperties
+     *                              Contains key/value pairs specifying additional properties for encoding this frame.
+     *                              Note that some session properties may also be changed between frames.
+     *                              Such changes have effect on subsequently encoded frames.
+     * @param sourceFrameRefcon
+     *                              Your reference value for the frame, which will be passed to the output callback
+     *                              function.
+     * @param infoFlagsOut
+     *                              Points to a VTEncodeInfoFlags to receive information about the encode operation.
+     *                              The kVTEncodeInfo_Asynchronous bit may be set if the encode is (or was) running
+     *                              asynchronously.
+     *                              The kVTEncodeInfo_FrameDropped bit may be set if the frame was dropped
+     *                              (synchronously).
+     *                              Pass NULL if you do not want to receive this information.
+     * 
+     *                              API-Since: 17.0
+     */
+    @Generated
+    @CFunction
+    public static native int VTCompressionSessionEncodeMultiImageFrame(@NotNull VTCompressionSessionRef session,
+            @NotNull CMTaggedBufferGroupRef taggedBufferGroup, @ByValue CMTime presentationTimeStamp,
+            @ByValue CMTime duration, @Nullable CFDictionaryRef frameProperties, @Nullable VoidPtr sourceFrameRefcon,
+            @Nullable IntPtr infoFlagsOut);
+
+    /**
+     * [@function] VTCompressionSessionEncodeMultiImageFrameWithOutputHandler
+     * 
+     * Call this function to present a multi-image frame to the compression session.
+     * Encoded frames may or may not be output before the function returns.
+     * 
+     * The client should not modify the pixel data after making this call.
+     * The session and/or encoder will retain the image buffer as long as necessary.
+     * Cannot be called with a session created with a VTCompressionOutputCallback.
+     * 
+     * @param session
+     *                              The compression session.
+     * @param taggedBufferGroup
+     *                              A CMTaggedBufferGroup containing the multiple images for a video frame to be
+     *                              compressed.
+     * @param presentationTimeStamp
+     *                              The presentation timestamp for this frame, to be attached to the sample buffer.
+     *                              Each presentation timestamp passed to a session must be greater than the previous
+     *                              one.
+     * @param duration
+     *                              The presentation duration for this frame, to be attached to the sample buffer.
+     *                              If you do not have duration information, pass kCMTimeInvalid.
+     * @param frameProperties
+     *                              Contains key/value pairs specifying additional properties for encoding this frame.
+     *                              Note that some session properties may also be changed between frames.
+     *                              Such changes have effect on subsequently encoded frames.
+     * @param infoFlagsOut
+     *                              Points to a VTEncodeInfoFlags to receive information about the encode operation.
+     *                              The kVTEncodeInfo_Asynchronous bit may be set if the encode is (or was) running
+     *                              asynchronously.
+     *                              The kVTEncodeInfo_FrameDropped bit may be set if the frame was dropped
+     *                              (synchronously).
+     *                              Pass NULL if you do not want to receive this information.
+     * @param outputHandler
+     *                              The block to be called when encoding the frame is completed.
+     *                              This block may be called asynchronously, on a different thread from the one that
+     *                              calls VTCompressionSessionEncodeMultiImageFrameWithOutputHandler.
+     * 
+     *                              API-Since: 17.0
+     */
+    @Generated
+    @CFunction
+    public static native int VTCompressionSessionEncodeMultiImageFrameWithOutputHandler(
+            @NotNull VTCompressionSessionRef session, @NotNull CMTaggedBufferGroupRef taggedBufferGroup,
+            @ByValue CMTime presentationTimeStamp, @ByValue CMTime duration, @Nullable CFDictionaryRef frameProperties,
+            @Nullable IntPtr infoFlagsOut,
+            @ObjCBlock(name = "call_VTCompressionSessionEncodeMultiImageFrameWithOutputHandler") @NotNull Block_VTCompressionSessionEncodeMultiImageFrameWithOutputHandler outputHandler);
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Block_VTCompressionSessionEncodeMultiImageFrameWithOutputHandler {
+        @Generated
+        void call_VTCompressionSessionEncodeMultiImageFrameWithOutputHandler(int status, int infoFlags,
+                @Nullable CMSampleBufferRef sampleBuffer);
+    }
+
+    /**
+     * [@function] VTIsStereoMVHEVCDecodeSupported
+     * 
+     * Indicates whether the current system supports stereo MV-HEVC decode.
+     * 
+     * This call returning true does not guarantee that decode resources will be available at all times.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @CFunction
+    public static native byte VTIsStereoMVHEVCDecodeSupported();
+
+    /**
+     * [@function] VTDecompressionSessionSetMultiImageCallback
+     * 
+     * Provides a callback capable of receiving multiple images for individual DecodeFrame requests.
+     * 
+     * The outputMultiImageCallback will be used when the video decoder outputs CMTaggedBufferGroups.
+     * When installed, outputMultiImageCallback will also be used when DecodeFrame operations fail and return a nonzero
+     * status.
+     * The original single-image callback will only be used in the case where the video decoder outputs a CVImageBuffer
+     * instead of a CMTaggedBufferGroup.
+     * Terminology note: in multi-image decompression, a single video sample (from one CMSampleBuffer) contains a single
+     * frame (with one PTS) that is decoded to produce multiple images.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @CFunction
+    public static native int VTDecompressionSessionSetMultiImageCallback(
+            @NotNull VTDecompressionSessionRef decompressionSession,
+            @FunctionPtr(name = "call_VTDecompressionSessionSetMultiImageCallback") @NotNull Function_VTDecompressionSessionSetMultiImageCallback outputMultiImageCallback,
+            @Nullable VoidPtr outputMultiImageRefcon);
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_VTDecompressionSessionSetMultiImageCallback {
+        @Generated
+        void call_VTDecompressionSessionSetMultiImageCallback(@Nullable VoidPtr arg0, @Nullable VoidPtr arg1, int arg2,
+                int arg3, @Nullable CMTaggedBufferGroupRef arg4, @ByValue CMTime arg5, @ByValue CMTime arg6);
+    }
+
+    /**
+     * [@function] VTDecompressionSessionDecodeFrameWithMultiImageCapableOutputHandler
+     * 
+     * Decompresses a video frame.
+     * 
+     * Cannot be called with a session created with a VTDecompressionOutputCallbackRecord.
+     * If the VTDecompressionSessionDecodeFrameWithOutputHandler call returns an error, the block
+     * will not be called.
+     * 
+     * @param session
+     *                                 The decompression session.
+     * @param sampleBuffer
+     *                                 A CMSampleBuffer containing one or more video frames.
+     * @param decodeFlags
+     *                                 A bitfield of directives to the decompression session and decoder.
+     *                                 The kVTDecodeFrame_EnableAsynchronousDecompression bit indicates whether the
+     *                                 video decoder
+     *                                 may decompress the frame asynchronously.
+     *                                 The kVTDecodeFrame_EnableTemporalProcessing bit indicates whether the decoder may
+     *                                 delay calls to the output callback
+     *                                 so as to enable processing in temporal (display) order.
+     *                                 If both flags are clear, the decompression shall complete and your output
+     *                                 callback function will be called
+     *                                 before VTDecompressionSessionDecodeFrame returns.
+     *                                 If either flag is set, VTDecompressionSessionDecodeFrame may return before the
+     *                                 output callback function is called.
+     * @param infoFlagsOut
+     *                                 Points to a VTDecodeInfoFlags to receive information about the decode operation.
+     *                                 The kVTDecodeInfo_Asynchronous bit may be set if the decode is (or was) running
+     *                                 asynchronously.
+     *                                 The kVTDecodeInfo_FrameDropped bit may be set if the frame was dropped
+     *                                 (synchronously).
+     *                                 Pass NULL if you do not want to receive this information.
+     * @param multiImageCapableHandler
+     *                                 The block to be called when decoding the frame is completed. If the
+     *                                 VTDecompressionSessionDecodeFrameWithMultiImageCapableOutputHandler call returns
+     *                                 an error,
+     *                                 the block will not be called.
+     * 
+     *                                 API-Since: 17.0
+     */
+    @Generated
+    @CFunction
+    public static native int VTDecompressionSessionDecodeFrameWithMultiImageCapableOutputHandler(
+            @NotNull VTDecompressionSessionRef session, @NotNull CMSampleBufferRef sampleBuffer, int decodeFlags,
+            @Nullable IntPtr infoFlagsOut,
+            @ObjCBlock(name = "call_VTDecompressionSessionDecodeFrameWithMultiImageCapableOutputHandler") @NotNull Block_VTDecompressionSessionDecodeFrameWithMultiImageCapableOutputHandler multiImageCapableOutputHandler);
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Block_VTDecompressionSessionDecodeFrameWithMultiImageCapableOutputHandler {
+        @Generated
+        void call_VTDecompressionSessionDecodeFrameWithMultiImageCapableOutputHandler(int status, int infoFlags,
+                @Nullable CVBufferRef imageBuffer, @Nullable CMTaggedBufferGroupRef taggedBufferGroup,
+                @ByValue CMTime presentationTimeStamp, @ByValue CMTime presentationDuration);
+    }
+
+    /**
+     * Read/write, CFArray(CFNumber), Optional
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kVTCompressionPropertyKey_MVHEVCVideoLayerIDs();
+
+    /**
+     * Read/write, CFArray(CFNumber), Optional
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kVTCompressionPropertyKey_MVHEVCViewIDs();
+
+    /**
+     * Read/write, CFArray[CFNumber(left view ID), CFNumber(right view ID)], Optional
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kVTCompressionPropertyKey_MVHEVCLeftAndRightViewIDs();
+
+    /**
+     * CFString, see kCMFormatDescriptionExtension_HeroEye
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kVTCompressionPropertyKey_HeroEye();
+
+    /**
+     * CFNumber(uint32), see kCMFormatDescriptionExtension_StereoCameraBaseline
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kVTCompressionPropertyKey_StereoCameraBaseline();
+
+    /**
+     * CFNumber(int32), see kCMFormatDescriptionExtension_HorizontalDisparityAdjustment
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kVTCompressionPropertyKey_HorizontalDisparityAdjustment();
+
+    /**
+     * CFBoolean, see kCMFormatDescriptionExtension_HasLeftStereoEyeView
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kVTCompressionPropertyKey_HasLeftStereoEyeView();
+
+    /**
+     * CFBoolean, see kCMFormatDescriptionExtension_HasRightStereoEyeView
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kVTCompressionPropertyKey_HasRightStereoEyeView();
+
+    /**
+     * CFBoolean, Optional, true by default
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kVTVideoDecoderSpecification_EnableHardwareAcceleratedVideoDecoder();
+
+    /**
+     * CFBoolean, Optional
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kVTVideoDecoderSpecification_RequireHardwareAcceleratedVideoDecoder();
+
+    /**
+     * CFBoolean, Read; assumed false by default
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kVTDecompressionPropertyKey_UsingHardwareAcceleratedVideoDecoder();
+
+    /**
+     * CFBoolean, Read/Write, Optional, kCFBooleanFalse by default
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kVTDecompressionPropertyKey_GeneratePerFrameHDRDisplayMetadata();
+
+    /**
+     * Read/write, CFArray(CFNumber), Optional
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kVTDecompressionPropertyKey_RequestedMVHEVCVideoLayerIDs();
 }

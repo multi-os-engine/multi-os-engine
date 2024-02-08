@@ -171,4 +171,9 @@ public class UICollectionViewFocusUpdateContext extends UIFocusUpdateContext {
     @Generated
     @Selector("previouslyFocusedIndexPath")
     public native NSIndexPath previouslyFocusedIndexPath();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

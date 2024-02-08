@@ -174,4 +174,9 @@ public class PKLabeledValue extends NSObject {
     @Generated
     @Selector("value")
     public native String value();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

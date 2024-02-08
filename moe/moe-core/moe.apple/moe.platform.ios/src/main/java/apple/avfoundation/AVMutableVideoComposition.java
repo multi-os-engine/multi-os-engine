@@ -202,7 +202,7 @@ public class AVMutableVideoComposition extends AVVideoComposition {
      * The default CIContext has the following properties:
      * 
      * - iOS: Device RGB color space
-     * - OS X: sRGB color space
+     * - macOS: sRGB color space
      * 
      * Example usage:
      * 
@@ -595,7 +595,7 @@ public class AVMutableVideoComposition extends AVVideoComposition {
      * The default CIContext has the following properties:
      * 
      * - iOS: Device RGB color space
-     * - OS X: sRGB color space
+     * - macOS: sRGB color space
      * 
      * Example usage:
      * 
@@ -747,4 +747,42 @@ public class AVMutableVideoComposition extends AVVideoComposition {
         void call_videoCompositionWithPropertiesOfAssetPrototypeInstructionCompletionHandler(
                 @Nullable AVMutableVideoComposition videoComposition, @Nullable NSError error);
     }
+
+    /**
+     * [@property] perFrameHDRDisplayMetadataPolicy
+     * 
+     * Configures policy for per frame HDR display metadata on the rendered frame
+     * 
+     * Allows the system to identify situations where HDR metadata can be generated and attached to the rendered video
+     * frame.
+     * Default is AVVideoCompositionPerFrameHDRDisplayMetadataPolicyPropagate. Any HDR metadata attached to the composed
+     * frame will be propagated to the rendered video frames.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("perFrameHDRDisplayMetadataPolicy")
+    @NotNull
+    public native String perFrameHDRDisplayMetadataPolicy();
+
+    /**
+     * [@property] perFrameHDRDisplayMetadataPolicy
+     * 
+     * Configures policy for per frame HDR display metadata on the rendered frame
+     * 
+     * Allows the system to identify situations where HDR metadata can be generated and attached to the rendered video
+     * frame.
+     * Default is AVVideoCompositionPerFrameHDRDisplayMetadataPolicyPropagate. Any HDR metadata attached to the composed
+     * frame will be propagated to the rendered video frames.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("setPerFrameHDRDisplayMetadataPolicy:")
+    public native void setPerFrameHDRDisplayMetadataPolicy(@NotNull String value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

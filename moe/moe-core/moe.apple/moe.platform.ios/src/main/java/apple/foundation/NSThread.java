@@ -386,4 +386,9 @@ public class NSThread extends NSObject {
         @Generated
         void call_initWithBlock();
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

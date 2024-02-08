@@ -328,4 +328,9 @@ public class UIBarButtonItemGroup extends NSObject implements NSCoding {
     @Generated
     @Selector("setMenuRepresentation:")
     public native void setMenuRepresentation(@Nullable UIMenuElement value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

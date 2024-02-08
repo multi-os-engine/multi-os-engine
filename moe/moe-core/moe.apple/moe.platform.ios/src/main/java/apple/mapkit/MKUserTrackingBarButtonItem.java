@@ -51,9 +51,6 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-/**
- * API-Since: 5.0
- */
 @Generated
 @Library("MapKit")
 @Runtime(ObjCRuntime.class)
@@ -348,4 +345,9 @@ public class MKUserTrackingBarButtonItem extends UIBarButtonItem {
     public native MKUserTrackingBarButtonItem initWithTitleImageTargetActionMenu(@Nullable String title,
             @Nullable UIImage image, @Nullable @Mapped(ObjCObjectMapper.class) Object target, @Nullable SEL action,
             @Nullable UIMenu menu);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -25,6 +25,13 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
+ * An object that contains a phone number that the data detection system
+ * matches.
+ * 
+ * The DataDetection framework returns a phone number match in a
+ * `DDMatchPhoneNumber` object, which contains a phone number, and optionally a
+ * label that categorizes the phone number.
+ * 
  * API-Since: 15.0
  */
 @Generated
@@ -119,6 +126,9 @@ public class DDMatchPhoneNumber extends DDMatch {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    /**
+     * A string that categorizes a phone number, such as Home or Work.
+     */
     @Nullable
     @Generated
     @Selector("label")
@@ -129,6 +139,9 @@ public class DDMatchPhoneNumber extends DDMatch {
     @Selector("new")
     public static native DDMatchPhoneNumber new_objc();
 
+    /**
+     * A string that represents a phone number.
+     */
     @NotNull
     @Generated
     @Selector("phoneNumber")
@@ -154,4 +167,9 @@ public class DDMatchPhoneNumber extends DDMatch {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

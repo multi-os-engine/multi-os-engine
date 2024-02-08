@@ -13,6 +13,12 @@ import org.moe.natj.objc.ann.Selector;
 import org.jetbrains.annotations.NotNull;
 
 /**
+ * A delegate protocol through which the document camera returns its scanned
+ * results.
+ * 
+ * Your app is responsible for dismissing the document camera in all delegate
+ * callback methods.
+ * 
  * API-Since: 13.0
  */
 @Generated
@@ -21,7 +27,10 @@ import org.jetbrains.annotations.NotNull;
 @ObjCProtocolName("VNDocumentCameraViewControllerDelegate")
 public interface VNDocumentCameraViewControllerDelegate {
     /**
-     * The delegate will receive this call when the user is unable to scan, with the following error.
+     * Tells the delegate that document scanning failed while the camera view controller was active.
+     * 
+     * - Parameter controller: The document camera view controller that failed.
+     * - Parameter error: The error containing the reason for failure.
      */
     @Generated
     @IsOptional
@@ -32,9 +41,10 @@ public interface VNDocumentCameraViewControllerDelegate {
     }
 
     /**
-     * The client is responsible for dismissing the document camera in these callbacks.
-     * The delegate will receive one of the following calls, depending whether the user saves or cancels, or if the
-     * session fails.
+     * Tells the delegate that the user successfully saved a scanned document from the document camera.
+     * 
+     * - Parameter controller: The document camera view controller that captured the scan.
+     * - Parameter scan: The scanned document that the camera detected.
      */
     @Generated
     @IsOptional
@@ -45,7 +55,9 @@ public interface VNDocumentCameraViewControllerDelegate {
     }
 
     /**
-     * The delegate will receive this call when the user cancels.
+     * Tells the delegate that the user canceled out of the document scanner camera.
+     * 
+     * - Parameter controller: The document camera view controller in which the user canceled.
      */
     @Generated
     @IsOptional

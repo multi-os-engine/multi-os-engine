@@ -283,4 +283,9 @@ public class NSRelationshipDescription extends NSPropertyDescription {
     @Generated
     @Selector("versionHash")
     public native NSData versionHash();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

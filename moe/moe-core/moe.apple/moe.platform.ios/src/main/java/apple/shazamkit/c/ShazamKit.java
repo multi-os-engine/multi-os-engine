@@ -205,4 +205,15 @@ public final class ShazamKit {
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String SHMediaItemFrequencySkewRanges();
+
+    /**
+     * The date when the media item was created
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String SHMediaItemCreationDate();
 }

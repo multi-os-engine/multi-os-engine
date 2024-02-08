@@ -199,4 +199,9 @@ public class ARCamera extends NSObject implements NSCopying {
     @Generated
     @Selector("exposureOffset")
     public native float exposureOffset();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

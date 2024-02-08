@@ -276,4 +276,9 @@ public class HKWorkoutConfiguration extends NSObject implements NSCopying, NSSec
     @Selector("swimmingLocationType")
     @NInt
     public native long swimmingLocationType();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

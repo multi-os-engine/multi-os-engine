@@ -50,8 +50,6 @@ import org.jetbrains.annotations.Nullable;
 /**
  * SKConstraints are evaluated each frame after actions and physics.
  * The node's transform will be changed to staisfy the constarint
- * 
- * API-Since: 8.0
  */
 @Generated
 @Library("SpriteKit")
@@ -288,4 +286,9 @@ public class SKConstraint extends NSObject implements NSSecureCoding, NSCopying 
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

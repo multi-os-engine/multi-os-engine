@@ -214,4 +214,9 @@ public class SWHighlightMentionEvent extends NSObject implements SWHighlightEven
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

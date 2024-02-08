@@ -26,6 +26,8 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
+ * Account details for accessing a streaming media service.
+ * 
  * API-Since: 14.0
  */
 @Generated
@@ -46,6 +48,9 @@ public class MSServiceAccount extends NSObject {
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
+    /**
+     * The user’s display name, email address, or other identifier in a streaming media service.
+     */
     @NotNull
     @Generated
     @Selector("accountName")
@@ -62,7 +67,10 @@ public class MSServiceAccount extends NSObject {
     public static native MSServiceAccount allocWithZone(VoidPtr zone);
 
     /**
-     * authorizationScope is an optional OAuth 2.0 scope parameter provided when requesting a token.
+     * A list of permissions for the token request.
+     * 
+     * The authorization scope is an optional OAuth 2.0 scope parameter the system provides
+     * when requesting a token.
      */
     @Nullable
     @Generated
@@ -70,8 +78,10 @@ public class MSServiceAccount extends NSObject {
     public native String authorizationScope();
 
     /**
-     * authorizationTokenURL is an OAuth 2.0 token service endpoint that can provide a Bearer token for retrieving
-     * configuration.
+     * A URL that provides a token for the user’s HomePod speakers.
+     * 
+     * The authorization token URL is an OAuth 2.0 token service endpoint that provides a
+     * Bearer Token for retrieving configuration.
      */
     @Nullable
     @Generated
@@ -104,8 +114,12 @@ public class MSServiceAccount extends NSObject {
     public static native Class classForKeyedUnarchiver();
 
     /**
-     * clientID is used to create a HTTP Basic auth for a token request and should be unique for an account, though it
-     * can also be unique per registration.
+     * A user identifier for the token request.
+     * 
+     * The Media Setup framework uses the ``MSServiceAccount/clientID`` to create a
+     * token request. You can choose the identifier format, but the identifier must
+     * be unique to the current account. You can provide a new identifier each time
+     * the user begins the home setup.
      */
     @Nullable
     @Generated
@@ -113,8 +127,10 @@ public class MSServiceAccount extends NSObject {
     public native String clientID();
 
     /**
-     * clientSecret is used to create a HTTP Basic auth for a token request and is a freeform string that may be a hash,
-     * but not a plaintext password
+     * A string that authenticates the user’s setup request.
+     * 
+     * The Media Setup framework uses the `clientSecret` to create a token request.
+     * Hashed passwords are acceptable, but plaintext passwords aren't.
      */
     @Nullable
     @Generated
@@ -122,8 +138,10 @@ public class MSServiceAccount extends NSObject {
     public native String clientSecret();
 
     /**
-     * configurationURL is a URL to the configuration endpoint of the CloudExtension instance servicing this account.
-     * The configuration is retrieved with the Oauth2 Bearer token.
+     * The path to access the configuration endpoint of your streaming media
+     * service for the home.
+     * 
+     * The device retrieves the configuration with the OAuth 2.0 Bearer token.
      */
     @Nullable
     @Generated
@@ -147,6 +165,14 @@ public class MSServiceAccount extends NSObject {
     @Selector("init")
     public native MSServiceAccount init();
 
+    /**
+     * Creates a new account.
+     * 
+     * - Parameters:
+     * - serviceName: The name of the streaming media service.
+     * 
+     * - accountName: The user’s display name in the streaming media service.
+     */
     @Generated
     @Selector("initWithServiceName:accountName:")
     public native MSServiceAccount initWithServiceNameAccountName(@NotNull String serviceName,
@@ -187,45 +213,61 @@ public class MSServiceAccount extends NSObject {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * The localized name of the streaming media service.
+     */
     @NotNull
     @Generated
     @Selector("serviceName")
     public native String serviceName();
 
     /**
-     * authorizationScope is an optional OAuth 2.0 scope parameter provided when requesting a token.
+     * A list of permissions for the token request.
+     * 
+     * The authorization scope is an optional OAuth 2.0 scope parameter the system provides
+     * when requesting a token.
      */
     @Generated
     @Selector("setAuthorizationScope:")
     public native void setAuthorizationScope(@Nullable String value);
 
     /**
-     * authorizationTokenURL is an OAuth 2.0 token service endpoint that can provide a Bearer token for retrieving
-     * configuration.
+     * A URL that provides a token for the user’s HomePod speakers.
+     * 
+     * The authorization token URL is an OAuth 2.0 token service endpoint that provides a
+     * Bearer Token for retrieving configuration.
      */
     @Generated
     @Selector("setAuthorizationTokenURL:")
     public native void setAuthorizationTokenURL(@Nullable NSURL value);
 
     /**
-     * clientID is used to create a HTTP Basic auth for a token request and should be unique for an account, though it
-     * can also be unique per registration.
+     * A user identifier for the token request.
+     * 
+     * The Media Setup framework uses the ``MSServiceAccount/clientID`` to create a
+     * token request. You can choose the identifier format, but the identifier must
+     * be unique to the current account. You can provide a new identifier each time
+     * the user begins the home setup.
      */
     @Generated
     @Selector("setClientID:")
     public native void setClientID(@Nullable String value);
 
     /**
-     * clientSecret is used to create a HTTP Basic auth for a token request and is a freeform string that may be a hash,
-     * but not a plaintext password
+     * A string that authenticates the user’s setup request.
+     * 
+     * The Media Setup framework uses the `clientSecret` to create a token request.
+     * Hashed passwords are acceptable, but plaintext passwords aren't.
      */
     @Generated
     @Selector("setClientSecret:")
     public native void setClientSecret(@Nullable String value);
 
     /**
-     * configurationURL is a URL to the configuration endpoint of the CloudExtension instance servicing this account.
-     * The configuration is retrieved with the Oauth2 Bearer token.
+     * The path to access the configuration endpoint of your streaming media
+     * service for the home.
+     * 
+     * The device retrieves the configuration with the OAuth 2.0 Bearer token.
      */
     @Generated
     @Selector("setConfigurationURL:")
@@ -243,4 +285,9 @@ public class MSServiceAccount extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

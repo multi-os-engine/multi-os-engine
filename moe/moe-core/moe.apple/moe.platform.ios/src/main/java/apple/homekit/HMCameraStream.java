@@ -207,4 +207,9 @@ public class HMCameraStream extends HMCameraSource {
         @Generated
         void call_updateAudioStreamSettingCompletionHandler(@Nullable NSError error);
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

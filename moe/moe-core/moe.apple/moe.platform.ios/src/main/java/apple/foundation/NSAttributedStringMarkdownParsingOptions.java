@@ -235,4 +235,9 @@ public class NSAttributedStringMarkdownParsingOptions extends NSObject implement
     @Generated
     @Selector("setAppliesSourcePositionAttributes:")
     public native void setAppliesSourcePositionAttributes(boolean value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

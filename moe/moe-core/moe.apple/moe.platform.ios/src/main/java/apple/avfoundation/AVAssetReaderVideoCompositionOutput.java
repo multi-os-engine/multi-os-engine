@@ -317,4 +317,9 @@ public class AVAssetReaderVideoCompositionOutput extends AVAssetReaderOutput {
     @Generated
     @Selector("videoTracks")
     public native NSArray<? extends AVAssetTrack> videoTracks();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

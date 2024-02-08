@@ -169,4 +169,9 @@ public class UINotificationFeedbackGenerator extends UIFeedbackGenerator {
     @Generated
     @Selector("notificationOccurred:")
     public native void notificationOccurred(@NInt long notificationType);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -264,4 +264,9 @@ public class MPSNNLossGradientNode extends MPSNNGradientFilterNode {
     @Generated
     @Selector("reduceAcrossBatch")
     public native boolean reduceAcrossBatch();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

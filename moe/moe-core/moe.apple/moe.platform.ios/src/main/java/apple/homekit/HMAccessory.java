@@ -440,4 +440,9 @@ public class HMAccessory extends NSObject {
     @Generated
     @Selector("matterNodeID")
     public native NSNumber matterNodeID();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

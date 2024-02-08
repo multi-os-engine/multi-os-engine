@@ -356,4 +356,9 @@ public class NFCNDEFPayload extends NSObject implements NSSecureCoding {
     @Generated
     @Selector("wellKnownTypeURIPayloadWithURL:")
     public static native NFCNDEFPayload wellKnownTypeURIPayloadWithURL(@NotNull NSURL url);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

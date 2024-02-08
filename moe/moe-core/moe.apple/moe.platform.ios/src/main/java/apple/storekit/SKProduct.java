@@ -277,4 +277,9 @@ public class SKProduct extends NSObject {
     @Generated
     @Selector("isFamilyShareable")
     public native boolean isFamilyShareable();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -39,4 +39,10 @@ public final class CLLocationPushServiceError {
      * API-Since: 15.0
      */
     @Generated @NInt public static final long MissingEntitlement = 0x0000000000000003L;
+    /**
+     * App is running on an unsupported platform
+     * 
+     * API-Since: 15.0
+     */
+    @Generated @NInt public static final long UnsupportedPlatform = 0x0000000000000004L;
 }

@@ -266,4 +266,9 @@ public class SKCloudServiceController extends NSObject {
         void call_requestUserTokenForDeveloperTokenCompletionHandler(@Nullable String userToken,
                 @Nullable NSError error);
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

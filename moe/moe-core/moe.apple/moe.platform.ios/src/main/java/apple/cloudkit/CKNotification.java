@@ -43,6 +43,8 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
+ * This class should not be subclassed. If it is, Sendable may no longer apply.
+ * 
  * API-Since: 8.0
  */
 @Generated
@@ -165,59 +167,78 @@ public class CKNotification extends NSObject {
     public static native long version_static();
 
     /**
-     * A key for a localized string to be used as the alert action in a modal style notification.
+     * API-Since: 8.0
+     * Deprecated-Since: 17.0
+     * Deprecated-Message: Interact with UI elements of a CloudKit-server-generated push message via
+     * UserNotifications.framework
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("alertActionLocalizationKey")
     public native String alertActionLocalizationKey();
 
     /**
-     * Optional alert string to display in a push notification.
+     * API-Since: 8.0
+     * Deprecated-Since: 17.0
+     * Deprecated-Message: Interact with UI elements of a CloudKit-server-generated push message via
+     * UserNotifications.framework
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("alertBody")
     public native String alertBody();
 
     /**
-     * The name of an image in your app bundle to be used as the launch image when launching in response to the
-     * notification.
+     * API-Since: 8.0
+     * Deprecated-Since: 17.0
+     * Deprecated-Message: Interact with UI elements of a CloudKit-server-generated push message via
+     * UserNotifications.framework
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("alertLaunchImage")
     public native String alertLaunchImage();
 
     /**
-     * A list of field names to take from the matching record that is used as substitution variables in a formatted
-     * alert string.
+     * API-Since: 8.0
+     * Deprecated-Since: 17.0
+     * Deprecated-Message: Interact with UI elements of a CloudKit-server-generated push message via
+     * UserNotifications.framework
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("alertLocalizationArgs")
     public native NSArray<String> alertLocalizationArgs();
 
     /**
-     * Instead of a raw alert string, you may optionally specify a key for a localized string in your app's
-     * Localizable.strings file.
+     * API-Since: 8.0
+     * Deprecated-Since: 17.0
+     * Deprecated-Message: Interact with UI elements of a CloudKit-server-generated push message via
+     * UserNotifications.framework
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("alertLocalizationKey")
     public native String alertLocalizationKey();
 
     /**
-     * The number to display as the badge of the application icon
+     * API-Since: 8.0
+     * Deprecated-Since: 17.0
+     * Deprecated-Message: Interact with UI elements of a CloudKit-server-generated push message via
+     * UserNotifications.framework
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("badge")
     public native NSNumber badge();
 
     /**
-     * The category for user-initiated actions in the notification
-     * 
      * API-Since: 9.0
      */
     @Nullable
@@ -237,10 +258,11 @@ public class CKNotification extends NSObject {
     /**
      * Whether or not the notification fully represents what the server wanted to send.
      * 
-     * Push notifications have a limited size. In some cases, CloudKit servers may not be able to send you a full @c
-     * CKNotification's worth of info in one push. In those cases, isPruned returns YES. The order in which we'll drop
-     * properties is defined in each @c CKNotification subclass below.
-     * The @c CKNotification can be obtained in full via a @c CKFetchNotificationChangesOperation
+     * Push notifications have a limited size. In some cases, CloudKit servers may not be able to send you a full
+     * `CKNotification`'s worth of info in one push.
+     * In those cases, `isPruned` returns `true`.
+     * The order in which properties are dropped from a push notification is defined in each `CKNotification` subclass
+     * below.
      */
     @Generated
     @Selector("isPruned")
@@ -252,8 +274,8 @@ public class CKNotification extends NSObject {
     public native CKNotificationID notificationID();
 
     /**
-     * When you instantiate a CKNotification from a remote notification dictionary, you will get back a concrete
-     * subclass defined below. Use notificationType to avoid -isKindOfClass: checks
+     * When you instantiate a `CKNotification` from a remote notification dictionary, you will get back a concrete
+     * subclass defined below. Use `notificationType` to avoid `as?` or `-isKindOfClass:` checks.
      */
     @Generated
     @Selector("notificationType")
@@ -261,15 +283,19 @@ public class CKNotification extends NSObject {
     public native long notificationType();
 
     /**
-     * The name of a sound file in your app bundle to play upon receiving the notification.
+     * API-Since: 8.0
+     * Deprecated-Since: 17.0
+     * Deprecated-Message: Interact with UI elements of a CloudKit-server-generated push message via
+     * UserNotifications.framework
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("soundName")
     public native String soundName();
 
     /**
-     * The ID of the subscription that caused this notification to fire
+     * The ID of the subscription that caused this notification to fire.
      * 
      * API-Since: 9.0
      */
@@ -279,8 +305,6 @@ public class CKNotification extends NSObject {
     public native String subscriptionID();
 
     /**
-     * Optional subtitle of the alert to display in a push notification.
-     * 
      * API-Since: 11.0
      */
     @Nullable
@@ -289,9 +313,6 @@ public class CKNotification extends NSObject {
     public native String subtitle();
 
     /**
-     * A list of field names to take from the matching record that is used as substitution variables in a formatted
-     * subtitle string.
-     * 
      * API-Since: 11.0
      */
     @Nullable
@@ -300,9 +321,6 @@ public class CKNotification extends NSObject {
     public native NSArray<String> subtitleLocalizationArgs();
 
     /**
-     * Instead of a raw subtitle string, you may optionally specify a key for a localized string in your app's
-     * Localizable.strings file.
-     * 
      * API-Since: 11.0
      */
     @Nullable
@@ -311,8 +329,6 @@ public class CKNotification extends NSObject {
     public native String subtitleLocalizationKey();
 
     /**
-     * Optional title of the alert to display in a push notification.
-     * 
      * API-Since: 11.0
      */
     @Nullable
@@ -321,9 +337,6 @@ public class CKNotification extends NSObject {
     public native String title();
 
     /**
-     * A list of field names to take from the matching record that is used as substitution variables in a formatted
-     * title string.
-     * 
      * API-Since: 11.0
      */
     @Nullable
@@ -332,9 +345,6 @@ public class CKNotification extends NSObject {
     public native NSArray<String> titleLocalizationArgs();
 
     /**
-     * Instead of a raw title string, you may optionally specify a key for a localized string in your app's
-     * Localizable.strings file.
-     * 
      * API-Since: 11.0
      */
     @Nullable
@@ -343,7 +353,7 @@ public class CKNotification extends NSObject {
     public native String titleLocalizationKey();
 
     /**
-     * The user recordID of the owner of the subscription for which this notification was generated
+     * The user `recordID` of the owner of the subscription for which this notification was generated
      * 
      * API-Since: 13.0
      */
@@ -351,4 +361,9 @@ public class CKNotification extends NSObject {
     @Generated
     @Selector("subscriptionOwnerUserRecordID")
     public native CKRecordID subscriptionOwnerUserRecordID();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

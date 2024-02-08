@@ -48,6 +48,7 @@ import apple.corefoundation.struct.CGAffineTransform;
 import apple.corefoundation.struct.CGSize;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.opaque.dispatch_queue_t;
 
 /**
  * AVAssetWriterInput
@@ -61,7 +62,7 @@ import org.jetbrains.annotations.Nullable;
  * 
  * AVAssetWriterInput also supports writing per-track metadata collections to the output file.
  * 
- * As of OS X 10.10 and iOS 8.0 AVAssetWriterInput can also be used to create tracks that are not self-contained. Such
+ * As of macOS 10.10 and iOS 8.0 AVAssetWriterInput can also be used to create tracks that are not self-contained. Such
  * tracks reference sample data that is located in another file. This is currently supported only for instances of
  * AVAssetWriterInput attached to an instance of AVAssetWriter that writes files of type AVFileTypeQuickTimeMovie.
  * 
@@ -371,7 +372,7 @@ public class AVAssetWriterInput extends NSObject {
      * that your track's output settings dictionary specifies the same width and height as the buffers you will be
      * appending. Do not include AVVideoScalingModeKey or AVVideoColorPropertiesKey.
      * 
-     * As of OS X 10.10 and iOS 8.0, this method can be used to add sample buffers that reference existing data in a
+     * As of macOS 10.10 and iOS 8.0, this method can be used to add sample buffers that reference existing data in a
      * file instead of containing media data to be appended to the file. This can be used to generate tracks that are
      * not self-contained. In order to append such a sample reference to the track create a CMSampleBufferRef with a
      * NULL dataBuffer and dataReady set to true and set the kCMSampleBufferAttachmentKey_SampleReferenceURL and
@@ -987,7 +988,7 @@ public class AVAssetWriterInput extends NSObject {
      */
     @Generated
     @Selector("requestMediaDataWhenReadyOnQueue:usingBlock:")
-    public native void requestMediaDataWhenReadyOnQueueUsingBlock(@NotNull NSObject queue,
+    public native void requestMediaDataWhenReadyOnQueueUsingBlock(@NotNull dispatch_queue_t queue,
             @NotNull @ObjCBlock(name = "call_requestMediaDataWhenReadyOnQueueUsingBlock") Block_requestMediaDataWhenReadyOnQueueUsingBlock block);
 
     /**
@@ -1022,7 +1023,7 @@ public class AVAssetWriterInput extends NSObject {
      */
     @Generated
     @Selector("respondToEachPassDescriptionOnQueue:usingBlock:")
-    public native void respondToEachPassDescriptionOnQueueUsingBlock(@NotNull NSObject queue,
+    public native void respondToEachPassDescriptionOnQueueUsingBlock(@NotNull dispatch_queue_t queue,
             @NotNull @ObjCBlock(name = "call_respondToEachPassDescriptionOnQueueUsingBlock") Block_respondToEachPassDescriptionOnQueueUsingBlock block);
 
     /**
@@ -1435,4 +1436,9 @@ public class AVAssetWriterInput extends NSObject {
     @Generated
     @Selector("setMediaDataLocation:")
     public native void setMediaDataLocation(@NotNull String value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

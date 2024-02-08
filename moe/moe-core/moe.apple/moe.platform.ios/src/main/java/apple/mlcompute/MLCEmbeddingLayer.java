@@ -38,7 +38,10 @@ import org.jetbrains.annotations.Nullable;
  * update.
  * 
  * API-Since: 14.0
+ * Deprecated-Since: 100000.0
+ * Deprecated-Message: Use Metal Performance Shaders Graph or BNNS instead.
  */
+@Deprecated
 @Generated
 @Library("MLCompute")
 @Runtime(ObjCRuntime.class)
@@ -190,4 +193,9 @@ public class MLCEmbeddingLayer extends MLCLayer {
     @Generated
     @Selector("weightsParameter")
     public native MLCTensorParameter weightsParameter();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

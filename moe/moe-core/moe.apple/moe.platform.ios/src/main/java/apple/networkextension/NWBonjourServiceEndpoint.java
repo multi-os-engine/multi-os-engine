@@ -234,4 +234,9 @@ public class NWBonjourServiceEndpoint extends NWEndpoint {
     @Generated
     @Selector("type")
     public native String type();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

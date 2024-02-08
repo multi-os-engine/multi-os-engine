@@ -42,14 +42,6 @@ public final class CLAuthorizationStatus {
      */
     @Generated public static final int Denied = 0x00000002;
     /**
-     * User has granted authorization to use their location at any
-     * time. Your app may be launched into the background by
-     * monitoring APIs such as visit monitoring, region monitoring,
-     * and significant location change monitoring.
-     * 
-     * This value should be used on iOS, tvOS and watchOS. It is available on
-     * MacOS, but kCLAuthorizationStatusAuthorized is synonymous and preferred.
-     * 
      * API-Since: 8.0
      */
     @Generated public static final int AuthorizedAlways = 0x00000003;
@@ -66,11 +58,6 @@ public final class CLAuthorizationStatus {
      */
     @Generated public static final int AuthorizedWhenInUse = 0x00000004;
     /**
-     * User has authorized this application to use location services.
-     * 
-     * This value is deprecated or prohibited on iOS, tvOS and watchOS.
-     * It should be used on MacOS.
-     * 
      * API-Since: 2.0
      * Deprecated-Since: 8.0
      * Deprecated-Message: Use kCLAuthorizationStatusAuthorizedAlways

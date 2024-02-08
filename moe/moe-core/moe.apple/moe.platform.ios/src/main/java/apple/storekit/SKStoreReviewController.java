@@ -180,4 +180,9 @@ public class SKStoreReviewController extends NSObject {
     @Generated
     @Selector("requestReviewInScene:")
     public static native void requestReviewInScene(@NotNull UIWindowScene windowScene);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

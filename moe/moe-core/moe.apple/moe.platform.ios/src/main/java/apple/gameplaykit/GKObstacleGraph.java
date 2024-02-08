@@ -44,8 +44,6 @@ import org.jetbrains.annotations.Nullable;
 
 /**
  * A collection of GKGraphNodes that are governed by a set of extruded GKPolygonObstacles
- * 
- * API-Since: 9.0
  */
 @Generated
 @Library("GameplayKit")
@@ -364,4 +362,9 @@ public class GKObstacleGraph<_NodeType> extends GKGraph {
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

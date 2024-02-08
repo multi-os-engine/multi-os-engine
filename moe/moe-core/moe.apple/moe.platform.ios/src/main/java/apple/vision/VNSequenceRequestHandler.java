@@ -381,4 +381,9 @@ public class VNSequenceRequestHandler extends NSObject {
     public native boolean performRequestsOnCMSampleBufferOrientationError(
             @NotNull NSArray<? extends VNRequest> requests, @NotNull CMSampleBufferRef sampleBuffer, int orientation,
             @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

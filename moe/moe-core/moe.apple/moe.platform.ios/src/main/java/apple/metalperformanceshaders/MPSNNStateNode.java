@@ -242,4 +242,9 @@ public class MPSNNStateNode extends NSObject {
     @Generated
     @Selector("synchronizeResource")
     public native boolean synchronizeResource();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

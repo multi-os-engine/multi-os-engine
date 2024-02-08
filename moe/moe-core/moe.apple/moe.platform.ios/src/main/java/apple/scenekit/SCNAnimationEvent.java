@@ -185,4 +185,9 @@ public class SCNAnimationEvent extends NSObject {
         void call_animationEventWithKeyTimeBlock(@NotNull @Mapped(ObjCObjectMapper.class) Object animation,
                 @NotNull @Mapped(ObjCObjectMapper.class) Object animatedObject, boolean playingBackward);
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

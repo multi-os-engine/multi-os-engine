@@ -234,4 +234,9 @@ public class HMCameraSettingsControl extends HMCameraControl {
     @Generated
     @Selector("targetVerticalTilt")
     public native HMCharacteristic targetVerticalTilt();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

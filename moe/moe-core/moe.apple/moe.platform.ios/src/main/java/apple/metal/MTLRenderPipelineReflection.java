@@ -230,4 +230,9 @@ public class MTLRenderPipelineReflection extends NSObject {
     @Generated
     @Selector("vertexBindings")
     public native NSArray<?> vertexBindings();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

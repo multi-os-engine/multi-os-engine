@@ -166,4 +166,9 @@ public class MPSNNReductionFeatureChannelsSumNode extends MPSNNUnaryReductionNod
     @Generated
     @Selector("weight")
     public native float weight();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

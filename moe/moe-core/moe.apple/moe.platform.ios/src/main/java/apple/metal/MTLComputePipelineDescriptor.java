@@ -511,4 +511,9 @@ public class MTLComputePipelineDescriptor extends NSObject implements NSCopying 
     @Generated
     @Selector("setPreloadedLibraries:")
     public native void setPreloadedLibraries(@NotNull NSArray<?> value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

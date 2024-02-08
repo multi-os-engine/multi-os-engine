@@ -36,6 +36,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.moe.natj.objc.ann.ObjCBlock;
 
 /**
  * An NSURLSessionUploadTask does not currently provide any additional
@@ -176,4 +177,31 @@ public class NSURLSessionUploadTask extends NSURLSessionDataTask {
     @Generated
     @Selector("init")
     public native NSURLSessionUploadTask init();
+
+    /**
+     * Cancels an upload and calls the completion handler with resume data for later use.
+     * resumeData will be nil if the server does not support the latest resumable uploads
+     * Internet-Draft from the HTTP Working Group, found at
+     * https://datatracker.ietf.org/doc/draft-ietf-httpbis-resumable-upload/
+     * 
+     * - Parameter completionHandler: The completion handler to call when the upload has been successfully canceled.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("cancelByProducingResumeData:")
+    public native void cancelByProducingResumeData(
+            @ObjCBlock(name = "call_cancelByProducingResumeData") @NotNull Block_cancelByProducingResumeData completionHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_cancelByProducingResumeData {
+        @Generated
+        void call_cancelByProducingResumeData(@Nullable NSData resumeData);
+    }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

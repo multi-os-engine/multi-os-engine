@@ -46,9 +46,6 @@ import apple.corefoundation.struct.CGSize;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-/**
- * API-Since: 10.0
- */
 @Generated
 @Library("Messages")
 @Runtime(ObjCRuntime.class)
@@ -412,4 +409,9 @@ public class MSMessagesAppViewController extends UIViewController implements MSM
     @Selector("presentationContext")
     @NUInt
     public native long presentationContext();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

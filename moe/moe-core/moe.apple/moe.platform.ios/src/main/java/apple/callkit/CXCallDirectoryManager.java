@@ -207,4 +207,9 @@ public class CXCallDirectoryManager extends NSObject {
         @Generated
         void call_openSettingsWithCompletionHandler(@Nullable NSError error);
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

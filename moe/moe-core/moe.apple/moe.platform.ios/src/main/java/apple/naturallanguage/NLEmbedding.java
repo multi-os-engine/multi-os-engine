@@ -34,9 +34,6 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-/**
- * API-Since: 13.0
- */
 @Generated
 @Library("NaturalLanguage")
 @Runtime(ObjCRuntime.class)
@@ -405,4 +402,9 @@ public class NLEmbedding extends NSObject {
     @Generated
     @Selector("supportedSentenceEmbeddingRevisionsForLanguage:")
     public static native NSIndexSet supportedSentenceEmbeddingRevisionsForLanguage(@NotNull String language);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

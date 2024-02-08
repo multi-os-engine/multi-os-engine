@@ -240,4 +240,9 @@ public class NSTextViewportLayoutController extends NSObject {
     @Generated
     @Selector("viewportRange")
     public native NSTextRange viewportRange();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

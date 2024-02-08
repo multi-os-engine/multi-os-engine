@@ -340,4 +340,9 @@ public class MPSNNImageNode extends NSObject {
     @Generated
     @Selector("synchronizeResource")
     public native boolean synchronizeResource();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -47,9 +47,6 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-/**
- * API-Since: 6.0
- */
 @Generated
 @Library("GameKit")
 @Runtime(ObjCRuntime.class)
@@ -228,7 +225,6 @@ public class GKChallenge extends NSObject implements NSCoding, NSSecureCoding {
      * 
      * API-Since: 6.0
      * Deprecated-Since: 8.0
-     * Deprecated-Message: This property is obsolete, Use issuingPlayer instead
      */
     @Nullable
     @Generated
@@ -259,7 +255,6 @@ public class GKChallenge extends NSObject implements NSCoding, NSSecureCoding {
      * 
      * API-Since: 6.0
      * Deprecated-Since: 8.0
-     * Deprecated-Message: This property is obsolete, Use receivingPlayer instead
      */
     @Nullable
     @Generated
@@ -288,4 +283,9 @@ public class GKChallenge extends NSObject implements NSCoding, NSSecureCoding {
         void call_loadReceivedChallengesWithCompletionHandler(@Nullable NSArray<? extends GKChallenge> challenges,
                 @Nullable NSError error);
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

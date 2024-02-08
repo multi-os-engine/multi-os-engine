@@ -64,8 +64,6 @@ public interface GKMatchDelegate {
      * 
      * API-Since: 4.1
      * Deprecated-Since: 8.0
-     * Deprecated-Message: This is never invoked and its implementation does nothing, use
-     * match:didReceiveData:fromRemotePlayer:
      */
     @Generated
     @IsOptional
@@ -104,8 +102,6 @@ public interface GKMatchDelegate {
     /**
      * API-Since: 4.1
      * Deprecated-Since: 8.0
-     * Deprecated-Message: This is never invoked and its implementation does nothing, use
-     * match:player:didChangeConnectionState:
      */
     @Generated
     @IsOptional
@@ -131,8 +127,6 @@ public interface GKMatchDelegate {
     /**
      * API-Since: 5.0
      * Deprecated-Since: 8.0
-     * Deprecated-Message: This is never invoked and its implementation does nothing, use
-     * shouldReinviteDisconnectedPlayer:
      */
     @Generated
     @IsOptional

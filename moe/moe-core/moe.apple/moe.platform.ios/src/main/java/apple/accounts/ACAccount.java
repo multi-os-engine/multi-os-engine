@@ -275,4 +275,9 @@ public class ACAccount extends NSObject {
     @Generated
     @Selector("username")
     public native String username();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -42,6 +42,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.foundation.NSDictionary;
 
 /**
  * AVPlayerItemErrorLogEvent
@@ -50,6 +51,8 @@ import org.jetbrains.annotations.Nullable;
  * 
  * An AVPlayerItemErrorLogEvent provides named properties for accessing the data
  * fields of each log event. None of the properties of this class are observable.
+ * 
+ * Subclasses of this type that are used from Swift must fulfill the requirements of a Sendable type.
  * 
  * API-Since: 4.3
  */
@@ -268,4 +271,23 @@ public class AVPlayerItemErrorLogEvent extends NSObject implements NSCopying {
     @Generated
     @Selector("serverAddress")
     public native String serverAddress();
+
+    /**
+     * [@property] allHTTPResponseHeaderFields
+     * 
+     * The HTTP header fields returned by the server, if an HTTP response was received as part of this error.
+     * 
+     * See -[NSHTTPURLResponse allHeaderFields] for more information.
+     * 
+     * API-Since: 17.2
+     */
+    @Generated
+    @Selector("allHTTPResponseHeaderFields")
+    @Nullable
+    public native NSDictionary<String, String> allHTTPResponseHeaderFields();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

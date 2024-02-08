@@ -188,4 +188,9 @@ public class UIScreenEdgePanGestureRecognizer extends UIPanGestureRecognizer {
     @Generated
     @Selector("initWithCoder:")
     public native UIScreenEdgePanGestureRecognizer initWithCoder(@NotNull NSCoder coder);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

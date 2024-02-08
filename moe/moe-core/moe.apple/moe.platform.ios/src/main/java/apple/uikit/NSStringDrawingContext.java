@@ -231,4 +231,9 @@ public class NSStringDrawingContext extends NSObject {
     @Selector("totalBounds")
     @ByValue
     public native CGRect totalBounds();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

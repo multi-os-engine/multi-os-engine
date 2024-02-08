@@ -560,7 +560,10 @@ public class MPVolumeView extends UIView implements NSCoding {
      * menu of the Settings application to always enable the volume limit.
      * 
      * API-Since: 7.0
+     * Deprecated-Since: 17.0
+     * Deprecated-Message: This is no longer supported
      */
+    @Deprecated
     @Generated
     @Selector("setVolumeWarningSliderImage:")
     public native void setVolumeWarningSliderImage(@Nullable UIImage value);
@@ -617,7 +620,10 @@ public class MPVolumeView extends UIView implements NSCoding {
      * menu of the Settings application to always enable the volume limit.
      * 
      * API-Since: 7.0
+     * Deprecated-Since: 17.0
+     * Deprecated-Message: This is no longer supported
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("volumeWarningSliderImage")
@@ -628,4 +634,16 @@ public class MPVolumeView extends UIView implements NSCoding {
     public static native void modifyAnimationsWithRepeatCountAutoreversesAnimations(@NFloat double count,
             boolean autoreverses,
             @NotNull @ObjCBlock(name = "call_modifyAnimationsWithRepeatCountAutoreversesAnimations") UIView.Block_modifyAnimationsWithRepeatCountAutoreversesAnimations animations);
+
+    @Generated
+    @Selector("animateWithSpringDuration:bounce:initialSpringVelocity:delay:options:animations:completion:")
+    public static native void animateWithSpringDurationBounceInitialSpringVelocityDelayOptionsAnimationsCompletion(
+            double duration, @NFloat double bounce, @NFloat double velocity, double delay, @NUInt long options,
+            @ObjCBlock(name = "call_animateWithSpringDurationBounceInitialSpringVelocityDelayOptionsAnimationsCompletion_5") @NotNull UIView.Block_animateWithSpringDurationBounceInitialSpringVelocityDelayOptionsAnimationsCompletion_5 animations,
+            @ObjCBlock(name = "call_animateWithSpringDurationBounceInitialSpringVelocityDelayOptionsAnimationsCompletion_6") @Nullable UIView.Block_animateWithSpringDurationBounceInitialSpringVelocityDelayOptionsAnimationsCompletion_6 completion);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

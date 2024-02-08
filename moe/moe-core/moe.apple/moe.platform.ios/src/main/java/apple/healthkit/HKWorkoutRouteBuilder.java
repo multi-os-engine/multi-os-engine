@@ -271,4 +271,9 @@ public class HKWorkoutRouteBuilder extends HKSeriesBuilder {
         @Generated
         void call_addMetadataCompletion(boolean success, @Nullable NSError error);
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

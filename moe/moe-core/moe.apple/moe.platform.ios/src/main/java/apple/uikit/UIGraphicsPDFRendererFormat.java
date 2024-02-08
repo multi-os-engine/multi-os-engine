@@ -180,4 +180,9 @@ public class UIGraphicsPDFRendererFormat extends UIGraphicsRendererFormat {
     @Generated
     @Selector("preferredFormat")
     public static native UIGraphicsPDFRendererFormat preferredFormat();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -207,4 +207,9 @@ public class CPVoiceControlTemplate extends CPTemplate {
     @Generated
     @Selector("voiceControlStates")
     public native NSArray<? extends CPVoiceControlState> voiceControlStates();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -173,4 +173,9 @@ public class NSAssertionHandler extends NSObject {
     @Generated
     @Selector("init")
     public native NSAssertionHandler init();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

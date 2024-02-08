@@ -565,7 +565,8 @@ public class UIPageControl extends UIControl {
             @NotNull @ObjCBlock(name = "call_modifyAnimationsWithRepeatCountAutoreversesAnimations") UIView.Block_modifyAnimationsWithRepeatCountAutoreversesAnimations animations);
 
     /**
-     * Returns YES if the continuous interaction is enabled, NO otherwise. Default is YES.
+     * Returns YES if continuous interaction is supported and enabled, NO otherwise. Default is YES for platforms that
+     * support it.
      * 
      * API-Since: 14.0
      */
@@ -621,7 +622,8 @@ public class UIPageControl extends UIControl {
     public native UIImage preferredIndicatorImage();
 
     /**
-     * Returns YES if the continuous interaction is enabled, NO otherwise. Default is YES.
+     * Returns YES if continuous interaction is supported and enabled, NO otherwise. Default is YES for platforms that
+     * support it.
      * 
      * API-Since: 14.0
      */
@@ -725,4 +727,35 @@ public class UIPageControl extends UIControl {
     @Generated
     @Selector("setPreferredCurrentPageIndicatorImage:")
     public native void setPreferredCurrentPageIndicatorImage(@Nullable UIImage value);
+
+    @Generated
+    @Selector("animateWithSpringDuration:bounce:initialSpringVelocity:delay:options:animations:completion:")
+    public static native void animateWithSpringDurationBounceInitialSpringVelocityDelayOptionsAnimationsCompletion(
+            double duration, @NFloat double bounce, @NFloat double velocity, double delay, @NUInt long options,
+            @ObjCBlock(name = "call_animateWithSpringDurationBounceInitialSpringVelocityDelayOptionsAnimationsCompletion_5") @NotNull UIView.Block_animateWithSpringDurationBounceInitialSpringVelocityDelayOptionsAnimationsCompletion_5 animations,
+            @ObjCBlock(name = "call_animateWithSpringDurationBounceInitialSpringVelocityDelayOptionsAnimationsCompletion_6") @Nullable UIView.Block_animateWithSpringDurationBounceInitialSpringVelocityDelayOptionsAnimationsCompletion_6 completion);
+
+    /**
+     * An object that defines the progress of the page control. Default is nil.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("progress")
+    @Nullable
+    public native UIPageControlProgress progress();
+
+    /**
+     * An object that defines the progress of the page control. Default is nil.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("setProgress:")
+    public native void setProgress(@Nullable UIPageControlProgress value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

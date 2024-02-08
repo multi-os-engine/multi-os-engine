@@ -167,4 +167,9 @@ public class NSMessagePort extends NSPort {
     @Generated
     @Selector("initWithCoder:")
     public native NSMessagePort initWithCoder(@NotNull NSCoder coder);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

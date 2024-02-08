@@ -197,4 +197,9 @@ public class UIPointerRegion extends NSObject implements NSCopying {
     @Generated
     @Selector("setLatchingAxes:")
     public native void setLatchingAxes(@NUInt long value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

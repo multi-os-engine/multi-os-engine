@@ -236,4 +236,9 @@ public class NSEntityMigrationPolicy extends NSObject {
     @Selector("performCustomValidationForEntityMapping:manager:error:")
     public native boolean performCustomValidationForEntityMappingManagerError(@NotNull NSEntityMapping mapping,
             @NotNull NSMigrationManager manager, @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -246,4 +246,9 @@ public class NSStream extends NSObject {
     @Selector("streamStatus")
     @NUInt
     public native long streamStatus();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

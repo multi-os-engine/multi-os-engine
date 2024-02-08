@@ -179,4 +179,9 @@ public class VNGenerateAttentionBasedSaliencyImageRequest extends VNImageBasedRe
     @Generated
     @Selector("results")
     public native NSArray<? extends VNSaliencyImageObservation> results();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

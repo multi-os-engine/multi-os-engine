@@ -192,10 +192,24 @@ public class AVURLAsset extends AVAsset implements NSItemProviderReading, NSItem
      * Returns YES if asset is playable with the codec(s) and container type specified in extendedMIMEType. Returns NO
      * otherwise.
      * 
+     * On releases prior to macOS 14, iOS 17, tvOS 17, and watchOS 10, regardless of the specified MIME type this method
+     * interprets all codecs parameters according to the ISO family syntax defined by RFC 6381 and evaluates playability
+     * according to whether the indicated codecs are supported when carried in container formats that conform to the ISO
+     * BMFF specification, such as the MPEG-4 file format.
+     * On releases starting with macOS 14, iOS 17, tvOS 17, and watchOS 10, this method interprets codecs parameters
+     * according to the syntax and namespace determined by the specified MIME type and evaluates playability according
+     * to whether the indicated codecs are supported when carried in the container format indicated by that MIME type.
+     * Codecs parameters for each of the following MIME types are supported: video/mp4 (per RFC 6381, ISO/IEC 14496-15
+     * Annex E, et al), video/quicktime (RFC 6381 et al), video/mp2t (ISO/IEC 13818-1), audio/vnd.wave (RFC 2361),
+     * audio/aiff (using the CoreAudio AudioFormatID namespace), audio/x-caf (also using the CoreAudio AudioFormatID
+     * namespace), and audio/mpeg (e.g. codecs="mp3"). MIME types supported as alternatives for the same container
+     * formats, e.g audio/mp4, are equivalently treated. If the indicated MIME type defines no supported syntax and
+     * namespace for codecs parameters, when any codecs parameter is present this method returns NO.
+     * 
+     * API-Since: 5.0
+     * 
      * @param extendedMIMEType
      * @return YES or NO.
-     * 
-     *         API-Since: 5.0
      */
     @Generated
     @Selector("isPlayableExtendedMIMEType:")
@@ -460,4 +474,9 @@ public class AVURLAsset extends AVAsset implements NSItemProviderReading, NSItem
     @Generated
     @Selector("httpSessionIdentifier")
     public native NSUUID httpSessionIdentifier();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

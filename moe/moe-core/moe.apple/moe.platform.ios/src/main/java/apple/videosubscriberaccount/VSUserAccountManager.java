@@ -27,7 +27,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
- * API-Since: 16.0
+ * API-Since: 16.4
  */
 @Generated
 @Library("VideoSubscriberAccount")
@@ -185,4 +185,9 @@ public class VSUserAccountManager extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

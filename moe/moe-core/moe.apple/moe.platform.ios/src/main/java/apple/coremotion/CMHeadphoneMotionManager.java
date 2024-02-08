@@ -30,11 +30,6 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
- * CMHeadphoneMotionManager
- * 
- * Discussion:
- * The CMHeadphoneMotionManager object is your entry point to the headphone motion service.
- * 
  * API-Since: 14.0
  */
 @Generated
@@ -277,4 +272,9 @@ public class CMHeadphoneMotionManager extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

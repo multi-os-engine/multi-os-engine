@@ -32,6 +32,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.foundation.NSDate;
 
 /**
  * [@c] SHMediaItem represents metadata associated with a @c SHSignature
@@ -371,4 +372,20 @@ public class SHMediaItem extends NSObject implements NSSecureCoding, NSCopying {
     @Generated
     @Selector("timeRanges")
     public native NSArray<? extends SHRange> timeRanges();
+
+    /**
+     * The date when the @c SHMediaItem was created
+     * [@note] This may be fetched using the key @c SHMediaItemCreationDate
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("creationDate")
+    @Nullable
+    public native NSDate creationDate();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

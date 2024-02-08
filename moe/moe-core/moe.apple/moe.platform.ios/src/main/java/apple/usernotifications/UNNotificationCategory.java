@@ -272,4 +272,9 @@ public class UNNotificationCategory extends NSObject implements NSCopying, NSSec
             @NotNull String identifier, @NotNull NSArray<? extends UNNotificationAction> actions,
             @NotNull NSArray<String> intentIdentifiers, @Nullable String hiddenPreviewsBodyPlaceholder,
             @Nullable String categorySummaryFormat, @NUInt long options);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

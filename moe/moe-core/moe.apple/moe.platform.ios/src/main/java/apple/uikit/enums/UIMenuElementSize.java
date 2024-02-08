@@ -24,4 +24,10 @@ public final class UIMenuElementSize {
      * API-Since: 16.0
      */
     @Generated @NInt public static final long Large = 0x0000000000000002L;
+    /**
+     * Automatically determine the appropriate element size for the current context.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated @NInt public static final long Automatic = 0xFFFFFFFFFFFFFFFFL;
 }

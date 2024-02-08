@@ -45,9 +45,6 @@ import org.jetbrains.annotations.Nullable;
  * CBATTRequest
  * 
  * Represents a read or write request from a central.
- * 
- * 
- * API-Since: 6.0
  */
 @Generated
 @Library("CoreBluetooth")
@@ -221,4 +218,9 @@ public class CBATTRequest extends NSObject {
     @Generated
     @Selector("value")
     public native NSData value();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

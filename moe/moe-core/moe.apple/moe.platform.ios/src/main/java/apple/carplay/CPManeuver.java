@@ -73,9 +73,9 @@ public class CPManeuver extends NSObject implements NSCopying, NSSecureCoding {
      * [@c] attributedInstructionVariants will be preferred over instructionVariants. You must provide at least one
      * variant for each maneuver.
      * 
-     * Only one attribute is presently supported: text attachments. You may annotate a maneuver instruction with an
-     * image
-     * by including a text attachment. The maximum text attachment image size is 64x16 points.
+     * Only one type of attribute is presently supported: text attachments. You may annotate a maneuver instruction with
+     * images
+     * by including one or more text attachments. The maximum text attachment image size is 64x25 points.
      * 
      * [@warning] All attributes other than text attachment attributes will be removed from your attributed string.
      * 
@@ -215,9 +215,9 @@ public class CPManeuver extends NSObject implements NSCopying, NSSecureCoding {
      * [@c] attributedInstructionVariants will be preferred over instructionVariants. You must provide at least one
      * variant for each maneuver.
      * 
-     * Only one attribute is presently supported: text attachments. You may annotate a maneuver instruction with an
-     * image
-     * by including a text attachment. The maximum text attachment image size is 64x16 points.
+     * Only one type of attribute is presently supported: text attachments. You may annotate a maneuver instruction with
+     * images
+     * by including one or more text attachments. The maximum text attachment image size is 64x25 points.
      * 
      * [@warning] All attributes other than text attachment attributes will be removed from your attributed string.
      * 
@@ -340,9 +340,9 @@ public class CPManeuver extends NSObject implements NSCopying, NSSecureCoding {
      * [@c] dashboardAttributedInstructionVariants will be preferred over dashboardInstructionVariants. If no dashboard
      * attributed variants are provided, dashboardInstructionVariants will be used.
      * 
-     * Only one attribute is presently supported: text attachments. You may annotate a maneuver instruction with an
-     * image
-     * by including a text attachment. The maximum text attachment image size is 64x16 points.
+     * Only one type of attribute is presently supported: text attachments. You may annotate a maneuver instruction with
+     * images
+     * by including one or more text attachments. The maximum text attachment image size is 64x25 points.
      * 
      * [@warning] All attributes other than text attachment attributes will be removed from your attributed string.
      * 
@@ -403,9 +403,9 @@ public class CPManeuver extends NSObject implements NSCopying, NSSecureCoding {
      * [@c] notificationAttributedInstructionVariants will be preferred over instructionVariants. If no notification
      * attributed variants are provided, notificationInstructionVariants will be used.
      * 
-     * Only one attribute is presently supported: text attachments. You may annotate a maneuver instruction with an
-     * image
-     * by including a text attachment. The maximum text attachment image size is 64x16 points.
+     * Only one type of attribute is presently supported: text attachments. You may annotate a maneuver instruction with
+     * images
+     * by including one or more text attachments. The maximum text attachment image size is 64x25 points.
      * 
      * [@warning] All attributes other than text attachment attributes will be removed from your attributed string.
      * 
@@ -452,9 +452,9 @@ public class CPManeuver extends NSObject implements NSCopying, NSSecureCoding {
      * [@c] dashboardAttributedInstructionVariants will be preferred over dashboardInstructionVariants. If no dashboard
      * attributed variants are provided, dashboardInstructionVariants will be used.
      * 
-     * Only one attribute is presently supported: text attachments. You may annotate a maneuver instruction with an
-     * image
-     * by including a text attachment. The maximum text attachment image size is 64x16 points.
+     * Only one type of attribute is presently supported: text attachments. You may annotate a maneuver instruction with
+     * images
+     * by including one or more text attachments. The maximum text attachment image size is 64x25 points.
      * 
      * [@warning] All attributes other than text attachment attributes will be removed from your attributed string.
      * 
@@ -511,9 +511,9 @@ public class CPManeuver extends NSObject implements NSCopying, NSSecureCoding {
      * [@c] notificationAttributedInstructionVariants will be preferred over instructionVariants. If no notification
      * attributed variants are provided, notificationInstructionVariants will be used.
      * 
-     * Only one attribute is presently supported: text attachments. You may annotate a maneuver instruction with an
-     * image
-     * by including a text attachment. The maximum text attachment image size is 64x16 points.
+     * Only one type of attribute is presently supported: text attachments. You may annotate a maneuver instruction with
+     * images
+     * by including one or more text attachments. The maximum text attachment image size is 64x25 points.
      * 
      * [@warning] All attributes other than text attachment attributes will be removed from your attributed string.
      * 
@@ -568,4 +568,9 @@ public class CPManeuver extends NSObject implements NSCopying, NSSecureCoding {
     @Generated
     @Selector("setCardBackgroundColor:")
     public native void setCardBackgroundColor(@Nullable UIColor value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -185,4 +185,9 @@ public class CABTMIDICentralViewController extends UITableViewController {
     @Generated
     @Selector("initWithStyle:")
     public native CABTMIDICentralViewController initWithStyle(@NInt long style);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

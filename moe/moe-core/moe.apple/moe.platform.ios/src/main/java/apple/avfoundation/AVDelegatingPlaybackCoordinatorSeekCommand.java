@@ -35,6 +35,8 @@ import org.jetbrains.annotations.Nullable;
  * If the current playback rate is non-zero, playback should not automatically resume after the seek. Instead the
  * delegate should pause and wait for the coordinator to issue another PlayCommand.
  * 
+ * Subclasses of this type that are used from Swift must fulfill the requirements of a Sendable type.
+ * 
  * API-Since: 15.0
  */
 @Generated
@@ -211,4 +213,9 @@ public class AVDelegatingPlaybackCoordinatorSeekCommand extends AVDelegatingPlay
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

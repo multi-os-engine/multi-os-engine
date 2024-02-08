@@ -27,8 +27,6 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
- * MPSGraphTensor
- * 
  * Symbolic representation of a compute datatype
  * 
  * NSCopy will cause a refrence to be taken, this is so NSDictionary can work with the tensor.
@@ -40,7 +38,7 @@ import org.jetbrains.annotations.Nullable;
 @Library("MetalPerformanceShadersGraph")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class MPSGraphTensor extends NSObject implements NSCopying {
+public class MPSGraphTensor extends MPSGraphObject implements NSCopying {
     static {
         NatJ.register();
     }
@@ -97,8 +95,6 @@ public class MPSGraphTensor extends NSObject implements NSCopying {
     public native Object copyWithZone(@Nullable VoidPtr zone);
 
     /**
-     * [@property] dataType
-     * 
      * dataType of the tensor
      */
     @Generated
@@ -150,8 +146,6 @@ public class MPSGraphTensor extends NSObject implements NSCopying {
     public static native MPSGraphTensor new_objc();
 
     /**
-     * [@property] operation
-     * 
      * operation responsible for creating this tensor
      */
     @NotNull
@@ -179,4 +173,9 @@ public class MPSGraphTensor extends NSObject implements NSCopying {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

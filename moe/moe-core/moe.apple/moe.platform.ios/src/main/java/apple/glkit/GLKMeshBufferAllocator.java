@@ -212,4 +212,9 @@ public class GLKMeshBufferAllocator extends NSObject implements MDLMeshBufferAll
     @MappedReturn(ObjCObjectMapper.class)
     public native MDLMeshBufferZone newZoneForBuffersWithSizeAndType(@NotNull NSArray<? extends NSNumber> sizes,
             @NotNull NSArray<? extends NSNumber> types);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

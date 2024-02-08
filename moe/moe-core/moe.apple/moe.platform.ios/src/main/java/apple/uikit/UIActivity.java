@@ -40,9 +40,6 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-/**
- * API-Since: 6.0
- */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -231,4 +228,9 @@ public class UIActivity extends NSObject {
     @Generated
     @Selector("prepareWithActivityItems:")
     public native void prepareWithActivityItems(@NotNull NSArray<?> activityItems);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

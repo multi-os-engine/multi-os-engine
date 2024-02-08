@@ -253,4 +253,9 @@ public class SKPayment extends NSObject implements NSCopying, NSMutableCopying {
     @Generated
     @Selector("paymentDiscount")
     public native SKPaymentDiscount paymentDiscount();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

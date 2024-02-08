@@ -41,6 +41,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.opaque.dispatch_queue_t;
 
 /**
  * API-Since: 10.0
@@ -176,7 +177,7 @@ public class CXCallController extends NSObject {
      */
     @Generated
     @Selector("initWithQueue:")
-    public native CXCallController initWithQueue(@NotNull NSObject queue);
+    public native CXCallController initWithQueue(@NotNull dispatch_queue_t queue);
 
     /**
      * Request a transaction to be performed by the in-app provider.
@@ -244,4 +245,9 @@ public class CXCallController extends NSObject {
         @Generated
         void call_requestTransactionWithActionsCompletion(@Nullable NSError error);
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

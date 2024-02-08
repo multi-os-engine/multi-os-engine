@@ -300,4 +300,9 @@ public class MTLRasterizationRateLayerDescriptor extends NSObject implements NSC
     @Generated
     @Selector("setSampleCount:")
     public native void setSampleCount(@ByValue MTLSize value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

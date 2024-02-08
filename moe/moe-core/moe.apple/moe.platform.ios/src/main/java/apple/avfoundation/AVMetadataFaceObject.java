@@ -239,4 +239,9 @@ public class AVMetadataFaceObject extends AVMetadataObject implements NSCopying 
     @Selector("yawAngle")
     @NFloat
     public native double yawAngle();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -54,8 +54,6 @@ import org.jetbrains.annotations.Nullable;
  * The app does not need access to the user’s contacts and the user will
  * not be prompted for access. It will only have access to the final selection of the user.
  * Changing the predicates only takes effect before the view is presented.
- * 
- * API-Since: 9.0
  */
 @Generated
 @Library("ContactsUI")
@@ -287,4 +285,9 @@ public class CNContactPickerViewController extends UIViewController {
     @Generated
     @Selector("setPredicateForSelectionOfProperty:")
     public native void setPredicateForSelectionOfProperty(@Nullable NSPredicate value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

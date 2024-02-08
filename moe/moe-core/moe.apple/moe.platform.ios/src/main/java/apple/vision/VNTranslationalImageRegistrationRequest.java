@@ -319,4 +319,9 @@ public class VNTranslationalImageRegistrationRequest extends VNImageRegistration
     @Generated
     @Selector("results")
     public native NSArray<? extends VNImageTranslationAlignmentObservation> results();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

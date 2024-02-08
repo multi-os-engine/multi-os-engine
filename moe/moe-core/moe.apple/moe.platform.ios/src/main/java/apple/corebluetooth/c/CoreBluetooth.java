@@ -633,4 +633,24 @@ public final class CoreBluetooth {
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String CBCentralManagerOptionDeviceAccessForMedia();
+
+    /**
+     * [@const] CBConnectPeripheralOptionEnableAutoReconnect
+     * 
+     * An NSNumber (Boolean) indicating that the AutoReconnect is enabled for the peripheral is connected. After
+     * peripheral device is connected, this will allow
+     * the system to initiate connect to the peer device automatically when link is dropped. Caller will get notified
+     * about the disconnection with potential delay via
+     * {@link centralManager:didDisconnectPeripheral:timestamp:isReconnecting:error:}
+     * 
+     * @see connectPeripheral:
+     * 
+     * 
+     *      API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String CBConnectPeripheralOptionEnableAutoReconnect();
 }

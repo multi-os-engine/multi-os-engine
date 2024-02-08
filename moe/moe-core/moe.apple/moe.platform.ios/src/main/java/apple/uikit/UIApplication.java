@@ -192,9 +192,11 @@ public class UIApplication extends UIResponder {
     public static native long version_static();
 
     /**
-     * set to 0 to hide. default is 0. In iOS 8.0 and later, your application must register for user notifications using
-     * -[UIApplication registerUserNotificationSettings:] before being able to set the icon badge.
+     * API-Since: 2.0
+     * Deprecated-Since: 17.0
+     * Deprecated-Message: Use -[UNUserNotificationCenter setBadgeCount:withCompletionHandler:] instead.
      */
+    @Deprecated
     @Generated
     @Selector("applicationIconBadgeNumber")
     @NInt
@@ -644,9 +646,11 @@ public class UIApplication extends UIResponder {
     public native void sendEvent(@NotNull UIEvent event);
 
     /**
-     * set to 0 to hide. default is 0. In iOS 8.0 and later, your application must register for user notifications using
-     * -[UIApplication registerUserNotificationSettings:] before being able to set the icon badge.
+     * API-Since: 2.0
+     * Deprecated-Since: 17.0
+     * Deprecated-Message: Use -[UNUserNotificationCenter setBadgeCount:withCompletionHandler:] instead.
      */
+    @Deprecated
     @Generated
     @Selector("setApplicationIconBadgeNumber:")
     public native void setApplicationIconBadgeNumber(@NInt long value);
@@ -988,15 +992,11 @@ public class UIApplication extends UIResponder {
     public native NSSet<? extends UISceneSession> openSessions();
 
     /**
-     * Request a given session be activated, first connecting it to the application if necessary.
-     * Providing a session will activate, connecting if necessary, the interface backed by the already existing
-     * UISceneSession.
-     * Providing a user activity will dispatch that activity to the provided session's scene. If no session is provided,
-     * then the system will select one (possibly creating a new session, if appropriate) and pass the activity to the
-     * session scene's delegate.
-     * 
      * API-Since: 13.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Please use activateSceneSessionForRequest:errorHandler:
      */
+    @Deprecated
     @Generated
     @Selector("requestSceneSessionActivation:userActivity:options:errorHandler:")
     public native void requestSceneSessionActivationUserActivityOptionsErrorHandler(
@@ -1049,4 +1049,29 @@ public class UIApplication extends UIResponder {
     @Generated
     @Selector("supportsMultipleScenes")
     public native boolean supportsMultipleScenes();
+
+    /**
+     * Asks the system to activate an existing scene, or create a new scene and associate it with your app.
+     * - Parameters:
+     * - request: The activation request.
+     * - errorHandler: A handler to be called if the request fails.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("activateSceneSessionForRequest:errorHandler:")
+    public native void activateSceneSessionForRequestErrorHandler(@NotNull UISceneSessionActivationRequest request,
+            @ObjCBlock(name = "call_activateSceneSessionForRequestErrorHandler") @Nullable Block_activateSceneSessionForRequestErrorHandler errorHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_activateSceneSessionForRequestErrorHandler {
+        @Generated
+        void call_activateSceneSessionForRequestErrorHandler(@NotNull NSError error);
+    }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

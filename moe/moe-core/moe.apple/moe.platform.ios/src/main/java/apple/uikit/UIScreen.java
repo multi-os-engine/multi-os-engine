@@ -428,6 +428,7 @@ public class UIScreen extends NSObject implements UITraitEnvironment {
     @Selector("traitCollection")
     public native UITraitCollection traitCollection();
 
+    @Deprecated
     @Generated
     @Selector("traitCollectionDidChange:")
     public native void traitCollectionDidChange(@Nullable UITraitCollection previousTraitCollection);
@@ -446,7 +447,10 @@ public class UIScreen extends NSObject implements UITraitEnvironment {
      * True if this screen is being captured (e.g. recorded, AirPlayed, mirrored, etc.)
      * 
      * API-Since: 11.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Use the sceneCaptureState in UITraitCollection instead.
      */
+    @Deprecated
     @Generated
     @Selector("isCaptured")
     public native boolean isCaptured();
@@ -508,4 +512,9 @@ public class UIScreen extends NSObject implements UITraitEnvironment {
     @Selector("referenceDisplayModeStatus")
     @NInt
     public native long referenceDisplayModeStatus();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

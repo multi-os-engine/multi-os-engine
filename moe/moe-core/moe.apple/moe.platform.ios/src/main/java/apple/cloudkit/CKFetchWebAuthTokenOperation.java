@@ -176,6 +176,8 @@ public class CKFetchWebAuthTokenOperation extends CKDatabaseOperation {
      * 
      * The @code -[NSOperation completionBlock] @endcode will also be called if both are set.
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
+     * This block may share mutable state with other blocks assigned to this operation, but any such mutable state
+     * should not be concurrently used outside of blocks assigned to this operation.
      */
     @Nullable
     @Generated
@@ -203,6 +205,8 @@ public class CKFetchWebAuthTokenOperation extends CKDatabaseOperation {
      * 
      * The @code -[NSOperation completionBlock] @endcode will also be called if both are set.
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
+     * This block may share mutable state with other blocks assigned to this operation, but any such mutable state
+     * should not be concurrently used outside of blocks assigned to this operation.
      */
     @Generated
     @Selector("setFetchWebAuthTokenCompletionBlock:")
@@ -222,4 +226,9 @@ public class CKFetchWebAuthTokenOperation extends CKDatabaseOperation {
         @Generated
         void call_setFetchWebAuthTokenCompletionBlock(@Nullable String arg0, @Nullable NSError arg1);
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

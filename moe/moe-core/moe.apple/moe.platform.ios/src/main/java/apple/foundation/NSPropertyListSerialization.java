@@ -258,4 +258,9 @@ public class NSPropertyListSerialization extends NSObject {
     @Generated
     @Selector("init")
     public native NSPropertyListSerialization init();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -219,4 +219,9 @@ public class NSUnitElectricResistance extends NSDimension implements NSSecureCod
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

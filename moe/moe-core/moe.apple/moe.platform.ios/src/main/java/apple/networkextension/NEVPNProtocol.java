@@ -391,8 +391,18 @@ public class NEVPNProtocol extends NSObject implements NSCopying, NSSecureCoding
     /**
      * [@property] includeAllNetworks
      * 
-     * If YES, all traffic will be sent over the tunnel, and all traffic will be dropped if the tunnel is down. The
-     * default is NO.
+     * If this property is set to YES then all network traffic is routed through the tunnel, with some exclusions.
+     * Several of the exclusions
+     * can be controlled with the excludeLocalNetworks, excludeCellularServices, and excludeAPNs properties. See the
+     * documentation for those properties.
+     * The following traffic is always excluded from the tunnel:
+     * - Traffic necessary for connecting and maintaining the device's network connection, such as DHCP.
+     * - Traffic necessary for connecting to captive networks.
+     * - Certain cellular services traffic that is not routable over the internet and is instead directly routed to the
+     * cellular network. See the
+     * excludeCellularServices property for more details.
+     * - Network communication with a companion device such as a watchOS device.
+     * The default value of this property is NO.
      * 
      * API-Since: 14.0
      */
@@ -403,8 +413,18 @@ public class NEVPNProtocol extends NSObject implements NSCopying, NSSecureCoding
     /**
      * [@property] includeAllNetworks
      * 
-     * If YES, all traffic will be sent over the tunnel, and all traffic will be dropped if the tunnel is down. The
-     * default is NO.
+     * If this property is set to YES then all network traffic is routed through the tunnel, with some exclusions.
+     * Several of the exclusions
+     * can be controlled with the excludeLocalNetworks, excludeCellularServices, and excludeAPNs properties. See the
+     * documentation for those properties.
+     * The following traffic is always excluded from the tunnel:
+     * - Traffic necessary for connecting and maintaining the device's network connection, such as DHCP.
+     * - Traffic necessary for connecting to captive networks.
+     * - Certain cellular services traffic that is not routable over the internet and is instead directly routed to the
+     * cellular network. See the
+     * excludeCellularServices property for more details.
+     * - Network communication with a companion device such as a watchOS device.
+     * The default value of this property is NO.
      * 
      * API-Since: 14.0
      */
@@ -457,4 +477,69 @@ public class NEVPNProtocol extends NSObject implements NSCopying, NSSecureCoding
     @Generated
     @Selector("setExcludeLocalNetworks:")
     public native void setExcludeLocalNetworks(boolean value);
+
+    /**
+     * [@property] excludeAPNs
+     * 
+     * If includeAllNetworks is set to YES and this property is set to YES, then network traffic for the Apple Push
+     * Notification service (APNs)
+     * is excluded from the tunnel. The default value of this property is YES.
+     * 
+     * API-Since: 16.4
+     */
+    @Generated
+    @Selector("excludeAPNs")
+    public native boolean excludeAPNs();
+
+    /**
+     * [@property] excludeCellularServices
+     * 
+     * If includeAllNetworks is set to YES and this property is set to YES, then internet-routable network traffic for
+     * cellular services
+     * (VoLTE, Wi-Fi Calling, IMS, MMS, Visual Voicemail, etc.) is excluded from the tunnel. Note that some cellular
+     * carriers route cellular services traffic
+     * directly to the carrier network, bypassing the internet. Such cellular services traffic is always excluded from
+     * the tunnel. The default value of this
+     * property is YES.
+     * 
+     * API-Since: 16.4
+     */
+    @Generated
+    @Selector("excludeCellularServices")
+    public native boolean excludeCellularServices();
+
+    /**
+     * [@property] excludeAPNs
+     * 
+     * If includeAllNetworks is set to YES and this property is set to YES, then network traffic for the Apple Push
+     * Notification service (APNs)
+     * is excluded from the tunnel. The default value of this property is YES.
+     * 
+     * API-Since: 16.4
+     */
+    @Generated
+    @Selector("setExcludeAPNs:")
+    public native void setExcludeAPNs(boolean value);
+
+    /**
+     * [@property] excludeCellularServices
+     * 
+     * If includeAllNetworks is set to YES and this property is set to YES, then internet-routable network traffic for
+     * cellular services
+     * (VoLTE, Wi-Fi Calling, IMS, MMS, Visual Voicemail, etc.) is excluded from the tunnel. Note that some cellular
+     * carriers route cellular services traffic
+     * directly to the carrier network, bypassing the internet. Such cellular services traffic is always excluded from
+     * the tunnel. The default value of this
+     * property is YES.
+     * 
+     * API-Since: 16.4
+     */
+    @Generated
+    @Selector("setExcludeCellularServices:")
+    public native void setExcludeCellularServices(boolean value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

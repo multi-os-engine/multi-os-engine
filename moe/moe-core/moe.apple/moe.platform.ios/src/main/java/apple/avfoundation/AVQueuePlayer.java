@@ -302,4 +302,9 @@ public class AVQueuePlayer extends AVPlayer {
     @Generated
     @Selector("eligibleForHDRPlayback")
     public static native boolean eligibleForHDRPlayback();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

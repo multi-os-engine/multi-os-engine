@@ -33,6 +33,8 @@ import org.jetbrains.annotations.Nullable;
  * routes have been detected. If this is the case, AVKit's AVRoutePickerView can be used to allow users to pick from the
  * set of available routes.
  * 
+ * Subclasses of this type that are used from Swift must fulfill the requirements of a Sendable type.
+ * 
  * API-Since: 11.0
  */
 @Generated
@@ -214,4 +216,9 @@ public class AVRouteDetector extends NSObject {
     @Generated
     @Selector("setDetectsCustomRoutes:")
     public native void setDetectsCustomRoutes(boolean value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

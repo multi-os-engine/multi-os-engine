@@ -20,19 +20,34 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
 /**
+ * Constants indicating the preferred response to a notification.
+ * 
  * API-Since: 10.0
  */
 @Generated
 public final class UNNotificationContentExtensionResponseOption {
     /**
+     * Don't dismiss the notification interface.
+     * 
+     * The content extension handles the selected action.
+     * 
      * API-Since: 10.0
      */
     @Generated @NUInt public static final long DoNotDismiss = 0x0000000000000000L;
     /**
+     * Dismiss the notification interface.
+     * 
+     * The content extension handles the selected action.
+     * 
      * API-Since: 10.0
      */
     @Generated @NUInt public static final long Dismiss = 0x0000000000000001L;
     /**
+     * Dismiss the notification interface and forward the notification to the app.
+     * 
+     * Choose this option when you want the app to respond to the action or handle
+     * it.
+     * 
      * API-Since: 10.0
      */
     @Generated @NUInt public static final long DismissAndForwardAction = 0x0000000000000002L;

@@ -14,9 +14,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.jetbrains.annotations.NotNull;
 
 /**
- * [@protocol] AVCustomRoutingControllerDelegate
- * 
- * A protocol for delegates of AVCustomRoutingController.
+ * A protocol for delegates of a custom routing controller.
  * 
  * API-Since: 16.0
  */
@@ -26,9 +24,12 @@ import org.jetbrains.annotations.NotNull;
 @ObjCProtocolName("AVCustomRoutingControllerDelegate")
 public interface AVCustomRoutingControllerDelegate {
     /**
-     * customRoutingController:didSelectItem:
+     * Tells the delegate when a user selects a custom item in the route picker.
      * 
-     * Informs the delegate that the user selected a custom item in the route picker.
+     * - Parameters:
+     * - controller: A custom routing controller.
+     * 
+     * - customActionItem: The selected action item.
      */
     @Generated
     @IsOptional
@@ -39,15 +40,14 @@ public interface AVCustomRoutingControllerDelegate {
     }
 
     /**
-     * customRoutingController:eventDidTimeOut:
+     * Tells the delegate when a routing event times out.
      * 
-     * The delegate can implement this method in order know when a route event timed out. This gives them a chance to
-     * clean up any connection attempts that are currently in flight.
+     * Adopt this method to clean up any in-progress connection attempts.
      * 
-     * @param controller
-     *                   The custom routing controller.
-     * @param event
-     *                   The route event that timed out.
+     * - Parameters:
+     * - controller: A custom routing controller.
+     * 
+     * - event: An event that times out.
      */
     @Generated
     @IsOptional
@@ -58,19 +58,19 @@ public interface AVCustomRoutingControllerDelegate {
     }
 
     /**
-     * customRoutingController:handleEvent:completionHandler:
+     * Connects to, or disconnects from, a device when a user requests it in the
+     * picker.
      * 
-     * The delegate needs to implement this method in order to both establish and tear down connection to a device when
-     * a user requests it through the picker.
+     * - Parameters:
+     * - controller: A custom routing controller.
      * 
-     * @param controller
-     *                          The custom routing controller.
-     * @param event
-     *                          The route event for the delegate to process.
-     * @param completionHandler
-     *                          The completion handler the delegate needs to call after the event has been processed.
-     *                          Pass YES to the completion handler if the activation, reactivation or deactivation of
-     *                          the route was successful, and NO otherwise.
+     * - event: The routing event to handle.
+     * 
+     * - completionHandler: A completion handler to call after processing the
+     * event. Pass <doc://com.apple.documentation/documentation/objectivec/yes> to
+     * the completion handler if the activation, reactivation, or deactivation of
+     * the route succeeds, and
+     * <doc://com.apple.documentation/documentation/objectivec/no>, otherwise.
      */
     @Generated
     @Selector("customRoutingController:handleEvent:completionHandler:")

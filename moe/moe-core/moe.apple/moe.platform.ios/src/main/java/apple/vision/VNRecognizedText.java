@@ -219,4 +219,9 @@ public class VNRecognizedText extends NSObject implements NSCopying, NSSecureCod
     @Selector("requestRevision")
     @NUInt
     public native long requestRevision();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

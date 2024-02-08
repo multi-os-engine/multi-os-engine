@@ -230,4 +230,9 @@ public class HKCDADocument extends NSObject {
     @Generated
     @Selector("title")
     public native String title();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

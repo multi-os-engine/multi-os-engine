@@ -274,4 +274,9 @@ public class UIAlertController extends UIViewController implements UISpringLoade
     @Selector("severity")
     @NInt
     public native long severity();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

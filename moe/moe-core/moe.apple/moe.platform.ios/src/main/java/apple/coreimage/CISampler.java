@@ -46,9 +46,6 @@ import apple.corefoundation.struct.CGRect;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-/**
- * API-Since: 9.0
- */
 @Generated
 @Library("CoreImage")
 @Runtime(ObjCRuntime.class)
@@ -243,4 +240,9 @@ public class CISampler extends NSObject implements NSCopying {
     @Generated
     @Selector("initWithImage:options:")
     public native CISampler initWithImageOptions(@NotNull CIImage im, @Nullable NSDictionary<?, ?> dict);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

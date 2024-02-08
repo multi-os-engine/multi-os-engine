@@ -289,4 +289,9 @@ public class AVAsynchronousVideoCompositionRequest extends NSObject implements N
     @Generated
     @Selector("sourceTimedMetadataByTrackID:")
     public native AVTimedMetadataGroup sourceTimedMetadataByTrackID(int trackID);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

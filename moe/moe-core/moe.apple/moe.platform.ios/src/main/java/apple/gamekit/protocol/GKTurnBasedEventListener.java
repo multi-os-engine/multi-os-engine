@@ -54,7 +54,6 @@ public interface GKTurnBasedEventListener {
      * 
      * API-Since: 7.0
      * Deprecated-Since: 8.0
-     * Deprecated-Message: use didRequestMatchWithOtherPlayers
      */
     @Generated
     @IsOptional

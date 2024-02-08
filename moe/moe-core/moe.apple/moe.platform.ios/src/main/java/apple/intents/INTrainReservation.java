@@ -205,4 +205,9 @@ public class INTrainReservation extends INReservation implements NSCopying, NSSe
             @NInt long reservationStatus, @Nullable String reservationHolderName,
             @Nullable NSArray<? extends INReservationAction> actions, @Nullable NSURL URL,
             @Nullable INSeat reservedSeat, @NotNull INTrainTrip trainTrip);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

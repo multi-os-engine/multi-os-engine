@@ -43,9 +43,6 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-/**
- * API-Since: 4.0
- */
 @Generated
 @Library("MapKit")
 @Runtime(ObjCRuntime.class)
@@ -187,4 +184,9 @@ public class MKPointAnnotation extends MKShape implements MKGeoJSONObject {
     @Selector("initWithCoordinate:title:subtitle:")
     public native MKPointAnnotation initWithCoordinateTitleSubtitle(@ByValue CLLocationCoordinate2D coordinate,
             @Nullable String title, @Nullable String subtitle);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

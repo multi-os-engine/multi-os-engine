@@ -31,6 +31,8 @@ import org.jetbrains.annotations.Nullable;
  * A now playing button that shows a callout-style action. For example,
  * your app could present a @c CPActionSheetTemplate to show more actions
  * when the user taps this button.
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("CarPlay")
@@ -168,4 +170,9 @@ public class CPNowPlayingMoreButton extends CPNowPlayingButton {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

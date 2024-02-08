@@ -34,7 +34,10 @@ import org.jetbrains.annotations.Nullable;
  * A collection of models managed as part of Core ML Model Deployment.
  * 
  * API-Since: 14.0
+ * Deprecated-Since: 100000.0
+ * Deprecated-Message: Use Background Assets or NSURLSession instead.
  */
+@Deprecated
 @Generated
 @Library("CoreML")
 @Runtime(ObjCRuntime.class)
@@ -78,7 +81,12 @@ public class MLModelCollection extends NSObject {
      * @param completionHandler The completion handler, invoked with a valid MLModelCollection instance on success or
      *                          NSError on failure.
      * @return NSProgress for updates during setup and download of the model collection
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 100000.0
+     *         Deprecated-Message: Use Background Assets or NSURLSession instead.
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("beginAccessingModelCollectionWithIdentifier:completionHandler:")
@@ -122,7 +130,12 @@ public class MLModelCollection extends NSObject {
     /**
      * The identifier for the currently downloaded deployment, corresponding to a recent deployment on the Core ML Model
      * Deployment dashboard.
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Use Background Assets or NSURLSession instead.
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("deploymentID")
@@ -140,7 +153,12 @@ public class MLModelCollection extends NSObject {
      * 
      * @param identifier        The model collection identifier, as managed in Core ML Model Deployment.
      * @param completionHandler The completion handler, invoked with YES on success or NSError on failure.
+     * 
+     *                          API-Since: 14.0
+     *                          Deprecated-Since: 100000.0
+     *                          Deprecated-Message: Use Background Assets or NSURLSession instead.
      */
+    @Deprecated
     @Generated
     @Selector("endAccessingModelCollectionWithIdentifier:completionHandler:")
     public static native void endAccessingModelCollectionWithIdentifierCompletionHandler(@NotNull String identifier,
@@ -156,7 +174,12 @@ public class MLModelCollection extends NSObject {
     /**
      * Information about the models downloaded in the collection, or an empty dictionary if the collection has not been
      * downloaded.
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Use Background Assets or NSURLSession instead.
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("entries")
@@ -170,7 +193,12 @@ public class MLModelCollection extends NSObject {
     /**
      * The identifier of the model collection you want to access, as configured in the Core ML Model Deployment
      * dashboard.
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Use Background Assets or NSURLSession instead.
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("identifier")
@@ -227,4 +255,9 @@ public class MLModelCollection extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -34,10 +34,11 @@ import org.jetbrains.annotations.Nullable;
  * 
  * A supplemental category to provide more context than just the app category
  * 
- * The app categories are very general. Providing a supplemental category will
- * allow more context about the specific app while not revealing the exact app name.
+ * The app categories from \c SRDeviceUsageCategoryKey are very general.
+ * Providing a supplemental category allows more context about the specific app while
+ * not revealing the exact app identity.
  * 
- * API-Since: 16.0
+ * API-Since: 16.4
  */
 @Generated
 @Library("SensorKit")
@@ -193,4 +194,9 @@ public class SRSupplementalCategory extends NSObject implements NSCopying, NSSec
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

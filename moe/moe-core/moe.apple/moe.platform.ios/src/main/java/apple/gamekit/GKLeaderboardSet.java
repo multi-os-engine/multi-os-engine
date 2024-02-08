@@ -49,8 +49,6 @@ import org.jetbrains.annotations.Nullable;
 
 /**
  * GKLeaderboardSet represents the sets that leaderboards can be broken out into.
- * 
- * API-Since: 7.0
  */
 @Generated
 @Library("GameKit")
@@ -226,7 +224,6 @@ public class GKLeaderboardSet extends NSObject implements NSCoding, NSSecureCodi
      * 
      * API-Since: 7.0
      * Deprecated-Since: 14.0
-     * Deprecated-Message: Use loadLeaderboardsWithHandler: instead.
      */
     @Deprecated
     @Generated
@@ -298,4 +295,9 @@ public class GKLeaderboardSet extends NSObject implements NSCoding, NSSecureCodi
         void call_loadLeaderboardsWithHandler(@Nullable NSArray<? extends GKLeaderboard> leaderboards,
                 @Nullable NSError error);
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

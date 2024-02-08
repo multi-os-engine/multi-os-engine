@@ -870,4 +870,9 @@ public class AVAssetExportSession extends NSObject {
     @Generated
     @Selector("setAudioTrackGroupHandling:")
     public native void setAudioTrackGroupHandling(@NUInt long value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

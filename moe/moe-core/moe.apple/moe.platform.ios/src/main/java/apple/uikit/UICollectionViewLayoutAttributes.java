@@ -323,4 +323,9 @@ public class UICollectionViewLayoutAttributes extends NSObject implements NSCopy
     @Selector("zIndex")
     @NInt
     public native long zIndex();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

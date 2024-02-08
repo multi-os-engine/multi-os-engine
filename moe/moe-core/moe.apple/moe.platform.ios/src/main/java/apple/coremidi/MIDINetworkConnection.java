@@ -174,4 +174,9 @@ public class MIDINetworkConnection extends NSObject {
     @Generated
     @Selector("init")
     public native MIDINetworkConnection init();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -180,4 +180,9 @@ public class EAGLSharegroup extends NSObject {
     @Generated
     @Selector("setDebugLabel:")
     public native void setDebugLabel(@Nullable String value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

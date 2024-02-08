@@ -55,8 +55,6 @@ import org.jetbrains.annotations.Nullable;
  * This functionality is achieved by creating a new EKRecurrenceRule, and setting an event to use the new rule.
  * When a new recurrence rule is set on an EKEvent, that change is not saved until the client
  * has passed the modified event to EKEventStore's saveEvent: method.
- * 
- * API-Since: 4.0
  */
 @Generated
 @Library("EventKit")
@@ -414,4 +412,9 @@ public class EKRecurrenceRule extends EKObject implements NSCopying {
     @Generated
     @Selector("weeksOfTheYear")
     public native NSArray<? extends NSNumber> weeksOfTheYear();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

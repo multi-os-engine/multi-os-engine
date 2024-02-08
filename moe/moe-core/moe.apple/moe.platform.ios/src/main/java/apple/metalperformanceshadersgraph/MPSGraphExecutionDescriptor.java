@@ -26,10 +26,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
- * MPSGraphExecutionDescriptor
- * 
- * A structure which consists of all the levers users can use to synchronize and schedule their graph execution
- * 
+ * This is a class that consists of all the levers to synchronize and schedule graph execution.
  * 
  * API-Since: 14.0
  */
@@ -37,7 +34,7 @@ import org.jetbrains.annotations.Nullable;
 @Library("MetalPerformanceShadersGraph")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class MPSGraphExecutionDescriptor extends NSObject {
+public class MPSGraphExecutionDescriptor extends MPSGraphObject {
     static {
         NatJ.register();
     }
@@ -143,9 +140,7 @@ public class MPSGraphExecutionDescriptor extends NSObject {
     public static native void setVersion_static(@NInt long aVersion);
 
     /**
-     * [@property] waitUntilCompleted
-     * 
-     * waitUntilCompleted for the graph, default value is false
+     * Flag that makes the execution call blocking till the entire compilation is complete, defaults to NO.
      */
     @Generated
     @Selector("setWaitUntilCompleted:")
@@ -161,18 +156,14 @@ public class MPSGraphExecutionDescriptor extends NSObject {
     public static native long version_static();
 
     /**
-     * [@property] waitUntilCompleted
-     * 
-     * waitUntilCompleted for the graph, default value is false
+     * Flag that makes the execution call blocking till the entire compilation is complete, defaults to NO.
      */
     @Generated
     @Selector("waitUntilCompleted")
     public native boolean waitUntilCompleted();
 
     /**
-     * [@property] compilationDescriptor
-     * 
-     * compilationDescriptor for the graph, default value is nil
+     * compilationDescriptor for the graph, default value is nil.
      * 
      * API-Since: 15.4
      */
@@ -182,9 +173,7 @@ public class MPSGraphExecutionDescriptor extends NSObject {
     public native MPSGraphCompilationDescriptor compilationDescriptor();
 
     /**
-     * [@property] compilationDescriptor
-     * 
-     * compilationDescriptor for the graph, default value is nil
+     * compilationDescriptor for the graph, default value is nil.
      * 
      * API-Since: 15.4
      */
@@ -193,13 +182,14 @@ public class MPSGraphExecutionDescriptor extends NSObject {
     public native void setCompilationDescriptor(@Nullable MPSGraphCompilationDescriptor value);
 
     /**
-     * Executable signals these shared events at execution stage and immediately proceeds
+     * Executable signals these shared events at execution stage and immediately proceeds.
      * 
-     * @param event          shared event to signal
-     * @param executionStage execution stage to signal event at
-     * @param value          value for shared event to wait on
+     * - Parameters:
+     * - event: shared event to signal.
+     * - executionStage: execution stage to signal event at.
+     * - value: value for shared event to wait on.
      * 
-     *                       API-Since: 16.0
+     * API-Since: 16.0
      */
     @Generated
     @Selector("signalEvent:atExecutionEvent:value:")
@@ -210,12 +200,18 @@ public class MPSGraphExecutionDescriptor extends NSObject {
      * Executable waits on these shared events before scheduling execution on the HW, this does not include encoding
      * which can still continue.
      * 
-     * @param event shared event to wait on
-     * @param value value for shared event to wait on
+     * - Parameters:
+     * - event: shared event graph waits on.
+     * - value: value of shared event graph waits on.
      * 
-     *              API-Since: 16.0
+     * API-Since: 16.0
      */
     @Generated
     @Selector("waitForEvent:value:")
     public native void waitForEventValue(@NotNull @Mapped(ObjCObjectMapper.class) MTLSharedEvent event, long value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

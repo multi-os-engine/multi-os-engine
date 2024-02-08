@@ -242,4 +242,23 @@ public class MXCrashDiagnostic extends MXDiagnostic {
     @Generated
     @Selector("virtualMemoryRegionInfo")
     public native String virtualMemoryRegionInfo();
+
+    /**
+     * [@property] exceptionReason
+     * 
+     * The MXCrashDiagnosticObjectiveCExceptionReason object associated with this crash.
+     * 
+     * @see <MetricKit/MXCrashDiagnosticObjectiveCExceptionReason.h>
+     * 
+     *      API-Since: 17.0
+     */
+    @Generated
+    @Selector("exceptionReason")
+    @Nullable
+    public native MXCrashDiagnosticObjectiveCExceptionReason exceptionReason();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

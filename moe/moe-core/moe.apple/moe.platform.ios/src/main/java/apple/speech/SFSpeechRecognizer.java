@@ -316,4 +316,9 @@ public class SFSpeechRecognizer extends NSObject {
     @Generated
     @Selector("supportsOnDeviceRecognition")
     public native boolean supportsOnDeviceRecognition();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -55,8 +55,6 @@ import org.jetbrains.annotations.Nullable;
  * 
  * This class can display a new contact, unknown contact or existing contact.
  * You must use one of the class factory methods.
- * 
- * API-Since: 9.0
  */
 @Generated
 @Library("ContactsUI")
@@ -471,4 +469,9 @@ public class CNContactViewController extends UIViewController {
     @Generated
     @Selector("shouldShowLinkedContacts")
     public native boolean shouldShowLinkedContacts();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

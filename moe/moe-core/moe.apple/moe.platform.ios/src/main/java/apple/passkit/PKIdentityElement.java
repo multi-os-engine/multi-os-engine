@@ -259,4 +259,31 @@ public class PKIdentityElement extends NSObject implements NSCopying {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * The document's DHS (U.S. Department of Homeland Security) compliance status.
+     * 
+     * This is also known as the document's "REAL ID status".
+     * 
+     * API-Since: 17.2
+     */
+    @Generated
+    @Selector("documentDHSComplianceStatusElement")
+    @NotNull
+    public static native PKIdentityElement documentDHSComplianceStatusElement();
+
+    /**
+     * The user's sex.
+     * 
+     * API-Since: 17.2
+     */
+    @Generated
+    @Selector("sexElement")
+    @NotNull
+    public static native PKIdentityElement sexElement();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

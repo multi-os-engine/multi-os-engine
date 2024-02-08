@@ -60,8 +60,6 @@ import org.jetbrains.annotations.Nullable;
  * The kernel should call sample() with coordinates based on either
  * samplerCoord() or samplerTransform() to read pixel values from input images.
  * The function must return a vec4 pixel color.
- * 
- * API-Since: 8.0
  */
 @Generated
 @Library("CoreImage")
@@ -330,4 +328,9 @@ public class CIKernel extends NSObject {
     @Selector("kernelsWithMetalString:error:")
     public static native NSArray<? extends CIKernel> kernelsWithMetalStringError(@NotNull String source,
             @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

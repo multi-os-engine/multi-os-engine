@@ -205,4 +205,9 @@ public class MPMoviePlayerViewController extends UIViewController {
     @Generated
     @Selector("moviePlayer")
     public native MPMoviePlayerController moviePlayer();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

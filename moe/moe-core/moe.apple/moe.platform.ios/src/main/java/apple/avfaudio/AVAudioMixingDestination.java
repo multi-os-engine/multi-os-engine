@@ -255,4 +255,9 @@ public class AVAudioMixingDestination extends NSObject implements AVAudioMixing 
     @Generated
     @Selector("volume")
     public native float volume();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

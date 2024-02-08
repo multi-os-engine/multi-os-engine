@@ -1688,4 +1688,52 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
     @Generated
     @Selector("setObjectThreadgroupMemoryLength:atIndex:")
     void setObjectThreadgroupMemoryLengthAtIndex(@NUInt long length, @NUInt long index);
+
+    /**
+     * sets vertex buffer at specified index with provided offset and stride. Only
+     * call this when the buffer-index is part of the vertexDescriptor and has set
+     * its stride to `MTLBufferLayoutStrideDynamic`
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("setVertexBuffer:offset:attributeStride:atIndex:")
+    void setVertexBufferOffsetAttributeStrideAtIndex(@Mapped(ObjCObjectMapper.class) @Nullable MTLBuffer buffer,
+            @NUInt long offset, @NUInt long stride, @NUInt long index);
+
+    /**
+     * only call this when the buffer-index is part of the vertexDescriptor and
+     * has set its stride to `MTLBufferLayoutStrideDynamic`
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("setVertexBufferOffset:attributeStride:atIndex:")
+    void setVertexBufferOffsetAttributeStrideAtIndex(@NUInt long offset, @NUInt long stride, @NUInt long index);
+
+    /**
+     * sets an array of vertex buffers with provided offsets and strides with the
+     * given bind point range.
+     * only call this when at least one buffer is part of the
+     * vertexDescriptor, other buffers must set their value relative to the
+     * `attributeStrides` array to `MTLAttributeStrideStatic`
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("setVertexBuffers:offsets:attributeStrides:withRange:")
+    void setVertexBuffersOffsetsAttributeStridesWithRange(
+            @ReferenceInfo(type = ObjCObject.class) @NotNull Ptr<ObjCObject> buffers, @NotNull ConstNUIntPtr offsets,
+            @NotNull ConstNUIntPtr strides, @ByValue NSRange range);
+
+    /**
+     * only call this when the buffer-index is part of the vertexDescriptor and
+     * has set its stride to `MTLBufferLayoutStrideDynamic`
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("setVertexBytes:length:attributeStride:atIndex:")
+    void setVertexBytesLengthAttributeStrideAtIndex(@NotNull ConstVoidPtr bytes, @NUInt long length, @NUInt long stride,
+            @NUInt long index);
 }

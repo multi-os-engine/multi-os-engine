@@ -545,4 +545,39 @@ public class PHLivePhotoView extends UIView {
     public static native void modifyAnimationsWithRepeatCountAutoreversesAnimations(@NFloat double count,
             boolean autoreverses,
             @NotNull @ObjCBlock(name = "call_modifyAnimationsWithRepeatCountAutoreversesAnimations") UIView.Block_modifyAnimationsWithRepeatCountAutoreversesAnimations animations);
+
+    @Generated
+    @Selector("animateWithSpringDuration:bounce:initialSpringVelocity:delay:options:animations:completion:")
+    public static native void animateWithSpringDurationBounceInitialSpringVelocityDelayOptionsAnimationsCompletion(
+            double duration, @NFloat double bounce, @NFloat double velocity, double delay, @NUInt long options,
+            @ObjCBlock(name = "call_animateWithSpringDurationBounceInitialSpringVelocityDelayOptionsAnimationsCompletion_5") @NotNull UIView.Block_animateWithSpringDurationBounceInitialSpringVelocityDelayOptionsAnimationsCompletion_5 animations,
+            @ObjCBlock(name = "call_animateWithSpringDurationBounceInitialSpringVelocityDelayOptionsAnimationsCompletion_6") @Nullable UIView.Block_animateWithSpringDurationBounceInitialSpringVelocityDelayOptionsAnimationsCompletion_6 completion);
+
+    /**
+     * The rectangle, in the unit coordinate space, that defines the portion of the Live Photo contents that should be
+     * displayed. In this coordinate system, the point `{0.0,0.0}` refers to the upper left corner of the Live Photo,
+     * and `{1.0,1.0}` refers to the bottom right corner.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("contentsRect")
+    @ByValue
+    public native CGRect contentsRect();
+
+    /**
+     * The rectangle, in the unit coordinate space, that defines the portion of the Live Photo contents that should be
+     * displayed. In this coordinate system, the point `{0.0,0.0}` refers to the upper left corner of the Live Photo,
+     * and `{1.0,1.0}` refers to the bottom right corner.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("setContentsRect:")
+    public native void setContentsRect(@ByValue CGRect value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -208,4 +208,9 @@ public class MDLVertexBufferLayout extends NSObject implements NSCopying {
     @Selector("stride")
     @NUInt
     public native long stride();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

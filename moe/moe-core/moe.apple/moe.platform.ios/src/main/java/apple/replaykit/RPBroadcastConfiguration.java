@@ -219,4 +219,9 @@ public class RPBroadcastConfiguration extends NSObject implements NSCoding, NSSe
     @Generated
     @Selector("videoCompressionProperties")
     public native NSDictionary<String, ? extends NSObject> videoCompressionProperties();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

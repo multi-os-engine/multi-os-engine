@@ -3,9 +3,34 @@
 //
 
 #import <CoreMedia/CMSync.h>
+#import <CoreMedia/CMTag.h>
 
 
 #define EXPORT __attribute__ ((visibility ("default")))
+
+EXPORT Boolean __natj_inline_CMTagIsValid(CMTag tag) {
+	return CMTagIsValid(tag);
+}
+
+EXPORT CMTagCategory __natj_inline_CMTagGetCategory(CMTag tag) {
+	return CMTagGetCategory(tag);
+}
+
+EXPORT Boolean __natj_inline_CMTagCategoryEqualToTagCategory(CMTag tag1, CMTag tag2) {
+	return CMTagCategoryEqualToTagCategory(tag1, tag2);
+}
+
+EXPORT CMTagValue __natj_inline_CMTagGetValue(CMTag tag) {
+	return CMTagGetValue(tag);
+}
+
+EXPORT Boolean __natj_inline_CMTagHasCategory(CMTag tag, CMTagCategory category) {
+	return CMTagHasCategory(tag, category);
+}
+
+EXPORT Boolean __natj_inline_CMTagCategoryValueEqualToValue(CMTag tag1, CMTag tag2) {
+	return CMTagCategoryValueEqualToValue(tag1, tag2);
+}
 
 EXPORT OSStatus __natj_inline_CMTimebaseCreateWithSourceClock(CFAllocatorRef _Nullable allocator, CMClockRef _Nonnull sourceClock, CMTimebaseRef  _Nullable * _Nonnull timebaseOut) {
 	return CMTimebaseCreateWithSourceClock(allocator, sourceClock, timebaseOut);

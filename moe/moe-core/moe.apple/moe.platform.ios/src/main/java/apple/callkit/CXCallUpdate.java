@@ -275,4 +275,9 @@ public class CXCallUpdate extends NSObject implements NSCopying {
     @Generated
     @Selector("supportsUngrouping")
     public native boolean supportsUngrouping();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

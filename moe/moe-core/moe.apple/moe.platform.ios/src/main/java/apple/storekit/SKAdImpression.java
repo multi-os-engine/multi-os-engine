@@ -315,7 +315,7 @@ public class SKAdImpression extends NSObject {
     /**
      * The source identifier
      * 
-     * API-Since: 16.0
+     * API-Since: 16.1
      */
     @Generated
     @Selector("setSourceIdentifier:")
@@ -324,10 +324,15 @@ public class SKAdImpression extends NSObject {
     /**
      * The source identifier
      * 
-     * API-Since: 16.0
+     * API-Since: 16.1
      */
     @NotNull
     @Generated
     @Selector("sourceIdentifier")
     public native NSNumber sourceIdentifier();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

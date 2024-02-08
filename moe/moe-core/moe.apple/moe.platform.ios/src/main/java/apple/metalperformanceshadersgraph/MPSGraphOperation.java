@@ -27,8 +27,6 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
- * MPSGraphOperation
- * 
  * Symbolic representation of a compute operation, all tensors are created, owned and destroyed by the MPSGraph
  * 
  * NSCopy will cause a refrence to be taken, this is so NSDictionary can work with the tensor.
@@ -40,7 +38,7 @@ import org.jetbrains.annotations.Nullable;
 @Library("MetalPerformanceShadersGraph")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class MPSGraphOperation extends NSObject implements NSCopying {
+public class MPSGraphOperation extends MPSGraphObject implements NSCopying {
     static {
         NatJ.register();
     }
@@ -90,8 +88,6 @@ public class MPSGraphOperation extends NSObject implements NSCopying {
     public static native Class classForKeyedUnarchiver();
 
     /**
-     * [@property] controlDependencies
-     * 
      * operations guaranteed to execute before this operation
      */
     @NotNull
@@ -115,8 +111,6 @@ public class MPSGraphOperation extends NSObject implements NSCopying {
     public static native String description_static();
 
     /**
-     * [@property] graph
-     * 
      * graph on which the operation is defined
      */
     @NotNull
@@ -134,8 +128,6 @@ public class MPSGraphOperation extends NSObject implements NSCopying {
     public native MPSGraphOperation init();
 
     /**
-     * [@property] inputTensors
-     * 
      * inputTensors of the operation
      */
     @NotNull
@@ -166,8 +158,6 @@ public class MPSGraphOperation extends NSObject implements NSCopying {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
-     * [@property] name
-     * 
      * name of the operation
      */
     @NotNull
@@ -181,8 +171,6 @@ public class MPSGraphOperation extends NSObject implements NSCopying {
     public static native MPSGraphOperation new_objc();
 
     /**
-     * [@property] outputTensors
-     * 
      * outputTensors of the operation
      */
     @NotNull
@@ -210,4 +198,9 @@ public class MPSGraphOperation extends NSObject implements NSCopying {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

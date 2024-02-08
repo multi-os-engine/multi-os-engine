@@ -381,4 +381,9 @@ public class AVContentKeyRequest extends NSObject {
     @Generated
     @Selector("contentKeySpecifier")
     public native AVContentKeySpecifier contentKeySpecifier();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

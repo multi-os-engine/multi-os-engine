@@ -44,6 +44,8 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.foundation.NSError;
+import apple.foundation.NSUUID;
 
 /**
  * A WKWebsiteDataStore represents various types of data that a website might
@@ -289,4 +291,95 @@ public class WKWebsiteDataStore extends NSObject implements NSSecureCoding {
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    /**
+     * Get a persistent data store.
+     * 
+     * If a data store with this identifier does not exist yet, it will be created. Throws exception if identifier
+     * is 0.
+     * 
+     * API-Since: 17.0
+     * 
+     * @param identifier An identifier that is used to uniquely identify the data store.
+     */
+    @Generated
+    @Selector("dataStoreForIdentifier:")
+    @NotNull
+    public static native WKWebsiteDataStore dataStoreForIdentifier(@NotNull NSUUID identifier);
+
+    /**
+     * Fetch all data stores identifiers.
+     * 
+     * Default or non-persistent data store do not have an identifier.
+     * 
+     * API-Since: 17.0
+     * 
+     * @param completionHandler A block to invoke with an array of identifiers when the operation completes.
+     */
+    @Generated
+    @Selector("fetchAllDataStoreIdentifiers:")
+    public static native void fetchAllDataStoreIdentifiers(
+            @ObjCBlock(name = "call_fetchAllDataStoreIdentifiers") @NotNull Block_fetchAllDataStoreIdentifiers completionHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_fetchAllDataStoreIdentifiers {
+        @Generated
+        void call_fetchAllDataStoreIdentifiers(@NotNull NSArray<? extends NSUUID> arg0);
+    }
+
+    /**
+     * Get identifier for a data store.
+     * 
+     * Returns nil for default and non-persistent data store .
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("identifier")
+    @Nullable
+    public native NSUUID identifier();
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("proxyConfigurations")
+    @Nullable
+    public native NSArray<?> proxyConfigurations();
+
+    /**
+     * Delete a persistent data store.
+     * 
+     * This should be called when the data store is not used any more. Returns error if removal fails
+     * to complete. WKWebView using the data store must be released before removal.
+     * 
+     * API-Since: 17.0
+     * 
+     * @param identifier        An identifier that is used to uniquely identify the data store.
+     * @param completionHandler A block to invoke with optional error when the operation completes.
+     */
+    @Generated
+    @Selector("removeDataStoreForIdentifier:completionHandler:")
+    public static native void removeDataStoreForIdentifierCompletionHandler(@NotNull NSUUID identifier,
+            @ObjCBlock(name = "call_removeDataStoreForIdentifierCompletionHandler") @NotNull Block_removeDataStoreForIdentifierCompletionHandler completionHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_removeDataStoreForIdentifierCompletionHandler {
+        @Generated
+        void call_removeDataStoreForIdentifierCompletionHandler(@Nullable NSError arg0);
+    }
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("setProxyConfigurations:")
+    public native void setProxyConfigurations(@Nullable NSArray<?> value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

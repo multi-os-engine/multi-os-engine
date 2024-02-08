@@ -56,9 +56,6 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-/**
- * API-Since: 6.0
- */
 @Generated
 @Library("MapKit")
 @Runtime(ObjCRuntime.class)
@@ -387,4 +384,9 @@ public class MKMapItem extends NSObject implements NSSecureCoding, NSItemProvide
     @Generated
     @Selector("setPointOfInterestCategory:")
     public native void setPointOfInterestCategory(@Nullable String value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -31,6 +31,8 @@ import org.jetbrains.annotations.Nullable;
  * 
  * This class is vended by AVAssetSegmentTrackReport. It will provide information on a sample in a track.
  * 
+ * Subclasses of this type that are used from Swift must fulfill the requirements of a Sendable type.
+ * 
  * API-Since: 14.0
  */
 @Generated
@@ -192,4 +194,9 @@ public class AVAssetSegmentReportSampleInformation extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

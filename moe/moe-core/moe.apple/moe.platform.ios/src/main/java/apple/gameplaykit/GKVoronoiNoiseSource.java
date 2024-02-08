@@ -43,8 +43,6 @@ import org.jetbrains.annotations.Nullable;
 /**
  * Voronoi noise partitions the space into angular, polygonal "cells", which are reminiscent
  * of stained glass or crystal-like structures.
- * 
- * API-Since: 10.0
  */
 @Generated
 @Library("GameplayKit")
@@ -206,4 +204,9 @@ public class GKVoronoiNoiseSource extends GKNoiseSource {
     @Generated
     @Selector("setSeed:")
     public native void setSeed(int value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

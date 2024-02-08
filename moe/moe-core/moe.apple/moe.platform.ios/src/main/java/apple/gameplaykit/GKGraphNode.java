@@ -45,8 +45,6 @@ import org.jetbrains.annotations.Nullable;
 
 /**
  * A node in a directed graph. Edges are directed and can have variable costs.
- * 
- * API-Since: 9.0
  */
 @Generated
 @Library("GameplayKit")
@@ -254,4 +252,9 @@ public class GKGraphNode extends NSObject implements NSSecureCoding {
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

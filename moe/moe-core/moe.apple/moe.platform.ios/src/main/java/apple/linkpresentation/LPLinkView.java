@@ -37,6 +37,31 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
+ * A rich visual representation of a link.
+ * 
+ * ``LPLinkView`` presents a link based on its available metadata. Use it to
+ * show a link’s title and icon, associated images, inline audio, video
+ * playback, and maps in a familiar and consistent style.
+ * 
+ * ## Present a rich link
+ * 
+ * To present a rich link in your app, create an ``LPLinkView``, passing an
+ * ``LPLinkMetadata`` instance into its initializer. Then add the
+ * ``LPLinkView`` to your view.
+ * 
+ * For example, to present links in a table view, add an ``LPLinkView``
+ * instance as a subview when populating each cell.
+ * 
+ * ```swift
+ * let linkView = LPLinkView(metadata: metadata)
+ * cell.contentView.addSubview(linkView)
+ * linkView.sizeToFit()
+ * ```
+ * 
+ * ``LPLinkView`` has an intrinsic size, but it also responds to
+ * <doc://com.apple.documentation/documentation/uikit/uiview/1622630-sizetofit>
+ * to present a layout at any size.
+ * 
  * API-Since: 13.0
  */
 @Generated
@@ -261,10 +286,16 @@ public class LPLinkView extends UIView {
     @Selector("initWithFrame:")
     public native LPLinkView initWithFrame(@ByValue CGRect frame);
 
+    /**
+     * Initializes a link view with specified metadata.
+     */
     @Generated
     @Selector("initWithMetadata:")
     public native LPLinkView initWithMetadata(@NotNull LPLinkMetadata metadata);
 
+    /**
+     * Initializes a placeholder link view without metadata for a given URL.
+     */
     @Generated
     @Selector("initWithURL:")
     public native LPLinkView initWithURL(@NotNull NSURL URL);
@@ -297,9 +328,9 @@ public class LPLinkView extends UIView {
     public static native Class layerClass();
 
     /**
-     * The LPLinkMetadata object with which to generate a rich presentation.
+     * The metadata from which to generate a rich presentation.
      * 
-     * The metadata can either be generated automatically from a URL by LPMetadataProvider,
+     * This can either be generated automatically from a URL by LPMetadataProvider,
      * or manually constructed with the desired data.
      */
     @NotNull
@@ -403,9 +434,9 @@ public class LPLinkView extends UIView {
     public static native void setAnimationsEnabled(boolean enabled);
 
     /**
-     * The LPLinkMetadata object with which to generate a rich presentation.
+     * The metadata from which to generate a rich presentation.
      * 
-     * The metadata can either be generated automatically from a URL by LPMetadataProvider,
+     * This can either be generated automatically from a URL by LPMetadataProvider,
      * or manually constructed with the desired data.
      */
     @Generated
@@ -448,4 +479,16 @@ public class LPLinkView extends UIView {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("animateWithSpringDuration:bounce:initialSpringVelocity:delay:options:animations:completion:")
+    public static native void animateWithSpringDurationBounceInitialSpringVelocityDelayOptionsAnimationsCompletion(
+            double duration, @NFloat double bounce, @NFloat double velocity, double delay, @NUInt long options,
+            @ObjCBlock(name = "call_animateWithSpringDurationBounceInitialSpringVelocityDelayOptionsAnimationsCompletion_5") @NotNull UIView.Block_animateWithSpringDurationBounceInitialSpringVelocityDelayOptionsAnimationsCompletion_5 animations,
+            @ObjCBlock(name = "call_animateWithSpringDurationBounceInitialSpringVelocityDelayOptionsAnimationsCompletion_6") @Nullable UIView.Block_animateWithSpringDurationBounceInitialSpringVelocityDelayOptionsAnimationsCompletion_6 completion);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

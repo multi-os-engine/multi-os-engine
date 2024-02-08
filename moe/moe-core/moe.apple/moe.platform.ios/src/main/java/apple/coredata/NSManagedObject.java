@@ -493,4 +493,9 @@ public class NSManagedObject extends NSObject implements NSFetchRequestResult {
     @Generated
     @Selector("willTurnIntoFault")
     public native void willTurnIntoFault();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

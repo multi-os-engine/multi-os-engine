@@ -264,4 +264,27 @@ public final class NetworkExtension {
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NEVPNConnectionErrorDomain();
+
+    /**
+     * [@const] NERelayErrorDomain The NERelay error domain
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String NERelayErrorDomain();
+
+    /**
+     * [@const] NERelayConfigurationDidChangeNotification Name of the NSNotification that is posted when the relay
+     * configuration changes.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String NERelayConfigurationDidChangeNotification();
 }

@@ -30,7 +30,10 @@ import org.jetbrains.annotations.Nullable;
  * An instance normalization layer. For more information refer to https://pytorch.org/docs/stable/nn.html#instancenorm2d
  * 
  * API-Since: 14.0
+ * Deprecated-Since: 100000.0
+ * Deprecated-Message: Use Metal Performance Shaders Graph or BNNS instead.
  */
+@Deprecated
 @Generated
 @Library("MLCompute")
 @Runtime(ObjCRuntime.class)
@@ -297,4 +300,9 @@ public class MLCInstanceNormalizationLayer extends MLCLayer {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

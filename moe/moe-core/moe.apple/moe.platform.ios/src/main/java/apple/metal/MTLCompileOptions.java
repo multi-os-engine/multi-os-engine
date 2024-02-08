@@ -414,4 +414,77 @@ public class MTLCompileOptions extends NSObject implements NSCopying {
     @Generated
     @Selector("setOptimizationLevel:")
     public native void setOptimizationLevel(@NInt long value);
+
+    /**
+     * [@property] allowReferencingUndefinedSymbols
+     * 
+     * Adds a compiler command to allow the reference of undefined symbols
+     * 
+     * API-Since: 16.4
+     */
+    @Generated
+    @Selector("allowReferencingUndefinedSymbols")
+    public native boolean allowReferencingUndefinedSymbols();
+
+    /**
+     * [@property]
+     * 
+     * Adds a compiler command to force the default visibility of symbols to be hidden
+     * 
+     * API-Since: 16.4
+     */
+    @Generated
+    @Selector("compileSymbolVisibility")
+    @NInt
+    public native long compileSymbolVisibility();
+
+    /**
+     * [@property] maxTotalThreadsPerThreadgroup
+     * 
+     * Adds a compiler command to specify the total threads per threadgroup
+     * 
+     * API-Since: 16.4
+     */
+    @Generated
+    @Selector("maxTotalThreadsPerThreadgroup")
+    @NUInt
+    public native long maxTotalThreadsPerThreadgroup();
+
+    /**
+     * [@property] allowReferencingUndefinedSymbols
+     * 
+     * Adds a compiler command to allow the reference of undefined symbols
+     * 
+     * API-Since: 16.4
+     */
+    @Generated
+    @Selector("setAllowReferencingUndefinedSymbols:")
+    public native void setAllowReferencingUndefinedSymbols(boolean value);
+
+    /**
+     * [@property]
+     * 
+     * Adds a compiler command to force the default visibility of symbols to be hidden
+     * 
+     * API-Since: 16.4
+     */
+    @Generated
+    @Selector("setCompileSymbolVisibility:")
+    public native void setCompileSymbolVisibility(@NInt long value);
+
+    /**
+     * [@property] maxTotalThreadsPerThreadgroup
+     * 
+     * Adds a compiler command to specify the total threads per threadgroup
+     * 
+     * API-Since: 16.4
+     */
+    @Generated
+    @Selector("setMaxTotalThreadsPerThreadgroup:")
+    public native void setMaxTotalThreadsPerThreadgroup(@NUInt long value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

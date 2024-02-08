@@ -414,4 +414,9 @@ public class AVFragmentedAsset extends AVURLAsset implements AVFragmentMinding {
         void call_loadTracksWithMediaTypeCompletionHandler(@Nullable NSArray<? extends AVFragmentedAssetTrack> arg0,
                 @Nullable NSError arg1);
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -42,8 +42,6 @@ import org.jetbrains.annotations.Nullable;
 
 /**
  * An obstacle with an impassible radius
- * 
- * API-Since: 9.0
  */
 @Generated
 @Library("GameplayKit")
@@ -184,4 +182,9 @@ public class GKCircleObstacle extends GKObstacle {
     @Generated
     @Selector("setRadius:")
     public native void setRadius(float value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -307,4 +307,9 @@ public class SCNTransaction extends NSObject {
         @Generated
         void call_setCompletionBlock();
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

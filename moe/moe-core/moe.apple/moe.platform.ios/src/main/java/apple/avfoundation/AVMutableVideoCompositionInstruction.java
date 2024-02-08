@@ -300,4 +300,9 @@ public class AVMutableVideoCompositionInstruction extends AVVideoCompositionInst
     @Generated
     @Selector("setRequiredSourceSampleDataTrackIDs:")
     public native void setRequiredSourceSampleDataTrackIDs(@NotNull NSArray<? extends NSNumber> value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

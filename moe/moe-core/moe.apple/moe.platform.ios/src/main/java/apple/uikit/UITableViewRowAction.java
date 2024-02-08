@@ -224,4 +224,9 @@ public class UITableViewRowAction extends NSObject implements NSCopying {
         @Generated
         void call_rowActionWithStyleTitleHandler(@NotNull UITableViewRowAction action, @NotNull NSIndexPath indexPath);
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

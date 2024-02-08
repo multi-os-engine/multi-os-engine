@@ -30,6 +30,8 @@ import org.jetbrains.annotations.Nullable;
  * 
  * A participant in a coordinated playback group connected through AVPlaybackCoordinator.
  * 
+ * Subclasses of this type that are used from Swift must fulfill the requirements of a Sendable type.
+ * 
  * API-Since: 15.0
  */
 @Generated
@@ -180,4 +182,9 @@ public class AVCoordinatedPlaybackParticipant extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

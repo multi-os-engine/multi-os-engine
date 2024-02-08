@@ -29,9 +29,6 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-/**
- * API-Since: 12.0
- */
 @Generated
 @Library("NaturalLanguage")
 @Runtime(ObjCRuntime.class)
@@ -247,4 +244,9 @@ public class NLTokenizer extends NSObject {
     @Selector("tokenRangeForRange:")
     @ByValue
     public native NSRange tokenRangeForRange(@ByValue NSRange range);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

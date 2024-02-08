@@ -25,28 +25,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
- * CKOperationConfiguration
- * 
- * An operation configuration is a set of properties that describes how your operation should behave. All properties
- * have a default value. When determining what properties to apply to an operation, we consult the operation's
- * configuration property, as well as the operation->group->defaultConfiguration property. We combine them following
- * these rules:
- * [@code]
- * Group Default Configuration Value | Operation Configuration Value | Value Applied To Operation
- * -----------------------------------+-------------------------------+-----------------------------------------
- * default value | default value | default value
- * default value | explicit value | operation.configuration explicit value
- * explicit value | default value | operation.group.defaultConfiguration explicit value
- * explicit value | explicit value | operation.configuration explicit value
- * [@endcode]
- * For example:
- * CKOperationGroup -> defaultConfiguration -> allowsCellularAccess explicitly set to NO
- * + CKOperation -> configuration -> allowsCellularAccess has default value of YES
- * = disallow cellular access
- * 
- * CKOperationGroup -> defaultConfiguration -> allowsCellularAccess explicitly set to NO
- * + CKOperation -> configuration -> allowsCellularAccess explicitly set to YES
- * = allow cellular access
+ * NS_SWIFT_SENDABLE on macos(13.3), macCatalyst(16.4), ios(16.4), tvos(16.4), watchos(9.4)
  * 
  * API-Since: 11.0
  */
@@ -335,4 +314,9 @@ public class CKOperationConfiguration extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

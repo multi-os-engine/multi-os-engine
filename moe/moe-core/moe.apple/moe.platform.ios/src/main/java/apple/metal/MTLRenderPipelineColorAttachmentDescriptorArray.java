@@ -177,4 +177,9 @@ public class MTLRenderPipelineColorAttachmentDescriptorArray extends NSObject {
     @Selector("setObject:atIndexedSubscript:")
     public native void setObjectAtIndexedSubscript(@Nullable MTLRenderPipelineColorAttachmentDescriptor attachment,
             @NUInt long attachmentIndex);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

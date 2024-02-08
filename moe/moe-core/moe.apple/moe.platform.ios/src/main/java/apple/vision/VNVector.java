@@ -294,4 +294,9 @@ public class VNVector extends NSObject implements NSCopying, NSSecureCoding {
     @Generated
     @Selector("zeroVector")
     public static native VNVector zeroVector();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

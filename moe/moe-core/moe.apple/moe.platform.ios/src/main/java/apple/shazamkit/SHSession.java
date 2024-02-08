@@ -189,7 +189,7 @@ public class SHSession extends NSObject {
      * be contiguous, gaps in the audio will have adverse
      * effects on the ability to match the audio. The time variable is validated by the session to ensure that the audio
      * is contiguous and mitigate the effect of discontiguous audio.
-     * [@note] This method will throw an exception if the audio format is not PCM in one of the following sample rates:
+     * [@note] This method only accepts PCM audio formats. The following sample rates are recommended but not required:
      * 48000, 44100, 32000, 16000.
      * 
      * @param buffer A buffer of audio to be used for recognition
@@ -246,4 +246,9 @@ public class SHSession extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

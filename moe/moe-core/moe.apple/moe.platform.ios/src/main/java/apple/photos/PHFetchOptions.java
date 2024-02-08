@@ -305,4 +305,9 @@ public class PHFetchOptions extends NSObject implements NSCopying {
     @Generated
     @Selector("wantsIncrementalChangeDetails")
     public native boolean wantsIncrementalChangeDetails();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

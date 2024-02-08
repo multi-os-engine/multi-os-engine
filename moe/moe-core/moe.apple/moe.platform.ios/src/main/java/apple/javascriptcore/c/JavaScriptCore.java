@@ -1193,8 +1193,8 @@ public final class JavaScriptCore {
      * 
      * Gets a copy of the name of a context.
      * 
-     * A JSGlobalContext's name is exposed for remote debugging to make it
-     * easier to identify the context you would like to attach to.
+     * A JSGlobalContext's name is exposed when inspecting the context to make it easier to identify the context you
+     * would like to inspect.
      * 
      * API-Since: 8.0
      * 
@@ -1208,10 +1208,10 @@ public final class JavaScriptCore {
     /**
      * [@function]
      * 
-     * Sets the remote debugging name for a context.
+     * Sets the name exposed when inspecting a context.
      * 
      * @param ctx  The JSGlobalContext that you want to name.
-     * @param name The remote debugging name to set on ctx.
+     * @param name The name to set on the context.
      * 
      *             API-Since: 8.0
      */
@@ -1910,4 +1910,32 @@ public final class JavaScriptCore {
             JSValueRef propertyKey, Ptr<JSValueRef> exception);
 
     @Generated public static final double JSC_OBJC_API_ENABLED = 1.0;
+
+    /**
+     * [@function]
+     * 
+     * Gets whether the context is inspectable in Web Inspector.
+     * 
+     * @param ctx The JSGlobalContext that you want to change the inspectability of.
+     * @return Whether the context is inspectable in Web Inspector.
+     * 
+     *         API-Since: 16.4
+     */
+    @Generated
+    @CFunction
+    public static native boolean JSGlobalContextIsInspectable(JSGlobalContextRef ctx);
+
+    /**
+     * [@function]
+     * 
+     * Sets whether the context is inspectable in Web Inspector. Default value is NO.
+     * 
+     * @param ctx         The JSGlobalContext that you want to change the inspectability of.
+     * @param inspectable YES to allow Web Inspector to connect to the context, otherwise NO.
+     * 
+     *                    API-Since: 16.4
+     */
+    @Generated
+    @CFunction
+    public static native void JSGlobalContextSetInspectable(JSGlobalContextRef ctx, boolean inspectable);
 }

@@ -51,8 +51,6 @@ import org.jetbrains.annotations.Nullable;
 /**
  * A collection of GKGoals or GKBehaviors with weights that can be applied to a GKAgent
  * The sub-goals or sub-behaviors are summed to produce a total force to be applied to an agent
- * 
- * API-Since: 9.0
  */
 @Generated
 @Library("GameplayKit")
@@ -281,4 +279,9 @@ public class GKBehavior extends NSObject implements NSFastEnumeration, NSCopying
     @Generated
     @Selector("weightForGoal:")
     public native float weightForGoal(@NotNull GKGoal goal);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -125,8 +125,11 @@ public class UIWindowSceneActivationRequestOptions extends UISceneActivationRequ
     public static native UIWindowSceneActivationRequestOptions new_objc();
 
     /**
-     * Request a specific presentation style. Defaults to @c UIWindowScenePresentationStyleAutomatic .
+     * API-Since: 15.0
+     * Deprecated-Since: 17.0
+     * Deprecated-Message: Place use .placement with an appropriate UIWindowScenePlacement.
      */
+    @Deprecated
     @Generated
     @Selector("preferredPresentationStyle")
     @NUInt
@@ -141,8 +144,11 @@ public class UIWindowSceneActivationRequestOptions extends UISceneActivationRequ
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * Request a specific presentation style. Defaults to @c UIWindowScenePresentationStyleAutomatic .
+     * API-Since: 15.0
+     * Deprecated-Since: 17.0
+     * Deprecated-Message: Place use .placement with an appropriate UIWindowScenePlacement.
      */
+    @Deprecated
     @Generated
     @Selector("setPreferredPresentationStyle:")
     public native void setPreferredPresentationStyle(@NUInt long value);
@@ -159,4 +165,32 @@ public class UIWindowSceneActivationRequestOptions extends UISceneActivationRequ
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * The preferred placement of the window scene to be activated. Scene placements influence how the
+     * system positions the activated scene. A `nil` value indicates that the system should determine
+     * the most appropriate placement to use.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("placement")
+    @Nullable
+    public native UIWindowScenePlacement placement();
+
+    /**
+     * The preferred placement of the window scene to be activated. Scene placements influence how the
+     * system positions the activated scene. A `nil` value indicates that the system should determine
+     * the most appropriate placement to use.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("setPlacement:")
+    public native void setPlacement(@Nullable UIWindowScenePlacement value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -202,4 +202,9 @@ public class UIGraphicsRendererFormat extends NSObject implements NSCopying {
     @Generated
     @Selector("preferredFormat")
     public static native UIGraphicsRendererFormat preferredFormat();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

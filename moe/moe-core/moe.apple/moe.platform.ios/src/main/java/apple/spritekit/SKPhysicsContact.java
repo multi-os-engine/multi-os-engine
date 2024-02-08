@@ -186,4 +186,9 @@ public class SKPhysicsContact extends NSObject {
     @Generated
     @Selector("init")
     public native SKPhysicsContact init();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

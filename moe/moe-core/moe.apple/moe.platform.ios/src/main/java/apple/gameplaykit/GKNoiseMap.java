@@ -49,8 +49,6 @@ import org.jetbrains.annotations.Nullable;
  * @see GKNoise
  * @see SKTexture
  * @see SKTileMapNode
- * 
- *      API-Since: 10.0
  */
 @Generated
 @Library("GameplayKit")
@@ -197,4 +195,9 @@ public class GKNoiseMap extends NSObject {
     @Generated
     @Selector("isSeamless")
     public native boolean isSeamless();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

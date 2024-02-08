@@ -162,4 +162,9 @@ public class HMCameraControl extends NSObject {
     @Generated
     @Selector("init")
     public native HMCameraControl init();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

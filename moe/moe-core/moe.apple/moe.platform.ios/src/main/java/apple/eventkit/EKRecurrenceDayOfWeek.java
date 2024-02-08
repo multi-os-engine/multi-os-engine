@@ -67,8 +67,6 @@ import org.jetbrains.annotations.Nullable;
  * result in an exception when trying to initialize the recurrence. In particular,
  * weekNumber must be zero when passing EKRecurrenceDayOfWeek objects to initialize a weekly
  * recurrence.
- * 
- * API-Since: 4.0
  */
 @Generated
 @Library("EventKit")
@@ -259,4 +257,9 @@ public class EKRecurrenceDayOfWeek extends NSObject implements NSCopying, NSSecu
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

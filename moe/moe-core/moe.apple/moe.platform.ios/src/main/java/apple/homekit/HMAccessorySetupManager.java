@@ -174,4 +174,9 @@ public class HMAccessorySetupManager extends NSObject {
         void call_performAccessorySetupUsingRequestCompletionHandler(@Nullable HMAccessorySetupResult result,
                 @Nullable NSError error);
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -231,4 +231,9 @@ public class NSInputStream extends NSStream {
     @Selector("read:maxLength:")
     @NInt
     public native long readMaxLength(@NotNull BytePtr buffer, @NUInt long len);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

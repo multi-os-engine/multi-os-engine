@@ -241,4 +241,9 @@ public class QLThumbnailReply extends NSObject {
     @Generated
     @Selector("setExtensionBadge:")
     public native void setExtensionBadge(@NotNull String value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

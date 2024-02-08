@@ -509,4 +509,9 @@ public class MPMediaItem extends MPMediaEntity {
     @Generated
     @Selector("isPreorder")
     public native boolean isPreorder();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

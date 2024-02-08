@@ -196,4 +196,9 @@ public class ENExposureWindow extends NSObject {
     @Generated
     @Selector("variantOfConcernType")
     public native int variantOfConcernType();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

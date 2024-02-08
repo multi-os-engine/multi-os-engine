@@ -309,4 +309,9 @@ public class ACAccountStore extends NSObject {
         @Generated
         void call_saveAccountWithCompletionHandler(boolean success, NSError error);
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -25,7 +25,16 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
- * A background task used to update your app's contents in the background.
+ * An object representing a short task typically used to refresh content that’s
+ * run while the app is in the background.
+ * 
+ * Use app refresh tasks for updating your app with small bits of information,
+ * such as the latest stock values.
+ * 
+ * Executing app refresh tasks requires setting the `fetch`
+ * <doc://com.apple.documentation/documentation/bundleresources/information_property_list/uibackgroundmodes>
+ * capability. For information on setting this capability, see
+ * ``BGTaskScheduler``.
  * 
  * API-Since: 13.0
  */
@@ -146,4 +155,9 @@ public class BGAppRefreshTask extends BGTask {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

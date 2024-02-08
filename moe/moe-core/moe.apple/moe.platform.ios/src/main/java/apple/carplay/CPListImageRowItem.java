@@ -304,4 +304,9 @@ public class CPListImageRowItem extends NSObject implements CPSelectableListItem
     @Generated
     @Selector("setEnabled:")
     public native void setEnabled(boolean value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

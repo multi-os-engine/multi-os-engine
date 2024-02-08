@@ -1821,4 +1821,39 @@ public class CALayer extends NSObject implements NSSecureCoding, CAMediaTiming {
     @Generated
     @Selector("setCornerCurve:")
     public native void setCornerCurve(@NotNull String value);
+
+    /**
+     * If YES, contents of the layer can be displayed up to its NSScreen's
+     * maximumExtendedDynamicRangeColorComponentValue or UIScreen's
+     * currentEDRHeadroom. If NO, contents are clipped or tonemapped to 1.0 (SDR).
+     * `contents` with a CGColorSpaceRef conforming to ITU-R 2100
+     * (CGColorSpaceUsesITUR_2100TF) will be tonemapped. Setting this value to
+     * YES may have a significant impact on power consumption and therefore
+     * should only be set when displaying EDR contents. The default value is NO.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("setWantsExtendedDynamicRangeContent:")
+    public native void setWantsExtendedDynamicRangeContent(boolean value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
+
+    /**
+     * If YES, contents of the layer can be displayed up to its NSScreen's
+     * maximumExtendedDynamicRangeColorComponentValue or UIScreen's
+     * currentEDRHeadroom. If NO, contents are clipped or tonemapped to 1.0 (SDR).
+     * `contents` with a CGColorSpaceRef conforming to ITU-R 2100
+     * (CGColorSpaceUsesITUR_2100TF) will be tonemapped. Setting this value to
+     * YES may have a significant impact on power consumption and therefore
+     * should only be set when displaying EDR contents. The default value is NO.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("wantsExtendedDynamicRangeContent")
+    public native boolean wantsExtendedDynamicRangeContent();
 }

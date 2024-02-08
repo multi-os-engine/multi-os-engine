@@ -45,11 +45,6 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
- * CMMagnetometerData
- * 
- * Discussion:
- * Contains a single magnetometer measurement.
- * 
  * API-Since: 5.0
  */
 @Generated
@@ -197,4 +192,9 @@ public class CMMagnetometerData extends CMLogItem {
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

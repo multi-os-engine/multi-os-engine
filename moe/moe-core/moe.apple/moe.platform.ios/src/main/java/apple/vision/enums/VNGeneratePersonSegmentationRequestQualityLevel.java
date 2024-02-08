@@ -5,7 +5,7 @@ import org.moe.natj.general.ann.NUInt;
 
 /**
  * Person segmentation level options to favor speed over recognition accuracy.
- * VNPersonSegmentationRequestLevelAccurate is the default option.
+ * VNGeneratePersonSegmentationRequestQualityLevelAccurate is the default option.
  * 
  * fast - generates a low accuracy segmentation mask that can be used in streaming scenarios on devices that have a
  * neural engine

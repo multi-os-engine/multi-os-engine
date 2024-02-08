@@ -34,7 +34,9 @@ import org.jetbrains.annotations.Nullable;
  * A vertex buffer and optional index and mask buffer for a set of polygons
  * 
  * API-Since: 13.0
+ * Deprecated-Since: 17.0
  */
+@Deprecated
 @Generated
 @Library("MetalPerformanceShaders")
 @Runtime(ObjCRuntime.class)
@@ -329,4 +331,9 @@ public class MPSPolygonBuffer extends NSObject implements NSCopying, NSSecureCod
     @Selector("vertexBufferOffset")
     @NUInt
     public native long vertexBufferOffset();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

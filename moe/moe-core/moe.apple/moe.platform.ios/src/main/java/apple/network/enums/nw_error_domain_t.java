@@ -26,7 +26,7 @@ public final class nw_error_domain_t {
      */
     @Generated public static final int nw_error_domain_dns = 0x00000002;
     /**
-     * [@const] nw_error_domain_tls The error code will be a TLS error as defined in <Security/SecureTransport.h>
+     * [@const] nw_error_domain_tls The error code will be a TLS error as defined in <Security/SecBase.h>
      */
     @Generated public static final int nw_error_domain_tls = 0x00000003;
 }

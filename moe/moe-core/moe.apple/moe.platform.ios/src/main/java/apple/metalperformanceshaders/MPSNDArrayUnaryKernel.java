@@ -330,4 +330,9 @@ public class MPSNDArrayUnaryKernel extends MPSNDArrayMultiaryKernel {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

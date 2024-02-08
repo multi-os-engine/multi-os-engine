@@ -336,4 +336,40 @@ public class PKToolPicker extends NSObject {
     @Generated
     @Selector("stateAutosaveName")
     public native String stateAutosaveName();
+
+    /**
+     * The maximum supported PencilKit content version.
+     * 
+     * Setting this to less than `.latest` limits the tools that are available to select so that they are compatible
+     * with the
+     * specified version. If setting this property, also set it on `PKCanvasView`.
+     * 
+     * Defaults to `.latest`.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("maximumSupportedContentVersion")
+    @NInt
+    public native long maximumSupportedContentVersion();
+
+    /**
+     * The maximum supported PencilKit content version.
+     * 
+     * Setting this to less than `.latest` limits the tools that are available to select so that they are compatible
+     * with the
+     * specified version. If setting this property, also set it on `PKCanvasView`.
+     * 
+     * Defaults to `.latest`.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("setMaximumSupportedContentVersion:")
+    public native void setMaximumSupportedContentVersion(@NInt long value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

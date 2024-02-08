@@ -241,4 +241,9 @@ public class TWRequest extends NSObject {
     @Generated
     @Selector("setAccount:")
     public native void setAccount(ACAccount value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

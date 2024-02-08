@@ -310,4 +310,9 @@ public class NSHashTable<_ObjectType> extends NSObject implements NSCopying, NSS
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -338,4 +338,9 @@ public class INRideCompletionStatus extends NSObject implements NSCopying, NSSec
     @Generated
     @Selector("setDefaultTippingOptions:")
     public native void setDefaultTippingOptions(@Nullable NSSet<? extends INCurrencyAmount> value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

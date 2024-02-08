@@ -160,4 +160,9 @@ public class MPMusicPlayerQueueDescriptor extends NSObject {
     @Generated
     @Selector("init")
     public native MPMusicPlayerQueueDescriptor init();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

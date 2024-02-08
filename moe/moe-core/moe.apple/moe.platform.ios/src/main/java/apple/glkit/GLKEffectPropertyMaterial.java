@@ -244,4 +244,9 @@ public class GLKEffectPropertyMaterial extends GLKEffectProperty {
     @Selector("specularColor")
     @ByValue
     public native GLKVector4 specularColor();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

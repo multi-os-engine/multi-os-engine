@@ -176,4 +176,9 @@ public class AVMetadataSalientObject extends AVMetadataObject implements NSCopyi
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

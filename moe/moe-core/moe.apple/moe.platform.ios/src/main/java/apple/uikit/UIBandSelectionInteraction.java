@@ -250,4 +250,9 @@ public class UIBandSelectionInteraction extends NSObject implements UIInteractio
     @Generated
     @Selector("willMoveToView:")
     public native void willMoveToView(@Nullable UIView view);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

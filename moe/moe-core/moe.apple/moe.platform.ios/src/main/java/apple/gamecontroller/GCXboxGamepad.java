@@ -198,4 +198,9 @@ public class GCXboxGamepad extends GCExtendedGamepad {
     @Generated
     @Selector("buttonShare")
     public native GCControllerButtonInput buttonShare();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

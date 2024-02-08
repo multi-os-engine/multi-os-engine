@@ -26,6 +26,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.matter.MTRSetupPayload;
 
 /**
  * API-Since: 15.4
@@ -232,4 +233,28 @@ public class HMAccessorySetupRequest extends NSObject implements NSCopying {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * The payload to use for Matter accessory setup
+     * [@note] When this is non-nil, the following entitlement is required:
+     * com.apple.developer.matter.allow-setup-payload
+     */
+    @Generated
+    @Selector("matterPayload")
+    @Nullable
+    public native MTRSetupPayload matterPayload();
+
+    /**
+     * The payload to use for Matter accessory setup
+     * [@note] When this is non-nil, the following entitlement is required:
+     * com.apple.developer.matter.allow-setup-payload
+     */
+    @Generated
+    @Selector("setMatterPayload:")
+    public native void setMatterPayload(@Nullable MTRSetupPayload value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

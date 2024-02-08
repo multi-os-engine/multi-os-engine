@@ -311,4 +311,9 @@ public class NSIncrementalStore extends NSPersistentStore {
     @Selector("referenceObjectForObjectID:")
     @MappedReturn(ObjCObjectMapper.class)
     public native Object referenceObjectForObjectID(@NotNull NSManagedObjectID objectID);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

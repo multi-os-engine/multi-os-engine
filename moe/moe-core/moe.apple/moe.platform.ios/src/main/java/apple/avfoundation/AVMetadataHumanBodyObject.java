@@ -162,4 +162,9 @@ public class AVMetadataHumanBodyObject extends AVMetadataBodyObject implements N
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

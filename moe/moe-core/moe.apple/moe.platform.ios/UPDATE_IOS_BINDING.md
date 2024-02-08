@@ -76,6 +76,9 @@
 * In `apple.authenticationservices.ASAuthorizationPlatformPublicKeyCredentialAssertionRequest` method was changed:
     * from `void setAllowedCredentials(NSArray<? extends ASAuthorizationPlatformPublicKeyCredentialDescriptor> value);`
     * to: `void setAllowedCredentials(NSArray<?> value);`
+* In `apple.uikit.UIContentUnavailableView` method was changed:
+    * from `public native void setConfiguration(@NotNull UIContentUnavailableConfiguration value);`
+    * to: `public native void setConfiguration(@NotNull UIContentConfiguration value);`
 
 
 ### How to Update Custom Modifications List

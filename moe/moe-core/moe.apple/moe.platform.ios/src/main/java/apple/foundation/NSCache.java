@@ -255,4 +255,9 @@ public class NSCache<_KeyType, _ObjectType> extends NSObject {
     @Selector("totalCostLimit")
     @NUInt
     public native long totalCostLimit();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

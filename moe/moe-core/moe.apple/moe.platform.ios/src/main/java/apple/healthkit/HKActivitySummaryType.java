@@ -240,4 +240,9 @@ public class HKActivitySummaryType extends HKObjectType {
     @Generated
     @Selector("visionPrescriptionType")
     public static native HKPrescriptionType visionPrescriptionType();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

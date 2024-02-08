@@ -358,4 +358,9 @@ public class UITableViewDiffableDataSource<_SectionIdentifierType, _ItemIdentifi
     @Selector("sectionIdentifierForIndex:")
     @MappedReturn(ObjCObjectMapper.class)
     public native _SectionIdentifierType sectionIdentifierForIndex(@NInt long index);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

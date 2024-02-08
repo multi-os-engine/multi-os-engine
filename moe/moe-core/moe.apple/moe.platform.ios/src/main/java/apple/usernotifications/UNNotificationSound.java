@@ -283,4 +283,9 @@ public class UNNotificationSound extends NSObject implements NSCopying, NSSecure
     @Generated
     @Selector("ringtoneSoundNamed:")
     public static native UNNotificationSound ringtoneSoundNamed(@NotNull String name);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

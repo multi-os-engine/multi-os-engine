@@ -313,4 +313,9 @@ public class PHAssetChangeRequest extends PHChangeRequest {
     @Generated
     @Selector("setLocation:")
     public native void setLocation(@Nullable CLLocation value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

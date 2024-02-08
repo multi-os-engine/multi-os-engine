@@ -374,4 +374,9 @@ public class UIPopoverController extends NSObject implements UIAppearanceContain
     @Generated
     @Selector("setPopoverLayoutMargins:")
     public native void setPopoverLayoutMargins(@ByValue UIEdgeInsets value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -206,4 +206,9 @@ public class NSManagedObjectID extends NSObject implements NSCopying, NSFetchReq
     @Generated
     @Selector("persistentStore")
     public native NSPersistentStore persistentStore();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -25,6 +25,13 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
+ * An object that contains a flight number that the data detection system
+ * matches.
+ * 
+ * The DataDetection framework returns a flight number match in a
+ * `DDMatchFlightNumber` object, which contains an airline name and flight
+ * number.
+ * 
  * API-Since: 15.0
  */
 @Generated
@@ -45,6 +52,9 @@ public class DDMatchFlightNumber extends DDMatch {
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
+    /**
+     * The name of an airline.
+     */
     @NotNull
     @Generated
     @Selector("airline")
@@ -93,6 +103,9 @@ public class DDMatchFlightNumber extends DDMatch {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * A string that represents a flight number.
+     */
     @NotNull
     @Generated
     @Selector("flightNumber")
@@ -154,4 +167,9 @@ public class DDMatchFlightNumber extends DDMatch {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

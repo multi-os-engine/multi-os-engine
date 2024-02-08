@@ -371,4 +371,9 @@ public class MFMailComposeViewController extends UINavigationController {
     @Generated
     @Selector("setPreferredSendingEmailAddress:")
     public native void setPreferredSendingEmailAddress(@NotNull String emailAddress);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

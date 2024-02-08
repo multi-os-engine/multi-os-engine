@@ -822,4 +822,9 @@ public class MPSImage extends NSObject {
     public native void writeBytesDataLayoutBytesPerRowBytesPerImageRegionFeatureChannelInfoImageIndex(
             @NotNull ConstVoidPtr dataBytes, @NUInt long dataLayout, @NUInt long bytesPerRow, @NUInt long bytesPerImage,
             @ByValue MTLRegion region, @ByValue MPSImageReadWriteParams featureChannelInfo, @NUInt long imageIndex);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

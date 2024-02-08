@@ -277,4 +277,9 @@ public class CLSActivity extends CLSObject {
     @Generated
     @Selector("removeAllActivityItems")
     public native void removeAllActivityItems();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

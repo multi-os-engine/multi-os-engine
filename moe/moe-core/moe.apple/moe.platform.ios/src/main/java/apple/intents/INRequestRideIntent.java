@@ -243,4 +243,9 @@ public class INRequestRideIntent extends INIntent {
     @Generated
     @Selector("scheduledPickupTime")
     public native INDateComponentsRange scheduledPickupTime();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

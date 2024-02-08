@@ -44,9 +44,6 @@ import org.jetbrains.annotations.Nullable;
  * CBService
  * 
  * Represents a peripheral's service or a service's included service.
- * 
- * 
- * API-Since: 5.0
  */
 @Generated
 @Library("CoreBluetooth")
@@ -204,4 +201,9 @@ public class CBService extends CBAttribute {
     @Generated
     @Selector("peripheral")
     public native CBPeripheral peripheral();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -341,4 +341,9 @@ public class ALAssetRepresentation extends NSObject {
     @Deprecated
     @Selector("url")
     public native NSURL url();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

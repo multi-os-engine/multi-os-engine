@@ -218,4 +218,9 @@ public class GLKEffectPropertyTransform extends GLKEffectProperty {
     @Generated
     @Selector("setProjectionMatrix:")
     public native void setProjectionMatrix(@ByValue GLKMatrix4 value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

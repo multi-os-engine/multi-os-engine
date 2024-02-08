@@ -520,4 +520,9 @@ public class AVAudioSequencer extends NSObject {
         @Generated
         void call_setUserCallback(@NotNull AVMusicTrack arg0, @NotNull NSData arg1, double arg2);
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

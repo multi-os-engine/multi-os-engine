@@ -358,4 +358,9 @@ public class NSMutableData extends NSData {
     @Selector("decompressUsingAlgorithm:error:")
     public native boolean decompressUsingAlgorithmError(@NInt long algorithm,
             @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

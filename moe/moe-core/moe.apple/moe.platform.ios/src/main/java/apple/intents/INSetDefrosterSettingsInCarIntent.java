@@ -216,4 +216,9 @@ public class INSetDefrosterSettingsInCarIntent extends INIntent {
     @Selector("initWithEnable:defroster:carName:")
     public native INSetDefrosterSettingsInCarIntent initWithEnableDefrosterCarName(@Nullable NSNumber enable,
             @NInt long defroster, @Nullable INSpeakableString carName);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -50,9 +50,6 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-/**
- * API-Since: 4.1
- */
 @Generated
 @Library("GameKit")
 @Runtime(ObjCRuntime.class)
@@ -195,7 +192,6 @@ public class GKLocalPlayer extends GKPlayer implements GKSavedGameListener {
     /**
      * API-Since: 4.1
      * Deprecated-Since: 6.0
-     * Deprecated-Message: Set the authenticateHandler instead
      */
     @Generated
     @Deprecated
@@ -233,7 +229,6 @@ public class GKLocalPlayer extends GKPlayer implements GKSavedGameListener {
      * 
      * API-Since: 4.1
      * Deprecated-Since: 8.0
-     * Deprecated-Message: This property is obsolete, Use loadFriendPlayersWithCompletionHandler: instead
      */
     @Nullable
     @Generated
@@ -249,8 +244,6 @@ public class GKLocalPlayer extends GKPlayer implements GKSavedGameListener {
      * 
      * API-Since: 7.0
      * Deprecated-Since: 13.5
-     * Deprecated-Message: API deprecated. Use fetchItemsForIdentityVerificationSignature: and the teamPlayerID value to
-     * verify a user identity.
      */
     @Deprecated
     @Generated
@@ -279,7 +272,6 @@ public class GKLocalPlayer extends GKPlayer implements GKSavedGameListener {
     /**
      * API-Since: 6.0
      * Deprecated-Since: 7.0
-     * Deprecated-Message: Use loadDefaultLeaderboardIdentifierWithCompletionHandler: instead
      */
     @Generated
     @Deprecated
@@ -316,8 +308,6 @@ public class GKLocalPlayer extends GKPlayer implements GKSavedGameListener {
      * 
      * API-Since: 4.1
      * Deprecated-Since: 8.0
-     * Deprecated-Message: This is never invoked and its implementation does nothing, use
-     * loadRecentPlayersWithCompletionHandler: instead
      */
     @Generated
     @Deprecated
@@ -398,7 +388,6 @@ public class GKLocalPlayer extends GKPlayer implements GKSavedGameListener {
     /**
      * API-Since: 6.0
      * Deprecated-Since: 7.0
-     * Deprecated-Message: Use setDefaultLeaderboardIdentifier:completionHandler: instead
      */
     @Generated
     @Deprecated
@@ -762,4 +751,9 @@ public class GKLocalPlayer extends GKPlayer implements GKSavedGameListener {
     @Selector("presentFriendRequestCreatorFromViewController:error:")
     public native boolean presentFriendRequestCreatorFromViewControllerError(@NotNull UIViewController viewController,
             @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

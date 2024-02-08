@@ -524,4 +524,9 @@ public class UICollectionViewLayout extends NSObject implements NSCoding {
     @Generated
     @Selector("flipsHorizontallyInOppositeLayoutDirection")
     public native boolean flipsHorizontallyInOppositeLayoutDirection();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

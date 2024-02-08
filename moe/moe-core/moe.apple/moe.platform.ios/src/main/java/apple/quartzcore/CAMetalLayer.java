@@ -486,4 +486,9 @@ public class CAMetalLayer extends CALayer {
     @Generated
     @Selector("wantsExtendedDynamicRangeContent")
     public native boolean wantsExtendedDynamicRangeContent();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

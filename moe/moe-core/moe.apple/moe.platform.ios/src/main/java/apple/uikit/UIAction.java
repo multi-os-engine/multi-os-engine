@@ -327,4 +327,18 @@ public class UIAction extends UIMenuElement implements UIMenuLeaf {
     @Selector("presentationSourceItem")
     @MappedReturn(ObjCObjectMapper.class)
     public native UIPopoverPresentationControllerSourceItem presentationSourceItem();
+
+    @Generated
+    @Selector("selectedImage")
+    @Nullable
+    public native UIImage selectedImage();
+
+    @Generated
+    @Selector("setSelectedImage:")
+    public native void setSelectedImage(@Nullable UIImage value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

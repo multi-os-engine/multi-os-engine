@@ -389,4 +389,9 @@ public class HKStatistics extends NSObject implements NSSecureCoding, NSCopying 
     @Generated
     @Selector("mostRecentQuantityForSource:")
     public native HKQuantity mostRecentQuantityForSource(@NotNull HKSource source);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

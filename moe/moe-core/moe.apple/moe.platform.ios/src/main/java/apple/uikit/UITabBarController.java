@@ -345,4 +345,9 @@ public class UITabBarController extends UIViewController implements UITabBarDele
     @Generated
     @Selector("viewControllers")
     public native NSArray<? extends UIViewController> viewControllers();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

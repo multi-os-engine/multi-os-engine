@@ -200,4 +200,9 @@ public class PKTransitPassProperties extends PKStoredValuePassProperties {
     @Generated
     @Selector("isBlocked")
     public native boolean isBlocked();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

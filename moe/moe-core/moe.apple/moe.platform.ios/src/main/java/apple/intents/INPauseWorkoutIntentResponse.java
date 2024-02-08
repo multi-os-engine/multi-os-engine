@@ -196,4 +196,9 @@ public class INPauseWorkoutIntentResponse extends INIntentResponse {
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

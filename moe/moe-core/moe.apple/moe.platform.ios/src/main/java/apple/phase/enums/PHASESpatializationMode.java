@@ -11,7 +11,8 @@ import org.moe.natj.general.ann.NInt;
  * Automatically select the spatialization mode based on the current output device.
  * [@constant] PHASESpatializationModeAlwaysUseBinaural
  * Always use binaural rendering, whether playing back on headphones or speakers.
- * Note that when rendering binaural over speakers, special filters are applied to achieve the expected behavior.
+ * Note that when rendering binaural over built-in speakers, special filters are applied to achieve the expected
+ * behavior.
  * [@constant] PHASESpatializationModeAlwaysUseChannelBased
  * Always use the appropriate channel-based panning algorithm for the output layout.
  * Note that when rendering channel-based over headphones, the sound will play back in stereo.

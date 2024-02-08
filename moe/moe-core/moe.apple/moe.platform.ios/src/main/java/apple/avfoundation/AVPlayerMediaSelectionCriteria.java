@@ -41,6 +41,12 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
+ * AVPlayerMediaSelectionCriteria
+ * 
+ * The preferred languages and media characteristics for a player.
+ * 
+ * Subclasses of this type that are used from Swift must fulfill the requirements of a Sendable type.
+ * 
  * API-Since: 7.0
  */
 @Generated
@@ -262,4 +268,9 @@ public class AVPlayerMediaSelectionCriteria extends NSObject {
     @Generated
     @Selector("principalMediaCharacteristics")
     public native NSArray<String> principalMediaCharacteristics();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

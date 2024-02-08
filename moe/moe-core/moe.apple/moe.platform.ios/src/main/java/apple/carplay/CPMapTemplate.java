@@ -437,4 +437,9 @@ public class CPMapTemplate extends CPTemplate implements CPBarButtonProviding {
     @Selector("showTripPreviews:selectedTrip:textConfiguration:")
     public native void showTripPreviewsSelectedTripTextConfiguration(@NotNull NSArray<? extends CPTrip> tripPreviews,
             @Nullable CPTrip selectedTrip, @Nullable CPTripPreviewTextConfiguration textConfiguration);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

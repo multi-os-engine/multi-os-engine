@@ -335,4 +335,9 @@ public class MTLAccelerationStructureTriangleGeometryDescriptor extends MTLAccel
     @Selector("vertexFormat")
     @NUInt
     public native long vertexFormat();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -474,4 +474,9 @@ public class NSPointerFunctions extends NSObject implements NSCopying {
         void call_setRelinquishFunction(@NotNull ConstVoidPtr arg0,
                 @Nullable @FunctionPtr(name = "call_Function_setRelinquishFunction") Function_Function_setRelinquishFunction arg1);
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

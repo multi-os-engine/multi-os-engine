@@ -69,6 +69,7 @@ import apple.corefoundation.struct.CGRect;
 import apple.corefoundation.struct.CGSize;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.uikit.protocol.UILetterformAwareAdjusting;
 
 /**
  * API-Since: 2.0
@@ -78,7 +79,7 @@ import org.jetbrains.annotations.Nullable;
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
 public class UITextField extends UIControl implements UITextInput, NSCoding, UIContentSizeCategoryAdjusting,
-        UITextDraggable, UITextDroppable, UITextPasteConfigurationSupporting {
+        UILetterformAwareAdjusting, UITextDraggable, UITextDroppable, UITextPasteConfigurationSupporting {
     static {
         NatJ.register();
     }
@@ -1522,4 +1523,36 @@ public class UITextField extends UIControl implements UITextInput, NSCoding, UIC
     @Selector("willPresentEditMenuWithAnimator:")
     public native void willPresentEditMenuWithAnimator(
             @NotNull @Mapped(ObjCObjectMapper.class) UIEditMenuInteractionAnimating animator);
+
+    @Generated
+    @Selector("animateWithSpringDuration:bounce:initialSpringVelocity:delay:options:animations:completion:")
+    public static native void animateWithSpringDurationBounceInitialSpringVelocityDelayOptionsAnimationsCompletion(
+            double duration, @NFloat double bounce, @NFloat double velocity, double delay, @NUInt long options,
+            @ObjCBlock(name = "call_animateWithSpringDurationBounceInitialSpringVelocityDelayOptionsAnimationsCompletion_5") @NotNull UIView.Block_animateWithSpringDurationBounceInitialSpringVelocityDelayOptionsAnimationsCompletion_5 animations,
+            @ObjCBlock(name = "call_animateWithSpringDurationBounceInitialSpringVelocityDelayOptionsAnimationsCompletion_6") @Nullable UIView.Block_animateWithSpringDurationBounceInitialSpringVelocityDelayOptionsAnimationsCompletion_6 completion);
+
+    @Generated
+    @IsOptional
+    @Selector("inlinePredictionType")
+    @NInt
+    public native long inlinePredictionType();
+
+    @Generated
+    @IsOptional
+    @Selector("setInlinePredictionType:")
+    public native void setInlinePredictionType(@NInt long value);
+
+    @Generated
+    @Selector("setSizingRule:")
+    public native void setSizingRule(@NInt long value);
+
+    @Generated
+    @Selector("sizingRule")
+    @NInt
+    public native long sizingRule();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

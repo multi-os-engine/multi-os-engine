@@ -53,6 +53,7 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.map.ObjCStringMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.coremidi.struct.MIDISysexSendRequestUMP;
 
 @Generated
 @Library("CoreMIDI")
@@ -2993,7 +2994,7 @@ public final class CoreMIDI {
     /**
      * constant kMIDIPropertyProtocolID
      * 
-     * device/entity/endpoint property, MIDIProtocolID. Indicates the native protocol in which
+     * device/entity/endpoint property (UMP-native), MIDIProtocolID. Indicates the native protocol in which
      * the endpoint communicates. The value is set by the system on endpoints, when they are
      * created. Drivers may dynamically change the protocol of an endpoint as a result of a MIDI-CI
      * negotiation, by setting this property on the endpoint. Clients can observe changes to
@@ -3099,4 +3100,102 @@ public final class CoreMIDI {
     public static native int MIDIBluetoothDriverDisconnect(@NotNull CFStringRef uuid);
 
     @Generated public static final byte kMIDI1UPMaxSysexSize = 6;
+
+    /**
+     * [@function] MIDISendUMPSysEx
+     * 
+     * Sends a single UMP system-exclusive event, asynchronously.
+     * 
+     * request->words must point to a single MIDI system-exclusive message, or portion thereof.
+     * 
+     * API-Since: 17.0
+     * 
+     * @param umpRequest
+     *                   Contains the destination, and a pointer to the MIDI data to be sent.
+     * @return An OSStatus result code.
+     */
+    @Generated
+    @CFunction
+    public static native int MIDISendUMPSysex(
+            @UncertainArgument("Options: reference, array Fallback: reference") @NotNull MIDISysexSendRequestUMP umpRequest);
+
+    /**
+     * [@function] MIDISendUMPSysEx8
+     * 
+     * Sends single system-exclusive 8-bit event, asynchronously.
+     * 
+     * request->data must point to a single MIDI system-exclusive message, or portion thereof.
+     * 
+     * API-Since: 17.0
+     * 
+     * @param umpRequest
+     *                   Contains the destination, and a pointer to the 8-bit system-exclusive data to be sent.
+     * @return An OSStatus result code.
+     */
+    @Generated
+    @CFunction
+    public static native int MIDISendUMPSysex8(
+            @UncertainArgument("Options: reference, array Fallback: reference") @NotNull MIDISysexSendRequestUMP umpRequest);
+
+    /**
+     * [@function] MIDIEventPacketSysexBytesForGroup
+     * 
+     * Gets MIDI 1.0 SysEx bytes on the indicated group.
+     * 
+     * pkt must contain a single MIDI system-exclusive message on groupIndex, or portion thereof.
+     * 
+     * API-Since: 17.0
+     * 
+     * @param pkt
+     *                   A MIDIEventPacket containing UMP system-exclusive data.
+     * 
+     * @param groupIndex
+     *                   The target group index, 0 to 15.
+     * 
+     * @param outData
+     *                   When successful, a CFDataRef byte stream of extracted system-exclusive data.
+     * 
+     * @return An OSStatus result code.
+     */
+    @Generated
+    @CFunction
+    public static native int MIDIEventPacketSysexBytesForGroup(
+            @UncertainArgument("Options: reference, array Fallback: reference") @NotNull MIDIEventPacket pkt,
+            byte groupIndex, @NotNull Ptr<CFDataRef> outData);
+
+    /**
+     * constant kMIDIPropertyUMPActiveGroupBitmap
+     * 
+     * entity and endpoint property (UMP-native), 16-bit unsigned integer. If present, describes which
+     * groups are currently active and available for message transmission. The most significant bit
+     * represents group 16, and the least significant bit represents group 1.
+     * 
+     * If a driver sets this property on a UMP-native endpoint provided for legacy MIDI 1.0 compatibility,
+     * only a single bit of the bitfield may be used. As a convenience, MIDI messages sent to a driver-
+     * created destination provided for legacy MIDI 1.0 compatibility will have all messages converted
+     * to the supported group prior to delivery.
+     * 
+     * Any UMP-native endpoint lacking this property and subsequently defined property
+     * kMIDIPropertyCanTransmitGroupless is assumed to handle/transmit all UMP traffic.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kMIDIPropertyUMPActiveGroupBitmap();
+
+    /**
+     * constant kMIDIPropertyUMPCanTransmitGroupless
+     * 
+     * entity and endpoint property (UMP-native), integer. If this property is present and set to 1,
+     * the referenced MIDI object is or has (an) endpoint/endpoints capable of transmitting UMP
+     * messages with no group (e.g., message type 0 and message type F).
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kMIDIPropertyUMPCanTransmitGroupless();
 }

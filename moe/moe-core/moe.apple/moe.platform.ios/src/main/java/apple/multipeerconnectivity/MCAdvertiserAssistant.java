@@ -73,9 +73,6 @@ import org.jetbrains.annotations.Nullable;
  * 
  * See Bonjour APIs https://developer.apple.com/bonjour/ for more
  * information about service types.
- * 
- * 
- * API-Since: 7.0
  */
 @Generated
 @Library("MultipeerConnectivity")
@@ -248,4 +245,9 @@ public class MCAdvertiserAssistant extends NSObject {
     @Generated
     @Selector("stop")
     public native void stop();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

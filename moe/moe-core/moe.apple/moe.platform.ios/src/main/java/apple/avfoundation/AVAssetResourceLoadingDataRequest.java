@@ -186,7 +186,7 @@ public class AVAssetResourceLoadingDataRequest extends NSObject {
      * and invoked -finishLoadingWithError:, or until you have received -resourceLoader:didCancelLoadingRequest: for the
      * AVAssetResourceLoadingRequest from which the AVAssetResourceLoadingDataRequest was obtained.
      * When requestsAllDataToEndOfResource is YES and the content length has not yet been provided by you via a prior
-     * finished loading request, the value of requestedLength is set to NSIntegerMax. Starting in OS X 10.11 and iOS
+     * finished loading request, the value of requestedLength is set to NSIntegerMax. Starting in macOS 10.11 and iOS
      * 9.0, in 32-bit applications requestedLength is also set to NSIntegerMax when all of the remaining resource data
      * is being requested and the known length of the remaining data exceeds NSIntegerMax.
      */
@@ -242,4 +242,9 @@ public class AVAssetResourceLoadingDataRequest extends NSObject {
     @Generated
     @Selector("respondWithData:")
     public native void respondWithData(@NotNull NSData data);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

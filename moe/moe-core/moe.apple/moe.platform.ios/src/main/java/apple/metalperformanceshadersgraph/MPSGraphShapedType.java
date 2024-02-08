@@ -25,6 +25,8 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
+ * Shaped type class for types on MPSGraph tensors has a shape and a dataType.
+ * 
  * API-Since: 14.0
  */
 @Generated
@@ -81,9 +83,7 @@ public class MPSGraphShapedType extends MPSGraphType {
     public static native Class classForKeyedUnarchiver();
 
     /**
-     * [@property] dataType
-     * 
-     * dataType of the shapedType
+     * DataType of the shapedType.
      */
     @Generated
     @Selector("dataType")
@@ -119,6 +119,13 @@ public class MPSGraphShapedType extends MPSGraphType {
     @Selector("instancesRespondToSelector:")
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
+    /**
+     * Checks if shapes and elementDataType are the same as the input shapedType.
+     * 
+     * - Parameters:
+     * - object: shapedType to compare to
+     * - Returns: true if equal, false if unequal
+     */
     @Generated
     @Selector("isEqualTo:")
     public native boolean isEqualTo(@Nullable MPSGraphShapedType object);
@@ -146,9 +153,7 @@ public class MPSGraphShapedType extends MPSGraphType {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * [@property] dataType
-     * 
-     * dataType of the shapedType
+     * DataType of the shapedType.
      */
     @Generated
     @Selector("setDataType:")
@@ -166,4 +171,9 @@ public class MPSGraphShapedType extends MPSGraphType {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

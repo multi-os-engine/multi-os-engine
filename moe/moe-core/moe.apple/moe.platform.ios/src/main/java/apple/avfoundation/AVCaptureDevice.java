@@ -52,6 +52,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.corefoundation.struct.CGPoint;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.corefoundation.struct.CGRect;
 
 /**
  * AVCaptureDevice
@@ -323,7 +324,7 @@ public class AVCaptureDevice extends NSObject {
      * 
      * Invoking this method with AVMediaTypeAudio is equivalent to calling -[AVAudioSession requestRecordPermission:].
      * 
-     * The completion handler is called on an arbitrary dispatch queue. Is it the client's responsibility to ensure that
+     * The completion handler is called on an arbitrary dispatch queue. It is the client's responsibility to ensure that
      * any UIKit-related updates are called on the main queue or main thread as a result.
      * 
      * API-Since: 7.0
@@ -3227,7 +3228,12 @@ public class AVCaptureDevice extends NSObject {
      * 
      * A class property indicating whether the Studio Light feature is currently enabled in Control Center.
      * 
-     * This property changes to reflect the Studio Light state in Control Center. It is key-value observable.
+     * This property changes to reflect the Studio Light state in Control Center. It is key-value observable. On iOS,
+     * Studio Light only applies to video conferencing apps by default (apps that use "voip" as one of their
+     * UIBackgroundModes). Non video conferencing apps may opt in for Studio Light by adding the following key to their
+     * Info.plist:
+     * <key>NSCameraStudioLightEnabled</key>
+     * <true/>
      * 
      * API-Since: 16.0
      */
@@ -3313,15 +3319,238 @@ public class AVCaptureDevice extends NSObject {
     public native void setFaceDrivenAutoFocusEnabled(boolean value);
 
     /**
-     * [@property] studioLightEnabled
+     * [@property] availableReactionTypes
      * 
-     * A class property indicating whether the Studio Light feature is currently enabled in Control Center.
+     * Returns a list of reaction types which can be passed to performEffectForReaction.
      * 
-     * This property changes to reflect the Studio Light state in Control Center. It is key-value observable.
+     * The list may differ between devices, or be affected by changes to active format, and can be key-value observed.
      * 
-     * API-Since: 16.0
+     * API-Since: 17.0
      */
     @Generated
-    @Selector("setStudioLightEnabled:")
-    public static native void setStudioLightEnabled(boolean value);
+    @Selector("availableReactionTypes")
+    @NotNull
+    public native NSSet<String> availableReactionTypes();
+
+    /**
+     * [@property] canPerformReactionEffects
+     * 
+     * Indicates whether reactions can be performed on a particular AVCaptureDevice. This requires
+     * reactionEffectsEnabled to be YES, as well as using a AVCaptureDeviceFormat with reactionEffectsSupported.
+     * 
+     * This readonly property returns YES when resources for reactions are available on the device instance. When YES,
+     * calls to performEffectForReaction: will render on the video feed, otherwise those calls are ignored. It is
+     * key-value observable.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("canPerformReactionEffects")
+    public native boolean canPerformReactionEffects();
+
+    /**
+     * [@property] centerStageRectOfInterest
+     * 
+     * Specifies the effective region within the output pixel buffer that will be used to perform Center Stage framing.
+     * 
+     * Applications that wish to apply additional processing (such as cropping) on top of Center Stage's output can use
+     * this property to guide Center Stage's framing.
+     * 
+     * The rectangle's origin is top left and is relative to the coordinate space of the output pixel buffer. The
+     * default value of this property is the value CGRectMake(0, 0, 1, 1), where {0,0} represents the top left of the
+     * picture area, and {1,1} represents the bottom right on an unrotated picture. This rectangle of interest is
+     * applied prior to rotation, mirroring or scaling.
+     * 
+     * Pixels outside of this rectangle of interest will be blackened out.
+     * 
+     * Setting this property has no impact on objects specified in the metadata output.
+     * 
+     * -setCenterStageRectOfInterest: throws an NSGenericException if called without first obtaining exclusive access to
+     * the receiver using -lockForConfiguration:. -setCenterStageRectOfInterest: throws an NSInvalidArgumentException if
+     * none of the AVCaptureDeviceFormats supported by the receiver support CenterStage. -setCenterStageRectOfInterest:
+     * throws an NSInvalidArgumentException if +centerStageEnabled is NO on the AVCaptureDevice class.
+     * -setCenterStageRectOfInterest: throws an NSInvalidArgumentException if the provided rectOfInterest goes outside
+     * the normalized (0-1) coordinate space.
+     * 
+     * API-Since: 16.4
+     */
+    @Generated
+    @Selector("centerStageRectOfInterest")
+    @ByValue
+    public native CGRect centerStageRectOfInterest();
+
+    /**
+     * performEffectForReaction:
+     * 
+     * Triggers a specified reaction on the video stream.
+     * 
+     * The entries in reactionEffectsInProgress may not reflect one-to-one against calls to this method. Depending on
+     * reaction style or resource limits, triggering multiple overlapping reactions of the same type may be coalesced
+     * into extending an existing reaction rather than overlaying a new one.
+     * 
+     * The reactionType requested must be one of those listed in availableReactionTypes or an exception will be thrown.
+     * Performing a reaction when canPerformReactionEffects is NO is ignored, and VoIP applications are encouraged to
+     * transmit and display such reactions outside of the video feed.
+     * 
+     * API-Since: 17.0
+     * 
+     * @param reactionType
+     *                     Indicates which reaction to perform.
+     */
+    @Generated
+    @Selector("performEffectForReaction:")
+    public native void performEffectForReaction(@NotNull String reactionType);
+
+    /**
+     * [@property] reactionEffectGesturesEnabled
+     * 
+     * A class property indicating whether gesture detection will trigger reaction effects on the video stream. Gesture
+     * detection will only run when the device's activeFormat.reactionEffectsSupported is also YES, which will be
+     * reflected by canPerformReactionEffects.
+     * 
+     * This property changes to reflect the Gestures state in Control Center. It is key-value observable. Clients can
+     * call performEffectForReaction: independently of whether gesture detection is enabled, reaction effects from
+     * either source will be intermixed.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("reactionEffectGesturesEnabled")
+    public static native boolean reactionEffectGesturesEnabled();
+
+    /**
+     * [@property] reactionEffectsEnabled
+     * 
+     * A class property indicating whether the application is suitable for reaction effects, either by automatic gesture
+     * detection, or by calls to -[AVCaptureDevice performEffectForReaction:]. Reactions are only rendered when the
+     * device's activeFormat.reactionEffectsSupported is also YES, which will be reflected by canPerformReactionEffects
+     * when the feature is both enabled and supported.
+     * 
+     * On macOS, Reaction Effects are enabled by default for all applications. On iOS, Reaction Effects are enabled by
+     * default for video conferencing applications (apps that use "voip" as one of their UIBackgroundModes). Non video
+     * conferencing applications may opt in for Reaction Effects by adding the following key to their Info.plist:
+     * <key>NSCameraReactionEffectsEnabled</key>
+     * <true/>
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("reactionEffectsEnabled")
+    public static native boolean reactionEffectsEnabled();
+
+    /**
+     * [@property] reactionEffectsInProgress
+     * 
+     * Contains an array of reaction effects that are currently being performed by the device, sorted by timestamp. If
+     * observing old and new values in the KVO callback, the reaction effects which are still running in the new array
+     * will have kCMTimeInvalid as their endTime property. Reaction effects which have ended will only be in the old
+     * array, and will have their endTime property set to the presentation time of the first frame where the reaction
+     * effect was no longer present.
+     * 
+     * Reaction effects which are triggered by either a call to performEffectForReaction: or by the automatic gesture
+     * detection will be reflected in this array. It is key-value observable to be notified when reaction effects begin
+     * or end.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("reactionEffectsInProgress")
+    @NotNull
+    public native NSArray<? extends AVCaptureReactionEffectState> reactionEffectsInProgress();
+
+    /**
+     * [@property] centerStageRectOfInterest
+     * 
+     * Specifies the effective region within the output pixel buffer that will be used to perform Center Stage framing.
+     * 
+     * Applications that wish to apply additional processing (such as cropping) on top of Center Stage's output can use
+     * this property to guide Center Stage's framing.
+     * 
+     * The rectangle's origin is top left and is relative to the coordinate space of the output pixel buffer. The
+     * default value of this property is the value CGRectMake(0, 0, 1, 1), where {0,0} represents the top left of the
+     * picture area, and {1,1} represents the bottom right on an unrotated picture. This rectangle of interest is
+     * applied prior to rotation, mirroring or scaling.
+     * 
+     * Pixels outside of this rectangle of interest will be blackened out.
+     * 
+     * Setting this property has no impact on objects specified in the metadata output.
+     * 
+     * -setCenterStageRectOfInterest: throws an NSGenericException if called without first obtaining exclusive access to
+     * the receiver using -lockForConfiguration:. -setCenterStageRectOfInterest: throws an NSInvalidArgumentException if
+     * none of the AVCaptureDeviceFormats supported by the receiver support CenterStage. -setCenterStageRectOfInterest:
+     * throws an NSInvalidArgumentException if +centerStageEnabled is NO on the AVCaptureDevice class.
+     * -setCenterStageRectOfInterest: throws an NSInvalidArgumentException if the provided rectOfInterest goes outside
+     * the normalized (0-1) coordinate space.
+     * 
+     * API-Since: 16.4
+     */
+    @Generated
+    @Selector("setCenterStageRectOfInterest:")
+    public native void setCenterStageRectOfInterest(@ByValue CGRect value);
+
+    /**
+     * [@property] userPreferredCamera
+     * 
+     * Settable property that specifies a user preferred camera.
+     * 
+     * Setting this property allows an application to persist its user’s preferred camera across app launches and
+     * reboots. The property internally maintains a short history, so if your user’s most recent preferred camera is not
+     * currently connected, it still reports the next best choice. This property always returns a device that is
+     * present. If no camera is available nil is returned. Setting the property to nil has no effect.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("setUserPreferredCamera:")
+    public static native void setUserPreferredCamera(@Nullable AVCaptureDevice value);
+
+    /**
+     * [@property] systemPreferredCamera
+     * 
+     * Specifies the best camera to use as determined by the system.
+     * 
+     * Apple chooses the default value. This property incorporates userPreferredCamera as well as other factors, such as
+     * camera suspension and Apple cameras appearing that should be automatically chosen. The property may change
+     * spontaneously, such as when the preferred camera goes away. This property always returns a device that is
+     * present. If no camera is available nil is returned.
+     * 
+     * Applications that adopt this API should always key-value observe this property and update their
+     * AVCaptureSession’s input device to reflect changes to the systemPreferredCamera. The application can still offer
+     * users the ability to pick a camera by setting userPreferredCamera, which will cause the systemPreferredCamera API
+     * to put the user’s choice first until either another Apple-preferred device becomes available or the machine is
+     * rebooted (after which it reverts to its original behavior of returning the internally determined best camera to
+     * use).
+     * 
+     * If the application wishes to offer users a fully manual camera selection mode in addition to automatic camera
+     * selection, it is recommended to call setUserPreferredCamera: each time the user makes a camera selection, but
+     * ignore key-value observer updates to systemPreferredCamera while in manual selection mode.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("systemPreferredCamera")
+    @Nullable
+    public static native AVCaptureDevice systemPreferredCamera();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
+
+    /**
+     * [@property] userPreferredCamera
+     * 
+     * Settable property that specifies a user preferred camera.
+     * 
+     * Setting this property allows an application to persist its user’s preferred camera across app launches and
+     * reboots. The property internally maintains a short history, so if your user’s most recent preferred camera is not
+     * currently connected, it still reports the next best choice. This property always returns a device that is
+     * present. If no camera is available nil is returned. Setting the property to nil has no effect.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("userPreferredCamera")
+    @Nullable
+    public static native AVCaptureDevice userPreferredCamera();
 }

@@ -34,9 +34,6 @@ import apple.corefoundation.struct.CGRect;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-/**
- * API-Since: 10.0
- */
 @Generated
 @Library("CoreImage")
 @Runtime(ObjCRuntime.class)
@@ -104,7 +101,7 @@ public interface CIImageProcessorInput {
     IOSurfaceRef surface();
 
     /**
-     * A 64-bit digest that uniquely descibes the contents of the input to a processor.
+     * A 64-bit digest that uniquely describes the contents of the input to a processor.
      * This digest will change if the graph of the input changes in any way.
      * 
      * API-Since: 16.0
@@ -112,4 +109,22 @@ public interface CIImageProcessorInput {
     @Generated
     @Selector("digest")
     long digest();
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("roiTileCount")
+    @NUInt
+    long roiTileCount();
+
+    /**
+     * For processors that implement 'roiTileArrayForInput:arguments:outputRect:'
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("roiTileIndex")
+    @NUInt
+    long roiTileIndex();
 }

@@ -211,4 +211,19 @@ public class SRDevice extends NSObject implements NSSecureCoding, NSCopying {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * e.g. @"Watch3,4"
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("productType")
+    @NotNull
+    public native String productType();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

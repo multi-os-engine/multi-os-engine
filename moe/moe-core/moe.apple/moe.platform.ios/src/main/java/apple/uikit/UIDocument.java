@@ -56,6 +56,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.foundation.struct.NSRange;
+import apple.uikit.protocol.UINavigationItemRenameDelegate;
+import org.moe.natj.general.ann.UncertainArgument;
 
 /**
  * API-Since: 5.0
@@ -64,7 +67,8 @@ import org.jetbrains.annotations.Nullable;
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class UIDocument extends NSObject implements NSFilePresenter, NSProgressReporting, UIUserActivityRestoring {
+public class UIDocument extends NSObject implements NSFilePresenter, NSProgressReporting,
+        UINavigationItemRenameDelegate, UIUserActivityRestoring {
     static {
         NatJ.register();
     }
@@ -691,4 +695,33 @@ public class UIDocument extends NSObject implements NSFilePresenter, NSProgressR
     @Selector("relinquishPresentedItemToWriter:")
     public native void relinquishPresentedItemToWriter(
             @NotNull @ObjCBlock(name = "call_relinquishPresentedItemToWriter") NSFilePresenter.Block_relinquishPresentedItemToWriter writer);
+
+    @Generated
+    @Selector("navigationItem:didEndRenamingWithTitle:")
+    public native void navigationItemDidEndRenamingWithTitle(@NotNull UINavigationItem navigationItem,
+            @NotNull String title);
+
+    @Generated
+    @IsOptional
+    @Selector("navigationItem:shouldEndRenamingWithTitle:")
+    public native boolean navigationItemShouldEndRenamingWithTitle(@NotNull UINavigationItem navigationItem,
+            @NotNull String title);
+
+    @Generated
+    @IsOptional
+    @Selector("navigationItem:willBeginRenamingWithSuggestedTitle:selectedRange:")
+    @NotNull
+    public native String navigationItemWillBeginRenamingWithSuggestedTitleSelectedRange(
+            @NotNull UINavigationItem navigationItem, @NotNull String title,
+            @UncertainArgument("Options: reference, array Fallback: reference") @NotNull NSRange selectedRange);
+
+    @Generated
+    @IsOptional
+    @Selector("navigationItemShouldBeginRenaming:")
+    public native boolean navigationItemShouldBeginRenaming(@NotNull UINavigationItem navigationItem);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

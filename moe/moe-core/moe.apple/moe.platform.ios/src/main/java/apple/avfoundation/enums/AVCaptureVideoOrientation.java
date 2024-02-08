@@ -35,25 +35,36 @@ import org.moe.natj.general.ann.NInt;
  * Indicates that video should be oriented horizontally, home button on the left.
  * 
  * API-Since: 4.0
+ * Deprecated-Since: 17.0
+ * Deprecated-Message: Use AVCaptureDeviceRotationCoordinator instead
  */
+@Deprecated
 @Generated
 public final class AVCaptureVideoOrientation {
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 17.0
+     * Deprecated-Message: Use AVCaptureDeviceRotationCoordinator instead
      */
-    @Generated @NInt public static final long Portrait = 0x0000000000000001L;
+    @Deprecated @Generated @NInt public static final long Portrait = 0x0000000000000001L;
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 17.0
+     * Deprecated-Message: Use AVCaptureDeviceRotationCoordinator instead
      */
-    @Generated @NInt public static final long PortraitUpsideDown = 0x0000000000000002L;
+    @Deprecated @Generated @NInt public static final long PortraitUpsideDown = 0x0000000000000002L;
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 17.0
+     * Deprecated-Message: Use AVCaptureDeviceRotationCoordinator instead
      */
-    @Generated @NInt public static final long LandscapeRight = 0x0000000000000003L;
+    @Deprecated @Generated @NInt public static final long LandscapeRight = 0x0000000000000003L;
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 17.0
+     * Deprecated-Message: Use AVCaptureDeviceRotationCoordinator instead
      */
-    @Generated @NInt public static final long LandscapeLeft = 0x0000000000000004L;
+    @Deprecated @Generated @NInt public static final long LandscapeLeft = 0x0000000000000004L;
 
     @Generated
     private AVCaptureVideoOrientation() {

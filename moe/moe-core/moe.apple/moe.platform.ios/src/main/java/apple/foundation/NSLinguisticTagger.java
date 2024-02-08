@@ -502,4 +502,9 @@ public class NSLinguisticTagger extends NSObject {
     @Selector("tokenRangeAtIndex:unit:")
     @ByValue
     public native NSRange tokenRangeAtIndexUnit(@NUInt long charIndex, @NInt long unit);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

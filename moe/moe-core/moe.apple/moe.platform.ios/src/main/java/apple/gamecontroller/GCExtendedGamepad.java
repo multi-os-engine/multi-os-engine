@@ -359,4 +359,9 @@ public class GCExtendedGamepad extends GCPhysicalInputProfile {
     @Generated
     @Selector("buttonHome")
     public native GCControllerButtonInput buttonHome();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

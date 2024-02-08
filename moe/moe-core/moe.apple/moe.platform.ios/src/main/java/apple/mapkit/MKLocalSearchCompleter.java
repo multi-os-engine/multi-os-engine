@@ -44,9 +44,6 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-/**
- * API-Since: 9.3
- */
 @Generated
 @Library("MapKit")
 @Runtime(ObjCRuntime.class)
@@ -172,8 +169,6 @@ public class MKLocalSearchCompleter extends NSObject {
     public native MKLocalSearchCompleterDelegate delegate();
 
     /**
-     * Defaults to MKSearchCompletionFilterTypeLocationsAndQueries
-     * 
      * API-Since: 9.3
      * Deprecated-Since: 13.0
      * Deprecated-Message: Use resultTypes
@@ -225,8 +220,6 @@ public class MKLocalSearchCompleter extends NSObject {
     }
 
     /**
-     * Defaults to MKSearchCompletionFilterTypeLocationsAndQueries
-     * 
      * API-Since: 9.3
      * Deprecated-Since: 13.0
      * Deprecated-Message: Use resultTypes
@@ -273,4 +266,9 @@ public class MKLocalSearchCompleter extends NSObject {
     @Generated
     @Selector("setResultTypes:")
     public native void setResultTypes(@NUInt long value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -16,7 +16,6 @@ limitations under the License.
 
 package apple.accelerate.c;
 
-import apple.NSObject;
 import apple.accelerate.opaque.FFTSetup;
 import apple.accelerate.opaque.FFTSetupD;
 import apple.accelerate.opaque.sparse_matrix_double;
@@ -79,6 +78,7 @@ import org.moe.natj.general.ptr.VoidPtr;
 import apple.corefoundation.struct.CGSize;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.accelerate.opaque.la_object_t;
 
 @Generated
 @Library("Accelerate")
@@ -2876,7 +2876,7 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_normalize(@NotNull ConstFloatPtr __A, @NInt long __IA, @Nullable FloatPtr __C,
+    public static native void vDSP_normalize(@NotNull ConstFloatPtr __A, @NInt long __IA, @NotNull FloatPtr __C,
             @NInt long __IC, @NotNull FloatPtr __Mean, @NotNull FloatPtr __StandardDeviation, @NUInt long __N);
 
     /**
@@ -2884,7 +2884,7 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_normalizeD(@NotNull ConstDoublePtr __A, @NInt long __IA, @Nullable DoublePtr __C,
+    public static native void vDSP_normalizeD(@NotNull ConstDoublePtr __A, @NInt long __IA, @NotNull DoublePtr __C,
             @NInt long __IC, @NotNull DoublePtr __Mean, @NotNull DoublePtr __StandardDeviation, @NUInt long __N);
 
     /**
@@ -6307,7 +6307,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated CBLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @Variadic()
     @CFunction
@@ -6315,7 +6319,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated CBLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @Variadic()
     @CFunction
@@ -6327,7 +6335,11 @@ public final class Accelerate {
      * ===========================================================================
      * 
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated CBLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native float cblas_sdsdot(int __N, float __alpha, ConstFloatPtr __X, int __incX, ConstFloatPtr __Y,
@@ -6335,21 +6347,33 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated CBLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native double cblas_dsdot(int __N, ConstFloatPtr __X, int __incX, ConstFloatPtr __Y, int __incY);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated CBLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native float cblas_sdot(int __N, ConstFloatPtr __X, int __incX, ConstFloatPtr __Y, int __incY);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated CBLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native double cblas_ddot(int __N, ConstDoublePtr __X, int __incX, ConstDoublePtr __Y, int __incY);
@@ -6358,7 +6382,11 @@ public final class Accelerate {
      * Functions having prefixes Z and C only
      * 
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated CBLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native void cblas_cdotu_sub(int __N, ConstVoidPtr __X, int __incX, ConstVoidPtr __Y, int __incY,
@@ -6366,7 +6394,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated CBLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native void cblas_cdotc_sub(int __N, ConstVoidPtr __X, int __incX, ConstVoidPtr __Y, int __incY,
@@ -6374,7 +6406,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated CBLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native void cblas_zdotu_sub(int __N, ConstVoidPtr __X, int __incX, ConstVoidPtr __Y, int __incY,
@@ -6382,7 +6418,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated CBLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native void cblas_zdotc_sub(int __N, ConstVoidPtr __X, int __incX, ConstVoidPtr __Y, int __incY,
@@ -6392,56 +6432,88 @@ public final class Accelerate {
      * Functions having prefixes S D SC DZ
      * 
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated CBLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native float cblas_snrm2(int __N, ConstFloatPtr __X, int __incX);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated CBLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native float cblas_sasum(int __N, ConstFloatPtr __X, int __incX);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated CBLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native double cblas_dnrm2(int __N, ConstDoublePtr __X, int __incX);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated CBLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native double cblas_dasum(int __N, ConstDoublePtr __X, int __incX);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated CBLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native float cblas_scnrm2(int __N, ConstVoidPtr __X, int __incX);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated CBLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native float cblas_scasum(int __N, ConstVoidPtr __X, int __incX);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated CBLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native double cblas_dznrm2(int __N, ConstVoidPtr __X, int __incX);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated CBLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native double cblas_dzasum(int __N, ConstVoidPtr __X, int __incX);
@@ -6450,28 +6522,44 @@ public final class Accelerate {
      * Functions having standard 4 prefixes (S D C Z)
      * 
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated CBLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int cblas_isamax(int __N, ConstFloatPtr __X, int __incX);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated CBLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int cblas_idamax(int __N, ConstDoublePtr __X, int __incX);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated CBLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int cblas_icamax(int __N, ConstVoidPtr __X, int __incX);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated CBLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int cblas_izamax(int __N, ConstVoidPtr __X, int __incX);
@@ -6480,21 +6568,33 @@ public final class Accelerate {
      * Routines with standard 4 prefixes (s, d, c, z)
      * 
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated CBLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native void cblas_sswap(int __N, FloatPtr __X, int __incX, FloatPtr __Y, int __incY);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated CBLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native void cblas_scopy(int __N, ConstFloatPtr __X, int __incX, FloatPtr __Y, int __incY);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated CBLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native void cblas_saxpy(int __N, float __alpha, ConstFloatPtr __X, int __incX, FloatPtr __Y,
@@ -6502,7 +6602,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated CBLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native void catlas_saxpby(int __N, float __alpha, ConstFloatPtr __X, int __incX, float __beta,
@@ -6510,28 +6614,44 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated CBLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native void catlas_sset(int __N, float __alpha, FloatPtr __X, int __incX);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated CBLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native void cblas_dswap(int __N, DoublePtr __X, int __incX, DoublePtr __Y, int __incY);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated CBLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native void cblas_dcopy(int __N, ConstDoublePtr __X, int __incX, DoublePtr __Y, int __incY);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated CBLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native void cblas_daxpy(int __N, double __alpha, ConstDoublePtr __X, int __incX, DoublePtr __Y,
@@ -6539,7 +6659,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated CBLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native void catlas_daxpby(int __N, double __alpha, ConstDoublePtr __X, int __incX, double __beta,
@@ -6547,28 +6671,44 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated CBLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native void catlas_dset(int __N, double __alpha, DoublePtr __X, int __incX);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated CBLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native void cblas_cswap(int __N, VoidPtr __X, int __incX, VoidPtr __Y, int __incY);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated CBLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native void cblas_ccopy(int __N, ConstVoidPtr __X, int __incX, VoidPtr __Y, int __incY);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated CBLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native void cblas_caxpy(int __N, ConstVoidPtr __alpha, ConstVoidPtr __X, int __incX, VoidPtr __Y,
@@ -6576,7 +6716,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated CBLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native void catlas_caxpby(int __N, ConstVoidPtr __alpha, ConstVoidPtr __X, int __incX,
@@ -6584,28 +6728,44 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated CBLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native void catlas_cset(int __N, ConstVoidPtr __alpha, VoidPtr __X, int __incX);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated CBLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native void cblas_zswap(int __N, VoidPtr __X, int __incX, VoidPtr __Y, int __incY);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated CBLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native void cblas_zcopy(int __N, ConstVoidPtr __X, int __incX, VoidPtr __Y, int __incY);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated CBLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native void cblas_zaxpy(int __N, ConstVoidPtr __alpha, ConstVoidPtr __X, int __incX, VoidPtr __Y,
@@ -6613,7 +6773,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated CBLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native void catlas_zaxpby(int __N, ConstVoidPtr __alpha, ConstVoidPtr __X, int __incX,
@@ -6621,7 +6785,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated CBLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native void catlas_zset(int __N, ConstVoidPtr __alpha, VoidPtr __X, int __incX);
@@ -6630,21 +6798,33 @@ public final class Accelerate {
      * Routines with S and D prefix only
      * 
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated CBLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native void cblas_srotg(FloatPtr __a, FloatPtr __b, FloatPtr __c, FloatPtr __s);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated CBLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native void cblas_srotmg(FloatPtr __d1, FloatPtr __d2, FloatPtr __b1, float __b2, FloatPtr __P);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated CBLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native void cblas_srot(int __N, FloatPtr __X, int __incX, FloatPtr __Y, int __incY, float __c,
@@ -6652,7 +6832,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated CBLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native void cblas_srotm(int __N, FloatPtr __X, int __incX, FloatPtr __Y, int __incY,
@@ -6660,21 +6844,33 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated CBLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native void cblas_drotg(DoublePtr __a, DoublePtr __b, DoublePtr __c, DoublePtr __s);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated CBLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native void cblas_drotmg(DoublePtr __d1, DoublePtr __d2, DoublePtr __b1, double __b2, DoublePtr __P);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated CBLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native void cblas_drot(int __N, DoublePtr __X, int __incX, DoublePtr __Y, int __incY, double __c,
@@ -6682,7 +6878,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated CBLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native void cblas_drotm(int __N, DoublePtr __X, int __incX, DoublePtr __Y, int __incY,
@@ -6692,42 +6892,66 @@ public final class Accelerate {
      * Routines with S D C Z CS and ZD prefixes
      * 
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated CBLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native void cblas_sscal(int __N, float __alpha, FloatPtr __X, int __incX);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated CBLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native void cblas_dscal(int __N, double __alpha, DoublePtr __X, int __incX);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated CBLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native void cblas_cscal(int __N, ConstVoidPtr __alpha, VoidPtr __X, int __incX);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated CBLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native void cblas_zscal(int __N, ConstVoidPtr __alpha, VoidPtr __X, int __incX);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated CBLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native void cblas_csscal(int __N, float __alpha, VoidPtr __X, int __incX);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated CBLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native void cblas_zdscal(int __N, double __alpha, VoidPtr __X, int __incX);
@@ -6736,21 +6960,33 @@ public final class Accelerate {
      * Extra reference routines provided by ATLAS, but not mandated by the standard
      * 
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated CBLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native void cblas_crotg(VoidPtr __a, VoidPtr __b, VoidPtr __c, VoidPtr __s);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated CBLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native void cblas_zrotg(VoidPtr __a, VoidPtr __b, VoidPtr __c, VoidPtr __s);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated CBLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native void cblas_csrot(int __N, VoidPtr __X, int __incX, VoidPtr __Y, int __incY, float __c,
@@ -6758,7 +6994,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated CBLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native void cblas_zdrot(int __N, VoidPtr __X, int __incX, VoidPtr __Y, int __incY, double __c,
@@ -6768,7 +7008,11 @@ public final class Accelerate {
      * Routines with standard 4 prefixes (S, D, C, Z)
      * 
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated CBLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native void cblas_sgemv(int __Order, int __TransA, int __M, int __N, float __alpha, ConstFloatPtr __A,
@@ -6776,7 +7020,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated CBLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native void cblas_sgbmv(int __Order, int __TransA, int __M, int __N, int __KL, int __KU,
@@ -6785,7 +7033,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated CBLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native void cblas_strmv(int __Order, int __Uplo, int __TransA, int __Diag, int __N, ConstFloatPtr __A,
@@ -6793,7 +7045,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated CBLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native void cblas_stbmv(int __Order, int __Uplo, int __TransA, int __Diag, int __N, int __K,
@@ -6801,7 +7057,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated CBLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native void cblas_stpmv(int __Order, int __Uplo, int __TransA, int __Diag, int __N,
@@ -6809,7 +7069,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated CBLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native void cblas_strsv(int __Order, int __Uplo, int __TransA, int __Diag, int __N, ConstFloatPtr __A,
@@ -6817,7 +7081,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated CBLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native void cblas_stbsv(int __Order, int __Uplo, int __TransA, int __Diag, int __N, int __K,
@@ -6825,7 +7093,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated CBLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native void cblas_stpsv(int __Order, int __Uplo, int __TransA, int __Diag, int __N,
@@ -6833,7 +7105,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated CBLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native void cblas_dgemv(int __Order, int __TransA, int __M, int __N, double __alpha,
@@ -6841,7 +7117,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated CBLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native void cblas_dgbmv(int __Order, int __TransA, int __M, int __N, int __KL, int __KU,
@@ -6850,7 +7130,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated CBLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native void cblas_dtrmv(int __Order, int __Uplo, int __TransA, int __Diag, int __N,
@@ -6858,7 +7142,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated CBLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native void cblas_dtbmv(int __Order, int __Uplo, int __TransA, int __Diag, int __N, int __K,
@@ -6866,7 +7154,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated CBLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native void cblas_dtpmv(int __Order, int __Uplo, int __TransA, int __Diag, int __N,
@@ -6874,7 +7166,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated CBLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native void cblas_dtrsv(int __Order, int __Uplo, int __TransA, int __Diag, int __N,
@@ -6882,7 +7178,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated CBLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native void cblas_dtbsv(int __Order, int __Uplo, int __TransA, int __Diag, int __N, int __K,
@@ -6890,7 +7190,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated CBLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native void cblas_dtpsv(int __Order, int __Uplo, int __TransA, int __Diag, int __N,
@@ -6898,7 +7202,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated CBLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native void cblas_cgemv(int __Order, int __TransA, int __M, int __N, ConstVoidPtr __alpha,
@@ -6906,7 +7214,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated CBLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native void cblas_cgbmv(int __Order, int __TransA, int __M, int __N, int __KL, int __KU,
@@ -6915,7 +7227,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated CBLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native void cblas_ctrmv(int __Order, int __Uplo, int __TransA, int __Diag, int __N, ConstVoidPtr __A,
@@ -6923,7 +7239,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated CBLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native void cblas_ctbmv(int __Order, int __Uplo, int __TransA, int __Diag, int __N, int __K,
@@ -6931,7 +7251,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated CBLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native void cblas_ctpmv(int __Order, int __Uplo, int __TransA, int __Diag, int __N, ConstVoidPtr __Ap,
@@ -6939,7 +7263,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated CBLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native void cblas_ctrsv(int __Order, int __Uplo, int __TransA, int __Diag, int __N, ConstVoidPtr __A,
@@ -6947,7 +7275,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated CBLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native void cblas_ctbsv(int __Order, int __Uplo, int __TransA, int __Diag, int __N, int __K,
@@ -6955,7 +7287,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated CBLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native void cblas_ctpsv(int __Order, int __Uplo, int __TransA, int __Diag, int __N, ConstVoidPtr __Ap,
@@ -6963,7 +7299,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated CBLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native void cblas_zgemv(int __Order, int __TransA, int __M, int __N, ConstVoidPtr __alpha,
@@ -6971,7 +7311,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated CBLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native void cblas_zgbmv(int __Order, int __TransA, int __M, int __N, int __KL, int __KU,
@@ -6980,7 +7324,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated CBLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native void cblas_ztrmv(int __Order, int __Uplo, int __TransA, int __Diag, int __N, ConstVoidPtr __A,
@@ -6988,7 +7336,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated CBLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native void cblas_ztbmv(int __Order, int __Uplo, int __TransA, int __Diag, int __N, int __K,
@@ -6996,7 +7348,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated CBLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native void cblas_ztpmv(int __Order, int __Uplo, int __TransA, int __Diag, int __N, ConstVoidPtr __Ap,
@@ -7004,7 +7360,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated CBLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native void cblas_ztrsv(int __Order, int __Uplo, int __TransA, int __Diag, int __N, ConstVoidPtr __A,
@@ -7012,7 +7372,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated CBLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native void cblas_ztbsv(int __Order, int __Uplo, int __TransA, int __Diag, int __N, int __K,
@@ -7020,7 +7384,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated CBLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native void cblas_ztpsv(int __Order, int __Uplo, int __TransA, int __Diag, int __N, ConstVoidPtr __Ap,
@@ -7030,7 +7398,11 @@ public final class Accelerate {
      * Routines with S and D prefixes only
      * 
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated CBLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native void cblas_ssymv(int __Order, int __Uplo, int __N, float __alpha, ConstFloatPtr __A, int __lda,
@@ -7038,7 +7410,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated CBLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native void cblas_ssbmv(int __Order, int __Uplo, int __N, int __K, float __alpha, ConstFloatPtr __A,
@@ -7046,7 +7422,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated CBLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native void cblas_sspmv(int __Order, int __Uplo, int __N, float __alpha, ConstFloatPtr __Ap,
@@ -7054,7 +7434,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated CBLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native void cblas_sger(int __Order, int __M, int __N, float __alpha, ConstFloatPtr __X, int __incX,
@@ -7062,7 +7446,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated CBLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native void cblas_ssyr(int __Order, int __Uplo, int __N, float __alpha, ConstFloatPtr __X, int __incX,
@@ -7070,7 +7458,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated CBLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native void cblas_sspr(int __Order, int __Uplo, int __N, float __alpha, ConstFloatPtr __X, int __incX,
@@ -7078,7 +7470,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated CBLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native void cblas_ssyr2(int __Order, int __Uplo, int __N, float __alpha, ConstFloatPtr __X,
@@ -7086,7 +7482,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated CBLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native void cblas_sspr2(int __Order, int __Uplo, int __N, float __alpha, ConstFloatPtr __X,
@@ -7094,7 +7494,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated CBLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native void cblas_dsymv(int __Order, int __Uplo, int __N, double __alpha, ConstDoublePtr __A,
@@ -7102,7 +7506,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated CBLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native void cblas_dsbmv(int __Order, int __Uplo, int __N, int __K, double __alpha, ConstDoublePtr __A,
@@ -7110,7 +7518,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated CBLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native void cblas_dspmv(int __Order, int __Uplo, int __N, double __alpha, ConstDoublePtr __Ap,
@@ -7118,7 +7530,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated CBLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native void cblas_dger(int __Order, int __M, int __N, double __alpha, ConstDoublePtr __X, int __incX,
@@ -7126,7 +7542,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated CBLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native void cblas_dsyr(int __Order, int __Uplo, int __N, double __alpha, ConstDoublePtr __X,
@@ -7134,7 +7554,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated CBLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native void cblas_dspr(int __Order, int __Uplo, int __N, double __alpha, ConstDoublePtr __X,
@@ -7142,7 +7566,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated CBLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native void cblas_dsyr2(int __Order, int __Uplo, int __N, double __alpha, ConstDoublePtr __X,
@@ -7150,7 +7578,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated CBLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native void cblas_dspr2(int __Order, int __Uplo, int __N, double __alpha, ConstDoublePtr __X,
@@ -7160,7 +7592,11 @@ public final class Accelerate {
      * Routines with C and Z prefixes only
      * 
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated CBLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native void cblas_chemv(int __Order, int __Uplo, int __N, ConstVoidPtr __alpha, ConstVoidPtr __A,
@@ -7168,7 +7604,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated CBLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native void cblas_chbmv(int __Order, int __Uplo, int __N, int __K, ConstVoidPtr __alpha,
@@ -7176,7 +7616,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated CBLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native void cblas_chpmv(int __Order, int __Uplo, int __N, ConstVoidPtr __alpha, ConstVoidPtr __Ap,
@@ -7184,7 +7628,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated CBLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native void cblas_cgeru(int __Order, int __M, int __N, ConstVoidPtr __alpha, ConstVoidPtr __X,
@@ -7192,7 +7640,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated CBLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native void cblas_cgerc(int __Order, int __M, int __N, ConstVoidPtr __alpha, ConstVoidPtr __X,
@@ -7200,7 +7652,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated CBLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native void cblas_cher(int __Order, int __Uplo, int __N, float __alpha, ConstVoidPtr __X, int __incX,
@@ -7208,7 +7664,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated CBLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native void cblas_chpr(int __Order, int __Uplo, int __N, float __alpha, ConstVoidPtr __X, int __incX,
@@ -7216,7 +7676,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated CBLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native void cblas_cher2(int __Order, int __Uplo, int __N, ConstVoidPtr __alpha, ConstVoidPtr __X,
@@ -7224,7 +7688,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated CBLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native void cblas_chpr2(int __Order, int __Uplo, int __N, ConstVoidPtr __alpha, ConstVoidPtr __X,
@@ -7232,7 +7700,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated CBLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native void cblas_zhemv(int __Order, int __Uplo, int __N, ConstVoidPtr __alpha, ConstVoidPtr __A,
@@ -7240,7 +7712,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated CBLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native void cblas_zhbmv(int __Order, int __Uplo, int __N, int __K, ConstVoidPtr __alpha,
@@ -7248,7 +7724,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated CBLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native void cblas_zhpmv(int __Order, int __Uplo, int __N, ConstVoidPtr __alpha, ConstVoidPtr __Ap,
@@ -7256,7 +7736,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated CBLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native void cblas_zgeru(int __Order, int __M, int __N, ConstVoidPtr __alpha, ConstVoidPtr __X,
@@ -7264,7 +7748,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated CBLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native void cblas_zgerc(int __Order, int __M, int __N, ConstVoidPtr __alpha, ConstVoidPtr __X,
@@ -7272,7 +7760,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated CBLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native void cblas_zher(int __Order, int __Uplo, int __N, double __alpha, ConstVoidPtr __X, int __incX,
@@ -7280,7 +7772,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated CBLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native void cblas_zhpr(int __Order, int __Uplo, int __N, double __alpha, ConstVoidPtr __X, int __incX,
@@ -7288,7 +7784,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated CBLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native void cblas_zher2(int __Order, int __Uplo, int __N, ConstVoidPtr __alpha, ConstVoidPtr __X,
@@ -7296,7 +7796,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated CBLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native void cblas_zhpr2(int __Order, int __Uplo, int __N, ConstVoidPtr __alpha, ConstVoidPtr __X,
@@ -7306,7 +7810,11 @@ public final class Accelerate {
      * Routines with standard 4 prefixes (S, D, C, Z)
      * 
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated CBLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native void cblas_sgemm(int __Order, int __TransA, int __TransB, int __M, int __N, int __K,
@@ -7315,7 +7823,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated CBLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native void cblas_ssymm(int __Order, int __Side, int __Uplo, int __M, int __N, float __alpha,
@@ -7323,7 +7835,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated CBLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native void cblas_ssyrk(int __Order, int __Uplo, int __Trans, int __N, int __K, float __alpha,
@@ -7331,7 +7847,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated CBLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native void cblas_ssyr2k(int __Order, int __Uplo, int __Trans, int __N, int __K, float __alpha,
@@ -7339,7 +7859,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated CBLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native void cblas_strmm(int __Order, int __Side, int __Uplo, int __TransA, int __Diag, int __M,
@@ -7347,7 +7871,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated CBLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native void cblas_strsm(int __Order, int __Side, int __Uplo, int __TransA, int __Diag, int __M,
@@ -7355,7 +7883,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated CBLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native void cblas_dgemm(int __Order, int __TransA, int __TransB, int __M, int __N, int __K,
@@ -7364,7 +7896,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated CBLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native void cblas_dsymm(int __Order, int __Side, int __Uplo, int __M, int __N, double __alpha,
@@ -7372,7 +7908,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated CBLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native void cblas_dsyrk(int __Order, int __Uplo, int __Trans, int __N, int __K, double __alpha,
@@ -7380,7 +7920,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated CBLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native void cblas_dsyr2k(int __Order, int __Uplo, int __Trans, int __N, int __K, double __alpha,
@@ -7388,7 +7932,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated CBLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native void cblas_dtrmm(int __Order, int __Side, int __Uplo, int __TransA, int __Diag, int __M,
@@ -7396,7 +7944,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated CBLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native void cblas_dtrsm(int __Order, int __Side, int __Uplo, int __TransA, int __Diag, int __M,
@@ -7404,7 +7956,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated CBLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native void cblas_cgemm(int __Order, int __TransA, int __TransB, int __M, int __N, int __K,
@@ -7413,7 +7969,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated CBLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native void cblas_csymm(int __Order, int __Side, int __Uplo, int __M, int __N, ConstVoidPtr __alpha,
@@ -7421,7 +7981,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated CBLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native void cblas_csyrk(int __Order, int __Uplo, int __Trans, int __N, int __K, ConstVoidPtr __alpha,
@@ -7429,7 +7993,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated CBLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native void cblas_csyr2k(int __Order, int __Uplo, int __Trans, int __N, int __K, ConstVoidPtr __alpha,
@@ -7437,7 +8005,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated CBLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native void cblas_ctrmm(int __Order, int __Side, int __Uplo, int __TransA, int __Diag, int __M,
@@ -7445,7 +8017,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated CBLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native void cblas_ctrsm(int __Order, int __Side, int __Uplo, int __TransA, int __Diag, int __M,
@@ -7453,7 +8029,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated CBLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native void cblas_zgemm(int __Order, int __TransA, int __TransB, int __M, int __N, int __K,
@@ -7462,7 +8042,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated CBLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native void cblas_zsymm(int __Order, int __Side, int __Uplo, int __M, int __N, ConstVoidPtr __alpha,
@@ -7470,7 +8054,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated CBLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native void cblas_zsyrk(int __Order, int __Uplo, int __Trans, int __N, int __K, ConstVoidPtr __alpha,
@@ -7478,7 +8066,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated CBLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native void cblas_zsyr2k(int __Order, int __Uplo, int __Trans, int __N, int __K, ConstVoidPtr __alpha,
@@ -7486,7 +8078,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated CBLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native void cblas_ztrmm(int __Order, int __Side, int __Uplo, int __TransA, int __Diag, int __M,
@@ -7494,7 +8090,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated CBLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native void cblas_ztrsm(int __Order, int __Side, int __Uplo, int __TransA, int __Diag, int __M,
@@ -7504,7 +8104,11 @@ public final class Accelerate {
      * Routines with prefixes C and Z only
      * 
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated CBLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native void cblas_chemm(int __Order, int __Side, int __Uplo, int __M, int __N, ConstVoidPtr __alpha,
@@ -7512,7 +8116,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated CBLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native void cblas_cherk(int __Order, int __Uplo, int __Trans, int __N, int __K, float __alpha,
@@ -7520,7 +8128,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated CBLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native void cblas_cher2k(int __Order, int __Uplo, int __Trans, int __N, int __K, ConstVoidPtr __alpha,
@@ -7528,7 +8140,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated CBLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native void cblas_zhemm(int __Order, int __Side, int __Uplo, int __M, int __N, ConstVoidPtr __alpha,
@@ -7536,7 +8152,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated CBLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native void cblas_zherk(int __Order, int __Uplo, int __Trans, int __N, int __K, double __alpha,
@@ -7544,7 +8164,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated CBLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native void cblas_zher2k(int __Order, int __Uplo, int __Trans, int __N, int __K, ConstVoidPtr __alpha,
@@ -7577,7 +8201,11 @@ public final class Accelerate {
      * If either A or B is transposed, then they are interpreted as n x m matrices.
      * 
      * API-Since: 8.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated CBLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native void appleblas_sgeadd(int __order, int __transA, int __transB, int __m, int __n, float __alpha,
@@ -7585,7 +8213,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 8.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated CBLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native void appleblas_dgeadd(int __order, int __transA, int __transB, int __m, int __n,
@@ -7594,7 +8226,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated CBLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native void SetBLASParamErrorProc(
@@ -7602,7 +8238,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int cbdsqr_(BytePtr __uplo, IntPtr __n, IntPtr __ncvt, IntPtr __nru, IntPtr __ncc,
@@ -7614,7 +8254,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int cgbbrd_(BytePtr __vect, IntPtr __m, IntPtr __n, IntPtr __ncc, IntPtr __kl, IntPtr __ku,
@@ -7628,7 +8272,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int cgbcon_(BytePtr __norm, IntPtr __n, IntPtr __kl, IntPtr __ku,
@@ -7639,7 +8287,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int cgbequ_(IntPtr __m, IntPtr __n, IntPtr __kl, IntPtr __ku,
@@ -7648,7 +8300,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int cgbequb_(IntPtr __m, IntPtr __n, IntPtr __kl, IntPtr __ku,
@@ -7657,7 +8313,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int cgbrfs_(BytePtr __trans, IntPtr __n, IntPtr __kl, IntPtr __ku, IntPtr __nrhs,
@@ -7671,7 +8331,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int cgbsv_(IntPtr __n, IntPtr __kl, IntPtr __ku, IntPtr __nrhs,
@@ -7681,7 +8345,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int cgbsvx_(BytePtr __fact, BytePtr __trans, IntPtr __n, IntPtr __kl, IntPtr __ku,
@@ -7696,7 +8364,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int cgbtf2_(IntPtr __m, IntPtr __n, IntPtr __kl, IntPtr __ku,
@@ -7705,7 +8377,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int cgbtrf_(IntPtr __m, IntPtr __n, IntPtr __kl, IntPtr __ku,
@@ -7714,7 +8390,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int cgbtrs_(BytePtr __trans, IntPtr __n, IntPtr __kl, IntPtr __ku, IntPtr __nrhs,
@@ -7724,7 +8404,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int cgebak_(BytePtr __job, BytePtr __side, IntPtr __n, IntPtr __ilo, IntPtr __ihi,
@@ -7734,7 +8418,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int cgebal_(BytePtr __job, IntPtr __n,
@@ -7743,7 +8431,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int cgebd2_(IntPtr __m, IntPtr __n,
@@ -7755,7 +8447,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int cgebrd_(IntPtr __m, IntPtr __n,
@@ -7768,7 +8464,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int cgecon_(BytePtr __norm, IntPtr __n,
@@ -7779,7 +8479,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int cgeequ_(IntPtr __m, IntPtr __n,
@@ -7788,7 +8492,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int cgeequb_(IntPtr __m, IntPtr __n,
@@ -7797,7 +8505,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int cgeev_(BytePtr __jobvl, BytePtr __jobvr, IntPtr __n,
@@ -7810,7 +8522,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int cgeevx_(BytePtr __balanc, BytePtr __jobvl, BytePtr __jobvr, BytePtr __sense, IntPtr __n,
@@ -7824,7 +8540,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int cgegs_(BytePtr __jobvsl, BytePtr __jobvsr, IntPtr __n,
@@ -7839,7 +8559,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int cgegv_(BytePtr __jobvl, BytePtr __jobvr, IntPtr __n,
@@ -7854,7 +8578,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int cgehd2_(IntPtr __n, IntPtr __ilo, IntPtr __ihi,
@@ -7864,7 +8592,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int cgehrd_(IntPtr __n, IntPtr __ilo, IntPtr __ihi,
@@ -7875,7 +8607,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int cgelq2_(IntPtr __m, IntPtr __n,
@@ -7885,7 +8621,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int cgelqf_(IntPtr __m, IntPtr __n,
@@ -7896,7 +8636,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int cgels_(BytePtr __trans, IntPtr __m, IntPtr __n, IntPtr __nrhs,
@@ -7907,7 +8651,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int cgelsd_(IntPtr __m, IntPtr __n, IntPtr __nrhs,
@@ -7919,7 +8667,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int cgelss_(IntPtr __m, IntPtr __n, IntPtr __nrhs,
@@ -7931,7 +8683,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int cgelsx_(IntPtr __m, IntPtr __n, IntPtr __nrhs,
@@ -7943,7 +8699,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int cgelsy_(IntPtr __m, IntPtr __n, IntPtr __nrhs,
@@ -7955,7 +8715,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int cgeql2_(IntPtr __m, IntPtr __n,
@@ -7965,7 +8729,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int cgeqlf_(IntPtr __m, IntPtr __n,
@@ -7976,7 +8744,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int cgeqp3_(IntPtr __m, IntPtr __n,
@@ -7987,7 +8759,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int cgeqpf_(IntPtr __m, IntPtr __n,
@@ -7998,7 +8774,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int cgeqr2_(IntPtr __m, IntPtr __n,
@@ -8008,7 +8788,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int cgeqrf_(IntPtr __m, IntPtr __n,
@@ -8019,7 +8803,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int cgerfs_(BytePtr __trans, IntPtr __n, IntPtr __nrhs,
@@ -8033,7 +8821,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int cgerq2_(IntPtr __m, IntPtr __n,
@@ -8043,7 +8835,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int cgerqf_(IntPtr __m, IntPtr __n,
@@ -8054,7 +8850,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int cgesc2_(IntPtr __n,
@@ -8064,7 +8864,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int cgesdd_(BytePtr __jobz, IntPtr __m, IntPtr __n,
@@ -8076,7 +8880,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int cgesv_(IntPtr __n, IntPtr __nrhs,
@@ -8086,7 +8894,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int cgesvd_(BytePtr __jobu, BytePtr __jobvt, IntPtr __m, IntPtr __n,
@@ -8098,7 +8910,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int cgesvx_(BytePtr __fact, BytePtr __trans, IntPtr __n, IntPtr __nrhs,
@@ -8113,7 +8929,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int cgetc2_(IntPtr __n,
@@ -8122,7 +8942,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int cgetf2_(IntPtr __m, IntPtr __n,
@@ -8131,7 +8955,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int cgetrf_(IntPtr __m, IntPtr __n,
@@ -8140,7 +8968,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int cgetri_(IntPtr __n,
@@ -8150,7 +8982,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int cgetrs_(BytePtr __trans, IntPtr __n, IntPtr __nrhs,
@@ -8160,7 +8996,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int cggbak_(BytePtr __job, BytePtr __side, IntPtr __n, IntPtr __ilo, IntPtr __ihi,
@@ -8170,7 +9010,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int cggbal_(BytePtr __job, IntPtr __n,
@@ -8180,7 +9024,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int cggev_(BytePtr __jobvl, BytePtr __jobvr, IntPtr __n,
@@ -8195,7 +9043,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int cggevx_(BytePtr __balanc, BytePtr __jobvl, BytePtr __jobvr, BytePtr __sense, IntPtr __n,
@@ -8212,7 +9064,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int cggglm_(IntPtr __n, IntPtr __m, IntPtr __p,
@@ -8226,7 +9082,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int cgghrd_(BytePtr __compq, BytePtr __compz, IntPtr __n, IntPtr __ilo, IntPtr __ihi,
@@ -8238,7 +9098,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int cgglse_(IntPtr __m, IntPtr __n, IntPtr __p,
@@ -8252,7 +9116,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int cggqrf_(IntPtr __n, IntPtr __m, IntPtr __p,
@@ -8265,7 +9133,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int cggrqf_(IntPtr __m, IntPtr __p, IntPtr __n,
@@ -8278,7 +9150,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int cggsvd_(BytePtr __jobu, BytePtr __jobv, BytePtr __jobq, IntPtr __m, IntPtr __n, IntPtr __p,
@@ -8294,7 +9170,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int cggsvp_(BytePtr __jobu, BytePtr __jobv, BytePtr __jobq, IntPtr __m, IntPtr __p, IntPtr __n,
@@ -8310,7 +9190,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int cgtcon_(BytePtr __norm, IntPtr __n,
@@ -8323,7 +9207,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int cgtrfs_(BytePtr __trans, IntPtr __n, IntPtr __nrhs,
@@ -8342,7 +9230,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int cgtsv_(IntPtr __n, IntPtr __nrhs,
@@ -8354,7 +9246,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int cgtsvx_(BytePtr __fact, BytePtr __trans, IntPtr __n, IntPtr __nrhs,
@@ -8373,7 +9269,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int cgttrf_(IntPtr __n,
@@ -8385,7 +9285,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int cgttrs_(BytePtr __trans, IntPtr __n, IntPtr __nrhs,
@@ -8398,7 +9302,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int cgtts2_(IntPtr __itrans, IntPtr __n, IntPtr __nrhs,
@@ -8410,7 +9318,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int chbev_(BytePtr __jobz, BytePtr __uplo, IntPtr __n, IntPtr __kd,
@@ -8421,7 +9333,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int chbevd_(BytePtr __jobz, BytePtr __uplo, IntPtr __n, IntPtr __kd,
@@ -8432,7 +9348,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int chbevx_(BytePtr __jobz, BytePtr __range, BytePtr __uplo, IntPtr __n, IntPtr __kd,
@@ -8445,7 +9365,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int chbgst_(BytePtr __vect, BytePtr __uplo, IntPtr __n, IntPtr __ka, IntPtr __kb,
@@ -8457,7 +9381,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int chbgv_(BytePtr __jobz, BytePtr __uplo, IntPtr __n, IntPtr __ka, IntPtr __kb,
@@ -8469,7 +9397,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int chbgvd_(BytePtr __jobz, BytePtr __uplo, IntPtr __n, IntPtr __ka, IntPtr __kb,
@@ -8481,7 +9413,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int chbgvx_(BytePtr __jobz, BytePtr __range, BytePtr __uplo, IntPtr __n, IntPtr __ka,
@@ -8495,7 +9431,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int chbtrd_(BytePtr __vect, BytePtr __uplo, IntPtr __n, IntPtr __kd,
@@ -8506,7 +9446,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int checon_(BytePtr __uplo, IntPtr __n,
@@ -8516,7 +9460,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int cheequb_(BytePtr __uplo, IntPtr __n,
@@ -8526,7 +9474,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int cheev_(BytePtr __jobz, BytePtr __uplo, IntPtr __n,
@@ -8536,7 +9488,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int cheevd_(BytePtr __jobz, BytePtr __uplo, IntPtr __n,
@@ -8546,7 +9502,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int cheevr_(BytePtr __jobz, BytePtr __range, BytePtr __uplo, IntPtr __n,
@@ -8558,7 +9518,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int cheevx_(BytePtr __jobz, BytePtr __range, BytePtr __uplo, IntPtr __n,
@@ -8570,7 +9534,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int chegs2_(IntPtr __itype, BytePtr __uplo, IntPtr __n,
@@ -8580,7 +9548,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int chegst_(IntPtr __itype, BytePtr __uplo, IntPtr __n,
@@ -8590,7 +9562,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int chegv_(IntPtr __itype, BytePtr __jobz, BytePtr __uplo, IntPtr __n,
@@ -8601,7 +9577,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int chegvd_(IntPtr __itype, BytePtr __jobz, BytePtr __uplo, IntPtr __n,
@@ -8612,7 +9592,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int chegvx_(IntPtr __itype, BytePtr __jobz, BytePtr __range, BytePtr __uplo, IntPtr __n,
@@ -8625,7 +9609,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int cherfs_(BytePtr __uplo, IntPtr __n, IntPtr __nrhs,
@@ -8639,7 +9627,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int chesv_(BytePtr __uplo, IntPtr __n, IntPtr __nrhs,
@@ -8650,7 +9642,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int chesvx_(BytePtr __fact, BytePtr __uplo, IntPtr __n, IntPtr __nrhs,
@@ -8664,7 +9660,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int chetd2_(BytePtr __uplo, IntPtr __n,
@@ -8674,7 +9674,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int chetf2_(BytePtr __uplo, IntPtr __n,
@@ -8683,7 +9687,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int chetrd_(BytePtr __uplo, IntPtr __n,
@@ -8695,7 +9703,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int chetrf_(BytePtr __uplo, IntPtr __n,
@@ -8705,7 +9717,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int chetri_(BytePtr __uplo, IntPtr __n,
@@ -8715,7 +9731,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int chetrs_(BytePtr __uplo, IntPtr __n, IntPtr __nrhs,
@@ -8725,7 +9745,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int chfrk_(BytePtr __transr, BytePtr __uplo, BytePtr __trans, IntPtr __n, IntPtr __k,
@@ -8735,7 +9759,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int chgeqz_(BytePtr __job, BytePtr __compq, BytePtr __compz, IntPtr __n, IntPtr __ilo,
@@ -8750,14 +9778,22 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native void chla_transtype__(BytePtr __ret_val, int __ret_val_len, IntPtr __trans);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int chpcon_(BytePtr __uplo, IntPtr __n,
@@ -8767,7 +9803,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int chpev_(BytePtr __jobz, BytePtr __uplo, IntPtr __n,
@@ -8778,7 +9818,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int chpevd_(BytePtr __jobz, BytePtr __uplo, IntPtr __n,
@@ -8789,7 +9833,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int chpevx_(BytePtr __jobz, BytePtr __range, BytePtr __uplo, IntPtr __n,
@@ -8801,7 +9849,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int chpgst_(IntPtr __itype, BytePtr __uplo, IntPtr __n,
@@ -8810,7 +9862,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int chpgv_(IntPtr __itype, BytePtr __jobz, BytePtr __uplo, IntPtr __n,
@@ -8822,7 +9878,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int chpgvd_(IntPtr __itype, BytePtr __jobz, BytePtr __uplo, IntPtr __n,
@@ -8834,7 +9894,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int chpgvx_(IntPtr __itype, BytePtr __jobz, BytePtr __range, BytePtr __uplo, IntPtr __n,
@@ -8847,7 +9911,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int chprfs_(BytePtr __uplo, IntPtr __n, IntPtr __nrhs,
@@ -8861,7 +9929,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int chpsv_(BytePtr __uplo, IntPtr __n, IntPtr __nrhs,
@@ -8871,7 +9943,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int chpsvx_(BytePtr __fact, BytePtr __uplo, IntPtr __n, IntPtr __nrhs,
@@ -8885,7 +9961,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int chptrd_(BytePtr __uplo, IntPtr __n,
@@ -8895,7 +9975,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int chptrf_(BytePtr __uplo, IntPtr __n,
@@ -8904,7 +9988,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int chptri_(BytePtr __uplo, IntPtr __n,
@@ -8913,7 +10001,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int chptrs_(BytePtr __uplo, IntPtr __n, IntPtr __nrhs,
@@ -8923,7 +10015,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int chsein_(BytePtr __side, BytePtr __eigsrc, BytePtr __initv, IntPtr __select, IntPtr __n,
@@ -8937,7 +10033,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int chseqr_(BytePtr __job, BytePtr __compz, IntPtr __n, IntPtr __ilo, IntPtr __ihi,
@@ -8949,7 +10049,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int clabrd_(IntPtr __m, IntPtr __n, IntPtr __nb,
@@ -8962,7 +10066,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int clacgv_(IntPtr __n,
@@ -8970,7 +10078,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int clacn2_(IntPtr __n,
@@ -8980,7 +10092,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int clacon_(IntPtr __n,
@@ -8990,7 +10106,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int clacp2_(BytePtr __uplo, IntPtr __m, IntPtr __n, FloatPtr __a, IntPtr __lda,
@@ -8998,7 +10118,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int clacpy_(BytePtr __uplo, IntPtr __m, IntPtr __n,
@@ -9007,7 +10131,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int clacrm_(IntPtr __m, IntPtr __n,
@@ -9018,7 +10146,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int clacrt_(IntPtr __n,
@@ -9029,7 +10161,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native void cladiv_(
@@ -9039,7 +10175,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int claed0_(IntPtr __qsiz, IntPtr __n, FloatPtr __d__, FloatPtr __e,
@@ -9049,7 +10189,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int claed7_(IntPtr __n, IntPtr __cutpnt, IntPtr __qsiz, IntPtr __tlvls, IntPtr __curlvl,
@@ -9062,7 +10206,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int claed8_(IntPtr __k, IntPtr __n, IntPtr __qsiz,
@@ -9074,7 +10222,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int claein_(IntPtr __rightv, IntPtr __noinit, IntPtr __n,
@@ -9086,7 +10238,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int claesy_(
@@ -9101,7 +10257,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int claev2_(
@@ -9113,7 +10273,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int clag2z_(IntPtr __m, IntPtr __n,
@@ -9123,7 +10287,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int clags2_(IntPtr __upper, FloatPtr __a1,
@@ -9136,7 +10304,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int clagtm_(BytePtr __trans, IntPtr __n, IntPtr __nrhs, FloatPtr __alpha,
@@ -9149,7 +10321,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int clahef_(BytePtr __uplo, IntPtr __n, IntPtr __nb, IntPtr __kb,
@@ -9159,7 +10335,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int clahqr_(IntPtr __wantt, IntPtr __wantz, IntPtr __n, IntPtr __ilo, IntPtr __ihi,
@@ -9170,7 +10350,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int clahr2_(IntPtr __n, IntPtr __k, IntPtr __nb,
@@ -9181,7 +10365,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int clahrd_(IntPtr __n, IntPtr __k, IntPtr __nb,
@@ -9192,7 +10380,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int claic1_(IntPtr __job, IntPtr __j,
@@ -9204,7 +10396,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int clals0_(IntPtr __icompq, IntPtr __nl, IntPtr __nr, IntPtr __sqre, IntPtr __nrhs,
@@ -9216,7 +10412,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int clalsa_(IntPtr __icompq, IntPtr __smlsiz, IntPtr __n, IntPtr __nrhs,
@@ -9228,7 +10428,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int clalsd_(BytePtr __uplo, IntPtr __smlsiz, IntPtr __n, IntPtr __nrhs, FloatPtr __d__,
@@ -9239,7 +10443,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native double clangb_(BytePtr __norm, IntPtr __n, IntPtr __kl, IntPtr __ku,
@@ -9248,7 +10456,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native double clange_(BytePtr __norm, IntPtr __m, IntPtr __n,
@@ -9257,7 +10469,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native double clangt_(BytePtr __norm, IntPtr __n,
@@ -9267,7 +10483,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native double clanhb_(BytePtr __norm, BytePtr __uplo, IntPtr __n, IntPtr __k,
@@ -9276,7 +10496,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native double clanhe_(BytePtr __norm, BytePtr __uplo, IntPtr __n,
@@ -9285,7 +10509,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native double clanhf_(BytePtr __norm, BytePtr __transr, BytePtr __uplo, IntPtr __n,
@@ -9293,7 +10521,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native double clanhp_(BytePtr __norm, BytePtr __uplo, IntPtr __n,
@@ -9301,7 +10533,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native double clanhs_(BytePtr __norm, IntPtr __n,
@@ -9310,7 +10546,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native double clanht_(BytePtr __norm, IntPtr __n, FloatPtr __d__,
@@ -9318,7 +10558,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native double clansb_(BytePtr __norm, BytePtr __uplo, IntPtr __n, IntPtr __k,
@@ -9327,7 +10571,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native double clansp_(BytePtr __norm, BytePtr __uplo, IntPtr __n,
@@ -9335,7 +10583,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native double clansy_(BytePtr __norm, BytePtr __uplo, IntPtr __n,
@@ -9344,7 +10596,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native double clantb_(BytePtr __norm, BytePtr __uplo, BytePtr __diag, IntPtr __n, IntPtr __k,
@@ -9353,7 +10609,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native double clantp_(BytePtr __norm, BytePtr __uplo, BytePtr __diag, IntPtr __n,
@@ -9361,7 +10621,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native double clantr_(BytePtr __norm, BytePtr __uplo, BytePtr __diag, IntPtr __m, IntPtr __n,
@@ -9370,7 +10634,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int clapll_(IntPtr __n,
@@ -9380,7 +10648,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int clapmt_(IntPtr __forwrd, IntPtr __m, IntPtr __n,
@@ -9389,7 +10661,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int claqgb_(IntPtr __m, IntPtr __n, IntPtr __kl, IntPtr __ku,
@@ -9398,7 +10674,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int claqge_(IntPtr __m, IntPtr __n,
@@ -9407,7 +10687,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int claqhb_(BytePtr __uplo, IntPtr __n, IntPtr __kd,
@@ -9416,7 +10700,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int claqhe_(BytePtr __uplo, IntPtr __n,
@@ -9425,7 +10713,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int claqhp_(BytePtr __uplo, IntPtr __n,
@@ -9434,7 +10726,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int claqp2_(IntPtr __m, IntPtr __n, IntPtr __offset,
@@ -9445,7 +10741,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int claqps_(IntPtr __m, IntPtr __n, IntPtr __offset, IntPtr __nb, IntPtr __kb,
@@ -9457,7 +10757,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int claqr0_(IntPtr __wantt, IntPtr __wantz, IntPtr __n, IntPtr __ilo, IntPtr __ihi,
@@ -9469,7 +10773,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int claqr1_(IntPtr __n,
@@ -9480,7 +10788,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int claqr2_(IntPtr __wantt, IntPtr __wantz, IntPtr __n, IntPtr __ktop, IntPtr __kbot,
@@ -9497,7 +10809,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int claqr3_(IntPtr __wantt, IntPtr __wantz, IntPtr __n, IntPtr __ktop, IntPtr __kbot,
@@ -9514,7 +10830,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int claqr4_(IntPtr __wantt, IntPtr __wantz, IntPtr __n, IntPtr __ilo, IntPtr __ihi,
@@ -9526,7 +10846,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int claqr5_(IntPtr __wantt, IntPtr __wantz, IntPtr __kacc22, IntPtr __n, IntPtr __ktop,
@@ -9543,7 +10867,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int claqsb_(BytePtr __uplo, IntPtr __n, IntPtr __kd,
@@ -9552,7 +10880,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int claqsp_(BytePtr __uplo, IntPtr __n,
@@ -9561,7 +10893,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int claqsy_(BytePtr __uplo, IntPtr __n,
@@ -9570,7 +10906,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int clar1v_(IntPtr __n, IntPtr __b1, IntPtr __bn, FloatPtr __lambda, FloatPtr __d__,
@@ -9581,7 +10921,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int clar2v_(IntPtr __n,
@@ -9593,7 +10937,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int clarcm_(IntPtr __m, IntPtr __n, FloatPtr __a, IntPtr __lda,
@@ -9603,7 +10951,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int clarf_(BytePtr __side, IntPtr __m, IntPtr __n,
@@ -9614,7 +10966,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int clarfb_(BytePtr __side, BytePtr __trans, BytePtr __direct, BytePtr __storev, IntPtr __m,
@@ -9626,7 +10982,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int clarfg_(IntPtr __n,
@@ -9636,7 +10996,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int clarfp_(IntPtr __n,
@@ -9646,7 +11010,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int clarft_(BytePtr __direct, BytePtr __storev, IntPtr __n, IntPtr __k,
@@ -9656,7 +11024,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int clarfx_(BytePtr __side, IntPtr __m, IntPtr __n,
@@ -9667,7 +11039,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int clargv_(IntPtr __n,
@@ -9677,7 +11053,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int clarnv_(IntPtr __idist, IntPtr __iseed, IntPtr __n,
@@ -9685,7 +11065,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int clarrv_(IntPtr __n, FloatPtr __vl, FloatPtr __vu, FloatPtr __d__, FloatPtr __l,
@@ -9697,7 +11081,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int clarscl2_(IntPtr __m, IntPtr __n, FloatPtr __d__,
@@ -9705,7 +11093,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int clartg_(
@@ -9716,7 +11108,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int clartv_(IntPtr __n,
@@ -9727,7 +11123,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int clarz_(BytePtr __side, IntPtr __m, IntPtr __n, IntPtr __l,
@@ -9738,7 +11138,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int clarzb_(BytePtr __side, BytePtr __trans, BytePtr __direct, BytePtr __storev, IntPtr __m,
@@ -9750,7 +11154,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int clarzt_(BytePtr __direct, BytePtr __storev, IntPtr __n, IntPtr __k,
@@ -9760,7 +11168,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int clascl_(BytePtr __type__, IntPtr __kl, IntPtr __ku, FloatPtr __cfrom, FloatPtr __cto,
@@ -9770,7 +11182,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int clascl2_(IntPtr __m, IntPtr __n, FloatPtr __d__,
@@ -9778,7 +11194,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int claset_(BytePtr __uplo, IntPtr __m, IntPtr __n,
@@ -9788,7 +11208,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int clasr_(BytePtr __side, BytePtr __pivot, BytePtr __direct, IntPtr __m, IntPtr __n,
@@ -9797,7 +11221,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int classq_(IntPtr __n,
@@ -9806,7 +11234,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int claswp_(IntPtr __n,
@@ -9815,7 +11247,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int clasyf_(BytePtr __uplo, IntPtr __n, IntPtr __nb, IntPtr __kb,
@@ -9825,7 +11261,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int clatbs_(BytePtr __uplo, BytePtr __trans, BytePtr __diag, BytePtr __normin, IntPtr __n,
@@ -9835,7 +11275,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int clatdf_(IntPtr __ijob, IntPtr __n,
@@ -9845,7 +11289,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int clatps_(BytePtr __uplo, BytePtr __trans, BytePtr __diag, BytePtr __normin, IntPtr __n,
@@ -9855,7 +11303,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int clatrd_(BytePtr __uplo, IntPtr __n, IntPtr __nb,
@@ -9865,7 +11317,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int clatrs_(BytePtr __uplo, BytePtr __trans, BytePtr __diag, BytePtr __normin, IntPtr __n,
@@ -9875,7 +11331,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int clatrz_(IntPtr __m, IntPtr __n, IntPtr __l,
@@ -9885,7 +11345,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int clatzm_(BytePtr __side, IntPtr __m, IntPtr __n,
@@ -9897,7 +11361,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int clauu2_(BytePtr __uplo, IntPtr __n,
@@ -9906,7 +11374,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int clauum_(BytePtr __uplo, IntPtr __n,
@@ -9915,7 +11387,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int cpbcon_(BytePtr __uplo, IntPtr __n, IntPtr __kd,
@@ -9926,7 +11402,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int cpbequ_(BytePtr __uplo, IntPtr __n, IntPtr __kd,
@@ -9935,7 +11415,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int cpbrfs_(BytePtr __uplo, IntPtr __n, IntPtr __kd, IntPtr __nrhs,
@@ -9949,7 +11433,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int cpbstf_(BytePtr __uplo, IntPtr __n, IntPtr __kd,
@@ -9958,7 +11446,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int cpbsv_(BytePtr __uplo, IntPtr __n, IntPtr __kd, IntPtr __nrhs,
@@ -9968,7 +11460,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int cpbsvx_(BytePtr __fact, BytePtr __uplo, IntPtr __n, IntPtr __kd, IntPtr __nrhs,
@@ -9983,7 +11479,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int cpbtf2_(BytePtr __uplo, IntPtr __n, IntPtr __kd,
@@ -9992,7 +11492,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int cpbtrf_(BytePtr __uplo, IntPtr __n, IntPtr __kd,
@@ -10001,7 +11505,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int cpbtrs_(BytePtr __uplo, IntPtr __n, IntPtr __kd, IntPtr __nrhs,
@@ -10011,7 +11519,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int cpftrf_(BytePtr __transr, BytePtr __uplo, IntPtr __n,
@@ -10019,7 +11531,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int cpftri_(BytePtr __transr, BytePtr __uplo, IntPtr __n,
@@ -10027,7 +11543,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int cpftrs_(BytePtr __transr, BytePtr __uplo, IntPtr __n, IntPtr __nrhs,
@@ -10037,7 +11557,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int cpocon_(BytePtr __uplo, IntPtr __n,
@@ -10048,7 +11572,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int cpoequ_(IntPtr __n,
@@ -10057,7 +11585,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int cpoequb_(IntPtr __n,
@@ -10066,7 +11598,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int cporfs_(BytePtr __uplo, IntPtr __n, IntPtr __nrhs,
@@ -10080,7 +11616,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int cposv_(BytePtr __uplo, IntPtr __n, IntPtr __nrhs,
@@ -10090,7 +11630,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int cposvx_(BytePtr __fact, BytePtr __uplo, IntPtr __n, IntPtr __nrhs,
@@ -10105,7 +11649,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int cpotf2_(BytePtr __uplo, IntPtr __n,
@@ -10114,7 +11662,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int cpotrf_(BytePtr __uplo, IntPtr __n,
@@ -10123,7 +11675,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int cpotri_(BytePtr __uplo, IntPtr __n,
@@ -10132,7 +11688,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int cpotrs_(BytePtr __uplo, IntPtr __n, IntPtr __nrhs,
@@ -10142,7 +11702,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int cppcon_(BytePtr __uplo, IntPtr __n,
@@ -10152,7 +11716,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int cppequ_(BytePtr __uplo, IntPtr __n,
@@ -10161,7 +11729,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int cpprfs_(BytePtr __uplo, IntPtr __n, IntPtr __nrhs,
@@ -10175,7 +11747,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int cppsv_(BytePtr __uplo, IntPtr __n, IntPtr __nrhs,
@@ -10185,7 +11761,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int cppsvx_(BytePtr __fact, BytePtr __uplo, IntPtr __n, IntPtr __nrhs,
@@ -10199,7 +11779,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int cpptrf_(BytePtr __uplo, IntPtr __n,
@@ -10207,7 +11791,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int cpptri_(BytePtr __uplo, IntPtr __n,
@@ -10215,7 +11803,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int cpptrs_(BytePtr __uplo, IntPtr __n, IntPtr __nrhs,
@@ -10225,7 +11817,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int cpstf2_(BytePtr __uplo, IntPtr __n,
@@ -10234,7 +11830,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int cpstrf_(BytePtr __uplo, IntPtr __n,
@@ -10243,7 +11843,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int cptcon_(IntPtr __n, FloatPtr __d__,
@@ -10252,7 +11856,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int cpteqr_(BytePtr __compz, IntPtr __n, FloatPtr __d__, FloatPtr __e,
@@ -10261,7 +11869,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int cptrfs_(BytePtr __uplo, IntPtr __n, IntPtr __nrhs, FloatPtr __d__,
@@ -10275,7 +11887,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int cptsv_(IntPtr __n, IntPtr __nrhs, FloatPtr __d__,
@@ -10285,7 +11901,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int cptsvx_(BytePtr __fact, IntPtr __n, IntPtr __nrhs, FloatPtr __d__,
@@ -10299,7 +11919,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int cpttrf_(IntPtr __n, FloatPtr __d__,
@@ -10307,7 +11931,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int cpttrs_(BytePtr __uplo, IntPtr __n, IntPtr __nrhs, FloatPtr __d__,
@@ -10317,7 +11945,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int cptts2_(IntPtr __iuplo, IntPtr __n, IntPtr __nrhs, FloatPtr __d__,
@@ -10326,7 +11958,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int crot_(IntPtr __n,
@@ -10336,7 +11972,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int cspcon_(BytePtr __uplo, IntPtr __n,
@@ -10346,7 +11986,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int cspmv_(BytePtr __uplo, IntPtr __n,
@@ -10358,7 +12002,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int cspr_(BytePtr __uplo, IntPtr __n,
@@ -10368,7 +12016,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int csprfs_(BytePtr __uplo, IntPtr __n, IntPtr __nrhs,
@@ -10382,7 +12034,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int cspsv_(BytePtr __uplo, IntPtr __n, IntPtr __nrhs,
@@ -10392,7 +12048,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int cspsvx_(BytePtr __fact, BytePtr __uplo, IntPtr __n, IntPtr __nrhs,
@@ -10406,7 +12066,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int csptrf_(BytePtr __uplo, IntPtr __n,
@@ -10415,7 +12079,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int csptri_(BytePtr __uplo, IntPtr __n,
@@ -10424,7 +12092,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int csptrs_(BytePtr __uplo, IntPtr __n, IntPtr __nrhs,
@@ -10434,7 +12106,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int csrscl_(IntPtr __n, FloatPtr __sa,
@@ -10442,7 +12118,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int cstedc_(BytePtr __compz, IntPtr __n, FloatPtr __d__, FloatPtr __e,
@@ -10452,7 +12132,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int cstegr_(BytePtr __jobz, BytePtr __range, IntPtr __n, FloatPtr __d__, FloatPtr __e,
@@ -10462,7 +12146,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int cstein_(IntPtr __n, FloatPtr __d__, FloatPtr __e, IntPtr __m, FloatPtr __w,
@@ -10472,7 +12160,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int cstemr_(BytePtr __jobz, BytePtr __range, IntPtr __n, FloatPtr __d__, FloatPtr __e,
@@ -10483,7 +12175,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int csteqr_(BytePtr __compz, IntPtr __n, FloatPtr __d__, FloatPtr __e,
@@ -10492,7 +12188,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int csycon_(BytePtr __uplo, IntPtr __n,
@@ -10502,7 +12202,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int csyequb_(BytePtr __uplo, IntPtr __n,
@@ -10512,7 +12216,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int csymv_(BytePtr __uplo, IntPtr __n,
@@ -10524,7 +12232,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int csyr_(BytePtr __uplo, IntPtr __n,
@@ -10534,7 +12246,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int csyrfs_(BytePtr __uplo, IntPtr __n, IntPtr __nrhs,
@@ -10548,7 +12264,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int csysv_(BytePtr __uplo, IntPtr __n, IntPtr __nrhs,
@@ -10559,7 +12279,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int csysvx_(BytePtr __fact, BytePtr __uplo, IntPtr __n, IntPtr __nrhs,
@@ -10573,7 +12297,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int csytf2_(BytePtr __uplo, IntPtr __n,
@@ -10582,7 +12310,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int csytrf_(BytePtr __uplo, IntPtr __n,
@@ -10592,7 +12324,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int csytri_(BytePtr __uplo, IntPtr __n,
@@ -10602,7 +12338,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int csytrs_(BytePtr __uplo, IntPtr __n, IntPtr __nrhs,
@@ -10612,7 +12352,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int ctbcon_(BytePtr __norm, BytePtr __uplo, BytePtr __diag, IntPtr __n, IntPtr __kd,
@@ -10622,7 +12366,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int ctbrfs_(BytePtr __uplo, BytePtr __trans, BytePtr __diag, IntPtr __n, IntPtr __kd,
@@ -10635,7 +12383,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int ctbtrs_(BytePtr __uplo, BytePtr __trans, BytePtr __diag, IntPtr __n, IntPtr __kd,
@@ -10645,7 +12397,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int ctfsm_(BytePtr __transr, BytePtr __side, BytePtr __uplo, BytePtr __trans, BytePtr __diag,
@@ -10656,7 +12412,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int ctftri_(BytePtr __transr, BytePtr __uplo, BytePtr __diag, IntPtr __n,
@@ -10664,7 +12424,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int ctfttp_(BytePtr __transr, BytePtr __uplo, IntPtr __n,
@@ -10673,7 +12437,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int ctfttr_(BytePtr __transr, BytePtr __uplo, IntPtr __n,
@@ -10683,7 +12451,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int ctgevc_(BytePtr __side, BytePtr __howmny, IntPtr __select, IntPtr __n,
@@ -10697,7 +12469,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int ctgex2_(IntPtr __wantq, IntPtr __wantz, IntPtr __n,
@@ -10709,7 +12485,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int ctgexc_(IntPtr __wantq, IntPtr __wantz, IntPtr __n,
@@ -10721,7 +12501,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int ctgsen_(IntPtr __ijob, IntPtr __wantq, IntPtr __wantz, IntPtr __select, IntPtr __n,
@@ -10737,7 +12521,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int ctgsja_(BytePtr __jobu, BytePtr __jobv, BytePtr __jobq, IntPtr __m, IntPtr __p, IntPtr __n,
@@ -10753,7 +12541,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int ctgsna_(BytePtr __job, BytePtr __howmny, IntPtr __select, IntPtr __n,
@@ -10767,7 +12559,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int ctgsy2_(BytePtr __trans, IntPtr __ijob, IntPtr __m, IntPtr __n,
@@ -10781,7 +12577,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int ctgsyl_(BytePtr __trans, IntPtr __ijob, IntPtr __m, IntPtr __n,
@@ -10797,7 +12597,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int ctpcon_(BytePtr __norm, BytePtr __uplo, BytePtr __diag, IntPtr __n,
@@ -10807,7 +12611,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int ctprfs_(BytePtr __uplo, BytePtr __trans, BytePtr __diag, IntPtr __n, IntPtr __nrhs,
@@ -10820,7 +12628,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int ctptri_(BytePtr __uplo, BytePtr __diag, IntPtr __n,
@@ -10828,7 +12640,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int ctptrs_(BytePtr __uplo, BytePtr __trans, BytePtr __diag, IntPtr __n, IntPtr __nrhs,
@@ -10838,7 +12654,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int ctpttf_(BytePtr __transr, BytePtr __uplo, IntPtr __n,
@@ -10847,7 +12667,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int ctpttr_(BytePtr __uplo, IntPtr __n,
@@ -10857,7 +12681,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int ctrcon_(BytePtr __norm, BytePtr __uplo, BytePtr __diag, IntPtr __n,
@@ -10867,7 +12695,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int ctrevc_(BytePtr __side, BytePtr __howmny, IntPtr __select, IntPtr __n,
@@ -10880,7 +12712,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int ctrexc_(BytePtr __compq, IntPtr __n,
@@ -10890,7 +12726,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int ctrrfs_(BytePtr __uplo, BytePtr __trans, BytePtr __diag, IntPtr __n, IntPtr __nrhs,
@@ -10903,7 +12743,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int ctrsen_(BytePtr __job, BytePtr __compq, IntPtr __select, IntPtr __n,
@@ -10916,7 +12760,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int ctrsna_(BytePtr __job, BytePtr __howmny, IntPtr __select, IntPtr __n,
@@ -10929,7 +12777,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int ctrsyl_(BytePtr __trana, BytePtr __tranb, IntPtr __isgn, IntPtr __m, IntPtr __n,
@@ -10940,7 +12792,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int ctrti2_(BytePtr __uplo, BytePtr __diag, IntPtr __n,
@@ -10949,7 +12805,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int ctrtri_(BytePtr __uplo, BytePtr __diag, IntPtr __n,
@@ -10958,7 +12818,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int ctrtrs_(BytePtr __uplo, BytePtr __trans, BytePtr __diag, IntPtr __n, IntPtr __nrhs,
@@ -10968,7 +12832,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int ctrttf_(BytePtr __transr, BytePtr __uplo, IntPtr __n,
@@ -10977,7 +12845,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int ctrttp_(BytePtr __uplo, IntPtr __n,
@@ -10986,7 +12858,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int ctzrqf_(IntPtr __m, IntPtr __n,
@@ -10995,7 +12871,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int ctzrzf_(IntPtr __m, IntPtr __n,
@@ -11006,7 +12886,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int cung2l_(IntPtr __m, IntPtr __n, IntPtr __k,
@@ -11016,7 +12900,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int cung2r_(IntPtr __m, IntPtr __n, IntPtr __k,
@@ -11026,7 +12914,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int cungbr_(BytePtr __vect, IntPtr __m, IntPtr __n, IntPtr __k,
@@ -11037,7 +12929,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int cunghr_(IntPtr __n, IntPtr __ilo, IntPtr __ihi,
@@ -11048,7 +12944,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int cungl2_(IntPtr __m, IntPtr __n, IntPtr __k,
@@ -11058,7 +12958,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int cunglq_(IntPtr __m, IntPtr __n, IntPtr __k,
@@ -11069,7 +12973,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int cungql_(IntPtr __m, IntPtr __n, IntPtr __k,
@@ -11080,7 +12988,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int cungqr_(IntPtr __m, IntPtr __n, IntPtr __k,
@@ -11091,7 +13003,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int cungr2_(IntPtr __m, IntPtr __n, IntPtr __k,
@@ -11101,7 +13017,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int cungrq_(IntPtr __m, IntPtr __n, IntPtr __k,
@@ -11112,7 +13032,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int cungtr_(BytePtr __uplo, IntPtr __n,
@@ -11123,7 +13047,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int cunm2l_(BytePtr __side, BytePtr __trans, IntPtr __m, IntPtr __n, IntPtr __k,
@@ -11134,7 +13062,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int cunm2r_(BytePtr __side, BytePtr __trans, IntPtr __m, IntPtr __n, IntPtr __k,
@@ -11145,7 +13077,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int cunmbr_(BytePtr __vect, BytePtr __side, BytePtr __trans, IntPtr __m, IntPtr __n,
@@ -11157,7 +13093,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int cunmhr_(BytePtr __side, BytePtr __trans, IntPtr __m, IntPtr __n, IntPtr __ilo,
@@ -11169,7 +13109,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int cunml2_(BytePtr __side, BytePtr __trans, IntPtr __m, IntPtr __n, IntPtr __k,
@@ -11180,7 +13124,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int cunmlq_(BytePtr __side, BytePtr __trans, IntPtr __m, IntPtr __n, IntPtr __k,
@@ -11192,7 +13140,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int cunmql_(BytePtr __side, BytePtr __trans, IntPtr __m, IntPtr __n, IntPtr __k,
@@ -11204,7 +13156,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int cunmqr_(BytePtr __side, BytePtr __trans, IntPtr __m, IntPtr __n, IntPtr __k,
@@ -11216,7 +13172,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int cunmr2_(BytePtr __side, BytePtr __trans, IntPtr __m, IntPtr __n, IntPtr __k,
@@ -11227,7 +13187,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int cunmr3_(BytePtr __side, BytePtr __trans, IntPtr __m, IntPtr __n, IntPtr __k, IntPtr __l,
@@ -11238,7 +13202,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int cunmrq_(BytePtr __side, BytePtr __trans, IntPtr __m, IntPtr __n, IntPtr __k,
@@ -11250,7 +13218,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int cunmrz_(BytePtr __side, BytePtr __trans, IntPtr __m, IntPtr __n, IntPtr __k, IntPtr __l,
@@ -11262,7 +13234,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int cunmtr_(BytePtr __side, BytePtr __uplo, BytePtr __trans, IntPtr __m, IntPtr __n,
@@ -11274,7 +13250,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int cupgtr_(BytePtr __uplo, IntPtr __n,
@@ -11285,7 +13265,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int cupmtr_(BytePtr __side, BytePtr __uplo, BytePtr __trans, IntPtr __m, IntPtr __n,
@@ -11296,7 +13280,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dbdsdc_(BytePtr __uplo, BytePtr __compq, IntPtr __n, DoublePtr __d__, DoublePtr __e,
@@ -11305,7 +13293,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dbdsqr_(BytePtr __uplo, IntPtr __n, IntPtr __ncvt, IntPtr __nru, IntPtr __ncc,
@@ -11314,7 +13306,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int ddisna_(BytePtr __job, IntPtr __m, IntPtr __n, DoublePtr __d__, DoublePtr __sep,
@@ -11322,7 +13318,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dgbbrd_(BytePtr __vect, IntPtr __m, IntPtr __n, IntPtr __ncc, IntPtr __kl, IntPtr __ku,
@@ -11331,7 +13331,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dgbcon_(BytePtr __norm, IntPtr __n, IntPtr __kl, IntPtr __ku, DoublePtr __ab,
@@ -11340,7 +13344,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dgbequ_(IntPtr __m, IntPtr __n, IntPtr __kl, IntPtr __ku, DoublePtr __ab, IntPtr __ldab,
@@ -11348,7 +13356,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dgbequb_(IntPtr __m, IntPtr __n, IntPtr __kl, IntPtr __ku, DoublePtr __ab, IntPtr __ldab,
@@ -11356,7 +13368,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dgbrfs_(BytePtr __trans, IntPtr __n, IntPtr __kl, IntPtr __ku, IntPtr __nrhs,
@@ -11366,7 +13382,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dgbsv_(IntPtr __n, IntPtr __kl, IntPtr __ku, IntPtr __nrhs, DoublePtr __ab, IntPtr __ldab,
@@ -11374,7 +13394,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dgbsvx_(BytePtr __fact, BytePtr __trans, IntPtr __n, IntPtr __kl, IntPtr __ku,
@@ -11384,7 +13408,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dgbtf2_(IntPtr __m, IntPtr __n, IntPtr __kl, IntPtr __ku, DoublePtr __ab, IntPtr __ldab,
@@ -11392,7 +13420,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dgbtrf_(IntPtr __m, IntPtr __n, IntPtr __kl, IntPtr __ku, DoublePtr __ab, IntPtr __ldab,
@@ -11400,7 +13432,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dgbtrs_(BytePtr __trans, IntPtr __n, IntPtr __kl, IntPtr __ku, IntPtr __nrhs,
@@ -11408,7 +13444,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dgebak_(BytePtr __job, BytePtr __side, IntPtr __n, IntPtr __ilo, IntPtr __ihi,
@@ -11416,7 +13456,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dgebal_(BytePtr __job, IntPtr __n, DoublePtr __a, IntPtr __lda, IntPtr __ilo, IntPtr __ihi,
@@ -11424,7 +13468,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dgebd2_(IntPtr __m, IntPtr __n, DoublePtr __a, IntPtr __lda, DoublePtr __d__,
@@ -11432,7 +13480,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dgebrd_(IntPtr __m, IntPtr __n, DoublePtr __a, IntPtr __lda, DoublePtr __d__,
@@ -11440,7 +13492,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dgecon_(BytePtr __norm, IntPtr __n, DoublePtr __a, IntPtr __lda, DoublePtr __anorm,
@@ -11448,7 +13504,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dgeequ_(IntPtr __m, IntPtr __n, DoublePtr __a, IntPtr __lda, DoublePtr __r__,
@@ -11456,7 +13516,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dgeequb_(IntPtr __m, IntPtr __n, DoublePtr __a, IntPtr __lda, DoublePtr __r__,
@@ -11464,7 +13528,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dgeev_(BytePtr __jobvl, BytePtr __jobvr, IntPtr __n, DoublePtr __a, IntPtr __lda,
@@ -11473,7 +13541,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dgeevx_(BytePtr __balanc, BytePtr __jobvl, BytePtr __jobvr, BytePtr __sense, IntPtr __n,
@@ -11483,7 +13555,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dgegs_(BytePtr __jobvsl, BytePtr __jobvsr, IntPtr __n, DoublePtr __a, IntPtr __lda,
@@ -11492,7 +13568,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dgegv_(BytePtr __jobvl, BytePtr __jobvr, IntPtr __n, DoublePtr __a, IntPtr __lda,
@@ -11501,7 +13581,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dgehd2_(IntPtr __n, IntPtr __ilo, IntPtr __ihi, DoublePtr __a, IntPtr __lda,
@@ -11509,7 +13593,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dgehrd_(IntPtr __n, IntPtr __ilo, IntPtr __ihi, DoublePtr __a, IntPtr __lda,
@@ -11517,7 +13605,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dgejsv_(BytePtr __joba, BytePtr __jobu, BytePtr __jobv, BytePtr __jobr, BytePtr __jobt,
@@ -11526,7 +13618,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dgelq2_(IntPtr __m, IntPtr __n, DoublePtr __a, IntPtr __lda, DoublePtr __tau,
@@ -11534,7 +13630,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dgelqf_(IntPtr __m, IntPtr __n, DoublePtr __a, IntPtr __lda, DoublePtr __tau,
@@ -11542,7 +13642,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dgels_(BytePtr __trans, IntPtr __m, IntPtr __n, IntPtr __nrhs, DoublePtr __a, IntPtr __lda,
@@ -11550,7 +13654,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dgelsd_(IntPtr __m, IntPtr __n, IntPtr __nrhs, DoublePtr __a, IntPtr __lda, DoublePtr __b,
@@ -11559,7 +13667,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dgelss_(IntPtr __m, IntPtr __n, IntPtr __nrhs, DoublePtr __a, IntPtr __lda, DoublePtr __b,
@@ -11568,7 +13680,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dgelsx_(IntPtr __m, IntPtr __n, IntPtr __nrhs, DoublePtr __a, IntPtr __lda, DoublePtr __b,
@@ -11576,7 +13692,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dgelsy_(IntPtr __m, IntPtr __n, IntPtr __nrhs, DoublePtr __a, IntPtr __lda, DoublePtr __b,
@@ -11585,7 +13705,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dgeql2_(IntPtr __m, IntPtr __n, DoublePtr __a, IntPtr __lda, DoublePtr __tau,
@@ -11593,7 +13717,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dgeqlf_(IntPtr __m, IntPtr __n, DoublePtr __a, IntPtr __lda, DoublePtr __tau,
@@ -11601,7 +13729,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dgeqp3_(IntPtr __m, IntPtr __n, DoublePtr __a, IntPtr __lda, IntPtr __jpvt,
@@ -11609,7 +13741,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dgeqpf_(IntPtr __m, IntPtr __n, DoublePtr __a, IntPtr __lda, IntPtr __jpvt,
@@ -11617,7 +13753,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dgeqr2_(IntPtr __m, IntPtr __n, DoublePtr __a, IntPtr __lda, DoublePtr __tau,
@@ -11625,7 +13765,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dgeqrf_(IntPtr __m, IntPtr __n, DoublePtr __a, IntPtr __lda, DoublePtr __tau,
@@ -11633,7 +13777,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dgerfs_(BytePtr __trans, IntPtr __n, IntPtr __nrhs, DoublePtr __a, IntPtr __lda,
@@ -11642,7 +13790,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dgerq2_(IntPtr __m, IntPtr __n, DoublePtr __a, IntPtr __lda, DoublePtr __tau,
@@ -11650,7 +13802,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dgerqf_(IntPtr __m, IntPtr __n, DoublePtr __a, IntPtr __lda, DoublePtr __tau,
@@ -11658,7 +13814,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dgesc2_(IntPtr __n, DoublePtr __a, IntPtr __lda, DoublePtr __rhs, IntPtr __ipiv,
@@ -11666,7 +13826,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dgesdd_(BytePtr __jobz, IntPtr __m, IntPtr __n, DoublePtr __a, IntPtr __lda, DoublePtr __s,
@@ -11675,7 +13839,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dgesv_(IntPtr __n, IntPtr __nrhs, DoublePtr __a, IntPtr __lda, IntPtr __ipiv,
@@ -11683,7 +13851,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dgesvd_(BytePtr __jobu, BytePtr __jobvt, IntPtr __m, IntPtr __n, DoublePtr __a,
@@ -11692,7 +13864,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dgesvj_(BytePtr __joba, BytePtr __jobu, BytePtr __jobv, IntPtr __m, IntPtr __n,
@@ -11701,7 +13877,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dgesvx_(BytePtr __fact, BytePtr __trans, IntPtr __n, IntPtr __nrhs, DoublePtr __a,
@@ -11711,7 +13891,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dgetc2_(IntPtr __n, DoublePtr __a, IntPtr __lda, IntPtr __ipiv, IntPtr __jpiv,
@@ -11719,21 +13903,33 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dgetf2_(IntPtr __m, IntPtr __n, DoublePtr __a, IntPtr __lda, IntPtr __ipiv, IntPtr __info);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dgetrf_(IntPtr __m, IntPtr __n, DoublePtr __a, IntPtr __lda, IntPtr __ipiv, IntPtr __info);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dgetri_(IntPtr __n, DoublePtr __a, IntPtr __lda, IntPtr __ipiv, DoublePtr __work,
@@ -11741,7 +13937,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dgetrs_(BytePtr __trans, IntPtr __n, IntPtr __nrhs, DoublePtr __a, IntPtr __lda,
@@ -11749,7 +13949,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dggbak_(BytePtr __job, BytePtr __side, IntPtr __n, IntPtr __ilo, IntPtr __ihi,
@@ -11757,7 +13961,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dggbal_(BytePtr __job, IntPtr __n, DoublePtr __a, IntPtr __lda, DoublePtr __b,
@@ -11766,7 +13974,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dggev_(BytePtr __jobvl, BytePtr __jobvr, IntPtr __n, DoublePtr __a, IntPtr __lda,
@@ -11775,7 +13987,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dggevx_(BytePtr __balanc, BytePtr __jobvl, BytePtr __jobvr, BytePtr __sense, IntPtr __n,
@@ -11786,7 +14002,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dggglm_(IntPtr __n, IntPtr __m, IntPtr __p, DoublePtr __a, IntPtr __lda, DoublePtr __b,
@@ -11795,7 +14015,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dgghrd_(BytePtr __compq, BytePtr __compz, IntPtr __n, IntPtr __ilo, IntPtr __ihi,
@@ -11804,7 +14028,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dgglse_(IntPtr __m, IntPtr __n, IntPtr __p, DoublePtr __a, IntPtr __lda, DoublePtr __b,
@@ -11813,7 +14041,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dggqrf_(IntPtr __n, IntPtr __m, IntPtr __p, DoublePtr __a, IntPtr __lda, DoublePtr __taua,
@@ -11821,7 +14053,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dggrqf_(IntPtr __m, IntPtr __p, IntPtr __n, DoublePtr __a, IntPtr __lda, DoublePtr __taua,
@@ -11829,7 +14065,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dggsvd_(BytePtr __jobu, BytePtr __jobv, BytePtr __jobq, IntPtr __m, IntPtr __n, IntPtr __p,
@@ -11839,7 +14079,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dggsvp_(BytePtr __jobu, BytePtr __jobv, BytePtr __jobq, IntPtr __m, IntPtr __p, IntPtr __n,
@@ -11849,7 +14093,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dgsvj0_(BytePtr __jobv, IntPtr __m, IntPtr __n, DoublePtr __a, IntPtr __lda,
@@ -11858,7 +14106,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dgsvj1_(BytePtr __jobv, IntPtr __m, IntPtr __n, IntPtr __n1, DoublePtr __a, IntPtr __lda,
@@ -11867,7 +14119,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dgtcon_(BytePtr __norm, IntPtr __n, DoublePtr __dl, DoublePtr __d__, DoublePtr __du,
@@ -11876,7 +14132,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dgtrfs_(BytePtr __trans, IntPtr __n, IntPtr __nrhs, DoublePtr __dl, DoublePtr __d__,
@@ -11886,7 +14146,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dgtsv_(IntPtr __n, IntPtr __nrhs, DoublePtr __dl, DoublePtr __d__, DoublePtr __du,
@@ -11894,7 +14158,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dgtsvx_(BytePtr __fact, BytePtr __trans, IntPtr __n, IntPtr __nrhs, DoublePtr __dl,
@@ -11904,7 +14172,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dgttrf_(IntPtr __n, DoublePtr __dl, DoublePtr __d__, DoublePtr __du, DoublePtr __du2,
@@ -11912,7 +14184,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dgttrs_(BytePtr __trans, IntPtr __n, IntPtr __nrhs, DoublePtr __dl, DoublePtr __d__,
@@ -11920,7 +14196,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dgtts2_(IntPtr __itrans, IntPtr __n, IntPtr __nrhs, DoublePtr __dl, DoublePtr __d__,
@@ -11928,7 +14208,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dhgeqz_(BytePtr __job, BytePtr __compq, BytePtr __compz, IntPtr __n, IntPtr __ilo,
@@ -11938,7 +14222,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dhsein_(BytePtr __side, BytePtr __eigsrc, BytePtr __initv, IntPtr __select, IntPtr __n,
@@ -11948,7 +14236,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dhseqr_(BytePtr __job, BytePtr __compz, IntPtr __n, IntPtr __ilo, IntPtr __ihi,
@@ -11957,21 +14249,33 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int disnan_(DoublePtr __din);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dlabad_(DoublePtr __small, DoublePtr __large);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dlabrd_(IntPtr __m, IntPtr __n, IntPtr __nb, DoublePtr __a, IntPtr __lda, DoublePtr __d__,
@@ -11980,7 +14284,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dlacn2_(IntPtr __n, DoublePtr __v, DoublePtr __x, IntPtr __isgn, DoublePtr __est,
@@ -11988,7 +14296,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dlacon_(IntPtr __n, DoublePtr __v, DoublePtr __x, IntPtr __isgn, DoublePtr __est,
@@ -11996,7 +14308,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dlacpy_(BytePtr __uplo, IntPtr __m, IntPtr __n, DoublePtr __a, IntPtr __lda, DoublePtr __b,
@@ -12004,7 +14320,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dladiv_(DoublePtr __a, DoublePtr __b, DoublePtr __c__, DoublePtr __d__, DoublePtr __p,
@@ -12012,14 +14332,22 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dlae2_(DoublePtr __a, DoublePtr __b, DoublePtr __c__, DoublePtr __rt1, DoublePtr __rt2);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dlaebz_(IntPtr __ijob, IntPtr __nitmax, IntPtr __n, IntPtr __mmax, IntPtr __minp,
@@ -12029,7 +14357,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dlaed0_(IntPtr __icompq, IntPtr __qsiz, IntPtr __n, DoublePtr __d__, DoublePtr __e,
@@ -12038,7 +14370,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dlaed1_(IntPtr __n, DoublePtr __d__, DoublePtr __q, IntPtr __ldq, IntPtr __indxq,
@@ -12046,7 +14382,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dlaed2_(IntPtr __k, IntPtr __n, IntPtr __n1, DoublePtr __d__, DoublePtr __q, IntPtr __ldq,
@@ -12055,7 +14395,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dlaed3_(IntPtr __k, IntPtr __n, IntPtr __n1, DoublePtr __d__, DoublePtr __q, IntPtr __ldq,
@@ -12064,7 +14408,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dlaed4_(IntPtr __n, IntPtr __i__, DoublePtr __d__, DoublePtr __z__, DoublePtr __delta,
@@ -12072,7 +14420,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dlaed5_(IntPtr __i__, DoublePtr __d__, DoublePtr __z__, DoublePtr __delta, DoublePtr __rho,
@@ -12080,7 +14432,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dlaed6_(IntPtr __kniter, IntPtr __orgati, DoublePtr __rho, DoublePtr __d__,
@@ -12088,7 +14444,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dlaed7_(IntPtr __icompq, IntPtr __n, IntPtr __qsiz, IntPtr __tlvls, IntPtr __curlvl,
@@ -12098,7 +14458,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dlaed8_(IntPtr __icompq, IntPtr __k, IntPtr __n, IntPtr __qsiz, DoublePtr __d__,
@@ -12108,7 +14472,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dlaed9_(IntPtr __k, IntPtr __kstart, IntPtr __kstop, IntPtr __n, DoublePtr __d__,
@@ -12117,7 +14485,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dlaeda_(IntPtr __n, IntPtr __tlvls, IntPtr __curlvl, IntPtr __curpbm, IntPtr __prmptr,
@@ -12126,7 +14498,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dlaein_(IntPtr __rightv, IntPtr __noinit, IntPtr __n, DoublePtr __h__, IntPtr __ldh,
@@ -12135,7 +14511,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dlaev2_(DoublePtr __a, DoublePtr __b, DoublePtr __c__, DoublePtr __rt1, DoublePtr __rt2,
@@ -12143,7 +14523,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dlaexc_(IntPtr __wantq, IntPtr __n, DoublePtr __t, IntPtr __ldt, DoublePtr __q,
@@ -12151,7 +14535,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dlag2_(DoublePtr __a, IntPtr __lda, DoublePtr __b, IntPtr __ldb, DoublePtr __safmin,
@@ -12159,7 +14547,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dlag2s_(IntPtr __m, IntPtr __n, DoublePtr __a, IntPtr __lda, FloatPtr __sa, IntPtr __ldsa,
@@ -12167,7 +14559,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dlags2_(IntPtr __upper, DoublePtr __a1, DoublePtr __a2, DoublePtr __a3, DoublePtr __b1,
@@ -12176,7 +14572,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dlagtf_(IntPtr __n, DoublePtr __a, DoublePtr __lambda, DoublePtr __b, DoublePtr __c__,
@@ -12184,7 +14584,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dlagtm_(BytePtr __trans, IntPtr __n, IntPtr __nrhs, DoublePtr __alpha, DoublePtr __dl,
@@ -12193,7 +14597,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dlagts_(IntPtr __job, IntPtr __n, DoublePtr __a, DoublePtr __b, DoublePtr __c__,
@@ -12201,7 +14609,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dlagv2_(DoublePtr __a, IntPtr __lda, DoublePtr __b, IntPtr __ldb, DoublePtr __alphar,
@@ -12209,7 +14621,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dlahqr_(IntPtr __wantt, IntPtr __wantz, IntPtr __n, IntPtr __ilo, IntPtr __ihi,
@@ -12218,7 +14634,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dlahr2_(IntPtr __n, IntPtr __k, IntPtr __nb, DoublePtr __a, IntPtr __lda, DoublePtr __tau,
@@ -12226,7 +14646,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dlahrd_(IntPtr __n, IntPtr __k, IntPtr __nb, DoublePtr __a, IntPtr __lda, DoublePtr __tau,
@@ -12234,7 +14658,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dlaic1_(IntPtr __job, IntPtr __j, DoublePtr __x, DoublePtr __sest, DoublePtr __w,
@@ -12242,14 +14670,22 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dlaisnan_(DoublePtr __din1, DoublePtr __din2);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dlaln2_(IntPtr __ltrans, IntPtr __na, IntPtr __nw, DoublePtr __smin, DoublePtr __ca,
@@ -12258,7 +14694,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dlals0_(IntPtr __icompq, IntPtr __nl, IntPtr __nr, IntPtr __sqre, IntPtr __nrhs,
@@ -12268,7 +14708,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dlalsa_(IntPtr __icompq, IntPtr __smlsiz, IntPtr __n, IntPtr __nrhs, DoublePtr __b,
@@ -12279,7 +14723,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dlalsd_(BytePtr __uplo, IntPtr __smlsiz, IntPtr __n, IntPtr __nrhs, DoublePtr __d__,
@@ -12288,7 +14736,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dlamrg_(IntPtr __n1, IntPtr __n2, DoublePtr __a, IntPtr __dtrd1, IntPtr __dtrd2,
@@ -12296,7 +14748,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dlaneg_(IntPtr __n, DoublePtr __d__, DoublePtr __lld, DoublePtr __sigma,
@@ -12304,7 +14760,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native double dlangb_(BytePtr __norm, IntPtr __n, IntPtr __kl, IntPtr __ku, DoublePtr __ab,
@@ -12312,7 +14772,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native double dlange_(BytePtr __norm, IntPtr __m, IntPtr __n, DoublePtr __a, IntPtr __lda,
@@ -12320,21 +14784,33 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native double dlangt_(BytePtr __norm, IntPtr __n, DoublePtr __dl, DoublePtr __d__, DoublePtr __du);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native double dlanhs_(BytePtr __norm, IntPtr __n, DoublePtr __a, IntPtr __lda, DoublePtr __work);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native double dlansb_(BytePtr __norm, BytePtr __uplo, IntPtr __n, IntPtr __k, DoublePtr __ab,
@@ -12342,7 +14818,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native double dlansf_(BytePtr __norm, BytePtr __transr, BytePtr __uplo, IntPtr __n, DoublePtr __a,
@@ -12350,21 +14830,33 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native double dlansp_(BytePtr __norm, BytePtr __uplo, IntPtr __n, DoublePtr __ap, DoublePtr __work);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native double dlanst_(BytePtr __norm, IntPtr __n, DoublePtr __d__, DoublePtr __e);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native double dlansy_(BytePtr __norm, BytePtr __uplo, IntPtr __n, DoublePtr __a, IntPtr __lda,
@@ -12372,7 +14864,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native double dlantb_(BytePtr __norm, BytePtr __uplo, BytePtr __diag, IntPtr __n, IntPtr __k,
@@ -12380,7 +14876,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native double dlantp_(BytePtr __norm, BytePtr __uplo, BytePtr __diag, IntPtr __n, DoublePtr __ap,
@@ -12388,7 +14888,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native double dlantr_(BytePtr __norm, BytePtr __uplo, BytePtr __diag, IntPtr __m, IntPtr __n,
@@ -12396,7 +14900,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dlanv2_(DoublePtr __a, DoublePtr __b, DoublePtr __c__, DoublePtr __d__, DoublePtr __rt1r,
@@ -12404,7 +14912,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dlapll_(IntPtr __n, DoublePtr __x, IntPtr __incx, DoublePtr __y, IntPtr __incy,
@@ -12412,28 +14924,44 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dlapmt_(IntPtr __forwrd, IntPtr __m, IntPtr __n, DoublePtr __x, IntPtr __ldx, IntPtr __k);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native double dlapy2_(DoublePtr __x, DoublePtr __y);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native double dlapy3_(DoublePtr __x, DoublePtr __y, DoublePtr __z__);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dlaqgb_(IntPtr __m, IntPtr __n, IntPtr __kl, IntPtr __ku, DoublePtr __ab, IntPtr __ldab,
@@ -12442,7 +14970,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dlaqge_(IntPtr __m, IntPtr __n, DoublePtr __a, IntPtr __lda, DoublePtr __r__,
@@ -12450,7 +14982,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dlaqp2_(IntPtr __m, IntPtr __n, IntPtr __offset, DoublePtr __a, IntPtr __lda,
@@ -12458,7 +14994,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dlaqps_(IntPtr __m, IntPtr __n, IntPtr __offset, IntPtr __nb, IntPtr __kb, DoublePtr __a,
@@ -12467,7 +15007,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dlaqr0_(IntPtr __wantt, IntPtr __wantz, IntPtr __n, IntPtr __ilo, IntPtr __ihi,
@@ -12476,7 +15020,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dlaqr1_(IntPtr __n, DoublePtr __h__, IntPtr __ldh, DoublePtr __sr1, DoublePtr __si1,
@@ -12484,7 +15032,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dlaqr2_(IntPtr __wantt, IntPtr __wantz, IntPtr __n, IntPtr __ktop, IntPtr __kbot,
@@ -12494,7 +15046,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dlaqr3_(IntPtr __wantt, IntPtr __wantz, IntPtr __n, IntPtr __ktop, IntPtr __kbot,
@@ -12504,7 +15060,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dlaqr4_(IntPtr __wantt, IntPtr __wantz, IntPtr __n, IntPtr __ilo, IntPtr __ihi,
@@ -12513,7 +15073,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dlaqr5_(IntPtr __wantt, IntPtr __wantz, IntPtr __kacc22, IntPtr __n, IntPtr __ktop,
@@ -12523,7 +15087,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dlaqsb_(BytePtr __uplo, IntPtr __n, IntPtr __kd, DoublePtr __ab, IntPtr __ldab,
@@ -12531,7 +15099,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dlaqsp_(BytePtr __uplo, IntPtr __n, DoublePtr __ap, DoublePtr __s, DoublePtr __scond,
@@ -12539,7 +15111,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dlaqsy_(BytePtr __uplo, IntPtr __n, DoublePtr __a, IntPtr __lda, DoublePtr __s,
@@ -12547,7 +15123,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dlaqtr_(IntPtr __ltran, IntPtr __l__CLPK_real, IntPtr __n, DoublePtr __t, IntPtr __ldt,
@@ -12555,7 +15135,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dlar1v_(IntPtr __n, IntPtr __b1, IntPtr __bn, DoublePtr __lambda, DoublePtr __d__,
@@ -12565,7 +15149,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dlar2v_(IntPtr __n, DoublePtr __x, DoublePtr __y, DoublePtr __z__, IntPtr __incx,
@@ -12573,7 +15161,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dlarf_(BytePtr __side, IntPtr __m, IntPtr __n, DoublePtr __v, IntPtr __incv,
@@ -12581,7 +15173,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dlarfb_(BytePtr __side, BytePtr __trans, BytePtr __direct, BytePtr __storev, IntPtr __m,
@@ -12590,21 +15186,33 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dlarfg_(IntPtr __n, DoublePtr __alpha, DoublePtr __x, IntPtr __incx, DoublePtr __tau);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dlarfp_(IntPtr __n, DoublePtr __alpha, DoublePtr __x, IntPtr __incx, DoublePtr __tau);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dlarft_(BytePtr __direct, BytePtr __storev, IntPtr __n, IntPtr __k, DoublePtr __v,
@@ -12612,7 +15220,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dlarfx_(BytePtr __side, IntPtr __m, IntPtr __n, DoublePtr __v, DoublePtr __tau,
@@ -12620,7 +15232,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dlargv_(IntPtr __n, DoublePtr __x, IntPtr __incx, DoublePtr __y, IntPtr __incy,
@@ -12628,14 +15244,22 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dlarnv_(IntPtr __idist, IntPtr __iseed, IntPtr __n, DoublePtr __x);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dlarra_(IntPtr __n, DoublePtr __d__, DoublePtr __e, DoublePtr __e2, DoublePtr __spltol,
@@ -12643,7 +15267,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dlarrb_(IntPtr __n, DoublePtr __d__, DoublePtr __lld, IntPtr __ifirst, IntPtr __ilast,
@@ -12652,7 +15280,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dlarrc_(BytePtr __jobt, IntPtr __n, DoublePtr __vl, DoublePtr __vu, DoublePtr __d__,
@@ -12660,7 +15292,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dlarrd_(BytePtr __range, BytePtr __order, IntPtr __n, DoublePtr __vl, DoublePtr __vu,
@@ -12671,7 +15307,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dlarre_(BytePtr __range, IntPtr __n, DoublePtr __vl, DoublePtr __vu, IntPtr __il,
@@ -12682,7 +15322,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dlarrf_(IntPtr __n, DoublePtr __d__, DoublePtr __l, DoublePtr __ld, IntPtr __clstrt,
@@ -12692,7 +15336,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dlarrj_(IntPtr __n, DoublePtr __d__, DoublePtr __e2, IntPtr __ifirst, IntPtr __ilast,
@@ -12701,7 +15349,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dlarrk_(IntPtr __n, IntPtr __iw, DoublePtr __gl, DoublePtr __gu, DoublePtr __d__,
@@ -12709,14 +15361,22 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dlarrr_(IntPtr __n, DoublePtr __d__, DoublePtr __e, IntPtr __info);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dlarrv_(IntPtr __n, DoublePtr __vl, DoublePtr __vu, DoublePtr __d__, DoublePtr __l,
@@ -12727,21 +15387,33 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dlarscl2_(IntPtr __m, IntPtr __n, DoublePtr __d__, DoublePtr __x, IntPtr __ldx);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dlartg_(DoublePtr __f, DoublePtr __g, DoublePtr __cs, DoublePtr __sn, DoublePtr __r__);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dlartv_(IntPtr __n, DoublePtr __x, IntPtr __incx, DoublePtr __y, IntPtr __incy,
@@ -12749,14 +15421,22 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dlaruv_(IntPtr __iseed, IntPtr __n, DoublePtr __x);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dlarz_(BytePtr __side, IntPtr __m, IntPtr __n, IntPtr __l, DoublePtr __v, IntPtr __incv,
@@ -12764,7 +15444,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dlarzb_(BytePtr __side, BytePtr __trans, BytePtr __direct, BytePtr __storev, IntPtr __m,
@@ -12773,7 +15457,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dlarzt_(BytePtr __direct, BytePtr __storev, IntPtr __n, IntPtr __k, DoublePtr __v,
@@ -12781,7 +15469,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dlas2_(DoublePtr __f, DoublePtr __g, DoublePtr __h__, DoublePtr __ssmin,
@@ -12789,7 +15481,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dlascl_(BytePtr __type__, IntPtr __kl, IntPtr __ku, DoublePtr __cfrom, DoublePtr __cto,
@@ -12797,14 +15493,22 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dlascl2_(IntPtr __m, IntPtr __n, DoublePtr __d__, DoublePtr __x, IntPtr __ldx);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dlasd0_(IntPtr __n, IntPtr __sqre, DoublePtr __d__, DoublePtr __e, DoublePtr __u,
@@ -12813,7 +15517,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dlasd1_(IntPtr __nl, IntPtr __nr, IntPtr __sqre, DoublePtr __d__, DoublePtr __alpha,
@@ -12822,7 +15530,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dlasd2_(IntPtr __nl, IntPtr __nr, IntPtr __sqre, IntPtr __k, DoublePtr __d__,
@@ -12832,7 +15544,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dlasd3_(IntPtr __nl, IntPtr __nr, IntPtr __sqre, IntPtr __k, DoublePtr __d__,
@@ -12842,7 +15558,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dlasd4_(IntPtr __n, IntPtr __i__, DoublePtr __d__, DoublePtr __z__, DoublePtr __delta,
@@ -12850,7 +15570,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dlasd5_(IntPtr __i__, DoublePtr __d__, DoublePtr __z__, DoublePtr __delta, DoublePtr __rho,
@@ -12858,7 +15582,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dlasd6_(IntPtr __icompq, IntPtr __nl, IntPtr __nr, IntPtr __sqre, DoublePtr __d__,
@@ -12869,7 +15597,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dlasd7_(IntPtr __icompq, IntPtr __nl, IntPtr __nr, IntPtr __sqre, IntPtr __k,
@@ -12880,7 +15612,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dlasd8_(IntPtr __icompq, IntPtr __k, DoublePtr __d__, DoublePtr __z__, DoublePtr __vf,
@@ -12889,7 +15625,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dlasda_(IntPtr __icompq, IntPtr __smlsiz, IntPtr __n, IntPtr __sqre, DoublePtr __d__,
@@ -12899,7 +15639,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dlasdq_(BytePtr __uplo, IntPtr __sqre, IntPtr __n, IntPtr __ncvt, IntPtr __nru,
@@ -12908,7 +15652,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dlasdt_(IntPtr __n, IntPtr __lvl, IntPtr __nd, IntPtr __inode, IntPtr __ndiml,
@@ -12916,7 +15664,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dlaset_(BytePtr __uplo, IntPtr __m, IntPtr __n, DoublePtr __alpha, DoublePtr __beta,
@@ -12924,21 +15676,33 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dlasq1_(IntPtr __n, DoublePtr __d__, DoublePtr __e, DoublePtr __work, IntPtr __info);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dlasq2_(IntPtr __n, DoublePtr __z__, IntPtr __info);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dlasq3_(IntPtr __i0, IntPtr __n0, DoublePtr __z__, IntPtr __pp, DoublePtr __dmin__,
@@ -12948,7 +15712,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dlasq4_(IntPtr __i0, IntPtr __n0, DoublePtr __z__, IntPtr __pp, IntPtr __n0in,
@@ -12957,7 +15725,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dlasq5_(IntPtr __i0, IntPtr __n0, DoublePtr __z__, IntPtr __pp, DoublePtr __tau,
@@ -12966,7 +15738,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dlasq6_(IntPtr __i0, IntPtr __n0, DoublePtr __z__, IntPtr __pp, DoublePtr __dmin__,
@@ -12974,7 +15750,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dlasr_(BytePtr __side, BytePtr __pivot, BytePtr __direct, IntPtr __m, IntPtr __n,
@@ -12982,21 +15762,33 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dlasrt_(BytePtr __id, IntPtr __n, DoublePtr __d__, IntPtr __info);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dlassq_(IntPtr __n, DoublePtr __x, IntPtr __incx, DoublePtr __scale, DoublePtr __sumsq);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dlasv2_(DoublePtr __f, DoublePtr __g, DoublePtr __h__, DoublePtr __ssmin,
@@ -13004,7 +15796,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dlaswp_(IntPtr __n, DoublePtr __a, IntPtr __lda, IntPtr __k1, IntPtr __k2, IntPtr __ipiv,
@@ -13012,7 +15808,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dlasy2_(IntPtr __ltranl, IntPtr __ltranr, IntPtr __isgn, IntPtr __n1, IntPtr __n2,
@@ -13021,7 +15821,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dlasyf_(BytePtr __uplo, IntPtr __n, IntPtr __nb, IntPtr __kb, DoublePtr __a, IntPtr __lda,
@@ -13029,7 +15833,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dlat2s_(BytePtr __uplo, IntPtr __n, DoublePtr __a, IntPtr __lda, FloatPtr __sa,
@@ -13037,7 +15845,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dlatbs_(BytePtr __uplo, BytePtr __trans, BytePtr __diag, BytePtr __normin, IntPtr __n,
@@ -13046,7 +15858,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dlatdf_(IntPtr __ijob, IntPtr __n, DoublePtr __z__, IntPtr __ldz, DoublePtr __rhs,
@@ -13054,7 +15870,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dlatps_(BytePtr __uplo, BytePtr __trans, BytePtr __diag, BytePtr __normin, IntPtr __n,
@@ -13062,7 +15882,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dlatrd_(BytePtr __uplo, IntPtr __n, IntPtr __nb, DoublePtr __a, IntPtr __lda,
@@ -13070,7 +15894,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dlatrs_(BytePtr __uplo, BytePtr __trans, BytePtr __diag, BytePtr __normin, IntPtr __n,
@@ -13078,7 +15906,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dlatrz_(IntPtr __m, IntPtr __n, IntPtr __l, DoublePtr __a, IntPtr __lda, DoublePtr __tau,
@@ -13086,7 +15918,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dlatzm_(BytePtr __side, IntPtr __m, IntPtr __n, DoublePtr __v, IntPtr __incv,
@@ -13094,21 +15930,33 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dlauu2_(BytePtr __uplo, IntPtr __n, DoublePtr __a, IntPtr __lda, IntPtr __info);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dlauum_(BytePtr __uplo, IntPtr __n, DoublePtr __a, IntPtr __lda, IntPtr __info);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dopgtr_(BytePtr __uplo, IntPtr __n, DoublePtr __ap, DoublePtr __tau, DoublePtr __q,
@@ -13116,7 +15964,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dopmtr_(BytePtr __side, BytePtr __uplo, BytePtr __trans, IntPtr __m, IntPtr __n,
@@ -13124,7 +15976,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dorg2l_(IntPtr __m, IntPtr __n, IntPtr __k, DoublePtr __a, IntPtr __lda, DoublePtr __tau,
@@ -13132,7 +15988,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dorg2r_(IntPtr __m, IntPtr __n, IntPtr __k, DoublePtr __a, IntPtr __lda, DoublePtr __tau,
@@ -13140,7 +16000,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dorgbr_(BytePtr __vect, IntPtr __m, IntPtr __n, IntPtr __k, DoublePtr __a, IntPtr __lda,
@@ -13148,7 +16012,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dorghr_(IntPtr __n, IntPtr __ilo, IntPtr __ihi, DoublePtr __a, IntPtr __lda,
@@ -13156,7 +16024,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dorgl2_(IntPtr __m, IntPtr __n, IntPtr __k, DoublePtr __a, IntPtr __lda, DoublePtr __tau,
@@ -13164,7 +16036,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dorglq_(IntPtr __m, IntPtr __n, IntPtr __k, DoublePtr __a, IntPtr __lda, DoublePtr __tau,
@@ -13172,7 +16048,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dorgql_(IntPtr __m, IntPtr __n, IntPtr __k, DoublePtr __a, IntPtr __lda, DoublePtr __tau,
@@ -13180,7 +16060,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dorgqr_(IntPtr __m, IntPtr __n, IntPtr __k, DoublePtr __a, IntPtr __lda, DoublePtr __tau,
@@ -13188,7 +16072,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dorgr2_(IntPtr __m, IntPtr __n, IntPtr __k, DoublePtr __a, IntPtr __lda, DoublePtr __tau,
@@ -13196,7 +16084,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dorgrq_(IntPtr __m, IntPtr __n, IntPtr __k, DoublePtr __a, IntPtr __lda, DoublePtr __tau,
@@ -13204,7 +16096,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dorgtr_(BytePtr __uplo, IntPtr __n, DoublePtr __a, IntPtr __lda, DoublePtr __tau,
@@ -13212,7 +16108,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dorm2l_(BytePtr __side, BytePtr __trans, IntPtr __m, IntPtr __n, IntPtr __k, DoublePtr __a,
@@ -13220,7 +16120,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dorm2r_(BytePtr __side, BytePtr __trans, IntPtr __m, IntPtr __n, IntPtr __k, DoublePtr __a,
@@ -13228,7 +16132,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dormbr_(BytePtr __vect, BytePtr __side, BytePtr __trans, IntPtr __m, IntPtr __n,
@@ -13237,7 +16145,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dormhr_(BytePtr __side, BytePtr __trans, IntPtr __m, IntPtr __n, IntPtr __ilo,
@@ -13246,7 +16158,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dorml2_(BytePtr __side, BytePtr __trans, IntPtr __m, IntPtr __n, IntPtr __k, DoublePtr __a,
@@ -13254,7 +16170,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dormlq_(BytePtr __side, BytePtr __trans, IntPtr __m, IntPtr __n, IntPtr __k, DoublePtr __a,
@@ -13263,7 +16183,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dormql_(BytePtr __side, BytePtr __trans, IntPtr __m, IntPtr __n, IntPtr __k, DoublePtr __a,
@@ -13272,7 +16196,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dormqr_(BytePtr __side, BytePtr __trans, IntPtr __m, IntPtr __n, IntPtr __k, DoublePtr __a,
@@ -13281,7 +16209,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dormr2_(BytePtr __side, BytePtr __trans, IntPtr __m, IntPtr __n, IntPtr __k, DoublePtr __a,
@@ -13289,7 +16221,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dormr3_(BytePtr __side, BytePtr __trans, IntPtr __m, IntPtr __n, IntPtr __k, IntPtr __l,
@@ -13298,7 +16234,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dormrq_(BytePtr __side, BytePtr __trans, IntPtr __m, IntPtr __n, IntPtr __k, DoublePtr __a,
@@ -13307,7 +16247,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dormrz_(BytePtr __side, BytePtr __trans, IntPtr __m, IntPtr __n, IntPtr __k, IntPtr __l,
@@ -13316,7 +16260,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dormtr_(BytePtr __side, BytePtr __uplo, BytePtr __trans, IntPtr __m, IntPtr __n,
@@ -13325,7 +16273,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dpbcon_(BytePtr __uplo, IntPtr __n, IntPtr __kd, DoublePtr __ab, IntPtr __ldab,
@@ -13333,7 +16285,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dpbequ_(BytePtr __uplo, IntPtr __n, IntPtr __kd, DoublePtr __ab, IntPtr __ldab,
@@ -13341,7 +16297,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dpbrfs_(BytePtr __uplo, IntPtr __n, IntPtr __kd, IntPtr __nrhs, DoublePtr __ab,
@@ -13350,7 +16310,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dpbstf_(BytePtr __uplo, IntPtr __n, IntPtr __kd, DoublePtr __ab, IntPtr __ldab,
@@ -13358,7 +16322,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dpbsv_(BytePtr __uplo, IntPtr __n, IntPtr __kd, IntPtr __nrhs, DoublePtr __ab,
@@ -13366,7 +16334,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dpbsvx_(BytePtr __fact, BytePtr __uplo, IntPtr __n, IntPtr __kd, IntPtr __nrhs,
@@ -13376,7 +16348,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dpbtf2_(BytePtr __uplo, IntPtr __n, IntPtr __kd, DoublePtr __ab, IntPtr __ldab,
@@ -13384,7 +16360,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dpbtrf_(BytePtr __uplo, IntPtr __n, IntPtr __kd, DoublePtr __ab, IntPtr __ldab,
@@ -13392,7 +16372,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dpbtrs_(BytePtr __uplo, IntPtr __n, IntPtr __kd, IntPtr __nrhs, DoublePtr __ab,
@@ -13400,21 +16384,33 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dpftrf_(BytePtr __transr, BytePtr __uplo, IntPtr __n, DoublePtr __a, IntPtr __info);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dpftri_(BytePtr __transr, BytePtr __uplo, IntPtr __n, DoublePtr __a, IntPtr __info);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dpftrs_(BytePtr __transr, BytePtr __uplo, IntPtr __n, IntPtr __nrhs, DoublePtr __a,
@@ -13422,7 +16418,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dpocon_(BytePtr __uplo, IntPtr __n, DoublePtr __a, IntPtr __lda, DoublePtr __anorm,
@@ -13430,7 +16430,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dpoequ_(IntPtr __n, DoublePtr __a, IntPtr __lda, DoublePtr __s, DoublePtr __scond,
@@ -13438,7 +16442,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dpoequb_(IntPtr __n, DoublePtr __a, IntPtr __lda, DoublePtr __s, DoublePtr __scond,
@@ -13446,7 +16454,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dporfs_(BytePtr __uplo, IntPtr __n, IntPtr __nrhs, DoublePtr __a, IntPtr __lda,
@@ -13455,7 +16467,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dposv_(BytePtr __uplo, IntPtr __n, IntPtr __nrhs, DoublePtr __a, IntPtr __lda,
@@ -13463,7 +16479,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dposvx_(BytePtr __fact, BytePtr __uplo, IntPtr __n, IntPtr __nrhs, DoublePtr __a,
@@ -13473,28 +16493,44 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dpotf2_(BytePtr __uplo, IntPtr __n, DoublePtr __a, IntPtr __lda, IntPtr __info);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dpotrf_(BytePtr __uplo, IntPtr __n, DoublePtr __a, IntPtr __lda, IntPtr __info);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dpotri_(BytePtr __uplo, IntPtr __n, DoublePtr __a, IntPtr __lda, IntPtr __info);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dpotrs_(BytePtr __uplo, IntPtr __n, IntPtr __nrhs, DoublePtr __a, IntPtr __lda,
@@ -13502,7 +16538,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dppcon_(BytePtr __uplo, IntPtr __n, DoublePtr __ap, DoublePtr __anorm, DoublePtr __rcond,
@@ -13510,7 +16550,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dppequ_(BytePtr __uplo, IntPtr __n, DoublePtr __ap, DoublePtr __s, DoublePtr __scond,
@@ -13518,7 +16562,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dpprfs_(BytePtr __uplo, IntPtr __n, IntPtr __nrhs, DoublePtr __ap, DoublePtr __afp,
@@ -13527,7 +16575,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dppsv_(BytePtr __uplo, IntPtr __n, IntPtr __nrhs, DoublePtr __ap, DoublePtr __b,
@@ -13535,7 +16587,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dppsvx_(BytePtr __fact, BytePtr __uplo, IntPtr __n, IntPtr __nrhs, DoublePtr __ap,
@@ -13544,21 +16600,33 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dpptrf_(BytePtr __uplo, IntPtr __n, DoublePtr __ap, IntPtr __info);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dpptri_(BytePtr __uplo, IntPtr __n, DoublePtr __ap, IntPtr __info);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dpptrs_(BytePtr __uplo, IntPtr __n, IntPtr __nrhs, DoublePtr __ap, DoublePtr __b,
@@ -13566,7 +16634,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dpstf2_(BytePtr __uplo, IntPtr __n, DoublePtr __a, IntPtr __lda, IntPtr __piv,
@@ -13574,7 +16646,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dpstrf_(BytePtr __uplo, IntPtr __n, DoublePtr __a, IntPtr __lda, IntPtr __piv,
@@ -13582,7 +16658,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dptcon_(IntPtr __n, DoublePtr __d__, DoublePtr __e, DoublePtr __anorm, DoublePtr __rcond,
@@ -13590,7 +16670,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dpteqr_(BytePtr __compz, IntPtr __n, DoublePtr __d__, DoublePtr __e, DoublePtr __z__,
@@ -13598,7 +16682,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dptrfs_(IntPtr __n, IntPtr __nrhs, DoublePtr __d__, DoublePtr __e, DoublePtr __df,
@@ -13607,7 +16695,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dptsv_(IntPtr __n, IntPtr __nrhs, DoublePtr __d__, DoublePtr __e, DoublePtr __b,
@@ -13615,7 +16707,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dptsvx_(BytePtr __fact, IntPtr __n, IntPtr __nrhs, DoublePtr __d__, DoublePtr __e,
@@ -13624,14 +16720,22 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dpttrf_(IntPtr __n, DoublePtr __d__, DoublePtr __e, IntPtr __info);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dpttrs_(IntPtr __n, IntPtr __nrhs, DoublePtr __d__, DoublePtr __e, DoublePtr __b,
@@ -13639,7 +16743,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dptts2_(IntPtr __n, IntPtr __nrhs, DoublePtr __d__, DoublePtr __e, DoublePtr __b,
@@ -13647,14 +16755,22 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int drscl_(IntPtr __n, DoublePtr __sa, DoublePtr __sx, IntPtr __incx);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dsbev_(BytePtr __jobz, BytePtr __uplo, IntPtr __n, IntPtr __kd, DoublePtr __ab,
@@ -13662,7 +16778,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dsbevd_(BytePtr __jobz, BytePtr __uplo, IntPtr __n, IntPtr __kd, DoublePtr __ab,
@@ -13671,7 +16791,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dsbevx_(BytePtr __jobz, BytePtr __range, BytePtr __uplo, IntPtr __n, IntPtr __kd,
@@ -13681,7 +16805,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dsbgst_(BytePtr __vect, BytePtr __uplo, IntPtr __n, IntPtr __ka, IntPtr __kb,
@@ -13690,7 +16818,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dsbgv_(BytePtr __jobz, BytePtr __uplo, IntPtr __n, IntPtr __ka, IntPtr __kb,
@@ -13699,7 +16831,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dsbgvd_(BytePtr __jobz, BytePtr __uplo, IntPtr __n, IntPtr __ka, IntPtr __kb,
@@ -13708,7 +16844,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dsbgvx_(BytePtr __jobz, BytePtr __range, BytePtr __uplo, IntPtr __n, IntPtr __ka,
@@ -13718,7 +16858,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dsbtrd_(BytePtr __vect, BytePtr __uplo, IntPtr __n, IntPtr __kd, DoublePtr __ab,
@@ -13727,7 +16871,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dsfrk_(BytePtr __transr, BytePtr __uplo, BytePtr __trans, IntPtr __n, IntPtr __k,
@@ -13735,7 +16883,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dsgesv_(IntPtr __n, IntPtr __nrhs, DoublePtr __a, IntPtr __lda, IntPtr __ipiv,
@@ -13744,7 +16896,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dspcon_(BytePtr __uplo, IntPtr __n, DoublePtr __ap, IntPtr __ipiv, DoublePtr __anorm,
@@ -13752,7 +16908,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dspev_(BytePtr __jobz, BytePtr __uplo, IntPtr __n, DoublePtr __ap, DoublePtr __w,
@@ -13760,7 +16920,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dspevd_(BytePtr __jobz, BytePtr __uplo, IntPtr __n, DoublePtr __ap, DoublePtr __w,
@@ -13769,7 +16933,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dspevx_(BytePtr __jobz, BytePtr __range, BytePtr __uplo, IntPtr __n, DoublePtr __ap,
@@ -13778,7 +16946,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dspgst_(IntPtr __itype, BytePtr __uplo, IntPtr __n, DoublePtr __ap, DoublePtr __bp,
@@ -13786,7 +16958,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dspgv_(IntPtr __itype, BytePtr __jobz, BytePtr __uplo, IntPtr __n, DoublePtr __ap,
@@ -13794,7 +16970,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dspgvd_(IntPtr __itype, BytePtr __jobz, BytePtr __uplo, IntPtr __n, DoublePtr __ap,
@@ -13803,7 +16983,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dspgvx_(IntPtr __itype, BytePtr __jobz, BytePtr __range, BytePtr __uplo, IntPtr __n,
@@ -13813,7 +16997,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dsposv_(BytePtr __uplo, IntPtr __n, IntPtr __nrhs, DoublePtr __a, IntPtr __lda,
@@ -13822,7 +17010,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dsprfs_(BytePtr __uplo, IntPtr __n, IntPtr __nrhs, DoublePtr __ap, DoublePtr __afp,
@@ -13831,7 +17023,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dspsv_(BytePtr __uplo, IntPtr __n, IntPtr __nrhs, DoublePtr __ap, IntPtr __ipiv,
@@ -13839,7 +17035,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dspsvx_(BytePtr __fact, BytePtr __uplo, IntPtr __n, IntPtr __nrhs, DoublePtr __ap,
@@ -13848,7 +17048,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dsptrd_(BytePtr __uplo, IntPtr __n, DoublePtr __ap, DoublePtr __d__, DoublePtr __e,
@@ -13856,14 +17060,22 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dsptrf_(BytePtr __uplo, IntPtr __n, DoublePtr __ap, IntPtr __ipiv, IntPtr __info);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dsptri_(BytePtr __uplo, IntPtr __n, DoublePtr __ap, IntPtr __ipiv, DoublePtr __work,
@@ -13871,7 +17083,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dsptrs_(BytePtr __uplo, IntPtr __n, IntPtr __nrhs, DoublePtr __ap, IntPtr __ipiv,
@@ -13879,7 +17095,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dstebz_(BytePtr __range, BytePtr __order, IntPtr __n, DoublePtr __vl, DoublePtr __vu,
@@ -13888,7 +17108,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dstedc_(BytePtr __compz, IntPtr __n, DoublePtr __d__, DoublePtr __e, DoublePtr __z__,
@@ -13896,7 +17120,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dstegr_(BytePtr __jobz, BytePtr __range, IntPtr __n, DoublePtr __d__, DoublePtr __e,
@@ -13906,7 +17134,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dstein_(IntPtr __n, DoublePtr __d__, DoublePtr __e, IntPtr __m, DoublePtr __w,
@@ -13915,7 +17147,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dstemr_(BytePtr __jobz, BytePtr __range, IntPtr __n, DoublePtr __d__, DoublePtr __e,
@@ -13925,7 +17161,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dsteqr_(BytePtr __compz, IntPtr __n, DoublePtr __d__, DoublePtr __e, DoublePtr __z__,
@@ -13933,14 +17173,22 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dsterf_(IntPtr __n, DoublePtr __d__, DoublePtr __e, IntPtr __info);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dstev_(BytePtr __jobz, IntPtr __n, DoublePtr __d__, DoublePtr __e, DoublePtr __z__,
@@ -13948,7 +17196,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dstevd_(BytePtr __jobz, IntPtr __n, DoublePtr __d__, DoublePtr __e, DoublePtr __z__,
@@ -13956,7 +17208,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dstevr_(BytePtr __jobz, BytePtr __range, IntPtr __n, DoublePtr __d__, DoublePtr __e,
@@ -13966,7 +17222,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dstevx_(BytePtr __jobz, BytePtr __range, IntPtr __n, DoublePtr __d__, DoublePtr __e,
@@ -13975,7 +17235,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dsycon_(BytePtr __uplo, IntPtr __n, DoublePtr __a, IntPtr __lda, IntPtr __ipiv,
@@ -13983,7 +17247,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dsyequb_(BytePtr __uplo, IntPtr __n, DoublePtr __a, IntPtr __lda, DoublePtr __s,
@@ -13991,7 +17259,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dsyev_(BytePtr __jobz, BytePtr __uplo, IntPtr __n, DoublePtr __a, IntPtr __lda,
@@ -13999,7 +17271,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dsyevd_(BytePtr __jobz, BytePtr __uplo, IntPtr __n, DoublePtr __a, IntPtr __lda,
@@ -14007,7 +17283,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dsyevr_(BytePtr __jobz, BytePtr __range, BytePtr __uplo, IntPtr __n, DoublePtr __a,
@@ -14017,7 +17297,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dsyevx_(BytePtr __jobz, BytePtr __range, BytePtr __uplo, IntPtr __n, DoublePtr __a,
@@ -14027,7 +17311,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dsygs2_(IntPtr __itype, BytePtr __uplo, IntPtr __n, DoublePtr __a, IntPtr __lda,
@@ -14035,7 +17323,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dsygst_(IntPtr __itype, BytePtr __uplo, IntPtr __n, DoublePtr __a, IntPtr __lda,
@@ -14043,7 +17335,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dsygv_(IntPtr __itype, BytePtr __jobz, BytePtr __uplo, IntPtr __n, DoublePtr __a,
@@ -14051,7 +17347,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dsygvd_(IntPtr __itype, BytePtr __jobz, BytePtr __uplo, IntPtr __n, DoublePtr __a,
@@ -14060,7 +17360,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dsygvx_(IntPtr __itype, BytePtr __jobz, BytePtr __range, BytePtr __uplo, IntPtr __n,
@@ -14070,7 +17374,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dsyrfs_(BytePtr __uplo, IntPtr __n, IntPtr __nrhs, DoublePtr __a, IntPtr __lda,
@@ -14079,7 +17387,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dsysv_(BytePtr __uplo, IntPtr __n, IntPtr __nrhs, DoublePtr __a, IntPtr __lda,
@@ -14087,7 +17399,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dsysvx_(BytePtr __fact, BytePtr __uplo, IntPtr __n, IntPtr __nrhs, DoublePtr __a,
@@ -14097,7 +17413,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dsytd2_(BytePtr __uplo, IntPtr __n, DoublePtr __a, IntPtr __lda, DoublePtr __d__,
@@ -14105,7 +17425,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dsytf2_(BytePtr __uplo, IntPtr __n, DoublePtr __a, IntPtr __lda, IntPtr __ipiv,
@@ -14113,7 +17437,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dsytrd_(BytePtr __uplo, IntPtr __n, DoublePtr __a, IntPtr __lda, DoublePtr __d__,
@@ -14121,7 +17449,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dsytrf_(BytePtr __uplo, IntPtr __n, DoublePtr __a, IntPtr __lda, IntPtr __ipiv,
@@ -14129,7 +17461,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dsytri_(BytePtr __uplo, IntPtr __n, DoublePtr __a, IntPtr __lda, IntPtr __ipiv,
@@ -14137,7 +17473,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dsytrs_(BytePtr __uplo, IntPtr __n, IntPtr __nrhs, DoublePtr __a, IntPtr __lda,
@@ -14145,7 +17485,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dtbcon_(BytePtr __norm, BytePtr __uplo, BytePtr __diag, IntPtr __n, IntPtr __kd,
@@ -14153,7 +17497,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dtbrfs_(BytePtr __uplo, BytePtr __trans, BytePtr __diag, IntPtr __n, IntPtr __kd,
@@ -14162,7 +17510,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dtbtrs_(BytePtr __uplo, BytePtr __trans, BytePtr __diag, IntPtr __n, IntPtr __kd,
@@ -14170,7 +17522,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dtfsm_(BytePtr __transr, BytePtr __side, BytePtr __uplo, BytePtr __trans, BytePtr __diag,
@@ -14178,7 +17534,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dtftri_(BytePtr __transr, BytePtr __uplo, BytePtr __diag, IntPtr __n, DoublePtr __a,
@@ -14186,7 +17546,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dtfttp_(BytePtr __transr, BytePtr __uplo, IntPtr __n, DoublePtr __arf, DoublePtr __ap,
@@ -14194,7 +17558,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dtfttr_(BytePtr __transr, BytePtr __uplo, IntPtr __n, DoublePtr __arf, DoublePtr __a,
@@ -14202,7 +17570,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dtgevc_(BytePtr __side, BytePtr __howmny, IntPtr __select, IntPtr __n, DoublePtr __s,
@@ -14211,7 +17583,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dtgex2_(IntPtr __wantq, IntPtr __wantz, IntPtr __n, DoublePtr __a, IntPtr __lda,
@@ -14220,7 +17596,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dtgexc_(IntPtr __wantq, IntPtr __wantz, IntPtr __n, DoublePtr __a, IntPtr __lda,
@@ -14229,7 +17609,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dtgsen_(IntPtr __ijob, IntPtr __wantq, IntPtr __wantz, IntPtr __select, IntPtr __n,
@@ -14240,7 +17624,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dtgsja_(BytePtr __jobu, BytePtr __jobv, BytePtr __jobq, IntPtr __m, IntPtr __p, IntPtr __n,
@@ -14250,7 +17638,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dtgsna_(BytePtr __job, BytePtr __howmny, IntPtr __select, IntPtr __n, DoublePtr __a,
@@ -14260,7 +17652,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dtgsy2_(BytePtr __trans, IntPtr __ijob, IntPtr __m, IntPtr __n, DoublePtr __a,
@@ -14270,7 +17666,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dtgsyl_(BytePtr __trans, IntPtr __ijob, IntPtr __m, IntPtr __n, DoublePtr __a,
@@ -14280,7 +17680,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dtpcon_(BytePtr __norm, BytePtr __uplo, BytePtr __diag, IntPtr __n, DoublePtr __ap,
@@ -14288,7 +17692,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dtprfs_(BytePtr __uplo, BytePtr __trans, BytePtr __diag, IntPtr __n, IntPtr __nrhs,
@@ -14297,14 +17705,22 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dtptri_(BytePtr __uplo, BytePtr __diag, IntPtr __n, DoublePtr __ap, IntPtr __info);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dtptrs_(BytePtr __uplo, BytePtr __trans, BytePtr __diag, IntPtr __n, IntPtr __nrhs,
@@ -14312,7 +17728,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dtpttf_(BytePtr __transr, BytePtr __uplo, IntPtr __n, DoublePtr __ap, DoublePtr __arf,
@@ -14320,7 +17740,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dtpttr_(BytePtr __uplo, IntPtr __n, DoublePtr __ap, DoublePtr __a, IntPtr __lda,
@@ -14328,7 +17752,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dtrcon_(BytePtr __norm, BytePtr __uplo, BytePtr __diag, IntPtr __n, DoublePtr __a,
@@ -14336,7 +17764,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dtrevc_(BytePtr __side, BytePtr __howmny, IntPtr __select, IntPtr __n, DoublePtr __t,
@@ -14345,7 +17777,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dtrexc_(BytePtr __compq, IntPtr __n, DoublePtr __t, IntPtr __ldt, DoublePtr __q,
@@ -14353,7 +17789,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dtrrfs_(BytePtr __uplo, BytePtr __trans, BytePtr __diag, IntPtr __n, IntPtr __nrhs,
@@ -14362,7 +17802,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dtrsen_(BytePtr __job, BytePtr __compq, IntPtr __select, IntPtr __n, DoublePtr __t,
@@ -14371,7 +17815,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dtrsna_(BytePtr __job, BytePtr __howmny, IntPtr __select, IntPtr __n, DoublePtr __t,
@@ -14380,7 +17828,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dtrsyl_(BytePtr __trana, BytePtr __tranb, IntPtr __isgn, IntPtr __m, IntPtr __n,
@@ -14389,7 +17841,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dtrti2_(BytePtr __uplo, BytePtr __diag, IntPtr __n, DoublePtr __a, IntPtr __lda,
@@ -14397,7 +17853,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dtrtri_(BytePtr __uplo, BytePtr __diag, IntPtr __n, DoublePtr __a, IntPtr __lda,
@@ -14405,7 +17865,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dtrtrs_(BytePtr __uplo, BytePtr __trans, BytePtr __diag, IntPtr __n, IntPtr __nrhs,
@@ -14413,7 +17877,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dtrttf_(BytePtr __transr, BytePtr __uplo, IntPtr __n, DoublePtr __a, IntPtr __lda,
@@ -14421,7 +17889,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dtrttp_(BytePtr __uplo, IntPtr __n, DoublePtr __a, IntPtr __lda, DoublePtr __ap,
@@ -14429,7 +17901,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dtzrqf_(IntPtr __m, IntPtr __n, DoublePtr __a, IntPtr __lda, DoublePtr __tau,
@@ -14437,7 +17913,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dtzrzf_(IntPtr __m, IntPtr __n, DoublePtr __a, IntPtr __lda, DoublePtr __tau,
@@ -14445,7 +17925,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native double dzsum1_(IntPtr __n,
@@ -14454,7 +17938,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int icmax1_(IntPtr __n,
@@ -14462,14 +17950,22 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int ieeeck_(IntPtr __ispec, FloatPtr __zero, FloatPtr __one);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int ilaclc_(IntPtr __m, IntPtr __n,
@@ -14477,7 +17973,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int ilaclr_(IntPtr __m, IntPtr __n,
@@ -14485,28 +17985,44 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int iladiag_(BytePtr __diag);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int iladlc_(IntPtr __m, IntPtr __n, DoublePtr __a, IntPtr __lda);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int iladlr_(IntPtr __m, IntPtr __n, DoublePtr __a, IntPtr __lda);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int ilaenv_(IntPtr __ispec, BytePtr __name__, BytePtr __opts, IntPtr __n1, IntPtr __n2,
@@ -14514,49 +18030,77 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int ilaprec_(BytePtr __prec);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int ilaslc_(IntPtr __m, IntPtr __n, FloatPtr __a, IntPtr __lda);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int ilaslr_(IntPtr __m, IntPtr __n, FloatPtr __a, IntPtr __lda);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int ilatrans_(BytePtr __trans);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int ilauplo_(BytePtr __uplo);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int ilaver_(IntPtr __vers_major__, IntPtr __vers_minor__, IntPtr __vers_patch__);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int ilazlc_(IntPtr __m, IntPtr __n,
@@ -14564,7 +18108,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int ilazlr_(IntPtr __m, IntPtr __n,
@@ -14572,7 +18120,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int iparmq_(IntPtr __ispec, BytePtr __name__, BytePtr __opts, IntPtr __n, IntPtr __ilo,
@@ -14580,7 +18132,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int izmax1_(IntPtr __n,
@@ -14589,21 +18145,33 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int lsamen_(IntPtr __n, BytePtr __ca, BytePtr __cb);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int smaxloc_(FloatPtr __a, IntPtr __dimm);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int sbdsdc_(BytePtr __uplo, BytePtr __compq, IntPtr __n, FloatPtr __d__, FloatPtr __e,
@@ -14612,7 +18180,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int sbdsqr_(BytePtr __uplo, IntPtr __n, IntPtr __ncvt, IntPtr __nru, IntPtr __ncc,
@@ -14621,7 +18193,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native double scsum1_(IntPtr __n,
@@ -14629,7 +18205,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int sdisna_(BytePtr __job, IntPtr __m, IntPtr __n, FloatPtr __d__, FloatPtr __sep,
@@ -14637,7 +18217,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int sgbbrd_(BytePtr __vect, IntPtr __m, IntPtr __n, IntPtr __ncc, IntPtr __kl, IntPtr __ku,
@@ -14646,7 +18230,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int sgbcon_(BytePtr __norm, IntPtr __n, IntPtr __kl, IntPtr __ku, FloatPtr __ab, IntPtr __ldab,
@@ -14654,7 +18242,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int sgbequ_(IntPtr __m, IntPtr __n, IntPtr __kl, IntPtr __ku, FloatPtr __ab, IntPtr __ldab,
@@ -14662,7 +18254,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int sgbequb_(IntPtr __m, IntPtr __n, IntPtr __kl, IntPtr __ku, FloatPtr __ab, IntPtr __ldab,
@@ -14670,7 +18266,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int sgbrfs_(BytePtr __trans, IntPtr __n, IntPtr __kl, IntPtr __ku, IntPtr __nrhs,
@@ -14680,7 +18280,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int sgbsv_(IntPtr __n, IntPtr __kl, IntPtr __ku, IntPtr __nrhs, FloatPtr __ab, IntPtr __ldab,
@@ -14688,7 +18292,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int sgbsvx_(BytePtr __fact, BytePtr __trans, IntPtr __n, IntPtr __kl, IntPtr __ku,
@@ -14698,7 +18306,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int sgbtf2_(IntPtr __m, IntPtr __n, IntPtr __kl, IntPtr __ku, FloatPtr __ab, IntPtr __ldab,
@@ -14706,7 +18318,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int sgbtrf_(IntPtr __m, IntPtr __n, IntPtr __kl, IntPtr __ku, FloatPtr __ab, IntPtr __ldab,
@@ -14714,7 +18330,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int sgbtrs_(BytePtr __trans, IntPtr __n, IntPtr __kl, IntPtr __ku, IntPtr __nrhs,
@@ -14722,7 +18342,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int sgebak_(BytePtr __job, BytePtr __side, IntPtr __n, IntPtr __ilo, IntPtr __ihi,
@@ -14730,7 +18354,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int sgebal_(BytePtr __job, IntPtr __n, FloatPtr __a, IntPtr __lda, IntPtr __ilo, IntPtr __ihi,
@@ -14738,7 +18366,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int sgebd2_(IntPtr __m, IntPtr __n, FloatPtr __a, IntPtr __lda, FloatPtr __d__, FloatPtr __e,
@@ -14746,7 +18378,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int sgebrd_(IntPtr __m, IntPtr __n, FloatPtr __a, IntPtr __lda, FloatPtr __d__, FloatPtr __e,
@@ -14754,7 +18390,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int sgecon_(BytePtr __norm, IntPtr __n, FloatPtr __a, IntPtr __lda, FloatPtr __anorm,
@@ -14762,7 +18402,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int sgeequ_(IntPtr __m, IntPtr __n, FloatPtr __a, IntPtr __lda, FloatPtr __r__, FloatPtr __c__,
@@ -14770,7 +18414,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int sgeequb_(IntPtr __m, IntPtr __n, FloatPtr __a, IntPtr __lda, FloatPtr __r__,
@@ -14778,7 +18426,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int sgeev_(BytePtr __jobvl, BytePtr __jobvr, IntPtr __n, FloatPtr __a, IntPtr __lda,
@@ -14787,7 +18439,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int sgeevx_(BytePtr __balanc, BytePtr __jobvl, BytePtr __jobvr, BytePtr __sense, IntPtr __n,
@@ -14797,7 +18453,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int sgegs_(BytePtr __jobvsl, BytePtr __jobvsr, IntPtr __n, FloatPtr __a, IntPtr __lda,
@@ -14806,7 +18466,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int sgegv_(BytePtr __jobvl, BytePtr __jobvr, IntPtr __n, FloatPtr __a, IntPtr __lda,
@@ -14815,7 +18479,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int sgehd2_(IntPtr __n, IntPtr __ilo, IntPtr __ihi, FloatPtr __a, IntPtr __lda, FloatPtr __tau,
@@ -14823,7 +18491,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int sgehrd_(IntPtr __n, IntPtr __ilo, IntPtr __ihi, FloatPtr __a, IntPtr __lda, FloatPtr __tau,
@@ -14831,7 +18503,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int sgejsv_(BytePtr __joba, BytePtr __jobu, BytePtr __jobv, BytePtr __jobr, BytePtr __jobt,
@@ -14840,7 +18516,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int sgelq2_(IntPtr __m, IntPtr __n, FloatPtr __a, IntPtr __lda, FloatPtr __tau,
@@ -14848,7 +18528,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int sgelqf_(IntPtr __m, IntPtr __n, FloatPtr __a, IntPtr __lda, FloatPtr __tau,
@@ -14856,7 +18540,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int sgels_(BytePtr __trans, IntPtr __m, IntPtr __n, IntPtr __nrhs, FloatPtr __a, IntPtr __lda,
@@ -14864,7 +18552,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int sgelsd_(IntPtr __m, IntPtr __n, IntPtr __nrhs, FloatPtr __a, IntPtr __lda, FloatPtr __b,
@@ -14873,7 +18565,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int sgelss_(IntPtr __m, IntPtr __n, IntPtr __nrhs, FloatPtr __a, IntPtr __lda, FloatPtr __b,
@@ -14882,7 +18578,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int sgelsx_(IntPtr __m, IntPtr __n, IntPtr __nrhs, FloatPtr __a, IntPtr __lda, FloatPtr __b,
@@ -14890,7 +18590,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int sgelsy_(IntPtr __m, IntPtr __n, IntPtr __nrhs, FloatPtr __a, IntPtr __lda, FloatPtr __b,
@@ -14899,7 +18603,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int sgeql2_(IntPtr __m, IntPtr __n, FloatPtr __a, IntPtr __lda, FloatPtr __tau,
@@ -14907,7 +18615,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int sgeqlf_(IntPtr __m, IntPtr __n, FloatPtr __a, IntPtr __lda, FloatPtr __tau,
@@ -14915,7 +18627,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int sgeqp3_(IntPtr __m, IntPtr __n, FloatPtr __a, IntPtr __lda, IntPtr __jpvt, FloatPtr __tau,
@@ -14923,7 +18639,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int sgeqpf_(IntPtr __m, IntPtr __n, FloatPtr __a, IntPtr __lda, IntPtr __jpvt, FloatPtr __tau,
@@ -14931,7 +18651,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int sgeqr2_(IntPtr __m, IntPtr __n, FloatPtr __a, IntPtr __lda, FloatPtr __tau,
@@ -14939,7 +18663,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int sgeqrf_(IntPtr __m, IntPtr __n, FloatPtr __a, IntPtr __lda, FloatPtr __tau,
@@ -14947,7 +18675,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int sgerfs_(BytePtr __trans, IntPtr __n, IntPtr __nrhs, FloatPtr __a, IntPtr __lda,
@@ -14956,7 +18688,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int sgerq2_(IntPtr __m, IntPtr __n, FloatPtr __a, IntPtr __lda, FloatPtr __tau,
@@ -14964,7 +18700,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int sgerqf_(IntPtr __m, IntPtr __n, FloatPtr __a, IntPtr __lda, FloatPtr __tau,
@@ -14972,7 +18712,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int sgesc2_(IntPtr __n, FloatPtr __a, IntPtr __lda, FloatPtr __rhs, IntPtr __ipiv,
@@ -14980,7 +18724,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int sgesdd_(BytePtr __jobz, IntPtr __m, IntPtr __n, FloatPtr __a, IntPtr __lda, FloatPtr __s,
@@ -14989,7 +18737,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int sgesv_(IntPtr __n, IntPtr __nrhs, FloatPtr __a, IntPtr __lda, IntPtr __ipiv, FloatPtr __b,
@@ -14997,7 +18749,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int sgesvd_(BytePtr __jobu, BytePtr __jobvt, IntPtr __m, IntPtr __n, FloatPtr __a,
@@ -15006,7 +18762,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int sgesvj_(BytePtr __joba, BytePtr __jobu, BytePtr __jobv, IntPtr __m, IntPtr __n,
@@ -15015,7 +18775,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int sgesvx_(BytePtr __fact, BytePtr __trans, IntPtr __n, IntPtr __nrhs, FloatPtr __a,
@@ -15025,7 +18789,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int sgetc2_(IntPtr __n, FloatPtr __a, IntPtr __lda, IntPtr __ipiv, IntPtr __jpiv,
@@ -15033,21 +18801,33 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int sgetf2_(IntPtr __m, IntPtr __n, FloatPtr __a, IntPtr __lda, IntPtr __ipiv, IntPtr __info);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int sgetrf_(IntPtr __m, IntPtr __n, FloatPtr __a, IntPtr __lda, IntPtr __ipiv, IntPtr __info);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int sgetri_(IntPtr __n, FloatPtr __a, IntPtr __lda, IntPtr __ipiv, FloatPtr __work,
@@ -15055,7 +18835,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int sgetrs_(BytePtr __trans, IntPtr __n, IntPtr __nrhs, FloatPtr __a, IntPtr __lda,
@@ -15063,7 +18847,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int sggbak_(BytePtr __job, BytePtr __side, IntPtr __n, IntPtr __ilo, IntPtr __ihi,
@@ -15071,7 +18859,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int sggbal_(BytePtr __job, IntPtr __n, FloatPtr __a, IntPtr __lda, FloatPtr __b, IntPtr __ldb,
@@ -15079,7 +18871,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int sggev_(BytePtr __jobvl, BytePtr __jobvr, IntPtr __n, FloatPtr __a, IntPtr __lda,
@@ -15088,7 +18884,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int sggevx_(BytePtr __balanc, BytePtr __jobvl, BytePtr __jobvr, BytePtr __sense, IntPtr __n,
@@ -15099,7 +18899,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int sggglm_(IntPtr __n, IntPtr __m, IntPtr __p, FloatPtr __a, IntPtr __lda, FloatPtr __b,
@@ -15107,7 +18911,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int sgghrd_(BytePtr __compq, BytePtr __compz, IntPtr __n, IntPtr __ilo, IntPtr __ihi,
@@ -15116,7 +18924,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int sgglse_(IntPtr __m, IntPtr __n, IntPtr __p, FloatPtr __a, IntPtr __lda, FloatPtr __b,
@@ -15124,7 +18936,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int sggqrf_(IntPtr __n, IntPtr __m, IntPtr __p, FloatPtr __a, IntPtr __lda, FloatPtr __taua,
@@ -15132,7 +18948,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int sggrqf_(IntPtr __m, IntPtr __p, IntPtr __n, FloatPtr __a, IntPtr __lda, FloatPtr __taua,
@@ -15140,7 +18960,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int sggsvd_(BytePtr __jobu, BytePtr __jobv, BytePtr __jobq, IntPtr __m, IntPtr __n, IntPtr __p,
@@ -15150,7 +18974,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int sggsvp_(BytePtr __jobu, BytePtr __jobv, BytePtr __jobq, IntPtr __m, IntPtr __p, IntPtr __n,
@@ -15160,7 +18988,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int sgsvj0_(BytePtr __jobv, IntPtr __m, IntPtr __n, FloatPtr __a, IntPtr __lda, FloatPtr __d__,
@@ -15169,7 +19001,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int sgsvj1_(BytePtr __jobv, IntPtr __m, IntPtr __n, IntPtr __n1, FloatPtr __a, IntPtr __lda,
@@ -15178,7 +19014,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int sgtcon_(BytePtr __norm, IntPtr __n, FloatPtr __dl, FloatPtr __d__, FloatPtr __du,
@@ -15187,7 +19027,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int sgtrfs_(BytePtr __trans, IntPtr __n, IntPtr __nrhs, FloatPtr __dl, FloatPtr __d__,
@@ -15197,7 +19041,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int sgtsv_(IntPtr __n, IntPtr __nrhs, FloatPtr __dl, FloatPtr __d__, FloatPtr __du,
@@ -15205,7 +19053,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int sgtsvx_(BytePtr __fact, BytePtr __trans, IntPtr __n, IntPtr __nrhs, FloatPtr __dl,
@@ -15215,7 +19067,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int sgttrf_(IntPtr __n, FloatPtr __dl, FloatPtr __d__, FloatPtr __du, FloatPtr __du2,
@@ -15223,7 +19079,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int sgttrs_(BytePtr __trans, IntPtr __n, IntPtr __nrhs, FloatPtr __dl, FloatPtr __d__,
@@ -15231,7 +19091,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int sgtts2_(IntPtr __itrans, IntPtr __n, IntPtr __nrhs, FloatPtr __dl, FloatPtr __d__,
@@ -15239,7 +19103,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int shgeqz_(BytePtr __job, BytePtr __compq, BytePtr __compz, IntPtr __n, IntPtr __ilo,
@@ -15249,7 +19117,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int shsein_(BytePtr __side, BytePtr __eigsrc, BytePtr __initv, IntPtr __select, IntPtr __n,
@@ -15258,7 +19130,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int shseqr_(BytePtr __job, BytePtr __compz, IntPtr __n, IntPtr __ilo, IntPtr __ihi,
@@ -15267,21 +19143,33 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int sisnan_(FloatPtr __sin__);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int slabad_(FloatPtr __small, FloatPtr __large);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int slabrd_(IntPtr __m, IntPtr __n, IntPtr __nb, FloatPtr __a, IntPtr __lda, FloatPtr __d__,
@@ -15289,7 +19177,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int slacn2_(IntPtr __n, FloatPtr __v, FloatPtr __x, IntPtr __isgn, FloatPtr __est,
@@ -15297,7 +19189,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int slacon_(IntPtr __n, FloatPtr __v, FloatPtr __x, IntPtr __isgn, FloatPtr __est,
@@ -15305,7 +19201,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int slacpy_(BytePtr __uplo, IntPtr __m, IntPtr __n, FloatPtr __a, IntPtr __lda, FloatPtr __b,
@@ -15313,7 +19213,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int sladiv_(FloatPtr __a, FloatPtr __b, FloatPtr __c__, FloatPtr __d__, FloatPtr __p,
@@ -15321,14 +19225,22 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int slae2_(FloatPtr __a, FloatPtr __b, FloatPtr __c__, FloatPtr __rt1, FloatPtr __rt2);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int slaebz_(IntPtr __ijob, IntPtr __nitmax, IntPtr __n, IntPtr __mmax, IntPtr __minp,
@@ -15338,7 +19250,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int slaed0_(IntPtr __icompq, IntPtr __qsiz, IntPtr __n, FloatPtr __d__, FloatPtr __e,
@@ -15347,7 +19263,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int slaed1_(IntPtr __n, FloatPtr __d__, FloatPtr __q, IntPtr __ldq, IntPtr __indxq,
@@ -15355,7 +19275,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int slaed2_(IntPtr __k, IntPtr __n, IntPtr __n1, FloatPtr __d__, FloatPtr __q, IntPtr __ldq,
@@ -15364,7 +19288,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int slaed3_(IntPtr __k, IntPtr __n, IntPtr __n1, FloatPtr __d__, FloatPtr __q, IntPtr __ldq,
@@ -15373,7 +19301,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int slaed4_(IntPtr __n, IntPtr __i__, FloatPtr __d__, FloatPtr __z__, FloatPtr __delta,
@@ -15381,7 +19313,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int slaed5_(IntPtr __i__, FloatPtr __d__, FloatPtr __z__, FloatPtr __delta, FloatPtr __rho,
@@ -15389,7 +19325,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int slaed6_(IntPtr __kniter, IntPtr __orgati, FloatPtr __rho, FloatPtr __d__, FloatPtr __z__,
@@ -15397,7 +19337,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int slaed7_(IntPtr __icompq, IntPtr __n, IntPtr __qsiz, IntPtr __tlvls, IntPtr __curlvl,
@@ -15407,7 +19351,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int slaed8_(IntPtr __icompq, IntPtr __k, IntPtr __n, IntPtr __qsiz, FloatPtr __d__,
@@ -15417,7 +19365,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int slaed9_(IntPtr __k, IntPtr __kstart, IntPtr __kstop, IntPtr __n, FloatPtr __d__,
@@ -15426,7 +19378,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int slaeda_(IntPtr __n, IntPtr __tlvls, IntPtr __curlvl, IntPtr __curpbm, IntPtr __prmptr,
@@ -15435,7 +19391,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int slaein_(IntPtr __rightv, IntPtr __noinit, IntPtr __n, FloatPtr __h__, IntPtr __ldh,
@@ -15444,7 +19404,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int slaev2_(FloatPtr __a, FloatPtr __b, FloatPtr __c__, FloatPtr __rt1, FloatPtr __rt2,
@@ -15452,7 +19416,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int slaexc_(IntPtr __wantq, IntPtr __n, FloatPtr __t, IntPtr __ldt, FloatPtr __q, IntPtr __ldq,
@@ -15460,7 +19428,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int slag2_(FloatPtr __a, IntPtr __lda, FloatPtr __b, IntPtr __ldb, FloatPtr __safmin,
@@ -15468,7 +19440,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int slag2d_(IntPtr __m, IntPtr __n, FloatPtr __sa, IntPtr __ldsa, DoublePtr __a, IntPtr __lda,
@@ -15476,7 +19452,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int slags2_(IntPtr __upper, FloatPtr __a1, FloatPtr __a2, FloatPtr __a3, FloatPtr __b1,
@@ -15485,7 +19465,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int slagtf_(IntPtr __n, FloatPtr __a, FloatPtr __lambda, FloatPtr __b, FloatPtr __c__,
@@ -15493,7 +19477,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int slagtm_(BytePtr __trans, IntPtr __n, IntPtr __nrhs, FloatPtr __alpha, FloatPtr __dl,
@@ -15501,7 +19489,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int slagts_(IntPtr __job, IntPtr __n, FloatPtr __a, FloatPtr __b, FloatPtr __c__,
@@ -15509,7 +19501,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int slagv2_(FloatPtr __a, IntPtr __lda, FloatPtr __b, IntPtr __ldb, FloatPtr __alphar,
@@ -15517,7 +19513,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int slahqr_(IntPtr __wantt, IntPtr __wantz, IntPtr __n, IntPtr __ilo, IntPtr __ihi,
@@ -15526,7 +19526,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int slahr2_(IntPtr __n, IntPtr __k, IntPtr __nb, FloatPtr __a, IntPtr __lda, FloatPtr __tau,
@@ -15534,7 +19538,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int slahrd_(IntPtr __n, IntPtr __k, IntPtr __nb, FloatPtr __a, IntPtr __lda, FloatPtr __tau,
@@ -15542,7 +19550,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int slaic1_(IntPtr __job, IntPtr __j, FloatPtr __x, FloatPtr __sest, FloatPtr __w,
@@ -15550,14 +19562,22 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int slaisnan_(FloatPtr __sin1, FloatPtr __sin2);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int slaln2_(IntPtr __ltrans, IntPtr __na, IntPtr __nw, FloatPtr __smin, FloatPtr __ca,
@@ -15566,7 +19586,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int slals0_(IntPtr __icompq, IntPtr __nl, IntPtr __nr, IntPtr __sqre, IntPtr __nrhs,
@@ -15576,7 +19600,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int slalsa_(IntPtr __icompq, IntPtr __smlsiz, IntPtr __n, IntPtr __nrhs, FloatPtr __b,
@@ -15587,7 +19615,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int slalsd_(BytePtr __uplo, IntPtr __smlsiz, IntPtr __n, IntPtr __nrhs, FloatPtr __d__,
@@ -15596,7 +19628,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int slamrg_(IntPtr __n1, IntPtr __n2, FloatPtr __a, IntPtr __strd1, IntPtr __strd2,
@@ -15604,7 +19640,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int slaneg_(IntPtr __n, FloatPtr __d__, FloatPtr __lld, FloatPtr __sigma, FloatPtr __pivmin,
@@ -15612,7 +19652,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native double slangb_(BytePtr __norm, IntPtr __n, IntPtr __kl, IntPtr __ku, FloatPtr __ab,
@@ -15620,7 +19664,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native double slange_(BytePtr __norm, IntPtr __m, IntPtr __n, FloatPtr __a, IntPtr __lda,
@@ -15628,21 +19676,33 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native double slangt_(BytePtr __norm, IntPtr __n, FloatPtr __dl, FloatPtr __d__, FloatPtr __du);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native double slanhs_(BytePtr __norm, IntPtr __n, FloatPtr __a, IntPtr __lda, FloatPtr __work);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native double slansb_(BytePtr __norm, BytePtr __uplo, IntPtr __n, IntPtr __k, FloatPtr __ab,
@@ -15650,7 +19710,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native double slansf_(BytePtr __norm, BytePtr __transr, BytePtr __uplo, IntPtr __n, FloatPtr __a,
@@ -15658,21 +19722,33 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native double slansp_(BytePtr __norm, BytePtr __uplo, IntPtr __n, FloatPtr __ap, FloatPtr __work);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native double slanst_(BytePtr __norm, IntPtr __n, FloatPtr __d__, FloatPtr __e);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native double slansy_(BytePtr __norm, BytePtr __uplo, IntPtr __n, FloatPtr __a, IntPtr __lda,
@@ -15680,7 +19756,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native double slantb_(BytePtr __norm, BytePtr __uplo, BytePtr __diag, IntPtr __n, IntPtr __k,
@@ -15688,7 +19768,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native double slantp_(BytePtr __norm, BytePtr __uplo, BytePtr __diag, IntPtr __n, FloatPtr __ap,
@@ -15696,7 +19780,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native double slantr_(BytePtr __norm, BytePtr __uplo, BytePtr __diag, IntPtr __m, IntPtr __n,
@@ -15704,7 +19792,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int slanv2_(FloatPtr __a, FloatPtr __b, FloatPtr __c__, FloatPtr __d__, FloatPtr __rt1r,
@@ -15712,7 +19804,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int slapll_(IntPtr __n, FloatPtr __x, IntPtr __incx, FloatPtr __y, IntPtr __incy,
@@ -15720,28 +19816,44 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int slapmt_(IntPtr __forwrd, IntPtr __m, IntPtr __n, FloatPtr __x, IntPtr __ldx, IntPtr __k);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native double slapy2_(FloatPtr __x, FloatPtr __y);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native double slapy3_(FloatPtr __x, FloatPtr __y, FloatPtr __z__);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int slaqgb_(IntPtr __m, IntPtr __n, IntPtr __kl, IntPtr __ku, FloatPtr __ab, IntPtr __ldab,
@@ -15749,7 +19861,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int slaqge_(IntPtr __m, IntPtr __n, FloatPtr __a, IntPtr __lda, FloatPtr __r__, FloatPtr __c__,
@@ -15757,7 +19873,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int slaqp2_(IntPtr __m, IntPtr __n, IntPtr __offset, FloatPtr __a, IntPtr __lda, IntPtr __jpvt,
@@ -15765,7 +19885,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int slaqps_(IntPtr __m, IntPtr __n, IntPtr __offset, IntPtr __nb, IntPtr __kb, FloatPtr __a,
@@ -15774,7 +19898,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int slaqr0_(IntPtr __wantt, IntPtr __wantz, IntPtr __n, IntPtr __ilo, IntPtr __ihi,
@@ -15783,7 +19911,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int slaqr1_(IntPtr __n, FloatPtr __h__, IntPtr __ldh, FloatPtr __sr1, FloatPtr __si1,
@@ -15791,7 +19923,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int slaqr2_(IntPtr __wantt, IntPtr __wantz, IntPtr __n, IntPtr __ktop, IntPtr __kbot,
@@ -15801,7 +19937,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int slaqr3_(IntPtr __wantt, IntPtr __wantz, IntPtr __n, IntPtr __ktop, IntPtr __kbot,
@@ -15811,7 +19951,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int slaqr4_(IntPtr __wantt, IntPtr __wantz, IntPtr __n, IntPtr __ilo, IntPtr __ihi,
@@ -15820,7 +19964,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int slaqr5_(IntPtr __wantt, IntPtr __wantz, IntPtr __kacc22, IntPtr __n, IntPtr __ktop,
@@ -15830,7 +19978,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int slaqsb_(BytePtr __uplo, IntPtr __n, IntPtr __kd, FloatPtr __ab, IntPtr __ldab,
@@ -15838,7 +19990,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int slaqsp_(BytePtr __uplo, IntPtr __n, FloatPtr __ap, FloatPtr __s, FloatPtr __scond,
@@ -15846,7 +20002,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int slaqsy_(BytePtr __uplo, IntPtr __n, FloatPtr __a, IntPtr __lda, FloatPtr __s,
@@ -15854,7 +20014,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int slaqtr_(IntPtr __ltran, IntPtr __l__CLPK_real, IntPtr __n, FloatPtr __t, IntPtr __ldt,
@@ -15862,7 +20026,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int slar1v_(IntPtr __n, IntPtr __b1, IntPtr __bn, FloatPtr __lambda, FloatPtr __d__,
@@ -15872,7 +20040,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int slar2v_(IntPtr __n, FloatPtr __x, FloatPtr __y, FloatPtr __z__, IntPtr __incx,
@@ -15880,7 +20052,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int slarf_(BytePtr __side, IntPtr __m, IntPtr __n, FloatPtr __v, IntPtr __incv, FloatPtr __tau,
@@ -15888,7 +20064,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int slarfb_(BytePtr __side, BytePtr __trans, BytePtr __direct, BytePtr __storev, IntPtr __m,
@@ -15897,21 +20077,33 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int slarfg_(IntPtr __n, FloatPtr __alpha, FloatPtr __x, IntPtr __incx, FloatPtr __tau);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int slarfp_(IntPtr __n, FloatPtr __alpha, FloatPtr __x, IntPtr __incx, FloatPtr __tau);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int slarft_(BytePtr __direct, BytePtr __storev, IntPtr __n, IntPtr __k, FloatPtr __v,
@@ -15919,7 +20111,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int slarfx_(BytePtr __side, IntPtr __m, IntPtr __n, FloatPtr __v, FloatPtr __tau,
@@ -15927,7 +20123,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int slargv_(IntPtr __n, FloatPtr __x, IntPtr __incx, FloatPtr __y, IntPtr __incy,
@@ -15935,14 +20135,22 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int slarnv_(IntPtr __idist, IntPtr __iseed, IntPtr __n, FloatPtr __x);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int slarra_(IntPtr __n, FloatPtr __d__, FloatPtr __e, FloatPtr __e2, FloatPtr __spltol,
@@ -15950,7 +20158,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int slarrb_(IntPtr __n, FloatPtr __d__, FloatPtr __lld, IntPtr __ifirst, IntPtr __ilast,
@@ -15959,7 +20171,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int slarrc_(BytePtr __jobt, IntPtr __n, FloatPtr __vl, FloatPtr __vu, FloatPtr __d__,
@@ -15967,7 +20183,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int slarrd_(BytePtr __range, BytePtr __order, IntPtr __n, FloatPtr __vl, FloatPtr __vu,
@@ -15978,7 +20198,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int slarre_(BytePtr __range, IntPtr __n, FloatPtr __vl, FloatPtr __vu, IntPtr __il,
@@ -15989,7 +20213,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int slarrf_(IntPtr __n, FloatPtr __d__, FloatPtr __l, FloatPtr __ld, IntPtr __clstrt,
@@ -15999,7 +20227,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int slarrj_(IntPtr __n, FloatPtr __d__, FloatPtr __e2, IntPtr __ifirst, IntPtr __ilast,
@@ -16008,7 +20240,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int slarrk_(IntPtr __n, IntPtr __iw, FloatPtr __gl, FloatPtr __gu, FloatPtr __d__,
@@ -16016,14 +20252,22 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int slarrr_(IntPtr __n, FloatPtr __d__, FloatPtr __e, IntPtr __info);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int slarrv_(IntPtr __n, FloatPtr __vl, FloatPtr __vu, FloatPtr __d__, FloatPtr __l,
@@ -16034,21 +20278,33 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int slarscl2_(IntPtr __m, IntPtr __n, FloatPtr __d__, FloatPtr __x, IntPtr __ldx);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int slartg_(FloatPtr __f, FloatPtr __g, FloatPtr __cs, FloatPtr __sn, FloatPtr __r__);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int slartv_(IntPtr __n, FloatPtr __x, IntPtr __incx, FloatPtr __y, IntPtr __incy,
@@ -16056,14 +20312,22 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int slaruv_(IntPtr __iseed, IntPtr __n, FloatPtr __x);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int slarz_(BytePtr __side, IntPtr __m, IntPtr __n, IntPtr __l, FloatPtr __v, IntPtr __incv,
@@ -16071,7 +20335,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int slarzb_(BytePtr __side, BytePtr __trans, BytePtr __direct, BytePtr __storev, IntPtr __m,
@@ -16080,7 +20348,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int slarzt_(BytePtr __direct, BytePtr __storev, IntPtr __n, IntPtr __k, FloatPtr __v,
@@ -16088,14 +20360,22 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int slas2_(FloatPtr __f, FloatPtr __g, FloatPtr __h__, FloatPtr __ssmin, FloatPtr __ssmax);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int slascl_(BytePtr __type__, IntPtr __kl, IntPtr __ku, FloatPtr __cfrom, FloatPtr __cto,
@@ -16103,14 +20383,22 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int slascl2_(IntPtr __m, IntPtr __n, FloatPtr __d__, FloatPtr __x, IntPtr __ldx);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int slasd0_(IntPtr __n, IntPtr __sqre, FloatPtr __d__, FloatPtr __e, FloatPtr __u,
@@ -16119,7 +20407,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int slasd1_(IntPtr __nl, IntPtr __nr, IntPtr __sqre, FloatPtr __d__, FloatPtr __alpha,
@@ -16128,7 +20420,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int slasd2_(IntPtr __nl, IntPtr __nr, IntPtr __sqre, IntPtr __k, FloatPtr __d__,
@@ -16138,7 +20434,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int slasd3_(IntPtr __nl, IntPtr __nr, IntPtr __sqre, IntPtr __k, FloatPtr __d__, FloatPtr __q,
@@ -16147,7 +20447,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int slasd4_(IntPtr __n, IntPtr __i__, FloatPtr __d__, FloatPtr __z__, FloatPtr __delta,
@@ -16155,7 +20459,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int slasd5_(IntPtr __i__, FloatPtr __d__, FloatPtr __z__, FloatPtr __delta, FloatPtr __rho,
@@ -16163,7 +20471,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int slasd6_(IntPtr __icompq, IntPtr __nl, IntPtr __nr, IntPtr __sqre, FloatPtr __d__,
@@ -16174,7 +20486,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int slasd7_(IntPtr __icompq, IntPtr __nl, IntPtr __nr, IntPtr __sqre, IntPtr __k,
@@ -16185,7 +20501,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int slasd8_(IntPtr __icompq, IntPtr __k, FloatPtr __d__, FloatPtr __z__, FloatPtr __vf,
@@ -16194,7 +20514,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int slasda_(IntPtr __icompq, IntPtr __smlsiz, IntPtr __n, IntPtr __sqre, FloatPtr __d__,
@@ -16204,7 +20528,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int slasdq_(BytePtr __uplo, IntPtr __sqre, IntPtr __n, IntPtr __ncvt, IntPtr __nru,
@@ -16213,7 +20541,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int slasdt_(IntPtr __n, IntPtr __lvl, IntPtr __nd, IntPtr __inode, IntPtr __ndiml,
@@ -16221,7 +20553,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int slaset_(BytePtr __uplo, IntPtr __m, IntPtr __n, FloatPtr __alpha, FloatPtr __beta,
@@ -16229,21 +20565,33 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int slasq1_(IntPtr __n, FloatPtr __d__, FloatPtr __e, FloatPtr __work, IntPtr __info);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int slasq2_(IntPtr __n, FloatPtr __z__, IntPtr __info);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int slasq3_(IntPtr __i0, IntPtr __n0, FloatPtr __z__, IntPtr __pp, FloatPtr __dmin__,
@@ -16253,7 +20601,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int slasq4_(IntPtr __i0, IntPtr __n0, FloatPtr __z__, IntPtr __pp, IntPtr __n0in,
@@ -16262,7 +20614,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int slasq5_(IntPtr __i0, IntPtr __n0, FloatPtr __z__, IntPtr __pp, FloatPtr __tau,
@@ -16271,7 +20627,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int slasq6_(IntPtr __i0, IntPtr __n0, FloatPtr __z__, IntPtr __pp, FloatPtr __dmin__,
@@ -16279,7 +20639,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int slasr_(BytePtr __side, BytePtr __pivot, BytePtr __direct, IntPtr __m, IntPtr __n,
@@ -16287,21 +20651,33 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int slasrt_(BytePtr __id, IntPtr __n, FloatPtr __d__, IntPtr __info);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int slassq_(IntPtr __n, FloatPtr __x, IntPtr __incx, FloatPtr __scale, FloatPtr __sumsq);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int slasv2_(FloatPtr __f, FloatPtr __g, FloatPtr __h__, FloatPtr __ssmin, FloatPtr __ssmax,
@@ -16309,7 +20685,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int slaswp_(IntPtr __n, FloatPtr __a, IntPtr __lda, IntPtr __k1, IntPtr __k2, IntPtr __ipiv,
@@ -16317,7 +20697,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int slasy2_(IntPtr __ltranl, IntPtr __ltranr, IntPtr __isgn, IntPtr __n1, IntPtr __n2,
@@ -16326,7 +20710,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int slasyf_(BytePtr __uplo, IntPtr __n, IntPtr __nb, IntPtr __kb, FloatPtr __a, IntPtr __lda,
@@ -16334,7 +20722,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int slatbs_(BytePtr __uplo, BytePtr __trans, BytePtr __diag, BytePtr __normin, IntPtr __n,
@@ -16342,7 +20734,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int slatdf_(IntPtr __ijob, IntPtr __n, FloatPtr __z__, IntPtr __ldz, FloatPtr __rhs,
@@ -16350,7 +20746,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int slatps_(BytePtr __uplo, BytePtr __trans, BytePtr __diag, BytePtr __normin, IntPtr __n,
@@ -16358,7 +20758,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int slatrd_(BytePtr __uplo, IntPtr __n, IntPtr __nb, FloatPtr __a, IntPtr __lda, FloatPtr __e,
@@ -16366,7 +20770,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int slatrs_(BytePtr __uplo, BytePtr __trans, BytePtr __diag, BytePtr __normin, IntPtr __n,
@@ -16374,7 +20782,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int slatrz_(IntPtr __m, IntPtr __n, IntPtr __l, FloatPtr __a, IntPtr __lda, FloatPtr __tau,
@@ -16382,7 +20794,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int slatzm_(BytePtr __side, IntPtr __m, IntPtr __n, FloatPtr __v, IntPtr __incv,
@@ -16390,21 +20806,33 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int slauu2_(BytePtr __uplo, IntPtr __n, FloatPtr __a, IntPtr __lda, IntPtr __info);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int slauum_(BytePtr __uplo, IntPtr __n, FloatPtr __a, IntPtr __lda, IntPtr __info);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int sopgtr_(BytePtr __uplo, IntPtr __n, FloatPtr __ap, FloatPtr __tau, FloatPtr __q,
@@ -16412,7 +20840,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int sopmtr_(BytePtr __side, BytePtr __uplo, BytePtr __trans, IntPtr __m, IntPtr __n,
@@ -16420,7 +20852,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int sorg2l_(IntPtr __m, IntPtr __n, IntPtr __k, FloatPtr __a, IntPtr __lda, FloatPtr __tau,
@@ -16428,7 +20864,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int sorg2r_(IntPtr __m, IntPtr __n, IntPtr __k, FloatPtr __a, IntPtr __lda, FloatPtr __tau,
@@ -16436,7 +20876,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int sorgbr_(BytePtr __vect, IntPtr __m, IntPtr __n, IntPtr __k, FloatPtr __a, IntPtr __lda,
@@ -16444,7 +20888,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int sorghr_(IntPtr __n, IntPtr __ilo, IntPtr __ihi, FloatPtr __a, IntPtr __lda, FloatPtr __tau,
@@ -16452,7 +20900,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int sorgl2_(IntPtr __m, IntPtr __n, IntPtr __k, FloatPtr __a, IntPtr __lda, FloatPtr __tau,
@@ -16460,7 +20912,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int sorglq_(IntPtr __m, IntPtr __n, IntPtr __k, FloatPtr __a, IntPtr __lda, FloatPtr __tau,
@@ -16468,7 +20924,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int sorgql_(IntPtr __m, IntPtr __n, IntPtr __k, FloatPtr __a, IntPtr __lda, FloatPtr __tau,
@@ -16476,7 +20936,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int sorgqr_(IntPtr __m, IntPtr __n, IntPtr __k, FloatPtr __a, IntPtr __lda, FloatPtr __tau,
@@ -16484,7 +20948,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int sorgr2_(IntPtr __m, IntPtr __n, IntPtr __k, FloatPtr __a, IntPtr __lda, FloatPtr __tau,
@@ -16492,7 +20960,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int sorgrq_(IntPtr __m, IntPtr __n, IntPtr __k, FloatPtr __a, IntPtr __lda, FloatPtr __tau,
@@ -16500,7 +20972,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int sorgtr_(BytePtr __uplo, IntPtr __n, FloatPtr __a, IntPtr __lda, FloatPtr __tau,
@@ -16508,7 +20984,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int sorm2l_(BytePtr __side, BytePtr __trans, IntPtr __m, IntPtr __n, IntPtr __k, FloatPtr __a,
@@ -16516,7 +20996,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int sorm2r_(BytePtr __side, BytePtr __trans, IntPtr __m, IntPtr __n, IntPtr __k, FloatPtr __a,
@@ -16524,7 +21008,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int sormbr_(BytePtr __vect, BytePtr __side, BytePtr __trans, IntPtr __m, IntPtr __n,
@@ -16533,7 +21021,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int sormhr_(BytePtr __side, BytePtr __trans, IntPtr __m, IntPtr __n, IntPtr __ilo,
@@ -16542,7 +21034,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int sorml2_(BytePtr __side, BytePtr __trans, IntPtr __m, IntPtr __n, IntPtr __k, FloatPtr __a,
@@ -16550,7 +21046,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int sormlq_(BytePtr __side, BytePtr __trans, IntPtr __m, IntPtr __n, IntPtr __k, FloatPtr __a,
@@ -16558,7 +21058,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int sormql_(BytePtr __side, BytePtr __trans, IntPtr __m, IntPtr __n, IntPtr __k, FloatPtr __a,
@@ -16566,7 +21070,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int sormqr_(BytePtr __side, BytePtr __trans, IntPtr __m, IntPtr __n, IntPtr __k, FloatPtr __a,
@@ -16574,7 +21082,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int sormr2_(BytePtr __side, BytePtr __trans, IntPtr __m, IntPtr __n, IntPtr __k, FloatPtr __a,
@@ -16582,7 +21094,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int sormr3_(BytePtr __side, BytePtr __trans, IntPtr __m, IntPtr __n, IntPtr __k, IntPtr __l,
@@ -16590,7 +21106,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int sormrq_(BytePtr __side, BytePtr __trans, IntPtr __m, IntPtr __n, IntPtr __k, FloatPtr __a,
@@ -16598,7 +21118,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int sormrz_(BytePtr __side, BytePtr __trans, IntPtr __m, IntPtr __n, IntPtr __k, IntPtr __l,
@@ -16607,7 +21131,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int sormtr_(BytePtr __side, BytePtr __uplo, BytePtr __trans, IntPtr __m, IntPtr __n,
@@ -16616,7 +21144,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int spbcon_(BytePtr __uplo, IntPtr __n, IntPtr __kd, FloatPtr __ab, IntPtr __ldab,
@@ -16624,7 +21156,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int spbequ_(BytePtr __uplo, IntPtr __n, IntPtr __kd, FloatPtr __ab, IntPtr __ldab,
@@ -16632,7 +21168,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int spbrfs_(BytePtr __uplo, IntPtr __n, IntPtr __kd, IntPtr __nrhs, FloatPtr __ab,
@@ -16641,7 +21181,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int spbstf_(BytePtr __uplo, IntPtr __n, IntPtr __kd, FloatPtr __ab, IntPtr __ldab,
@@ -16649,7 +21193,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int spbsv_(BytePtr __uplo, IntPtr __n, IntPtr __kd, IntPtr __nrhs, FloatPtr __ab,
@@ -16657,7 +21205,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int spbsvx_(BytePtr __fact, BytePtr __uplo, IntPtr __n, IntPtr __kd, IntPtr __nrhs,
@@ -16667,7 +21219,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int spbtf2_(BytePtr __uplo, IntPtr __n, IntPtr __kd, FloatPtr __ab, IntPtr __ldab,
@@ -16675,7 +21231,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int spbtrf_(BytePtr __uplo, IntPtr __n, IntPtr __kd, FloatPtr __ab, IntPtr __ldab,
@@ -16683,7 +21243,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int spbtrs_(BytePtr __uplo, IntPtr __n, IntPtr __kd, IntPtr __nrhs, FloatPtr __ab,
@@ -16691,21 +21255,33 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int spftrf_(BytePtr __transr, BytePtr __uplo, IntPtr __n, FloatPtr __a, IntPtr __info);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int spftri_(BytePtr __transr, BytePtr __uplo, IntPtr __n, FloatPtr __a, IntPtr __info);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int spftrs_(BytePtr __transr, BytePtr __uplo, IntPtr __n, IntPtr __nrhs, FloatPtr __a,
@@ -16713,7 +21289,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int spocon_(BytePtr __uplo, IntPtr __n, FloatPtr __a, IntPtr __lda, FloatPtr __anorm,
@@ -16721,7 +21301,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int spoequ_(IntPtr __n, FloatPtr __a, IntPtr __lda, FloatPtr __s, FloatPtr __scond,
@@ -16729,7 +21313,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int spoequb_(IntPtr __n, FloatPtr __a, IntPtr __lda, FloatPtr __s, FloatPtr __scond,
@@ -16737,7 +21325,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int sporfs_(BytePtr __uplo, IntPtr __n, IntPtr __nrhs, FloatPtr __a, IntPtr __lda,
@@ -16746,7 +21338,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int sposv_(BytePtr __uplo, IntPtr __n, IntPtr __nrhs, FloatPtr __a, IntPtr __lda, FloatPtr __b,
@@ -16754,7 +21350,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int sposvx_(BytePtr __fact, BytePtr __uplo, IntPtr __n, IntPtr __nrhs, FloatPtr __a,
@@ -16764,28 +21364,44 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int spotf2_(BytePtr __uplo, IntPtr __n, FloatPtr __a, IntPtr __lda, IntPtr __info);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int spotrf_(BytePtr __uplo, IntPtr __n, FloatPtr __a, IntPtr __lda, IntPtr __info);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int spotri_(BytePtr __uplo, IntPtr __n, FloatPtr __a, IntPtr __lda, IntPtr __info);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int spotrs_(BytePtr __uplo, IntPtr __n, IntPtr __nrhs, FloatPtr __a, IntPtr __lda,
@@ -16793,7 +21409,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int sppcon_(BytePtr __uplo, IntPtr __n, FloatPtr __ap, FloatPtr __anorm, FloatPtr __rcond,
@@ -16801,7 +21421,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int sppequ_(BytePtr __uplo, IntPtr __n, FloatPtr __ap, FloatPtr __s, FloatPtr __scond,
@@ -16809,7 +21433,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int spprfs_(BytePtr __uplo, IntPtr __n, IntPtr __nrhs, FloatPtr __ap, FloatPtr __afp,
@@ -16818,7 +21446,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int sppsv_(BytePtr __uplo, IntPtr __n, IntPtr __nrhs, FloatPtr __ap, FloatPtr __b,
@@ -16826,7 +21458,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int sppsvx_(BytePtr __fact, BytePtr __uplo, IntPtr __n, IntPtr __nrhs, FloatPtr __ap,
@@ -16835,21 +21471,33 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int spptrf_(BytePtr __uplo, IntPtr __n, FloatPtr __ap, IntPtr __info);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int spptri_(BytePtr __uplo, IntPtr __n, FloatPtr __ap, IntPtr __info);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int spptrs_(BytePtr __uplo, IntPtr __n, IntPtr __nrhs, FloatPtr __ap, FloatPtr __b,
@@ -16857,7 +21505,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int spstf2_(BytePtr __uplo, IntPtr __n, FloatPtr __a, IntPtr __lda, IntPtr __piv,
@@ -16865,7 +21517,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int spstrf_(BytePtr __uplo, IntPtr __n, FloatPtr __a, IntPtr __lda, IntPtr __piv,
@@ -16873,7 +21529,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int sptcon_(IntPtr __n, FloatPtr __d__, FloatPtr __e, FloatPtr __anorm, FloatPtr __rcond,
@@ -16881,7 +21541,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int spteqr_(BytePtr __compz, IntPtr __n, FloatPtr __d__, FloatPtr __e, FloatPtr __z__,
@@ -16889,7 +21553,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int sptrfs_(IntPtr __n, IntPtr __nrhs, FloatPtr __d__, FloatPtr __e, FloatPtr __df,
@@ -16898,7 +21566,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int sptsv_(IntPtr __n, IntPtr __nrhs, FloatPtr __d__, FloatPtr __e, FloatPtr __b, IntPtr __ldb,
@@ -16906,7 +21578,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int sptsvx_(BytePtr __fact, IntPtr __n, IntPtr __nrhs, FloatPtr __d__, FloatPtr __e,
@@ -16915,14 +21591,22 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int spttrf_(IntPtr __n, FloatPtr __d__, FloatPtr __e, IntPtr __info);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int spttrs_(IntPtr __n, IntPtr __nrhs, FloatPtr __d__, FloatPtr __e, FloatPtr __b,
@@ -16930,7 +21614,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int sptts2_(IntPtr __n, IntPtr __nrhs, FloatPtr __d__, FloatPtr __e, FloatPtr __b,
@@ -16938,14 +21626,22 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int srscl_(IntPtr __n, FloatPtr __sa, FloatPtr __sx, IntPtr __incx);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int ssbev_(BytePtr __jobz, BytePtr __uplo, IntPtr __n, IntPtr __kd, FloatPtr __ab,
@@ -16953,7 +21649,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int ssbevd_(BytePtr __jobz, BytePtr __uplo, IntPtr __n, IntPtr __kd, FloatPtr __ab,
@@ -16962,7 +21662,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int ssbevx_(BytePtr __jobz, BytePtr __range, BytePtr __uplo, IntPtr __n, IntPtr __kd,
@@ -16972,7 +21676,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int ssbgst_(BytePtr __vect, BytePtr __uplo, IntPtr __n, IntPtr __ka, IntPtr __kb,
@@ -16981,7 +21689,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int ssbgv_(BytePtr __jobz, BytePtr __uplo, IntPtr __n, IntPtr __ka, IntPtr __kb, FloatPtr __ab,
@@ -16990,7 +21702,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int ssbgvd_(BytePtr __jobz, BytePtr __uplo, IntPtr __n, IntPtr __ka, IntPtr __kb,
@@ -16999,7 +21715,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int ssbgvx_(BytePtr __jobz, BytePtr __range, BytePtr __uplo, IntPtr __n, IntPtr __ka,
@@ -17009,7 +21729,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int ssbtrd_(BytePtr __vect, BytePtr __uplo, IntPtr __n, IntPtr __kd, FloatPtr __ab,
@@ -17017,7 +21741,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int ssfrk_(BytePtr __transr, BytePtr __uplo, BytePtr __trans, IntPtr __n, IntPtr __k,
@@ -17025,7 +21753,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int sspcon_(BytePtr __uplo, IntPtr __n, FloatPtr __ap, IntPtr __ipiv, FloatPtr __anorm,
@@ -17033,7 +21765,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int sspev_(BytePtr __jobz, BytePtr __uplo, IntPtr __n, FloatPtr __ap, FloatPtr __w,
@@ -17041,7 +21777,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int sspevd_(BytePtr __jobz, BytePtr __uplo, IntPtr __n, FloatPtr __ap, FloatPtr __w,
@@ -17050,7 +21790,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int sspevx_(BytePtr __jobz, BytePtr __range, BytePtr __uplo, IntPtr __n, FloatPtr __ap,
@@ -17059,7 +21803,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int sspgst_(IntPtr __itype, BytePtr __uplo, IntPtr __n, FloatPtr __ap, FloatPtr __bp,
@@ -17067,7 +21815,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int sspgv_(IntPtr __itype, BytePtr __jobz, BytePtr __uplo, IntPtr __n, FloatPtr __ap,
@@ -17075,7 +21827,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int sspgvd_(IntPtr __itype, BytePtr __jobz, BytePtr __uplo, IntPtr __n, FloatPtr __ap,
@@ -17084,7 +21840,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int sspgvx_(IntPtr __itype, BytePtr __jobz, BytePtr __range, BytePtr __uplo, IntPtr __n,
@@ -17094,7 +21854,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int ssprfs_(BytePtr __uplo, IntPtr __n, IntPtr __nrhs, FloatPtr __ap, FloatPtr __afp,
@@ -17103,7 +21867,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int sspsv_(BytePtr __uplo, IntPtr __n, IntPtr __nrhs, FloatPtr __ap, IntPtr __ipiv,
@@ -17111,7 +21879,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int sspsvx_(BytePtr __fact, BytePtr __uplo, IntPtr __n, IntPtr __nrhs, FloatPtr __ap,
@@ -17120,7 +21892,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int ssptrd_(BytePtr __uplo, IntPtr __n, FloatPtr __ap, FloatPtr __d__, FloatPtr __e,
@@ -17128,14 +21904,22 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int ssptrf_(BytePtr __uplo, IntPtr __n, FloatPtr __ap, IntPtr __ipiv, IntPtr __info);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int ssptri_(BytePtr __uplo, IntPtr __n, FloatPtr __ap, IntPtr __ipiv, FloatPtr __work,
@@ -17143,7 +21927,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int ssptrs_(BytePtr __uplo, IntPtr __n, IntPtr __nrhs, FloatPtr __ap, IntPtr __ipiv,
@@ -17151,7 +21939,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int sstebz_(BytePtr __range, BytePtr __order, IntPtr __n, FloatPtr __vl, FloatPtr __vu,
@@ -17160,7 +21952,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int sstedc_(BytePtr __compz, IntPtr __n, FloatPtr __d__, FloatPtr __e, FloatPtr __z__,
@@ -17168,7 +21964,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int sstegr_(BytePtr __jobz, BytePtr __range, IntPtr __n, FloatPtr __d__, FloatPtr __e,
@@ -17178,7 +21978,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int sstein_(IntPtr __n, FloatPtr __d__, FloatPtr __e, IntPtr __m, FloatPtr __w,
@@ -17187,7 +21991,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int sstemr_(BytePtr __jobz, BytePtr __range, IntPtr __n, FloatPtr __d__, FloatPtr __e,
@@ -17197,7 +22005,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int ssteqr_(BytePtr __compz, IntPtr __n, FloatPtr __d__, FloatPtr __e, FloatPtr __z__,
@@ -17205,14 +22017,22 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int ssterf_(IntPtr __n, FloatPtr __d__, FloatPtr __e, IntPtr __info);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int sstev_(BytePtr __jobz, IntPtr __n, FloatPtr __d__, FloatPtr __e, FloatPtr __z__,
@@ -17220,7 +22040,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int sstevd_(BytePtr __jobz, IntPtr __n, FloatPtr __d__, FloatPtr __e, FloatPtr __z__,
@@ -17228,7 +22052,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int sstevr_(BytePtr __jobz, BytePtr __range, IntPtr __n, FloatPtr __d__, FloatPtr __e,
@@ -17238,7 +22066,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int sstevx_(BytePtr __jobz, BytePtr __range, IntPtr __n, FloatPtr __d__, FloatPtr __e,
@@ -17247,7 +22079,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int ssycon_(BytePtr __uplo, IntPtr __n, FloatPtr __a, IntPtr __lda, IntPtr __ipiv,
@@ -17255,7 +22091,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int ssyequb_(BytePtr __uplo, IntPtr __n, FloatPtr __a, IntPtr __lda, FloatPtr __s,
@@ -17263,7 +22103,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int ssyev_(BytePtr __jobz, BytePtr __uplo, IntPtr __n, FloatPtr __a, IntPtr __lda,
@@ -17271,7 +22115,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int ssyevd_(BytePtr __jobz, BytePtr __uplo, IntPtr __n, FloatPtr __a, IntPtr __lda,
@@ -17279,7 +22127,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int ssyevr_(BytePtr __jobz, BytePtr __range, BytePtr __uplo, IntPtr __n, FloatPtr __a,
@@ -17289,7 +22141,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int ssyevx_(BytePtr __jobz, BytePtr __range, BytePtr __uplo, IntPtr __n, FloatPtr __a,
@@ -17299,7 +22155,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int ssygs2_(IntPtr __itype, BytePtr __uplo, IntPtr __n, FloatPtr __a, IntPtr __lda,
@@ -17307,7 +22167,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int ssygst_(IntPtr __itype, BytePtr __uplo, IntPtr __n, FloatPtr __a, IntPtr __lda,
@@ -17315,7 +22179,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int ssygv_(IntPtr __itype, BytePtr __jobz, BytePtr __uplo, IntPtr __n, FloatPtr __a,
@@ -17323,7 +22191,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int ssygvd_(IntPtr __itype, BytePtr __jobz, BytePtr __uplo, IntPtr __n, FloatPtr __a,
@@ -17332,7 +22204,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int ssygvx_(IntPtr __itype, BytePtr __jobz, BytePtr __range, BytePtr __uplo, IntPtr __n,
@@ -17342,7 +22218,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int ssyrfs_(BytePtr __uplo, IntPtr __n, IntPtr __nrhs, FloatPtr __a, IntPtr __lda,
@@ -17351,7 +22231,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int ssysv_(BytePtr __uplo, IntPtr __n, IntPtr __nrhs, FloatPtr __a, IntPtr __lda,
@@ -17359,7 +22243,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int ssysvx_(BytePtr __fact, BytePtr __uplo, IntPtr __n, IntPtr __nrhs, FloatPtr __a,
@@ -17369,7 +22257,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int ssytd2_(BytePtr __uplo, IntPtr __n, FloatPtr __a, IntPtr __lda, FloatPtr __d__,
@@ -17377,7 +22269,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int ssytf2_(BytePtr __uplo, IntPtr __n, FloatPtr __a, IntPtr __lda, IntPtr __ipiv,
@@ -17385,7 +22281,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int ssytrd_(BytePtr __uplo, IntPtr __n, FloatPtr __a, IntPtr __lda, FloatPtr __d__,
@@ -17393,7 +22293,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int ssytrf_(BytePtr __uplo, IntPtr __n, FloatPtr __a, IntPtr __lda, IntPtr __ipiv,
@@ -17401,7 +22305,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int ssytri_(BytePtr __uplo, IntPtr __n, FloatPtr __a, IntPtr __lda, IntPtr __ipiv,
@@ -17409,7 +22317,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int ssytrs_(BytePtr __uplo, IntPtr __n, IntPtr __nrhs, FloatPtr __a, IntPtr __lda,
@@ -17417,7 +22329,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int stbcon_(BytePtr __norm, BytePtr __uplo, BytePtr __diag, IntPtr __n, IntPtr __kd,
@@ -17425,7 +22341,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int stbrfs_(BytePtr __uplo, BytePtr __trans, BytePtr __diag, IntPtr __n, IntPtr __kd,
@@ -17434,7 +22354,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int stbtrs_(BytePtr __uplo, BytePtr __trans, BytePtr __diag, IntPtr __n, IntPtr __kd,
@@ -17442,7 +22366,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int stfsm_(BytePtr __transr, BytePtr __side, BytePtr __uplo, BytePtr __trans, BytePtr __diag,
@@ -17450,7 +22378,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int stftri_(BytePtr __transr, BytePtr __uplo, BytePtr __diag, IntPtr __n, FloatPtr __a,
@@ -17458,7 +22390,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int stfttp_(BytePtr __transr, BytePtr __uplo, IntPtr __n, FloatPtr __arf, FloatPtr __ap,
@@ -17466,7 +22402,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int stfttr_(BytePtr __transr, BytePtr __uplo, IntPtr __n, FloatPtr __arf, FloatPtr __a,
@@ -17474,7 +22414,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int stgevc_(BytePtr __side, BytePtr __howmny, IntPtr __select, IntPtr __n, FloatPtr __s,
@@ -17483,7 +22427,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int stgex2_(IntPtr __wantq, IntPtr __wantz, IntPtr __n, FloatPtr __a, IntPtr __lda,
@@ -17492,7 +22440,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int stgexc_(IntPtr __wantq, IntPtr __wantz, IntPtr __n, FloatPtr __a, IntPtr __lda,
@@ -17501,7 +22453,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int stgsen_(IntPtr __ijob, IntPtr __wantq, IntPtr __wantz, IntPtr __select, IntPtr __n,
@@ -17512,7 +22468,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int stgsja_(BytePtr __jobu, BytePtr __jobv, BytePtr __jobq, IntPtr __m, IntPtr __p, IntPtr __n,
@@ -17522,7 +22482,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int stgsna_(BytePtr __job, BytePtr __howmny, IntPtr __select, IntPtr __n, FloatPtr __a,
@@ -17532,7 +22496,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int stgsy2_(BytePtr __trans, IntPtr __ijob, IntPtr __m, IntPtr __n, FloatPtr __a, IntPtr __lda,
@@ -17542,7 +22510,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int stgsyl_(BytePtr __trans, IntPtr __ijob, IntPtr __m, IntPtr __n, FloatPtr __a, IntPtr __lda,
@@ -17552,7 +22524,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int stpcon_(BytePtr __norm, BytePtr __uplo, BytePtr __diag, IntPtr __n, FloatPtr __ap,
@@ -17560,7 +22536,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int stprfs_(BytePtr __uplo, BytePtr __trans, BytePtr __diag, IntPtr __n, IntPtr __nrhs,
@@ -17569,14 +22549,22 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int stptri_(BytePtr __uplo, BytePtr __diag, IntPtr __n, FloatPtr __ap, IntPtr __info);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int stptrs_(BytePtr __uplo, BytePtr __trans, BytePtr __diag, IntPtr __n, IntPtr __nrhs,
@@ -17584,7 +22572,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int stpttf_(BytePtr __transr, BytePtr __uplo, IntPtr __n, FloatPtr __ap, FloatPtr __arf,
@@ -17592,7 +22584,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int stpttr_(BytePtr __uplo, IntPtr __n, FloatPtr __ap, FloatPtr __a, IntPtr __lda,
@@ -17600,7 +22596,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int strcon_(BytePtr __norm, BytePtr __uplo, BytePtr __diag, IntPtr __n, FloatPtr __a,
@@ -17608,7 +22608,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int strevc_(BytePtr __side, BytePtr __howmny, IntPtr __select, IntPtr __n, FloatPtr __t,
@@ -17617,7 +22621,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int strexc_(BytePtr __compq, IntPtr __n, FloatPtr __t, IntPtr __ldt, FloatPtr __q,
@@ -17625,7 +22633,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int strrfs_(BytePtr __uplo, BytePtr __trans, BytePtr __diag, IntPtr __n, IntPtr __nrhs,
@@ -17634,7 +22646,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int strsen_(BytePtr __job, BytePtr __compq, IntPtr __select, IntPtr __n, FloatPtr __t,
@@ -17643,7 +22659,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int strsna_(BytePtr __job, BytePtr __howmny, IntPtr __select, IntPtr __n, FloatPtr __t,
@@ -17652,7 +22672,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int strsyl_(BytePtr __trana, BytePtr __tranb, IntPtr __isgn, IntPtr __m, IntPtr __n,
@@ -17661,7 +22685,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int strti2_(BytePtr __uplo, BytePtr __diag, IntPtr __n, FloatPtr __a, IntPtr __lda,
@@ -17669,7 +22697,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int strtri_(BytePtr __uplo, BytePtr __diag, IntPtr __n, FloatPtr __a, IntPtr __lda,
@@ -17677,7 +22709,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int strtrs_(BytePtr __uplo, BytePtr __trans, BytePtr __diag, IntPtr __n, IntPtr __nrhs,
@@ -17685,7 +22721,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int strttf_(BytePtr __transr, BytePtr __uplo, IntPtr __n, FloatPtr __a, IntPtr __lda,
@@ -17693,7 +22733,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int strttp_(BytePtr __uplo, IntPtr __n, FloatPtr __a, IntPtr __lda, FloatPtr __ap,
@@ -17701,14 +22745,22 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int stzrqf_(IntPtr __m, IntPtr __n, FloatPtr __a, IntPtr __lda, FloatPtr __tau, IntPtr __info);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int stzrzf_(IntPtr __m, IntPtr __n, FloatPtr __a, IntPtr __lda, FloatPtr __tau,
@@ -17716,7 +22768,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zbdsqr_(BytePtr __uplo, IntPtr __n, IntPtr __ncvt, IntPtr __nru, IntPtr __ncc,
@@ -17729,7 +22785,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zcgesv_(IntPtr __n, IntPtr __nrhs,
@@ -17743,7 +22803,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zcposv_(BytePtr __uplo, IntPtr __n, IntPtr __nrhs,
@@ -17756,7 +22820,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zdrscl_(IntPtr __n, DoublePtr __sa,
@@ -17765,7 +22833,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zgbbrd_(BytePtr __vect, IntPtr __m, IntPtr __n, IntPtr __ncc, IntPtr __kl, IntPtr __ku,
@@ -17781,7 +22853,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zgbcon_(BytePtr __norm, IntPtr __n, IntPtr __kl, IntPtr __ku,
@@ -17792,7 +22868,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zgbequ_(IntPtr __m, IntPtr __n, IntPtr __kl, IntPtr __ku,
@@ -17802,7 +22882,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zgbequb_(IntPtr __m, IntPtr __n, IntPtr __kl, IntPtr __ku,
@@ -17812,7 +22896,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zgbrfs_(BytePtr __trans, IntPtr __n, IntPtr __kl, IntPtr __ku, IntPtr __nrhs,
@@ -17828,7 +22916,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zgbsv_(IntPtr __n, IntPtr __kl, IntPtr __ku, IntPtr __nrhs,
@@ -17839,7 +22931,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zgbsvx_(BytePtr __fact, BytePtr __trans, IntPtr __n, IntPtr __kl, IntPtr __ku,
@@ -17856,7 +22952,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zgbtf2_(IntPtr __m, IntPtr __n, IntPtr __kl, IntPtr __ku,
@@ -17865,7 +22965,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zgbtrf_(IntPtr __m, IntPtr __n, IntPtr __kl, IntPtr __ku,
@@ -17874,7 +22978,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zgbtrs_(BytePtr __trans, IntPtr __n, IntPtr __kl, IntPtr __ku, IntPtr __nrhs,
@@ -17885,7 +22993,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zgebak_(BytePtr __job, BytePtr __side, IntPtr __n, IntPtr __ilo, IntPtr __ihi,
@@ -17895,7 +23007,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zgebal_(BytePtr __job, IntPtr __n,
@@ -17904,7 +23020,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zgebd2_(IntPtr __m, IntPtr __n,
@@ -17917,7 +23037,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zgebrd_(IntPtr __m, IntPtr __n,
@@ -17930,7 +23054,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zgecon_(BytePtr __norm, IntPtr __n,
@@ -17941,7 +23069,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zgeequ_(IntPtr __m, IntPtr __n,
@@ -17950,7 +23082,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zgeequb_(IntPtr __m, IntPtr __n,
@@ -17959,7 +23095,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zgeev_(BytePtr __jobvl, BytePtr __jobvr, IntPtr __n,
@@ -17974,7 +23114,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zgeevx_(BytePtr __balanc, BytePtr __jobvl, BytePtr __jobvr, BytePtr __sense, IntPtr __n,
@@ -17990,7 +23134,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zgegs_(BytePtr __jobvsl, BytePtr __jobvsr, IntPtr __n,
@@ -18007,7 +23155,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zgegv_(BytePtr __jobvl, BytePtr __jobvr, IntPtr __n,
@@ -18024,7 +23176,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zgehd2_(IntPtr __n, IntPtr __ilo, IntPtr __ihi,
@@ -18035,7 +23191,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zgehrd_(IntPtr __n, IntPtr __ilo, IntPtr __ihi,
@@ -18046,7 +23206,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zgelq2_(IntPtr __m, IntPtr __n,
@@ -18057,7 +23221,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zgelqf_(IntPtr __m, IntPtr __n,
@@ -18068,7 +23236,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zgels_(BytePtr __trans, IntPtr __m, IntPtr __n, IntPtr __nrhs,
@@ -18079,7 +23251,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zgelsd_(IntPtr __m, IntPtr __n, IntPtr __nrhs,
@@ -18091,7 +23267,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zgelss_(IntPtr __m, IntPtr __n, IntPtr __nrhs,
@@ -18103,7 +23283,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zgelsx_(IntPtr __m, IntPtr __n, IntPtr __nrhs,
@@ -18115,7 +23299,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zgelsy_(IntPtr __m, IntPtr __n, IntPtr __nrhs,
@@ -18127,7 +23315,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zgeql2_(IntPtr __m, IntPtr __n,
@@ -18138,7 +23330,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zgeqlf_(IntPtr __m, IntPtr __n,
@@ -18149,7 +23345,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zgeqp3_(IntPtr __m, IntPtr __n,
@@ -18161,7 +23361,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zgeqpf_(IntPtr __m, IntPtr __n,
@@ -18173,7 +23377,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zgeqr2_(IntPtr __m, IntPtr __n,
@@ -18184,7 +23392,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zgeqrf_(IntPtr __m, IntPtr __n,
@@ -18195,7 +23407,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zgerfs_(BytePtr __trans, IntPtr __n, IntPtr __nrhs,
@@ -18210,7 +23426,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zgerq2_(IntPtr __m, IntPtr __n,
@@ -18221,7 +23441,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zgerqf_(IntPtr __m, IntPtr __n,
@@ -18232,7 +23456,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zgesc2_(IntPtr __n,
@@ -18242,7 +23470,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zgesdd_(BytePtr __jobz, IntPtr __m, IntPtr __n,
@@ -18255,7 +23487,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zgesv_(IntPtr __n, IntPtr __nrhs,
@@ -18265,7 +23501,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zgesvd_(BytePtr __jobu, BytePtr __jobvt, IntPtr __m, IntPtr __n,
@@ -18278,7 +23518,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zgesvx_(BytePtr __fact, BytePtr __trans, IntPtr __n, IntPtr __nrhs,
@@ -18293,7 +23537,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zgetc2_(IntPtr __n,
@@ -18302,7 +23550,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zgetf2_(IntPtr __m, IntPtr __n,
@@ -18311,7 +23563,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zgetrf_(IntPtr __m, IntPtr __n,
@@ -18320,7 +23576,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zgetri_(IntPtr __n,
@@ -18331,7 +23591,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zgetrs_(BytePtr __trans, IntPtr __n, IntPtr __nrhs,
@@ -18341,7 +23605,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zggbak_(BytePtr __job, BytePtr __side, IntPtr __n, IntPtr __ilo, IntPtr __ihi,
@@ -18351,7 +23619,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zggbal_(BytePtr __job, IntPtr __n,
@@ -18361,7 +23633,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zggev_(BytePtr __jobvl, BytePtr __jobvr, IntPtr __n,
@@ -18378,7 +23654,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zggevx_(BytePtr __balanc, BytePtr __jobvl, BytePtr __jobvr, BytePtr __sense, IntPtr __n,
@@ -18396,7 +23676,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zggglm_(IntPtr __n, IntPtr __m, IntPtr __p,
@@ -18410,7 +23694,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zgghrd_(BytePtr __compq, BytePtr __compz, IntPtr __n, IntPtr __ilo, IntPtr __ihi,
@@ -18422,7 +23710,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zgglse_(IntPtr __m, IntPtr __n, IntPtr __p,
@@ -18436,7 +23728,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zggqrf_(IntPtr __n, IntPtr __m, IntPtr __p,
@@ -18449,7 +23745,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zggrqf_(IntPtr __m, IntPtr __p, IntPtr __n,
@@ -18462,7 +23762,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zggsvd_(BytePtr __jobu, BytePtr __jobv, BytePtr __jobq, IntPtr __m, IntPtr __n, IntPtr __p,
@@ -18478,7 +23782,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zggsvp_(BytePtr __jobu, BytePtr __jobv, BytePtr __jobq, IntPtr __m, IntPtr __p, IntPtr __n,
@@ -18495,7 +23803,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zgtcon_(BytePtr __norm, IntPtr __n,
@@ -18509,7 +23821,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zgtrfs_(BytePtr __trans, IntPtr __n, IntPtr __nrhs,
@@ -18528,7 +23844,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zgtsv_(IntPtr __n, IntPtr __nrhs,
@@ -18540,7 +23860,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zgtsvx_(BytePtr __fact, BytePtr __trans, IntPtr __n, IntPtr __nrhs,
@@ -18559,7 +23883,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zgttrf_(IntPtr __n,
@@ -18571,7 +23899,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zgttrs_(BytePtr __trans, IntPtr __n, IntPtr __nrhs,
@@ -18584,7 +23916,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zgtts2_(IntPtr __itrans, IntPtr __n, IntPtr __nrhs,
@@ -18597,7 +23933,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zhbev_(BytePtr __jobz, BytePtr __uplo, IntPtr __n, IntPtr __kd,
@@ -18610,7 +23950,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zhbevd_(BytePtr __jobz, BytePtr __uplo, IntPtr __n, IntPtr __kd,
@@ -18623,7 +23967,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zhbevx_(BytePtr __jobz, BytePtr __range, BytePtr __uplo, IntPtr __n, IntPtr __kd,
@@ -18638,7 +23986,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zhbgst_(BytePtr __vect, BytePtr __uplo, IntPtr __n, IntPtr __ka, IntPtr __kb,
@@ -18652,7 +24004,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zhbgv_(BytePtr __jobz, BytePtr __uplo, IntPtr __n, IntPtr __ka, IntPtr __kb,
@@ -18667,7 +24023,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zhbgvd_(BytePtr __jobz, BytePtr __uplo, IntPtr __n, IntPtr __ka, IntPtr __kb,
@@ -18682,7 +24042,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zhbgvx_(BytePtr __jobz, BytePtr __range, BytePtr __uplo, IntPtr __n, IntPtr __ka,
@@ -18699,7 +24063,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zhbtrd_(BytePtr __vect, BytePtr __uplo, IntPtr __n, IntPtr __kd,
@@ -18711,7 +24079,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zhecon_(BytePtr __uplo, IntPtr __n,
@@ -18722,7 +24094,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zheequb_(BytePtr __uplo, IntPtr __n,
@@ -18733,7 +24109,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zheev_(BytePtr __jobz, BytePtr __uplo, IntPtr __n,
@@ -18744,7 +24124,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zheevd_(BytePtr __jobz, BytePtr __uplo, IntPtr __n,
@@ -18755,7 +24139,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zheevr_(BytePtr __jobz, BytePtr __range, BytePtr __uplo, IntPtr __n,
@@ -18768,7 +24156,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zheevx_(BytePtr __jobz, BytePtr __range, BytePtr __uplo, IntPtr __n,
@@ -18781,7 +24173,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zhegs2_(IntPtr __itype, BytePtr __uplo, IntPtr __n,
@@ -18791,7 +24187,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zhegst_(IntPtr __itype, BytePtr __uplo, IntPtr __n,
@@ -18801,7 +24201,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zhegv_(IntPtr __itype, BytePtr __jobz, BytePtr __uplo, IntPtr __n,
@@ -18813,7 +24217,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zhegvd_(IntPtr __itype, BytePtr __jobz, BytePtr __uplo, IntPtr __n,
@@ -18825,7 +24233,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zhegvx_(IntPtr __itype, BytePtr __jobz, BytePtr __range, BytePtr __uplo, IntPtr __n,
@@ -18839,7 +24251,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zherfs_(BytePtr __uplo, IntPtr __n, IntPtr __nrhs,
@@ -18854,7 +24270,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zhesv_(BytePtr __uplo, IntPtr __n, IntPtr __nrhs,
@@ -18866,7 +24286,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zhesvx_(BytePtr __fact, BytePtr __uplo, IntPtr __n, IntPtr __nrhs,
@@ -18881,7 +24305,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zhetd2_(BytePtr __uplo, IntPtr __n,
@@ -18892,7 +24320,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zhetf2_(BytePtr __uplo, IntPtr __n,
@@ -18901,7 +24333,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zhetrd_(BytePtr __uplo, IntPtr __n,
@@ -18913,7 +24349,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zhetrf_(BytePtr __uplo, IntPtr __n,
@@ -18924,7 +24364,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zhetri_(BytePtr __uplo, IntPtr __n,
@@ -18935,7 +24379,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zhetrs_(BytePtr __uplo, IntPtr __n, IntPtr __nrhs,
@@ -18945,7 +24393,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zhfrk_(BytePtr __transr, BytePtr __uplo, BytePtr __trans, IntPtr __n, IntPtr __k,
@@ -18956,7 +24408,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zhgeqz_(BytePtr __job, BytePtr __compq, BytePtr __compz, IntPtr __n, IntPtr __ilo,
@@ -18974,7 +24430,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zhpcon_(BytePtr __uplo, IntPtr __n,
@@ -18985,7 +24445,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zhpev_(BytePtr __jobz, BytePtr __uplo, IntPtr __n,
@@ -18998,7 +24462,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zhpevd_(BytePtr __jobz, BytePtr __uplo, IntPtr __n,
@@ -19011,7 +24479,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zhpevx_(BytePtr __jobz, BytePtr __range, BytePtr __uplo, IntPtr __n,
@@ -19024,7 +24496,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zhpgst_(IntPtr __itype, BytePtr __uplo, IntPtr __n,
@@ -19034,7 +24510,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zhpgv_(IntPtr __itype, BytePtr __jobz, BytePtr __uplo, IntPtr __n,
@@ -19048,7 +24528,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zhpgvd_(IntPtr __itype, BytePtr __jobz, BytePtr __uplo, IntPtr __n,
@@ -19062,7 +24546,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zhpgvx_(IntPtr __itype, BytePtr __jobz, BytePtr __range, BytePtr __uplo, IntPtr __n,
@@ -19076,7 +24564,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zhprfs_(BytePtr __uplo, IntPtr __n, IntPtr __nrhs,
@@ -19090,7 +24582,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zhpsv_(BytePtr __uplo, IntPtr __n, IntPtr __nrhs,
@@ -19100,7 +24596,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zhpsvx_(BytePtr __fact, BytePtr __uplo, IntPtr __n, IntPtr __nrhs,
@@ -19114,7 +24614,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zhptrd_(BytePtr __uplo, IntPtr __n,
@@ -19125,7 +24629,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zhptrf_(BytePtr __uplo, IntPtr __n,
@@ -19134,7 +24642,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zhptri_(BytePtr __uplo, IntPtr __n,
@@ -19145,7 +24657,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zhptrs_(BytePtr __uplo, IntPtr __n, IntPtr __nrhs,
@@ -19155,7 +24671,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zhsein_(BytePtr __side, BytePtr __eigsrc, BytePtr __initv, IntPtr __select, IntPtr __n,
@@ -19170,7 +24690,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zhseqr_(BytePtr __job, BytePtr __compz, IntPtr __n, IntPtr __ilo, IntPtr __ihi,
@@ -19183,7 +24707,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zlabrd_(IntPtr __m, IntPtr __n, IntPtr __nb,
@@ -19196,7 +24724,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zlacgv_(IntPtr __n,
@@ -19205,7 +24737,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zlacn2_(IntPtr __n,
@@ -19215,7 +24751,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zlacon_(IntPtr __n,
@@ -19225,7 +24765,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zlacp2_(BytePtr __uplo, IntPtr __m, IntPtr __n, DoublePtr __a, IntPtr __lda,
@@ -19233,7 +24777,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zlacpy_(BytePtr __uplo, IntPtr __m, IntPtr __n,
@@ -19242,7 +24790,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zlacrm_(IntPtr __m, IntPtr __n,
@@ -19253,7 +24805,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zlacrt_(IntPtr __n,
@@ -19266,7 +24822,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native void zladiv_(
@@ -19276,7 +24836,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zlaed0_(IntPtr __qsiz, IntPtr __n, DoublePtr __d__, DoublePtr __e,
@@ -19286,7 +24850,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zlaed7_(IntPtr __n, IntPtr __cutpnt, IntPtr __qsiz, IntPtr __tlvls, IntPtr __curlvl,
@@ -19299,7 +24867,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zlaed8_(IntPtr __k, IntPtr __n, IntPtr __qsiz,
@@ -19311,7 +24883,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zlaein_(IntPtr __rightv, IntPtr __noinit, IntPtr __n,
@@ -19323,7 +24899,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zlaesy_(
@@ -19338,7 +24918,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zlaev2_(
@@ -19350,7 +24934,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zlag2c_(IntPtr __m, IntPtr __n,
@@ -19360,7 +24948,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zlags2_(IntPtr __upper, DoublePtr __a1,
@@ -19376,7 +24968,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zlagtm_(BytePtr __trans, IntPtr __n, IntPtr __nrhs, DoublePtr __alpha,
@@ -19389,7 +24985,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zlahef_(BytePtr __uplo, IntPtr __n, IntPtr __nb, IntPtr __kb,
@@ -19399,7 +24999,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zlahqr_(IntPtr __wantt, IntPtr __wantz, IntPtr __n, IntPtr __ilo, IntPtr __ihi,
@@ -19411,7 +25015,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zlahr2_(IntPtr __n, IntPtr __k, IntPtr __nb,
@@ -19422,7 +25030,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zlahrd_(IntPtr __n, IntPtr __k, IntPtr __nb,
@@ -19433,7 +25045,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zlaic1_(IntPtr __job, IntPtr __j,
@@ -19447,7 +25063,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zlals0_(IntPtr __icompq, IntPtr __nl, IntPtr __nr, IntPtr __sqre, IntPtr __nrhs,
@@ -19459,7 +25079,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zlalsa_(IntPtr __icompq, IntPtr __smlsiz, IntPtr __n, IntPtr __nrhs,
@@ -19471,7 +25095,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zlalsd_(BytePtr __uplo, IntPtr __smlsiz, IntPtr __n, IntPtr __nrhs, DoublePtr __d__,
@@ -19482,7 +25110,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native double zlangb_(BytePtr __norm, IntPtr __n, IntPtr __kl, IntPtr __ku,
@@ -19491,7 +25123,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native double zlange_(BytePtr __norm, IntPtr __m, IntPtr __n,
@@ -19500,7 +25136,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native double zlangt_(BytePtr __norm, IntPtr __n,
@@ -19510,7 +25150,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native double zlanhb_(BytePtr __norm, BytePtr __uplo, IntPtr __n, IntPtr __k,
@@ -19519,7 +25163,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native double zlanhe_(BytePtr __norm, BytePtr __uplo, IntPtr __n,
@@ -19528,7 +25176,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native double zlanhf_(BytePtr __norm, BytePtr __transr, BytePtr __uplo, IntPtr __n,
@@ -19537,7 +25189,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native double zlanhp_(BytePtr __norm, BytePtr __uplo, IntPtr __n,
@@ -19546,7 +25202,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native double zlanhs_(BytePtr __norm, IntPtr __n,
@@ -19555,7 +25215,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native double zlanht_(BytePtr __norm, IntPtr __n, DoublePtr __d__,
@@ -19563,7 +25227,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native double zlansb_(BytePtr __norm, BytePtr __uplo, IntPtr __n, IntPtr __k,
@@ -19572,7 +25240,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native double zlansp_(BytePtr __norm, BytePtr __uplo, IntPtr __n,
@@ -19581,7 +25253,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native double zlansy_(BytePtr __norm, BytePtr __uplo, IntPtr __n,
@@ -19590,7 +25266,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native double zlantb_(BytePtr __norm, BytePtr __uplo, BytePtr __diag, IntPtr __n, IntPtr __k,
@@ -19599,7 +25279,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native double zlantp_(BytePtr __norm, BytePtr __uplo, BytePtr __diag, IntPtr __n,
@@ -19608,7 +25292,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native double zlantr_(BytePtr __norm, BytePtr __uplo, BytePtr __diag, IntPtr __m, IntPtr __n,
@@ -19617,7 +25305,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zlapll_(IntPtr __n,
@@ -19627,7 +25319,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zlapmt_(IntPtr __forwrd, IntPtr __m, IntPtr __n,
@@ -19636,7 +25332,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zlaqgb_(IntPtr __m, IntPtr __n, IntPtr __kl, IntPtr __ku,
@@ -19646,7 +25346,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zlaqge_(IntPtr __m, IntPtr __n,
@@ -19656,7 +25360,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zlaqhb_(BytePtr __uplo, IntPtr __n, IntPtr __kd,
@@ -19665,7 +25373,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zlaqhe_(BytePtr __uplo, IntPtr __n,
@@ -19674,7 +25386,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zlaqhp_(BytePtr __uplo, IntPtr __n,
@@ -19683,7 +25399,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zlaqp2_(IntPtr __m, IntPtr __n, IntPtr __offset,
@@ -19695,7 +25415,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zlaqps_(IntPtr __m, IntPtr __n, IntPtr __offset, IntPtr __nb, IntPtr __kb,
@@ -19708,7 +25432,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zlaqr0_(IntPtr __wantt, IntPtr __wantz, IntPtr __n, IntPtr __ilo, IntPtr __ihi,
@@ -19722,7 +25450,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zlaqr1_(IntPtr __n,
@@ -19733,7 +25465,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zlaqr2_(IntPtr __wantt, IntPtr __wantz, IntPtr __n, IntPtr __ktop, IntPtr __kbot,
@@ -19752,7 +25488,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zlaqr3_(IntPtr __wantt, IntPtr __wantz, IntPtr __n, IntPtr __ktop, IntPtr __kbot,
@@ -19771,7 +25511,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zlaqr4_(IntPtr __wantt, IntPtr __wantz, IntPtr __n, IntPtr __ilo, IntPtr __ihi,
@@ -19785,7 +25529,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zlaqr5_(IntPtr __wantt, IntPtr __wantz, IntPtr __kacc22, IntPtr __n, IntPtr __ktop,
@@ -19804,7 +25552,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zlaqsb_(BytePtr __uplo, IntPtr __n, IntPtr __kd,
@@ -19813,7 +25565,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zlaqsp_(BytePtr __uplo, IntPtr __n,
@@ -19822,7 +25578,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zlaqsy_(BytePtr __uplo, IntPtr __n,
@@ -19831,7 +25591,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zlar1v_(IntPtr __n, IntPtr __b1, IntPtr __bn, DoublePtr __lambda, DoublePtr __d__,
@@ -19842,7 +25606,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zlar2v_(IntPtr __n,
@@ -19855,7 +25623,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zlarcm_(IntPtr __m, IntPtr __n, DoublePtr __a, IntPtr __lda,
@@ -19865,7 +25637,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zlarf_(BytePtr __side, IntPtr __m, IntPtr __n,
@@ -19877,7 +25653,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zlarfb_(BytePtr __side, BytePtr __trans, BytePtr __direct, BytePtr __storev, IntPtr __m,
@@ -19891,7 +25671,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zlarfg_(IntPtr __n,
@@ -19901,7 +25685,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zlarfp_(IntPtr __n,
@@ -19911,7 +25699,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zlarft_(BytePtr __direct, BytePtr __storev, IntPtr __n, IntPtr __k,
@@ -19921,7 +25713,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zlarfx_(BytePtr __side, IntPtr __m, IntPtr __n,
@@ -19933,7 +25729,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zlargv_(IntPtr __n,
@@ -19943,7 +25743,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zlarnv_(IntPtr __idist, IntPtr __iseed, IntPtr __n,
@@ -19951,7 +25755,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zlarrv_(IntPtr __n, DoublePtr __vl, DoublePtr __vu, DoublePtr __d__, DoublePtr __l,
@@ -19963,7 +25771,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zlarscl2_(IntPtr __m, IntPtr __n, DoublePtr __d__,
@@ -19971,7 +25783,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zlartg_(
@@ -19983,7 +25799,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zlartv_(IntPtr __n,
@@ -19995,7 +25815,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zlarz_(BytePtr __side, IntPtr __m, IntPtr __n, IntPtr __l,
@@ -20007,7 +25831,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zlarzb_(BytePtr __side, BytePtr __trans, BytePtr __direct, BytePtr __storev, IntPtr __m,
@@ -20021,7 +25849,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zlarzt_(BytePtr __direct, BytePtr __storev, IntPtr __n, IntPtr __k,
@@ -20031,7 +25863,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zlascl_(BytePtr __type__, IntPtr __kl, IntPtr __ku, DoublePtr __cfrom, DoublePtr __cto,
@@ -20041,7 +25877,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zlascl2_(IntPtr __m, IntPtr __n, DoublePtr __d__,
@@ -20049,7 +25889,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zlaset_(BytePtr __uplo, IntPtr __m, IntPtr __n,
@@ -20059,7 +25903,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zlasr_(BytePtr __side, BytePtr __pivot, BytePtr __direct, IntPtr __m, IntPtr __n,
@@ -20068,7 +25916,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zlassq_(IntPtr __n,
@@ -20077,7 +25929,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zlaswp_(IntPtr __n,
@@ -20086,7 +25942,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zlasyf_(BytePtr __uplo, IntPtr __n, IntPtr __nb, IntPtr __kb,
@@ -20096,7 +25956,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zlat2c_(BytePtr __uplo, IntPtr __n,
@@ -20106,7 +25970,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zlatbs_(BytePtr __uplo, BytePtr __trans, BytePtr __diag, BytePtr __normin, IntPtr __n,
@@ -20116,7 +25984,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zlatdf_(IntPtr __ijob, IntPtr __n,
@@ -20127,7 +25999,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zlatps_(BytePtr __uplo, BytePtr __trans, BytePtr __diag, BytePtr __normin, IntPtr __n,
@@ -20137,7 +26013,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zlatrd_(BytePtr __uplo, IntPtr __n, IntPtr __nb,
@@ -20148,7 +26028,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zlatrs_(BytePtr __uplo, BytePtr __trans, BytePtr __diag, BytePtr __normin, IntPtr __n,
@@ -20158,7 +26042,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zlatrz_(IntPtr __m, IntPtr __n, IntPtr __l,
@@ -20168,7 +26056,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zlatzm_(BytePtr __side, IntPtr __m, IntPtr __n,
@@ -20180,7 +26072,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zlauu2_(BytePtr __uplo, IntPtr __n,
@@ -20189,7 +26085,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zlauum_(BytePtr __uplo, IntPtr __n,
@@ -20198,7 +26098,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zpbcon_(BytePtr __uplo, IntPtr __n, IntPtr __kd,
@@ -20209,7 +26113,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zpbequ_(BytePtr __uplo, IntPtr __n, IntPtr __kd,
@@ -20218,7 +26126,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zpbrfs_(BytePtr __uplo, IntPtr __n, IntPtr __kd, IntPtr __nrhs,
@@ -20234,7 +26146,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zpbstf_(BytePtr __uplo, IntPtr __n, IntPtr __kd,
@@ -20243,7 +26159,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zpbsv_(BytePtr __uplo, IntPtr __n, IntPtr __kd, IntPtr __nrhs,
@@ -20253,7 +26173,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zpbsvx_(BytePtr __fact, BytePtr __uplo, IntPtr __n, IntPtr __kd, IntPtr __nrhs,
@@ -20269,7 +26193,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zpbtf2_(BytePtr __uplo, IntPtr __n, IntPtr __kd,
@@ -20278,7 +26206,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zpbtrf_(BytePtr __uplo, IntPtr __n, IntPtr __kd,
@@ -20287,7 +26219,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zpbtrs_(BytePtr __uplo, IntPtr __n, IntPtr __kd, IntPtr __nrhs,
@@ -20297,7 +26233,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zpftrf_(BytePtr __transr, BytePtr __uplo, IntPtr __n,
@@ -20306,7 +26246,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zpftri_(BytePtr __transr, BytePtr __uplo, IntPtr __n,
@@ -20315,7 +26259,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zpftrs_(BytePtr __transr, BytePtr __uplo, IntPtr __n, IntPtr __nrhs,
@@ -20325,7 +26273,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zpocon_(BytePtr __uplo, IntPtr __n,
@@ -20336,7 +26288,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zpoequ_(IntPtr __n,
@@ -20345,7 +26301,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zpoequb_(IntPtr __n,
@@ -20354,7 +26314,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zporfs_(BytePtr __uplo, IntPtr __n, IntPtr __nrhs,
@@ -20368,7 +26332,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zposv_(BytePtr __uplo, IntPtr __n, IntPtr __nrhs,
@@ -20378,7 +26346,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zposvx_(BytePtr __fact, BytePtr __uplo, IntPtr __n, IntPtr __nrhs,
@@ -20393,7 +26365,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zpotf2_(BytePtr __uplo, IntPtr __n,
@@ -20402,7 +26378,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zpotrf_(BytePtr __uplo, IntPtr __n,
@@ -20411,7 +26391,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zpotri_(BytePtr __uplo, IntPtr __n,
@@ -20420,7 +26404,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zpotrs_(BytePtr __uplo, IntPtr __n, IntPtr __nrhs,
@@ -20430,7 +26418,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zppcon_(BytePtr __uplo, IntPtr __n,
@@ -20441,7 +26433,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zppequ_(BytePtr __uplo, IntPtr __n,
@@ -20450,7 +26446,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zpprfs_(BytePtr __uplo, IntPtr __n, IntPtr __nrhs,
@@ -20464,7 +26464,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zppsv_(BytePtr __uplo, IntPtr __n, IntPtr __nrhs,
@@ -20474,7 +26478,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zppsvx_(BytePtr __fact, BytePtr __uplo, IntPtr __n, IntPtr __nrhs,
@@ -20489,7 +26497,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zpptrf_(BytePtr __uplo, IntPtr __n,
@@ -20498,7 +26510,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zpptri_(BytePtr __uplo, IntPtr __n,
@@ -20507,7 +26523,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zpptrs_(BytePtr __uplo, IntPtr __n, IntPtr __nrhs,
@@ -20517,7 +26537,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zpstf2_(BytePtr __uplo, IntPtr __n,
@@ -20526,7 +26550,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zpstrf_(BytePtr __uplo, IntPtr __n,
@@ -20535,7 +26563,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zptcon_(IntPtr __n, DoublePtr __d__,
@@ -20544,7 +26576,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zpteqr_(BytePtr __compz, IntPtr __n, DoublePtr __d__, DoublePtr __e,
@@ -20553,7 +26589,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zptrfs_(BytePtr __uplo, IntPtr __n, IntPtr __nrhs, DoublePtr __d__,
@@ -20568,7 +26608,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zptsv_(IntPtr __n, IntPtr __nrhs, DoublePtr __d__,
@@ -20578,7 +26622,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zptsvx_(BytePtr __fact, IntPtr __n, IntPtr __nrhs, DoublePtr __d__,
@@ -20593,7 +26641,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zpttrf_(IntPtr __n, DoublePtr __d__,
@@ -20602,7 +26654,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zpttrs_(BytePtr __uplo, IntPtr __n, IntPtr __nrhs, DoublePtr __d__,
@@ -20612,7 +26668,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zptts2_(IntPtr __iuplo, IntPtr __n, IntPtr __nrhs, DoublePtr __d__,
@@ -20621,7 +26681,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zrot_(IntPtr __n,
@@ -20633,7 +26697,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zspcon_(BytePtr __uplo, IntPtr __n,
@@ -20644,7 +26712,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zspmv_(BytePtr __uplo, IntPtr __n,
@@ -20657,7 +26729,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zspr_(BytePtr __uplo, IntPtr __n,
@@ -20667,7 +26743,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zsprfs_(BytePtr __uplo, IntPtr __n, IntPtr __nrhs,
@@ -20681,7 +26761,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zspsv_(BytePtr __uplo, IntPtr __n, IntPtr __nrhs,
@@ -20691,7 +26775,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zspsvx_(BytePtr __fact, BytePtr __uplo, IntPtr __n, IntPtr __nrhs,
@@ -20705,7 +26793,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zsptrf_(BytePtr __uplo, IntPtr __n,
@@ -20714,7 +26806,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zsptri_(BytePtr __uplo, IntPtr __n,
@@ -20725,7 +26821,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zsptrs_(BytePtr __uplo, IntPtr __n, IntPtr __nrhs,
@@ -20735,7 +26835,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zstedc_(BytePtr __compz, IntPtr __n, DoublePtr __d__, DoublePtr __e,
@@ -20746,7 +26850,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zstegr_(BytePtr __jobz, BytePtr __range, IntPtr __n, DoublePtr __d__, DoublePtr __e,
@@ -20757,7 +26865,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zstein_(IntPtr __n, DoublePtr __d__, DoublePtr __e, IntPtr __m, DoublePtr __w,
@@ -20767,7 +26879,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zstemr_(BytePtr __jobz, BytePtr __range, IntPtr __n, DoublePtr __d__, DoublePtr __e,
@@ -20778,7 +26894,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zsteqr_(BytePtr __compz, IntPtr __n, DoublePtr __d__, DoublePtr __e,
@@ -20787,7 +26907,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zsycon_(BytePtr __uplo, IntPtr __n,
@@ -20798,7 +26922,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zsyequb_(BytePtr __uplo, IntPtr __n,
@@ -20809,7 +26937,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zsymv_(BytePtr __uplo, IntPtr __n,
@@ -20822,7 +26954,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zsyr_(BytePtr __uplo, IntPtr __n,
@@ -20832,7 +26968,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zsyrfs_(BytePtr __uplo, IntPtr __n, IntPtr __nrhs,
@@ -20847,7 +26987,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zsysv_(BytePtr __uplo, IntPtr __n, IntPtr __nrhs,
@@ -20859,7 +27003,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zsysvx_(BytePtr __fact, BytePtr __uplo, IntPtr __n, IntPtr __nrhs,
@@ -20874,7 +27022,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zsytf2_(BytePtr __uplo, IntPtr __n,
@@ -20883,7 +27035,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zsytrf_(BytePtr __uplo, IntPtr __n,
@@ -20894,7 +27050,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zsytri_(BytePtr __uplo, IntPtr __n,
@@ -20905,7 +27065,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zsytrs_(BytePtr __uplo, IntPtr __n, IntPtr __nrhs,
@@ -20915,7 +27079,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int ztbcon_(BytePtr __norm, BytePtr __uplo, BytePtr __diag, IntPtr __n, IntPtr __kd,
@@ -20926,7 +27094,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int ztbrfs_(BytePtr __uplo, BytePtr __trans, BytePtr __diag, IntPtr __n, IntPtr __kd,
@@ -20940,7 +27112,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int ztbtrs_(BytePtr __uplo, BytePtr __trans, BytePtr __diag, IntPtr __n, IntPtr __kd,
@@ -20951,7 +27127,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int ztfsm_(BytePtr __transr, BytePtr __side, BytePtr __uplo, BytePtr __trans, BytePtr __diag,
@@ -20962,7 +27142,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int ztftri_(BytePtr __transr, BytePtr __uplo, BytePtr __diag, IntPtr __n,
@@ -20971,7 +27155,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int ztfttp_(BytePtr __transr, BytePtr __uplo, IntPtr __n,
@@ -20981,7 +27169,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int ztfttr_(BytePtr __transr, BytePtr __uplo, IntPtr __n,
@@ -20991,7 +27183,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int ztgevc_(BytePtr __side, BytePtr __howmny, IntPtr __select, IntPtr __n,
@@ -21006,7 +27202,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int ztgex2_(IntPtr __wantq, IntPtr __wantz, IntPtr __n,
@@ -21018,7 +27218,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int ztgexc_(IntPtr __wantq, IntPtr __wantz, IntPtr __n,
@@ -21030,7 +27234,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int ztgsen_(IntPtr __ijob, IntPtr __wantq, IntPtr __wantz, IntPtr __select, IntPtr __n,
@@ -21046,7 +27254,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int ztgsja_(BytePtr __jobu, BytePtr __jobv, BytePtr __jobq, IntPtr __m, IntPtr __p, IntPtr __n,
@@ -21062,7 +27274,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int ztgsna_(BytePtr __job, BytePtr __howmny, IntPtr __select, IntPtr __n,
@@ -21077,7 +27293,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int ztgsy2_(BytePtr __trans, IntPtr __ijob, IntPtr __m, IntPtr __n,
@@ -21092,7 +27312,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int ztgsyl_(BytePtr __trans, IntPtr __ijob, IntPtr __m, IntPtr __n,
@@ -21109,7 +27333,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int ztpcon_(BytePtr __norm, BytePtr __uplo, BytePtr __diag, IntPtr __n,
@@ -21120,7 +27348,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int ztprfs_(BytePtr __uplo, BytePtr __trans, BytePtr __diag, IntPtr __n, IntPtr __nrhs,
@@ -21133,7 +27365,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int ztptri_(BytePtr __uplo, BytePtr __diag, IntPtr __n,
@@ -21142,7 +27378,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int ztptrs_(BytePtr __uplo, BytePtr __trans, BytePtr __diag, IntPtr __n, IntPtr __nrhs,
@@ -21152,7 +27392,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int ztpttf_(BytePtr __transr, BytePtr __uplo, IntPtr __n,
@@ -21162,7 +27406,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int ztpttr_(BytePtr __uplo, IntPtr __n,
@@ -21172,7 +27420,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int ztrcon_(BytePtr __norm, BytePtr __uplo, BytePtr __diag, IntPtr __n,
@@ -21183,7 +27435,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int ztrevc_(BytePtr __side, BytePtr __howmny, IntPtr __select, IntPtr __n,
@@ -21197,7 +27453,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int ztrexc_(BytePtr __compq, IntPtr __n,
@@ -21207,7 +27467,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int ztrrfs_(BytePtr __uplo, BytePtr __trans, BytePtr __diag, IntPtr __n, IntPtr __nrhs,
@@ -21220,7 +27484,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int ztrsen_(BytePtr __job, BytePtr __compq, IntPtr __select, IntPtr __n,
@@ -21233,7 +27501,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int ztrsna_(BytePtr __job, BytePtr __howmny, IntPtr __select, IntPtr __n,
@@ -21247,7 +27519,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int ztrsyl_(BytePtr __trana, BytePtr __tranb, IntPtr __isgn, IntPtr __m, IntPtr __n,
@@ -21258,7 +27534,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int ztrti2_(BytePtr __uplo, BytePtr __diag, IntPtr __n,
@@ -21267,7 +27547,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int ztrtri_(BytePtr __uplo, BytePtr __diag, IntPtr __n,
@@ -21276,7 +27560,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int ztrtrs_(BytePtr __uplo, BytePtr __trans, BytePtr __diag, IntPtr __n, IntPtr __nrhs,
@@ -21286,7 +27574,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int ztrttf_(BytePtr __transr, BytePtr __uplo, IntPtr __n,
@@ -21296,7 +27588,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int ztrttp_(BytePtr __uplo, IntPtr __n,
@@ -21306,7 +27602,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int ztzrqf_(IntPtr __m, IntPtr __n,
@@ -21316,7 +27616,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int ztzrzf_(IntPtr __m, IntPtr __n,
@@ -21327,7 +27631,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zung2l_(IntPtr __m, IntPtr __n, IntPtr __k,
@@ -21338,7 +27646,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zung2r_(IntPtr __m, IntPtr __n, IntPtr __k,
@@ -21349,7 +27661,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zungbr_(BytePtr __vect, IntPtr __m, IntPtr __n, IntPtr __k,
@@ -21360,7 +27676,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zunghr_(IntPtr __n, IntPtr __ilo, IntPtr __ihi,
@@ -21371,7 +27691,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zungl2_(IntPtr __m, IntPtr __n, IntPtr __k,
@@ -21382,7 +27706,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zunglq_(IntPtr __m, IntPtr __n, IntPtr __k,
@@ -21393,7 +27721,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zungql_(IntPtr __m, IntPtr __n, IntPtr __k,
@@ -21404,7 +27736,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zungqr_(IntPtr __m, IntPtr __n, IntPtr __k,
@@ -21415,7 +27751,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zungr2_(IntPtr __m, IntPtr __n, IntPtr __k,
@@ -21426,7 +27766,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zungrq_(IntPtr __m, IntPtr __n, IntPtr __k,
@@ -21437,7 +27781,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zungtr_(BytePtr __uplo, IntPtr __n,
@@ -21448,7 +27796,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zunm2l_(BytePtr __side, BytePtr __trans, IntPtr __m, IntPtr __n, IntPtr __k,
@@ -21461,7 +27813,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zunm2r_(BytePtr __side, BytePtr __trans, IntPtr __m, IntPtr __n, IntPtr __k,
@@ -21474,7 +27830,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zunmbr_(BytePtr __vect, BytePtr __side, BytePtr __trans, IntPtr __m, IntPtr __n,
@@ -21488,7 +27848,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zunmhr_(BytePtr __side, BytePtr __trans, IntPtr __m, IntPtr __n, IntPtr __ilo,
@@ -21502,7 +27866,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zunml2_(BytePtr __side, BytePtr __trans, IntPtr __m, IntPtr __n, IntPtr __k,
@@ -21515,7 +27883,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zunmlq_(BytePtr __side, BytePtr __trans, IntPtr __m, IntPtr __n, IntPtr __k,
@@ -21528,7 +27900,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zunmql_(BytePtr __side, BytePtr __trans, IntPtr __m, IntPtr __n, IntPtr __k,
@@ -21541,7 +27917,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zunmqr_(BytePtr __side, BytePtr __trans, IntPtr __m, IntPtr __n, IntPtr __k,
@@ -21554,7 +27934,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zunmr2_(BytePtr __side, BytePtr __trans, IntPtr __m, IntPtr __n, IntPtr __k,
@@ -21567,7 +27951,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zunmr3_(BytePtr __side, BytePtr __trans, IntPtr __m, IntPtr __n, IntPtr __k, IntPtr __l,
@@ -21580,7 +27968,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zunmrq_(BytePtr __side, BytePtr __trans, IntPtr __m, IntPtr __n, IntPtr __k,
@@ -21593,7 +27985,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zunmrz_(BytePtr __side, BytePtr __trans, IntPtr __m, IntPtr __n, IntPtr __k, IntPtr __l,
@@ -21606,7 +28002,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zunmtr_(BytePtr __side, BytePtr __uplo, BytePtr __trans, IntPtr __m, IntPtr __n,
@@ -21619,7 +28019,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zupgtr_(BytePtr __uplo, IntPtr __n,
@@ -21631,7 +28035,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zupmtr_(BytePtr __side, BytePtr __uplo, BytePtr __trans, IntPtr __m, IntPtr __n,
@@ -21644,28 +28052,44 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dlamc1_(IntPtr __beta, IntPtr __t, IntPtr __rnd, IntPtr __ieee1);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native double slamch_(BytePtr __cmach);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int slamc1_(IntPtr __beta, IntPtr __t, IntPtr __rnd, IntPtr __ieee1);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int slamc2_(IntPtr __beta, IntPtr __t, IntPtr __rnd, FloatPtr __eps, IntPtr __emin,
@@ -21673,21 +28097,33 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native double slamc3_(FloatPtr __a, FloatPtr __b);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int slamc4_(IntPtr __emin, FloatPtr __start, IntPtr __base);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int slamc5_(IntPtr __beta, IntPtr __p, IntPtr __emin, IntPtr __ieee, IntPtr __emax,
@@ -21695,14 +28131,22 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native double dlamch_(BytePtr __cmach);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dlamc2_(IntPtr __beta, IntPtr __t, IntPtr __rnd, DoublePtr __eps, IntPtr __emin,
@@ -21710,21 +28154,33 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native double dlamc3_(DoublePtr __a, DoublePtr __b);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dlamc4_(IntPtr __emin, DoublePtr __start, IntPtr __base);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: The CLAPACK interface is deprecated. Please compile with -DACCELERATE_NEW_LAPACK to access
+     * the new lapack headers.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dlamc5_(IntPtr __beta, IntPtr __p, IntPtr __emin, IntPtr __ieee, IntPtr __emax,
@@ -21750,7 +28206,7 @@ public final class Accelerate {
     @Deprecated
     @Generated
     @CFunction
-    public static native NSObject la_retain(@NotNull NSObject object);
+    public static native la_object_t la_retain(@NotNull la_object_t object);
 
     /**
      * Decrement the reference count of an la_object_t object.
@@ -21768,7 +28224,7 @@ public final class Accelerate {
     @Deprecated
     @Generated
     @CFunction
-    public static native void la_release(@NotNull NSObject object);
+    public static native void la_release(@NotNull la_object_t object);
 
     /**
      * Add attributes to an la_object_t object.
@@ -21799,7 +28255,7 @@ public final class Accelerate {
     @Deprecated
     @Generated
     @CFunction
-    public static native void la_add_attributes(@NotNull NSObject object, @NUInt long attributes);
+    public static native void la_add_attributes(@NotNull la_object_t object, @NUInt long attributes);
 
     /**
      * Remove attributes from an la_object_t object.
@@ -21826,7 +28282,7 @@ public final class Accelerate {
     @Deprecated
     @Generated
     @CFunction
-    public static native void la_remove_attributes(@NotNull NSObject object, @NUInt long attributes);
+    public static native void la_remove_attributes(@NotNull la_object_t object, @NUInt long attributes);
 
     /**
      * Query the status of an la_object.
@@ -21875,7 +28331,7 @@ public final class Accelerate {
     @Generated
     @CFunction
     @NInt
-    public static native long la_status(@NotNull NSObject object);
+    public static native long la_status(@NotNull la_object_t object);
 
     /**
      * Create a matrix using data from a buffer of floats. Ownership of the buffer
@@ -21927,7 +28383,7 @@ public final class Accelerate {
     @Deprecated
     @Generated
     @CFunction
-    public static native NSObject la_matrix_from_float_buffer(@NotNull ConstFloatPtr buffer, @NUInt long matrix_rows,
+    public static native la_object_t la_matrix_from_float_buffer(@NotNull ConstFloatPtr buffer, @NUInt long matrix_rows,
             @NUInt long matrix_cols, @NUInt long matrix_row_stride, @NUInt long matrix_hint, @NUInt long attributes);
 
     /**
@@ -21980,8 +28436,9 @@ public final class Accelerate {
     @Deprecated
     @Generated
     @CFunction
-    public static native NSObject la_matrix_from_double_buffer(@NotNull ConstDoublePtr buffer, @NUInt long matrix_rows,
-            @NUInt long matrix_cols, @NUInt long matrix_row_stride, @NUInt long matrix_hint, @NUInt long attributes);
+    public static native la_object_t la_matrix_from_double_buffer(@NotNull ConstDoublePtr buffer,
+            @NUInt long matrix_rows, @NUInt long matrix_cols, @NUInt long matrix_row_stride, @NUInt long matrix_hint,
+            @NUInt long attributes);
 
     /**
      * Create a matrix using data from a buffer of floats. Ownership of the buffer
@@ -22037,8 +28494,8 @@ public final class Accelerate {
     @Deprecated
     @Generated
     @CFunction
-    public static native NSObject la_matrix_from_float_buffer_nocopy(@NotNull FloatPtr buffer, @NUInt long matrix_rows,
-            @NUInt long matrix_cols, @NUInt long matrix_row_stride, @NUInt long matrix_hint,
+    public static native la_object_t la_matrix_from_float_buffer_nocopy(@NotNull FloatPtr buffer,
+            @NUInt long matrix_rows, @NUInt long matrix_cols, @NUInt long matrix_row_stride, @NUInt long matrix_hint,
             @Nullable @FunctionPtr(name = "call_la_matrix_from_float_buffer_nocopy") Function_la_matrix_from_float_buffer_nocopy deallocator,
             @NUInt long attributes);
 
@@ -22096,7 +28553,7 @@ public final class Accelerate {
     @Deprecated
     @Generated
     @CFunction
-    public static native NSObject la_matrix_from_double_buffer_nocopy(@NotNull DoublePtr buffer,
+    public static native la_object_t la_matrix_from_double_buffer_nocopy(@NotNull DoublePtr buffer,
             @NUInt long matrix_rows, @NUInt long matrix_cols, @NUInt long matrix_row_stride, @NUInt long matrix_hint,
             @Nullable @FunctionPtr(name = "call_la_matrix_from_double_buffer_nocopy") Function_la_matrix_from_double_buffer_nocopy deallocator,
             @NUInt long attributes);
@@ -22139,7 +28596,7 @@ public final class Accelerate {
     @CFunction
     @NInt
     public static native long la_matrix_to_float_buffer(@NotNull FloatPtr buffer, @NUInt long buffer_row_stride,
-            @NotNull NSObject matrix);
+            @NotNull la_object_t matrix);
 
     /**
      * Stores the elements of a matrix to a buffer.
@@ -22179,7 +28636,7 @@ public final class Accelerate {
     @CFunction
     @NInt
     public static native long la_matrix_to_double_buffer(@NotNull DoublePtr buffer, @NUInt long buffer_row_stride,
-            @NotNull NSObject matrix);
+            @NotNull la_object_t matrix);
 
     /**
      * Get the number of rows in a matrix.
@@ -22198,7 +28655,7 @@ public final class Accelerate {
     @Generated
     @CFunction
     @NUInt
-    public static native long la_matrix_rows(@NotNull NSObject matrix);
+    public static native long la_matrix_rows(@NotNull la_object_t matrix);
 
     /**
      * Get the number of columns in a matrix.
@@ -22217,7 +28674,7 @@ public final class Accelerate {
     @Generated
     @CFunction
     @NUInt
-    public static native long la_matrix_cols(@NotNull NSObject matrix);
+    public static native long la_matrix_cols(@NotNull la_object_t matrix);
 
     /**
      * Create a slice of a matrix.
@@ -22278,7 +28735,7 @@ public final class Accelerate {
     @Deprecated
     @Generated
     @CFunction
-    public static native NSObject la_matrix_slice(@NotNull NSObject matrix, @NInt long matrix_first_row,
+    public static native la_object_t la_matrix_slice(@NotNull la_object_t matrix, @NInt long matrix_first_row,
             @NInt long matrix_first_col, @NInt long matrix_row_stride, @NInt long matrix_col_stride,
             @NUInt long slice_rows, @NUInt long slice_cols);
 
@@ -22291,7 +28748,8 @@ public final class Accelerate {
     @Deprecated
     @Generated
     @CFunction
-    public static native NSObject la_identity_matrix(@NUInt long matrix_size, int scalar_type, @NUInt long attributes);
+    public static native la_object_t la_identity_matrix(@NUInt long matrix_size, int scalar_type,
+            @NUInt long attributes);
 
     /**
      * Create a matrix with a specified diagonal provided by a vector, and zeros in
@@ -22324,7 +28782,8 @@ public final class Accelerate {
     @Deprecated
     @Generated
     @CFunction
-    public static native NSObject la_diagonal_matrix_from_vector(@NotNull NSObject vector, @NInt long matrix_diagonal);
+    public static native la_object_t la_diagonal_matrix_from_vector(@NotNull la_object_t vector,
+            @NInt long matrix_diagonal);
 
     /**
      * Creates a vector from the specified row of the matrix.
@@ -22354,7 +28813,7 @@ public final class Accelerate {
     @Deprecated
     @Generated
     @CFunction
-    public static native NSObject la_vector_from_matrix_row(@NotNull NSObject matrix, @NUInt long matrix_row);
+    public static native la_object_t la_vector_from_matrix_row(@NotNull la_object_t matrix, @NUInt long matrix_row);
 
     /**
      * Creates a vector from the specified column of the matrix.
@@ -22384,7 +28843,7 @@ public final class Accelerate {
     @Deprecated
     @Generated
     @CFunction
-    public static native NSObject la_vector_from_matrix_col(@NotNull NSObject matrix, @NUInt long matrix_col);
+    public static native la_object_t la_vector_from_matrix_col(@NotNull la_object_t matrix, @NUInt long matrix_col);
 
     /**
      * Creates a vector from the specified diagonal of the matrix.
@@ -22424,7 +28883,8 @@ public final class Accelerate {
     @Deprecated
     @Generated
     @CFunction
-    public static native NSObject la_vector_from_matrix_diagonal(@NotNull NSObject matrix, @NInt long matrix_diagonal);
+    public static native la_object_t la_vector_from_matrix_diagonal(@NotNull la_object_t matrix,
+            @NInt long matrix_diagonal);
 
     /**
      * Stores the elements of a vector to a buffer.
@@ -22478,7 +28938,7 @@ public final class Accelerate {
     @CFunction
     @NInt
     public static native long la_vector_to_float_buffer(@NotNull FloatPtr buffer, @NInt long buffer_stride,
-            @NotNull NSObject vector);
+            @NotNull la_object_t vector);
 
     /**
      * Stores the elements of a vector to a buffer.
@@ -22536,7 +28996,7 @@ public final class Accelerate {
     @CFunction
     @NInt
     public static native long la_vector_to_double_buffer(@NotNull DoublePtr buffer, @NInt long buffer_stride,
-            @NotNull NSObject vector);
+            @NotNull la_object_t vector);
 
     /**
      * Get the length of a vector.
@@ -22555,7 +29015,7 @@ public final class Accelerate {
     @Generated
     @CFunction
     @NUInt
-    public static native long la_vector_length(@NotNull NSObject vector);
+    public static native long la_vector_length(@NotNull la_object_t vector);
 
     /**
      * Create a slice of a vector.
@@ -22607,7 +29067,7 @@ public final class Accelerate {
     @Deprecated
     @Generated
     @CFunction
-    public static native NSObject la_vector_slice(@NotNull NSObject vector, @NInt long vector_first,
+    public static native la_object_t la_vector_slice(@NotNull la_object_t vector, @NInt long vector_first,
             @NInt long vector_stride, @NUInt long slice_length);
 
     /**
@@ -22647,7 +29107,7 @@ public final class Accelerate {
     @Deprecated
     @Generated
     @CFunction
-    public static native NSObject la_splat_from_float(float scalar_value, @NUInt long attributes);
+    public static native la_object_t la_splat_from_float(float scalar_value, @NUInt long attributes);
 
     /**
      * API-Since: 8.0
@@ -22658,7 +29118,7 @@ public final class Accelerate {
     @Deprecated
     @Generated
     @CFunction
-    public static native NSObject la_splat_from_double(double scalar_value, @NUInt long attributes);
+    public static native la_object_t la_splat_from_double(double scalar_value, @NUInt long attributes);
 
     /**
      * API-Since: 8.0
@@ -22669,7 +29129,7 @@ public final class Accelerate {
     @Deprecated
     @Generated
     @CFunction
-    public static native NSObject la_splat_from_vector_element(@NotNull NSObject vector, @NInt long vector_index);
+    public static native la_object_t la_splat_from_vector_element(@NotNull la_object_t vector, @NInt long vector_index);
 
     /**
      * API-Since: 8.0
@@ -22680,7 +29140,7 @@ public final class Accelerate {
     @Deprecated
     @Generated
     @CFunction
-    public static native NSObject la_splat_from_matrix_element(@NotNull NSObject matrix, @NInt long matrix_row,
+    public static native la_object_t la_splat_from_matrix_element(@NotNull la_object_t matrix, @NInt long matrix_row,
             @NInt long matrix_col);
 
     /**
@@ -22700,7 +29160,7 @@ public final class Accelerate {
     @Deprecated
     @Generated
     @CFunction
-    public static native NSObject la_vector_from_splat(@NotNull NSObject splat, @NUInt long simd_length);
+    public static native la_object_t la_vector_from_splat(@NotNull la_object_t splat, @NUInt long simd_length);
 
     /**
      * API-Since: 8.0
@@ -22711,7 +29171,7 @@ public final class Accelerate {
     @Deprecated
     @Generated
     @CFunction
-    public static native NSObject la_matrix_from_splat(@NotNull NSObject splat, @NUInt long matrix_rows,
+    public static native la_object_t la_matrix_from_splat(@NotNull la_object_t splat, @NUInt long matrix_rows,
             @NUInt long matrix_cols);
 
     /**
@@ -22729,7 +29189,7 @@ public final class Accelerate {
     @Deprecated
     @Generated
     @CFunction
-    public static native NSObject la_transpose(@NotNull NSObject matrix);
+    public static native la_object_t la_transpose(@NotNull la_object_t matrix);
 
     /**
      * Multiply a matrix or vector by a scalar given by a float.
@@ -22750,7 +29210,7 @@ public final class Accelerate {
     @Deprecated
     @Generated
     @CFunction
-    public static native NSObject la_scale_with_float(@NotNull NSObject matrix, float scalar);
+    public static native la_object_t la_scale_with_float(@NotNull la_object_t matrix, float scalar);
 
     /**
      * Multiply a matrix or vector by a scalar given by a double.
@@ -22771,7 +29231,7 @@ public final class Accelerate {
     @Deprecated
     @Generated
     @CFunction
-    public static native NSObject la_scale_with_double(@NotNull NSObject matrix, double scalar);
+    public static native la_object_t la_scale_with_double(@NotNull la_object_t matrix, double scalar);
 
     /**
      * Compute the element-wise sum of two vectors or matrices.
@@ -22796,7 +29256,7 @@ public final class Accelerate {
     @Deprecated
     @Generated
     @CFunction
-    public static native NSObject la_sum(@NotNull NSObject obj_left, @NotNull NSObject obj_right);
+    public static native la_object_t la_sum(@NotNull la_object_t obj_left, @NotNull la_object_t obj_right);
 
     /**
      * Compute the element-wise difference of two vectors or matrices.
@@ -22822,7 +29282,7 @@ public final class Accelerate {
     @Deprecated
     @Generated
     @CFunction
-    public static native NSObject la_difference(@NotNull NSObject obj_left, @NotNull NSObject obj_right);
+    public static native la_object_t la_difference(@NotNull la_object_t obj_left, @NotNull la_object_t obj_right);
 
     /**
      * Compute the element-wise product of two vectors or matrices.
@@ -22847,7 +29307,8 @@ public final class Accelerate {
     @Deprecated
     @Generated
     @CFunction
-    public static native NSObject la_elementwise_product(@NotNull NSObject obj_left, @NotNull NSObject obj_right);
+    public static native la_object_t la_elementwise_product(@NotNull la_object_t obj_left,
+            @NotNull la_object_t obj_right);
 
     /**
      * Compute the inner product of two vectors.
@@ -22873,7 +29334,8 @@ public final class Accelerate {
     @Deprecated
     @Generated
     @CFunction
-    public static native NSObject la_inner_product(@NotNull NSObject vector_left, @NotNull NSObject vector_right);
+    public static native la_object_t la_inner_product(@NotNull la_object_t vector_left,
+            @NotNull la_object_t vector_right);
 
     /**
      * Compute the outer product of two vectors.
@@ -22899,7 +29361,8 @@ public final class Accelerate {
     @Deprecated
     @Generated
     @CFunction
-    public static native NSObject la_outer_product(@NotNull NSObject vector_left, @NotNull NSObject vector_right);
+    public static native la_object_t la_outer_product(@NotNull la_object_t vector_left,
+            @NotNull la_object_t vector_right);
 
     /**
      * Compute a matrix product.
@@ -22944,7 +29407,8 @@ public final class Accelerate {
     @Deprecated
     @Generated
     @CFunction
-    public static native NSObject la_matrix_product(@NotNull NSObject matrix_left, @NotNull NSObject matrix_right);
+    public static native la_object_t la_matrix_product(@NotNull la_object_t matrix_left,
+            @NotNull la_object_t matrix_right);
 
     /**
      * Solves a system of linear equations
@@ -23005,7 +29469,7 @@ public final class Accelerate {
     @Deprecated
     @Generated
     @CFunction
-    public static native NSObject la_solve(@NotNull NSObject matrix_system, @NotNull NSObject obj_rhs);
+    public static native la_object_t la_solve(@NotNull la_object_t matrix_system, @NotNull la_object_t obj_rhs);
 
     /**
      * Compute a norm of a vector or matrix.
@@ -23023,7 +29487,7 @@ public final class Accelerate {
     @Deprecated
     @Generated
     @CFunction
-    public static native float la_norm_as_float(@NotNull NSObject vector, @NUInt long vector_norm);
+    public static native float la_norm_as_float(@NotNull la_object_t vector, @NUInt long vector_norm);
 
     /**
      * API-Since: 8.0
@@ -23033,7 +29497,7 @@ public final class Accelerate {
     @Deprecated
     @Generated
     @CFunction
-    public static native double la_norm_as_double(@NotNull NSObject vector, @NUInt long vector_norm);
+    public static native double la_norm_as_double(@NotNull la_object_t vector, @NUInt long vector_norm);
 
     /**
      * "Normalizes" a vector or matrix.
@@ -23053,7 +29517,7 @@ public final class Accelerate {
     @Deprecated
     @Generated
     @CFunction
-    public static native NSObject la_normalized_vector(@NotNull NSObject vector, @NUInt long vector_norm);
+    public static native la_object_t la_normalized_vector(@NotNull la_object_t vector, @NUInt long vector_norm);
 
     /**
      * Compute the inner product of sparse vector x with dense vector y.
@@ -42883,6 +49347,7 @@ public final class Accelerate {
      * BNNSActivationFunctionSoftShrink
      * BNNSActivationFunctionTanhShrink
      * BNNSActivationFunctionThreshold
+     * BNNSActivationFunctionGELUApproximationSigmoid
      * 
      * The activation functions above can be fused with computation in training, only if the forward pass output y is
      * provided in backward apply.
@@ -43041,6 +49506,7 @@ public final class Accelerate {
      * BNNSActivationFunctionSoftShrink
      * BNNSActivationFunctionTanhShrink
      * BNNSActivationFunctionThreshold
+     * BNNSActivationFunctionGELUApproximationSigmoid
      * 
      * The activation functions above can be fused with computation in training, only if the forward pass output y is
      * provided in backward apply.
@@ -44646,203 +51112,319 @@ public final class Accelerate {
      * =====================================
      * 
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated BLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int isamax_(IntPtr n, FloatPtr sx, IntPtr incx);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated BLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int idamax_(IntPtr n, DoublePtr dx, IntPtr incx);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated BLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int icamax_(IntPtr n, VoidPtr cx, IntPtr incx);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated BLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int izamax_(IntPtr n, VoidPtr cx, IntPtr incx);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated BLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native double sasum_(IntPtr n, FloatPtr sx, IntPtr incx);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated BLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native double dasum_(IntPtr n, DoublePtr dx, IntPtr incx);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated BLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native double scasum_(IntPtr n, VoidPtr cx, IntPtr incx);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated BLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native double dzasum_(IntPtr n, VoidPtr cx, IntPtr incx);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated BLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int saxpy_(IntPtr n, FloatPtr da, FloatPtr sx, IntPtr incx, FloatPtr sy, IntPtr incy);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated BLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int daxpy_(IntPtr n, DoublePtr da, DoublePtr dx, IntPtr incx, DoublePtr dy, IntPtr incy);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated BLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int caxpy_(IntPtr n, VoidPtr ca, VoidPtr cx, IntPtr incx, VoidPtr cy, IntPtr incy);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated BLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zaxpy_(IntPtr n, VoidPtr ca, VoidPtr cx, IntPtr incx, VoidPtr cy, IntPtr incy);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated BLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int scopy_(IntPtr n, FloatPtr sx, IntPtr incx, FloatPtr sy, IntPtr incy);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated BLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dcopy_(IntPtr n, DoublePtr dx, IntPtr incx, DoublePtr dy, IntPtr incy);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated BLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int ccopy_(IntPtr n, VoidPtr cx, IntPtr incx, VoidPtr cy, IntPtr incy);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated BLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zcopy_(IntPtr n, VoidPtr cx, IntPtr incx, VoidPtr cy, IntPtr incy);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated BLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native double sdot_(IntPtr n, FloatPtr sx, IntPtr incx, FloatPtr sy, IntPtr incy);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated BLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native double ddot_(IntPtr n, DoublePtr dx, IntPtr incx, DoublePtr dy, IntPtr incy);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated BLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native double sdsdot_(IntPtr n, FloatPtr sb, FloatPtr sx, IntPtr incx, FloatPtr sy, IntPtr incy);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated BLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native double dsdot_(IntPtr n, FloatPtr sx, IntPtr incx, FloatPtr sy, IntPtr incy);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated BLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native void cdotc_(VoidPtr ret_val, IntPtr n, VoidPtr cx, IntPtr incx, VoidPtr cy, IntPtr incy);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated BLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native void zdotc_(VoidPtr ret_val, IntPtr n, VoidPtr cx, IntPtr incx, VoidPtr cy, IntPtr incy);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated BLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native void cdotu_(VoidPtr ret_val, IntPtr n, VoidPtr cx, IntPtr incx, VoidPtr cy, IntPtr incy);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated BLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native void zdotu_(VoidPtr ret_val, IntPtr n, VoidPtr cx, IntPtr incx, VoidPtr cy, IntPtr incy);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated BLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native double snrm2_(IntPtr n, FloatPtr x, IntPtr incx);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated BLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native double dnrm2_(IntPtr n, DoublePtr x, IntPtr incx);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated BLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native double scnrm2_(IntPtr n, VoidPtr cx, IntPtr incx);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated BLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native double dznrm2_(IntPtr n, VoidPtr cx, IntPtr incx);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated BLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int srot_(IntPtr n, FloatPtr sx, IntPtr incx, FloatPtr sy, IntPtr incy, FloatPtr c,
@@ -44850,7 +51432,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated BLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int drot_(IntPtr n, DoublePtr dx, IntPtr incx, DoublePtr dy, IntPtr incy, DoublePtr c,
@@ -44858,14 +51444,22 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated BLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int csrot_(IntPtr n, VoidPtr cx, IntPtr incx, VoidPtr cy, IntPtr incy, FloatPtr c, FloatPtr s);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated BLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zdrot_(IntPtr n, VoidPtr cx, IntPtr incx, VoidPtr cy, IntPtr incy, DoublePtr c,
@@ -44873,126 +51467,198 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated BLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int srotg_(FloatPtr sa, FloatPtr sb, FloatPtr c, FloatPtr s);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated BLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int drotg_(DoublePtr da, DoublePtr db, DoublePtr c, DoublePtr s);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated BLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int crotg_(VoidPtr ca, VoidPtr cb, FloatPtr c, VoidPtr cs);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated BLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zrotg_(VoidPtr ca, VoidPtr cb, DoublePtr c, VoidPtr cs);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated BLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int srotm_(IntPtr n, FloatPtr sx, IntPtr incx, FloatPtr sy, IntPtr incy, FloatPtr param);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated BLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int drotm_(IntPtr n, DoublePtr dx, IntPtr incx, DoublePtr dy, IntPtr incy, DoublePtr dparam);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated BLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int srotmg_(FloatPtr sd1, FloatPtr sd2, FloatPtr sx1, FloatPtr sy1, FloatPtr param);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated BLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int drotmg_(DoublePtr dd1, DoublePtr dd2, DoublePtr dx1, DoublePtr dy1, DoublePtr dparam);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated BLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int sscal_(IntPtr n, FloatPtr sa, FloatPtr sx, IntPtr incx);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated BLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dscal_(IntPtr n, DoublePtr da, DoublePtr dx, IntPtr incx);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated BLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int cscal_(IntPtr n, VoidPtr ca, VoidPtr cx, IntPtr incx);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated BLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zscal_(IntPtr n, VoidPtr ca, VoidPtr cx, IntPtr incx);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated BLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int csscal_(IntPtr n, FloatPtr sa, VoidPtr cx, IntPtr incx);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated BLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zdscal_(IntPtr n, DoublePtr sa, VoidPtr cx, IntPtr incx);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated BLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int sswap_(IntPtr n, FloatPtr sx, IntPtr incx, FloatPtr sy, IntPtr incy);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated BLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dswap_(IntPtr n, DoublePtr dx, IntPtr incx, DoublePtr dy, IntPtr incy);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated BLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int cswap_(IntPtr n, VoidPtr cx, IntPtr incx, VoidPtr cy, IntPtr incy);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated BLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zswap_(IntPtr n, VoidPtr cx, IntPtr incx, VoidPtr cy, IntPtr incy);
@@ -45003,7 +51669,11 @@ public final class Accelerate {
      * =====================================
      * 
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated BLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int sgemv_(BytePtr trans, IntPtr m, IntPtr n, FloatPtr alpha, FloatPtr a, IntPtr lda,
@@ -45011,7 +51681,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated BLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dgemv_(BytePtr trans, IntPtr m, IntPtr n, DoublePtr alpha, DoublePtr a, IntPtr lda,
@@ -45019,7 +51693,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated BLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int cgemv_(BytePtr trans, IntPtr m, IntPtr n, VoidPtr alpha, VoidPtr a, IntPtr lda, VoidPtr x,
@@ -45027,7 +51705,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated BLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zgemv_(BytePtr trans, IntPtr m, IntPtr n, VoidPtr alpha, VoidPtr a, IntPtr lda, VoidPtr x,
@@ -45035,7 +51717,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated BLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int sgbmv_(BytePtr trans, IntPtr m, IntPtr n, IntPtr kl, IntPtr ku, FloatPtr alpha, FloatPtr a,
@@ -45043,7 +51729,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated BLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dgbmv_(BytePtr trans, IntPtr m, IntPtr n, IntPtr kl, IntPtr ku, DoublePtr alpha,
@@ -45051,7 +51741,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated BLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int cgbmv_(BytePtr trans, IntPtr m, IntPtr n, IntPtr kl, IntPtr ku, VoidPtr alpha, VoidPtr a,
@@ -45059,7 +51753,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated BLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zgbmv_(BytePtr trans, IntPtr m, IntPtr n, IntPtr kl, IntPtr ku, VoidPtr alpha, VoidPtr a,
@@ -45067,7 +51765,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated BLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int ssymv_(BytePtr uplo, IntPtr n, FloatPtr alpha, FloatPtr a, IntPtr lda, FloatPtr x,
@@ -45075,7 +51777,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated BLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dsymv_(BytePtr uplo, IntPtr n, DoublePtr alpha, DoublePtr a, IntPtr lda, DoublePtr x,
@@ -45083,7 +51789,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated BLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int chemv_(BytePtr uplo, IntPtr n, VoidPtr alpha, VoidPtr a, IntPtr lda, VoidPtr x,
@@ -45091,7 +51801,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated BLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zhemv_(BytePtr uplo, IntPtr n, VoidPtr alpha, VoidPtr a, IntPtr lda, VoidPtr x,
@@ -45099,7 +51813,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated BLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int ssbmv_(BytePtr uplo, IntPtr n, IntPtr k, FloatPtr alpha, FloatPtr a, IntPtr lda,
@@ -45107,7 +51825,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated BLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dsbmv_(BytePtr uplo, IntPtr n, IntPtr k, DoublePtr alpha, DoublePtr a, IntPtr lda,
@@ -45115,7 +51837,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated BLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int chbmv_(BytePtr uplo, IntPtr n, IntPtr k, VoidPtr alpha, VoidPtr a, IntPtr lda, VoidPtr x,
@@ -45123,7 +51849,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated BLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zhbmv_(BytePtr uplo, IntPtr n, IntPtr k, VoidPtr alpha, VoidPtr a, IntPtr lda, VoidPtr x,
@@ -45131,7 +51861,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated BLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int sspmv_(BytePtr uplo, IntPtr n, FloatPtr alpha, FloatPtr ap, FloatPtr x, IntPtr incx,
@@ -45139,7 +51873,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated BLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dspmv_(BytePtr uplo, IntPtr n, DoublePtr alpha, DoublePtr ap, DoublePtr x, IntPtr incx,
@@ -45147,7 +51885,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated BLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int chpmv_(BytePtr uplo, IntPtr n, VoidPtr alpha, VoidPtr ap, VoidPtr x, IntPtr incx,
@@ -45155,7 +51897,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated BLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zhpmv_(BytePtr uplo, IntPtr n, VoidPtr alpha, VoidPtr ap, VoidPtr x, IntPtr incx,
@@ -45163,7 +51909,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated BLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int strmv_(BytePtr uplo, BytePtr trans, BytePtr diag, IntPtr n, FloatPtr a, IntPtr lda,
@@ -45171,7 +51921,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated BLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dtrmv_(BytePtr uplo, BytePtr trans, BytePtr diag, IntPtr n, DoublePtr a, IntPtr lda,
@@ -45179,7 +51933,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated BLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int ctrmv_(BytePtr uplo, BytePtr trans, BytePtr diag, IntPtr n, VoidPtr a, IntPtr lda,
@@ -45187,7 +51945,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated BLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int ztrmv_(BytePtr uplo, BytePtr trans, BytePtr diag, IntPtr n, VoidPtr a, IntPtr lda,
@@ -45195,7 +51957,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated BLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int stbmv_(BytePtr uplo, BytePtr trans, BytePtr diag, IntPtr n, IntPtr k, FloatPtr a,
@@ -45203,7 +51969,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated BLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dtbmv_(BytePtr uplo, BytePtr trans, BytePtr diag, IntPtr n, IntPtr k, DoublePtr a,
@@ -45211,7 +51981,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated BLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int ctbmv_(BytePtr uplo, BytePtr trans, BytePtr diag, IntPtr n, IntPtr k, VoidPtr a,
@@ -45219,7 +51993,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated BLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int ztbmv_(BytePtr uplo, BytePtr trans, BytePtr diag, IntPtr n, IntPtr k, VoidPtr a,
@@ -45227,7 +52005,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated BLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int stpmv_(BytePtr uplo, BytePtr trans, BytePtr diag, IntPtr n, FloatPtr ap, FloatPtr x,
@@ -45235,7 +52017,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated BLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dtpmv_(BytePtr uplo, BytePtr trans, BytePtr diag, IntPtr n, DoublePtr ap, DoublePtr x,
@@ -45243,7 +52029,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated BLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int ctpmv_(BytePtr uplo, BytePtr trans, BytePtr diag, IntPtr n, VoidPtr ap, VoidPtr x,
@@ -45251,7 +52041,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated BLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int ztpmv_(BytePtr uplo, BytePtr trans, BytePtr diag, IntPtr n, VoidPtr ap, VoidPtr x,
@@ -45259,7 +52053,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated BLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int strsv_(BytePtr uplo, BytePtr trans, BytePtr diag, IntPtr n, FloatPtr a, IntPtr lda,
@@ -45267,7 +52065,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated BLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dtrsv_(BytePtr uplo, BytePtr trans, BytePtr diag, IntPtr n, DoublePtr a, IntPtr lda,
@@ -45275,7 +52077,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated BLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int ctrsv_(BytePtr uplo, BytePtr trans, BytePtr diag, IntPtr n, VoidPtr a, IntPtr lda,
@@ -45283,7 +52089,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated BLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int ztrsv_(BytePtr uplo, BytePtr trans, BytePtr diag, IntPtr n, VoidPtr a, IntPtr lda,
@@ -45291,7 +52101,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated BLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int stbsv_(BytePtr uplo, BytePtr trans, BytePtr diag, IntPtr n, IntPtr k, FloatPtr a,
@@ -45299,7 +52113,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated BLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dtbsv_(BytePtr uplo, BytePtr trans, BytePtr diag, IntPtr n, IntPtr k, DoublePtr a,
@@ -45307,7 +52125,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated BLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int ctbsv_(BytePtr uplo, BytePtr trans, BytePtr diag, IntPtr n, IntPtr k, VoidPtr a,
@@ -45315,7 +52137,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated BLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int ztbsv_(BytePtr uplo, BytePtr trans, BytePtr diag, IntPtr n, IntPtr k, VoidPtr a,
@@ -45323,7 +52149,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated BLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int stpsv_(BytePtr uplo, BytePtr trans, BytePtr diag, IntPtr n, FloatPtr ap, FloatPtr x,
@@ -45331,7 +52161,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated BLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dtpsv_(BytePtr uplo, BytePtr trans, BytePtr diag, IntPtr n, DoublePtr ap, DoublePtr x,
@@ -45339,7 +52173,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated BLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int ctpsv_(BytePtr uplo, BytePtr trans, BytePtr diag, IntPtr n, VoidPtr ap, VoidPtr x,
@@ -45347,7 +52185,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated BLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int ztpsv_(BytePtr uplo, BytePtr trans, BytePtr diag, IntPtr n, VoidPtr ap, VoidPtr x,
@@ -45355,7 +52197,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated BLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int sger_(IntPtr m, IntPtr n, FloatPtr alpha, FloatPtr x, IntPtr incx, FloatPtr y, IntPtr incy,
@@ -45363,7 +52209,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated BLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dger_(IntPtr m, IntPtr n, DoublePtr alpha, DoublePtr x, IntPtr incx, DoublePtr y,
@@ -45371,7 +52221,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated BLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int cgerc_(IntPtr m, IntPtr n, VoidPtr alpha, VoidPtr x, IntPtr incx, VoidPtr y, IntPtr incy,
@@ -45379,7 +52233,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated BLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zgerc_(IntPtr m, IntPtr n, VoidPtr alpha, VoidPtr x, IntPtr incx, VoidPtr y, IntPtr incy,
@@ -45387,7 +52245,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated BLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int cgeru_(IntPtr m, IntPtr n, VoidPtr alpha, VoidPtr x, IntPtr incx, VoidPtr y, IntPtr incy,
@@ -45395,7 +52257,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated BLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zgeru_(IntPtr m, IntPtr n, VoidPtr alpha, VoidPtr x, IntPtr incx, VoidPtr y, IntPtr incy,
@@ -45403,7 +52269,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated BLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int ssyr_(BytePtr uplo, IntPtr n, FloatPtr alpha, FloatPtr x, IntPtr incx, FloatPtr a,
@@ -45411,7 +52281,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated BLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dsyr_(BytePtr uplo, IntPtr n, DoublePtr alpha, DoublePtr x, IntPtr incx, DoublePtr a,
@@ -45419,7 +52293,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated BLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int cher_(BytePtr uplo, IntPtr n, FloatPtr alpha, VoidPtr x, IntPtr incx, VoidPtr a,
@@ -45427,7 +52305,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated BLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zher_(BytePtr uplo, IntPtr n, DoublePtr alpha, VoidPtr x, IntPtr incx, VoidPtr a,
@@ -45435,7 +52317,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated BLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int ssyr2_(BytePtr uplo, IntPtr n, FloatPtr alpha, FloatPtr x, IntPtr incx, FloatPtr y,
@@ -45443,7 +52329,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated BLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dsyr2_(BytePtr uplo, IntPtr n, DoublePtr alpha, DoublePtr x, IntPtr incx, DoublePtr y,
@@ -45451,7 +52341,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated BLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int cher2_(BytePtr uplo, IntPtr n, VoidPtr alpha, VoidPtr x, IntPtr incx, VoidPtr y,
@@ -45459,7 +52353,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated BLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zher2_(BytePtr uplo, IntPtr n, VoidPtr alpha, VoidPtr x, IntPtr incx, VoidPtr y,
@@ -45467,35 +52365,55 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated BLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int sspr_(BytePtr uplo, IntPtr n, FloatPtr alpha, FloatPtr x, IntPtr incx, FloatPtr ap);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated BLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dspr_(BytePtr uplo, IntPtr n, DoublePtr alpha, DoublePtr x, IntPtr incx, DoublePtr ap);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated BLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int chpr_(BytePtr uplo, IntPtr n, FloatPtr alpha, VoidPtr x, IntPtr incx, VoidPtr ap);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated BLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zhpr_(BytePtr uplo, IntPtr n, DoublePtr alpha, VoidPtr x, IntPtr incx, VoidPtr ap);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated BLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int sspr2_(BytePtr uplo, IntPtr n, FloatPtr alpha, FloatPtr x, IntPtr incx, FloatPtr y,
@@ -45503,7 +52421,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated BLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dspr2_(BytePtr uplo, IntPtr n, DoublePtr alpha, DoublePtr x, IntPtr incx, DoublePtr y,
@@ -45511,7 +52433,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated BLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int chpr2_(BytePtr uplo, IntPtr n, VoidPtr alpha, VoidPtr x, IntPtr incx, VoidPtr y,
@@ -45519,7 +52445,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated BLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zhpr2_(BytePtr uplo, IntPtr n, VoidPtr alpha, VoidPtr x, IntPtr incx, VoidPtr y,
@@ -45531,7 +52461,11 @@ public final class Accelerate {
      * =====================================
      * 
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated BLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int sgemm_(BytePtr transa, BytePtr transb, IntPtr m, IntPtr n, IntPtr k, FloatPtr alpha,
@@ -45539,7 +52473,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated BLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dgemm_(BytePtr transa, BytePtr transb, IntPtr m, IntPtr n, IntPtr k, DoublePtr alpha,
@@ -45547,7 +52485,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated BLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int cgemm_(BytePtr transa, BytePtr transb, IntPtr m, IntPtr n, IntPtr k, VoidPtr alpha,
@@ -45555,7 +52497,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated BLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zgemm_(BytePtr transa, BytePtr transb, IntPtr m, IntPtr n, IntPtr k, VoidPtr alpha,
@@ -45563,7 +52509,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated BLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int ssymm_(BytePtr side, BytePtr uplo, IntPtr m, IntPtr n, FloatPtr alpha, FloatPtr a,
@@ -45571,7 +52521,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated BLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dsymm_(BytePtr side, BytePtr uplo, IntPtr m, IntPtr n, DoublePtr alpha, DoublePtr a,
@@ -45579,7 +52533,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated BLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int csymm_(BytePtr side, BytePtr uplo, IntPtr m, IntPtr n, VoidPtr alpha, VoidPtr a,
@@ -45587,7 +52545,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated BLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zsymm_(BytePtr side, BytePtr uplo, IntPtr m, IntPtr n, VoidPtr alpha, VoidPtr a,
@@ -45595,7 +52557,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated BLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int chemm_(BytePtr side, BytePtr uplo, IntPtr m, IntPtr n, VoidPtr alpha, VoidPtr a,
@@ -45603,7 +52569,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated BLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zhemm_(BytePtr side, BytePtr uplo, IntPtr m, IntPtr n, VoidPtr alpha, VoidPtr a,
@@ -45611,7 +52581,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated BLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int strmm_(BytePtr side, BytePtr uplo, BytePtr transa, BytePtr diag, IntPtr m, IntPtr n,
@@ -45619,7 +52593,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated BLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dtrmm_(BytePtr side, BytePtr uplo, BytePtr transa, BytePtr diag, IntPtr m, IntPtr n,
@@ -45627,7 +52605,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated BLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int ctrmm_(BytePtr side, BytePtr uplo, BytePtr transa, BytePtr diag, IntPtr m, IntPtr n,
@@ -45635,7 +52617,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated BLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int ztrmm_(BytePtr side, BytePtr uplo, BytePtr transa, BytePtr diag, IntPtr m, IntPtr n,
@@ -45643,7 +52629,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated BLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int strsm_(BytePtr side, BytePtr uplo, BytePtr transa, BytePtr diag, IntPtr m, IntPtr n,
@@ -45651,7 +52641,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated BLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dtrsm_(BytePtr side, BytePtr uplo, BytePtr transa, BytePtr diag, IntPtr m, IntPtr n,
@@ -45659,7 +52653,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated BLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int ctrsm_(BytePtr side, BytePtr uplo, BytePtr transa, BytePtr diag, IntPtr m, IntPtr n,
@@ -45667,7 +52665,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated BLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int ztrsm_(BytePtr side, BytePtr uplo, BytePtr transa, BytePtr diag, IntPtr m, IntPtr n,
@@ -45675,7 +52677,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated BLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int ssyrk_(BytePtr uplo, BytePtr trans, IntPtr n, IntPtr k, FloatPtr alpha, FloatPtr a,
@@ -45683,7 +52689,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated BLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dsyrk_(BytePtr uplo, BytePtr trans, IntPtr n, IntPtr k, DoublePtr alpha, DoublePtr a,
@@ -45691,7 +52701,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated BLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int csyrk_(BytePtr uplo, BytePtr trans, IntPtr n, IntPtr k, VoidPtr alpha, VoidPtr a,
@@ -45699,7 +52713,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated BLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zsyrk_(BytePtr uplo, BytePtr trans, IntPtr n, IntPtr k, VoidPtr alpha, VoidPtr a,
@@ -45707,7 +52725,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated BLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int cherk_(BytePtr uplo, BytePtr trans, IntPtr n, IntPtr k, FloatPtr alpha, VoidPtr a,
@@ -45715,7 +52737,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated BLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zherk_(BytePtr uplo, BytePtr trans, IntPtr n, IntPtr k, DoublePtr alpha, VoidPtr a,
@@ -45723,7 +52749,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated BLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int ssyr2k_(BytePtr uplo, BytePtr trans, IntPtr n, IntPtr k, FloatPtr alpha, FloatPtr a,
@@ -45731,7 +52761,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated BLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int dsyr2k_(BytePtr uplo, BytePtr trans, IntPtr n, IntPtr k, DoublePtr alpha, DoublePtr a,
@@ -45739,7 +52773,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated BLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int csyr2k_(BytePtr uplo, BytePtr trans, IntPtr n, IntPtr k, VoidPtr alpha, VoidPtr a,
@@ -45747,7 +52785,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated BLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zsyr2k_(BytePtr uplo, BytePtr trans, IntPtr n, IntPtr k, VoidPtr alpha, VoidPtr a,
@@ -45755,7 +52797,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated BLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int cher2k_(BytePtr uplo, BytePtr trans, IntPtr n, IntPtr k, VoidPtr alpha, VoidPtr a,
@@ -45763,7 +52809,11 @@ public final class Accelerate {
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: An updated BLAS interface supporting ILP64 is available. Please compile with
+     * -DACCELERATE_NEW_LAPACK to access the new headers and -DACCELERATE_LAPACK_ILP64 for ILP64 support.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int zher2k_(BytePtr uplo, BytePtr trans, IntPtr n, IntPtr k, VoidPtr alpha, VoidPtr a,
@@ -47720,8 +54770,8 @@ public final class Accelerate {
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer srcDest,
             VoidPtr tempBuffer, @NUInt long seedX, @NUInt long seedY, char newValue, int connectivity, int flags);
 
-    @Generated public static final double vDSP_Version0 = 818.0;
-    @Generated public static final double vDSP_Version1 = 60.0;
+    @Generated public static final double vDSP_Version0 = 1041.0;
+    @Generated public static final double vDSP_Version1 = 0.0;
     @Generated public static final double USE_NON_APPLE_STANDARD_DATATYPES = 1.0;
     @Generated public static final double LA_L1_NORM = 1.0;
     @Generated public static final double LA_L2_NORM = 2.0;
@@ -47732,4 +54782,120 @@ public final class Accelerate {
     @Generated public static final double VIMAGE_AFFINETRANSFORM_DOUBLE_IS_AVAILABLE = 1.0;
     @Generated public static final double VIMAGE_CGAFFINETRANSFORM_IS_AVAILABLE = 1.0;
     @Generated public static final double vImage_CVUtilities_h = 1.0;
+
+    /**
+     * Fill the supplied tensor with random float data using the supplied generator mapped to
+     * categorical distributions with the given event (log) probabilities.
+     * 
+     * We generate random values from a categorical distribution with specified event probabilities or event log
+     * probabilities.
+     * Note that if generator is used on multiple threads, usage is serialized through an internal lock. In this
+     * scenario we recommend
+     * users create a different BNNSRandomGenerator object with a different seed for each thread to ensure consistency
+     * of output
+     * on any replay using BNNSRandomGeneratorGetState/BNNSRandomGeneratorSetState and to eliminate contention.
+     * Assume r is the rank of the probabilities tensor, and K is the inner most dimension of probabilities tensor,
+     * i.e., probabilities.size[r-1].
+     * Then, desc must be a rank r tensor with the first r-1 dimensions having the same size as the first r-1 dimensions
+     * of probabilities, where
+     * the first r-1 dimensions are treated as batch sizes and each desc [i_0, ..., i_r-2, i_r-1] will be an integer in
+     * 0,1,..., K-1 drawn from the
+     * categorical distribution from the corresponding probabilities slice [i_0, ..., i_r-2, :]. That is to say
+     * desc.size[r-1] samples are drawn from
+     * a categorical distribution, such that P(desc[i_0, ..., i_r-2, i_r-1] == k) = probabilities[i0, ..., i_r-2, k].
+     * The probabilities data is assumed to be nonnegative and finite, which will be normalized to sum one along the
+     * inner most dimension.
+     * The log probabilities data will be normalized, so their exponentials sum to one along the inner most dimension.
+     * 
+     * [@returns] 0 on success, nonzero on error.
+     * 
+     * API-Since: 17.0
+     * 
+     * @param generator         - random generator to be used
+     * 
+     * @param desc              - tensor descriptor to be filled with random values, data type must be floating point
+     * 
+     * @param probabilities     - probabilities or log probabilities, data type must be the same as desc
+     * 
+     * @param log_probabilities - true if log probabilities is provided, otherwise probabilities data is provided
+     */
+    @Generated
+    @CFunction
+    public static native int BNNSRandomFillCategoricalFloat(@Nullable VoidPtr generator,
+            @UncertainArgument("Options: reference, array Fallback: reference") @NotNull BNNSNDArrayDescriptor desc,
+            @UncertainArgument("Options: reference, array Fallback: reference") @NotNull BNNSNDArrayDescriptor probabilities,
+            boolean log_probabilities);
+
+    /**
+     * Create a BNNSNearestNeighbors object, that is used to calculate k nearest neighbors of data points
+     * based on Euclidean distance
+     * 
+     * @param max_n_samples - maximum number of data points
+     * @param n_features    - number of features (dimensions) of each data point
+     * @param n_neighbors   - number of nearest neighbors
+     * @param data_type     - data type of the features, only fp32 and fp16 is supported by now
+     * @param filter_params - filter runtime parameters, may be NULL for default parameters
+     * 
+     * @return On success, a BNNSNearestNeighbors object is created. On failure, returns NULL.
+     * 
+     *         API-Since: 17.0
+     */
+    @Generated
+    @CFunction
+    @Nullable
+    public static native VoidPtr BNNSCreateNearestNeighbors(int max_n_samples, int n_features, int n_neighbors,
+            int data_type,
+            @UncertainArgument("Options: reference, array Fallback: reference") @Nullable BNNSFilterParameters filter_params);
+
+    /**
+     * Destroy a BNNSNearestNeighbors object
+     * 
+     * @param knn - the BNNSNearestNeighbors object to be destroyed
+     * 
+     *            API-Since: 17.0
+     */
+    @Generated
+    @CFunction
+    public static native void BNNSDestroyNearestNeighbors(@Nullable VoidPtr knn);
+
+    /**
+     * Add new sample data to BNNSNearestNeighbors
+     * 
+     * @param knn           - the BNNSNearestNeighbors object used for calculation and storage
+     * @param n_new_samples - number of new data points to be added
+     * @param data_ptr      - pointer to the new data array of size [n_new_samples, n_features]
+     * 
+     * @return 0 for success, nonzero on failure (failure reason will reported in os logs)
+     * 
+     *         API-Since: 17.0
+     */
+    @Generated
+    @CFunction
+    public static native int BNNSNearestNeighborsLoad(@Nullable VoidPtr knn, int n_new_samples,
+            @NotNull ConstVoidPtr data_ptr);
+
+    /**
+     * Return the sorted indices and distances of the k nearest neighbors to certain sample point
+     * 
+     * @param knn           - the BNNSNearestNeighbors object used for calculation and storage
+     * @param sample_number - sample number to return the k nearest neighbors, if negative return all of them
+     * @param indices       - sorted indices of the k nearest neighbors to the sample point (sample_number), if not
+     *                      null.
+     *                      If sample_number is negative, indices is an array of [n_samples, n_neighbors], otherwise
+     *                      indices is an array of [n_neighbors].
+     *                      Return -1 for n_neighbors larger than n_samples.
+     * @param distances     - sorted distances of the k nearest neighbors to the sample point (sample_number), if not
+     *                      null.
+     *                      If sample_number is negative, distances is an array of [n_samples, n_neighbors], otherwise
+     *                      distances is an array of [n_neighbors].
+     *                      Return INFINITY for n_neighbors larger than n_samples.
+     * 
+     * @return 0 for success, nonzero on failure (failure reason will reported in os logs)
+     * 
+     *         API-Since: 17.0
+     */
+    @Generated
+    @CFunction
+    public static native int BNNSNearestNeighborsGetInfo(@Nullable VoidPtr knn, int sample_number,
+            @Nullable IntPtr indices, @Nullable VoidPtr distances);
 }

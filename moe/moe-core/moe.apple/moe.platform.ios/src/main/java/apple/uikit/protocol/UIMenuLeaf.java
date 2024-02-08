@@ -130,4 +130,23 @@ public interface UIMenuLeaf {
     @Generated
     @Selector("title")
     String title();
+
+    /**
+     * Image that can appear next to this action when the `state` is `UIMenuElementStateOn`
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("selectedImage")
+    @Nullable
+    UIImage selectedImage();
+
+    /**
+     * Image that can appear next to this action when the `state` is `UIMenuElementStateOn`
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("setSelectedImage:")
+    void setSelectedImage(@Nullable UIImage value);
 }

@@ -1347,6 +1347,7 @@ public final class PDFKit {
 
     /**
      * [@YES] to enable, disabled by default
+     * If enabled, annotations will be rendered into the content stream and NOT saved as annotations
      * 
      * API-Since: 16.0
      */
@@ -1358,6 +1359,8 @@ public final class PDFKit {
 
     /**
      * [@YES] to enable, disabled by default
+     * If enabled, OCR will be performed on all pages on which it has not been done already and saved as invisible, but
+     * selectable, text
      * 
      * API-Since: 16.0
      */
@@ -1366,4 +1369,28 @@ public final class PDFKit {
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String PDFDocumentSaveTextFromOCROption();
+
+    /**
+     * [@YES] to enable, disabled by default
+     * If enabled, images will be saved using JPEG encoding.
+     * 
+     * API-Since: 16.4
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String PDFDocumentSaveImagesAsJPEGOption();
+
+    /**
+     * [@YES] to enable, disabled by default
+     * If enabled, the resolution of images will be limited to a resolution appropriate for screen display.
+     * 
+     * API-Since: 16.4
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String PDFDocumentOptimizeImagesForScreenOption();
 }

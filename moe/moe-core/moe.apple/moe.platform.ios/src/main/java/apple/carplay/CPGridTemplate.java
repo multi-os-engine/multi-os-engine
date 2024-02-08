@@ -238,4 +238,9 @@ public class CPGridTemplate extends CPTemplate implements CPBarButtonProviding {
     @Generated
     @Selector("updateTitle:")
     public native void updateTitle(@NotNull String title);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

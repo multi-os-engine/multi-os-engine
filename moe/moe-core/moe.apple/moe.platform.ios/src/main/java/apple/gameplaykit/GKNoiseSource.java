@@ -54,8 +54,6 @@ import org.jetbrains.annotations.Nullable;
  * 
  * @see GKNoise
  * @see GKNoiseMap
- * 
- *      API-Since: 10.0
  */
 @Generated
 @Library("GameplayKit")
@@ -174,4 +172,9 @@ public class GKNoiseSource extends NSObject {
     @Generated
     @Selector("init")
     public native GKNoiseSource init();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

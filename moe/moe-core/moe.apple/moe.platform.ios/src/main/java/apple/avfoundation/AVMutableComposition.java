@@ -49,6 +49,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.corefoundation.struct.CGSize;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.cinematic.CNAssetInfo;
+import apple.cinematic.CNCompositionInfo;
 
 /**
  * API-Since: 4.0
@@ -270,8 +272,7 @@ public class AVMutableComposition extends AVComposition {
      *                  Specifies the timeRange of the asset to be inserted.
      * @param asset
      *                  Specifies the asset that contains the tracks that are to be inserted. Only instances of
-     *                  AVURLAsset and AVComposition are supported (AVComposition starting in MacOS X 10.10 and iOS
-     *                  8.0).
+     *                  AVURLAsset and AVComposition are supported (AVComposition starting in macOS 10.10 and iOS 8.0).
      * @param startTime
      *                  Specifies the time at which the inserted tracks are to be presented by the composition.
      * @param outError
@@ -550,7 +551,7 @@ public class AVMutableComposition extends AVComposition {
      *                          Specifies the timeRange of the asset to be inserted.
      * @param asset
      *                          Specifies the asset that contains the tracks that are to be inserted. Only instances of
-     *                          AVURLAsset and AVComposition are supported (AVComposition starting in MacOS X 10.10 and
+     *                          AVURLAsset and AVComposition are supported (AVComposition starting in macOS 10.10 and
      *                          iOS 8.0).
      * @param startTime
      *                          Specifies the time at which the inserted tracks are to be presented by the composition.
@@ -571,4 +572,21 @@ public class AVMutableComposition extends AVComposition {
         @Generated
         void call_insertTimeRangeOfAssetAtTimeCompletionHandler(@Nullable NSError error);
     }
+
+    /**
+     * Adds a group of empty tracks associated with a cinematic asset to a mutable composition.
+     * - Returns: Information about the composition tracks added to the mutable composition.
+     * Be sure to call insertTimeRange on the result to specify at least one time range of cinematic asset you'd like in
+     * the composition.
+     */
+    @Generated
+    @Selector("addTracksForCinematicAssetInfo:preferredStartingTrackID:")
+    @NotNull
+    public native CNCompositionInfo addTracksForCinematicAssetInfoPreferredStartingTrackID(
+            @NotNull CNAssetInfo assetInfo, int preferredStartingTrackID);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -375,4 +375,9 @@ public class AVCaptureFileOutput extends AVCaptureOutput {
     @Generated
     @Selector("stopRecording")
     public native void stopRecording();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

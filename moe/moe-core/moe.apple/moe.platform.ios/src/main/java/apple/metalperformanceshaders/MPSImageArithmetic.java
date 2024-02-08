@@ -329,4 +329,9 @@ public class MPSImageArithmetic extends MPSBinaryImageKernel {
     @Generated
     @Selector("setMinimumValue:")
     public native void setMinimumValue(float value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -26,6 +26,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.foundation.protocol.NSCopying;
 
 /**
  * API-Since: 16.0
@@ -34,7 +35,7 @@ import org.jetbrains.annotations.Nullable;
 @Library("MetalFX")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class MTLFXTemporalScalerDescriptor extends NSObject {
+public class MTLFXTemporalScalerDescriptor extends NSObject implements NSCopying {
     static {
         NatJ.register();
     }
@@ -301,4 +302,34 @@ public class MTLFXTemporalScalerDescriptor extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Owned
+    @Selector("copyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    @NotNull
+    public native Object copyWithZone(@Nullable VoidPtr zone);
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("supportedInputContentMaxScaleForDevice:")
+    public static native float supportedInputContentMaxScaleForDevice(
+            @Mapped(ObjCObjectMapper.class) @NotNull MTLDevice device);
+
+    /**
+     * Class methods for querying supported min/max input content scale.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("supportedInputContentMinScaleForDevice:")
+    public static native float supportedInputContentMinScaleForDevice(
+            @Mapped(ObjCObjectMapper.class) @NotNull MTLDevice device);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

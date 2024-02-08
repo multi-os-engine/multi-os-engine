@@ -294,4 +294,9 @@ public class AVVideoCompositionLayerInstruction extends NSObject implements NSSe
     @Generated
     @Selector("trackID")
     public native int trackID();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

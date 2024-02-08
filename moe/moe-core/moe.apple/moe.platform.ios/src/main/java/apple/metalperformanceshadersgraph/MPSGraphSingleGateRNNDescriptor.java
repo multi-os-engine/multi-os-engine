@@ -27,13 +27,29 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
+ * This class defines parameters for a single gate (vanilla) RNN operation.
+ * 
+ * Use this descriptor with the following ``MPSGraph`` methods:
+ * - ``MPSGraph/singleGateRNNWithSourceTensor:recurrentWeight:initState:descriptor:name:``,
+ * - ``MPSGraph/singleGateRNNWithSourceTensor:recurrentWeight:inputWeight:bias:initState:descriptor:name:``,
+ * - ``MPSGraph/singleGateRNNWithSourceTensor:recurrentWeight:inputWeight:bias:initState:mask:descriptor:name:``,
+ * -
+ * ``MPSGraph/singleGateRNNGradientsWithSourceTensor:recurrentWeight:sourceGradient:zState:initState:descriptor:name:``,
+ * -
+ * ``MPSGraph/singleGateRNNGradientsWithSourceTensor:recurrentWeight:sourceGradient:zState:inputWeight:bias:initState:descriptor:name:``,
+ * -
+ * ``MPSGraph/singleGateRNNGradientsWithSourceTensor:recurrentWeight:sourceGradient:zState:inputWeight:bias:initState:mask:descriptor:name:``,
+ * and
+ * -
+ * ``MPSGraph/singleGateRNNGradientsWithSourceTensor:recurrentWeight:sourceGradient:zState:stateGradient:inputWeight:bias:initState:mask:descriptor:name:``.
+ * 
  * API-Since: 15.4
  */
 @Generated
 @Library("MetalPerformanceShadersGraph")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class MPSGraphSingleGateRNNDescriptor extends NSObject implements NSCopying {
+public class MPSGraphSingleGateRNNDescriptor extends MPSGraphObject implements NSCopying {
     static {
         NatJ.register();
     }
@@ -48,10 +64,8 @@ public class MPSGraphSingleGateRNNDescriptor extends NSObject implements NSCopyi
     public static native boolean accessInstanceVariablesDirectly();
 
     /**
-     * [@property] activation
-     * 
-     * Activation function to use with the RNN op.
-     * Default value: @code MPSGraphRNNActivationRelu @endcode
+     * A parameter which defines the activation function to use with the RNN operation.
+     * Default value: `MPSGraphRNNActivationRelu`.
      */
     @Generated
     @Selector("activation")
@@ -73,11 +87,11 @@ public class MPSGraphSingleGateRNNDescriptor extends NSObject implements NSCopyi
     public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
-     * [@property] bidirectional
+     * A parameter that defines a bidirectional RNN layer.
      * 
-     * If set then the input sequence is traversed in both directions and the two results
+     * If set to `YES` then the input sequence is traversed in both directions and the two results
      * are concatenated together on the channel-axis.
-     * Default value: @code NO @endcode
+     * Default value: `NO`.
      */
     @Generated
     @Selector("bidirectional")
@@ -119,6 +133,9 @@ public class MPSGraphSingleGateRNNDescriptor extends NSObject implements NSCopyi
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * Creates a single gate RNN descriptor with default values.
+     */
     @Generated
     @Selector("descriptor")
     public static native MPSGraphSingleGateRNNDescriptor descriptor();
@@ -168,53 +185,51 @@ public class MPSGraphSingleGateRNNDescriptor extends NSObject implements NSCopyi
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * [@property] reverse
+     * A parameter that defines time direction of the input sequence.
      * 
-     * If set then the input sequence is passed in reverse time order to the layer.
-     * Note: Ignored when @code bidirectional = YES @endcode.
-     * Default value: @code NO @endcode
+     * If set to `YES` then the input sequence is passed in reverse time order to the layer.
+     * Note: Ignored when `bidirectional = YES`.
+     * Default value: `NO`.
      */
     @Generated
     @Selector("reverse")
     public native boolean reverse();
 
     /**
-     * [@property] activation
-     * 
-     * Activation function to use with the RNN op.
-     * Default value: @code MPSGraphRNNActivationRelu @endcode
+     * A parameter which defines the activation function to use with the RNN operation.
+     * Default value: `MPSGraphRNNActivationRelu`.
      */
     @Generated
     @Selector("setActivation:")
     public native void setActivation(@NUInt long value);
 
     /**
-     * [@property] bidirectional
+     * A parameter that defines a bidirectional RNN layer.
      * 
-     * If set then the input sequence is traversed in both directions and the two results
+     * If set to `YES` then the input sequence is traversed in both directions and the two results
      * are concatenated together on the channel-axis.
-     * Default value: @code NO @endcode
+     * Default value: `NO`.
      */
     @Generated
     @Selector("setBidirectional:")
     public native void setBidirectional(boolean value);
 
     /**
-     * [@property] reverse
+     * A parameter that defines time direction of the input sequence.
      * 
-     * If set then the input sequence is passed in reverse time order to the layer.
-     * Note: Ignored when @code bidirectional = YES @endcode.
-     * Default value: @code NO @endcode
+     * If set to `YES` then the input sequence is passed in reverse time order to the layer.
+     * Note: Ignored when `bidirectional = YES`.
+     * Default value: `NO`.
      */
     @Generated
     @Selector("setReverse:")
     public native void setReverse(boolean value);
 
     /**
-     * [@property] training
+     * A parameter that makes the RNN layer support training.
      * 
-     * If set then the layer will produce training state tensor as a secondary output.
-     * Default value: @code NO @endcode
+     * If set to `YES` then the layer will produce training state tensor as a secondary output.
+     * Default value: `NO`.
      */
     @Generated
     @Selector("setTraining:")
@@ -229,10 +244,10 @@ public class MPSGraphSingleGateRNNDescriptor extends NSObject implements NSCopyi
     public static native Class superclass_static();
 
     /**
-     * [@property] training
+     * A parameter that makes the RNN layer support training.
      * 
-     * If set then the layer will produce training state tensor as a secondary output.
-     * Default value: @code NO @endcode
+     * If set to `YES` then the layer will produce training state tensor as a secondary output.
+     * Default value: `NO`.
      */
     @Generated
     @Selector("training")
@@ -242,4 +257,9 @@ public class MPSGraphSingleGateRNNDescriptor extends NSObject implements NSCopyi
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

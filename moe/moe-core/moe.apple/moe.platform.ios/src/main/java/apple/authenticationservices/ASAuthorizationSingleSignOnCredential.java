@@ -230,4 +230,9 @@ public class ASAuthorizationSingleSignOnCredential extends NSObject implements A
     @Generated
     @Selector("privateKeys")
     public native NSArray<?> privateKeys();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

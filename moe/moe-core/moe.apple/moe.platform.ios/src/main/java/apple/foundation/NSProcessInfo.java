@@ -370,4 +370,9 @@ public class NSProcessInfo extends NSObject {
     @Generated
     @Selector("isiOSAppOnMac")
     public native boolean isiOSAppOnMac();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -177,4 +177,9 @@ public class UITextRange extends NSObject {
     @Generated
     @Selector("start")
     public native UITextPosition start();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

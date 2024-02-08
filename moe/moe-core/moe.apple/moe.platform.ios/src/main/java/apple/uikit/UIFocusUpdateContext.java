@@ -218,4 +218,9 @@ public class UIFocusUpdateContext extends NSObject {
     @Generated
     @Selector("previouslyFocusedView")
     public native UIView previouslyFocusedView();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

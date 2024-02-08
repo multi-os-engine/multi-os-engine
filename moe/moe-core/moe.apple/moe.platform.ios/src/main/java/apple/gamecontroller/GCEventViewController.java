@@ -44,6 +44,10 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
+ * A view controller subclass that allows fine grained control of the user interface system's handling
+ * of game controller events. Set an instance of this class as your root view controller if you intend
+ * to use GCController APIs for handling game controllers.
+ * 
  * API-Since: 9.0
  */
 @Generated
@@ -231,4 +235,9 @@ public class GCEventViewController extends UIViewController {
     @Generated
     @Selector("setControllerUserInteractionEnabled:")
     public native void setControllerUserInteractionEnabled(boolean value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -434,4 +434,9 @@ public class ALAssetsLibrary extends NSObject {
         @Generated
         void call_writeVideoAtPathToSavedPhotosAlbumCompletionBlock(NSURL assetURL, NSError error);
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

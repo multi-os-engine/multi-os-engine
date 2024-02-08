@@ -1,6 +1,5 @@
 package apple.avfoundation.protocol;
 
-import apple.NSObject;
 import apple.coremedia.opaque.CMSampleBufferRef;
 import apple.coremedia.opaque.CMTimebaseRef;
 import org.moe.natj.general.ann.Generated;
@@ -11,6 +10,7 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.jetbrains.annotations.NotNull;
+import apple.opaque.dispatch_queue_t;
 
 /**
  * [@protocol] AVQueuedSampleBufferRendering
@@ -47,6 +47,10 @@ public interface AVQueuedSampleBufferRendering {
      * IMPORTANT NOTE: attachments with the kCMSampleAttachmentKey_ prefix must be set via
      * CMSampleBufferGetSampleAttachmentsArray and CFDictionarySetValue. Attachments with the
      * kCMSampleBufferAttachmentKey_ prefix must be set via CMSetAttachment.
+     * 
+     * The combination of either a non-NULL controlTimebase or an AVSampleBufferRenderSynchronizer with the use of
+     * kCMSampleAttachmentKey_DisplayImmediately as an attachment to the CMSampleBuffers that are enqueued for display
+     * is not recommended.
      */
     @Generated
     @Selector("enqueueSampleBuffer:")
@@ -116,7 +120,7 @@ public interface AVQueuedSampleBufferRendering {
      */
     @Generated
     @Selector("requestMediaDataWhenReadyOnQueue:usingBlock:")
-    void requestMediaDataWhenReadyOnQueueUsingBlock(@NotNull NSObject queue,
+    void requestMediaDataWhenReadyOnQueueUsingBlock(@NotNull dispatch_queue_t queue,
             @NotNull @ObjCBlock(name = "call_requestMediaDataWhenReadyOnQueueUsingBlock") Block_requestMediaDataWhenReadyOnQueueUsingBlock block);
 
     @Runtime(ObjCRuntime.class)

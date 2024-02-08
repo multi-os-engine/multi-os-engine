@@ -215,4 +215,9 @@ public class NINearbyObject extends NSObject implements NSCopying, NSSecureCodin
     @Selector("verticalDirectionEstimate")
     @NInt
     public native long verticalDirectionEstimate();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -46,9 +46,6 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-/**
- * API-Since: 9.0
- */
 @Generated
 @Library("CoreSpotlight")
 @Runtime(ObjCRuntime.class)
@@ -291,4 +288,9 @@ public class CSSearchableItem extends NSObject implements NSSecureCoding, NSCopy
     @Selector("compareByRank:")
     @NInt
     public native long compareByRank(@NotNull CSSearchableItem other);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

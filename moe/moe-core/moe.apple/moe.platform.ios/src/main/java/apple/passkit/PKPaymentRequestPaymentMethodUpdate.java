@@ -168,4 +168,9 @@ public class PKPaymentRequestPaymentMethodUpdate extends PKPaymentRequestUpdate 
     @Generated
     @Selector("setErrors:")
     public native void setErrors(NSArray<? extends NSError> value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

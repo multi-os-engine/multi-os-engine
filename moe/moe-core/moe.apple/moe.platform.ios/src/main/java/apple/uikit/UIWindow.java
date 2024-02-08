@@ -641,7 +641,7 @@ public class UIWindow extends UIView {
 
     /**
      * This layout guide is designed specifically for full-screen media content, and attaching constraints from deep in
-     * the window's view heirarchy will raise an exception.
+     * the window's view hierarchy will raise an exception.
      * 
      * This guide provides a layout area for placing media content of a given aspect ratio (width over height) such that
      * the content will be completely visible within the window.
@@ -651,12 +651,12 @@ public class UIWindow extends UIView {
      * area. The rect defined by this guide will be centered within the
      * window.
      * 
-     * This layout guide should only be used for fixed aspect ratio content that is indended to fill the window (such as
+     * This layout guide should only be used for fixed aspect ratio content that is intended to fill the window (such as
      * image or video content) and is not a replacement for the
      * standard `safeAreaLayoutGuide` on each UIView which should be used for most content layout. The
      * `safeAreaAspectFitLayoutGuide` should only be used with views
      * that are direct subviews of, or very close descendants of, the guide's window. Creating constraints from this
-     * layout guide to views deeper in the view heirarchy or across
+     * layout guide to views deeper in the view hierarchy or across
      * views owned by child view controllers can significantly degrade performance and possibly raise an exception.
      * Additionally, the safe area insets added by child view
      * controllers will not be reflected in these cases. For anything other than full-screen/window media content, the
@@ -668,4 +668,16 @@ public class UIWindow extends UIView {
     @Generated
     @Selector("safeAreaAspectFitLayoutGuide")
     public native UILayoutGuide safeAreaAspectFitLayoutGuide();
+
+    @Generated
+    @Selector("animateWithSpringDuration:bounce:initialSpringVelocity:delay:options:animations:completion:")
+    public static native void animateWithSpringDurationBounceInitialSpringVelocityDelayOptionsAnimationsCompletion(
+            double duration, @NFloat double bounce, @NFloat double velocity, double delay, @NUInt long options,
+            @ObjCBlock(name = "call_animateWithSpringDurationBounceInitialSpringVelocityDelayOptionsAnimationsCompletion_5") @NotNull UIView.Block_animateWithSpringDurationBounceInitialSpringVelocityDelayOptionsAnimationsCompletion_5 animations,
+            @ObjCBlock(name = "call_animateWithSpringDurationBounceInitialSpringVelocityDelayOptionsAnimationsCompletion_6") @Nullable UIView.Block_animateWithSpringDurationBounceInitialSpringVelocityDelayOptionsAnimationsCompletion_6 completion);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

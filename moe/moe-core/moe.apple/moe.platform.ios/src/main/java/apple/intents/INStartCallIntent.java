@@ -228,4 +228,9 @@ public class INStartCallIntent extends INIntent implements UNNotificationContent
             @Nullable INCallRecordFilter callRecordFilter, @Nullable INCallRecord callRecordToCallBack,
             @NInt long audioRoute, @NInt long destinationType, @Nullable NSArray<? extends INPerson> contacts,
             @NInt long callCapability);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

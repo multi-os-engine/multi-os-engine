@@ -46,9 +46,6 @@ import apple.uniformtypeidentifiers.UTType;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-/**
- * API-Since: 9.0
- */
 @Generated
 @Library("CoreSpotlight")
 @Runtime(ObjCRuntime.class)
@@ -342,4 +339,9 @@ public class CSSearchableIndex extends NSObject {
         void call_fetchDataForBundleIdentifierItemIdentifierContentTypeCompletionHandler(@Nullable NSData arg0,
                 @Nullable NSError arg1);
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

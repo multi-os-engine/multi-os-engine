@@ -30,7 +30,10 @@ import org.jetbrains.annotations.Nullable;
  * A YOLO loss layer
  * 
  * API-Since: 14.0
+ * Deprecated-Since: 100000.0
+ * Deprecated-Message: Use Metal Performance Shaders Graph or BNNS instead.
  */
+@Deprecated
 @Generated
 @Library("MLCompute")
 @Runtime(ObjCRuntime.class)
@@ -281,4 +284,9 @@ public class MLCYOLOLossLayer extends MLCLossLayer {
     @Generated
     @Selector("yoloLossDescriptor")
     public native MLCYOLOLossDescriptor yoloLossDescriptor();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

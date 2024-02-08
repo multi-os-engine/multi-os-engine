@@ -210,4 +210,9 @@ public class NSMachPort extends NSPort {
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) Object anObject);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

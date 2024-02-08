@@ -270,4 +270,9 @@ public class NSCachedURLResponse extends NSObject implements NSSecureCoding, NSC
     @Generated
     @Selector("userInfo")
     public native NSDictionary<?, ?> userInfo();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -42,8 +42,6 @@ import org.jetbrains.annotations.Nullable;
 
 /**
  * Perlin noise is useful for creating natural-looking textures and realistic-looking terrain.
- * 
- * API-Since: 10.0
  */
 @Generated
 @Library("GameplayKit")
@@ -180,4 +178,9 @@ public class GKPerlinNoiseSource extends GKCoherentNoiseSource {
     @Generated
     @Selector("setPersistence:")
     public native void setPersistence(double value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -193,4 +193,9 @@ public class UIIndirectScribbleInteraction extends NSObject implements UIInterac
     @Generated
     @Selector("willMoveToView:")
     public native void willMoveToView(@Nullable UIView view);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

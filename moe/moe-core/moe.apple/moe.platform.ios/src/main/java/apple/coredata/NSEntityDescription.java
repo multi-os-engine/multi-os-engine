@@ -486,4 +486,9 @@ public class NSEntityDescription extends NSObject implements NSCoding, NSCopying
     @Generated
     @Selector("setIndexes:")
     public native void setIndexes(@NotNull NSArray<? extends NSFetchIndexDescription> value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

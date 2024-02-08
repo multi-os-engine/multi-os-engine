@@ -187,4 +187,9 @@ public class HMAccessoryProfile extends NSObject {
     @Generated
     @Selector("uniqueIdentifier")
     public native NSUUID uniqueIdentifier();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

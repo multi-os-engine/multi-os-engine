@@ -706,4 +706,57 @@ public class NSAttributedString extends NSObject implements NSCopying, NSMutable
     @Selector("localizedAttributedStringWithFormat:options:")
     public static native NSAttributedString localizedAttributedStringWithFormatOptions(
             @NotNull NSAttributedString format, @NUInt long options, Object... varargs);
+
+    /**
+     * Formats the string using the specified locale (or the canonical one, if nil).
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Variadic()
+    @Selector("initWithFormat:options:locale:context:")
+    public native NSAttributedString initWithFormatOptionsLocaleContext(@NotNull NSAttributedString format,
+            @NUInt long options, @Nullable NSLocale locale, @NotNull NSDictionary<String, ?> context,
+            Object... varargs);
+
+    /**
+     * Formats the string using the arguments list and the specified locale (or the canonical one, if nil).
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("initWithFormat:options:locale:context:arguments:")
+    public native NSAttributedString initWithFormatOptionsLocaleContextArguments(@NotNull NSAttributedString format,
+            @NUInt long options, @Nullable NSLocale locale, @NotNull NSDictionary<String, ?> context,
+            BytePtr arguments);
+
+    /**
+     * Formats the string using the current locale and default options.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Variadic()
+    @Selector("localizedAttributedStringWithFormat:context:")
+    @NotNull
+    public static native NSAttributedString localizedAttributedStringWithFormatContext(
+            @NotNull NSAttributedString format, @NotNull NSDictionary<String, ?> context, Object... varargs);
+
+    /**
+     * Formats the string using the current locale and the specified options.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Variadic()
+    @Selector("localizedAttributedStringWithFormat:options:context:")
+    @NotNull
+    public static native NSAttributedString localizedAttributedStringWithFormatOptionsContext(
+            @NotNull NSAttributedString format, @NUInt long options, @NotNull NSDictionary<String, ?> context,
+            Object... varargs);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -273,4 +273,9 @@ public class NEFilterFlow extends NSObject implements NSSecureCoding, NSCopying 
     @Generated
     @Selector("identifier")
     public native NSUUID identifier();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

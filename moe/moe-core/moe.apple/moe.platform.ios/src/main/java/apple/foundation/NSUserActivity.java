@@ -816,4 +816,9 @@ public class NSUserActivity extends NSObject implements NSItemProviderReading, N
     @Generated
     @Selector("appClipActivationPayload")
     public native APActivationPayload appClipActivationPayload();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -199,4 +199,9 @@ public class HKFitzpatrickSkinTypeObject extends NSObject implements NSCopying, 
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -208,4 +208,9 @@ public class EAAccessoryManager extends NSObject {
         @Generated
         void call_showBluetoothAccessoryPickerWithNameFilterCompletion(@Nullable NSError error);
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

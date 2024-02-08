@@ -47,16 +47,8 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
- * CKShare
- * 
- * Like CKRecords, CKShares can store arbitrary key-value pairs. They are modified and fetched in the same manner.
- * A share, its root record, and its root record's children records will only appear in a participant's
- * CKFetchRecordChangesOperation's results after the share has been accepted by that participant.
- * Clients have access to the share (and optionally the root record) before accepting a share, via the CKShareMetadata
- * object. Note that in order to access a root record before accepting a share, you must run a
- * CKFetchShareMetadataOperation requesting the root record.
- * A CKShare will appear in a CKFetchRecordChangesOperation's results set whenever the participant list is updated. For
- * that reason, you shouldn't place heavy key-value pairs in it.
+ * This class should not be subclassed. If it is, Sendable may no longer apply.
+ * NS_SWIFT_SENDABLE on macos(14.0), ios(17.0), tvos(17.0), watchos(10.0)
  * 
  * API-Since: 10.0
  */
@@ -335,4 +327,9 @@ public class CKShare extends CKRecord implements NSSecureCoding, NSCopying {
     @Generated
     @Selector("initWithRecordZoneID:")
     public native CKShare initWithRecordZoneID(@NotNull CKRecordZoneID recordZoneID);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

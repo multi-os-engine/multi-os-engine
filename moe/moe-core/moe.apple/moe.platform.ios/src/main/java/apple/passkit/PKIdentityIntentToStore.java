@@ -182,4 +182,9 @@ public class PKIdentityIntentToStore extends NSObject implements NSCopying {
     @Generated
     @Selector("willNotStoreIntent")
     public static native PKIdentityIntentToStore willNotStoreIntent();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -47,8 +47,6 @@ import org.jetbrains.annotations.Nullable;
 /**
  * A component system is a homogeneous collection of components that are intended to be called at the same time.
  * The system is homogeneous, meaning it only allows members of the same class into the system.
- * 
- * API-Since: 9.0
  */
 @Generated
 @Library("GameplayKit")
@@ -269,4 +267,9 @@ public class GKComponentSystem<_ComponentType> extends NSObject implements NSFas
     @Generated
     @Selector("updateWithDeltaTime:")
     public native void updateWithDeltaTime(double seconds);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -189,4 +189,9 @@ public class MDLSkeleton extends MDLObject implements NSCopying {
     @Generated
     @Selector("jointRestTransforms")
     public native MDLMatrix4x4Array jointRestTransforms();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

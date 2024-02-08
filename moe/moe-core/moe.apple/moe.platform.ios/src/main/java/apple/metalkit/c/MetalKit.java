@@ -406,4 +406,19 @@ public final class MetalKit {
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MTKModelErrorKey();
+
+    /**
+     * [@constant] MTKTextureLoaderOptionLoadAsArray
+     * 
+     * Identifier specifying that the texture should be loaded as an array texture when possible.
+     * 
+     * Type is an NSNumber with a boolean value.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String MTKTextureLoaderOptionLoadAsArray();
 }

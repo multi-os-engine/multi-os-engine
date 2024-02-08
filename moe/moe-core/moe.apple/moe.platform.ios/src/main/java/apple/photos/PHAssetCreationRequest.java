@@ -225,4 +225,9 @@ public class PHAssetCreationRequest extends PHAssetChangeRequest {
     @Generated
     @Selector("init")
     public native PHAssetCreationRequest init();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

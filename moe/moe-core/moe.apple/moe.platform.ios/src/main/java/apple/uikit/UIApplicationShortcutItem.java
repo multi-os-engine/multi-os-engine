@@ -233,4 +233,9 @@ public class UIApplicationShortcutItem extends NSObject implements NSCopying, NS
     @Selector("targetContentIdentifier")
     @MappedReturn(ObjCObjectMapper.class)
     public native Object targetContentIdentifier();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

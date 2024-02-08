@@ -128,13 +128,16 @@ public final class NSFileProviderErrorCode {
      * 
      * This is returned by NSFileProviderManager if a barrier failed for a sync-related error.
      * 
-     * If the failure is caused by a specific item, the NSFileProviderErrorItemKey will be set to the corresponding item
-     * identifier
+     * If the failure is caused by a specific item, the system will set the NSFileProviderErrorItemKey to the
+     * corresponding item identifier
      * and the NSUnderlyingErrorKey will be set to the error encountered by that item.
      * 
-     * When a provider returns that error, it means the syncing an item is definitively broken, and cannot be resolved
-     * without an update of
-     * either the provider or the system.
+     * When a provider returns this error on createItem or updateItem, it means that syncing that item is definitively
+     * broken.
+     * The system will not retry syncing those items, until either:
+     * * The operating system has been updated.
+     * * The FileProvider extension has been updated.
+     * * The item is modified on disk.
      * 
      * API-Since: 16.0
      */

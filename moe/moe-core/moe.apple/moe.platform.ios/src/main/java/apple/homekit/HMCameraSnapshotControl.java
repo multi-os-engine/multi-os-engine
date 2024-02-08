@@ -211,4 +211,9 @@ public class HMCameraSnapshotControl extends HMCameraControl {
     @Generated
     @Selector("takeSnapshot")
     public native void takeSnapshot();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

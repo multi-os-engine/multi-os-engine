@@ -274,4 +274,9 @@ public class MTLArgument extends NSObject {
     @Generated
     @Selector("bufferPointerType")
     public native MTLPointerType bufferPointerType();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

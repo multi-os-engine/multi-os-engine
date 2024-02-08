@@ -288,4 +288,29 @@ public class PTChannelManager extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * The default channel behavior is to map supported accessory button events to begin/end transmission actions. If
+     * your application does not wish to map these button events to transmission actions you can disable them by setting
+     * the enabled value to false.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("setAccessoryButtonEventsEnabled:forChannelUUID:completionHandler:")
+    public native void setAccessoryButtonEventsEnabledForChannelUUIDCompletionHandler(boolean enabled,
+            @NotNull NSUUID channelUUID,
+            @ObjCBlock(name = "call_setAccessoryButtonEventsEnabledForChannelUUIDCompletionHandler") @Nullable Block_setAccessoryButtonEventsEnabledForChannelUUIDCompletionHandler completionHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_setAccessoryButtonEventsEnabledForChannelUUIDCompletionHandler {
+        @Generated
+        void call_setAccessoryButtonEventsEnabledForChannelUUIDCompletionHandler(@Nullable NSError arg0);
+    }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -201,4 +201,9 @@ public class MTLRenderPassDepthAttachmentDescriptor extends MTLRenderPassAttachm
     @Generated
     @Selector("setDepthResolveFilter:")
     public native void setDepthResolveFilter(@NUInt long value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

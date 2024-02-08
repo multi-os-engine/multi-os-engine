@@ -319,4 +319,9 @@ public class CPBarButton extends NSObject implements NSSecureCoding {
     @Generated
     @Selector("setButtonStyle:")
     public native void setButtonStyle(@NInt long value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

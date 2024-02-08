@@ -265,4 +265,43 @@ public class MXMetaData extends NSObject implements NSSecureCoding {
     @Generated
     @Selector("platformArchitecture")
     public native String platformArchitecture();
+
+    /**
+     * [@property] isTestFlightApp
+     * 
+     * A boolean representing if the app is registered as a testFlightApp
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("isTestFlightApp")
+    public native boolean isTestFlightApp();
+
+    /**
+     * [@property] lowPowerModeEnabled
+     * 
+     * A boolean representing low power mode enablement on device
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("lowPowerModeEnabled")
+    public native boolean lowPowerModeEnabled();
+
+    /**
+     * [@property] pid
+     * 
+     * pid of the process
+     * [@note] A value of -1 indicates that the PID was unavailable for the containing payload.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("pid")
+    public native int pid();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

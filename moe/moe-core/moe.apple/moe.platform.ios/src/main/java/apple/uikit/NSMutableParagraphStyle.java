@@ -411,4 +411,9 @@ public class NSMutableParagraphStyle extends NSParagraphStyle {
     @Generated
     @Selector("textLists")
     public native NSArray<? extends NSTextList> textLists();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

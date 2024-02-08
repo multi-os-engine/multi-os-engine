@@ -48,9 +48,6 @@ import apple.corefoundation.struct.CGSize;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-/**
- * API-Since: 7.0
- */
 @Generated
 @Library("MapKit")
 @Runtime(ObjCRuntime.class)
@@ -186,6 +183,12 @@ public class MKMapSnapshotOptions extends NSObject implements NSCopying {
     @ByValue
     public native MKMapRect mapRect();
 
+    /**
+     * API-Since: 7.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Use preferredConfiguration
+     */
+    @Deprecated
     @Generated
     @Selector("mapType")
     @NUInt
@@ -217,6 +220,12 @@ public class MKMapSnapshotOptions extends NSObject implements NSCopying {
     @Selector("setMapRect:")
     public native void setMapRect(@ByValue MKMapRect value);
 
+    /**
+     * API-Since: 7.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Use preferredConfiguration
+     */
+    @Deprecated
     @Generated
     @Selector("setMapType:")
     public native void setMapType(@NUInt long value);
@@ -239,17 +248,20 @@ public class MKMapSnapshotOptions extends NSObject implements NSCopying {
 
     /**
      * Affects MKMapTypeStandard
+     * 
+     * API-Since: 7.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: No longer supported.
      */
+    @Deprecated
     @Generated
     @Selector("setShowsBuildings:")
     public native void setShowsBuildings(boolean value);
 
     /**
-     * Affects MKMapTypeStandard and MKMapTypeHybrid
-     * 
      * API-Since: 7.0
      * Deprecated-Since: 13.0
-     * Deprecated-Message: Use pointOfInterestFilter
+     * Deprecated-Message: Use preferredConfiguration
      */
     @Deprecated
     @Generated
@@ -262,17 +274,20 @@ public class MKMapSnapshotOptions extends NSObject implements NSCopying {
 
     /**
      * Affects MKMapTypeStandard
+     * 
+     * API-Since: 7.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: No longer supported.
      */
+    @Deprecated
     @Generated
     @Selector("showsBuildings")
     public native boolean showsBuildings();
 
     /**
-     * Affects MKMapTypeStandard and MKMapTypeHybrid
-     * 
      * API-Since: 7.0
      * Deprecated-Since: 13.0
-     * Deprecated-Message: Use pointOfInterestFilter
+     * Deprecated-Message: Use preferredConfiguration
      */
     @Deprecated
     @Generated
@@ -286,7 +301,10 @@ public class MKMapSnapshotOptions extends NSObject implements NSCopying {
 
     /**
      * API-Since: 13.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Use preferredConfiguration
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("pointOfInterestFilter")
@@ -294,7 +312,10 @@ public class MKMapSnapshotOptions extends NSObject implements NSCopying {
 
     /**
      * API-Since: 13.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Use preferredConfiguration
      */
+    @Deprecated
     @Generated
     @Selector("setPointOfInterestFilter:")
     public native void setPointOfInterestFilter(@Nullable MKPointOfInterestFilter value);
@@ -313,4 +334,24 @@ public class MKMapSnapshotOptions extends NSObject implements NSCopying {
     @Generated
     @Selector("traitCollection")
     public native UITraitCollection traitCollection();
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("preferredConfiguration")
+    @NotNull
+    public native MKMapConfiguration preferredConfiguration();
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("setPreferredConfiguration:")
+    public native void setPreferredConfiguration(@NotNull MKMapConfiguration value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

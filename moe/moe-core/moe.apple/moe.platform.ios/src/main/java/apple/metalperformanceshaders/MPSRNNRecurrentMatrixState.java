@@ -224,4 +224,9 @@ public class MPSRNNRecurrentMatrixState extends MPSState {
     @Selector("temporaryStateWithCommandBuffer:textureDescriptor:")
     public static native MPSRNNRecurrentMatrixState temporaryStateWithCommandBufferTextureDescriptor(
             @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer cmdBuf, @NotNull MTLTextureDescriptor descriptor);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

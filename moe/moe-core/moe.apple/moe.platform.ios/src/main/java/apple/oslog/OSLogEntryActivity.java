@@ -198,4 +198,9 @@ public class OSLogEntryActivity extends OSLogEntry implements OSLogEntryFromProc
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

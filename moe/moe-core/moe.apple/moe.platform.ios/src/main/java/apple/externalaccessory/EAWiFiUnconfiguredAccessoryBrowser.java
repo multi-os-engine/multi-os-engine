@@ -43,6 +43,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.opaque.dispatch_queue_t;
 
 /**
  * Interface for browsing unconfigured accessories
@@ -51,9 +52,6 @@ import org.jetbrains.annotations.Nullable;
  * This browser enables the application to scan for unconfigured accessories,
  * connect them to the user's Wi-Fi infrastructure and configure attributes of
  * the accessory.
- * 
- * 
- * API-Since: 8.0
  */
 @Generated
 @Library("ExternalAccessory")
@@ -225,7 +223,7 @@ public class EAWiFiUnconfiguredAccessoryBrowser extends NSObject {
     @Selector("initWithDelegate:queue:")
     public native EAWiFiUnconfiguredAccessoryBrowser initWithDelegateQueue(
             @Nullable @Mapped(ObjCObjectMapper.class) EAWiFiUnconfiguredAccessoryBrowserDelegate delegate,
-            @Nullable NSObject queue);
+            @Nullable dispatch_queue_t queue);
 
     /**
      * [@property] delegate
@@ -292,4 +290,9 @@ public class EAWiFiUnconfiguredAccessoryBrowser extends NSObject {
     @Generated
     @Selector("unconfiguredAccessories")
     public native NSSet<? extends EAWiFiUnconfiguredAccessory> unconfiguredAccessories();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

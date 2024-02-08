@@ -192,4 +192,9 @@ public class ARFaceAnchor extends ARAnchor implements ARTrackable {
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

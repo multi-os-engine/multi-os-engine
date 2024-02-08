@@ -350,4 +350,9 @@ public class GLKBaseEffect extends NSObject implements GLKNamedEffect {
     @Generated
     @Selector("useConstantColor")
     public native byte useConstantColor();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

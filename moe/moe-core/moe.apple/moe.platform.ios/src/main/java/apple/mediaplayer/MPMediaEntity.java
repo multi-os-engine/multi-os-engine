@@ -243,4 +243,9 @@ public class MPMediaEntity extends NSObject implements NSSecureCoding {
         void call_enumerateValuesForPropertiesUsingBlock(@NotNull String property,
                 @NotNull @Mapped(ObjCObjectMapper.class) Object value, @NotNull BoolPtr stop);
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

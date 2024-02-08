@@ -495,4 +495,9 @@ public class MPSRNNMatrixInferenceLayer extends MPSKernel {
             @NotNull NSArray<? extends MPSMatrix> destinationMatrices, @Nullable NUIntPtr destinationOffsets,
             @Nullable MPSRNNRecurrentMatrixState recurrentInputState,
             @Nullable NSMutableArray<MPSRNNRecurrentMatrixState> recurrentOutputStates);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

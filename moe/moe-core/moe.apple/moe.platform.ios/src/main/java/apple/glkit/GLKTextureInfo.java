@@ -214,4 +214,9 @@ public class GLKTextureInfo extends NSObject implements NSCopying {
     @Generated
     @Selector("width")
     public native int width();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

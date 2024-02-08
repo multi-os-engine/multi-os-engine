@@ -46,9 +46,6 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-/**
- * API-Since: 6.0
- */
 @Generated
 @Library("GameKit")
 @Runtime(ObjCRuntime.class)
@@ -203,8 +200,6 @@ public class GKGameCenterViewController extends UINavigationController {
     /**
      * API-Since: 4.1
      * Deprecated-Since: 7.0
-     * Deprecated-Message: GKGameCenterViewController's leaderboardCategory property is deprecated. Use
-     * -initWithLeaderboard: instead
      */
     @Nullable
     @Generated
@@ -215,7 +210,6 @@ public class GKGameCenterViewController extends UINavigationController {
     /**
      * API-Since: 7.0
      * Deprecated-Since: 14.0
-     * Deprecated-Message: Use -initWithLeaderboard: instead
      */
     @Nullable
     @Deprecated
@@ -226,7 +220,6 @@ public class GKGameCenterViewController extends UINavigationController {
     /**
      * API-Since: 4.1
      * Deprecated-Since: 14.0
-     * Deprecated-Message: Use -initWithLeaderboard: instead
      */
     @Deprecated
     @Generated
@@ -254,8 +247,6 @@ public class GKGameCenterViewController extends UINavigationController {
     /**
      * API-Since: 4.1
      * Deprecated-Since: 7.0
-     * Deprecated-Message: GKGameCenterViewController's leaderboardCategory property is deprecated. Use
-     * -initWithLeaderboard: instead
      */
     @Generated
     @Deprecated
@@ -265,7 +256,6 @@ public class GKGameCenterViewController extends UINavigationController {
     /**
      * API-Since: 7.0
      * Deprecated-Since: 14.0
-     * Deprecated-Message: Use -initWithLeaderboard: instead
      */
     @Deprecated
     @Generated
@@ -275,7 +265,6 @@ public class GKGameCenterViewController extends UINavigationController {
     /**
      * API-Since: 4.1
      * Deprecated-Since: 14.0
-     * Deprecated-Message: Use -initWithLeaderboard: instead
      */
     @Deprecated
     @Generated
@@ -285,7 +274,6 @@ public class GKGameCenterViewController extends UINavigationController {
     /**
      * API-Since: 6.0
      * Deprecated-Since: 14.0
-     * Deprecated-Message: Use -initWithState: instead
      */
     @Deprecated
     @Generated
@@ -295,7 +283,6 @@ public class GKGameCenterViewController extends UINavigationController {
     /**
      * API-Since: 6.0
      * Deprecated-Since: 14.0
-     * Deprecated-Message: Use -initWithState: instead
      */
     @Deprecated
     @Generated
@@ -345,4 +332,9 @@ public class GKGameCenterViewController extends UINavigationController {
     @Generated
     @Selector("initWithState:")
     public native GKGameCenterViewController initWithState(@NInt long state);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

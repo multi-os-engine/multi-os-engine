@@ -347,4 +347,9 @@ public class NSHTTPCookieStorage extends NSObject {
         @Generated
         void call_getCookiesForTaskCompletionHandler(@Nullable NSArray<? extends NSHTTPCookie> cookies);
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

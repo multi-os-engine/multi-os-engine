@@ -656,4 +656,9 @@ public class AVCaptureVideoPreviewLayer extends CALayer {
     @Generated
     @Selector("isPreviewing")
     public native boolean isPreviewing();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

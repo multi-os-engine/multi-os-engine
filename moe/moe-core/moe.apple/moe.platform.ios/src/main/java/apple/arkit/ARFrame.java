@@ -429,4 +429,9 @@ public class ARFrame extends NSObject implements NSCopying {
     @Generated
     @Selector("exifData")
     public native NSDictionary<String, ?> exifData();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

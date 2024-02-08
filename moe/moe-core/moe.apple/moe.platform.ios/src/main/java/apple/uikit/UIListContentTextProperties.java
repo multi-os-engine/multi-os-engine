@@ -378,4 +378,9 @@ public class UIListContentTextProperties extends NSObject implements NSCopying, 
     @Generated
     @Selector("showsExpansionTextWhenTruncated")
     public native boolean showsExpansionTextWhenTruncated();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -9,13 +9,19 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.jetbrains.annotations.Nullable;
 
+/**
+ * A protocol that provides media setup display information to the system.
+ */
 @Generated
 @Library("MediaSetup")
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("MSAuthenticationPresentationContext")
 public interface MSAuthenticationPresentationContext {
     /**
-     * The anchor to present the interface in
+     * A window that presents the system’s HomePod configuration view to the user.
+     * 
+     * - Returns: The interface element in your app that the system uses to display
+     * HomePod configuration information.
      */
     @Nullable
     @Generated

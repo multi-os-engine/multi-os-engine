@@ -44,8 +44,6 @@ import org.jetbrains.annotations.Nullable;
  * An R-tree is a data structure that partitions axis aligned bounding rectangles into groups spatially.
  * When a group goes to large, it is split according to its split strategy into two new groups.
  * Fast queries can be made on these partition bounding rectangles.
- * 
- * API-Since: 10.0
  */
 @Generated
 @Library("GameplayKit")
@@ -195,4 +193,9 @@ public class GKRTree<_ElementType> extends NSObject {
     @Generated
     @Selector("setQueryReserve:")
     public native void setQueryReserve(@NUInt long value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

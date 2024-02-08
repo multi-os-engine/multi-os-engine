@@ -252,4 +252,9 @@ public class SCNLevelOfDetail extends NSObject implements NSCopying, NSSecureCod
     @Selector("worldSpaceDistance")
     @NFloat
     public native double worldSpaceDistance();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

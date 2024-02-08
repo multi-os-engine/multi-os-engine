@@ -25,6 +25,8 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
+ * This class defines parameters for an MPSGraphVariableOp.
+ * 
  * API-Since: 14.0
  */
 @Generated
@@ -81,9 +83,7 @@ public class MPSGraphVariableOp extends MPSGraphOperation {
     public static native Class classForKeyedUnarchiver();
 
     /**
-     * [@property] dataType
-     * 
-     * dataType of the variable
+     * The dataType of the variable.
      */
     @Generated
     @Selector("dataType")
@@ -153,4 +153,9 @@ public class MPSGraphVariableOp extends MPSGraphOperation {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

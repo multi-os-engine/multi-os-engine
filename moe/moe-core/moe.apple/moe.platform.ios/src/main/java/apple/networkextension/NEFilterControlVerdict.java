@@ -278,4 +278,9 @@ public class NEFilterControlVerdict extends NEFilterNewFlowVerdict implements NS
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

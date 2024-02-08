@@ -386,4 +386,9 @@ public class INRideOption extends NSObject implements NSCopying, NSSecureCoding 
     @Generated
     @Selector("usesMeteredFare")
     public native NSNumber usesMeteredFare();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

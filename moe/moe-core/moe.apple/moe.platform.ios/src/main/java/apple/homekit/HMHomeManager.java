@@ -304,4 +304,9 @@ public class HMHomeManager extends NSObject {
     @Selector("authorizationStatus")
     @NUInt
     public native long authorizationStatus();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

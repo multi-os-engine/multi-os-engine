@@ -242,4 +242,9 @@ public class UIEvent extends NSObject {
     @Selector("modifierFlags")
     @NInt
     public native long modifierFlags();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

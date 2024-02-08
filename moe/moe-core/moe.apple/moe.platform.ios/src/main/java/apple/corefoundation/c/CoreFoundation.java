@@ -16,7 +16,6 @@ limitations under the License.
 
 package apple.corefoundation.c;
 
-import apple.NSObject;
 import apple.corefoundation.opaque.*;
 import apple.corefoundation.struct.CFAllocatorContext;
 import apple.corefoundation.struct.CFArrayCallBacks;
@@ -75,6 +74,7 @@ import org.moe.natj.general.ptr.VoidPtr;
 import org.moe.natj.objc.ann.ObjCBlock;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.opaque.dispatch_queue_t;
 
 @Generated
 @Library("CoreFoundation")
@@ -1829,25 +1829,6 @@ public final class CoreFoundation {
     @CFunction
     public static native CFNotificationCenterRef CFNotificationCenterGetDarwinNotifyCenter();
 
-    /**
-     * The Darwin Notify Center is based on the <notify.h> API.
-     * For this center, there are limitations in the API. There are no notification "objects",
-     * "userInfo" cannot be passed in the notification, and there are no suspension behaviors
-     * (always "deliver immediately"). Other limitations in the <notify.h> API as described in
-     * that header will also apply.
-     * - In the CFNotificationCallback, the 'object' and 'userInfo' parameters must be ignored.
-     * - CFNotificationCenterAddObserver(): the 'object' and 'suspensionBehavior' arguments are ignored.
-     * - CFNotificationCenterAddObserver(): the 'name' argument may not be NULL (for this center).
-     * - CFNotificationCenterRemoveObserver(): the 'object' argument is ignored.
-     * - CFNotificationCenterPostNotification(): the 'object', 'userInfo', and 'deliverImmediately' arguments are
-     * ignored.
-     * - CFNotificationCenterPostNotificationWithOptions(): the 'object', 'userInfo', and 'options' arguments are
-     * ignored.
-     * The Darwin Notify Center has no notion of per-user sessions, all notifications are system-wide.
-     * As with distributed notifications, the main thread's run loop must be running in one of the
-     * common modes (usually kCFRunLoopDefaultMode) for Darwin-style notifications to be delivered.
-     * NOTE: NULL or 0 should be passed for all ignored arguments to ensure future compatibility.
-     */
     @Generated
     @CFunction
     public static native void CFNotificationCenterAddObserver(CFNotificationCenterRef center, ConstVoidPtr observer,
@@ -3983,9 +3964,10 @@ public final class CoreFoundation {
 
     /**
      * Given a CFURLRef created by resolving a bookmark data created with security scope, make the resource referenced
-     * by the url accessible to the process. When access to this resource is no longer needed the client must call
-     * CFURLStopAccessingSecurityScopedResource(). Each call to CFURLStartAccessingSecurityScopedResource() must be
-     * balanced with a call to CFURLStopAccessingSecurityScopedResource() (Note: this is not reference counted).
+     * by the url accessible to the process. Each call to CFURLStartAccessingSecurityScopedResource that returns true
+     * must be balanced with a call to CFURLStopAccessingSecurityScopedResource when access to this resource is no
+     * longer needed by the client. Calls to start and stop accessing the resource are reference counted and may be
+     * nested, which allows the pair of calls to be logically scoped.
      * 
      * API-Since: 8.0
      */
@@ -3994,7 +3976,8 @@ public final class CoreFoundation {
     public static native byte CFURLStartAccessingSecurityScopedResource(CFURLRef url);
 
     /**
-     * Revokes the access granted to the url by a prior successful call to CFURLStartAccessingSecurityScopedResource().
+     * Removes one "accessing" reference to the security scope. When all references are removed, it revokes the access
+     * granted to the url by the initial prior successful call to CFURLStartAccessingSecurityScopedResource().
      * 
      * API-Since: 8.0
      */
@@ -6016,14 +5999,14 @@ public final class CoreFoundation {
      */
     @Generated
     @CFunction
-    public static native void CFReadStreamSetDispatchQueue(CFReadStreamRef stream, NSObject q);
+    public static native void CFReadStreamSetDispatchQueue(CFReadStreamRef stream, dispatch_queue_t q);
 
     /**
      * API-Since: 7.0
      */
     @Generated
     @CFunction
-    public static native void CFWriteStreamSetDispatchQueue(CFWriteStreamRef stream, NSObject q);
+    public static native void CFWriteStreamSetDispatchQueue(CFWriteStreamRef stream, dispatch_queue_t q);
 
     /**
      * Returns the previously set dispatch queue with an incremented retain count.
@@ -6034,14 +6017,14 @@ public final class CoreFoundation {
      */
     @Generated
     @CFunction
-    public static native NSObject CFReadStreamCopyDispatchQueue(CFReadStreamRef stream);
+    public static native dispatch_queue_t CFReadStreamCopyDispatchQueue(CFReadStreamRef stream);
 
     /**
      * API-Since: 7.0
      */
     @Generated
     @CFunction
-    public static native NSObject CFWriteStreamCopyDispatchQueue(CFWriteStreamRef stream);
+    public static native dispatch_queue_t CFWriteStreamCopyDispatchQueue(CFWriteStreamRef stream);
 
     @Generated
     @CFunction
@@ -7445,7 +7428,7 @@ public final class CoreFoundation {
      */
     @Generated
     @CFunction
-    public static native void CFMessagePortSetDispatchQueue(CFMessagePortRef ms, NSObject queue);
+    public static native void CFMessagePortSetDispatchQueue(CFMessagePortRef ms, dispatch_queue_t queue);
 
     /**
      * ================= Creating PlugIns =================
@@ -11515,7 +11498,10 @@ public final class CoreFoundation {
     public static native CFStringRef kCFStreamPropertyShouldCloseNativeSocket();
 
     /**
-     * The time the resource's attributes were last modified (Read-only, value type CFDate)
+     * The file system's internal inode identifier for the item. This value is not stable for all file systems or across
+     * all mounts, so it should be used sparingly and not persisted. It is useful, for example, to match URLs from the
+     * URL enumerator with paths from FSEvents. (Read-only, value type CFNumber containing a long long which should be
+     * cast to a UInt64).
      * 
      * API-Since: 14.0
      */
@@ -11770,4 +11756,64 @@ public final class CoreFoundation {
     @Generated public static final double __COREFOUNDATION_CFPLUGINCOM__ = 1.0;
     @Generated public static final double SEVERITY_SUCCESS = 0.0;
     @Generated public static final double SEVERITY_ERROR = 1.0;
+
+    /**
+     * The time the resource's attributes were last modified (Read-only, value type CFDate)
+     * 
+     * API-Since: 16.4
+     */
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCFURLFileIdentifierKey();
+
+    /**
+     * The file is stored in an encrypted format on disk and cannot be read from or written to while the device is
+     * locked or booting. Transient data files with this protection type should be excluded from backups using
+     * kCFURLIsExcludedFromBackupKey.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCFURLFileProtectionCompleteWhenUserInactive();
+
+    /**
+     * Returns the count of file system objects contained in the directory. This is a count of objects actually stored
+     * in the file system, so excludes virtual items like "." and "..". The property is useful for quickly identifying
+     * an empty directory for backup and syncing. If the URL is not a directory or the file system cannot cheaply
+     * compute the value, `nil` is returned. (Read-only, value type CFNumber)
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCFURLDirectoryEntryCountKey();
+
+    /**
+     * true if the volume supports data protection for files (see kCFURLFileProtectionKey). (Read-only, value type
+     * CFBoolean)
+     * 
+     * API-Since: 16.4
+     */
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCFURLVolumeTypeNameKey();
+
+    /**
+     * The name of the file system type. (Read-only, value type CFString)
+     * 
+     * API-Since: 16.4
+     */
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCFURLVolumeSubtypeKey();
+
+    /**
+     * The file system subtype value. (Read-only, value type CFNumber)
+     * 
+     * API-Since: 16.4
+     */
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCFURLVolumeMountFromLocationKey();
 }

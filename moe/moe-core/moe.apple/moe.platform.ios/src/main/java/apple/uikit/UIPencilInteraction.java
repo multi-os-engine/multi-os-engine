@@ -199,4 +199,9 @@ public class UIPencilInteraction extends NSObject implements UIInteraction {
     @Generated
     @Selector("prefersPencilOnlyDrawing")
     public static native boolean prefersPencilOnlyDrawing();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

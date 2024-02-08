@@ -240,4 +240,9 @@ public class NSUnitDuration extends NSDimension implements NSSecureCoding {
     @Generated
     @Selector("picoseconds")
     public static native NSUnitDuration picoseconds();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

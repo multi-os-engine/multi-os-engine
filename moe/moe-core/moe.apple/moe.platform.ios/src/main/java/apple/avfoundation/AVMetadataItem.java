@@ -528,4 +528,9 @@ public class AVMetadataItem extends NSObject implements AVAsynchronousKeyValueLo
         void call_metadataItemWithPropertiesOfMetadataItemValueLoadingHandler(
                 @NotNull AVMetadataItemValueRequest valueRequest);
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

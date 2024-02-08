@@ -565,4 +565,9 @@ public class AVCapturePhoto extends NSObject {
     @Selector("semanticSegmentationMatteForType:")
     public native AVSemanticSegmentationMatte semanticSegmentationMatteForType(
             @NotNull String semanticSegmentationMatteType);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

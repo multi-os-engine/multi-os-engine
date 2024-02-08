@@ -174,4 +174,9 @@ public class UILexicon extends NSObject implements NSCopying {
     @Generated
     @Selector("init")
     public native UILexicon init();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

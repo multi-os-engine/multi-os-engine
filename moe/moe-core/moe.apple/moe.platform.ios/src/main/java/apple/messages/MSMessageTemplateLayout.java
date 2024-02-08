@@ -47,8 +47,6 @@ import org.jetbrains.annotations.Nullable;
  * 
  * The MSMessageTemplateLayout encapsulates properties used in the construction of UI
  * representing a message using the default message layout template.
- * 
- * API-Since: 10.0
  */
 @Generated
 @Library("Messages")
@@ -333,4 +331,9 @@ public class MSMessageTemplateLayout extends MSMessageLayout {
     @Generated
     @Selector("trailingSubcaption")
     public native String trailingSubcaption();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

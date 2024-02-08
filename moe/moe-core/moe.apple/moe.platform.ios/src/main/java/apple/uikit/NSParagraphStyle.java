@@ -384,4 +384,9 @@ public class NSParagraphStyle extends NSObject implements NSCopying, NSMutableCo
     @Generated
     @Selector("textLists")
     public native NSArray<? extends NSTextList> textLists();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

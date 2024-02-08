@@ -408,4 +408,9 @@ public class NEVPNManager extends NSObject {
         @Generated
         void call_saveToPreferencesWithCompletionHandler(@Nullable NSError error);
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -268,4 +268,9 @@ public class INObject extends NSObject implements INSpeakable, NSCopying, NSSecu
     @Generated
     @Selector("subtitleString")
     public native String subtitleString();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

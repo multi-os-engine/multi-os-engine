@@ -34,7 +34,10 @@ import org.jetbrains.annotations.Nullable;
  * There is an exception for the case of (N,C,1,1) which gets mapped to (N,C',1,1).
  * 
  * API-Since: 14.0
+ * Deprecated-Since: 100000.0
+ * Deprecated-Message: Use Metal Performance Shaders Graph or BNNS instead.
  */
+@Deprecated
 @Generated
 @Library("MLCompute")
 @Runtime(ObjCRuntime.class)
@@ -219,4 +222,9 @@ public class MLCFullyConnectedLayer extends MLCLayer {
     @Generated
     @Selector("weightsParameter")
     public native MLCTensorParameter weightsParameter();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

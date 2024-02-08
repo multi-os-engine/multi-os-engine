@@ -421,7 +421,9 @@ import org.jetbrains.annotations.Nullable;
  * threads should copy or create their own MPSRayIntersectors.
  * 
  * API-Since: 12.0
+ * Deprecated-Since: 17.0
  */
+@Deprecated
 @Generated
 @Library("MetalPerformanceShaders")
 @Runtime(ObjCRuntime.class)
@@ -616,7 +618,9 @@ public class MPSRayIntersector extends MPSKernel implements NSSecureCoding, NSCo
      * @param accelerationStructure    Acceleration structure to test against
      * 
      *                                 API-Since: 13.0
+     *                                 Deprecated-Since: 17.0
      */
+    @Deprecated
     @Generated
     @Selector("encodeIntersectionToCommandBuffer:intersectionType:rayBuffer:rayBufferOffset:rayIndexBuffer:rayIndexBufferOffset:intersectionBuffer:intersectionBufferOffset:rayIndexCount:accelerationStructure:")
     public native void encodeIntersectionToCommandBufferIntersectionTypeRayBufferRayBufferOffsetRayIndexBufferRayIndexBufferOffsetIntersectionBufferIntersectionBufferOffsetRayIndexCountAccelerationStructure(
@@ -654,7 +658,9 @@ public class MPSRayIntersector extends MPSKernel implements NSSecureCoding, NSCo
      * @param accelerationStructure     Acceleration structure to test against
      * 
      *                                  API-Since: 13.0
+     *                                  Deprecated-Since: 17.0
      */
+    @Deprecated
     @Generated
     @Selector("encodeIntersectionToCommandBuffer:intersectionType:rayBuffer:rayBufferOffset:rayIndexBuffer:rayIndexBufferOffset:intersectionBuffer:intersectionBufferOffset:rayIndexCountBuffer:rayIndexCountBufferOffset:accelerationStructure:")
     public native void encodeIntersectionToCommandBufferIntersectionTypeRayBufferRayBufferOffsetRayIndexBufferRayIndexBufferOffsetIntersectionBufferIntersectionBufferOffsetRayIndexCountBufferRayIndexCountBufferOffsetAccelerationStructure(
@@ -721,7 +727,9 @@ public class MPSRayIntersector extends MPSKernel implements NSSecureCoding, NSCo
      * @param accelerationStructure Acceleration structure to test against
      * 
      *                              API-Since: 13.0
+     *                              Deprecated-Since: 17.0
      */
+    @Deprecated
     @Generated
     @Selector("encodeIntersectionToCommandBuffer:intersectionType:rayTexture:intersectionTexture:accelerationStructure:")
     public native void encodeIntersectionToCommandBufferIntersectionTypeRayTextureIntersectionTextureAccelerationStructure(
@@ -839,7 +847,9 @@ public class MPSRayIntersector extends MPSKernel implements NSSecureCoding, NSCo
      * MPSDataTypeUInt32 are supported.
      * 
      * API-Since: 13.0
+     * Deprecated-Since: 17.0
      */
+    @Deprecated
     @Generated
     @Selector("rayIndexDataType")
     public native int rayIndexDataType();
@@ -849,7 +859,9 @@ public class MPSRayIntersector extends MPSKernel implements NSSecureCoding, NSCo
      * per-ray mask if the ray data type contains a mask.
      * 
      * API-Since: 13.0
+     * Deprecated-Since: 17.0
      */
+    @Deprecated
     @Generated
     @Selector("rayMask")
     public native int rayMask();
@@ -859,7 +871,9 @@ public class MPSRayIntersector extends MPSKernel implements NSSecureCoding, NSCo
      * primitive or instance. Defaults to MPSRayMaskOperatorAnd.
      * 
      * API-Since: 13.0
+     * Deprecated-Since: 17.0
      */
+    @Deprecated
     @Generated
     @Selector("rayMaskOperator")
     @NUInt
@@ -1000,7 +1014,9 @@ public class MPSRayIntersector extends MPSKernel implements NSSecureCoding, NSCo
      * MPSDataTypeUInt32 are supported.
      * 
      * API-Since: 13.0
+     * Deprecated-Since: 17.0
      */
+    @Deprecated
     @Generated
     @Selector("setRayIndexDataType:")
     public native void setRayIndexDataType(int value);
@@ -1010,7 +1026,9 @@ public class MPSRayIntersector extends MPSKernel implements NSSecureCoding, NSCo
      * per-ray mask if the ray data type contains a mask.
      * 
      * API-Since: 13.0
+     * Deprecated-Since: 17.0
      */
+    @Deprecated
     @Generated
     @Selector("setRayMask:")
     public native void setRayMask(int value);
@@ -1020,7 +1038,9 @@ public class MPSRayIntersector extends MPSKernel implements NSSecureCoding, NSCo
      * primitive or instance. Defaults to MPSRayMaskOperatorAnd.
      * 
      * API-Since: 13.0
+     * Deprecated-Since: 17.0
      */
+    @Deprecated
     @Generated
     @Selector("setRayMaskOperator:")
     public native void setRayMaskOperator(@NUInt long value);
@@ -1099,4 +1119,9 @@ public class MPSRayIntersector extends MPSKernel implements NSSecureCoding, NSCo
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

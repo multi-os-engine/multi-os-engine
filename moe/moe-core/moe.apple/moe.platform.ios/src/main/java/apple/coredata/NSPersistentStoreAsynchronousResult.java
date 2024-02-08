@@ -181,4 +181,9 @@ public class NSPersistentStoreAsynchronousResult extends NSPersistentStoreResult
     @Generated
     @Selector("progress")
     public native NSProgress progress();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

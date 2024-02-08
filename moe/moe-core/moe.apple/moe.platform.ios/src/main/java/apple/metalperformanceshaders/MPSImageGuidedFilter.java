@@ -417,4 +417,9 @@ public class MPSImageGuidedFilter extends MPSKernel {
             @Nullable @Mapped(ObjCObjectMapper.class) MTLTexture weightsTexture,
             @NotNull @Mapped(ObjCObjectMapper.class) MTLTexture destinationCoefficientsTextureA,
             @NotNull @Mapped(ObjCObjectMapper.class) MTLTexture destinationCoefficientsTextureB);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -204,4 +204,9 @@ public class INRecurrenceRule extends NSObject implements NSCopying, NSSecureCod
     @Selector("weeklyRecurrenceDays")
     @NUInt
     public native long weeklyRecurrenceDays();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

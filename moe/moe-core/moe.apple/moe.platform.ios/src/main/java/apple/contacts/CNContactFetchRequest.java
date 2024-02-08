@@ -302,4 +302,9 @@ public class CNContactFetchRequest extends CNFetchRequest implements NSSecureCod
     @Generated
     @Selector("unifyResults")
     public native boolean unifyResults();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

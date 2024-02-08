@@ -41,6 +41,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.network.opaque.nw_interface_t;
 
 /**
  * [@interface] NEAppProxyFlow
@@ -250,7 +251,7 @@ public class NEAppProxyFlow extends NSObject {
     @Nullable
     @Generated
     @Selector("networkInterface")
-    public native NSObject networkInterface();
+    public native nw_interface_t networkInterface();
 
     /**
      * [@property] networkInterface
@@ -263,7 +264,7 @@ public class NEAppProxyFlow extends NSObject {
      */
     @Generated
     @Selector("setNetworkInterface:")
-    public native void setNetworkInterface(@Nullable NSObject value);
+    public native void setNetworkInterface(@Nullable nw_interface_t value);
 
     /**
      * [@property] remoteHostname
@@ -290,4 +291,9 @@ public class NEAppProxyFlow extends NSObject {
     @Generated
     @Selector("isBound")
     public native boolean isBound();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

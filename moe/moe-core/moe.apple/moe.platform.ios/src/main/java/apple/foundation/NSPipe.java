@@ -169,4 +169,9 @@ public class NSPipe extends NSObject {
     @Generated
     @Selector("init")
     public native NSPipe init();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

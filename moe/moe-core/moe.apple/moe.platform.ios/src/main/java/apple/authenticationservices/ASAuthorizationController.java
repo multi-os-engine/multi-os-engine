@@ -286,4 +286,9 @@ public class ASAuthorizationController extends NSObject {
     @Generated
     @Selector("performRequestsWithOptions:")
     public native void performRequestsWithOptions(@NUInt long options);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

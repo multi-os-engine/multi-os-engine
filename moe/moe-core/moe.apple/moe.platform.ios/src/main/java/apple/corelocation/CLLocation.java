@@ -250,11 +250,6 @@ public class CLLocation extends NSObject implements NSCopying, NSSecureCoding, C
     public native CLFloor floor();
 
     /**
-     * getDistanceFrom:
-     * 
-     * Discussion:
-     * Deprecated. Use -distanceFromLocation: instead.
-     * 
      * API-Since: 2.0
      * Deprecated-Since: 3.2
      */
@@ -434,4 +429,9 @@ public class CLLocation extends NSObject implements NSCopying, NSSecureCoding, C
     @Generated
     @Selector("sourceInformation")
     public native CLLocationSourceInformation sourceInformation();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

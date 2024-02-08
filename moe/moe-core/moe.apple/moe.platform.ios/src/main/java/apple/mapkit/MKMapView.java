@@ -61,9 +61,6 @@ import apple.corefoundation.struct.CGRect;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-/**
- * API-Since: 3.0
- */
 @Generated
 @Library("MapKit")
 @Runtime(ObjCRuntime.class)
@@ -874,8 +871,6 @@ public class MKMapView extends UIView implements NSCoding {
     public native void setShowsCompass(boolean value);
 
     /**
-     * Affects MKMapTypeStandard and MKMapTypeHybrid
-     * 
      * API-Since: 7.0
      * Deprecated-Since: 13.0
      * Deprecated-Message: Use pointOfInterestFilter
@@ -969,8 +964,6 @@ public class MKMapView extends UIView implements NSCoding {
     public native boolean showsCompass();
 
     /**
-     * Affects MKMapTypeStandard and MKMapTypeHybrid
-     * 
      * API-Since: 7.0
      * Deprecated-Since: 13.0
      * Deprecated-Message: Use pointOfInterestFilter
@@ -1170,4 +1163,45 @@ public class MKMapView extends UIView implements NSCoding {
     @Generated
     @Selector("setSelectableMapFeatures:")
     public native void setSelectableMapFeatures(@NInt long value);
+
+    @Generated
+    @Selector("animateWithSpringDuration:bounce:initialSpringVelocity:delay:options:animations:completion:")
+    public static native void animateWithSpringDurationBounceInitialSpringVelocityDelayOptionsAnimationsCompletion(
+            double duration, @NFloat double bounce, @NFloat double velocity, double delay, @NUInt long options,
+            @ObjCBlock(name = "call_animateWithSpringDurationBounceInitialSpringVelocityDelayOptionsAnimationsCompletion_5") @NotNull UIView.Block_animateWithSpringDurationBounceInitialSpringVelocityDelayOptionsAnimationsCompletion_5 animations,
+            @ObjCBlock(name = "call_animateWithSpringDurationBounceInitialSpringVelocityDelayOptionsAnimationsCompletion_6") @Nullable UIView.Block_animateWithSpringDurationBounceInitialSpringVelocityDelayOptionsAnimationsCompletion_6 completion);
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("pitchButtonVisibility")
+    @NInt
+    public native long pitchButtonVisibility();
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("setPitchButtonVisibility:")
+    public native void setPitchButtonVisibility(@NInt long value);
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("setShowsUserTrackingButton:")
+    public native void setShowsUserTrackingButton(boolean value);
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("showsUserTrackingButton")
+    public native boolean showsUserTrackingButton();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -267,4 +267,9 @@ public class MLModelConfiguration extends NSObject implements NSCopying, NSSecur
     @Generated
     @Selector("setModelDisplayName:")
     public native void setModelDisplayName(@Nullable String value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -267,13 +267,13 @@ public class AVCaptureInputPort extends NSObject {
      * particular direction. Examples follow.
      * 
      * To discover the audio port that captures omnidirectional audio, use [microphoneDeviceInput
-     * portsWithMediaType:AVMediaTypeAudio sourceDeviceType:AVCaptureDeviceTypeBuiltInMicrophone
+     * portsWithMediaType:AVMediaTypeAudio sourceDeviceType:AVCaptureDeviceTypeMicrophone
      * sourceDevicePosition:AVCaptureDevicePositionUnspecified].firstObject.
      * To discover the audio port that captures front-facing audio, use [microphoneDeviceInput
-     * portsWithMediaType:AVMediaTypeAudio sourceDeviceType:AVCaptureDeviceTypeBuiltInMicrophone
+     * portsWithMediaType:AVMediaTypeAudio sourceDeviceType:AVCaptureDeviceTypeMicrophone
      * sourceDevicePosition:AVCaptureDevicePositionFront].firstObject.
      * To discover the audio port that captures back-facing audio, use [microphoneDeviceInput
-     * portsWithMediaType:AVMediaTypeAudio sourceDeviceType:AVCaptureDeviceTypeBuiltInMicrophone
+     * portsWithMediaType:AVMediaTypeAudio sourceDeviceType:AVCaptureDeviceTypeMicrophone
      * sourceDevicePosition:AVCaptureDevicePositionBack].firstObject.
      * 
      * API-Since: 13.0
@@ -307,4 +307,9 @@ public class AVCaptureInputPort extends NSObject {
     @Generated
     @Selector("sourceDeviceType")
     public native String sourceDeviceType();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

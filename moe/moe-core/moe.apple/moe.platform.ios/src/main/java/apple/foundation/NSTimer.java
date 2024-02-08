@@ -332,4 +332,9 @@ public class NSTimer extends NSObject {
         @Generated
         void call_timerWithTimeIntervalRepeatsBlock(@NotNull NSTimer timer);
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

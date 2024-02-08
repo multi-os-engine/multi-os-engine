@@ -43,8 +43,6 @@ import org.jetbrains.annotations.Nullable;
 /**
  * API-Since: 5.0
  * Deprecated-Since: 7.0
- * Deprecated-Message: Use registerListener on GKLocalPlayer with an object that implements the GKTurnBasedEventListener
- * protocol
  */
 @Deprecated
 @Generated
@@ -210,4 +208,9 @@ public class GKTurnBasedEventHandler extends NSObject {
             org.moe.natj.objc.ObjCRuntime.dissociateObjCObject(this, __old);
         }
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

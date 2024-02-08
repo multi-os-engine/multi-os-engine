@@ -168,4 +168,9 @@ public class MDLBundleAssetResolver extends NSObject implements MDLAssetResolver
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

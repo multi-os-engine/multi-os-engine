@@ -45,13 +45,10 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
- * CLCircularRegion
- * 
- * Discussion:
- * A circular geographic area.
- * 
  * API-Since: 7.0
+ * Deprecated-Since: 100000.0
  */
+@Deprecated
 @Generated
 @Library("CoreLocation")
 @Runtime(ObjCRuntime.class)
@@ -233,4 +230,9 @@ public class CLCircularRegion extends CLRegion {
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -235,4 +235,9 @@ public class NSPort extends NSObject implements NSCopying, NSCoding {
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) Object anObject);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

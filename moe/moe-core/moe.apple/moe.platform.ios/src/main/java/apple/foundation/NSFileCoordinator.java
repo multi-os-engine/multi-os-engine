@@ -591,4 +591,9 @@ public class NSFileCoordinator extends NSObject {
         void call_prepareForReadingItemsAtURLsOptionsWritingItemsAtURLsOptionsErrorByAccessor(
                 @NotNull @ObjCBlock(name = "call_Block_prepareForReadingItemsAtURLsOptionsWritingItemsAtURLsOptionsErrorByAccessor") Block_Block_prepareForReadingItemsAtURLsOptionsWritingItemsAtURLsOptionsErrorByAccessor completionHandler);
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

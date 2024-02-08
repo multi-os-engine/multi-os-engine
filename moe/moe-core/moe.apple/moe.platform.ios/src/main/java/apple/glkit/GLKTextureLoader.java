@@ -51,6 +51,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.opaque.dispatch_queue_t;
 
 /**
  * API-Since: 5.0
@@ -259,7 +260,7 @@ public class GLKTextureLoader extends NSObject {
     @Generated
     @Selector("cubeMapWithContentsOfFile:options:queue:completionHandler:")
     public native void cubeMapWithContentsOfFileOptionsQueueCompletionHandler(@NotNull String path,
-            @Nullable NSDictionary<String, ? extends NSNumber> options, @Nullable NSObject queue,
+            @Nullable NSDictionary<String, ? extends NSNumber> options, @Nullable dispatch_queue_t queue,
             @NotNull @ObjCBlock(name = "call_cubeMapWithContentsOfFileOptionsQueueCompletionHandler") Block_cubeMapWithContentsOfFileOptionsQueueCompletionHandler block);
 
     /**
@@ -268,7 +269,7 @@ public class GLKTextureLoader extends NSObject {
     @Generated
     @Selector("cubeMapWithContentsOfFiles:options:queue:completionHandler:")
     public native void cubeMapWithContentsOfFilesOptionsQueueCompletionHandler(@NotNull NSArray<?> paths,
-            @Nullable NSDictionary<String, ? extends NSNumber> options, @Nullable NSObject queue,
+            @Nullable NSDictionary<String, ? extends NSNumber> options, @Nullable dispatch_queue_t queue,
             @NotNull @ObjCBlock(name = "call_cubeMapWithContentsOfFilesOptionsQueueCompletionHandler") Block_cubeMapWithContentsOfFilesOptionsQueueCompletionHandler block);
 
     /**
@@ -277,7 +278,7 @@ public class GLKTextureLoader extends NSObject {
     @Generated
     @Selector("cubeMapWithContentsOfURL:options:queue:completionHandler:")
     public native void cubeMapWithContentsOfURLOptionsQueueCompletionHandler(@NotNull NSURL url,
-            @Nullable NSDictionary<String, ? extends NSNumber> options, @Nullable NSObject queue,
+            @Nullable NSDictionary<String, ? extends NSNumber> options, @Nullable dispatch_queue_t queue,
             @NotNull @ObjCBlock(name = "call_cubeMapWithContentsOfURLOptionsQueueCompletionHandler") Block_cubeMapWithContentsOfURLOptionsQueueCompletionHandler block);
 
     @Generated
@@ -294,7 +295,7 @@ public class GLKTextureLoader extends NSObject {
     @Generated
     @Selector("textureWithCGImage:options:queue:completionHandler:")
     public native void textureWithCGImageOptionsQueueCompletionHandler(@NotNull CGImageRef cgImage,
-            @Nullable NSDictionary<String, ? extends NSNumber> options, @Nullable NSObject queue,
+            @Nullable NSDictionary<String, ? extends NSNumber> options, @Nullable dispatch_queue_t queue,
             @NotNull @ObjCBlock(name = "call_textureWithCGImageOptionsQueueCompletionHandler") Block_textureWithCGImageOptionsQueueCompletionHandler block);
 
     /**
@@ -303,7 +304,7 @@ public class GLKTextureLoader extends NSObject {
     @Generated
     @Selector("textureWithContentsOfData:options:queue:completionHandler:")
     public native void textureWithContentsOfDataOptionsQueueCompletionHandler(@NotNull NSData data,
-            @Nullable NSDictionary<String, ? extends NSNumber> options, @Nullable NSObject queue,
+            @Nullable NSDictionary<String, ? extends NSNumber> options, @Nullable dispatch_queue_t queue,
             @NotNull @ObjCBlock(name = "call_textureWithContentsOfDataOptionsQueueCompletionHandler") Block_textureWithContentsOfDataOptionsQueueCompletionHandler block);
 
     /**
@@ -312,7 +313,7 @@ public class GLKTextureLoader extends NSObject {
     @Generated
     @Selector("textureWithContentsOfFile:options:queue:completionHandler:")
     public native void textureWithContentsOfFileOptionsQueueCompletionHandler(@NotNull String path,
-            @Nullable NSDictionary<String, ? extends NSNumber> options, @Nullable NSObject queue,
+            @Nullable NSDictionary<String, ? extends NSNumber> options, @Nullable dispatch_queue_t queue,
             @NotNull @ObjCBlock(name = "call_textureWithContentsOfFileOptionsQueueCompletionHandler") Block_textureWithContentsOfFileOptionsQueueCompletionHandler block);
 
     /**
@@ -321,7 +322,7 @@ public class GLKTextureLoader extends NSObject {
     @Generated
     @Selector("textureWithContentsOfURL:options:queue:completionHandler:")
     public native void textureWithContentsOfURLOptionsQueueCompletionHandler(@NotNull NSURL url,
-            @Nullable NSDictionary<String, ? extends NSNumber> options, @Nullable NSObject queue,
+            @Nullable NSDictionary<String, ? extends NSNumber> options, @Nullable dispatch_queue_t queue,
             @NotNull @ObjCBlock(name = "call_textureWithContentsOfURLOptionsQueueCompletionHandler") Block_textureWithContentsOfURLOptionsQueueCompletionHandler block);
 
     /**
@@ -331,7 +332,7 @@ public class GLKTextureLoader extends NSObject {
     @Selector("textureWithName:scaleFactor:bundle:options:queue:completionHandler:")
     public native void textureWithNameScaleFactorBundleOptionsQueueCompletionHandler(@NotNull String name,
             @NFloat double scaleFactor, @Nullable NSBundle bundle,
-            @Nullable NSDictionary<String, ? extends NSNumber> options, @Nullable NSObject queue,
+            @Nullable NSDictionary<String, ? extends NSNumber> options, @Nullable dispatch_queue_t queue,
             @NotNull @ObjCBlock(name = "call_textureWithNameScaleFactorBundleOptionsQueueCompletionHandler") Block_textureWithNameScaleFactorBundleOptionsQueueCompletionHandler block);
 
     @Runtime(ObjCRuntime.class)
@@ -397,4 +398,9 @@ public class GLKTextureLoader extends NSObject {
         void call_textureWithNameScaleFactorBundleOptionsQueueCompletionHandler(@Nullable GLKTextureInfo textureInfo,
                 @Nullable NSError outError);
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

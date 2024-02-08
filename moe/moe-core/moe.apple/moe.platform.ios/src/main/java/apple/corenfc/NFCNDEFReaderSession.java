@@ -27,6 +27,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.opaque.dispatch_queue_t;
 
 /**
  * NFCNDEFReaderSession
@@ -201,8 +202,8 @@ public class NFCNDEFReaderSession extends NFCReaderSession {
     @Generated
     @Selector("initWithDelegate:queue:invalidateAfterFirstRead:")
     public native NFCNDEFReaderSession initWithDelegateQueueInvalidateAfterFirstRead(
-            @NotNull @Mapped(ObjCObjectMapper.class) NFCNDEFReaderSessionDelegate delegate, @Nullable NSObject queue,
-            boolean invalidateAfterFirstRead);
+            @NotNull @Mapped(ObjCObjectMapper.class) NFCNDEFReaderSessionDelegate delegate,
+            @Nullable dispatch_queue_t queue, boolean invalidateAfterFirstRead);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -274,4 +275,9 @@ public class NFCNDEFReaderSession extends NFCReaderSession {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

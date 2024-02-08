@@ -33,7 +33,10 @@ import org.jetbrains.annotations.Nullable;
  * The order of source tensors of the layer must be condition tensor, tensor x, and tensor y.
  * 
  * API-Since: 14.5
+ * Deprecated-Since: 100000.0
+ * Deprecated-Message: Use Metal Performance Shaders Graph or BNNS instead.
  */
+@Deprecated
 @Generated
 @Library("MLCompute")
 @Runtime(ObjCRuntime.class)
@@ -164,4 +167,9 @@ public class MLCSelectionLayer extends MLCLayer {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

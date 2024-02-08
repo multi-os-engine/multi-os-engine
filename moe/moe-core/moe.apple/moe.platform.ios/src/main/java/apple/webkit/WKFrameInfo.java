@@ -212,4 +212,9 @@ public class WKFrameInfo extends NSObject implements NSCopying {
     @Generated
     @Selector("webView")
     public native WKWebView webView();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

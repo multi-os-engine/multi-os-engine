@@ -742,4 +742,9 @@ public class CAEmitterCell extends NSObject implements NSSecureCoding, CAMediaTi
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

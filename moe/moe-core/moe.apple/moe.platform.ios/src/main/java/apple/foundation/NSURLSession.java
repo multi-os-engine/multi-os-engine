@@ -576,4 +576,53 @@ public class NSURLSession extends NSObject {
     @Selector("webSocketTaskWithURL:protocols:")
     public native NSURLSessionWebSocketTask webSocketTaskWithURLProtocols(@NotNull NSURL url,
             @NotNull NSArray<String> protocols);
+
+    /**
+     * Creates an upload task from a resume data blob. Requires the server to support the latest resumable uploads
+     * Internet-Draft from the HTTP Working Group, found at
+     * https://datatracker.ietf.org/doc/draft-ietf-httpbis-resumable-upload/
+     * If resuming from an upload file, the file must still exist and be unmodified. If the upload cannot be
+     * successfully
+     * resumed, URLSession:task:didCompleteWithError: will be called.
+     * 
+     * - Parameter resumeData: Resume data blob from an incomplete upload, such as data returned by the
+     * cancelByProducingResumeData: method.
+     * - Returns: A new session upload task, or nil if the resumeData is invalid.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("uploadTaskWithResumeData:")
+    @NotNull
+    public native NSURLSessionUploadTask uploadTaskWithResumeData(@NotNull NSData resumeData);
+
+    /**
+     * Creates a URLSessionUploadTask from a resume data blob. If resuming from an upload
+     * file, the file must still exist and be unmodified.
+     * 
+     * - Parameter resumeData: Resume data blob from an incomplete upload, such as data returned by the
+     * cancelByProducingResumeData: method.
+     * - Parameter completionHandler: The completion handler to call when the load request is complete.
+     * - Returns: A new session upload task, or nil if the resumeData is invalid.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("uploadTaskWithResumeData:completionHandler:")
+    @NotNull
+    public native NSURLSessionUploadTask uploadTaskWithResumeDataCompletionHandler(@NotNull NSData resumeData,
+            @ObjCBlock(name = "call_uploadTaskWithResumeDataCompletionHandler") @NotNull Block_uploadTaskWithResumeDataCompletionHandler completionHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_uploadTaskWithResumeDataCompletionHandler {
+        @Generated
+        void call_uploadTaskWithResumeDataCompletionHandler(@Nullable NSData data, @Nullable NSURLResponse response,
+                @Nullable NSError error);
+    }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

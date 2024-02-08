@@ -197,4 +197,9 @@ public class MDLLight extends MDLObject {
     @Generated
     @Selector("setLightType:")
     public native void setLightType(@NUInt long value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

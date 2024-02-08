@@ -231,4 +231,9 @@ public class PKPayment extends NSObject {
     @Generated
     @Selector("token")
     public native PKPaymentToken token();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

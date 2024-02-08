@@ -1178,4 +1178,9 @@ public class NSArray<_ObjectType> extends NSObject implements NSCopying, NSMutab
                 @NotNull @Mapped(ObjCObjectMapper.class) Object obj1,
                 @NotNull @Mapped(ObjCObjectMapper.class) Object obj2);
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -316,4 +316,9 @@ public class GCControllerButtonInput extends GCControllerElement {
         void call_touchedChangedHandler_ret(@NotNull GCControllerButtonInput button, float value, boolean pressed,
                 boolean touched);
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

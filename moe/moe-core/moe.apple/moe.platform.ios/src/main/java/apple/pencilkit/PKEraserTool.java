@@ -23,6 +23,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.moe.natj.general.ann.NFloat;
 
 /**
  * An eraser tool for erasing parts of a drawing.
@@ -158,4 +159,61 @@ public class PKEraserTool extends PKTool {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * The default width for an eraser type.
+     * 
+     * API-Since: 16.4
+     */
+    @Generated
+    @Selector("defaultWidthForEraserType:")
+    @NFloat
+    public static native double defaultWidthForEraserType(@NInt long eraserType);
+
+    /**
+     * Create a new eraser tool with a width.
+     * 
+     * @param eraserType The type of eraser.
+     * @param width      The width of the eraser.
+     * 
+     *                   API-Since: 16.4
+     */
+    @Generated
+    @Selector("initWithEraserType:width:")
+    public native PKEraserTool initWithEraserTypeWidth(@NInt long eraserType, @NFloat double width);
+
+    /**
+     * The maximum width for an eraser type.
+     * 
+     * API-Since: 16.4
+     */
+    @Generated
+    @Selector("maximumWidthForEraserType:")
+    @NFloat
+    public static native double maximumWidthForEraserType(@NInt long eraserType);
+
+    /**
+     * The minimum width for an eraser type.
+     * 
+     * API-Since: 16.4
+     */
+    @Generated
+    @Selector("minimumWidthForEraserType:")
+    @NFloat
+    public static native double minimumWidthForEraserType(@NInt long eraserType);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
+
+    /**
+     * The width of the eraser.
+     * 
+     * API-Since: 16.4
+     */
+    @Generated
+    @Selector("width")
+    @NFloat
+    public native double width();
 }

@@ -256,4 +256,24 @@ public class NEAppPushProvider extends NEProvider {
     @Generated
     @Selector("start")
     public native void start();
+
+    /**
+     * reportPushToTalkMessageWithUserInfo:userinfo:
+     * 
+     * This function is called by the provider when it receives a Push to Talk message on the connection.
+     * 
+     * @param userInfo A dictionary of custom information associated with the Push to Talk message, such as the active
+     *                 remote participant. This dictionary is passed to the PTChannelManagerDelegate of the containing
+     *                 app if the user is joined to a Push to Talk channel.
+     * 
+     *                 API-Since: 16.4
+     */
+    @Generated
+    @Selector("reportPushToTalkMessageWithUserInfo:")
+    public native void reportPushToTalkMessageWithUserInfo(@NotNull NSDictionary<?, ?> userInfo);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

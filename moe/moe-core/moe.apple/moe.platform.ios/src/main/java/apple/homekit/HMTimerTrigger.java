@@ -186,32 +186,10 @@ public class HMTimerTrigger extends HMTrigger {
     public native HMTimerTrigger init();
 
     /**
-     * Initialize a new HMTimerTrigger object.
-     * 
-     * Validity checks are performed when the trigger is added to the home and the NSError in
-     * the completion block for addTrigger: method indicates the reason for the failure:
-     * HMErrorCodeDateMustBeOnSpecifiedBoundaries is returned if the seconds/nanoseconds fields
-     * in recurrence interval or seconds field in fireDate have a value other than 0.
-     * HMErrorCodeRecurrenceTooSmall is returned if recurrence interval is less than 5 minutes.
-     * HMErrorCodeRecurrenceTooLarge is returned if recurrence interval is greater than 5 weeks.
-     * HMErrorCodeFireDateInPast is returned if recurrence is nil and fireDate is in the past.
-     * 
-     * @param name               Name for the trigger.
-     * 
-     * @param fireDate           The initial fire date for the timer trigger. The seconds value must be zero.
-     *                           Date should be at least 1 minute ahead for reliable firing.
-     *                           HMErrorCodeDateMustBeOnSpecifiedBoundaries will be returned when adding the trigger
-     *                           to a home if the fireDate includes a seconds value other than 0.
-     * 
-     * @param timeZone           The time zone of the initial fire date. A value of nil indicates default timezone.
-     * 
-     * @param recurrence         The recurrence interval to fire the trigger. A value of nil indicates that the
-     *                           trigger is non-repeating. The minimum reccurence interval is 5 minutes, maximum
-     *                           recurrence interval is 5 weeks and the recurrence interval must be specified in
-     *                           multiples of whole minutes.
-     * 
-     * @param recurrenceCalendar The calendar corresponding to a recurring timer trigger. May be nil.
+     * API-Since: 8.0
+     * Deprecated-Since: 16.4
      */
+    @Deprecated
     @Generated
     @Selector("initWithName:fireDate:timeZone:recurrence:recurrenceCalendar:")
     public native HMTimerTrigger initWithNameFireDateTimeZoneRecurrenceRecurrenceCalendar(@NotNull String name,
@@ -236,20 +214,23 @@ public class HMTimerTrigger extends HMTrigger {
     public native NSDateComponents recurrence();
 
     /**
-     * The calendar corresponding to a recurring timer trigger.
+     * API-Since: 8.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: No longer supported
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("recurrenceCalendar")
     public native NSCalendar recurrenceCalendar();
 
     /**
-     * Set the time zone to interpret the fire date in.
-     * 
-     * If this value is nil and the user switches time zones, the time the trigger is
-     * fired will be adjusted to account for the time zone change. If this value is
-     * non-nil, the trigger will fire at the specified time in the specific time zone.
+     * API-Since: 8.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: Use HMEventTrigger with HMCalendarEvent for triggers based on a time-zone-relative time of
+     * day
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("timeZone")
@@ -293,15 +274,12 @@ public class HMTimerTrigger extends HMTrigger {
             @NotNull @ObjCBlock(name = "call_updateRecurrenceCompletionHandler") Block_updateRecurrenceCompletionHandler completion);
 
     /**
-     * This method is used to change the time zone of the fire date of a timer trigger.
-     * 
-     * @param timeZone   New time zone for the trigger. Passing a nil indicates that the default
-     *                   (system) timezone is used.
-     * 
-     * @param completion Block that is invoked once the request is processed.
-     *                   The NSError provides more information on the status of the request,
-     *                   error will be nil on success.
+     * API-Since: 8.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: Use HMEventTrigger with HMCalendarEvent for triggers based on a time-zone-relative time of
+     * day
      */
+    @Deprecated
     @Generated
     @Selector("updateTimeZone:completionHandler:")
     public native void updateTimeZoneCompletionHandler(@Nullable NSTimeZone timeZone,
@@ -327,4 +305,39 @@ public class HMTimerTrigger extends HMTrigger {
         @Generated
         void call_updateTimeZoneCompletionHandler(@Nullable NSError error);
     }
+
+    /**
+     * Initialize a new HMTimerTrigger object.
+     * 
+     * Validity checks are performed when the trigger is added to the home and the NSError in
+     * the completion block for addTrigger: method indicates the reason for the failure:
+     * HMErrorCodeDateMustBeOnSpecifiedBoundaries is returned if the seconds/nanoseconds fields
+     * in recurrence interval or seconds field in fireDate have a value other than 0.
+     * HMErrorCodeRecurrenceTooSmall is returned if recurrence interval is less than 5 minutes.
+     * HMErrorCodeRecurrenceTooLarge is returned if recurrence interval is greater than 5 weeks.
+     * HMErrorCodeFireDateInPast is returned if recurrence is nil and fireDate is in the past.
+     * 
+     * API-Since: 16.4
+     * 
+     * @param name       Name for the trigger.
+     * 
+     * @param fireDate   The initial fire date for the timer trigger. The seconds value must be zero.
+     *                   Date should be at least 1 minute ahead for reliable firing.
+     *                   HMErrorCodeDateMustBeOnSpecifiedBoundaries will be returned when adding the trigger
+     *                   to a home if the fireDate includes a seconds value other than 0.
+     * 
+     * @param recurrence The recurrence interval to fire the trigger. A value of nil indicates that the
+     *                   trigger is non-repeating. The minimum reccurence interval is 5 minutes, maximum
+     *                   recurrence interval is 5 weeks and the recurrence interval must be specified in
+     *                   multiples of whole minutes.
+     */
+    @Generated
+    @Selector("initWithName:fireDate:recurrence:")
+    public native HMTimerTrigger initWithNameFireDateRecurrence(@NotNull String name, @NotNull NSDate fireDate,
+            @Nullable NSDateComponents recurrence);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

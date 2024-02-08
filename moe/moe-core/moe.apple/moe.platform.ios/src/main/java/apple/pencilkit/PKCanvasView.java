@@ -571,4 +571,45 @@ public class PKCanvasView extends UIScrollView implements PKToolPickerObserver {
     @Generated
     @Selector("setDrawingPolicy:")
     public native void setDrawingPolicy(@NUInt long value);
+
+    @Generated
+    @Selector("animateWithSpringDuration:bounce:initialSpringVelocity:delay:options:animations:completion:")
+    public static native void animateWithSpringDurationBounceInitialSpringVelocityDelayOptionsAnimationsCompletion(
+            double duration, @NFloat double bounce, @NFloat double velocity, double delay, @NUInt long options,
+            @ObjCBlock(name = "call_animateWithSpringDurationBounceInitialSpringVelocityDelayOptionsAnimationsCompletion_5") @NotNull UIView.Block_animateWithSpringDurationBounceInitialSpringVelocityDelayOptionsAnimationsCompletion_5 animations,
+            @ObjCBlock(name = "call_animateWithSpringDurationBounceInitialSpringVelocityDelayOptionsAnimationsCompletion_6") @Nullable UIView.Block_animateWithSpringDurationBounceInitialSpringVelocityDelayOptionsAnimationsCompletion_6 completion);
+
+    /**
+     * The maximum supported PencilKit content version.
+     * 
+     * Setting this to less than `.latest` limits the edits that can be made so they are compatible with the
+     * specified version. If setting this property, also set it on any `PKToolPicker` used.
+     * 
+     * Defaults to `.latest`.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("maximumSupportedContentVersion")
+    @NInt
+    public native long maximumSupportedContentVersion();
+
+    /**
+     * The maximum supported PencilKit content version.
+     * 
+     * Setting this to less than `.latest` limits the edits that can be made so they are compatible with the
+     * specified version. If setting this property, also set it on any `PKToolPicker` used.
+     * 
+     * Defaults to `.latest`.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("setMaximumSupportedContentVersion:")
+    public native void setMaximumSupportedContentVersion(@NInt long value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

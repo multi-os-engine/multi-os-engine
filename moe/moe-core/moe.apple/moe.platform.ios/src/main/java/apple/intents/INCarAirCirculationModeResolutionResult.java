@@ -231,4 +231,9 @@ public class INCarAirCirculationModeResolutionResult extends INIntentResolutionR
     @Generated
     @Selector("unsupportedWithReason:")
     public static native INCarAirCirculationModeResolutionResult unsupportedWithReason(@NInt long reason);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -13,39 +13,38 @@ public final class UICollectionLayoutSectionOrthogonalScrollingBehavior {
     }
 
     /**
-     * default behavior. Section will layout along main layout axis (i.e. configuration.scrollDirection)
+     * The section will layout along the main layout axis.
      * 
      * API-Since: 13.0
      */
     @Generated @NInt public static final long None = 0x0000000000000000L;
     /**
-     * Standard scroll view behavior: UIScrollViewDecelerationRateNormal
+     * The section allows users to scroll its content orthogonally with continuous scrolling.
      * 
      * API-Since: 13.0
      */
     @Generated @NInt public static final long Continuous = 0x0000000000000001L;
     /**
-     * Scrolling will come to rest on the leading edge of a group boundary
+     * The section allows users to scroll its content orthogonally, coming to a natural stop at the leading boundary of
+     * the visible group.
      * 
      * API-Since: 13.0
      */
     @Generated @NInt public static final long ContinuousGroupLeadingBoundary = 0x0000000000000002L;
     /**
-     * Standard scroll view paging behavior (UIScrollViewDecelerationRateFast) with page size == extent of the
-     * collection view's bounds
+     * The section allows users to page its content orthogonally.
      * 
      * API-Since: 13.0
      */
     @Generated @NInt public static final long Paging = 0x0000000000000003L;
     /**
-     * Fractional size paging behavior determined by the sections layout group's dimension
+     * The section allows users to page its content orthogonally one group at a time.
      * 
      * API-Since: 13.0
      */
     @Generated @NInt public static final long GroupPaging = 0x0000000000000004L;
     /**
-     * Same of group paging with additional leading and trailing content insets to center each group's contents along
-     * the orthogonal axis
+     * The section allows users to page its content orthogonally one group at a time, centering each group.
      * 
      * API-Since: 13.0
      */

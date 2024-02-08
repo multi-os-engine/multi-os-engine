@@ -297,4 +297,9 @@ public class UIAccessibilityCustomRotor extends NSObject {
     @Selector("systemRotorType")
     @NInt
     public native long systemRotorType();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -22,7 +22,7 @@ import org.moe.natj.general.ann.NInt;
 /**
  * [@enum] HKErrorCode
  * 
- * [@constant] HKNoError No error.
+ * [@constant] HKUnknownError Unknown error.
  * [@constant] HKErrorHealthDataUnavailable HealthKit is not available on this device.
  * [@constant] HKErrorHealthDataRestricted HealthKit is restricted on this device.
  * [@constant] HKErrorInvalidArgument An invalid argument was provided to the API.
@@ -37,6 +37,10 @@ import org.moe.natj.general.ann.NInt;
  * required data types.
  * [@constant] HKErrorNoData No data is available for the requested query and predicate, and so the
  * query's result could not be meaningfully computed.
+ * [@constant] HKErrorWorkoutActivityNotAllowed A workout session is not allowed to be created for the activity type.
+ * [@constant] HKErrorDataSizeExceeded The provided data's size exceeds the maximum allowed.
+ * [@constant] HKErrorBackgroundWorkoutSessionNotAllowed A workout session is not allowed to start or prepare when this
+ * app is in the background.
  * 
  * API-Since: 8.0
  */
@@ -44,8 +48,9 @@ import org.moe.natj.general.ann.NInt;
 public final class HKErrorCode {
     /**
      * API-Since: 8.0
+     * Deprecated-Since: 100000.0
      */
-    @Generated @NInt public static final long NoError = 0x0000000000000000L;
+    @Deprecated @Generated @NInt public static final long NoError = 0x0000000000000000L;
     /**
      * API-Since: 8.0
      */
@@ -95,4 +100,20 @@ public final class HKErrorCode {
      * API-Since: 14.0
      */
     @Generated @NInt public static final long ErrorNoData = 0x000000000000000BL;
+    /**
+     * API-Since: 8.0
+     */
+    @Generated @NInt public static final long UnknownError = 0x0000000000000000L;
+    /**
+     * API-Since: 17.0
+     */
+    @Generated @NInt public static final long ErrorWorkoutActivityNotAllowed = 0x000000000000000CL;
+    /**
+     * API-Since: 17.0
+     */
+    @Generated @NInt public static final long ErrorDataSizeExceeded = 0x000000000000000DL;
+    /**
+     * API-Since: 17.0
+     */
+    @Generated @NInt public static final long ErrorBackgroundWorkoutSessionNotAllowed = 0x000000000000000EL;
 }

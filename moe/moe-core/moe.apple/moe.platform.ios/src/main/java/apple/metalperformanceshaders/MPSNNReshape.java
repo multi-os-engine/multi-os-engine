@@ -227,4 +227,9 @@ public class MPSNNReshape extends MPSCNNKernel {
     public native MPSImage encodeToCommandBufferSourceImageReshapedWidthReshapedHeightReshapedFeatureChannels(
             @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, @NotNull MPSImage sourceImage,
             @NUInt long reshapedWidth, @NUInt long reshapedHeight, @NUInt long reshapedFeatureChannels);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

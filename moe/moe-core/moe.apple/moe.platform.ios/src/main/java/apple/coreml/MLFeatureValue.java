@@ -408,4 +408,9 @@ public class MLFeatureValue extends NSObject implements NSCopying, NSSecureCodin
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

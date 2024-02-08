@@ -205,4 +205,9 @@ public class MXHistogramBucket<_UnitType> extends NSObject implements NSSecureCo
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

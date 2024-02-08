@@ -17,7 +17,6 @@ limitations under the License.
 package apple.foundation;
 
 import apple.NSObject;
-import apple.newsstandkit.NKAssetDownload;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
@@ -402,22 +401,6 @@ public class NSURLConnection extends NSObject {
             @Nullable @Mapped(ObjCObjectMapper.class) Object delegate, boolean startImmediately);
 
     /**
-     * [@property] newsstandAssetDownload
-     * 
-     * A pointer to the asset download that this connection is associated with.
-     * 
-     * API-Since: 5.0
-     * Deprecated-Since: 13.0
-     * Deprecated-Message: Use Remote notifications Background Modes instead:
-     * https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/pushing_updates_to_your_app_silently
-     */
-    @Nullable
-    @Deprecated
-    @Generated
-    @Selector("newsstandAssetDownload")
-    public native NKAssetDownload newsstandAssetDownload();
-
-    /**
      * API-Since: 5.0
      */
     @NotNull
@@ -460,4 +443,9 @@ public class NSURLConnection extends NSObject {
         void call_sendAsynchronousRequestQueueCompletionHandler(@Nullable NSURLResponse response, @Nullable NSData data,
                 @Nullable NSError connectionError);
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

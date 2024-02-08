@@ -229,4 +229,9 @@ public class UIFocusDebugger extends NSObject {
     @MappedReturn(ObjCObjectMapper.class)
     public static native UIFocusDebuggerOutput preferredFocusEnvironmentsForEnvironment(
             @NotNull @Mapped(ObjCObjectMapper.class) UIFocusEnvironment environment);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

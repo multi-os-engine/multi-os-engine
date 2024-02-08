@@ -172,8 +172,9 @@ public class CKFetchDatabaseChangesOperation extends CKDatabaseOperation {
     public static native long version_static();
 
     /**
-     * ! @discussion Each @c CKOperation instance has a private serial queue. This queue is used for all callback block
-     * invocations.
+     * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
+     * This block may share mutable state with other blocks assigned to this operation, but any such mutable state
+     * should not be concurrently used outside of blocks assigned to this operation.
      */
     @Nullable
     @Generated
@@ -191,6 +192,9 @@ public class CKFetchDatabaseChangesOperation extends CKDatabaseOperation {
      * moreComing is YES in a @c fetchDatabaseChangesCompletionBlock invocation.
      * [@c] fetchAllChanges is @c YES by default
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations
+     * Blocks assigned to this operation may share mutable state with other blocks assigned to this operation, but any
+     * such mutable state
+     * should not be concurrently used outside of blocks assigned to this operation.
      */
     @Generated
     @Selector("fetchAllChanges")
@@ -208,6 +212,8 @@ public class CKFetchDatabaseChangesOperation extends CKDatabaseOperation {
      * CKFetchDatabaseChangesOperation operation should be run with the @c previousServerChangeToken token from this
      * operation.
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations
+     * This block may share mutable state with other blocks assigned to this operation, but any such mutable state
+     * should not be concurrently used outside of blocks assigned to this operation.
      */
     @Nullable
     @Generated
@@ -229,12 +235,22 @@ public class CKFetchDatabaseChangesOperation extends CKDatabaseOperation {
     @Selector("previousServerChangeToken")
     public native CKServerChangeToken previousServerChangeToken();
 
+    /**
+     * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
+     * This block may share mutable state with other blocks assigned to this operation, but any such mutable state
+     * should not be concurrently used outside of blocks assigned to this operation.
+     */
     @Nullable
     @Generated
     @Selector("recordZoneWithIDChangedBlock")
     @ObjCBlock(name = "call_recordZoneWithIDChangedBlock_ret")
     public native Block_recordZoneWithIDChangedBlock_ret recordZoneWithIDChangedBlock();
 
+    /**
+     * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
+     * This block may share mutable state with other blocks assigned to this operation, but any such mutable state
+     * should not be concurrently used outside of blocks assigned to this operation.
+     */
     @Nullable
     @Generated
     @Selector("recordZoneWithIDWasDeletedBlock")
@@ -247,8 +263,9 @@ public class CKFetchDatabaseChangesOperation extends CKDatabaseOperation {
     public native long resultsLimit();
 
     /**
-     * ! @discussion Each @c CKOperation instance has a private serial queue. This queue is used for all callback block
-     * invocations.
+     * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
+     * This block may share mutable state with other blocks assigned to this operation, but any such mutable state
+     * should not be concurrently used outside of blocks assigned to this operation.
      */
     @Generated
     @Selector("setChangeTokenUpdatedBlock:")
@@ -265,6 +282,9 @@ public class CKFetchDatabaseChangesOperation extends CKDatabaseOperation {
      * moreComing is YES in a @c fetchDatabaseChangesCompletionBlock invocation.
      * [@c] fetchAllChanges is @c YES by default
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations
+     * Blocks assigned to this operation may share mutable state with other blocks assigned to this operation, but any
+     * such mutable state
+     * should not be concurrently used outside of blocks assigned to this operation.
      */
     @Generated
     @Selector("setFetchAllChanges:")
@@ -282,6 +302,8 @@ public class CKFetchDatabaseChangesOperation extends CKDatabaseOperation {
      * CKFetchDatabaseChangesOperation operation should be run with the @c previousServerChangeToken token from this
      * operation.
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations
+     * This block may share mutable state with other blocks assigned to this operation, but any such mutable state
+     * should not be concurrently used outside of blocks assigned to this operation.
      */
     @Generated
     @Selector("setFetchDatabaseChangesCompletionBlock:")
@@ -292,11 +314,21 @@ public class CKFetchDatabaseChangesOperation extends CKDatabaseOperation {
     @Selector("setPreviousServerChangeToken:")
     public native void setPreviousServerChangeToken(@Nullable CKServerChangeToken value);
 
+    /**
+     * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
+     * This block may share mutable state with other blocks assigned to this operation, but any such mutable state
+     * should not be concurrently used outside of blocks assigned to this operation.
+     */
     @Generated
     @Selector("setRecordZoneWithIDChangedBlock:")
     public native void setRecordZoneWithIDChangedBlock(
             @Nullable @ObjCBlock(name = "call_setRecordZoneWithIDChangedBlock") Block_setRecordZoneWithIDChangedBlock value);
 
+    /**
+     * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
+     * This block may share mutable state with other blocks assigned to this operation, but any such mutable state
+     * should not be concurrently used outside of blocks assigned to this operation.
+     */
     @Generated
     @Selector("setRecordZoneWithIDWasDeletedBlock:")
     public native void setRecordZoneWithIDWasDeletedBlock(
@@ -371,6 +403,8 @@ public class CKFetchDatabaseChangesOperation extends CKDatabaseOperation {
      * This is an indication that the user wanted all data deleted, so local cached data should be wiped and not
      * re-uploaded to the server.
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations
+     * This block may share mutable state with other blocks assigned to this operation, but any such mutable state
+     * should not be concurrently used outside of blocks assigned to this operation.
      * 
      * API-Since: 11.0
      */
@@ -394,6 +428,8 @@ public class CKFetchDatabaseChangesOperation extends CKDatabaseOperation {
      * This is an indication that the user wanted all data deleted, so local cached data should be wiped and not
      * re-uploaded to the server.
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations
+     * This block may share mutable state with other blocks assigned to this operation, but any such mutable state
+     * should not be concurrently used outside of blocks assigned to this operation.
      * 
      * API-Since: 11.0
      */
@@ -416,6 +452,8 @@ public class CKFetchDatabaseChangesOperation extends CKDatabaseOperation {
      * This is an indication that the user had to reset encrypted data during account recovery, so local cached data
      * should be re-uploaded to the server to minimize data loss.
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations
+     * This block may share mutable state with other blocks assigned to this operation, but any such mutable state
+     * should not be concurrently used outside of blocks assigned to this operation.
      * 
      * API-Since: 15.0
      */
@@ -439,6 +477,8 @@ public class CKFetchDatabaseChangesOperation extends CKDatabaseOperation {
      * This is an indication that the user had to reset encrypted data during account recovery, so local cached data
      * should be re-uploaded to the server to minimize data loss.
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations
+     * This block may share mutable state with other blocks assigned to this operation, but any such mutable state
+     * should not be concurrently used outside of blocks assigned to this operation.
      * 
      * API-Since: 15.0
      */
@@ -453,4 +493,9 @@ public class CKFetchDatabaseChangesOperation extends CKDatabaseOperation {
         @Generated
         void call_setRecordZoneWithIDWasDeletedDueToUserEncryptedDataResetBlock(@NotNull CKRecordZoneID arg0);
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

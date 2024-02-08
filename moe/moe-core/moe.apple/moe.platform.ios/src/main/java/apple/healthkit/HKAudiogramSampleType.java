@@ -224,4 +224,9 @@ public class HKAudiogramSampleType extends HKSampleType {
     @Generated
     @Selector("visionPrescriptionType")
     public static native HKPrescriptionType visionPrescriptionType();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

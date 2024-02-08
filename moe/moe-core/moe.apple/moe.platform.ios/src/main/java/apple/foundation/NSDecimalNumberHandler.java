@@ -202,4 +202,9 @@ public class NSDecimalNumberHandler extends NSObject implements NSDecimalNumberB
     @Generated
     @Selector("scale")
     public native short scale();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

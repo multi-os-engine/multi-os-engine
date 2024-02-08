@@ -274,4 +274,9 @@ public class SKTransition extends NSObject implements NSCopying {
     @Generated
     @Selector("setPausesOutgoingScene:")
     public native void setPausesOutgoingScene(boolean value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

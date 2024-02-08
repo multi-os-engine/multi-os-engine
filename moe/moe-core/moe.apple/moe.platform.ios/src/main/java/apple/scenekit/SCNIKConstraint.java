@@ -256,4 +256,9 @@ public class SCNIKConstraint extends SCNConstraint {
     @Selector("targetPosition")
     @ByValue
     public native SCNVector3 targetPosition();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -170,4 +170,9 @@ public class MTLVertexAttributeDescriptorArray extends NSObject {
     @Selector("setObject:atIndexedSubscript:")
     public native void setObjectAtIndexedSubscript(@Nullable MTLVertexAttributeDescriptor attributeDesc,
             @NUInt long index);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

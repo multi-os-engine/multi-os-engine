@@ -217,4 +217,9 @@ public class NSCollectionLayoutDecorationItem extends NSCollectionLayoutItem imp
     @Selector("zIndex")
     @NInt
     public native long zIndex();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -30,6 +30,8 @@ import org.jetbrains.annotations.Nullable;
 /**
  * A now playing button that can be used to allow the user to add the current
  * playing item to a collection, like their library.
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("CarPlay")
@@ -167,4 +169,9 @@ public class CPNowPlayingAddToLibraryButton extends CPNowPlayingButton {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

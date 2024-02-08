@@ -432,4 +432,9 @@ public class NEProxySettings extends NSObject implements NSSecureCoding, NSCopyi
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

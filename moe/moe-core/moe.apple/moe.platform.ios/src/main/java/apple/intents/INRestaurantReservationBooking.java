@@ -335,4 +335,9 @@ public class INRestaurantReservationBooking extends NSObject implements NSSecure
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

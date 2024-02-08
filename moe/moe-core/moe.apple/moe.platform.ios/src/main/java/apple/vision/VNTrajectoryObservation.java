@@ -204,4 +204,9 @@ public class VNTrajectoryObservation extends VNObservation {
     @Selector("movingAverageRadius")
     @NFloat
     public native double movingAverageRadius();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

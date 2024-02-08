@@ -188,4 +188,9 @@ public class MPRatingCommand extends MPRemoteCommand {
     @Generated
     @Selector("setMinimumRating:")
     public native void setMinimumRating(float value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

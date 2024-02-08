@@ -170,4 +170,9 @@ public class MTLVertexBufferLayoutDescriptorArray extends NSObject {
     @Selector("setObject:atIndexedSubscript:")
     public native void setObjectAtIndexedSubscript(@Nullable MTLVertexBufferLayoutDescriptor bufferDesc,
             @NUInt long index);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -41,10 +41,8 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.opaque.dispatch_queue_t;
 
-/**
- * API-Since: 7.0
- */
 @Generated
 @Library("MapKit")
 @Runtime(ObjCRuntime.class)
@@ -185,7 +183,7 @@ public class MKMapSnapshotter extends NSObject {
 
     @Generated
     @Selector("startWithQueue:completionHandler:")
-    public native void startWithQueueCompletionHandler(@NotNull NSObject queue,
+    public native void startWithQueueCompletionHandler(@NotNull dispatch_queue_t queue,
             @NotNull @ObjCBlock(name = "call_startWithQueueCompletionHandler") Block_startWithQueueCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
@@ -201,4 +199,9 @@ public class MKMapSnapshotter extends NSObject {
         @Generated
         void call_startWithQueueCompletionHandler(@Nullable MKMapSnapshot snapshot, @Nullable NSError error);
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

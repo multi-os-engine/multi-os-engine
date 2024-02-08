@@ -188,4 +188,9 @@ public class INCancelWorkoutIntent extends INIntent {
     @Generated
     @Selector("workoutName")
     public native INSpeakableString workoutName();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

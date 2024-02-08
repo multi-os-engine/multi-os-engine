@@ -294,4 +294,9 @@ public class NEPacketTunnelProvider extends NETunnelProvider {
         @Generated
         void call_stopTunnelWithReasonCompletionHandler();
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

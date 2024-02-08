@@ -215,4 +215,9 @@ public class UICommandAlternate extends NSObject implements NSCopying, NSSecureC
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

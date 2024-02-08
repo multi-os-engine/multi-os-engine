@@ -169,4 +169,9 @@ public class MPSeekCommandEvent extends MPRemoteCommandEvent {
     @Selector("type")
     @NUInt
     public native long type();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

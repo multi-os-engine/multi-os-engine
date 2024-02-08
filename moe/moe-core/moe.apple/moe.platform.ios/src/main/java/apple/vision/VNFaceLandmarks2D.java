@@ -273,4 +273,9 @@ public class VNFaceLandmarks2D extends VNFaceLandmarks {
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

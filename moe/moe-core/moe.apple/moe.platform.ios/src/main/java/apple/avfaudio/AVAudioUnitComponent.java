@@ -299,4 +299,9 @@ public class AVAudioUnitComponent extends NSObject {
     @Generated
     @Selector("passesAUVal")
     public native boolean passesAUVal();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

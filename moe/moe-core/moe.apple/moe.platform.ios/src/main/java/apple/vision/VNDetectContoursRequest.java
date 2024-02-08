@@ -283,4 +283,9 @@ public class VNDetectContoursRequest extends VNImageBasedRequest {
     @Generated
     @Selector("setContrastPivot:")
     public native void setContrastPivot(@Nullable NSNumber value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

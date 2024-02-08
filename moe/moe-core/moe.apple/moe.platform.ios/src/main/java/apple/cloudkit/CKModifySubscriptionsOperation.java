@@ -178,6 +178,8 @@ public class CKModifySubscriptionsOperation extends CKDatabaseOperation {
      * [@c] savedSubscriptions, @c deletedSubscriptionIDs and any @c CKPartialErrorsByItemIDKey errors are repeats of
      * the data sent back in previous @c perSubscriptionSaveBlock and @c perSubscriptionDeleteBlock invocations
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
+     * This block may share mutable state with other blocks assigned to this operation, but any such mutable state
+     * should not be concurrently used outside of blocks assigned to this operation.
      */
     @Nullable
     @Generated
@@ -194,6 +196,8 @@ public class CKModifySubscriptionsOperation extends CKDatabaseOperation {
      * [@c] savedSubscriptions, @c deletedSubscriptionIDs and any @c CKPartialErrorsByItemIDKey errors are repeats of
      * the data sent back in previous @c perSubscriptionSaveBlock and @c perSubscriptionDeleteBlock invocations
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
+     * This block may share mutable state with other blocks assigned to this operation, but any such mutable state
+     * should not be concurrently used outside of blocks assigned to this operation.
      */
     @Generated
     @Selector("setModifySubscriptionsCompletionBlock:")
@@ -238,6 +242,8 @@ public class CKModifySubscriptionsOperation extends CKDatabaseOperation {
      * Called on success or failure of a subscription deletion
      * 
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
+     * This block may share mutable state with other blocks assigned to this operation, but any such mutable state
+     * should not be concurrently used outside of blocks assigned to this operation.
      * 
      * API-Since: 15.0
      */
@@ -258,6 +264,8 @@ public class CKModifySubscriptionsOperation extends CKDatabaseOperation {
      * Called on success or failure of a subscription save
      * 
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
+     * This block may share mutable state with other blocks assigned to this operation, but any such mutable state
+     * should not be concurrently used outside of blocks assigned to this operation.
      * 
      * API-Since: 15.0
      */
@@ -279,6 +287,8 @@ public class CKModifySubscriptionsOperation extends CKDatabaseOperation {
      * Called on success or failure of a subscription deletion
      * 
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
+     * This block may share mutable state with other blocks assigned to this operation, but any such mutable state
+     * should not be concurrently used outside of blocks assigned to this operation.
      * 
      * API-Since: 15.0
      */
@@ -298,6 +308,8 @@ public class CKModifySubscriptionsOperation extends CKDatabaseOperation {
      * Called on success or failure of a subscription save
      * 
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
+     * This block may share mutable state with other blocks assigned to this operation, but any such mutable state
+     * should not be concurrently used outside of blocks assigned to this operation.
      * 
      * API-Since: 15.0
      */
@@ -313,4 +325,9 @@ public class CKModifySubscriptionsOperation extends CKDatabaseOperation {
         void call_setPerSubscriptionSaveBlock(@NotNull String arg0, @Nullable CKSubscription arg1,
                 @Nullable NSError arg2);
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -187,4 +187,9 @@ public class NSBlockOperation extends NSOperation {
         @Generated
         void call_blockOperationWithBlock();
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

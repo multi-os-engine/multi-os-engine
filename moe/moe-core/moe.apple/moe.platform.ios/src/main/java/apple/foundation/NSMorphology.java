@@ -90,6 +90,12 @@ public class NSMorphology extends NSObject implements NSCopying, NSSecureCoding 
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(@Nullable VoidPtr zone);
 
+    /**
+     * API-Since: 15.0
+     * Deprecated-Since: 17.0
+     * Deprecated-Message: Use NSTermOfAddress instead
+     */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("customPronounForLanguage:")
@@ -179,6 +185,12 @@ public class NSMorphology extends NSObject implements NSCopying, NSSecureCoding 
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 15.0
+     * Deprecated-Since: 17.0
+     * Deprecated-Message: Use NSTermOfAddress instead
+     */
+    @Deprecated
     @Generated
     @Selector("setCustomPronoun:forLanguage:error:")
     public native boolean setCustomPronounForLanguageError(@Nullable NSMorphologyCustomPronoun features,
@@ -226,4 +238,84 @@ public class NSMorphology extends NSObject implements NSCopying, NSSecureCoding 
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("definiteness")
+    @NInt
+    public native long definiteness();
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("determination")
+    @NInt
+    public native long determination();
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("grammaticalCase")
+    @NInt
+    public native long grammaticalCase();
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("grammaticalPerson")
+    @NInt
+    public native long grammaticalPerson();
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("pronounType")
+    @NInt
+    public native long pronounType();
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("setDefiniteness:")
+    public native void setDefiniteness(@NInt long value);
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("setDetermination:")
+    public native void setDetermination(@NInt long value);
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("setGrammaticalCase:")
+    public native void setGrammaticalCase(@NInt long value);
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("setGrammaticalPerson:")
+    public native void setGrammaticalPerson(@NInt long value);
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("setPronounType:")
+    public native void setPronounType(@NInt long value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

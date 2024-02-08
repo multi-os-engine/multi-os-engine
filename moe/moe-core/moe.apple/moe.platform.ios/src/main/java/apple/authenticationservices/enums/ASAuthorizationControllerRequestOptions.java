@@ -15,8 +15,6 @@ public final class ASAuthorizationControllerRequestOptions {
     /**
      * Tell the authorization controller that it should prefer credentials that are immediately available on the local
      * device.
-     * 
-     * API-Since: 16.0
      */
     @Generated @NUInt public static final long ASAuthorizationControllerRequestOptionPreferImmediatelyAvailableCredentials = 0x0000000000000001L;
 }

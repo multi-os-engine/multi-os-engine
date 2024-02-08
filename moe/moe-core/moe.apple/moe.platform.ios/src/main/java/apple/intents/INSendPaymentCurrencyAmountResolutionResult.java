@@ -198,4 +198,9 @@ public class INSendPaymentCurrencyAmountResolutionResult extends INCurrencyAmoun
     @Generated
     @Selector("unsupportedWithReason:")
     public static native INSendPaymentCurrencyAmountResolutionResult unsupportedWithReason(@NInt long reason);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

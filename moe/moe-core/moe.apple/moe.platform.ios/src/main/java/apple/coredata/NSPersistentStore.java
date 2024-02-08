@@ -317,4 +317,9 @@ public class NSPersistentStore extends NSObject {
     @Generated
     @Selector("coreSpotlightExporter")
     public native NSCoreDataCoreSpotlightDelegate coreSpotlightExporter();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

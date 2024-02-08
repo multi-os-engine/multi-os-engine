@@ -246,4 +246,9 @@ public class INRestaurant extends NSObject implements NSSecureCoding, NSCopying 
     @Generated
     @Selector("vendorIdentifier")
     public native String vendorIdentifier();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

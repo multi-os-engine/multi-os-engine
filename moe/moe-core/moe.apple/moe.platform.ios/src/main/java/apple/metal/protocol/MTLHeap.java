@@ -116,7 +116,7 @@ public interface MTLHeap {
     @Generated
     @Selector("newTextureWithDescriptor:")
     @MappedReturn(ObjCObjectMapper.class)
-    MTLTexture newTextureWithDescriptor(@NotNull MTLTextureDescriptor desc);
+    MTLTexture newTextureWithDescriptor(@NotNull MTLTextureDescriptor descriptor);
 
     /**
      * [@property] label

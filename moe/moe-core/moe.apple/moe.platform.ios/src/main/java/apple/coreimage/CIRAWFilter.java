@@ -39,9 +39,6 @@ import apple.corefoundation.struct.CGSize;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-/**
- * API-Since: 15.0
- */
 @Generated
 @Library("CoreImage")
 @Runtime(ObjCRuntime.class)
@@ -171,6 +168,7 @@ public class CIRAWFilter extends CIFilter {
     @Selector("extendedDynamicRangeAmount")
     public native float extendedDynamicRangeAmount();
 
+    @Deprecated
     @NotNull
     @Generated
     @Selector("filterArrayFromSerializedXMP:inputImageExtent:error:")
@@ -533,6 +531,7 @@ public class CIRAWFilter extends CIFilter {
     @Selector("semanticSegmentationTeethMatte")
     public native CIImage semanticSegmentationTeethMatte();
 
+    @Deprecated
     @Nullable
     @Generated
     @Selector("serializedXMPFromFilters:inputImageExtent:")
@@ -751,4 +750,9 @@ public class CIRAWFilter extends CIFilter {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

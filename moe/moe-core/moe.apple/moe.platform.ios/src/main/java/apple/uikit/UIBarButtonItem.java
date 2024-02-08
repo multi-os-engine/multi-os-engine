@@ -50,6 +50,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.uikit.protocol.UIPopoverPresentationControllerSourceItem;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.corefoundation.struct.CGRect;
+import apple.symbols.NSSymbolContentTransition;
+import apple.symbols.NSSymbolEffect;
+import apple.symbols.NSSymbolEffectOptions;
 
 /**
  * API-Since: 2.0
@@ -841,4 +845,149 @@ public class UIBarButtonItem extends UIBarItem implements NSCoding, UISpringLoad
     @Generated
     @Selector("setPreferredMenuElementOrder:")
     public native void setPreferredMenuElementOrder(@NInt long value);
+
+    /**
+     * Adds a symbol effect to the bar button item with default options and animation.
+     * Only a subset of symbol effects are supported; Appear and Disappear effects, for example, are unsupported, and
+     * will assert.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("addSymbolEffect:")
+    public native void addSymbolEffect(@NotNull NSSymbolEffect symbolEffect);
+
+    /**
+     * Adds a symbol effect to the bar button item with specified options and default animation.
+     * Only a subset of symbol effects are supported; Appear and Disappear effects, for example, are unsupported, and
+     * will assert.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("addSymbolEffect:options:")
+    public native void addSymbolEffectOptions(@NotNull NSSymbolEffect symbolEffect,
+            @NotNull NSSymbolEffectOptions options);
+
+    /**
+     * Adds a symbol effect to the bar button item with specified options and animation.
+     * Only a subset of symbol effects are supported; Appear and Disappear effects, for example, are unsupported, and
+     * will assert.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("addSymbolEffect:options:animated:")
+    public native void addSymbolEffectOptionsAnimated(@NotNull NSSymbolEffect symbolEffect,
+            @NotNull NSSymbolEffectOptions options, boolean animated);
+
+    @Generated
+    @Selector("frameInView:")
+    @ByValue
+    public native CGRect frameInView(@NotNull UIView referenceView);
+
+    /**
+     * Whether or not symbol animations are enabled for this bar button item.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("isSymbolAnimationEnabled")
+    public native boolean isSymbolAnimationEnabled();
+
+    /**
+     * Removes all symbol effects from the bar button item with default options and animation.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("removeAllSymbolEffects")
+    public native void removeAllSymbolEffects();
+
+    /**
+     * Removes all symbol effects from the bar button item with specified options and default animation.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("removeAllSymbolEffectsWithOptions:")
+    public native void removeAllSymbolEffectsWithOptions(@NotNull NSSymbolEffectOptions options);
+
+    /**
+     * Removes all symbol effects from the bar button item with specified options and animation.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("removeAllSymbolEffectsWithOptions:animated:")
+    public native void removeAllSymbolEffectsWithOptionsAnimated(@NotNull NSSymbolEffectOptions options,
+            boolean animated);
+
+    /**
+     * Removes from the bar button item the symbol effect matching the type of effect passed in, with default options
+     * and animation.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("removeSymbolEffectOfType:")
+    public native void removeSymbolEffectOfType(@NotNull NSSymbolEffect symbolEffect);
+
+    /**
+     * Removes from the bar button item the symbol effect matching the type of effect passed in, with specified options
+     * and default animation.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("removeSymbolEffectOfType:options:")
+    public native void removeSymbolEffectOfTypeOptions(@NotNull NSSymbolEffect symbolEffect,
+            @NotNull NSSymbolEffectOptions options);
+
+    /**
+     * Removes from the bar button item the symbol effect matching the type of effect passed in, with specified options
+     * and animation.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("removeSymbolEffectOfType:options:animated:")
+    public native void removeSymbolEffectOfTypeOptionsAnimated(@NotNull NSSymbolEffect symbolEffect,
+            @NotNull NSSymbolEffectOptions options, boolean animated);
+
+    /**
+     * Whether or not symbol animations are enabled for this bar button item.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("setSymbolAnimationEnabled:")
+    public native void setSymbolAnimationEnabled(boolean value);
+
+    /**
+     * Sets the symbol image on the bar button item with a symbol content transition and default options.
+     * Passing in a non-symbol image will result in undefined behavior.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("setSymbolImage:withContentTransition:")
+    public native void setSymbolImageWithContentTransition(@NotNull UIImage symbolImage,
+            @NotNull NSSymbolContentTransition transition);
+
+    /**
+     * Sets the symbol image on the bar button item with a symbol content transition and specified options.
+     * Passing in a non-symbol image will result in undefined behavior.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("setSymbolImage:withContentTransition:options:")
+    public native void setSymbolImageWithContentTransitionOptions(@NotNull UIImage symbolImage,
+            @NotNull NSSymbolContentTransition transition, @NotNull NSSymbolEffectOptions options);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

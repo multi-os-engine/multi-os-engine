@@ -641,4 +641,9 @@ public class NSDecimalNumber extends NSNumber {
     @Generated
     @Selector("valueWithCMVideoDimensions:")
     public static native NSValue valueWithCMVideoDimensions(@ByValue CMVideoDimensions dimensions);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

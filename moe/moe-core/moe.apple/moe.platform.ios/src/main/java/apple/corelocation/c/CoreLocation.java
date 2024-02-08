@@ -209,16 +209,12 @@ public final class CoreLocation {
     public static native double kCLLocationAccuracyReduced();
 
     /**
-     * CLLocationPushServiceErrorDomain
-     * 
-     * Discussion:
-     * Error returned as the domain to NSError from -[CLLocationManager startMonitoringLocationPushesWithCompletion:].
-     * 
-     * 
      * API-Since: 15.0
      */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String CLLocationPushServiceErrorDomain();
+
+    @Generated public static final double CL_TARGET_SUPPORTS_CONDITIONS = 0.0;
 }

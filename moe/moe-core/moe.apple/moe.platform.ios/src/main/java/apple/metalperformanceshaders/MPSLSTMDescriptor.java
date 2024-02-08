@@ -605,4 +605,9 @@ public class MPSLSTMDescriptor extends MPSRNNDescriptor {
     @Generated
     @Selector("setCellToOutputNeuronParamC:")
     public native void setCellToOutputNeuronParamC(float value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

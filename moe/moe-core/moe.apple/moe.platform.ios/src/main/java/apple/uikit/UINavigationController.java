@@ -481,4 +481,9 @@ public class UINavigationController extends UIViewController {
     @Generated
     @Selector("visibleViewController")
     public native UIViewController visibleViewController();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

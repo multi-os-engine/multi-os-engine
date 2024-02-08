@@ -241,4 +241,9 @@ public class CHHapticPattern extends NSObject {
     @Selector("initWithContentsOfURL:error:")
     public native CHHapticPattern initWithContentsOfURLError(@NotNull NSURL ahapURL,
             @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -257,4 +257,9 @@ public class UIGraphicsRenderer extends NSObject {
         @Generated
         void call_runDrawingActionsCompletionActionsError_1(@NotNull UIGraphicsRendererContext rendererContext);
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

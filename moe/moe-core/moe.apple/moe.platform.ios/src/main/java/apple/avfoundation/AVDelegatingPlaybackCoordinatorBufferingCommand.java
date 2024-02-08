@@ -34,6 +34,8 @@ import org.jetbrains.annotations.Nullable;
  * To cancel the group intent to begin playback and move back into a paused state, call [AVDelegatingPlaybackCoordinator
  * coordinateRateChangeToRate:0 options: 0]
  * 
+ * Subclasses of this type that are used from Swift must fulfill the requirements of a Sendable type.
+ * 
  * API-Since: 15.0
  */
 @Generated
@@ -185,4 +187,9 @@ public class AVDelegatingPlaybackCoordinatorBufferingCommand extends
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

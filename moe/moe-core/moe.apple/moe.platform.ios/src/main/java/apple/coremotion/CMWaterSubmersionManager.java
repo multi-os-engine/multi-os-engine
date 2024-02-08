@@ -25,6 +25,8 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.foundation.NSMeasurement;
+import apple.foundation.NSUnitLength;
 
 /**
  * CMWaterSubmersionManager
@@ -32,6 +34,8 @@ import org.jetbrains.annotations.Nullable;
  * Discussion:
  * API to retrieve values related to device state with respect to water
  * submersion and measurements updates when device is submerged.
+ * 
+ * API-Since: 16.0
  */
 @Generated
 @Library("CoreMotion")
@@ -225,4 +229,26 @@ public class CMWaterSubmersionManager extends NSObject {
     @Generated
     @Selector("waterSubmersionAvailable")
     public static native boolean waterSubmersionAvailable();
+
+    /**
+     * maximumDepth
+     * 
+     * Discussion:
+     * Returns the maximum depth threshold that this client is authorized to
+     * receive. This is the threshold at which the API will change state
+     * to CMWaterSubmersionDepthStatePastMaxDepth. The API will continue
+     * to vend data until CMWaterSubmersionDepthStateSensorDepthError, 10%
+     * above this threshold.
+     * 
+     * Returns nil if client is not authorized for submersion data.
+     */
+    @Generated
+    @Selector("maximumDepth")
+    @Nullable
+    public native NSMeasurement<NSUnitLength> maximumDepth();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

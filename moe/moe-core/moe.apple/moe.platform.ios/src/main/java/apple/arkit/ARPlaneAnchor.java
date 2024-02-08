@@ -225,4 +225,9 @@ public class ARPlaneAnchor extends ARAnchor {
     @Generated
     @Selector("planeExtent")
     public native ARPlaneExtent planeExtent();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

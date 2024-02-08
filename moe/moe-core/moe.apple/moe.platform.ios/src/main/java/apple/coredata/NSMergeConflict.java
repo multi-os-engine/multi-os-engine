@@ -215,4 +215,9 @@ public class NSMergeConflict extends NSObject {
     @Generated
     @Selector("sourceObject")
     public native NSManagedObject sourceObject();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

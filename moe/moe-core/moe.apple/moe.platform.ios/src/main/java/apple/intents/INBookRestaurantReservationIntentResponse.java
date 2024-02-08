@@ -202,4 +202,9 @@ public class INBookRestaurantReservationIntentResponse extends INIntentResponse 
     @Generated
     @Selector("userBooking")
     public native INRestaurantReservationUserBooking userBooking();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

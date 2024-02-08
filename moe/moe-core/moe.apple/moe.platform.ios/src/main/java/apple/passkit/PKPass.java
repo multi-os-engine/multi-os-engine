@@ -295,4 +295,9 @@ public class PKPass extends PKObject {
     @Generated
     @Selector("secureElementPass")
     public native PKSecureElementPass secureElementPass();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

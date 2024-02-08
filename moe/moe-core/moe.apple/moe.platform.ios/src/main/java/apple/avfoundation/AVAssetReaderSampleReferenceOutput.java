@@ -226,4 +226,9 @@ public class AVAssetReaderSampleReferenceOutput extends AVAssetReaderOutput {
     @Generated
     @Selector("track")
     public native AVAssetTrack track();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

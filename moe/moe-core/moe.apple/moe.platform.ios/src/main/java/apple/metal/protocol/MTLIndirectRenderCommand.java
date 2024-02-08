@@ -12,6 +12,8 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.metal.struct.MTLSize;
+import org.moe.natj.general.ann.ByValue;
 
 /**
  * Describes a CPU-recorded indirect render command
@@ -72,4 +74,73 @@ public interface MTLIndirectRenderCommand {
     @Selector("setVertexBuffer:offset:atIndex:")
     void setVertexBufferOffsetAtIndex(@NotNull @Mapped(ObjCObjectMapper.class) MTLBuffer buffer, @NUInt long offset,
             @NUInt long index);
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("clearBarrier")
+    void clearBarrier();
+
+    /**
+     * MTLIndirectCommandTypeDrawMeshThreadgroups
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("drawMeshThreadgroups:threadsPerObjectThreadgroup:threadsPerMeshThreadgroup:")
+    void drawMeshThreadgroupsThreadsPerObjectThreadgroupThreadsPerMeshThreadgroup(@ByValue MTLSize threadgroupsPerGrid,
+            @ByValue MTLSize threadsPerObjectThreadgroup, @ByValue MTLSize threadsPerMeshThreadgroup);
+
+    /**
+     * MTLIndirectCommandTypeDrawMeshThreads
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("drawMeshThreads:threadsPerObjectThreadgroup:threadsPerMeshThreadgroup:")
+    void drawMeshThreadsThreadsPerObjectThreadgroupThreadsPerMeshThreadgroup(@ByValue MTLSize threadsPerGrid,
+            @ByValue MTLSize threadsPerObjectThreadgroup, @ByValue MTLSize threadsPerMeshThreadgroup);
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("setBarrier")
+    void setBarrier();
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("setMeshBuffer:offset:atIndex:")
+    void setMeshBufferOffsetAtIndex(@Mapped(ObjCObjectMapper.class) @NotNull MTLBuffer buffer, @NUInt long offset,
+            @NUInt long index);
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("setObjectBuffer:offset:atIndex:")
+    void setObjectBufferOffsetAtIndex(@Mapped(ObjCObjectMapper.class) @NotNull MTLBuffer buffer, @NUInt long offset,
+            @NUInt long index);
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("setObjectThreadgroupMemoryLength:atIndex:")
+    void setObjectThreadgroupMemoryLengthAtIndex(@NUInt long length, @NUInt long index);
+
+    /**
+     * sets vertex buffer at specified index with provided offset and stride.
+     * only call this when the buffer-index is part of the vertexDescriptor and
+     * has set its stride to `MTLBufferLayoutStrideDynamic`
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("setVertexBuffer:offset:attributeStride:atIndex:")
+    void setVertexBufferOffsetAttributeStrideAtIndex(@Mapped(ObjCObjectMapper.class) @NotNull MTLBuffer buffer,
+            @NUInt long offset, @NUInt long stride, @NUInt long index);
 }

@@ -33,8 +33,6 @@ import org.jetbrains.annotations.Nullable;
 /**
  * NLGazetteer is a class representing an efficient probabilistic representation for assigning labels to a set of
  * strings.
- * 
- * API-Since: 13.0
  */
 @Generated
 @Library("NaturalLanguage")
@@ -219,4 +217,9 @@ public class NLGazetteer extends NSObject {
     public static native boolean writeGazetteerForDictionaryLanguageToURLError(
             @NotNull NSDictionary<String, ? extends NSArray<String>> dictionary, @Nullable String language,
             @NotNull NSURL url, @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

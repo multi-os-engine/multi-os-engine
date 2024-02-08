@@ -190,4 +190,9 @@ public class UIGraphicsPDFRendererContext extends UIGraphicsRendererContext {
     @Generated
     @Selector("setURL:forRect:")
     public native void setURLForRect(@NotNull NSURL url, @ByValue CGRect rect);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

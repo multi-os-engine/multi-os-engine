@@ -233,4 +233,9 @@ public class HMCharacteristicMetadata extends NSObject {
     @Generated
     @Selector("validValues")
     public native NSArray<? extends NSNumber> validValues();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -315,4 +315,9 @@ public class AVAssetDownloadURLSession extends NSURLSession {
     @Selector("assetDownloadTaskWithConfiguration:")
     public native AVAssetDownloadTask assetDownloadTaskWithConfiguration(
             @NotNull AVAssetDownloadConfiguration downloadConfiguration);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

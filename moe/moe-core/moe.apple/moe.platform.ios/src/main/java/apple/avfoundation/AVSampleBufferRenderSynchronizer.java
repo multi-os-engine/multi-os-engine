@@ -30,6 +30,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.opaque.dispatch_queue_t;
 
 /**
  * AVSampleBufferRenderSynchronizer
@@ -85,7 +86,7 @@ public class AVSampleBufferRenderSynchronizer extends NSObject {
     @Selector("addBoundaryTimeObserverForTimes:queue:usingBlock:")
     @MappedReturn(ObjCObjectMapper.class)
     public native Object addBoundaryTimeObserverForTimesQueueUsingBlock(@NotNull NSArray<? extends NSValue> times,
-            @Nullable NSObject queue,
+            @Nullable dispatch_queue_t queue,
             @NotNull @ObjCBlock(name = "call_addBoundaryTimeObserverForTimesQueueUsingBlock") Block_addBoundaryTimeObserverForTimesQueueUsingBlock block);
 
     @Runtime(ObjCRuntime.class)
@@ -130,7 +131,7 @@ public class AVSampleBufferRenderSynchronizer extends NSObject {
     @Selector("addPeriodicTimeObserverForInterval:queue:usingBlock:")
     @MappedReturn(ObjCObjectMapper.class)
     public native Object addPeriodicTimeObserverForIntervalQueueUsingBlock(@ByValue CMTime interval,
-            @Nullable NSObject queue,
+            @Nullable dispatch_queue_t queue,
             @NotNull @ObjCBlock(name = "call_addPeriodicTimeObserverForIntervalQueueUsingBlock") Block_addPeriodicTimeObserverForIntervalQueueUsingBlock block);
 
     @Runtime(ObjCRuntime.class)
@@ -365,6 +366,7 @@ public class AVSampleBufferRenderSynchronizer extends NSObject {
      * Sets the timebase's time to time and then sets the rendering rate to rate. A rate value of 0.0 means "stopped"; a
      * rate value of 1.0 means "play at the natural rate of the media". Use kCMTimeInvalid for time to not modify the
      * timebase's time.
+     * Note that this method updates the rate property synchronously, but the timebase is updated asynchronously.
      * 
      * @param rate
      *             A new timebase rate to set. Must be greater than or equal to 0.0
@@ -485,6 +487,8 @@ public class AVSampleBufferRenderSynchronizer extends NSObject {
      * CMTime inOneSecond = CMTimeAdd(CMClockGetTime(CMClockGetHostTimeClock()), CMTimeMake(1, 1));
      * [synchronizer setRate:rate time:startTime atHostTime:inOneSecond];
      * 
+     * Also note that this method updates the rate property synchronously, but the timebase is updated asynchronously.
+     * 
      * API-Since: 14.5
      * 
      * @param rate
@@ -497,4 +501,9 @@ public class AVSampleBufferRenderSynchronizer extends NSObject {
     @Generated
     @Selector("setRate:time:atHostTime:")
     public native void setRateTimeAtHostTime(float rate, @ByValue CMTime time, @ByValue CMTime hostTime);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -124,4 +124,10 @@ public final class MLModelError {
      * API-Since: 14.0
      */
     @Generated @NInt public static final long ModelCollection = 0x000000000000000AL;
+    /**
+     * Core ML throws/returns this error when the prediction is cancelled prior to completing.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated @NInt public static final long PredictionCancelled = 0x000000000000000BL;
 }

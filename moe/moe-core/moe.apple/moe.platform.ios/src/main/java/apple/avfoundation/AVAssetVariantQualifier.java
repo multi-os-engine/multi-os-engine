@@ -29,6 +29,12 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
+ * AVAssetVariantQualifier
+ * 
+ * The qualifier of an asset variant.
+ * 
+ * Subclasses of this type that are used from Swift must fulfill the requirements of a Sendable type.
+ * 
  * API-Since: 15.0
  */
 @Generated
@@ -163,7 +169,7 @@ public class AVAssetVariantQualifier extends NSObject implements NSCopying {
     /**
      * predicateForChannelCount:mediaSelectionOption:operatorType:
      * 
-     * Creates a NSPredicate for audio channel count which can be used with other NSPredicates' to express variant
+     * Creates a NSPredicate for audio channel count which can be used with other NSPredicates to express variant
      * preferences.
      * 
      * @param channelCount
@@ -242,4 +248,65 @@ public class AVAssetVariantQualifier extends NSObject implements NSCopying {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * predicateForBinauralAudio:mediaSelectionOption:
+     * 
+     * Creates a NSPredicate for binaural which can be used with other NSPredicates to express variant preferences.
+     * 
+     * @param isBinaural
+     *                             The RHS value for the value of isBinauralAudio in the predicate equation.
+     * @param mediaSelectionOption
+     *                             The audio media selection option under consideration.
+     * 
+     *                             API-Since: 17.0
+     */
+    @Generated
+    @Selector("predicateForBinauralAudio:mediaSelectionOption:")
+    @NotNull
+    public static native NSPredicate predicateForBinauralAudioMediaSelectionOption(boolean isBinauralAudio,
+            @NotNull AVMediaSelectionOption mediaSelectionOption);
+
+    /**
+     * predicateForDownmixAudio:mediaSelectionOption:
+     * 
+     * Creates a NSPredicate for immersive audio which can be used with other NSPredicates to express variant
+     * preferences.
+     * 
+     * @param isDownmixAudio
+     *                             The RHS value for the value of isDownmixAudio in the predicate equation.
+     * @param mediaSelectionOption
+     *                             The audio media selection option under consideration.
+     * 
+     *                             API-Since: 17.0
+     */
+    @Generated
+    @Selector("predicateForDownmixAudio:mediaSelectionOption:")
+    @NotNull
+    public static native NSPredicate predicateForDownmixAudioMediaSelectionOption(boolean isDownmixAudio,
+            @NotNull AVMediaSelectionOption mediaSelectionOption);
+
+    /**
+     * predicateForImmersiveAudio:mediaSelectionOption:
+     * 
+     * Creates a NSPredicate for immersive audio which can be used with other NSPredicates to express variant
+     * preferences.
+     * 
+     * @param isImmersiveAudio
+     *                             The RHS value for the value of isImmersiveAudio in the predicate equation.
+     * @param mediaSelectionOption
+     *                             The audio media selection option under consideration.
+     * 
+     *                             API-Since: 17.0
+     */
+    @Generated
+    @Selector("predicateForImmersiveAudio:mediaSelectionOption:")
+    @NotNull
+    public static native NSPredicate predicateForImmersiveAudioMediaSelectionOption(boolean isImmersiveAudio,
+            @NotNull AVMediaSelectionOption mediaSelectionOption);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

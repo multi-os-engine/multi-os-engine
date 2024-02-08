@@ -43,8 +43,6 @@ import org.jetbrains.annotations.Nullable;
 /**
  * A tree data structure where each level has 4 children that subdivide a given space into the four quadrants.
  * Stores arbitrary NSObject data via points and quads.
- * 
- * API-Since: 10.0
  */
 @Generated
 @Library("GameplayKit")
@@ -187,4 +185,9 @@ public class GKQuadtree<_ElementType> extends NSObject {
     @Generated
     @Selector("removeElement:withNode:")
     public native boolean removeElementWithNode(@NotNull NSObject data, @NotNull GKQuadtreeNode node);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

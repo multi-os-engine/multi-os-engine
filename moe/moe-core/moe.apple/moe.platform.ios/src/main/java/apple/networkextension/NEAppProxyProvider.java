@@ -284,4 +284,9 @@ public class NEAppProxyProvider extends NETunnelProvider {
     @Selector("handleNewUDPFlow:initialRemoteEndpoint:")
     public native boolean handleNewUDPFlowInitialRemoteEndpoint(@NotNull NEAppProxyUDPFlow flow,
             @NotNull NWEndpoint remoteEndpoint);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

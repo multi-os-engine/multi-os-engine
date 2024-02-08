@@ -209,4 +209,9 @@ public class SFVoiceAnalytics extends NSObject implements NSCopying, NSSecureCod
     @Generated
     @Selector("voicing")
     public native SFAcousticFeature voicing();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

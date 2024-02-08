@@ -224,4 +224,9 @@ public class INPaymentMethod extends NSObject implements NSCopying, NSSecureCodi
     @Selector("type")
     @NInt
     public native long type();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

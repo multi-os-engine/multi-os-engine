@@ -366,4 +366,9 @@ public class INSearchForMessagesIntent extends INIntent {
             @Nullable NSArray<String> notificationIdentifiers,
             @Nullable NSArray<? extends INSpeakableString> speakableGroupNames,
             @Nullable NSArray<String> conversationIdentifiers);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

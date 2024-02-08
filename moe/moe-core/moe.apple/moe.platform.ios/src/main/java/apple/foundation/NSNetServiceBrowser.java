@@ -262,4 +262,9 @@ public class NSNetServiceBrowser extends NSObject {
     @Generated
     @Selector("stop")
     public native void stop();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

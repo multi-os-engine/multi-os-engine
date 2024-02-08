@@ -29,8 +29,6 @@ import org.jetbrains.annotations.Nullable;
  * 
  * The MSMessageLiveLayout is used to indicate a message should be rendered in Messages using an instance of
  * `MSMessagesAppViewController` with a `presentationStyle` of `MSMessagesAppPresentationStyleTranscript`.
- * 
- * API-Since: 11.0
  */
 @Generated
 @Library("Messages")
@@ -168,4 +166,9 @@ public class MSMessageLiveLayout extends MSMessageLayout {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

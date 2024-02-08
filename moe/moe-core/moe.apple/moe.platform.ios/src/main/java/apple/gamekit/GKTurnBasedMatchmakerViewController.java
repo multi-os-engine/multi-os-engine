@@ -46,9 +46,6 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-/**
- * API-Since: 5.0
- */
 @Generated
 @Library("GameKit")
 @Runtime(ObjCRuntime.class)
@@ -251,4 +248,9 @@ public class GKTurnBasedMatchmakerViewController extends UINavigationController 
     @Generated
     @Selector("setMatchmakingMode:")
     public native void setMatchmakingMode(@NInt long value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

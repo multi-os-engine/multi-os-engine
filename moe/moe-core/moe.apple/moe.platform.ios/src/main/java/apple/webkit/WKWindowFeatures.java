@@ -227,4 +227,9 @@ public class WKWindowFeatures extends NSObject {
     @Generated
     @Selector("y")
     public native NSNumber y();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

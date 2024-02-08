@@ -217,4 +217,9 @@ public class UIUserNotificationCategory extends NSObject implements NSCopying, N
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

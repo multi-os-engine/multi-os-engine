@@ -313,4 +313,9 @@ public class NSAttributeDescription extends NSPropertyDescription {
     @Generated
     @Selector("setAllowsCloudEncryption:")
     public native void setAllowsCloudEncryption(boolean value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

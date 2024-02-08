@@ -676,4 +676,9 @@ public class CLSContext extends CLSObject {
     @Generated
     @Selector("removeNavigationChildContext:")
     public native void removeNavigationChildContext(@NotNull CLSContext child);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

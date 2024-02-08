@@ -36,4 +36,12 @@ public final class MTLIndirectCommandType {
      * API-Since: 13.0
      */
     @Generated @NUInt public static final long ConcurrentDispatchThreads = 0x0000000000000040L;
+    /**
+     * API-Since: 17.0
+     */
+    @Generated @NUInt public static final long DrawMeshThreadgroups = 0x0000000000000080L;
+    /**
+     * API-Since: 17.0
+     */
+    @Generated @NUInt public static final long DrawMeshThreads = 0x0000000000000100L;
 }

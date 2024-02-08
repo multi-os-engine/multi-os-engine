@@ -201,4 +201,9 @@ public class ILMessageFilterQueryResponse extends NSObject implements NSSecureCo
     @Selector("subAction")
     @NInt
     public native long subAction();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

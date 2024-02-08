@@ -49,6 +49,9 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
+ * This class should not be subclassed. If it is, Sendable may no longer apply.
+ * NS_SWIFT_SENDABLE on macos(14.0), ios(17.0), tvos(17.0), watchos(10.0)
+ * 
  * API-Since: 8.0
  */
 @Generated
@@ -434,4 +437,9 @@ public class CKRecord extends NSObject implements NSSecureCoding, NSCopying, CKR
     @Selector("encryptedValues")
     @MappedReturn(ObjCObjectMapper.class)
     public native CKRecordKeyValueSetting encryptedValues();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

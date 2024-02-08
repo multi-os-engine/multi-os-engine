@@ -814,4 +814,9 @@ public class NSProgress extends NSObject {
     @Generated
     @Selector("throughput")
     public native NSNumber throughput();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

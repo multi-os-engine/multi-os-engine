@@ -180,6 +180,8 @@ public class CKModifyBadgeOperation extends CKOperation {
      * 
      * The @code -[NSOperation completionBlock] @endcode will also be called if both are set.
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
+     * This block may share mutable state with other blocks assigned to this operation, but any such mutable state
+     * should not be concurrently used outside of blocks assigned to this operation.
      */
     @Nullable
     @Generated
@@ -196,6 +198,8 @@ public class CKModifyBadgeOperation extends CKOperation {
      * 
      * The @code -[NSOperation completionBlock] @endcode will also be called if both are set.
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
+     * This block may share mutable state with other blocks assigned to this operation, but any such mutable state
+     * should not be concurrently used outside of blocks assigned to this operation.
      */
     @Generated
     @Selector("setModifyBadgeCompletionBlock:")
@@ -215,4 +219,9 @@ public class CKModifyBadgeOperation extends CKOperation {
         @Generated
         void call_setModifyBadgeCompletionBlock(@Nullable NSError arg0);
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

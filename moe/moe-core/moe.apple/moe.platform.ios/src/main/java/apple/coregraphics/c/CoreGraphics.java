@@ -1551,11 +1551,11 @@ public final class CoreGraphics {
      * in `colors' will be at location 1, and intervening colors will be at
      * equal intervals in between. Otherwise, each location in `locations'
      * should be a CGFloat between 0 and 1. Each set of color components should
-     * specify a color in the color space `space' (which may not be a pattern or
-     * indexed color space). The number of locations is specified by `count';
-     * the number of color components is the product of `count' and the number
-     * of color components of `space'. If no color is provided for 0 or 1, the
-     * gradient will use the color provided at the locations closest to 0 and 1
+     * specify a color in the color space `space', which may not any of
+     * CIELAB, DeviceN, Indexed or Pattern. The number of locations is specified
+     * by `count'; the number of color components is the product of `count' and
+     * the number of color components of `space'. If no color is provided for 0 or 1,
+     * the gradient will use the color provided at the locations closest to 0 and 1
      * for those values.
      * 
      * API-Since: 2.0
@@ -1570,13 +1570,14 @@ public final class CoreGraphics {
      * Creates a gradient by pairing the colors provided in `colors' with the
      * locations provided in `locations'. `colors' should be a non-empty array
      * of CGColor objects. The colors may be in any color space other than a
-     * pattern or indexed color space. If `space' is non-NULL, each color will
-     * be converted to that color space and the gradient will drawn in that
-     * space; otherwise, each color will be converted to and drawn in the
-     * "Generic" RGB color space. If `space' is specified, it may not be a
-     * pattern or indexed color space. If `locations' is NULL, the first color
-     * in `colors' will be at location 0, the last color in `colors' will be at
-     * location 1, and intervening colors will be at equal intervals in between.
+     * pattern color space and are required to be convertible to `space'.
+     * If `space' is non-NULL, it may not be any of CIELAB, DeviceN, Indexed or Pattern.
+     * Each color will be converted to that color space and the gradient will drawn
+     * in that space; otherwise, each color will be converted to and drawn in the
+     * "Generic" RGB color space.
+     * If `locations' is NULL, the first color in `colors' will be at location 0,
+     * the last color in `colors' will be at location 1, and intervening colors
+     * will be at equal intervals in between.
      * Otherwise, each location in `locations' should be a CGFloat between 0 and
      * 1; the array of locations should should contain the same number of items
      * as `colors'. If no color is provided for 0 or 1, the gradient will use
@@ -6016,6 +6017,9 @@ public final class CoreGraphics {
     public static native boolean CGColorSpaceIsHDR(@NotNull CGColorSpaceRef arg1);
 
     /**
+     * CGColorSpaceCopyPropertyList will return NULL for special color spaces
+     * (e.g. kCGColorSpaceDeviceN or kCGColorSpacePattern), except Indexed Color Space
+     * 
      * API-Since: 10.0
      */
     @Nullable
@@ -6864,4 +6868,20 @@ public final class CoreGraphics {
     @Generated public static final int kCGBitmapByteOrder16Host = 0x00001000;
     @Generated public static final int kCGBitmapByteOrder32Host = 0x00002000;
     @Generated public static final double CG_HDR_BT_2100 = 1.0;
+
+    /**
+     * Fill the current clipping region of `context' with a conic gradient
+     * defined by the center point and rotation angle. The location 0 of `gradient'
+     * corresponds to a initial rotation angle; the location 1 of `gradient'
+     * corresponds to 360 degrees rotation from rotation angle; colors are linearly
+     * interpolated over the full angle based on the values of the gradient's
+     * locations. The 0 angle corresponds to positive x axis. The angle increases
+     * towards positive y axis.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @CFunction
+    public static native void CGContextDrawConicGradient(@NotNull CGContextRef c, @Nullable CGGradientRef gradient,
+            @ByValue CGPoint center, @NFloat double angle);
 }

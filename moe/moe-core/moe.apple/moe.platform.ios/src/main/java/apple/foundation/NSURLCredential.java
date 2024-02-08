@@ -357,4 +357,9 @@ public class NSURLCredential extends NSObject implements NSSecureCoding, NSCopyi
     @Generated
     @Selector("user")
     public native String user();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

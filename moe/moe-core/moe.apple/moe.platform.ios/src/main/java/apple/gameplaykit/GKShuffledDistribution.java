@@ -50,8 +50,6 @@ import org.jetbrains.annotations.Nullable;
  * 
  * Do not use with distributions ranging more than 256 between lowest and highest as the shuffling seqeunce is stored
  * internally in memory.
- * 
- * API-Since: 9.0
  */
 @Generated
 @Library("GameplayKit")
@@ -195,4 +193,9 @@ public class GKShuffledDistribution extends GKRandomDistribution {
     public native GKShuffledDistribution initWithRandomSourceLowestValueHighestValue(
             @NotNull @Mapped(ObjCObjectMapper.class) GKRandom source, @NInt long lowestInclusive,
             @NInt long highestInclusive);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

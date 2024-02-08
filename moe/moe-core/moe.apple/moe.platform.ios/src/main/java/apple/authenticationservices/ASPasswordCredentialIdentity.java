@@ -28,6 +28,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.authenticationservices.protocol.ASCredentialIdentity;
 
 /**
  * ASPasswordCredentialIdentity
@@ -41,7 +42,7 @@ import org.jetbrains.annotations.Nullable;
 @Library("AuthenticationServices")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class ASPasswordCredentialIdentity extends NSObject implements NSCopying, NSSecureCoding {
+public class ASPasswordCredentialIdentity extends NSObject implements NSCopying, NSSecureCoding, ASCredentialIdentity {
     static {
         NatJ.register();
     }
@@ -262,4 +263,9 @@ public class ASPasswordCredentialIdentity extends NSObject implements NSCopying,
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

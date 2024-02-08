@@ -179,4 +179,9 @@ public class VNDetectHorizonRequest extends VNImageBasedRequest {
     @Generated
     @Selector("results")
     public native NSArray<? extends VNHorizonObservation> results();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

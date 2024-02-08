@@ -198,4 +198,9 @@ public class PKAddCarKeyPassConfiguration extends PKAddSecureElementPassConfigur
     @Generated
     @Selector("setProvisioningTemplateIdentifier:")
     public native void setProvisioningTemplateIdentifier(@Nullable String value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

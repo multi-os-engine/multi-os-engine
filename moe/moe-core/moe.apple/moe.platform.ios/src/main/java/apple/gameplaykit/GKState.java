@@ -49,8 +49,6 @@ import org.jetbrains.annotations.Nullable;
  * 
  * @see GKStateMachine
  * @see isValidNextState:
- * 
- *      API-Since: 9.0
  */
 @Generated
 @Library("GameplayKit")
@@ -232,4 +230,9 @@ public class GKState extends NSObject {
     @Generated
     @Selector("willExitWithNextState:")
     public native void willExitWithNextState(@NotNull GKState nextState);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

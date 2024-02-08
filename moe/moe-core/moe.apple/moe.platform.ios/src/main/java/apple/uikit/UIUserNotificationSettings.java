@@ -185,4 +185,9 @@ public class UIUserNotificationSettings extends NSObject {
     @Selector("types")
     @NUInt
     public native long types();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

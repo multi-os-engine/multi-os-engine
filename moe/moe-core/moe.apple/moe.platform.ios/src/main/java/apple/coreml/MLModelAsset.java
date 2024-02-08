@@ -124,7 +124,7 @@ public class MLModelAsset extends NSObject {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
-     * Construct an optimized model asset asynchronously from the contents of specification data.
+     * Construct an optimized model asset from the contents of specification data.
      * 
      * @param specificationData Contents of .mlmodel as a data blob.
      * @param error             When the model asset creation fails error is populated with the reason for failure.
@@ -162,4 +162,9 @@ public class MLModelAsset extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -167,6 +167,8 @@ public class CKAcceptSharesOperation extends CKOperation {
      * errors keyed off of @c CKPartialErrorsByItemIDKey. These errors are repeats of those sent back in previous @c
      * perShareCompletionBlock invocations
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
+     * This block may share mutable state with other blocks assigned to this operation, but any such mutable state
+     * should not be concurrently used outside of blocks assigned to this operation.
      */
     @Nullable
     @Generated
@@ -188,6 +190,8 @@ public class CKAcceptSharesOperation extends CKOperation {
      * 
      * If error is nil then the share was successfully accepted.
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
+     * This block may share mutable state with other blocks assigned to this operation, but any such mutable state
+     * should not be concurrently used outside of blocks assigned to this operation.
      */
     @Nullable
     @Generated
@@ -203,6 +207,8 @@ public class CKAcceptSharesOperation extends CKOperation {
      * errors keyed off of @c CKPartialErrorsByItemIDKey. These errors are repeats of those sent back in previous @c
      * perShareCompletionBlock invocations
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
+     * This block may share mutable state with other blocks assigned to this operation, but any such mutable state
+     * should not be concurrently used outside of blocks assigned to this operation.
      */
     @Generated
     @Selector("setAcceptSharesCompletionBlock:")
@@ -214,6 +220,8 @@ public class CKAcceptSharesOperation extends CKOperation {
      * 
      * If error is nil then the share was successfully accepted.
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
+     * This block may share mutable state with other blocks assigned to this operation, but any such mutable state
+     * should not be concurrently used outside of blocks assigned to this operation.
      */
     @Generated
     @Selector("setPerShareCompletionBlock:")
@@ -258,4 +266,9 @@ public class CKAcceptSharesOperation extends CKOperation {
         void call_setPerShareCompletionBlock(@NotNull CKShareMetadata arg0, @Nullable CKShare arg1,
                 @Nullable NSError arg2);
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

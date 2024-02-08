@@ -41,6 +41,8 @@ import org.jetbrains.annotations.Nullable;
  * depth, surface pressure, and submersion state. Depth value is positive when underwater.
  * Depth, pressure, and pressureUncertainty are null when not submerged or when the state
  * is CMWaterSubmersionDepthStateSensorDepthError.
+ * 
+ * API-Since: 16.0
  */
 @Generated
 @Library("CoreMotion")
@@ -209,4 +211,9 @@ public class CMWaterSubmersionMeasurement extends NSObject implements NSSecureCo
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

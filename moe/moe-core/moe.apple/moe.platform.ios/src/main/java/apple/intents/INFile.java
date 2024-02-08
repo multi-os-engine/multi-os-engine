@@ -247,4 +247,9 @@ public class INFile extends NSObject implements NSSecureCoding {
     @Generated
     @Selector("setRemovedOnCompletion:")
     public native void setRemovedOnCompletion(boolean value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

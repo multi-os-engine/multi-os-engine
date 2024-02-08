@@ -233,4 +233,9 @@ public class HMLocationEvent extends HMEvent implements NSCopying, NSMutableCopy
     @Selector("mutableCopyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
     public native Object mutableCopyWithZone(@Nullable VoidPtr zone);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

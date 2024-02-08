@@ -2,8 +2,6 @@ package apple.avfaudio;
 
 import apple.NSObject;
 import apple.audiotoolbox.struct.AudioComponentDescription;
-import apple.avfaudio.protocol.AVAudioMixing;
-import apple.avfaudio.struct.AVAudio3DPoint;
 import apple.foundation.NSArray;
 import apple.foundation.NSData;
 import apple.foundation.NSMethodSignature;
@@ -47,7 +45,7 @@ import org.jetbrains.annotations.Nullable;
 @Library("AVFAudio")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class AVAudioUnitMIDIInstrument extends AVAudioUnit implements AVAudioMixing {
+public class AVAudioUnitMIDIInstrument extends AVAudioUnit {
     static {
         NatJ.register();
     }
@@ -103,11 +101,6 @@ public class AVAudioUnitMIDIInstrument extends AVAudioUnit implements AVAudioMix
     @Generated
     @Selector("description")
     public static native String description_static();
-
-    @Nullable
-    @Generated
-    @Selector("destinationForMixer:bus:")
-    public native AVAudioMixingDestination destinationForMixerBus(@NotNull AVAudioNode mixer, @NUInt long bus);
 
     @Generated
     @Selector("hash")
@@ -167,47 +160,12 @@ public class AVAudioUnitMIDIInstrument extends AVAudioUnit implements AVAudioMix
     public static native AVAudioUnitMIDIInstrument new_objc();
 
     @Generated
-    @Selector("obstruction")
-    public native float obstruction();
-
-    @Generated
-    @Selector("occlusion")
-    public native float occlusion();
-
-    @Generated
-    @Selector("pan")
-    public native float pan();
-
-    @Generated
-    @Selector("pointSourceInHeadMode")
-    @NInt
-    public native long pointSourceInHeadMode();
-
-    @Generated
-    @Selector("position")
-    @ByValue
-    public native AVAudio3DPoint position();
-
-    @Generated
-    @Selector("rate")
-    public native float rate();
-
-    @Generated
-    @Selector("renderingAlgorithm")
-    @NInt
-    public native long renderingAlgorithm();
-
-    @Generated
     @Selector("resolveClassMethod:")
     public static native boolean resolveClassMethod(SEL sel);
 
     @Generated
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
-
-    @Generated
-    @Selector("reverbBlend")
-    public native float reverbBlend();
 
     /**
      * sendController:withValue:onChannel:
@@ -363,53 +321,8 @@ public class AVAudioUnitMIDIInstrument extends AVAudioUnit implements AVAudioMix
     public native void sendProgramChangeOnChannel(byte program, byte channel);
 
     @Generated
-    @Selector("setObstruction:")
-    public native void setObstruction(float value);
-
-    @Generated
-    @Selector("setOcclusion:")
-    public native void setOcclusion(float value);
-
-    @Generated
-    @Selector("setPan:")
-    public native void setPan(float value);
-
-    @Generated
-    @Selector("setPointSourceInHeadMode:")
-    public native void setPointSourceInHeadMode(@NInt long value);
-
-    @Generated
-    @Selector("setPosition:")
-    public native void setPosition(@ByValue AVAudio3DPoint value);
-
-    @Generated
-    @Selector("setRate:")
-    public native void setRate(float value);
-
-    @Generated
-    @Selector("setRenderingAlgorithm:")
-    public native void setRenderingAlgorithm(@NInt long value);
-
-    @Generated
-    @Selector("setReverbBlend:")
-    public native void setReverbBlend(float value);
-
-    @Generated
-    @Selector("setSourceMode:")
-    public native void setSourceMode(@NInt long value);
-
-    @Generated
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
-
-    @Generated
-    @Selector("setVolume:")
-    public native void setVolume(float value);
-
-    @Generated
-    @Selector("sourceMode")
-    @NInt
-    public native long sourceMode();
 
     /**
      * startNote:withVelocity:onChannel:
@@ -455,10 +368,6 @@ public class AVAudioUnitMIDIInstrument extends AVAudioUnit implements AVAudioMix
     @NInt
     public static native long version_static();
 
-    @Generated
-    @Selector("volume")
-    public native float volume();
-
     /**
      * sendMIDIEventList:eventList:
      * 
@@ -473,4 +382,9 @@ public class AVAudioUnitMIDIInstrument extends AVAudioUnit implements AVAudioMix
     @Selector("sendMIDIEventList:")
     public native void sendMIDIEventList(
             @NotNull @UncertainArgument("Options: reference, array Fallback: reference") MIDIEventList eventList);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

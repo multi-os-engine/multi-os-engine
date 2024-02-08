@@ -19,12 +19,17 @@ package apple.foundation.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
+/**
+ * API-Since: 2.0
+ */
 @Generated
 public final class NSNetServiceOptions {
     /**
      * When passed to -publishWithOptions:, this suppresses the auto-renaming of an
      * NSNetService in the event of a name collision. The collision is reported to the
      * instance's delegate on the -netService:didNotPublish: method.
+     * 
+     * API-Since: 2.0
      */
     @Generated @NUInt public static final long NoAutoRename = 0x0000000000000001L;
     /**

@@ -52,10 +52,10 @@ import org.jetbrains.annotations.Nullable;
  * 
  * Even for use cases that may typically support ready access to some keys (such as for assets initialized with URLs for
  * files in the local filesystem), slow I/O may require AVAsset to block before returning their values. Although
- * blocking may be acceptable for OS X API clients in cases where assets are being prepared on background threads or in
+ * blocking may be acceptable for macOS API clients in cases where assets are being prepared on background threads or in
  * operation queues, in all cases in which blocking should be avoided you should use
- * loadValuesAsynchronouslyForKeys:completionHandler:. For iOS clients, blocking to obtain the value of a key
- * synchronously is never recommended under any circumstances.
+ * loadValuesAsynchronouslyForKeys:completionHandler:. For clients of platforms other than macOS, blocking to obtain the
+ * value of a key synchronously is never recommended under any circumstances.
  */
 @Generated
 @Library("AVFoundation")
@@ -97,10 +97,10 @@ public interface AVAsynchronousKeyValueLoading {
      * loading values for all keys of interest via -loadValuesAsynchronouslyForKeys:completionHandler: and testing the
      * availability of the requested values before fetching them by calling getters.
      * 
-     * The sole exception to this general rule is in usage on Mac OS X on the desktop, where it may be acceptable to
-     * block in cases in which the client is preparing objects for use on background threads or in operation queues. On
-     * iOS, values should always be loaded asynchronously prior to calling getters for the values, in any usage
-     * scenario.
+     * The sole exception to this general rule is in usage on macOS on the desktop, where it may be acceptable to block
+     * in cases in which the client is preparing objects for use on background threads or in operation queues. On
+     * platforms other than macOS, values should always be loaded asynchronously prior to calling getters for the
+     * values, in any usage scenario.
      * 
      * @param key
      *                 An instance of NSString containing the specified key.

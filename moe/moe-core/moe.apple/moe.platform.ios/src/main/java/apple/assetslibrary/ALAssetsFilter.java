@@ -185,4 +185,9 @@ public class ALAssetsFilter extends NSObject {
     @Generated
     @Selector("init")
     public native ALAssetsFilter init();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

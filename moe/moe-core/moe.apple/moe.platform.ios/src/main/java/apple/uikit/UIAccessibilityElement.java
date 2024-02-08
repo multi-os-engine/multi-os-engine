@@ -287,4 +287,9 @@ public class UIAccessibilityElement extends UIResponder implements UIAccessibili
     @Generated
     @Selector("clearTextInputContextIdentifier:")
     public static native void clearTextInputContextIdentifier(@NotNull String identifier);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -213,4 +213,12 @@ public final class AVError {
      * API-Since: 16.0
      */
     @Generated @NInt public static final long AirPlayReceiverTemporarilyUnavailable = 0xFFFFFFFFFFFFD196L;
+    /**
+     * API-Since: 16.0
+     */
+    @Generated @NInt public static final long EncodeFailed = 0xFFFFFFFFFFFFD195L;
+    /**
+     * API-Since: 16.0
+     */
+    @Generated @NInt public static final long SandboxExtensionDenied = 0xFFFFFFFFFFFFD194L;
 }

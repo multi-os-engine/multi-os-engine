@@ -700,4 +700,9 @@ public class MPSCNNConvolutionDescriptor extends NSObject implements NSSecureCod
     @Generated
     @Selector("setFusedNeuronDescriptor:")
     public native void setFusedNeuronDescriptor(@NotNull MPSNNNeuronDescriptor value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

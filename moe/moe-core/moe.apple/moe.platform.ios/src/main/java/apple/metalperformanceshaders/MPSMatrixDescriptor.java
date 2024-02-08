@@ -367,4 +367,9 @@ public class MPSMatrixDescriptor extends NSObject {
     @Selector("rowBytesForColumns:dataType:")
     @NUInt
     public static native long rowBytesForColumnsDataType(@NUInt long columns, int dataType);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

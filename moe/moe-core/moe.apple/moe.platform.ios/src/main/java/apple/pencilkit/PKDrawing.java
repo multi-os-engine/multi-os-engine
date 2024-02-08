@@ -281,4 +281,19 @@ public class PKDrawing extends NSObject implements NSCopying, NSSecureCoding {
     @Generated
     @Selector("strokes")
     public native NSArray<? extends PKStroke> strokes();
+
+    /**
+     * The PencilKit version required to use this drawing.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("requiredContentVersion")
+    @NInt
+    public native long requiredContentVersion();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

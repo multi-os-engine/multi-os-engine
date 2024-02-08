@@ -194,4 +194,9 @@ public class UNTimeIntervalNotificationTrigger extends UNNotificationTrigger {
     @Generated
     @Selector("timeInterval")
     public native double timeInterval();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

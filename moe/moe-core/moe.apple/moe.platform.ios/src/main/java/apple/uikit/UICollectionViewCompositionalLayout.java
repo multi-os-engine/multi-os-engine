@@ -226,4 +226,9 @@ public class UICollectionViewCompositionalLayout extends UICollectionViewLayout 
     @Selector("layoutWithListConfiguration:")
     public static native UICollectionViewCompositionalLayout layoutWithListConfiguration(
             @NotNull UICollectionLayoutListConfiguration configuration);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

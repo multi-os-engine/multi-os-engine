@@ -264,4 +264,9 @@ public class AVAudioUnitDelay extends AVAudioUnitEffect {
     @Generated
     @Selector("wetDryMix")
     public native float wetDryMix();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

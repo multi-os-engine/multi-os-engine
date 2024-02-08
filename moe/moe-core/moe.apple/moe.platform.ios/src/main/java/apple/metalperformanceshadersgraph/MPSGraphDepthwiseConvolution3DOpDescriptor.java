@@ -28,9 +28,14 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
- * MPSGraphDepthwiseConvolution3DOpDescriptor
+ * This class defines parameters for a 3d depthwise convolution operation.
  * 
- * Defines a 3d depthwise convolution operation
+ * A `MPSGraphDepthwiseConvolution3DOpDescriptor` defines constant parameters for 3d depthwise convolutions.
+ * Use this class with ``MPSGraph/depthwiseConvolution3DWithSourceTensor:weightsTensor:descriptor:name:``,
+ * ``MPSGraph/depthwiseConvolution3DDataGradientWithIncomingGradientTensor:weightsTensor:outputShape:descriptor:name:``
+ * and
+ * ``MPSGraph/depthwiseConvolution3DWeightsGradientWithIncomingGradientTensor:sourceTensor:outputShape:descriptor:name:``
+ * methods.
  * 
  * API-Since: 15.0
  */
@@ -38,7 +43,7 @@ import org.jetbrains.annotations.Nullable;
 @Library("MetalPerformanceShadersGraph")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class MPSGraphDepthwiseConvolution3DOpDescriptor extends NSObject implements NSCopying {
+public class MPSGraphDepthwiseConvolution3DOpDescriptor extends MPSGraphObject implements NSCopying {
     static {
         NatJ.register();
     }
@@ -78,16 +83,14 @@ public class MPSGraphDepthwiseConvolution3DOpDescriptor extends NSObject impleme
             @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
     /**
-     * [@property] channelDimensionIndex
+     * The axis that contains the channels in the input and the weights, within
+     * the 4d tile of the last dimensions.
      * 
-     * Defines which axis contains the channels in the input and the weights, within
-     * the 4d tile of the last dimensions. For example the value of @code -1 @endcode
-     * corresponds to @code NDHWC, NHWC @endcode layouts. This allows the placement
-     * of the channel index anywhere within the last 4 dimensions of the tensor. In case the
-     * weights are in a different layout it is recommended to bring them to the same layout
+     * For example the value of `-1` corresponds to `NDHWC`, `NHWC` layouts. This allows the placement
+     * of the channel index anywhere within the last 4 dimensions of the tensor. In case your
+     * weights are in a different layout you can bring them to the same layout
      * as inputs using transposes or permutations.
-     * Default value: @code -4 @endcode, corresponds to @code NCDHW @endcode
-     * and @code CDHW @endcode layouts.
+     * Default value: `-4`, corresponds to `NCDHW` and `CDHW` layouts.
      */
     @Generated
     @Selector("channelDimensionIndex")
@@ -122,8 +125,9 @@ public class MPSGraphDepthwiseConvolution3DOpDescriptor extends NSObject impleme
     /**
      * Creates a 3d depthwise convolution descriptor with default values.
      * 
-     * @param paddingStyle See corresponding property above.
-     * @return The descriptor on autoreleasepool.
+     * - Parameters:
+     * - paddingStyle: See `paddingStyle` property.
+     * - Returns: The descriptor on autoreleasepool.
      */
     @Generated
     @Selector("descriptorWithPaddingStyle:")
@@ -133,11 +137,12 @@ public class MPSGraphDepthwiseConvolution3DOpDescriptor extends NSObject impleme
     /**
      * Creates a 3d depthwise convolution descriptor with given values.
      * 
-     * @param strides       See corresponding property above.
-     * @param dilationRates See corresponding property above.
-     * @param paddingValues See corresponding property above.
-     * @param paddingStyle  See corresponding property above.
-     * @return The descriptor on autoreleasepool.
+     * - Parameters:
+     * - strides: See `strides` property.
+     * - dilationRates: See `dilationRates` property.
+     * - paddingValues: See `paddingValues` property.
+     * - paddingStyle: See `paddingStyle` property.
+     * - Returns: The descriptor on autoreleasepool.
      */
     @Generated
     @Selector("descriptorWithStrides:dilationRates:paddingValues:paddingStyle:")
@@ -146,10 +151,10 @@ public class MPSGraphDepthwiseConvolution3DOpDescriptor extends NSObject impleme
             @NotNull NSArray<? extends NSNumber> paddingValues, @NUInt long paddingStyle);
 
     /**
-     * [@property] dilationRates
+     * The dilation rates for spatial dimensions.
      * 
      * Must be three numbers, one for each spatial dimension, fastest running index last.
-     * Default value: @code @[ @1, @1, @1 ] @endcode
+     * Default value: `@[ @1, @1, @1 ]`
      */
     @NotNull
     @Generated
@@ -193,10 +198,7 @@ public class MPSGraphDepthwiseConvolution3DOpDescriptor extends NSObject impleme
     public static native MPSGraphDepthwiseConvolution3DOpDescriptor new_objc();
 
     /**
-     * [@property] paddingStyle
-     * 
-     * Defines what kind of padding to apply to operation.
-     * Default value: @code MPSGraphPaddingStyleExplicit @endcode
+     * The padding style for the operation. Default value: `MPSGraphPaddingStyleExplicit`.
      */
     @Generated
     @Selector("paddingStyle")
@@ -204,13 +206,14 @@ public class MPSGraphDepthwiseConvolution3DOpDescriptor extends NSObject impleme
     public native long paddingStyle();
 
     /**
-     * [@property] paddingValues
+     * The padding values for spatial dimensions.
      * 
-     * Must be six numbers, two for each spatial dimension. `paddingValues[0]` defines the explicit padding
+     * Must be six numbers, two for each spatial dimension.
+     * For example `paddingValues[0]` defines the explicit padding
      * amount before the first spatial dimension (slowest running index of spatial dimensions),
      * `paddingValues[1]` defines the padding amount after the first spatial dimension etc.
-     * Used only when `paddingStyle = MPSGraphPaddingStyleExplicit`.
-     * Default value: @code @[ @0, @0, @0, @0, @0, @0 ] @endcode
+     * Use only with `paddingStyle = MPSGraphPaddingStyleExplicit`.
+     * Default value: `@[ @0, @0, @0, @0, @0, @0 ]`
      */
     @NotNull
     @Generated
@@ -226,59 +229,55 @@ public class MPSGraphDepthwiseConvolution3DOpDescriptor extends NSObject impleme
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * [@property] channelDimensionIndex
+     * The axis that contains the channels in the input and the weights, within
+     * the 4d tile of the last dimensions.
      * 
-     * Defines which axis contains the channels in the input and the weights, within
-     * the 4d tile of the last dimensions. For example the value of @code -1 @endcode
-     * corresponds to @code NDHWC, NHWC @endcode layouts. This allows the placement
-     * of the channel index anywhere within the last 4 dimensions of the tensor. In case the
-     * weights are in a different layout it is recommended to bring them to the same layout
+     * For example the value of `-1` corresponds to `NDHWC`, `NHWC` layouts. This allows the placement
+     * of the channel index anywhere within the last 4 dimensions of the tensor. In case your
+     * weights are in a different layout you can bring them to the same layout
      * as inputs using transposes or permutations.
-     * Default value: @code -4 @endcode, corresponds to @code NCDHW @endcode
-     * and @code CDHW @endcode layouts.
+     * Default value: `-4`, corresponds to `NCDHW` and `CDHW` layouts.
      */
     @Generated
     @Selector("setChannelDimensionIndex:")
     public native void setChannelDimensionIndex(@NInt long value);
 
     /**
-     * [@property] dilationRates
+     * The dilation rates for spatial dimensions.
      * 
      * Must be three numbers, one for each spatial dimension, fastest running index last.
-     * Default value: @code @[ @1, @1, @1 ] @endcode
+     * Default value: `@[ @1, @1, @1 ]`
      */
     @Generated
     @Selector("setDilationRates:")
     public native void setDilationRates(@NotNull NSArray<? extends NSNumber> value);
 
     /**
-     * [@property] paddingStyle
-     * 
-     * Defines what kind of padding to apply to operation.
-     * Default value: @code MPSGraphPaddingStyleExplicit @endcode
+     * The padding style for the operation. Default value: `MPSGraphPaddingStyleExplicit`.
      */
     @Generated
     @Selector("setPaddingStyle:")
     public native void setPaddingStyle(@NUInt long value);
 
     /**
-     * [@property] paddingValues
+     * The padding values for spatial dimensions.
      * 
-     * Must be six numbers, two for each spatial dimension. `paddingValues[0]` defines the explicit padding
+     * Must be six numbers, two for each spatial dimension.
+     * For example `paddingValues[0]` defines the explicit padding
      * amount before the first spatial dimension (slowest running index of spatial dimensions),
      * `paddingValues[1]` defines the padding amount after the first spatial dimension etc.
-     * Used only when `paddingStyle = MPSGraphPaddingStyleExplicit`.
-     * Default value: @code @[ @0, @0, @0, @0, @0, @0 ] @endcode
+     * Use only with `paddingStyle = MPSGraphPaddingStyleExplicit`.
+     * Default value: `@[ @0, @0, @0, @0, @0, @0 ]`
      */
     @Generated
     @Selector("setPaddingValues:")
     public native void setPaddingValues(@NotNull NSArray<? extends NSNumber> value);
 
     /**
-     * [@property] strides
+     * The strides for spatial dimensions.
      * 
      * Must be three numbers, one for each spatial dimension, fastest running index last.
-     * Default value: @code @[ @1, @1, @1 ] @endcode
+     * Default value: `@[ @1, @1, @1 ]`
      */
     @Generated
     @Selector("setStrides:")
@@ -289,10 +288,10 @@ public class MPSGraphDepthwiseConvolution3DOpDescriptor extends NSObject impleme
     public static native void setVersion_static(@NInt long aVersion);
 
     /**
-     * [@property] strides
+     * The strides for spatial dimensions.
      * 
      * Must be three numbers, one for each spatial dimension, fastest running index last.
-     * Default value: @code @[ @1, @1, @1 ] @endcode
+     * Default value: `@[ @1, @1, @1 ]`
      */
     @NotNull
     @Generated
@@ -307,4 +306,9 @@ public class MPSGraphDepthwiseConvolution3DOpDescriptor extends NSObject impleme
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

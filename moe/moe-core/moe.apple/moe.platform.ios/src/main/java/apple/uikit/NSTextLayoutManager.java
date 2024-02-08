@@ -626,4 +626,9 @@ public class NSTextLayoutManager extends NSObject implements NSSecureCoding, NST
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

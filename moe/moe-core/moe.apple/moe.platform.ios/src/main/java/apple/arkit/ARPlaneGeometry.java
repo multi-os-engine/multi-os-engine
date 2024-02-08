@@ -211,4 +211,9 @@ public class ARPlaneGeometry extends NSObject implements NSSecureCoding {
     @Selector("vertexCount")
     @NUInt
     public native long vertexCount();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

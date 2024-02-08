@@ -46,7 +46,10 @@ public interface UITraitEnvironment {
      * To be overridden as needed to provide custom behavior when the environment's traits change.
      * 
      * API-Since: 8.0
+     * Deprecated-Since: 17.0
+     * Deprecated-Message: Use the trait change registration APIs declared in the UITraitChangeObservable protocol
      */
+    @Deprecated
     @Generated
     @Selector("traitCollectionDidChange:")
     void traitCollectionDidChange(@Nullable UITraitCollection previousTraitCollection);

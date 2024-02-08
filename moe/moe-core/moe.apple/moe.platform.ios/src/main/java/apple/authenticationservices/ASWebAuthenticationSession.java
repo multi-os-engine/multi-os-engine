@@ -309,4 +309,9 @@ public class ASWebAuthenticationSession extends NSObject {
     @Generated
     @Selector("canStart")
     public native boolean canStart();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

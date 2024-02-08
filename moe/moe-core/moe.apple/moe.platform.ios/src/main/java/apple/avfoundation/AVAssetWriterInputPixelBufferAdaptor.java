@@ -354,4 +354,9 @@ public class AVAssetWriterInputPixelBufferAdaptor extends NSObject {
     @Generated
     @Selector("sourcePixelBufferAttributes")
     public native NSDictionary<String, ?> sourcePixelBufferAttributes();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

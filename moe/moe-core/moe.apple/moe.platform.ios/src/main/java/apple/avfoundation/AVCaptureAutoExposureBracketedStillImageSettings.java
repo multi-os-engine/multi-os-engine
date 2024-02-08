@@ -198,4 +198,9 @@ public class AVCaptureAutoExposureBracketedStillImageSettings extends AVCaptureB
     @Generated
     @Selector("init")
     public native AVCaptureAutoExposureBracketedStillImageSettings init();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

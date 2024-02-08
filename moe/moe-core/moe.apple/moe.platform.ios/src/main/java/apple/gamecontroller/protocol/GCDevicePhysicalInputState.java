@@ -28,12 +28,12 @@ public interface GCDevicePhysicalInputState {
     @NotNull
     @Generated
     @Selector("axes")
-    GCPhysicalInputElementCollection<String, Object> axes();
+    GCPhysicalInputElementCollection<String, ?> axes();
 
     @NotNull
     @Generated
     @Selector("buttons")
-    GCPhysicalInputElementCollection<String, Object> buttons();
+    GCPhysicalInputElementCollection<String, ?> buttons();
 
     /**
      * The device that this profile is mapping input from.
@@ -47,7 +47,7 @@ public interface GCDevicePhysicalInputState {
     @NotNull
     @Generated
     @Selector("dpads")
-    GCPhysicalInputElementCollection<String, Object> dpads();
+    GCPhysicalInputElementCollection<String, ?> dpads();
 
     /**
      * The following properties allow for runtime lookup of any input element on a
@@ -60,7 +60,7 @@ public interface GCDevicePhysicalInputState {
     @NotNull
     @Generated
     @Selector("elements")
-    GCPhysicalInputElementCollection<String, Object> elements();
+    GCPhysicalInputElementCollection<String, ?> elements();
 
     /**
      * The interval (in seconds) between the timestamp of the last event and the
@@ -107,5 +107,5 @@ public interface GCDevicePhysicalInputState {
     @NotNull
     @Generated
     @Selector("switches")
-    GCPhysicalInputElementCollection<String, Object> switches();
+    GCPhysicalInputElementCollection<String, ?> switches();
 }

@@ -665,4 +665,9 @@ public class MDLAsset extends NSObject implements NSCopying, NSFastEnumeration {
     @Generated
     @Selector("setOriginals:")
     public native void setOriginals(@NotNull @Mapped(ObjCObjectMapper.class) MDLObjectContainerComponent value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

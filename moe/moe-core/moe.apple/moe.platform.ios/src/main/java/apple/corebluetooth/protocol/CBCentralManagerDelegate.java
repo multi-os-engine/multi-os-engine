@@ -210,4 +210,32 @@ public interface CBCentralManagerDelegate {
             @NotNull CBPeripheral peripheral) {
         throw new java.lang.UnsupportedOperationException();
     }
+
+    /**
+     * centralManager:didDisconnectPeripheral:timestamp:isReconnecting:error
+     * 
+     * This method is invoked upon the disconnection of a peripheral that was connected by
+     * {@link connectPeripheral:options:}. If perihperal is
+     * connected with connect option {@link CBConnectPeripheralOptionEnableAutoReconnect}, once this method has been
+     * called, the system
+     * will automatically invoke connect to the peripheral. And if connection is established with the peripheral
+     * afterwards,
+     * {@link centralManager:didConnectPeripheral:} can be invoked. If perihperal is connected without option
+     * CBConnectPeripheralOptionEnableAutoReconnect, once this method has been called, no more methods will be invoked
+     * on
+     * <i>peripheral</i>'s <code>CBPeripheralDelegate</code> .
+     * 
+     * @param central        The central manager providing this information.
+     * @param peripheral     The <code>CBPeripheral</code> that has disconnected.
+     * @param timestamp      Timestamp of the disconnection, it can be now or a few seconds ago.
+     * @param isReconnecting If reconnect was triggered upon disconnection.
+     * @param error          If an error occurred, the cause of the failure.
+     */
+    @Generated
+    @IsOptional
+    @Selector("centralManager:didDisconnectPeripheral:timestamp:isReconnecting:error:")
+    default void centralManagerDidDisconnectPeripheralTimestampIsReconnectingError(@NotNull CBCentralManager central,
+            @NotNull CBPeripheral peripheral, double timestamp, boolean isReconnecting, @Nullable NSError error) {
+        throw new java.lang.UnsupportedOperationException();
+    }
 }

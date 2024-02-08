@@ -62,8 +62,6 @@ import org.jetbrains.annotations.Nullable;
 
 /**
  * CSLocalizedString can be used in place of NSString to support localization
- * 
- * API-Since: 9.0
  */
 @Generated
 @Library("CoreSpotlight")
@@ -544,4 +542,9 @@ public class CSLocalizedString extends NSString {
     public static native CSLocalizedString stringWithValidatedFormatValidFormatSpecifiersError(@NotNull String format,
             @NotNull String validFormatSpecifiers, @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error,
             Object... varargs);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

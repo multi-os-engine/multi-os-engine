@@ -245,4 +245,9 @@ public class PHLivePhotoRequestOptions extends NSObject implements NSCopying {
         void call_setProgressHandler(double progress, @Nullable NSError error, @NotNull BoolPtr stop,
                 @Nullable NSDictionary<?, ?> info);
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

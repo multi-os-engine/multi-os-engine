@@ -28,10 +28,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
- * AAAttribution
- * 
- * This class contains a method that generates a token used to obtain the app's attribution from Apple’s Attribution
- * Server.
+ * The parent class that the framework uses to request a token.
  * 
  * API-Since: 14.3
  */
@@ -64,22 +61,7 @@ public class AAAttribution extends NSObject {
     public static native AAAttribution allocWithZone(VoidPtr zone);
 
     /**
-     * attributionTokenWithError:
-     * 
-     * This method is used to generate an attribution token. The token is used in conjunction with Ad Platforms
-     * Attribution REST API to obtain the app's attribution information from Apple’s Attribution Server.
-     * This method requires that the network is available otherwise it will return an error.
-     * The token string can be used directly with the REST API.
-     * If an error occurs, the return value of the method will be nil and the error parameter, if provided, will contain
-     * a reference to an NSError object describing the error that occurred.
-     * 
-     * @param error
-     *              If the error parameter is not nil it will contain any errors encountered during the call. The code
-     *              property on the error object will be a member of the enum AAAttributionErrorCode.
-     * 
-     * @return NSString
-     *         The value returned will be a token string. If there are any errors the return value will be nil and error
-     *         parameter populated.
+     * Generates a token.
      */
     @Nullable
     @Generated
@@ -176,4 +158,9 @@ public class AAAttribution extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -247,4 +247,9 @@ public class MXSignpostIntervalData extends NSObject implements NSSecureCoding {
     @Generated
     @Selector("cumulativeHitchTimeRatio")
     public native NSMeasurement<NSUnit> cumulativeHitchTimeRatio();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

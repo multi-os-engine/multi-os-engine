@@ -389,4 +389,9 @@ public class NSExtensionContext extends NSObject {
     @Generated
     @Selector("setNotificationActions:")
     public native void setNotificationActions(@NotNull NSArray<? extends UNNotificationAction> value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

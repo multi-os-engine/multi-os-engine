@@ -275,4 +275,9 @@ public class AVAssetWriterInputGroup extends AVMediaSelectionGroup {
     @Generated
     @Selector("inputs")
     public native NSArray<? extends AVAssetWriterInput> inputs();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

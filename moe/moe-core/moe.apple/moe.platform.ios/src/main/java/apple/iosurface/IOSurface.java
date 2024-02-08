@@ -404,4 +404,9 @@ public class IOSurface extends NSObject implements NSSecureCoding {
     @Selector("widthOfPlaneAtIndex:")
     @NInt
     public native long widthOfPlaneAtIndex(@NUInt long planeIndex);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

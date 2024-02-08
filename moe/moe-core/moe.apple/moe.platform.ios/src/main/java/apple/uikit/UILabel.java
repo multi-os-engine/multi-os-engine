@@ -52,6 +52,7 @@ import apple.corefoundation.struct.CGRect;
 import apple.corefoundation.struct.CGSize;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.uikit.protocol.UILetterformAwareAdjusting;
 
 /**
  * API-Since: 2.0
@@ -60,7 +61,7 @@ import org.jetbrains.annotations.Nullable;
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class UILabel extends UIView implements NSCoding, UIContentSizeCategoryAdjusting {
+public class UILabel extends UIView implements NSCoding, UIContentSizeCategoryAdjusting, UILetterformAwareAdjusting {
     static {
         NatJ.register();
     }
@@ -840,4 +841,68 @@ public class UILabel extends UIView implements NSCoding, UIContentSizeCategoryAd
     @Generated
     @Selector("showsExpansionTextWhenTruncated")
     public native boolean showsExpansionTextWhenTruncated();
+
+    @Generated
+    @Selector("animateWithSpringDuration:bounce:initialSpringVelocity:delay:options:animations:completion:")
+    public static native void animateWithSpringDurationBounceInitialSpringVelocityDelayOptionsAnimationsCompletion(
+            double duration, @NFloat double bounce, @NFloat double velocity, double delay, @NUInt long options,
+            @ObjCBlock(name = "call_animateWithSpringDurationBounceInitialSpringVelocityDelayOptionsAnimationsCompletion_5") @NotNull UIView.Block_animateWithSpringDurationBounceInitialSpringVelocityDelayOptionsAnimationsCompletion_5 animations,
+            @ObjCBlock(name = "call_animateWithSpringDurationBounceInitialSpringVelocityDelayOptionsAnimationsCompletion_6") @Nullable UIView.Block_animateWithSpringDurationBounceInitialSpringVelocityDelayOptionsAnimationsCompletion_6 completion);
+
+    /**
+     * Controls whether a label becomes vibrant automatically.
+     * 
+     * If a label has a vibrancy mode other than `None` set, the system tries
+     * to apply vibrancy automatically to that label. This will only succeed if
+     * the label is in a context that allows vibrancy, which in general means the
+     * the label needs to be on top of a blurred material.
+     * 
+     * This property can only be used to opt-in to automatic vibrancy. It is not
+     * a way to opt-out of vibrancy that is enabled by other means. A label
+     * placed in a vibrant `UIVisualEffectView` with preferred vibrancy `None` will
+     * still be vibrant.
+     * 
+     * The default is `automatic` on xrOS and `none` on all other platforms.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("preferredVibrancy")
+    @NInt
+    public native long preferredVibrancy();
+
+    /**
+     * Controls whether a label becomes vibrant automatically.
+     * 
+     * If a label has a vibrancy mode other than `None` set, the system tries
+     * to apply vibrancy automatically to that label. This will only succeed if
+     * the label is in a context that allows vibrancy, which in general means the
+     * the label needs to be on top of a blurred material.
+     * 
+     * This property can only be used to opt-in to automatic vibrancy. It is not
+     * a way to opt-out of vibrancy that is enabled by other means. A label
+     * placed in a vibrant `UIVisualEffectView` with preferred vibrancy `None` will
+     * still be vibrant.
+     * 
+     * The default is `automatic` on xrOS and `none` on all other platforms.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("setPreferredVibrancy:")
+    public native void setPreferredVibrancy(@NInt long value);
+
+    @Generated
+    @Selector("setSizingRule:")
+    public native void setSizingRule(@NInt long value);
+
+    @Generated
+    @Selector("sizingRule")
+    @NInt
+    public native long sizingRule();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

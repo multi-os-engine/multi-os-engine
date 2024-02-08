@@ -231,4 +231,9 @@ public class UISimpleTextPrintFormatter extends UIPrintFormatter {
     @Selector("textAlignment")
     @NInt
     public native long textAlignment();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -16,7 +16,6 @@ limitations under the License.
 
 package apple.security.c;
 
-import apple.NSObject;
 import apple.corefoundation.opaque.CFAllocatorRef;
 import apple.corefoundation.opaque.CFArrayRef;
 import apple.corefoundation.opaque.CFDataRef;
@@ -55,6 +54,13 @@ import org.moe.natj.general.ptr.VoidPtr;
 import org.moe.natj.objc.ann.ObjCBlock;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.opaque.dispatch_data_t;
+import apple.opaque.dispatch_queue_t;
+import apple.security.opaque.sec_certificate_t;
+import apple.security.opaque.sec_identity_t;
+import apple.security.opaque.sec_protocol_metadata_t;
+import apple.security.opaque.sec_protocol_options_t;
+import apple.security.opaque.sec_trust_t;
 
 @Generated
 @Library("Security")
@@ -282,7 +288,11 @@ public final class Security {
      * kSecReturnAttributes with a value of kCFBooleanTrue.
      * * To obtain a reference to a matching item (SecKeychainItemRef,
      * SecKeyRef, SecCertificateRef, or SecIdentityRef), specify kSecReturnRef
-     * with a value of kCFBooleanTrue.
+     * with a value of kCFBooleanTrue. Note that returning references is
+     * supported only for Certificate, Key or Identity items on iOS, watchOS and
+     * tvOS. Similarly, returning references is supported only for Certificate, Key
+     * or Identity items on macOS when either kSecUseDataProtectionKeychain
+     * is set to true or kSecAttrSynchronizable is set to true.
      * * To obtain a persistent reference to a matching item (CFDataRef),
      * specify kSecReturnPersistentRef with a value of kCFBooleanTrue. Note
      * that unlike normal references, a persistent reference may be stored
@@ -339,6 +349,13 @@ public final class Security {
      * On OSX, To add an item to a particular keychain, supply kSecUseKeychain
      * with a SecKeychainRef as its value.
      * 
+     * On iOS, watchOS & tvOS, Certificate, Key, and Identity items may be
+     * added by reference, but neither Internet Passwords nor Generic Passwords
+     * may be. Similarly, on macOS with either kSecUseDataProtectionKeychain
+     * set to true or kSecAttrSynchronizable set to true, Certificate, Key, and Identity
+     * items may be added by reference, but neither Internet Passwords nor Generic
+     * Passwords may be.
+     * 
      * Result types are specified as follows:
      * 
      * * To obtain the data of the added item (CFDataRef), specify
@@ -346,8 +363,9 @@ public final class Security {
      * * To obtain all the attributes of the added item (CFDictionaryRef),
      * specify kSecReturnAttributes with a value of kCFBooleanTrue.
      * * To obtain a reference to the added item (SecKeychainItemRef, SecKeyRef,
-     * SecCertiicateRef, or SecIdentityRef), specify kSecReturnRef with a
-     * value of kCFBooleanTrue.
+     * SecCertificateRef, or SecIdentityRef), specify kSecReturnRef with a
+     * value of kCFBooleanTrue. See also note about kSecReturnRef and
+     * macOS.
      * * To obtain a persistent reference to the added item (CFDataRef), specify
      * kSecReturnPersistentRef with a value of kCFBooleanTrue. Note that
      * unlike normal references, a persistent reference may be stored on disk
@@ -1448,7 +1466,7 @@ public final class Security {
     @Deprecated
     @Generated
     @CFunction
-    public static native int SecTrustEvaluateAsync(@NotNull SecTrustRef trust, @Nullable NSObject queue,
+    public static native int SecTrustEvaluateAsync(@NotNull SecTrustRef trust, @Nullable dispatch_queue_t queue,
             @NotNull @ObjCBlock(name = "call_SecTrustEvaluateAsync") Block_SecTrustEvaluateAsync result);
 
     /**
@@ -2975,8 +2993,9 @@ public final class Security {
      * affect all copies of the item, not just the one on your local device.
      * Be sure that it makes sense to use the same password on all devices
      * before deciding to make a password synchronizable.
-     * - Only password items can currently be synchronized. Keychain syncing
-     * is not supported for certificates or cryptographic keys.
+     * - Starting in iOS 14, macOS 11, and watchOS 7, the keychain
+     * synchronizes passwords, certificates, and cryptographic keys.
+     * Earlier OS versions synchronize only passwords.
      * - Items stored or obtained using the kSecAttrSynchronizable key cannot
      * specify SecAccessRef-based access control with kSecAttrAccess. If a
      * password is intended to be shared between multiple applications, the
@@ -2986,10 +3005,8 @@ public final class Security {
      * - Items stored or obtained using the kSecAttrSynchronizable key may
      * not also specify a kSecAttrAccessible value which is incompatible
      * with syncing (namely, those whose names end with "ThisDeviceOnly".)
-     * - Items stored or obtained using the kSecAttrSynchronizable key cannot
-     * be specified by reference. You must pass kSecReturnAttributes and/or
-     * kSecReturnData to retrieve results; kSecReturnRef is currently not
-     * supported for synchronizable items.
+     * - On macOS, when kSecAttrSynchronizable is set to true, returning
+     * references is supported only for Certificate, Key or Identity items.
      * - Persistent references to synchronizable items should be avoided;
      * while they may work locally, they cannot be moved between devices,
      * and may not resolve if the item is modified on some other device.
@@ -4128,7 +4145,7 @@ public final class Security {
      * [@constant] kSecMatchEmailAddressIfPresent Specifies a dictionary key whose
      * value is a CFStringRef containing an RFC822 email address. If
      * provided, returned certificates or identities will be limited to those
-     * that contain the address, or do not contain any email address.
+     * that contain the address in their subject or subject alternative name.
      * [@constant] kSecMatchSubjectContains Specifies a dictionary key whose value
      * is a CFStringRef. If provided, returned certificates or identities
      * will be limited to those containing this string in the subject.
@@ -4287,7 +4304,11 @@ public final class Security {
      * CFBooleanRef. A value of kCFBooleanTrue indicates that a reference
      * should be returned. Depending on the item class requested, the
      * returned reference(s) may be of type SecKeychainItemRef, SecKeyRef,
-     * SecCertificateRef, or SecIdentityRef.
+     * SecCertificateRef, or SecIdentityRef. Note that returning references is
+     * supported only for Certificate, Key or Identity items on iOS, watchOS and
+     * tvOS. Similarly, returning references is supported only for Certificate, Key
+     * or Identity items on macOS when either kSecUseDataProtectionKeychain
+     * is set to true or kSecAttrSynchronizable is set to true.
      * [@constant] kSecReturnPersistentRef Specifies a dictionary key whose value
      * is of type CFBooleanRef. A value of kCFBooleanTrue indicates that a
      * persistent reference to an item (CFDataRef) should be returned.
@@ -4401,6 +4422,8 @@ public final class Security {
      * [@constant] kSecUseDataProtectionKeychain Specifies a dictionary key whose value
      * is a CFBooleanRef. Set to kCFBooleanTrue to use kSecAttrAccessGroup and/or
      * kSecAttrAccessible on macOS without requiring the item to be marked synchronizable.
+     * Note that when kSecUseDataProtectionKeychain is set to true, returning references is
+     * supported only for Certificate, Key or Identity items.
      * [@constant] kSecUseUserIndependentKeychain Specifies a dctionary key whose value is a CFBooleanRef
      * indicating whether the item is shared with other personas on the system.
      * 
@@ -4464,7 +4487,7 @@ public final class Security {
      * [@constant] kSecUseAuthenticationUIFail Specifies that the error
      * errSecInteractionNotAllowed will be returned if an item needs
      * to authenticate with UI
-     * [@constant] kSecUseAuthenticationUIAllowSkip Specifies that all items which need
+     * [@constant] kSecUseAuthenticationUISkip Specifies that all items which need
      * to authenticate with UI will be silently skipped. This value can be used
      * only with SecItemCopyMatching.
      * 
@@ -4662,7 +4685,9 @@ public final class Security {
 
     /**
      * API-Since: 10.0
+     * Deprecated-Since: 17.0
      */
+    @Deprecated
     @NotNull
     @Generated
     @CVariable()
@@ -6110,7 +6135,7 @@ public final class Security {
      */
     @Generated
     @CFunction
-    public static native int SecTrustEvaluateAsyncWithError(@NotNull SecTrustRef trust, @NotNull NSObject queue,
+    public static native int SecTrustEvaluateAsyncWithError(@NotNull SecTrustRef trust, @NotNull dispatch_queue_t queue,
             @NotNull @ObjCBlock(name = "call_SecTrustEvaluateAsyncWithError") Block_SecTrustEvaluateAsyncWithError result);
 
     @Runtime(CRuntime.class)
@@ -6156,7 +6181,7 @@ public final class Security {
     @Nullable
     @Generated
     @CFunction
-    public static native NSObject sec_trust_create(@NotNull SecTrustRef trust);
+    public static native sec_trust_t sec_trust_create(@NotNull SecTrustRef trust);
 
     /**
      * [@function] sec_trust_copy_ref
@@ -6173,7 +6198,7 @@ public final class Security {
     @NotNull
     @Generated
     @CFunction
-    public static native SecTrustRef sec_trust_copy_ref(@NotNull NSObject trust);
+    public static native SecTrustRef sec_trust_copy_ref(@NotNull sec_trust_t trust);
 
     /**
      * [@function] sec_identity_create
@@ -6190,7 +6215,7 @@ public final class Security {
     @Nullable
     @Generated
     @CFunction
-    public static native NSObject sec_identity_create(@NotNull SecIdentityRef identity);
+    public static native sec_identity_t sec_identity_create(@NotNull SecIdentityRef identity);
 
     /**
      * [@function] sec_identity_create_with_certificates
@@ -6211,7 +6236,7 @@ public final class Security {
     @Nullable
     @Generated
     @CFunction
-    public static native NSObject sec_identity_create_with_certificates(@NotNull SecIdentityRef identity,
+    public static native sec_identity_t sec_identity_create_with_certificates(@NotNull SecIdentityRef identity,
             @NotNull CFArrayRef certificates);
 
     /**
@@ -6231,14 +6256,14 @@ public final class Security {
      */
     @Generated
     @CFunction
-    public static native boolean sec_identity_access_certificates(@NotNull NSObject identity,
+    public static native boolean sec_identity_access_certificates(@NotNull sec_identity_t identity,
             @NotNull @ObjCBlock(name = "call_sec_identity_access_certificates") Block_sec_identity_access_certificates handler);
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Block_sec_identity_access_certificates {
         @Generated
-        void call_sec_identity_access_certificates(@NotNull NSObject arg0);
+        void call_sec_identity_access_certificates(@NotNull sec_certificate_t arg0);
     }
 
     /**
@@ -6256,7 +6281,7 @@ public final class Security {
     @Nullable
     @Generated
     @CFunction
-    public static native SecIdentityRef sec_identity_copy_ref(@NotNull NSObject identity);
+    public static native SecIdentityRef sec_identity_copy_ref(@NotNull sec_identity_t identity);
 
     /**
      * [@function] sec_identity_copy_certificates_ref
@@ -6273,7 +6298,7 @@ public final class Security {
     @Nullable
     @Generated
     @CFunction
-    public static native CFArrayRef sec_identity_copy_certificates_ref(@NotNull NSObject identity);
+    public static native CFArrayRef sec_identity_copy_certificates_ref(@NotNull sec_identity_t identity);
 
     /**
      * [@function] sec_certificate_create
@@ -6290,7 +6315,7 @@ public final class Security {
     @Nullable
     @Generated
     @CFunction
-    public static native NSObject sec_certificate_create(@NotNull SecCertificateRef certificate);
+    public static native sec_certificate_t sec_certificate_create(@NotNull SecCertificateRef certificate);
 
     /**
      * [@function] sec_certificate_copy_ref
@@ -6307,7 +6332,7 @@ public final class Security {
     @NotNull
     @Generated
     @CFunction
-    public static native SecCertificateRef sec_certificate_copy_ref(@NotNull NSObject certificate);
+    public static native SecCertificateRef sec_certificate_copy_ref(@NotNull sec_certificate_t certificate);
 
     /**
      * [@function] sec_protocol_metadata_get_negotiated_protocol
@@ -6325,7 +6350,8 @@ public final class Security {
     @Generated
     @CFunction
     @UncertainReturn("Options: java.string, c.const-byte-ptr Fallback: java.string")
-    public static native String sec_protocol_metadata_get_negotiated_protocol(@NotNull NSObject metadata);
+    public static native String sec_protocol_metadata_get_negotiated_protocol(
+            @NotNull sec_protocol_metadata_t metadata);
 
     /**
      * [@function] sec_protocol_metadata_copy_peer_public_key
@@ -6342,7 +6368,8 @@ public final class Security {
     @Nullable
     @Generated
     @CFunction
-    public static native NSObject sec_protocol_metadata_copy_peer_public_key(@NotNull NSObject metadata);
+    public static native dispatch_data_t sec_protocol_metadata_copy_peer_public_key(
+            @NotNull sec_protocol_metadata_t metadata);
 
     /**
      * [@function] sec_protocol_metadata_get_negotiated_tls_protocol_version
@@ -6358,7 +6385,8 @@ public final class Security {
      */
     @Generated
     @CFunction
-    public static native short sec_protocol_metadata_get_negotiated_tls_protocol_version(@NotNull NSObject metadata);
+    public static native short sec_protocol_metadata_get_negotiated_tls_protocol_version(
+            @NotNull sec_protocol_metadata_t metadata);
 
     /**
      * [@function] sec_protocol_metadata_get_negotiated_protocol_version
@@ -6376,7 +6404,8 @@ public final class Security {
     @Deprecated
     @Generated
     @CFunction
-    public static native int sec_protocol_metadata_get_negotiated_protocol_version(@NotNull NSObject metadata);
+    public static native int sec_protocol_metadata_get_negotiated_protocol_version(
+            @NotNull sec_protocol_metadata_t metadata);
 
     /**
      * [@function] sec_protocol_metadata_get_negotiated_tls_ciphersuite
@@ -6392,7 +6421,8 @@ public final class Security {
      */
     @Generated
     @CFunction
-    public static native short sec_protocol_metadata_get_negotiated_tls_ciphersuite(@NotNull NSObject metadata);
+    public static native short sec_protocol_metadata_get_negotiated_tls_ciphersuite(
+            @NotNull sec_protocol_metadata_t metadata);
 
     /**
      * [@function] sec_protocol_metadata_get_negotiated_ciphersuite
@@ -6410,7 +6440,8 @@ public final class Security {
     @Deprecated
     @Generated
     @CFunction
-    public static native char sec_protocol_metadata_get_negotiated_ciphersuite(@NotNull NSObject metadata);
+    public static native char sec_protocol_metadata_get_negotiated_ciphersuite(
+            @NotNull sec_protocol_metadata_t metadata);
 
     /**
      * [@function] sec_protocol_metadata_get_early_data_accepted
@@ -6426,7 +6457,8 @@ public final class Security {
      */
     @Generated
     @CFunction
-    public static native boolean sec_protocol_metadata_get_early_data_accepted(@NotNull NSObject metadata);
+    public static native boolean sec_protocol_metadata_get_early_data_accepted(
+            @NotNull sec_protocol_metadata_t metadata);
 
     /**
      * [@function] sec_protocol_metadata_access_peer_certificate_chain
@@ -6445,14 +6477,15 @@ public final class Security {
      */
     @Generated
     @CFunction
-    public static native boolean sec_protocol_metadata_access_peer_certificate_chain(@NotNull NSObject metadata,
+    public static native boolean sec_protocol_metadata_access_peer_certificate_chain(
+            @NotNull sec_protocol_metadata_t metadata,
             @NotNull @ObjCBlock(name = "call_sec_protocol_metadata_access_peer_certificate_chain") Block_sec_protocol_metadata_access_peer_certificate_chain handler);
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Block_sec_protocol_metadata_access_peer_certificate_chain {
         @Generated
-        void call_sec_protocol_metadata_access_peer_certificate_chain(@NotNull NSObject arg0);
+        void call_sec_protocol_metadata_access_peer_certificate_chain(@NotNull sec_certificate_t arg0);
     }
 
     /**
@@ -6472,14 +6505,14 @@ public final class Security {
      */
     @Generated
     @CFunction
-    public static native boolean sec_protocol_metadata_access_ocsp_response(@NotNull NSObject metadata,
+    public static native boolean sec_protocol_metadata_access_ocsp_response(@NotNull sec_protocol_metadata_t metadata,
             @NotNull @ObjCBlock(name = "call_sec_protocol_metadata_access_ocsp_response") Block_sec_protocol_metadata_access_ocsp_response handler);
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Block_sec_protocol_metadata_access_ocsp_response {
         @Generated
-        void call_sec_protocol_metadata_access_ocsp_response(@NotNull NSObject arg0);
+        void call_sec_protocol_metadata_access_ocsp_response(@NotNull dispatch_data_t arg0);
     }
 
     /**
@@ -6500,7 +6533,8 @@ public final class Security {
      */
     @Generated
     @CFunction
-    public static native boolean sec_protocol_metadata_access_supported_signature_algorithms(@NotNull NSObject metadata,
+    public static native boolean sec_protocol_metadata_access_supported_signature_algorithms(
+            @NotNull sec_protocol_metadata_t metadata,
             @NotNull @ObjCBlock(name = "call_sec_protocol_metadata_access_supported_signature_algorithms") Block_sec_protocol_metadata_access_supported_signature_algorithms handler);
 
     @Runtime(CRuntime.class)
@@ -6527,14 +6561,15 @@ public final class Security {
      */
     @Generated
     @CFunction
-    public static native boolean sec_protocol_metadata_access_distinguished_names(@NotNull NSObject metadata,
+    public static native boolean sec_protocol_metadata_access_distinguished_names(
+            @NotNull sec_protocol_metadata_t metadata,
             @NotNull @ObjCBlock(name = "call_sec_protocol_metadata_access_distinguished_names") Block_sec_protocol_metadata_access_distinguished_names handler);
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Block_sec_protocol_metadata_access_distinguished_names {
         @Generated
-        void call_sec_protocol_metadata_access_distinguished_names(@NotNull NSObject arg0);
+        void call_sec_protocol_metadata_access_distinguished_names(@NotNull dispatch_data_t arg0);
     }
 
     /**
@@ -6555,14 +6590,15 @@ public final class Security {
      */
     @Generated
     @CFunction
-    public static native boolean sec_protocol_metadata_access_pre_shared_keys(@NotNull NSObject metadata,
+    public static native boolean sec_protocol_metadata_access_pre_shared_keys(@NotNull sec_protocol_metadata_t metadata,
             @NotNull @ObjCBlock(name = "call_sec_protocol_metadata_access_pre_shared_keys") Block_sec_protocol_metadata_access_pre_shared_keys handler);
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Block_sec_protocol_metadata_access_pre_shared_keys {
         @Generated
-        void call_sec_protocol_metadata_access_pre_shared_keys(@NotNull NSObject arg0, @NotNull NSObject arg1);
+        void call_sec_protocol_metadata_access_pre_shared_keys(@NotNull dispatch_data_t arg0,
+                @NotNull dispatch_data_t arg1);
     }
 
     /**
@@ -6584,7 +6620,7 @@ public final class Security {
     @Generated
     @CFunction
     @UncertainReturn("Options: java.string, c.const-byte-ptr Fallback: java.string")
-    public static native String sec_protocol_metadata_get_server_name(@NotNull NSObject metadata);
+    public static native String sec_protocol_metadata_get_server_name(@NotNull sec_protocol_metadata_t metadata);
 
     /**
      * [@function] sec_protocol_metadata_peers_are_equal
@@ -6604,8 +6640,8 @@ public final class Security {
      */
     @Generated
     @CFunction
-    public static native boolean sec_protocol_metadata_peers_are_equal(@NotNull NSObject metadataA,
-            @NotNull NSObject metadataB);
+    public static native boolean sec_protocol_metadata_peers_are_equal(@NotNull sec_protocol_metadata_t metadataA,
+            @NotNull sec_protocol_metadata_t metadataB);
 
     /**
      * [@function] sec_protocol_metadata_challenge_parameters_are_equal
@@ -6628,8 +6664,8 @@ public final class Security {
      */
     @Generated
     @CFunction
-    public static native boolean sec_protocol_metadata_challenge_parameters_are_equal(@NotNull NSObject metadataA,
-            @NotNull NSObject metadataB);
+    public static native boolean sec_protocol_metadata_challenge_parameters_are_equal(
+            @NotNull sec_protocol_metadata_t metadataA, @NotNull sec_protocol_metadata_t metadataB);
 
     /**
      * [@function] sec_protocol_metadata_create_secret
@@ -6655,7 +6691,8 @@ public final class Security {
     @Nullable
     @Generated
     @CFunction
-    public static native NSObject sec_protocol_metadata_create_secret(@NotNull NSObject metadata, @NUInt long label_len,
+    public static native dispatch_data_t sec_protocol_metadata_create_secret(@NotNull sec_protocol_metadata_t metadata,
+            @NUInt long label_len,
             @NotNull @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String label,
             @NUInt long exporter_length);
 
@@ -6689,8 +6726,8 @@ public final class Security {
     @Nullable
     @Generated
     @CFunction
-    public static native NSObject sec_protocol_metadata_create_secret_with_context(@NotNull NSObject metadata,
-            @NUInt long label_len,
+    public static native dispatch_data_t sec_protocol_metadata_create_secret_with_context(
+            @NotNull sec_protocol_metadata_t metadata, @NUInt long label_len,
             @NotNull @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String label,
             @NUInt long context_len,
             @NotNull @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String context,
@@ -6713,7 +6750,8 @@ public final class Security {
      */
     @Generated
     @CFunction
-    public static native boolean sec_protocol_options_are_equal(@NotNull NSObject optionsA, @NotNull NSObject optionsB);
+    public static native boolean sec_protocol_options_are_equal(@NotNull sec_protocol_options_t optionsA,
+            @NotNull sec_protocol_options_t optionsB);
 
     /**
      * [@function] sec_protocol_options_set_local_identity
@@ -6730,8 +6768,8 @@ public final class Security {
      */
     @Generated
     @CFunction
-    public static native void sec_protocol_options_set_local_identity(@NotNull NSObject options,
-            @NotNull NSObject identity);
+    public static native void sec_protocol_options_set_local_identity(@NotNull sec_protocol_options_t options,
+            @NotNull sec_identity_t identity);
 
     /**
      * [@function] sec_protocol_options_append_tls_ciphersuite
@@ -6748,7 +6786,8 @@ public final class Security {
      */
     @Generated
     @CFunction
-    public static native void sec_protocol_options_append_tls_ciphersuite(@NotNull NSObject options, short ciphersuite);
+    public static native void sec_protocol_options_append_tls_ciphersuite(@NotNull sec_protocol_options_t options,
+            short ciphersuite);
 
     /**
      * [@function] sec_protocol_options_add_tls_ciphersuite
@@ -6768,7 +6807,8 @@ public final class Security {
     @Deprecated
     @Generated
     @CFunction
-    public static native void sec_protocol_options_add_tls_ciphersuite(@NotNull NSObject options, char ciphersuite);
+    public static native void sec_protocol_options_add_tls_ciphersuite(@NotNull sec_protocol_options_t options,
+            char ciphersuite);
 
     /**
      * [@function] sec_protocol_options_append_tls_ciphersuite_group
@@ -6785,7 +6825,8 @@ public final class Security {
      */
     @Generated
     @CFunction
-    public static native void sec_protocol_options_append_tls_ciphersuite_group(@NotNull NSObject options, short group);
+    public static native void sec_protocol_options_append_tls_ciphersuite_group(@NotNull sec_protocol_options_t options,
+            short group);
 
     /**
      * [@function] sec_protocol_options_add_tls_ciphersuite_group
@@ -6805,7 +6846,8 @@ public final class Security {
     @Deprecated
     @Generated
     @CFunction
-    public static native void sec_protocol_options_add_tls_ciphersuite_group(@NotNull NSObject options, int group);
+    public static native void sec_protocol_options_add_tls_ciphersuite_group(@NotNull sec_protocol_options_t options,
+            int group);
 
     /**
      * [@function] sec_protocol_options_set_tls_min_version
@@ -6824,7 +6866,8 @@ public final class Security {
     @Deprecated
     @Generated
     @CFunction
-    public static native void sec_protocol_options_set_tls_min_version(@NotNull NSObject options, int version);
+    public static native void sec_protocol_options_set_tls_min_version(@NotNull sec_protocol_options_t options,
+            int version);
 
     /**
      * [@function] sec_protocol_options_set_min_tls_protocol_version
@@ -6841,7 +6884,7 @@ public final class Security {
      */
     @Generated
     @CFunction
-    public static native void sec_protocol_options_set_min_tls_protocol_version(@NotNull NSObject options,
+    public static native void sec_protocol_options_set_min_tls_protocol_version(@NotNull sec_protocol_options_t options,
             short version);
 
     /**
@@ -6887,7 +6930,8 @@ public final class Security {
     @Deprecated
     @Generated
     @CFunction
-    public static native void sec_protocol_options_set_tls_max_version(@NotNull NSObject options, int version);
+    public static native void sec_protocol_options_set_tls_max_version(@NotNull sec_protocol_options_t options,
+            int version);
 
     /**
      * [@function] sec_protocol_options_set_max_tls_protocol_version
@@ -6904,7 +6948,7 @@ public final class Security {
      */
     @Generated
     @CFunction
-    public static native void sec_protocol_options_set_max_tls_protocol_version(@NotNull NSObject options,
+    public static native void sec_protocol_options_set_max_tls_protocol_version(@NotNull sec_protocol_options_t options,
             short version);
 
     /**
@@ -6948,7 +6992,7 @@ public final class Security {
      */
     @Generated
     @CFunction
-    public static native void sec_protocol_options_add_tls_application_protocol(@NotNull NSObject options,
+    public static native void sec_protocol_options_add_tls_application_protocol(@NotNull sec_protocol_options_t options,
             @NotNull @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String application_protocol);
 
     /**
@@ -6967,7 +7011,7 @@ public final class Security {
      */
     @Generated
     @CFunction
-    public static native void sec_protocol_options_set_tls_server_name(@NotNull NSObject options,
+    public static native void sec_protocol_options_set_tls_server_name(@NotNull sec_protocol_options_t options,
             @NotNull @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String server_name);
 
     /**
@@ -6988,8 +7032,8 @@ public final class Security {
     @Deprecated
     @Generated
     @CFunction
-    public static native void sec_protocol_options_set_tls_diffie_hellman_parameters(@NotNull NSObject options,
-            @NotNull NSObject params);
+    public static native void sec_protocol_options_set_tls_diffie_hellman_parameters(
+            @NotNull sec_protocol_options_t options, @NotNull dispatch_data_t params);
 
     /**
      * [@function] sec_protocol_options_add_pre_shared_key
@@ -7009,8 +7053,8 @@ public final class Security {
      */
     @Generated
     @CFunction
-    public static native void sec_protocol_options_add_pre_shared_key(@NotNull NSObject options, @NotNull NSObject psk,
-            @NotNull NSObject psk_identity);
+    public static native void sec_protocol_options_add_pre_shared_key(@NotNull sec_protocol_options_t options,
+            @NotNull dispatch_data_t psk, @NotNull dispatch_data_t psk_identity);
 
     /**
      * [@function] sec_protocol_options_set_tls_pre_shared_key_identity_hint
@@ -7028,8 +7072,8 @@ public final class Security {
      */
     @Generated
     @CFunction
-    public static native void sec_protocol_options_set_tls_pre_shared_key_identity_hint(@NotNull NSObject options,
-            @NotNull NSObject psk_identity_hint);
+    public static native void sec_protocol_options_set_tls_pre_shared_key_identity_hint(
+            @NotNull sec_protocol_options_t options, @NotNull dispatch_data_t psk_identity_hint);
 
     /**
      * [@function] sec_protocol_options_set_tls_tickets_enabled
@@ -7046,7 +7090,7 @@ public final class Security {
      */
     @Generated
     @CFunction
-    public static native void sec_protocol_options_set_tls_tickets_enabled(@NotNull NSObject options,
+    public static native void sec_protocol_options_set_tls_tickets_enabled(@NotNull sec_protocol_options_t options,
             boolean tickets_enabled);
 
     /**
@@ -7070,7 +7114,7 @@ public final class Security {
      */
     @Generated
     @CFunction
-    public static native void sec_protocol_options_set_tls_is_fallback_attempt(@NotNull NSObject options,
+    public static native void sec_protocol_options_set_tls_is_fallback_attempt(@NotNull sec_protocol_options_t options,
             boolean is_fallback_attempt);
 
     /**
@@ -7088,7 +7132,7 @@ public final class Security {
      */
     @Generated
     @CFunction
-    public static native void sec_protocol_options_set_tls_resumption_enabled(@NotNull NSObject options,
+    public static native void sec_protocol_options_set_tls_resumption_enabled(@NotNull sec_protocol_options_t options,
             boolean resumption_enabled);
 
     /**
@@ -7106,7 +7150,7 @@ public final class Security {
      */
     @Generated
     @CFunction
-    public static native void sec_protocol_options_set_tls_false_start_enabled(@NotNull NSObject options,
+    public static native void sec_protocol_options_set_tls_false_start_enabled(@NotNull sec_protocol_options_t options,
             boolean false_start_enabled);
 
     /**
@@ -7124,7 +7168,7 @@ public final class Security {
      */
     @Generated
     @CFunction
-    public static native void sec_protocol_options_set_tls_ocsp_enabled(@NotNull NSObject options,
+    public static native void sec_protocol_options_set_tls_ocsp_enabled(@NotNull sec_protocol_options_t options,
             boolean ocsp_enabled);
 
     /**
@@ -7142,7 +7186,8 @@ public final class Security {
      */
     @Generated
     @CFunction
-    public static native void sec_protocol_options_set_tls_sct_enabled(@NotNull NSObject options, boolean sct_enabled);
+    public static native void sec_protocol_options_set_tls_sct_enabled(@NotNull sec_protocol_options_t options,
+            boolean sct_enabled);
 
     /**
      * [@function] sec_protocol_options_set_tls_renegotiation_enabled
@@ -7159,8 +7204,8 @@ public final class Security {
      */
     @Generated
     @CFunction
-    public static native void sec_protocol_options_set_tls_renegotiation_enabled(@NotNull NSObject options,
-            boolean renegotiation_enabled);
+    public static native void sec_protocol_options_set_tls_renegotiation_enabled(
+            @NotNull sec_protocol_options_t options, boolean renegotiation_enabled);
 
     /**
      * [@function] sec_protocol_options_set_peer_authentication_required
@@ -7177,8 +7222,8 @@ public final class Security {
      */
     @Generated
     @CFunction
-    public static native void sec_protocol_options_set_peer_authentication_required(@NotNull NSObject options,
-            boolean peer_authentication_required);
+    public static native void sec_protocol_options_set_peer_authentication_required(
+            @NotNull sec_protocol_options_t options, boolean peer_authentication_required);
 
     /**
      * API-Since: 13.0
@@ -7206,9 +7251,10 @@ public final class Security {
      */
     @Generated
     @CFunction
-    public static native void sec_protocol_options_set_pre_shared_key_selection_block(@NotNull NSObject options,
+    public static native void sec_protocol_options_set_pre_shared_key_selection_block(
+            @NotNull sec_protocol_options_t options,
             @NotNull @ObjCBlock(name = "call_sec_protocol_options_set_pre_shared_key_selection_block") Block_sec_protocol_options_set_pre_shared_key_selection_block psk_selection_block,
-            @NotNull NSObject psk_selection_queue);
+            @NotNull dispatch_queue_t psk_selection_queue);
 
     @Runtime(CRuntime.class)
     @Generated
@@ -7217,12 +7263,13 @@ public final class Security {
         @Generated
         public interface Block_Block_sec_protocol_options_set_pre_shared_key_selection_block {
             @Generated
-            void call_Block_sec_protocol_options_set_pre_shared_key_selection_block(@Nullable NSObject psk_identity);
+            void call_Block_sec_protocol_options_set_pre_shared_key_selection_block(
+                    @Nullable dispatch_data_t psk_identity);
         }
 
         @Generated
-        void call_sec_protocol_options_set_pre_shared_key_selection_block(@NotNull NSObject metadata,
-                @Nullable NSObject psk_identity_hint,
+        void call_sec_protocol_options_set_pre_shared_key_selection_block(@NotNull sec_protocol_metadata_t metadata,
+                @Nullable dispatch_data_t psk_identity_hint,
                 @NotNull @ObjCBlock(name = "call_Block_sec_protocol_options_set_pre_shared_key_selection_block") Block_Block_sec_protocol_options_set_pre_shared_key_selection_block complete);
     }
 
@@ -7244,9 +7291,9 @@ public final class Security {
      */
     @Generated
     @CFunction
-    public static native void sec_protocol_options_set_key_update_block(@NotNull NSObject options,
+    public static native void sec_protocol_options_set_key_update_block(@NotNull sec_protocol_options_t options,
             @NotNull @ObjCBlock(name = "call_sec_protocol_options_set_key_update_block") Block_sec_protocol_options_set_key_update_block key_update_block,
-            @NotNull NSObject key_update_queue);
+            @NotNull dispatch_queue_t key_update_queue);
 
     @Runtime(CRuntime.class)
     @Generated
@@ -7259,7 +7306,7 @@ public final class Security {
         }
 
         @Generated
-        void call_sec_protocol_options_set_key_update_block(@NotNull NSObject metadata,
+        void call_sec_protocol_options_set_key_update_block(@NotNull sec_protocol_metadata_t metadata,
                 @NotNull @ObjCBlock(name = "call_Block_sec_protocol_options_set_key_update_block") Block_Block_sec_protocol_options_set_key_update_block complete);
     }
 
@@ -7281,9 +7328,9 @@ public final class Security {
      */
     @Generated
     @CFunction
-    public static native void sec_protocol_options_set_challenge_block(@NotNull NSObject options,
+    public static native void sec_protocol_options_set_challenge_block(@NotNull sec_protocol_options_t options,
             @NotNull @ObjCBlock(name = "call_sec_protocol_options_set_challenge_block") Block_sec_protocol_options_set_challenge_block challenge_block,
-            @NotNull NSObject challenge_queue);
+            @NotNull dispatch_queue_t challenge_queue);
 
     @Runtime(CRuntime.class)
     @Generated
@@ -7292,11 +7339,11 @@ public final class Security {
         @Generated
         public interface Block_Block_sec_protocol_options_set_challenge_block {
             @Generated
-            void call_Block_sec_protocol_options_set_challenge_block(@Nullable NSObject identity);
+            void call_Block_sec_protocol_options_set_challenge_block(@Nullable sec_identity_t identity);
         }
 
         @Generated
-        void call_sec_protocol_options_set_challenge_block(@NotNull NSObject metadata,
+        void call_sec_protocol_options_set_challenge_block(@NotNull sec_protocol_metadata_t metadata,
                 @NotNull @ObjCBlock(name = "call_Block_sec_protocol_options_set_challenge_block") Block_Block_sec_protocol_options_set_challenge_block complete);
     }
 
@@ -7318,9 +7365,9 @@ public final class Security {
      */
     @Generated
     @CFunction
-    public static native void sec_protocol_options_set_verify_block(@NotNull NSObject options,
+    public static native void sec_protocol_options_set_verify_block(@NotNull sec_protocol_options_t options,
             @NotNull @ObjCBlock(name = "call_sec_protocol_options_set_verify_block") Block_sec_protocol_options_set_verify_block verify_block,
-            @NotNull NSObject verify_block_queue);
+            @NotNull dispatch_queue_t verify_block_queue);
 
     @Runtime(CRuntime.class)
     @Generated
@@ -7333,7 +7380,8 @@ public final class Security {
         }
 
         @Generated
-        void call_sec_protocol_options_set_verify_block(@NotNull NSObject metadata, @NotNull NSObject trust_ref,
+        void call_sec_protocol_options_set_verify_block(@NotNull sec_protocol_metadata_t metadata,
+                @NotNull sec_trust_t trust_ref,
                 @NotNull @ObjCBlock(name = "call_Block_sec_protocol_options_set_verify_block") Block_Block_sec_protocol_options_set_verify_block complete);
     }
 
@@ -7374,4 +7422,100 @@ public final class Security {
     public static native CFArrayRef SecTrustCopyCertificateChain(@NotNull SecTrustRef trust);
 
     @Generated public static final double SECURITY_TYPE_UNIFICATION = 1.0;
+
+    @Generated
+    @CFunction
+    public static native VoidPtr sec_retain(VoidPtr obj);
+
+    @Generated
+    @CFunction
+    public static native void sec_release(VoidPtr obj);
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kSecKeyAlgorithmECDSASignatureDigestRFC4754();
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kSecKeyAlgorithmECDSASignatureDigestRFC4754SHA1();
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kSecKeyAlgorithmECDSASignatureDigestRFC4754SHA224();
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kSecKeyAlgorithmECDSASignatureDigestRFC4754SHA256();
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kSecKeyAlgorithmECDSASignatureDigestRFC4754SHA384();
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kSecKeyAlgorithmECDSASignatureDigestRFC4754SHA512();
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kSecKeyAlgorithmECDSASignatureMessageRFC4754SHA1();
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kSecKeyAlgorithmECDSASignatureMessageRFC4754SHA224();
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kSecKeyAlgorithmECDSASignatureMessageRFC4754SHA256();
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kSecKeyAlgorithmECDSASignatureMessageRFC4754SHA384();
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kSecKeyAlgorithmECDSASignatureMessageRFC4754SHA512();
 }

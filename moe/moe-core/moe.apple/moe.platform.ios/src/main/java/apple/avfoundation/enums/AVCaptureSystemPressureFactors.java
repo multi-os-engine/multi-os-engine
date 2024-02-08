@@ -18,6 +18,8 @@ import org.moe.natj.general.ann.NUInt;
  * [@constant] AVCaptureSystemPressureFactorDepthModuleTemperature
  * Indicates that the module capturing depth information is operating at an elevated temperature. As system pressure
  * increases, depth quality may become degraded.
+ * [@constant] AVCaptureSystemPressureFactorCameraTemperature
+ * Indicates that the camera module is operating at an elevated temperature.
  * 
  * API-Since: 11.1
  */
@@ -43,4 +45,8 @@ public final class AVCaptureSystemPressureFactors {
      * API-Since: 11.1
      */
     @Generated @NUInt public static final long DepthModuleTemperature = 0x0000000000000004L;
+    /**
+     * API-Since: 17.0
+     */
+    @Generated @NUInt public static final long CameraTemperature = 0x0000000000000008L;
 }

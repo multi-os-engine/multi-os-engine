@@ -226,4 +226,9 @@ public class WKBackForwardList extends NSObject {
     @Generated
     @Selector("itemAtIndex:")
     public native WKBackForwardListItem itemAtIndex(@NInt long index);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -214,4 +214,9 @@ public class NEDNSOverHTTPSSettings extends NEDNSSettings {
     @Generated
     @Selector("setIdentityReference:")
     public native void setIdentityReference(@Nullable NSData value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

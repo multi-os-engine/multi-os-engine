@@ -473,4 +473,9 @@ public class UNMutableNotificationContent extends UNNotificationContent {
     @Generated
     @Selector("setFilterCriteria:")
     public native void setFilterCriteria(@Nullable String value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

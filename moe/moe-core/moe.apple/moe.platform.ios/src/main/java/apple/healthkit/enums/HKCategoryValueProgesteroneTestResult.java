@@ -6,10 +6,11 @@ import org.moe.natj.general.ann.NInt;
 /**
  * [@enum] HKCategoryValueProgesteroneTestResult
  * 
- * Set of values that may be used for HKCategorySamples with the HKCategoryTypeIdentifierProgesteroneTestResult type.
+ * Set of values that may be used for HKCategorySamples with the
+ * HKCategoryTypeIdentifierProgesteroneTestResult type.
  * 
- * This category value tracks the result of a home ovulation confirmation test that use surges in hormone levels to
- * confirm if ovulation has occurred.
+ * This category value tracks the result of a home ovulation confirmation test that use surges in hormone
+ * levels to confirm if ovulation has occurred.
  * 
  * API-Since: 15.0
  */

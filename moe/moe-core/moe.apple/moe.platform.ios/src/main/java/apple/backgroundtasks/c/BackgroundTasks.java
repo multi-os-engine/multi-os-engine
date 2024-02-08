@@ -23,6 +23,8 @@ public final class BackgroundTasks {
     }
 
     /**
+     * The background tasks error domain as a string.
+     * 
      * API-Since: 13.0
      */
     @NotNull

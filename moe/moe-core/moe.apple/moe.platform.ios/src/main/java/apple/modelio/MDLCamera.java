@@ -427,4 +427,9 @@ public class MDLCamera extends MDLObject {
     @Generated
     @Selector("worldToMetersConversionScale")
     public native float worldToMetersConversionScale();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -32,20 +32,26 @@ public final class NEVPNIKEv2EncryptionAlgorithm {
      * [@const] NEVPNIKEv2EncryptionAlgorithmDES Data Encryption Standard (DES)
      * 
      * API-Since: 8.0
+     * Deprecated-Since: 17.0
+     * Deprecated-Message: Use an encryption algorithm with 256-bit keys instead
      */
-    @Generated @NInt public static final long AlgorithmDES = 0x0000000000000001L;
+    @Deprecated @Generated @NInt public static final long AlgorithmDES = 0x0000000000000001L;
     /**
      * [@const] NEVPNIKEv2EncryptionAlgorithm3DES Triple Data Encryption Algorithm (aka 3DES)
      * 
      * API-Since: 8.0
+     * Deprecated-Since: 17.0
+     * Deprecated-Message: Use an encryption algorithm with 256-bit keys instead
      */
-    @Generated @NInt public static final long Algorithm3DES = 0x0000000000000002L;
+    @Deprecated @Generated @NInt public static final long Algorithm3DES = 0x0000000000000002L;
     /**
      * [@const] NEVPNIKEv2EncryptionAlgorithmAES128 Advanced Encryption Standard 128 bit (AES128)
      * 
      * API-Since: 8.0
+     * Deprecated-Since: 17.0
+     * Deprecated-Message: Use an encryption algorithm with 256-bit keys instead
      */
-    @Generated @NInt public static final long AlgorithmAES128 = 0x0000000000000003L;
+    @Deprecated @Generated @NInt public static final long AlgorithmAES128 = 0x0000000000000003L;
     /**
      * [@const] NEVPNIKEv2EncryptionAlgorithmAES256 Advanced Encryption Standard 256 bit (AES256)
      * 
@@ -56,8 +62,10 @@ public final class NEVPNIKEv2EncryptionAlgorithm {
      * [@const] NEVPNIKEv2EncryptionAlgorithmAES128GCM Advanced Encryption Standard 128 bit (AES128GCM)
      * 
      * API-Since: 8.3
+     * Deprecated-Since: 17.0
+     * Deprecated-Message: Use an encryption algorithm with 256-bit keys instead
      */
-    @Generated @NInt public static final long AlgorithmAES128GCM = 0x0000000000000005L;
+    @Deprecated @Generated @NInt public static final long AlgorithmAES128GCM = 0x0000000000000005L;
     /**
      * [@const] NEVPNIKEv2EncryptionAlgorithmAES256GCM Advanced Encryption Standard 256 bit (AES256GCM)
      * 

@@ -30,4 +30,16 @@ public final class MTLAccelerationStructureInstanceDescriptorType {
      * API-Since: 15.0
      */
     @Generated @NUInt public static final long Motion = 0x0000000000000002L;
+    /**
+     * Instance descriptor with a resource handle for the instanced acceleration structure
+     * 
+     * API-Since: 17.0
+     */
+    @Generated @NUInt public static final long Indirect = 0x0000000000000003L;
+    /**
+     * Motion instance descriptor with a resource handle for the instanced acceleration structure.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated @NUInt public static final long IndirectMotion = 0x0000000000000004L;
 }

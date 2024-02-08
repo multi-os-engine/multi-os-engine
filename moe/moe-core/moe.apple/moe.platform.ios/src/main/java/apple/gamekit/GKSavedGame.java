@@ -216,4 +216,9 @@ public class GKSavedGame extends NSObject implements NSCopying {
         @Generated
         void call_loadDataWithCompletionHandler(@Nullable NSData data, @Nullable NSError error);
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

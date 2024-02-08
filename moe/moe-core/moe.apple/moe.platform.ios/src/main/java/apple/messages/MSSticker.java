@@ -43,10 +43,8 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.foundation.NSUUID;
 
-/**
- * API-Since: 10.0
- */
 @Generated
 @Library("Messages")
 @Runtime(ObjCRuntime.class)
@@ -207,4 +205,14 @@ public class MSSticker extends NSObject {
     @Generated
     @Selector("localizedDescription")
     public native String localizedDescription();
+
+    @Generated
+    @Selector("initWithFileURL:identifier:localizedDescription:")
+    public native MSSticker initWithFileURLIdentifierLocalizedDescription(@NotNull NSURL url,
+            @NotNull NSUUID identifier, @NotNull String localizedDescription);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

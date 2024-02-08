@@ -19,6 +19,8 @@ import org.jetbrains.annotations.NotNull;
  * Discussion:
  * Delegate protocol to receive updates from the CMWaterSubmersionManager API. Methods will be invoked
  * on the main queue.
+ * 
+ * API-Since: 16.0
  */
 @Generated
 @Library("CoreMotion")

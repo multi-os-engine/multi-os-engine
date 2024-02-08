@@ -299,4 +299,9 @@ public class SKDownload extends NSObject {
     @Selector("state")
     @NInt
     public native long state();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

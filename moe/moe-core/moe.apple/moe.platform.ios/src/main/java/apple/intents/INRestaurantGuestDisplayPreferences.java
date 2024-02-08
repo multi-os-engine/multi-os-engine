@@ -302,4 +302,9 @@ public class INRestaurantGuestDisplayPreferences extends NSObject implements NSS
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

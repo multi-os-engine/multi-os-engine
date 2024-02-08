@@ -215,10 +215,11 @@ public class NSTextLayoutFragment extends NSObject implements NSSecureCoding {
     public native NSTextRange rangeInElement();
 
     /**
-     * The bounds defining the area required for rendering the contents. The coordinate system is vertically flipped
-     * from the layoutFragmentFrame origin ({0,0} is at the upper left corner). The size should be larger than
-     * layoutFragmentFrame.size. The origin could be in the negative coordinate since the rendering could be stretched
-     * out of layoutFragmentFrame. Only valid when state > NSTextLayoutFragmentStateEstimatedUsageBounds.
+     * The bounds defining the area required for rendering the contents. The coordinate system is relative to the
+     * layoutFragmentFrame. The coordinate system is vertically flipped, meaning origin ({0,0} is at the upper-left
+     * corner). The size should be larger than layoutFragmentFrame.size. The origin could be in the negative coordinate
+     * since the rendering could be stretched out of layoutFragmentFrame. Only valid when state >
+     * NSTextLayoutFragmentStateEstimatedUsageBounds.
      */
     @Generated
     @Selector("renderingSurfaceBounds")
@@ -318,4 +319,33 @@ public class NSTextLayoutFragment extends NSObject implements NSSecureCoding {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * Returns the NSTextLineFragment containing textLocation. When isUpstreamAffinity=YES, it returns the text line
+     * fragment ending at textLocation.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("textLineFragmentForTextLocation:isUpstreamAffinity:")
+    @Nullable
+    public native NSTextLineFragment textLineFragmentForTextLocationIsUpstreamAffinity(
+            @Mapped(ObjCObjectMapper.class) @NotNull NSTextLocation textLocation, boolean isUpstreamAffinity);
+
+    /**
+     * Returns the NSTextLineFragment containing verticalOffset if found. When requiresExactMatch=NO, it returns the
+     * closest line fragment beyond verticalOffset if no line fragment contains verticalOffset.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("textLineFragmentForVerticalOffset:requiresExactMatch:")
+    @Nullable
+    public native NSTextLineFragment textLineFragmentForVerticalOffsetRequiresExactMatch(@NFloat double verticalOffset,
+            boolean requiresExactMatch);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

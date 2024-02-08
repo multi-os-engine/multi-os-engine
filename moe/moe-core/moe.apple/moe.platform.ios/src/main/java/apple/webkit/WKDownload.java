@@ -226,4 +226,9 @@ public class WKDownload extends NSObject implements NSProgressReporting {
     @Generated
     @Selector("webView")
     public native WKWebView webView();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

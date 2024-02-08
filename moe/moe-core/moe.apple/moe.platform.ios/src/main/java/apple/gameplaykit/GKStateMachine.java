@@ -42,8 +42,6 @@ import org.jetbrains.annotations.Nullable;
 
 /**
  * Models a finite state machine that has a single current state.
- * 
- * API-Since: 9.0
  */
 @Generated
 @Library("GameplayKit")
@@ -225,4 +223,9 @@ public class GKStateMachine extends NSObject {
     @Generated
     @Selector("updateWithDeltaTime:")
     public native void updateWithDeltaTime(double sec);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

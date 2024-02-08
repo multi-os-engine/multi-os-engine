@@ -44,9 +44,6 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-/**
- * API-Since: 5.0
- */
 @Generated
 @Library("GameKit")
 @Runtime(ObjCRuntime.class)
@@ -263,7 +260,6 @@ public class GKTurnBasedMatch extends NSObject {
      * 
      * API-Since: 6.0
      * Deprecated-Since: 14.0
-     * Deprecated-Message: pass GKLeaderboardScore to endMatchInTurnWithMatchData:scores:completionHandler instead
      */
     @Deprecated
     @Generated
@@ -277,7 +273,6 @@ public class GKTurnBasedMatch extends NSObject {
      * 
      * API-Since: 5.0
      * Deprecated-Since: 6.0
-     * Deprecated-Message: Use endTurnWithNextParticipants:... instead
      */
     @Generated
     @Deprecated
@@ -385,7 +380,6 @@ public class GKTurnBasedMatch extends NSObject {
     /**
      * API-Since: 5.0
      * Deprecated-Since: 6.0
-     * Deprecated-Message: Use participantQuitInTurnWithOutcome:nextParticipants:turnTimeout:... instead
      */
     @Generated
     @Deprecated
@@ -693,4 +687,9 @@ public class GKTurnBasedMatch extends NSObject {
         @Generated
         void call_endMatchInTurnWithMatchDataLeaderboardScoresAchievementsCompletionHandler(@Nullable NSError error);
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

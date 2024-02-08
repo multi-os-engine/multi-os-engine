@@ -237,4 +237,9 @@ public class UIPanGestureRecognizer extends UIGestureRecognizer {
     @Generated
     @Selector("setAllowedScrollTypesMask:")
     public native void setAllowedScrollTypesMask(@NInt long value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

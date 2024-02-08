@@ -31,7 +31,7 @@ import org.jetbrains.annotations.Nullable;
 
 /**
  * VNTextObservation
- * [@superclass] VNDetectedObjectObservation
+ * [@superclass] VNRectangleObservation
  * 
  * VNTextObservation Describes a text area detected by the VNRequestNameDetectTextRectangles request.
  * 
@@ -190,9 +190,21 @@ public class VNTextObservation extends VNRectangleObservation {
     public static native VNTextObservation observationWithRequestRevisionBoundingBox(@NUInt long requestRevision,
             @ByValue CGRect boundingBox);
 
+    @Deprecated
     @Generated
     @Selector("rectangleObservationWithRequestRevision:topLeft:bottomLeft:bottomRight:topRight:")
     public static native VNTextObservation rectangleObservationWithRequestRevisionTopLeftBottomLeftBottomRightTopRight(
             @NUInt long requestRevision, @ByValue CGPoint topLeft, @ByValue CGPoint bottomLeft,
             @ByValue CGPoint bottomRight, @ByValue CGPoint topRight);
+
+    @Generated
+    @Selector("rectangleObservationWithRequestRevision:topLeft:topRight:bottomRight:bottomLeft:")
+    public static native VNTextObservation rectangleObservationWithRequestRevisionTopLeftTopRightBottomRightBottomLeft(
+            @NUInt long requestRevision, @ByValue CGPoint topLeft, @ByValue CGPoint topRight,
+            @ByValue CGPoint bottomRight, @ByValue CGPoint bottomLeft);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -192,4 +192,9 @@ public class UISearchContainerViewController extends UIViewController {
     @Generated
     @Selector("searchController")
     public native UISearchController searchController();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

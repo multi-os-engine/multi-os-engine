@@ -287,4 +287,9 @@ public class RPBroadcastActivityViewController extends UIViewController {
         void call_loadBroadcastActivityViewControllerWithPreferredExtensionHandler(
                 @Nullable RPBroadcastActivityViewController broadcastActivityViewController, @Nullable NSError error);
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

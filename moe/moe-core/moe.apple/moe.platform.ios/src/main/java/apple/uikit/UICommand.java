@@ -313,4 +313,18 @@ public class UICommand extends UIMenuElement implements UIMenuLeaf {
     @Selector("sender")
     @MappedReturn(ObjCObjectMapper.class)
     public native Object sender();
+
+    @Generated
+    @Selector("selectedImage")
+    @Nullable
+    public native UIImage selectedImage();
+
+    @Generated
+    @Selector("setSelectedImage:")
+    public native void setSelectedImage(@Nullable UIImage value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -43,8 +43,6 @@ import org.jetbrains.annotations.Nullable;
 /**
  * The individual node(s) that make up a GKOctree.
  * Used as a hint for faster removal via [GKOctree removeData:WithNode:]
- * 
- * API-Since: 10.0
  */
 @Generated
 @Library("GameplayKit")
@@ -163,4 +161,9 @@ public class GKOctreeNode extends NSObject {
     @Generated
     @Selector("init")
     public native GKOctreeNode init();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

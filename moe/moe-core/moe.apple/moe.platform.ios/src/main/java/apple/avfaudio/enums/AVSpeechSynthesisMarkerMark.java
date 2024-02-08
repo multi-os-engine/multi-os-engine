@@ -30,4 +30,8 @@ public final class AVSpeechSynthesisMarkerMark {
      * API-Since: 16.0
      */
     @Generated @NInt public static final long Paragraph = 0x0000000000000003L;
+    /**
+     * API-Since: 16.0
+     */
+    @Generated @NInt public static final long Bookmark = 0x0000000000000004L;
 }

@@ -65,6 +65,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.corefoundation.struct.CGSize;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.uikit.protocol.UIContentConfiguration;
+import apple.uikit.protocol.UITraitChangeObservable;
+import apple.uikit.protocol.UITraitChangeRegistration;
+import apple.uikit.protocol.UITraitOverrides;
 
 /**
  * API-Since: 2.0
@@ -74,7 +78,7 @@ import org.jetbrains.annotations.Nullable;
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
 public class UIViewController extends UIResponder implements NSCoding, UIAppearanceContainer, UITraitEnvironment,
-        UIContentContainer, UIFocusEnvironment, UIStateRestoring, NSExtensionRequestHandling {
+        UIContentContainer, UIFocusEnvironment, UIStateRestoring, NSExtensionRequestHandling, UITraitChangeObservable {
     static {
         NatJ.register();
     }
@@ -755,7 +759,10 @@ public class UIViewController extends UIResponder implements NSCoding, UIAppeara
 
     /**
      * API-Since: 8.0
+     * Deprecated-Since: 17.0
+     * Deprecated-Message: Use the traitOverrides property on the child view controller instead
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("overrideTraitCollectionForChildViewController:")
@@ -947,6 +954,7 @@ public class UIViewController extends UIResponder implements NSCoding, UIAppeara
      * 
      * API-Since: 9.0
      * Deprecated-Since: 13.0
+     * Deprecated-Message: UIViewControllerPreviewing is deprecated. Please use UIContextMenuInteraction.
      */
     @NotNull
     @Deprecated
@@ -1208,7 +1216,10 @@ public class UIViewController extends UIResponder implements NSCoding, UIAppeara
      * Call to modify the trait collection for child view controllers.
      * 
      * API-Since: 8.0
+     * Deprecated-Since: 17.0
+     * Deprecated-Message: Use the traitOverrides property on the child view controller instead
      */
+    @Deprecated
     @Generated
     @Selector("setOverrideTraitCollection:forChildViewController:")
     public native void setOverrideTraitCollectionForChildViewController(@Nullable UITraitCollection collection,
@@ -1525,6 +1536,7 @@ public class UIViewController extends UIResponder implements NSCoding, UIAppeara
     @Selector("traitCollection")
     public native UITraitCollection traitCollection();
 
+    @Deprecated
     @Generated
     @Selector("traitCollectionDidChange:")
     public native void traitCollectionDidChange(@Nullable UITraitCollection previousTraitCollection);
@@ -1580,6 +1592,7 @@ public class UIViewController extends UIResponder implements NSCoding, UIAppeara
     /**
      * API-Since: 9.0
      * Deprecated-Since: 13.0
+     * Deprecated-Message: UIViewControllerPreviewing is deprecated. Please use UIContextMenuInteraction.
      */
     @Deprecated
     @Generated
@@ -1647,14 +1660,15 @@ public class UIViewController extends UIResponder implements NSCoding, UIAppeara
             @NotNull UIViewController fromViewController, @Nullable @Mapped(ObjCObjectMapper.class) Object sender);
 
     /**
-     * Called when the view has been fully transitioned onto the screen. Default does nothing
+     * Called after the view has fully transitioned to visible, when any transition animations have completed.
      */
     @Generated
     @Selector("viewDidAppear:")
     public native void viewDidAppear(boolean animated);
 
     /**
-     * Called after the view was dismissed, covered or otherwise hidden. Default does nothing
+     * Called after the view has fully been dismissed, covered, or otherwise hidden, when any transition animations have
+     * completed.
      */
     @Generated
     @Selector("viewDidDisappear:")
@@ -1701,14 +1715,21 @@ public class UIViewController extends UIResponder implements NSCoding, UIAppeara
     public native UIView viewIfLoaded();
 
     /**
-     * Called when the view is about to made visible. Default does nothing
+     * Called when the view is about to made visible, before it is added to the hierarchy.
+     * Because the view is not yet in the hierarchy at the time this method is called, it
+     * is too early in the appearance transition for many usages. Prefer -viewIsAppearing:
+     * instead of this method when possible. Only use this method when its exact timing
+     * before the appearance transition starts running is desired, such as to set up an
+     * alongside animation with a transition coordinator, or as a counterpart for paired
+     * code in a viewWillDisappear/viewDidDisappear callback that does not rely on the
+     * view or view controller's trait collection or the view hierarchy.
      */
     @Generated
     @Selector("viewWillAppear:")
     public native void viewWillAppear(boolean animated);
 
     /**
-     * Called when the view is dismissed, covered or otherwise hidden. Default does nothing
+     * Called when the view is about to be dismissed, covered, or otherwise hidden.
      */
     @Generated
     @Selector("viewWillDisappear:")
@@ -2185,4 +2206,135 @@ public class UIViewController extends UIResponder implements NSCoding, UIAppeara
     @Generated
     @Selector("setNeedsUpdateOfSupportedInterfaceOrientations")
     public native void setNeedsUpdateOfSupportedInterfaceOrientations();
+
+    /**
+     * Setting a content unavailable configuration replaces the existing content unavailable view of the view controller
+     * with a new content unavailable view instance from the configuration,
+     * or directly applies the configuration to the existing content unavailable view if the configuration is compatible
+     * with the existing content unavailable view type.
+     * The default value is nil.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("contentUnavailableConfiguration")
+    @MappedReturn(ObjCObjectMapper.class)
+    @Nullable
+    public native UIContentConfiguration contentUnavailableConfiguration();
+
+    /**
+     * Returns the current content unavailable configuration state for the view.
+     * To add your own custom state(s), override the getter and call super to obtain an instance with the
+     * system properties set, then set your own custom states as desired.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("contentUnavailableConfigurationState")
+    @NotNull
+    public native UIContentUnavailableConfigurationState contentUnavailableConfigurationState();
+
+    @Generated
+    @Selector("registerForTraitChanges:withAction:")
+    @MappedReturn(ObjCObjectMapper.class)
+    @NotNull
+    public native UITraitChangeRegistration registerForTraitChangesWithAction(@NotNull NSArray<?> traits,
+            @NotNull SEL action);
+
+    @Generated
+    @Selector("registerForTraitChanges:withHandler:")
+    @MappedReturn(ObjCObjectMapper.class)
+    @NotNull
+    public native UITraitChangeRegistration registerForTraitChangesWithHandler(@NotNull NSArray<?> traits,
+            @ObjCBlock(name = "call_registerForTraitChangesWithHandler") @NotNull UITraitChangeObservable.Block_registerForTraitChangesWithHandler handler);
+
+    @Generated
+    @Selector("registerForTraitChanges:withTarget:action:")
+    @MappedReturn(ObjCObjectMapper.class)
+    @NotNull
+    public native UITraitChangeRegistration registerForTraitChangesWithTargetAction(@NotNull NSArray<?> traits,
+            @Mapped(ObjCObjectMapper.class) @NotNull Object target, @NotNull SEL action);
+
+    /**
+     * Setting a content unavailable configuration replaces the existing content unavailable view of the view controller
+     * with a new content unavailable view instance from the configuration,
+     * or directly applies the configuration to the existing content unavailable view if the configuration is compatible
+     * with the existing content unavailable view type.
+     * The default value is nil.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("setContentUnavailableConfiguration:")
+    public native void setContentUnavailableConfiguration(
+            @Mapped(ObjCObjectMapper.class) @Nullable UIContentConfiguration value);
+
+    /**
+     * Requests the view update its content unavailable configuration for its current state. This method is called
+     * automatically
+     * when the view's `contentUnavailableConfigurationState` may have changed, as well as in other circumstances where
+     * an
+     * update may be required. Multiple requests may be coalesced into a single update at the appropriate time.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("setNeedsUpdateContentUnavailableConfiguration")
+    public native void setNeedsUpdateContentUnavailableConfiguration();
+
+    @Generated
+    @Selector("traitOverrides")
+    @MappedReturn(ObjCObjectMapper.class)
+    @NotNull
+    public native UITraitOverrides traitOverrides();
+
+    @Generated
+    @Selector("unregisterForTraitChanges:")
+    public native void unregisterForTraitChanges(
+            @Mapped(ObjCObjectMapper.class) @NotNull UITraitChangeRegistration registration);
+
+    /**
+     * Subclasses should override this method and update the content unavailable's configuration using the state
+     * provided.
+     * This method should not be called directly, use `setNeedsUpdateContentUnavailableConfiguration` to request an
+     * update.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("updateContentUnavailableConfigurationUsingState:")
+    public native void updateContentUnavailableConfigurationUsingState(
+            @NotNull UIContentUnavailableConfigurationState state);
+
+    /**
+     * Forces an immediate trait update for this view controller and its view, including any view
+     * controllers and views in this subtree. Any trait change callbacks are sent synchronously.
+     */
+    @Generated
+    @Selector("updateTraitsIfNeeded")
+    public native void updateTraitsIfNeeded();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
+
+    /**
+     * Called when the view is becoming visible at the beginning of the appearance transition,
+     * after it has been added to the hierarchy and been laid out by its superview. This method
+     * is very similar to -viewWillAppear: and is always called shortly afterwards (so changes
+     * made in either callback will be visible to the user at the same time), but unlike
+     * -viewWillAppear:, at the time when -viewIsAppearing: is called all of the following are
+     * valid for the view controller and its own view:
+     * - View controller and view's trait collection
+     * - View's superview chain and window
+     * - View's geometry (e.g. frame/bounds, safe area insets, layout margins)
+     * Choose this method instead of -viewWillAppear: by default, as it is a direct replacement
+     * that provides equivalent or superior behavior in nearly all cases.
+     * 
+     * API-Since: 13.0
+     */
+    @Generated
+    @Selector("viewIsAppearing:")
+    public native void viewIsAppearing(boolean animated);
 }

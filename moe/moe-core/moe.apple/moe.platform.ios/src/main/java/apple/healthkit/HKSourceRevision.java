@@ -265,4 +265,9 @@ public class HKSourceRevision extends NSObject implements NSSecureCoding, NSCopy
     @Generated
     @Selector("productType")
     public native String productType();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

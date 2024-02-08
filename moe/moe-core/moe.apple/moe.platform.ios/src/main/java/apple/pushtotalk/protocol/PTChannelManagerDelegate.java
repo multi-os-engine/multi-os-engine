@@ -16,6 +16,7 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.jetbrains.annotations.NotNull;
+import org.moe.natj.objc.ann.ObjCBlock;
 
 /**
  * API-Since: 16.0
@@ -120,4 +121,36 @@ public interface PTChannelManagerDelegate {
     @Selector("incomingPushResultForChannelManager:channelUUID:pushPayload:")
     PTPushResult incomingPushResultForChannelManagerChannelUUIDPushPayload(@NotNull PTChannelManager channelManager,
             @NotNull NSUUID channelUUID, @NotNull NSDictionary<String, ?> pushPayload);
+
+    /**
+     * This method is called for each incoming service update push. Use this method to extract service update data from
+     * the notification's payload and to
+     * perform the relevant task for that data. When you finish the task, execute the provided `completion` handler
+     * block to let PushToTalk know you are finished.
+     * 
+     * Service Update push notifications that are sent with high priority (priority=10) are subject to a budget of six
+     * per hour. Use the `remainingHighPriorityBudget`
+     * value to monitor the number of remaining high priority push notifications available to your app. Low-priority
+     * push notifications (priority<=5) are not subject
+     * to a budget limit and should be used whenever possible.
+     * 
+     * API-Since: 17.2
+     */
+    @Generated
+    @IsOptional
+    @Selector("incomingServiceUpdatePushForChannelManager:channelUUID:pushPayload:isHighPriority:remainingHighPriorityBudget:withCompletionHandler:")
+    default void incomingServiceUpdatePushForChannelManagerChannelUUIDPushPayloadIsHighPriorityRemainingHighPriorityBudgetWithCompletionHandler(
+            @NotNull PTChannelManager channelManager, @NotNull NSUUID channelUUID,
+            @NotNull NSDictionary<String, ?> pushPayload, boolean isHighPriority,
+            @NInt long remainingHighPriorityBudget,
+            @ObjCBlock(name = "call_incomingServiceUpdatePushForChannelManagerChannelUUIDPushPayloadIsHighPriorityRemainingHighPriorityBudgetWithCompletionHandler") @NotNull Block_incomingServiceUpdatePushForChannelManagerChannelUUIDPushPayloadIsHighPriorityRemainingHighPriorityBudgetWithCompletionHandler completion) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_incomingServiceUpdatePushForChannelManagerChannelUUIDPushPayloadIsHighPriorityRemainingHighPriorityBudgetWithCompletionHandler {
+        @Generated
+        void call_incomingServiceUpdatePushForChannelManagerChannelUUIDPushPayloadIsHighPriorityRemainingHighPriorityBudgetWithCompletionHandler();
+    }
 }

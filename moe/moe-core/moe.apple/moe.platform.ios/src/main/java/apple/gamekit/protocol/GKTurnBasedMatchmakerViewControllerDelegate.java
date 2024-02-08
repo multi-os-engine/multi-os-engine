@@ -48,7 +48,6 @@ public interface GKTurnBasedMatchmakerViewControllerDelegate {
      * 
      * API-Since: 5.0
      * Deprecated-Since: 9.0
-     * Deprecated-Message: use GKTurnBasedEventListener player:receivedTurnEventForMatch:didBecomeActive:
      */
     @Generated
     @IsOptional
@@ -64,7 +63,6 @@ public interface GKTurnBasedMatchmakerViewControllerDelegate {
      * 
      * API-Since: 5.0
      * Deprecated-Since: 9.0
-     * Deprecated-Message: use GKTurnBasedEventListener player:wantsToQuitMatch:
      */
     @Generated
     @IsOptional

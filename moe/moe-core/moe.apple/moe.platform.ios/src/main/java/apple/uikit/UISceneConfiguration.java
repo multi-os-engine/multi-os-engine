@@ -86,9 +86,9 @@ public class UISceneConfiguration extends NSObject implements NSCopying, NSSecur
     public static native Class classForKeyedUnarchiver();
 
     /**
-     * creates a UISceneConfiguration instance from your Info.plist using the name & system type provided.
-     * If nil is provided for the name, the first matching instance of the provided sessionType is used.
-     * If no matching name is found, or no descriptions of the provided sessionType exist in your Info.plist,
+     * Creates a UISceneConfiguration instance from your Info.plist using the name and session role provided.
+     * If nil is provided for the name, the first matching instance of the provided session role is used.
+     * If no matching name is found, or no descriptions of the provided session role exist in your Info.plist,
      * then an instance with a nil sceneSubclass, delegateClass, and storyboard is returned.
      * The name parameter passed in is used to lookup a predefined configuration from your app's Info.plist.
      * the returned UISceneConfiguration instance is not guaranteed to share the value of the parameter.
@@ -228,4 +228,9 @@ public class UISceneConfiguration extends NSObject implements NSCopying, NSSecur
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

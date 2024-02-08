@@ -312,4 +312,9 @@ public class MDLMaterial extends NSObject implements MDLNamed, NSFastEnumeration
     @Generated
     @Selector("resolveTexturesWithResolver:")
     public native void resolveTexturesWithResolver(@NotNull @Mapped(ObjCObjectMapper.class) MDLAssetResolver resolver);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

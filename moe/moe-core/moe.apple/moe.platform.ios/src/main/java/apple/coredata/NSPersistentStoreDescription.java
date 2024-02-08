@@ -303,4 +303,9 @@ public class NSPersistentStoreDescription extends NSObject implements NSCopying 
     @Generated
     @Selector("setCloudKitContainerOptions:")
     public native void setCloudKitContainerOptions(@Nullable NSPersistentCloudKitContainerOptions value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

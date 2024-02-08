@@ -394,4 +394,9 @@ public class AVCaptureDeviceInput extends AVCaptureInput {
     @Selector("videoMinFrameDurationOverride")
     @ByValue
     public native CMTime videoMinFrameDurationOverride();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

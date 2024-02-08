@@ -651,4 +651,113 @@ public class MTLMeshRenderPipelineDescriptor extends NSObject implements NSCopyi
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * [@property] fragmentLinkedFunctions
+     * 
+     * The set of functions to be linked with the pipeline state and accessed from the fragment function.
+     * 
+     * @see MTLLinkedFunctions
+     * 
+     *      API-Since: 17.0
+     */
+    @Generated
+    @Selector("fragmentLinkedFunctions")
+    public native MTLLinkedFunctions fragmentLinkedFunctions();
+
+    /**
+     * [@property] meshLinkedFunctions
+     * 
+     * The set of functions to be linked with the pipeline state and accessed from the mesh function.
+     * 
+     * @see MTLLinkedFunctions
+     * 
+     *      API-Since: 17.0
+     */
+    @Generated
+    @Selector("meshLinkedFunctions")
+    public native MTLLinkedFunctions meshLinkedFunctions();
+
+    /**
+     * [@property] objectLinkedFunctions
+     * 
+     * The set of functions to be linked with the pipeline state and accessed from the object function.
+     * 
+     * @see MTLLinkedFunctions
+     * 
+     *      API-Since: 17.0
+     */
+    @Generated
+    @Selector("objectLinkedFunctions")
+    public native MTLLinkedFunctions objectLinkedFunctions();
+
+    /**
+     * [@property] fragmentLinkedFunctions
+     * 
+     * The set of functions to be linked with the pipeline state and accessed from the fragment function.
+     * 
+     * @see MTLLinkedFunctions
+     * 
+     *      API-Since: 17.0
+     */
+    @Generated
+    @Selector("setFragmentLinkedFunctions:")
+    public native void setFragmentLinkedFunctions(MTLLinkedFunctions value);
+
+    /**
+     * [@property] meshLinkedFunctions
+     * 
+     * The set of functions to be linked with the pipeline state and accessed from the mesh function.
+     * 
+     * @see MTLLinkedFunctions
+     * 
+     *      API-Since: 17.0
+     */
+    @Generated
+    @Selector("setMeshLinkedFunctions:")
+    public native void setMeshLinkedFunctions(MTLLinkedFunctions value);
+
+    /**
+     * [@property] objectLinkedFunctions
+     * 
+     * The set of functions to be linked with the pipeline state and accessed from the object function.
+     * 
+     * @see MTLLinkedFunctions
+     * 
+     *      API-Since: 17.0
+     */
+    @Generated
+    @Selector("setObjectLinkedFunctions:")
+    public native void setObjectLinkedFunctions(MTLLinkedFunctions value);
+
+    /**
+     * [@property] supportIndirectCommandBuffers
+     * 
+     * Whether this pipeline will support being used by commands in an indirect command buffer.
+     * 
+     * The default value is NO.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("setSupportIndirectCommandBuffers:")
+    public native void setSupportIndirectCommandBuffers(boolean value);
+
+    /**
+     * [@property] supportIndirectCommandBuffers
+     * 
+     * Whether this pipeline will support being used by commands in an indirect command buffer.
+     * 
+     * The default value is NO.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("supportIndirectCommandBuffers")
+    public native boolean supportIndirectCommandBuffers();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

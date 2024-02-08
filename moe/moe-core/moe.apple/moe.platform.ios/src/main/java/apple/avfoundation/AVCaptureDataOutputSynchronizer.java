@@ -25,6 +25,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.opaque.dispatch_queue_t;
 
 /**
  * AVCaptureDataOutputSynchronizer
@@ -144,7 +145,7 @@ public class AVCaptureDataOutputSynchronizer extends NSObject {
     @Nullable
     @Generated
     @Selector("delegateCallbackQueue")
-    public native NSObject delegateCallbackQueue();
+    public native dispatch_queue_t delegateCallbackQueue();
 
     @Generated
     @Selector("description")
@@ -236,7 +237,7 @@ public class AVCaptureDataOutputSynchronizer extends NSObject {
     @Selector("setDelegate:queue:")
     public native void setDelegateQueue(
             @Nullable @Mapped(ObjCObjectMapper.class) AVCaptureDataOutputSynchronizerDelegate delegate,
-            @Nullable NSObject delegateCallbackQueue);
+            @Nullable dispatch_queue_t delegateCallbackQueue);
 
     @Generated
     @Selector("setVersion:")
@@ -250,4 +251,9 @@ public class AVCaptureDataOutputSynchronizer extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

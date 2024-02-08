@@ -297,4 +297,9 @@ public class RPBroadcastController extends NSObject {
         @Generated
         void call_startBroadcastWithHandler(@Nullable NSError error);
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -522,4 +522,9 @@ public class AUParameterNode extends NSObject {
         void call_tokenByAddingParameterRecordingObserver(@NInt long numberEvents,
                 @NotNull AURecordedParameterEvent events);
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

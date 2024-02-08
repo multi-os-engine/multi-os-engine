@@ -28,10 +28,6 @@ import apple.corefoundation.struct.CGSize;
 import org.jetbrains.annotations.NotNull;
 
 /**
- * MTKViewDelegate
- * 
- * Allows an object to render into the view and respond to resize events
- * 
  * API-Since: 9.0
  */
 @Generated

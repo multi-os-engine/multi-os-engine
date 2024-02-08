@@ -31,7 +31,7 @@ import org.jetbrains.annotations.Nullable;
 
 /**
  * VNRectangleObservation
- * [@superclass] VNObservation
+ * [@superclass] VNDetectedObjectObservation
  * 
  * VNRectangleObservation is the result of a rectangle detector
  * 
@@ -205,11 +205,47 @@ public class VNRectangleObservation extends VNDetectedObjectObservation {
             @ByValue CGRect boundingBox);
 
     /**
-     * API-Since: 13.0
+     * Create a synthesized `VNRectangleObservation`.
+     * [@note] The clockwise parameter ordered `+[VNRectangleObservation
+     * rectangleObservationWithRequestRevision:topLeft:topRight:bottomRight:bottomLeft:]` is the preferred initializer.
+     * 
+     * @param requestRevision The revision of the VNDetectRectanglesRequest that the observation is to be treated as
+     *                        originating from.
+     * @param topLeft         The top-left corner of the rectangle in normalized coordinate space.
+     * @param bottomLeft      The bottom-left corner of the rectangle in normalized coordinate space.
+     * @param bottomRight     The bottom-right corner of the rectangle in normalized coordinate space.
+     * @param topRight        The top-right corner of the rectangle in normalized coordinate space.
+     * 
+     *                        API-Since: 13.0
+     *                        Deprecated-Since: 17.0
      */
+    @Deprecated
     @Generated
     @Selector("rectangleObservationWithRequestRevision:topLeft:bottomLeft:bottomRight:topRight:")
     public static native VNRectangleObservation rectangleObservationWithRequestRevisionTopLeftBottomLeftBottomRightTopRight(
             @NUInt long requestRevision, @ByValue CGPoint topLeft, @ByValue CGPoint bottomLeft,
             @ByValue CGPoint bottomRight, @ByValue CGPoint topRight);
+
+    /**
+     * Create a synthesized `VNRectangleObservation`.
+     * 
+     * @param requestRevision The revision of the VNDetectRectanglesRequest that the observation is to be treated as
+     *                        originating from.
+     * @param topLeft         The top-left corner of the rectangle in normalized coordinate space.
+     * @param topRight        The top-right corner of the rectangle in normalized coordinate space.
+     * @param bottomRight     The bottom-right corner of the rectangle in normalized coordinate space.
+     * @param bottomLeft      The bottom-left corner of the rectangle in normalized coordinate space.
+     * 
+     *                        API-Since: 17.0
+     */
+    @Generated
+    @Selector("rectangleObservationWithRequestRevision:topLeft:topRight:bottomRight:bottomLeft:")
+    public static native VNRectangleObservation rectangleObservationWithRequestRevisionTopLeftTopRightBottomRightBottomLeft(
+            @NUInt long requestRevision, @ByValue CGPoint topLeft, @ByValue CGPoint topRight,
+            @ByValue CGPoint bottomRight, @ByValue CGPoint bottomLeft);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

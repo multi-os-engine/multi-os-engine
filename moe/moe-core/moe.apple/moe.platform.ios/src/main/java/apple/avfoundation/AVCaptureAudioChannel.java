@@ -192,4 +192,9 @@ public class AVCaptureAudioChannel extends NSObject {
     @Generated
     @Selector("peakHoldLevel")
     public native float peakHoldLevel();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

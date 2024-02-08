@@ -214,4 +214,9 @@ public class INSearchCallHistoryIntentResponse extends INIntentResponse {
     @Generated
     @Selector("setCallRecords:")
     public native void setCallRecords(@Nullable NSArray<? extends INCallRecord> value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

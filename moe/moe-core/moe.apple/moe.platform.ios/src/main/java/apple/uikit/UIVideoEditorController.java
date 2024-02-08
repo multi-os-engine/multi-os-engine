@@ -257,4 +257,9 @@ public class UIVideoEditorController extends UINavigationController {
     @Selector("videoQuality")
     @NInt
     public native long videoQuality();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

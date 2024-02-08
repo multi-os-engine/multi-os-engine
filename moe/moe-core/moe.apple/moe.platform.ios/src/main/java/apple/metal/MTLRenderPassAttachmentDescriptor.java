@@ -395,4 +395,9 @@ public class MTLRenderPassAttachmentDescriptor extends NSObject implements NSCop
     @Selector("storeActionOptions")
     @NUInt
     public native long storeActionOptions();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

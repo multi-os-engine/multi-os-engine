@@ -247,4 +247,9 @@ public class MPSCNNPoolingNode extends MPSNNFilterNode {
     @Selector("strideInPixelsY")
     @NUInt
     public native long strideInPixelsY();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

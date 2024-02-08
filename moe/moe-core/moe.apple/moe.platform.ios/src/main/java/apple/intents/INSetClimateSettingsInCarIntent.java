@@ -271,4 +271,9 @@ public class INSetClimateSettingsInCarIntent extends INIntent {
             @Nullable NSNumber fanSpeedIndex, @Nullable NSNumber fanSpeedPercentage, @NInt long relativeFanSpeedSetting,
             @Nullable NSMeasurement<NSUnitTemperature> temperature, @NInt long relativeTemperatureSetting,
             @NInt long climateZone, @Nullable INSpeakableString carName);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

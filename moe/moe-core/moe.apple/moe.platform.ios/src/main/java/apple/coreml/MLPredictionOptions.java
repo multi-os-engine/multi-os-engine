@@ -313,4 +313,9 @@ public class MLPredictionOptions extends NSObject {
     @Generated
     @Selector("setOutputBackings:")
     public native void setOutputBackings(@NotNull NSDictionary<String, ?> value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

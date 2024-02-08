@@ -28,6 +28,10 @@ import apple.foundation.NSError;
 import org.moe.natj.objc.ann.ObjCBlock;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.uikit.protocol.UITraitChangeObservable;
+import apple.uikit.protocol.UITraitChangeRegistration;
+import apple.uikit.protocol.UITraitEnvironment;
+import apple.uikit.protocol.UITraitOverrides;
 
 /**
  * API-Since: 13.0
@@ -36,7 +40,7 @@ import org.jetbrains.annotations.Nullable;
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class UIWindowScene extends UIScene {
+public class UIWindowScene extends UIScene implements UITraitEnvironment, UITraitChangeObservable {
     static {
         NatJ.register();
     }
@@ -327,4 +331,46 @@ public class UIWindowScene extends UIScene {
     @Generated
     @Selector("windowingBehaviors")
     public native UISceneWindowingBehaviors windowingBehaviors();
+
+    @Generated
+    @Selector("registerForTraitChanges:withAction:")
+    @MappedReturn(ObjCObjectMapper.class)
+    @NotNull
+    public native UITraitChangeRegistration registerForTraitChangesWithAction(@NotNull NSArray<?> traits,
+            @NotNull SEL action);
+
+    @Generated
+    @Selector("registerForTraitChanges:withHandler:")
+    @MappedReturn(ObjCObjectMapper.class)
+    @NotNull
+    public native UITraitChangeRegistration registerForTraitChangesWithHandler(@NotNull NSArray<?> traits,
+            @ObjCBlock(name = "call_registerForTraitChangesWithHandler") @NotNull UITraitChangeObservable.Block_registerForTraitChangesWithHandler handler);
+
+    @Generated
+    @Selector("registerForTraitChanges:withTarget:action:")
+    @MappedReturn(ObjCObjectMapper.class)
+    @NotNull
+    public native UITraitChangeRegistration registerForTraitChangesWithTargetAction(@NotNull NSArray<?> traits,
+            @Mapped(ObjCObjectMapper.class) @NotNull Object target, @NotNull SEL action);
+
+    @Generated
+    @Deprecated
+    @Selector("traitCollectionDidChange:")
+    public native void traitCollectionDidChange(@Nullable UITraitCollection previousTraitCollection);
+
+    @Generated
+    @Selector("traitOverrides")
+    @MappedReturn(ObjCObjectMapper.class)
+    @NotNull
+    public native UITraitOverrides traitOverrides();
+
+    @Generated
+    @Selector("unregisterForTraitChanges:")
+    public native void unregisterForTraitChanges(
+            @Mapped(ObjCObjectMapper.class) @NotNull UITraitChangeRegistration registration);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

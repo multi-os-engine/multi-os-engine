@@ -247,4 +247,9 @@ public class INSearchCallHistoryIntent extends INIntent {
     @Generated
     @Selector("unseen")
     public native NSNumber unseen();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

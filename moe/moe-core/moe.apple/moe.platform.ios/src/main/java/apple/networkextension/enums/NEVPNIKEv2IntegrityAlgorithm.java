@@ -32,14 +32,18 @@ public final class NEVPNIKEv2IntegrityAlgorithm {
      * [@const] NEVPNIKEv2IntegrityAlgorithmSHA96 SHA-1 96 bit
      * 
      * API-Since: 8.0
+     * Deprecated-Since: 17.0
+     * Deprecated-Message: Use SHA-2 for integrity protection instead
      */
-    @Generated @NInt public static final long SHA96 = 0x0000000000000001L;
+    @Deprecated @Generated @NInt public static final long SHA96 = 0x0000000000000001L;
     /**
      * [@const] NEVPNIKEv2IntegrityAlgorithmSHA160 SHA-1 160 bit
      * 
      * API-Since: 8.0
+     * Deprecated-Since: 17.0
+     * Deprecated-Message: Use SHA-2 for integrity protection instead
      */
-    @Generated @NInt public static final long SHA160 = 0x0000000000000002L;
+    @Deprecated @Generated @NInt public static final long SHA160 = 0x0000000000000002L;
     /**
      * [@const] NEVPNIKEv2IntegrityAlgorithmSHA256 SHA-2 256 bit
      * 

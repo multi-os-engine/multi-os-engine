@@ -209,4 +209,9 @@ public class MTLArrayType extends MTLType {
     @Generated
     @Selector("elementTextureReferenceType")
     public native MTLTextureReferenceType elementTextureReferenceType();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -325,4 +325,9 @@ public class MDLVoxelArray extends MDLObject {
     @Generated
     @Selector("voxelIndices")
     public native NSData voxelIndices();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

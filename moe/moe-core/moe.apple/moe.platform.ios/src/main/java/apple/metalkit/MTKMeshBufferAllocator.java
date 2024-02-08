@@ -51,8 +51,6 @@ import org.jetbrains.annotations.Nullable;
  * MTKMeshBufferAllocator
  * 
  * Allocator passed to MDLAsset init method to load vertex and index data directly into Metal buffers.
- * 
- * API-Since: 9.0
  */
 @Generated
 @Library("MetalKit")
@@ -232,4 +230,9 @@ public class MTKMeshBufferAllocator extends NSObject implements MDLMeshBufferAll
     @MappedReturn(ObjCObjectMapper.class)
     public native MDLMeshBufferZone newZoneForBuffersWithSizeAndType(@NotNull NSArray<? extends NSNumber> sizes,
             @NotNull NSArray<? extends NSNumber> types);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

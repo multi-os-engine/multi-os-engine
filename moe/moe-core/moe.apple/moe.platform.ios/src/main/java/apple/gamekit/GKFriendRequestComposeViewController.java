@@ -46,11 +46,6 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-/**
- * API-Since: 4.2
- * Deprecated-Since: 10.0
- */
-@Deprecated
 @Generated
 @Library("GameKit")
 @Runtime(ObjCRuntime.class)
@@ -201,7 +196,6 @@ public class GKFriendRequestComposeViewController extends UINavigationController
     /**
      * API-Since: 4.2
      * Deprecated-Since: 8.0
-     * Deprecated-Message: use addRecipientPlayers:
      */
     @Generated
     @Deprecated
@@ -276,4 +270,9 @@ public class GKFriendRequestComposeViewController extends UINavigationController
     @Generated
     @Selector("setMessage:")
     public native void setMessage(@Nullable String message);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

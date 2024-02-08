@@ -250,4 +250,9 @@ public class HMCharacteristicEvent<_TriggerValueType> extends HMEvent implements
     @Selector("mutableCopyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
     public native Object mutableCopyWithZone(@Nullable VoidPtr zone);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

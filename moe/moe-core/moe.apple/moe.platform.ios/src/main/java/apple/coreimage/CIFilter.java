@@ -65,8 +65,6 @@ import org.jetbrains.annotations.Nullable;
  * CIContext, CIVector, CIImageAccumulator, and CIColor objects to take advantage of the built-in Core Image filters
  * when processing images. CIFilter objects are also used along with CIKernel, CISampler, and CIFilterShape objects to
  * create custom filters.
- * 
- * API-Since: 5.0
  */
 @Generated
 @Library("CoreImage")
@@ -133,7 +131,9 @@ public class CIFilter extends NSObject implements NSSecureCoding, NSCopying {
      * Return an array of CIFilters de-serialized from XMP data.
      * 
      * API-Since: 6.0
+     * Deprecated-Since: 17.0
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("filterArrayFromSerializedXMP:inputImageExtent:error:")
@@ -351,7 +351,9 @@ public class CIFilter extends NSObject implements NSSecureCoding, NSCopying {
      * The return value will be null if none of the filters can be serialized.
      * 
      * API-Since: 6.0
+     * Deprecated-Since: 17.0
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("serializedXMPFromFilters:inputImageExtent:")
@@ -465,4 +467,9 @@ public class CIFilter extends NSObject implements NSSecureCoding, NSCopying {
     @Generated
     @Selector("supportedRawCameraModels")
     public static native NSArray<String> supportedRawCameraModels();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

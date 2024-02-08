@@ -169,4 +169,9 @@ public class MPChangePlaybackRateCommandEvent extends MPRemoteCommandEvent {
     @Generated
     @Selector("playbackRate")
     public native float playbackRate();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

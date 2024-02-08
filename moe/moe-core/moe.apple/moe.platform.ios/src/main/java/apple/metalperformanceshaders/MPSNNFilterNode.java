@@ -398,4 +398,9 @@ public class MPSNNFilterNode extends NSObject {
                 @NotNull MPSNNFilterNode inferenceNode, @NotNull MPSNNImageNode inferenceSource,
                 @NotNull MPSNNImageNode gradientSource);
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

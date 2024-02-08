@@ -387,4 +387,9 @@ public class NEFilterProviderConfiguration extends NSObject implements NSSecureC
     @Generated
     @Selector("vendorConfiguration")
     public native NSDictionary<String, ?> vendorConfiguration();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

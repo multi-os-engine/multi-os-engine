@@ -49,6 +49,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.corefoundation.struct.CGRect;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.symbols.NSSymbolContentTransition;
+import apple.symbols.NSSymbolEffect;
+import apple.symbols.NSSymbolEffectOptions;
 
 /**
  * API-Since: 2.0
@@ -619,4 +622,209 @@ public class UIImageView extends UIView implements UIAccessibilityContentSizeCat
     @Generated
     @Selector("setPreferredSymbolConfiguration:")
     public native void setPreferredSymbolConfiguration(@Nullable UIImageSymbolConfiguration value);
+
+    /**
+     * Adds a symbol effect to the image view with default options and animation.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("addSymbolEffect:")
+    public native void addSymbolEffect(@NotNull NSSymbolEffect symbolEffect);
+
+    /**
+     * Adds a symbol effect to the image view with specified options and default animation.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("addSymbolEffect:options:")
+    public native void addSymbolEffectOptions(@NotNull NSSymbolEffect symbolEffect,
+            @NotNull NSSymbolEffectOptions options);
+
+    /**
+     * Adds a symbol effect to the image view with specified options and animation.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("addSymbolEffect:options:animated:")
+    public native void addSymbolEffectOptionsAnimated(@NotNull NSSymbolEffect symbolEffect,
+            @NotNull NSSymbolEffectOptions options, boolean animated);
+
+    /**
+     * Adds a symbol effect to the image view with specified options, animation, and completion handler.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("addSymbolEffect:options:animated:completion:")
+    public native void addSymbolEffectOptionsAnimatedCompletion(@NotNull NSSymbolEffect symbolEffect,
+            @NotNull NSSymbolEffectOptions options, boolean animated,
+            @ObjCBlock(name = "call_addSymbolEffectOptionsAnimatedCompletion") @Nullable Block_addSymbolEffectOptionsAnimatedCompletion completionHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_addSymbolEffectOptionsAnimatedCompletion {
+        @Generated
+        void call_addSymbolEffectOptionsAnimatedCompletion(@NotNull UISymbolEffectCompletionContext context);
+    }
+
+    @Generated
+    @Selector("animateWithSpringDuration:bounce:initialSpringVelocity:delay:options:animations:completion:")
+    public static native void animateWithSpringDurationBounceInitialSpringVelocityDelayOptionsAnimationsCompletion(
+            double duration, @NFloat double bounce, @NFloat double velocity, double delay, @NUInt long options,
+            @ObjCBlock(name = "call_animateWithSpringDurationBounceInitialSpringVelocityDelayOptionsAnimationsCompletion_5") @NotNull UIView.Block_animateWithSpringDurationBounceInitialSpringVelocityDelayOptionsAnimationsCompletion_5 animations,
+            @ObjCBlock(name = "call_animateWithSpringDurationBounceInitialSpringVelocityDelayOptionsAnimationsCompletion_6") @Nullable UIView.Block_animateWithSpringDurationBounceInitialSpringVelocityDelayOptionsAnimationsCompletion_6 completion);
+
+    /**
+     * The resolved treatment to use for HDR images.
+     */
+    @Generated
+    @Selector("imageDynamicRange")
+    @NInt
+    public native long imageDynamicRange();
+
+    /**
+     * The preferred treatment to use for HDR images. By default the image view will defer to the value from its
+     * traitCollection.
+     */
+    @Generated
+    @Selector("preferredImageDynamicRange")
+    @NInt
+    public native long preferredImageDynamicRange();
+
+    /**
+     * Removes all symbol effects from the image view with default options and animation.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("removeAllSymbolEffects")
+    public native void removeAllSymbolEffects();
+
+    /**
+     * Removes all symbol effects from the image view with specified options and default animation.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("removeAllSymbolEffectsWithOptions:")
+    public native void removeAllSymbolEffectsWithOptions(@NotNull NSSymbolEffectOptions options);
+
+    /**
+     * Removes all symbol effects from the image view with specified options and animation.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("removeAllSymbolEffectsWithOptions:animated:")
+    public native void removeAllSymbolEffectsWithOptionsAnimated(@NotNull NSSymbolEffectOptions options,
+            boolean animated);
+
+    /**
+     * Removes from the image view the symbol effect matching the type of effect passed in, with default options and
+     * animation.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("removeSymbolEffectOfType:")
+    public native void removeSymbolEffectOfType(@NotNull NSSymbolEffect symbolEffect);
+
+    /**
+     * Removes from the image view the symbol effect matching the type of effect passed in, with specified options and
+     * default animation.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("removeSymbolEffectOfType:options:")
+    public native void removeSymbolEffectOfTypeOptions(@NotNull NSSymbolEffect symbolEffect,
+            @NotNull NSSymbolEffectOptions options);
+
+    /**
+     * Removes from the image view the symbol effect matching the type of effect passed in, with specified options and
+     * animation.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("removeSymbolEffectOfType:options:animated:")
+    public native void removeSymbolEffectOfTypeOptionsAnimated(@NotNull NSSymbolEffect symbolEffect,
+            @NotNull NSSymbolEffectOptions options, boolean animated);
+
+    /**
+     * Removes from the image view the symbol effect matching the type of effect passed in, with specified options,
+     * animation, and completion handler.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("removeSymbolEffectOfType:options:animated:completion:")
+    public native void removeSymbolEffectOfTypeOptionsAnimatedCompletion(@NotNull NSSymbolEffect symbolEffect,
+            @NotNull NSSymbolEffectOptions options, boolean animated,
+            @ObjCBlock(name = "call_removeSymbolEffectOfTypeOptionsAnimatedCompletion") @Nullable Block_removeSymbolEffectOfTypeOptionsAnimatedCompletion completionHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_removeSymbolEffectOfTypeOptionsAnimatedCompletion {
+        @Generated
+        void call_removeSymbolEffectOfTypeOptionsAnimatedCompletion(@NotNull UISymbolEffectCompletionContext context);
+    }
+
+    /**
+     * The preferred treatment to use for HDR images. By default the image view will defer to the value from its
+     * traitCollection.
+     */
+    @Generated
+    @Selector("setPreferredImageDynamicRange:")
+    public native void setPreferredImageDynamicRange(@NInt long value);
+
+    /**
+     * Sets the symbol image on the image view with a symbol content transition and default options.
+     * Passing in a non-symbol image will result in undefined behavior.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("setSymbolImage:withContentTransition:")
+    public native void setSymbolImageWithContentTransition(@NotNull UIImage symbolImage,
+            @NotNull NSSymbolContentTransition transition);
+
+    /**
+     * Sets the symbol image on the image view with a symbol content transition and specified options.
+     * Passing in a non-symbol image will result in undefined behavior.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("setSymbolImage:withContentTransition:options:")
+    public native void setSymbolImageWithContentTransitionOptions(@NotNull UIImage symbolImage,
+            @NotNull NSSymbolContentTransition transition, @NotNull NSSymbolEffectOptions options);
+
+    /**
+     * Sets the symbol image on the image view with a symbol content transition, options, and completion handler.
+     * Passing in a non-symbol image will result in undefined behavior.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("setSymbolImage:withContentTransition:options:completion:")
+    public native void setSymbolImageWithContentTransitionOptionsCompletion(@NotNull UIImage symbolImage,
+            @NotNull NSSymbolContentTransition transition, @NotNull NSSymbolEffectOptions options,
+            @ObjCBlock(name = "call_setSymbolImageWithContentTransitionOptionsCompletion") @Nullable Block_setSymbolImageWithContentTransitionOptionsCompletion completionHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_setSymbolImageWithContentTransitionOptionsCompletion {
+        @Generated
+        void call_setSymbolImageWithContentTransitionOptionsCompletion(
+                @NotNull UISymbolEffectCompletionContext context);
+    }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

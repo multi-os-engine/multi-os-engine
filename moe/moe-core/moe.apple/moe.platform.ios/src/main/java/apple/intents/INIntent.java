@@ -297,4 +297,9 @@ public class INIntent extends NSObject implements NSCopying, NSSecureCoding {
     @Generated
     @Selector("setDonationMetadata:")
     public native void setDonationMetadata(@Nullable INIntentDonationMetadata value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

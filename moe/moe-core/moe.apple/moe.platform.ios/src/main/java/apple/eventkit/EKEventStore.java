@@ -59,8 +59,6 @@ import org.jetbrains.annotations.Nullable;
  * Events, Reminders, and Calendar objects retrieved from an event store cannot be used with any other event
  * store. It is generally best to hold onto a long-lived instance of an event store, most
  * likely as a singleton instance in your application.
- * 
- * API-Since: 4.0
  */
 @Generated
 @Library("EventKit")
@@ -594,19 +592,12 @@ public class EKEventStore extends NSObject {
             @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
-     * requestAccessToEntityType:completion:
-     * 
-     * Users are able to grant or deny access to event and reminder data on a per-app basis. To request access to
-     * event and/or reminder data, call -requestAccessToEntityType:completion:. This will not block the app while
-     * the user is being asked to grant or deny access.
-     * 
-     * Until access has been granted for an entity type, the event store will not contain any calendars for that
-     * entity type, and any attempt to save will fail. The user will only be prompted the first time access is
-     * requested; any subsequent instantiations of EKEventStore will use the existing permissions. When the user
-     * taps to grant or deny access, the completion handler will be called on an arbitrary queue.
-     * 
      * API-Since: 6.0
+     * Deprecated-Since: 17.0
+     * Deprecated-Message: Use -requestFullAccessToEventsWithCompletion:,
+     * -requestWriteOnlyAccessToEventsWithCompletion:, or -requestFullAccessToRemindersWithCompletion:
      */
+    @Deprecated
     @Generated
     @Selector("requestAccessToEntityType:completion:")
     public native void requestAccessToEntityTypeCompletion(@NUInt long entityType,
@@ -786,4 +777,54 @@ public class EKEventStore extends NSObject {
     @Generated
     @Selector("initWithSources:")
     public native EKEventStore initWithSources(@NotNull NSArray<? extends EKSource> sources);
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("requestFullAccessToEventsWithCompletion:")
+    public native void requestFullAccessToEventsWithCompletion(
+            @ObjCBlock(name = "call_requestFullAccessToEventsWithCompletion") @NotNull Block_requestFullAccessToEventsWithCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_requestFullAccessToEventsWithCompletion {
+        @Generated
+        void call_requestFullAccessToEventsWithCompletion(boolean granted, @Nullable NSError error);
+    }
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("requestFullAccessToRemindersWithCompletion:")
+    public native void requestFullAccessToRemindersWithCompletion(
+            @ObjCBlock(name = "call_requestFullAccessToRemindersWithCompletion") @NotNull Block_requestFullAccessToRemindersWithCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_requestFullAccessToRemindersWithCompletion {
+        @Generated
+        void call_requestFullAccessToRemindersWithCompletion(boolean granted, @Nullable NSError error);
+    }
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("requestWriteOnlyAccessToEventsWithCompletion:")
+    public native void requestWriteOnlyAccessToEventsWithCompletion(
+            @ObjCBlock(name = "call_requestWriteOnlyAccessToEventsWithCompletion") @NotNull Block_requestWriteOnlyAccessToEventsWithCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_requestWriteOnlyAccessToEventsWithCompletion {
+        @Generated
+        void call_requestWriteOnlyAccessToEventsWithCompletion(boolean granted, @Nullable NSError error);
+    }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

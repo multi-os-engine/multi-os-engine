@@ -181,7 +181,10 @@ public interface MTLFunction {
      * bind point index.
      * 
      * API-Since: 11.0
+     * Deprecated-Since: 16.0
+     * Deprecated-Message: Use MTLDevice's newArgumentEncoderWithBufferBinding: instead
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("newArgumentEncoderWithBufferIndex:reflection:")

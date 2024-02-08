@@ -584,7 +584,7 @@ public class MTLTextureDescriptor extends NSObject implements NSCopying {
      * loss.
      * Enabling lossy compression requires both storageMode == MTLStorageModePrivate, allowGPUOptimizedContents == YES,
      * and cannot be combined with either MTLTextureUsagePixelFormatView, MTLTextureUsageShaderWrite,
-     * MTLTextureType1D(Array) or MTLTextureTypeTextureBuffer.
+     * MTLTextureUsageShaderAtomic, MTLTextureType1D(Array) or MTLTextureTypeTextureBuffer.
      * Moreover, not all MTLPixelFormat are supported with lossy compression, verify that the MTLDevice's GPU family
      * supports the lossy compression feature for the pixelFormat requested.
      * Set allowGPUOptimizedContents to NO to opt out of both lossless and lossy compression; such textures do not
@@ -615,7 +615,7 @@ public class MTLTextureDescriptor extends NSObject implements NSCopying {
      * loss.
      * Enabling lossy compression requires both storageMode == MTLStorageModePrivate, allowGPUOptimizedContents == YES,
      * and cannot be combined with either MTLTextureUsagePixelFormatView, MTLTextureUsageShaderWrite,
-     * MTLTextureType1D(Array) or MTLTextureTypeTextureBuffer.
+     * MTLTextureUsageShaderAtomic, MTLTextureType1D(Array) or MTLTextureTypeTextureBuffer.
      * Moreover, not all MTLPixelFormat are supported with lossy compression, verify that the MTLDevice's GPU family
      * supports the lossy compression feature for the pixelFormat requested.
      * Set allowGPUOptimizedContents to NO to opt out of both lossless and lossy compression; such textures do not
@@ -627,4 +627,9 @@ public class MTLTextureDescriptor extends NSObject implements NSCopying {
     @Generated
     @Selector("setCompressionType:")
     public native void setCompressionType(@NInt long value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

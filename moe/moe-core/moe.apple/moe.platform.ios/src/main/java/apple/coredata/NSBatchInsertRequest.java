@@ -358,4 +358,9 @@ public class NSBatchInsertRequest extends NSPersistentStoreRequest {
         @Generated
         boolean call_setManagedObjectHandler(@NotNull NSManagedObject arg0);
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

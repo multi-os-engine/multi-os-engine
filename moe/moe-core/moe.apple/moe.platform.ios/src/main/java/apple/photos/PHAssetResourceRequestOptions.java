@@ -215,4 +215,9 @@ public class PHAssetResourceRequestOptions extends NSObject implements NSCopying
         @Generated
         void call_setProgressHandler(double progress);
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

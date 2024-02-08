@@ -277,4 +277,9 @@ public class MPSNNForwardLossNode extends MPSNNFilterNode {
     @Generated
     @Selector("reduceAcrossBatch")
     public native boolean reduceAcrossBatch();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

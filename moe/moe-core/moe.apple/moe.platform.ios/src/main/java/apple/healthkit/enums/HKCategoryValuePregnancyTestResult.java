@@ -6,10 +6,11 @@ import org.moe.natj.general.ann.NInt;
 /**
  * [@enum] HKCategoryValuePregnancyTestResult
  * 
- * Set of values that may be used for HKCategorySamples with the HKCategoryTypeIdentifierPregnancyTestResult type.
+ * Set of values that may be used for HKCategorySamples with the
+ * HKCategoryTypeIdentifierPregnancyTestResult type.
  * 
- * This category value tracks the result of a home pregnancy test that checks for presence of the human chorionic
- * gonadotrophin (hCG) hormone in urine to confirm pregnancy.
+ * This category value tracks the result of a home pregnancy test that checks for presence of the human
+ * chorionic gonadotrophin (hCG) hormone in urine to confirm pregnancy.
  * 
  * API-Since: 15.0
  */

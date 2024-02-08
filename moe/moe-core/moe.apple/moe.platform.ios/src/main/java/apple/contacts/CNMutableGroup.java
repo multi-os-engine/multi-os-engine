@@ -47,8 +47,6 @@ import org.jetbrains.annotations.Nullable;
  * A mutable value object representing a group.
  * 
  * CNMutableGroup is not thread safe.
- * 
- * API-Since: 9.0
  */
 @Generated
 @Library("Contacts")
@@ -200,4 +198,9 @@ public class CNMutableGroup extends CNGroup {
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -375,4 +375,9 @@ public class SCNPhysicsVehicleWheel extends NSObject implements NSCopying, NSSec
     @Selector("suspensionStiffness")
     @NFloat
     public native double suspensionStiffness();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

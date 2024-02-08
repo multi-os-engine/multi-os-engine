@@ -288,4 +288,9 @@ public class SKOverlayAppConfiguration extends SKOverlayConfiguration {
     @Generated
     @Selector("setAdImpression:")
     public native void setAdImpression(@NotNull SKAdImpression impression);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

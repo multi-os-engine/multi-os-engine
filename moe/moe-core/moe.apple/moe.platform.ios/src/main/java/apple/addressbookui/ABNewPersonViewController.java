@@ -268,4 +268,9 @@ public class ABNewPersonViewController extends UIViewController {
     @Generated
     @Selector("setParentGroup:")
     public native void setParentGroup(@Nullable ConstVoidPtr value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

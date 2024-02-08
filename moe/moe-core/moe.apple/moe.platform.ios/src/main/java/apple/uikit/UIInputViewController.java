@@ -297,4 +297,9 @@ public class UIInputViewController extends UIViewController implements UITextInp
     @Generated
     @Selector("setHasDictationKey:")
     public native void setHasDictationKey(boolean value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -226,4 +226,9 @@ public class NETunnelProviderManager extends NEVPNManager {
         void call_loadAllFromPreferencesWithCompletionHandler(
                 @Nullable NSArray<? extends NETunnelProviderManager> managers, @Nullable NSError error);
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

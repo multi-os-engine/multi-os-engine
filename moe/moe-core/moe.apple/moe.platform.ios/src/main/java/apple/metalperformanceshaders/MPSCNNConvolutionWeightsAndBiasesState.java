@@ -331,4 +331,9 @@ public class MPSCNNConvolutionWeightsAndBiasesState extends MPSState {
     @Selector("weightsOffset")
     @NUInt
     public native long weightsOffset();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

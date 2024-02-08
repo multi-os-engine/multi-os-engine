@@ -300,4 +300,9 @@ public class MPSNNBinaryArithmeticNode extends MPSNNFilterNode {
     @Generated
     @Selector("setSecondaryStrideInPixelsY:")
     public native void setSecondaryStrideInPixelsY(@NUInt long value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

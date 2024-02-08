@@ -26,6 +26,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.authenticationservices.protocol.ASCredentialRequest;
 
 /**
  * API-Since: 12.0
@@ -205,8 +206,12 @@ public class ASCredentialProviderViewController extends UIViewController {
      * identity cannot
      * be found in the database, pass an error with code ASExtensionErrorCodeCredentialIdentityNotFound.
      * 
+     * API-Since: 12.0
+     * Deprecated-Since: 17.0
+     * 
      * @param credentialIdentity the credential identity for which a credential should be provided.
      */
+    @Deprecated
     @Generated
     @Selector("prepareInterfaceToProvideCredentialForIdentity:")
     public native void prepareInterfaceToProvideCredentialForIdentity(
@@ -232,8 +237,12 @@ public class ASCredentialProviderViewController extends UIViewController {
      * or expect to show any user
      * interface in this method.
      * 
+     * API-Since: 12.0
+     * Deprecated-Since: 17.0
+     * 
      * @param credentialIdentity the credential identity for which a credential should be provided.
      */
+    @Deprecated
     @Generated
     @Selector("provideCredentialWithoutUserInteractionForIdentity:")
     public native void provideCredentialWithoutUserInteractionForIdentity(
@@ -259,4 +268,140 @@ public class ASCredentialProviderViewController extends UIViewController {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * Prepare the view controller to show a list of password and passkey credentials.
+     * 
+     * This method is called by the system to prepare the extension's view controller to present the list of
+     * credentials.
+     * A service identifier array is passed which can be used to filter or prioritize the credentials that closely match
+     * each service.
+     * The service identifier array could have zero or more items. If there is more than one item in the array, items
+     * with lower indexes
+     * represent more specific identifiers for which a credential is being requested. For example, the array could
+     * contain identifiers
+     * [m.example.com, example.com] with the first item representing the more specifc service that requires a
+     * credential.
+     * If the array of service identifiers is empty, it is expected that the credential list should still show
+     * credentials that the user can pick from.
+     * If a passkey credential is selected, the extension should use the requestParameters object to complete the
+     * request using the selected
+     * passkey credential.
+     * 
+     * API-Since: 17.0
+     * 
+     * @param serviceIdentifiers the array of service identifiers.
+     * @param requestParameters  the parameters of the active passkey request.
+     */
+    @Generated
+    @Selector("prepareCredentialListForServiceIdentifiers:requestParameters:")
+    public native void prepareCredentialListForServiceIdentifiersRequestParameters(
+            @NotNull NSArray<? extends ASCredentialServiceIdentifier> serviceIdentifiers,
+            @NotNull ASPasskeyCredentialRequestParameters requestParameters);
+
+    /**
+     * Prepare UI to register a passkey for the specified relying party.
+     * 
+     * The system calls this method when the user selects your extension to use for creating a passkey. In order
+     * for your extension to be presented in the list of options for passkey registration requests, your extension
+     * needs to specify a true value for the Information Property List key `ProvidesPasskeys` under the
+     * `ASCredentialProviderExtensionCapabilities` dictionary.
+     * 
+     * Info.plist
+     * ├─ NSExtension
+     * ├─ NSExtensionAttributes
+     * ├─ ASCredentialProviderExtensionCapabilities
+     * ├─ ProvidesPasskeys => true
+     * 
+     * This method will present your extension's UI for user authentication before creating the passkey. Once the
+     * passkey is created, your extension should call `-[ASCredentialProviderExtensionContext
+     * completeRegistrationRequestWithSelectedPasskeyCredential:completionHandler:]`
+     * with the newly created ASPasskeyCredential object. If an error occurs, call
+     * `-[ASCredentialProviderExtensionContext cancelRequestWithError:]` and pass an
+     * error with domain `ASExtensionErrorDomain` and an appropriate error code from `ASExtensionErrorCode`.
+     * 
+     * - Parameter registrationRequest: The passkey registration request parameters needed to
+     * register a new passkey.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("prepareInterfaceForPasskeyRegistration:")
+    public native void prepareInterfaceForPasskeyRegistration(
+            @Mapped(ObjCObjectMapper.class) @NotNull ASCredentialRequest registrationRequest);
+
+    /**
+     * Prepare the view controller to show user interface for providing the user-requested credential.
+     * 
+     * The system calls this method when your extension cannot provide the requested credential without user
+     * interaction.
+     * Set up the view controller for any user interaction required to provide the requested credential only. The user
+     * interaction should
+     * be limited in nature to operations required for providing the requested credential. An example is showing an
+     * authentication UI to
+     * unlock the user's passwords database.
+     * Call -[ASCredentialProviderExtensionContext completeRequestWithSelectedCredential:completionHandler:] for
+     * password credentials or
+     * -[ASCredentialProviderExtensionContext completeAssertionRequestWithSelectedPasskeyCredential:completionHandler:]
+     * for passkey credentials.
+     * If an error occurs, call -[ASCredentialProviderExtensionContext cancelRequestWithError:] and pass an error with
+     * domain
+     * ASExtensionErrorDomain and an appropriate error code from ASExtensionErrorCode. For example, if the credential
+     * identity cannot
+     * be found in the database, pass an error with code ASExtensionErrorCodeCredentialIdentityNotFound.
+     * 
+     * API-Since: 17.0
+     * 
+     * @param credentialRequest the credential request for which a credential should be provided.
+     */
+    @Generated
+    @Selector("prepareInterfaceToProvideCredentialForRequest:")
+    public native void prepareInterfaceToProvideCredentialForRequest(
+            @Mapped(ObjCObjectMapper.class) @NotNull ASCredentialRequest credentialRequest);
+
+    /**
+     * Attempt to provide the user-requested credential without any user interaction.
+     * 
+     * After the user selects a credential identity, the system will create a credential request, the contents of
+     * which will depend on whether the credential to use is a password or passkey. The request type will match
+     * the type of credential that was requested. Refer to `ASPasswordCredentialRequest` and
+     * `ASPasskeyCredentialRequest` for details.
+     * 
+     * The system may ask your extension to provide the credential without showing any user interface if possible
+     * to enhance the user experience. If your extension can accomplish this (for example, the user’s passwords
+     * database is still unlocked from a recent interaction), call `-[ASCredentialProviderExtensionContext
+     * completeRequestWithSelectedCredential:completionHandler:]`
+     * for password credentials or `-[ASCredentialProviderExtensionContext
+     * completeAssertionRequestWithSelectedPasskeyCredential:completionHandler:]` for passkey credentials. If an error
+     * occurs, call `-[ASCredentialProviderExtensionContext cancelRequestWithError:]`
+     * and pass an error with domain `ASExtensionErrorDomain` and an appropriate error code from
+     * `ASExtensionErrorCode`. For example, if your extension requires user interaction because the
+     * passwords database needs to be unlocked, pass an error with code `ASExtensionErrorCodeUserInteractionRequired`.
+     * 
+     * In order for your extension to be presented in the list of options for passkey assertion requests, your
+     * extension needs to specify a true value for the Information Property List key `ProvidesPasskeys`
+     * under the `ASCredentialProviderExtensionCapabilities` dictionary.
+     * 
+     * Info.plist
+     * ├─ NSExtension
+     * ├─ NSExtensionAttributes
+     * ├─ ASCredentialProviderExtensionCapabilities
+     * ├─ ProvidesPasskeys => true
+     * 
+     * - Note: When this method is called, your extension's view controller is not present on the screen. Do not
+     * attempt or expect to show any user interface in this method.
+     * 
+     * - Parameter credentialRequest: The credential request for which a credential should be provided.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("provideCredentialWithoutUserInteractionForRequest:")
+    public native void provideCredentialWithoutUserInteractionForRequest(
+            @Mapped(ObjCObjectMapper.class) @NotNull ASCredentialRequest credentialRequest);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

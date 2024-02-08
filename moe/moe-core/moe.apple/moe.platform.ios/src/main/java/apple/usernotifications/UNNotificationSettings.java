@@ -285,4 +285,9 @@ public class UNNotificationSettings extends NSObject implements NSCopying, NSSec
     @Selector("timeSensitiveSetting")
     @NInt
     public native long timeSensitiveSetting();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

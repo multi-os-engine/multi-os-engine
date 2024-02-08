@@ -43,6 +43,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.opaque.dispatch_queue_t;
 
 /**
  * CBPeripheralManager
@@ -66,9 +67,6 @@ import org.jetbrains.annotations.Nullable;
  * to you by calling {@link startAdvertising:}. Like the GATT database, advertisement is managed at the system level and
  * shared by all
  * applications. This means that even if you aren't advertising at the moment, someone else might be!
- * 
- * 
- * API-Since: 6.0
  */
 @Generated
 @Library("CoreBluetooth")
@@ -242,13 +240,17 @@ public class CBPeripheralManager extends CBManager {
      * The initialization call. The events of the peripheral role will be dispatched on the provided queue.
      * If <i>nil</i>, the main queue will be used.
      * 
+     * 
+     * API-Since: 6.0
+     * 
      * @param delegate The delegate that will receive peripheral role events.
      * @param queue    The dispatch queue on which the events will be dispatched.
      */
     @Generated
     @Selector("initWithDelegate:queue:")
     public native CBPeripheralManager initWithDelegateQueue(
-            @Nullable @Mapped(ObjCObjectMapper.class) CBPeripheralManagerDelegate delegate, @Nullable NSObject queue);
+            @Nullable @Mapped(ObjCObjectMapper.class) CBPeripheralManagerDelegate delegate,
+            @Nullable dispatch_queue_t queue);
 
     /**
      * initWithDelegate:queue:options:
@@ -269,8 +271,8 @@ public class CBPeripheralManager extends CBManager {
     @Generated
     @Selector("initWithDelegate:queue:options:")
     public native CBPeripheralManager initWithDelegateQueueOptions(
-            @Nullable @Mapped(ObjCObjectMapper.class) CBPeripheralManagerDelegate delegate, @Nullable NSObject queue,
-            @Nullable NSDictionary<String, ?> options);
+            @Nullable @Mapped(ObjCObjectMapper.class) CBPeripheralManagerDelegate delegate,
+            @Nullable dispatch_queue_t queue, @Nullable NSDictionary<String, ?> options);
 
     /**
      * [@property] isAdvertising
@@ -472,4 +474,9 @@ public class CBPeripheralManager extends CBManager {
     @Selector("authorization")
     @NInt
     public static native long authorization_static();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

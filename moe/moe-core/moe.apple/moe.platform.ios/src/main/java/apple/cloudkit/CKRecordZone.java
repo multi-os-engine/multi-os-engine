@@ -46,6 +46,8 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
+ * NS_SWIFT_SENDABLE on macos(14.0), ios(17.0), tvos(17.0), watchos(10.0)
+ * 
  * API-Since: 8.0
  */
 @Generated
@@ -234,4 +236,9 @@ public class CKRecordZone extends NSObject implements NSSecureCoding, NSCopying 
     @Generated
     @Selector("share")
     public native CKReference share();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -646,4 +646,9 @@ public class SCNTechnique extends NSObject implements SCNAnimatable, NSCopying, 
     @Generated
     @Selector("removeAllAnimationsWithBlendOutDuration:")
     public native void removeAllAnimationsWithBlendOutDuration(@NFloat double duration);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

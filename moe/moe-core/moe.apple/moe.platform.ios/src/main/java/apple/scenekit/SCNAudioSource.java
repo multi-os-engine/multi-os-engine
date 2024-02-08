@@ -353,4 +353,9 @@ public class SCNAudioSource extends NSObject implements NSCopying, NSSecureCodin
     @Generated
     @Selector("volume")
     public native float volume();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

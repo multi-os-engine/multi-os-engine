@@ -43,8 +43,7 @@ import org.jetbrains.annotations.Nullable;
 
 /**
  * A GCGamepadSnapshot snapshot is a concrete GCGamepad implementation. It can be used directly in an
- * application to implement controller input replays. It is also returned as the result API_DEPRECATED("GCGamepad has
- * been deprecated, use GCExtendedGamepad instead", macos(10.9, 10.15), ios(7.0, 13.0), tvos(7.0, 13.0))of polling
+ * application to implement controller input replays. It is also returned as the result of polling
  * a controller.
  * 
  * The current snapshotData is readily available to access as NSData. A developer can serialize this to any
@@ -194,4 +193,9 @@ public class GCGamepadSnapshot extends GCGamepad {
     @Generated
     @Selector("snapshotData")
     public native NSData snapshotData();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

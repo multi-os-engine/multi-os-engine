@@ -199,4 +199,9 @@ public class HKBloodTypeObject extends NSObject implements NSCopying, NSSecureCo
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

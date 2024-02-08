@@ -212,4 +212,9 @@ public class NSNotification extends NSObject implements NSCopying, NSCoding {
     @Generated
     @Selector("userInfo")
     public native NSDictionary<?, ?> userInfo();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

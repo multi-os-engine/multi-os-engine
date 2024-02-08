@@ -175,4 +175,9 @@ public class NSURLSessionDataTask extends NSURLSessionTask {
     @Generated
     @Selector("init")
     public native NSURLSessionDataTask init();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

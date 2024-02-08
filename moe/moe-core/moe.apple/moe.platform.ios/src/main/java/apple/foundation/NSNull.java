@@ -194,4 +194,9 @@ public class NSNull extends NSObject implements NSCopying, NSSecureCoding, CAAct
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

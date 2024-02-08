@@ -376,4 +376,9 @@ public class NWUDPSession extends NSObject {
         @Generated
         void call_writeMultipleDatagramsCompletionHandler(@Nullable NSError error);
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

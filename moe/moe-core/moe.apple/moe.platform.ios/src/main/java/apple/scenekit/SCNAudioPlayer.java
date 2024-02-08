@@ -291,4 +291,9 @@ public class SCNAudioPlayer extends NSObject {
         @Generated
         void call_willStartPlayback_ret();
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

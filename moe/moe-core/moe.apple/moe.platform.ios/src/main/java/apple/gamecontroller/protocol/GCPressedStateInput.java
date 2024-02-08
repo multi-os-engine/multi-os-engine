@@ -11,6 +11,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.foundation.NSSet;
 
 /**
  * An object conforming to \c GCPressedStateInput represents the pressed state of
@@ -96,4 +97,15 @@ public interface GCPressedStateInput {
         void call_setPressedDidChangeHandler(@NotNull @Mapped(ObjCObjectMapper.class) Object arg0,
                 @NotNull @Mapped(ObjCObjectMapper.class) Object arg1, boolean arg2);
     }
+
+    /**
+     * An object describing the physical action(s) the user performs to manipulate
+     * this input.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("sources")
+    @NotNull
+    NSSet<?> sources();
 }

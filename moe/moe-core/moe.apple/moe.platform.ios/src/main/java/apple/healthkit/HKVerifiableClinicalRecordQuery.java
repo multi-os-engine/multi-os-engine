@@ -466,4 +466,9 @@ public class HKVerifiableClinicalRecordQuery extends HKQuery {
     @Generated
     @Selector("sourceTypes")
     public native NSArray<String> sourceTypes();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

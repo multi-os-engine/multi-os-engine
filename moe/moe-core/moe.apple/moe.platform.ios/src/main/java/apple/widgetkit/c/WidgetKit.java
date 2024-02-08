@@ -21,16 +21,26 @@ public final class WidgetKit {
     private WidgetKit() {
     }
 
+    /**
+     * A key you use to access the widget's kind. The value matches the `kind` property specified in the widget’s
+     * configuration.
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String WGWidgetUserInfoKeyKind();
 
+    /**
+     * A key you use to access the widget's family.
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String WGWidgetUserInfoKeyFamily();
 
+    /**
+     * A key you use to access the activity ID if the widget represents a Live Activity.
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)

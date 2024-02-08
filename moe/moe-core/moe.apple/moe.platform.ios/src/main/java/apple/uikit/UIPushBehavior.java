@@ -244,4 +244,9 @@ public class UIPushBehavior extends UIDynamicBehavior {
     @Selector("targetOffsetFromCenterForItem:")
     @ByValue
     public native UIOffset targetOffsetFromCenterForItem(@NotNull @Mapped(ObjCObjectMapper.class) UIDynamicItem item);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

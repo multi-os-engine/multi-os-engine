@@ -260,4 +260,9 @@ public class AVAssetReaderOutputMetadataAdaptor extends NSObject {
     @Generated
     @Selector("nextTimedMetadataGroup")
     public native AVTimedMetadataGroup nextTimedMetadataGroup();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -230,4 +230,9 @@ public class INSendMessageIntentResponse extends INIntentResponse {
     @Generated
     @Selector("setSentMessages:")
     public native void setSentMessages(@Nullable NSArray<? extends INMessage> value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

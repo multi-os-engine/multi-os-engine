@@ -101,6 +101,9 @@ public class FPUIActionExtensionViewController extends UIViewController {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * The extension context provided by the host app.
+     */
     @NotNull
     @Generated
     @Selector("extensionContext")
@@ -152,7 +155,17 @@ public class FPUIActionExtensionViewController extends UIViewController {
     public static native FPUIActionExtensionViewController new_objc();
 
     /**
-     * To be overridden by the subclass
+     * Performs any necessary setup or configuration for the specified action.
+     * 
+     * Use this method to prepare a user interface for handling the action. At a
+     * minimum, you should display feedback about the action.
+     * 
+     * For more information, see <doc:adding-actions-to-the-context-menu>.
+     * 
+     * - Parameters:
+     * - actionIdentifier: The identifier for the action performed by the user.
+     * 
+     * - itemIdentifiers: The identifiers of the items affected by the action.
      */
     @Generated
     @Selector("prepareForActionWithIdentifier:itemIdentifiers:")
@@ -160,7 +173,21 @@ public class FPUIActionExtensionViewController extends UIViewController {
             @NotNull NSArray<String> itemIdentifiers);
 
     /**
-     * To be overridden by the subclass
+     * Performs any necessary setup or configuration when an authentication error
+     * occurs.
+     * 
+     * While your file provider is enumerating its content, the system calls this
+     * method whenever your file provider returns an
+     * <doc://com.apple.documentation/documentation/fileprovider/nsfileprovidererrordomain>
+     * error with a
+     * <doc://com.apple.documentation/documentation/fileprovider/nsfileprovidererrorcode/nsfileprovidererrornotauthenticated>
+     * code. Use this method to present an interface to authenticate the user.
+     * 
+     * - Parameters:
+     * - error: An object representing the authentication error. Your File Provider
+     * extension can pass additional information in the error's
+     * <doc://com.apple.documentation/documentation/foundation/nserror/1411580-userinfo>
+     * property.
      */
     @Generated
     @Selector("prepareForError:")
@@ -186,4 +213,9 @@ public class FPUIActionExtensionViewController extends UIViewController {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

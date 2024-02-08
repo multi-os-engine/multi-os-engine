@@ -30,8 +30,6 @@ import org.jetbrains.annotations.NotNull;
 /**
  * The MSStickerBrowserViewDataSource protocol declares the methods that the Sticker Browser View uses to access the
  * contents of its data source object.
- * 
- * API-Since: 10.0
  */
 @Generated
 @Library("Messages")

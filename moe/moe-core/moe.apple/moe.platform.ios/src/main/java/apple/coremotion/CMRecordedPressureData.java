@@ -28,11 +28,6 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
- * CMRecordedPressureData
- * 
- * Discussion:
- * CMRecordedPressureData contains data for each pressure sample.
- * 
  * API-Since: 12.0
  */
 @Generated
@@ -189,4 +184,9 @@ public class CMRecordedPressureData extends CMAmbientPressureData {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

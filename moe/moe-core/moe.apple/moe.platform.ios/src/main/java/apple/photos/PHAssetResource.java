@@ -224,4 +224,9 @@ public class PHAssetResource extends NSObject {
     @Selector("pixelWidth")
     @NInt
     public native long pixelWidth();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

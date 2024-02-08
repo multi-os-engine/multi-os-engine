@@ -242,4 +242,9 @@ public class NSMeasurement<_UnitType> extends NSObject implements NSCopying, NSS
     @Generated
     @Selector("unit")
     public native NSUnit unit();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

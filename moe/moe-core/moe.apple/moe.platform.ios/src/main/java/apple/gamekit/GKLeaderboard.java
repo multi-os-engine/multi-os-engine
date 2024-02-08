@@ -51,8 +51,6 @@ import org.jetbrains.annotations.Nullable;
  * Leaderboards can be of the following types:
  * 1. Classic - Traditional, non-expiring leaderboards
  * 2. Recurring - Periodic timed leaderboards that follow a recurrence rule defined in App Store Connect.
- * 
- * API-Since: 4.1
  */
 @Generated
 @Library("GameKit")
@@ -145,7 +143,6 @@ public class GKLeaderboard extends NSObject {
     /**
      * API-Since: 4.1
      * Deprecated-Since: 6.0
-     * Deprecated-Message: Use loadLeaderboardsWithIDs:completionHandler: instead
      */
     @Generated
     @Deprecated
@@ -162,7 +159,6 @@ public class GKLeaderboard extends NSObject {
      * 
      * API-Since: 6.0
      * Deprecated-Since: 14.0
-     * Deprecated-Message: Use class method loadLeaderboardsWithIDs:completionHandler:
      */
     @Deprecated
     @Generated
@@ -186,7 +182,6 @@ public class GKLeaderboard extends NSObject {
     /**
      * API-Since: 5.0
      * Deprecated-Since: 7.0
-     * Deprecated-Message: Use setDefaultLeaderboardIdentifier:completionHandler: on GKLocalPlayer instead
      */
     @Generated
     @Deprecated
@@ -208,11 +203,8 @@ public class GKLeaderboard extends NSObject {
     public static native long version_static();
 
     /**
-     * Deprecated. Use identifier instead.
-     * 
      * API-Since: 4.1
      * Deprecated-Since: 7.0
-     * Deprecated-Message: Use identifier instead
      */
     @Nullable
     @Generated
@@ -236,7 +228,6 @@ public class GKLeaderboard extends NSObject {
      * 
      * API-Since: 7.0
      * Deprecated-Since: 14.0
-     * Deprecated-Message: Use loadEntriesForPlayerScope:timeScope:range:completionHandler: instead.
      */
     @Nullable
     @Deprecated
@@ -250,8 +241,6 @@ public class GKLeaderboard extends NSObject {
      * 
      * API-Since: 4.0
      * Deprecated-Since: 14.0
-     * Deprecated-Message: Do not instantiate GKLeaderboard directly. Use class method
-     * loadLeaderboardsWithIDs:completionHandler: to get the leaderboards.
      */
     @Deprecated
     @Generated
@@ -261,7 +250,6 @@ public class GKLeaderboard extends NSObject {
     /**
      * API-Since: 4.1
      * Deprecated-Since: 8.0
-     * Deprecated-Message: Use initWithPlayers: instead
      */
     @Generated
     @Deprecated
@@ -275,7 +263,6 @@ public class GKLeaderboard extends NSObject {
      * 
      * API-Since: 8.0
      * Deprecated-Since: 14.0
-     * Deprecated-Message: Use instance method loadEntriesForPlayers:timeScope:completionHandler: instead.
      */
     @Deprecated
     @Generated
@@ -287,7 +274,6 @@ public class GKLeaderboard extends NSObject {
      * 
      * API-Since: 4.1
      * Deprecated-Since: 14.0
-     * Deprecated-Message: Use loadEntriesForPlayerScope:timeScope:range:completionHandler: method to obtain scores.
      */
     @Deprecated
     @Generated
@@ -310,7 +296,6 @@ public class GKLeaderboard extends NSObject {
      * 
      * API-Since: 4.0
      * Deprecated-Since: 14.0
-     * Deprecated-Message: Use loadEntriesForPlayerScope:timeScope:range:completionHandler:.
      */
     @Deprecated
     @Generated
@@ -323,7 +308,6 @@ public class GKLeaderboard extends NSObject {
      * 
      * API-Since: 4.0
      * Deprecated-Since: 14.0
-     * Deprecated-Message: Use loadEntriesForPlayerScope:timeScope:range:completionHandler: method to obtain scores.
      */
     @Nullable
     @Deprecated
@@ -336,8 +320,6 @@ public class GKLeaderboard extends NSObject {
      * 
      * API-Since: 4.0
      * Deprecated-Since: 14.0
-     * Deprecated-Message: Use loadEntriesForPlayerScope:timeScope:range:completionHandler: method to obtain the size of
-     * the leaderboard.
      */
     @Deprecated
     @Generated
@@ -350,7 +332,6 @@ public class GKLeaderboard extends NSObject {
      * 
      * API-Since: 4.0
      * Deprecated-Since: 14.0
-     * Deprecated-Message: Use loadEntriesForPlayerScope:timeScope:range:completionHandler: instead.
      */
     @Deprecated
     @Generated
@@ -364,7 +345,6 @@ public class GKLeaderboard extends NSObject {
      * 
      * API-Since: 4.0
      * Deprecated-Since: 14.0
-     * Deprecated-Message: Use loadEntriesForPlayerScope:timeScope:range:completionHandler: instead.
      */
     @Deprecated
     @Generated
@@ -377,7 +357,6 @@ public class GKLeaderboard extends NSObject {
      * 
      * API-Since: 4.0
      * Deprecated-Since: 14.0
-     * Deprecated-Message: Use loadEntriesForPlayerScope:timeScope:range:completionHandler: to obtain scores.
      */
     @Nullable
     @Deprecated
@@ -386,11 +365,8 @@ public class GKLeaderboard extends NSObject {
     public native NSArray<? extends GKScore> scores();
 
     /**
-     * Deprecated. Use identifier instead.
-     * 
      * API-Since: 4.1
      * Deprecated-Since: 7.0
-     * Deprecated-Message: Use identifier instead
      */
     @Generated
     @Deprecated
@@ -402,7 +378,6 @@ public class GKLeaderboard extends NSObject {
      * 
      * API-Since: 7.0
      * Deprecated-Since: 14.0
-     * Deprecated-Message: Use loadEntriesForPlayerScope:timeScope:range:completionHandler: instead.
      */
     @Deprecated
     @Generated
@@ -414,7 +389,6 @@ public class GKLeaderboard extends NSObject {
      * 
      * API-Since: 4.0
      * Deprecated-Since: 14.0
-     * Deprecated-Message: Use loadEntriesForPlayerScope:timeScope:range:completionHandler: instead.
      */
     @Deprecated
     @Generated
@@ -427,7 +401,6 @@ public class GKLeaderboard extends NSObject {
      * 
      * API-Since: 4.0
      * Deprecated-Since: 14.0
-     * Deprecated-Message: Use loadEntriesForPlayerScope:timeScope:range:completionHandler: instead.
      */
     @Deprecated
     @Generated
@@ -437,7 +410,6 @@ public class GKLeaderboard extends NSObject {
     /**
      * API-Since: 4.0
      * Deprecated-Since: 14.0
-     * Deprecated-Message: Use loadEntriesForPlayerScope:timeScope:range:completionHandler: instead.
      */
     @Deprecated
     @Generated
@@ -447,7 +419,6 @@ public class GKLeaderboard extends NSObject {
     /**
      * API-Since: 4.0
      * Deprecated-Since: 14.0
-     * Deprecated-Message: Use loadEntriesForPlayerScope:timeScope:range:completionHandler: instead.
      */
     @Deprecated
     @Generated
@@ -683,4 +654,9 @@ public class GKLeaderboard extends NSObject {
     @Selector("type")
     @NInt
     public native long type();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

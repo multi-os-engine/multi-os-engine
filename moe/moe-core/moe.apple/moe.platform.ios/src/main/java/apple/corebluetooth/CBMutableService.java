@@ -48,9 +48,6 @@ import org.jetbrains.annotations.Nullable;
  * Once a service is published, it is cached and can no longer be changed. This class adds write access to all
  * properties in the
  * [@link] CBService @/link class.
- * 
- * 
- * API-Since: 6.0
  */
 @Generated
 @Library("CoreBluetooth")
@@ -185,6 +182,9 @@ public class CBMutableService extends CBService {
      * 
      * Returns a service, initialized with a service type and UUID.
      * 
+     * 
+     * API-Since: 6.0
+     * 
      * @param UUID      The Bluetooth UUID of the service.
      * @param isPrimary The type of the service (primary or secondary).
      */
@@ -199,4 +199,9 @@ public class CBMutableService extends CBService {
     @Generated
     @Selector("setIncludedServices:")
     public native void setIncludedServices(@Nullable NSArray<? extends CBService> value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

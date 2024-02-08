@@ -58,8 +58,6 @@ import org.jetbrains.annotations.Nullable;
  * MTKTextureLoader
  * 
  * Load Metal textures from files with the device specified at initialization
- * 
- * API-Since: 9.0
  */
 @Generated
 @Library("MetalKit")
@@ -538,4 +536,9 @@ public class MTKTextureLoader extends NSObject {
         void call_newTexturesWithNamesScaleFactorBundleOptionsCompletionHandler(@NotNull NSArray<?> textures,
                 @Nullable NSError error);
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

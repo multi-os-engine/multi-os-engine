@@ -27,13 +27,29 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
+ * This class defines parameters for a Long Short Term Memory (LSTM) operation.
+ * 
+ * Use this descriptor with the following ``MPSGraph`` methods:
+ * - ``MPSGraph/LSTMWithSourceTensor:recurrentWeight:initState:initCell:descriptor:name:``,
+ * - ``MPSGraph/LSTMWithSourceTensor:recurrentWeight:inputWeight:bias:initState:initCell:descriptor:name:``,
+ * -
+ * ``MPSGraph/LSTMWithSourceTensor:recurrentWeight:inputWeight:bias:initState:initCell:mask:peephole:descriptor:name:``,
+ * - ``MPSGraph/LSTMGradientsWithSourceTensor:recurrentWeight:sourceGradient:zState:cellOutputFwd:descriptor:name:``,
+ * -
+ * ``MPSGraph/LSTMGradientsWithSourceTensor:recurrentWeight:sourceGradient:zState:cellOutputFwd:inputWeight:bias:initState:initCell:descriptor:name:``,
+ * -
+ * ``MPSGraph/LSTMGradientsWithSourceTensor:recurrentWeight:sourceGradient:zState:cellOutputFwd:inputWeight:bias:initState:initCell:mask:descriptor:name:``
+ * and
+ * -
+ * ``MPSGraph/LSTMGradientsWithSourceTensor:recurrentWeight:sourceGradient:zState:cellOutputFwd:stateGradient:cellGradient:inputWeight:bias:initState:initCell:mask:peephole:descriptor:name:``.
+ * 
  * API-Since: 15.4
  */
 @Generated
 @Library("MetalPerformanceShadersGraph")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class MPSGraphLSTMDescriptor extends NSObject implements NSCopying {
+public class MPSGraphLSTMDescriptor extends MPSGraphObject implements NSCopying {
     static {
         NatJ.register();
     }
@@ -48,10 +64,8 @@ public class MPSGraphLSTMDescriptor extends NSObject implements NSCopying {
     public static native boolean accessInstanceVariablesDirectly();
 
     /**
-     * [@property] activation
-     * 
-     * Activation function to use with the current cell value of the LSTM op.
-     * Default value: @code MPSGraphRNNActivationTanh @endcode
+     * A parameter which defines the activation function used with the current cell value of the LSTM operation.
+     * Default value: `MPSGraphRNNActivationTanh`.
      */
     @Generated
     @Selector("activation")
@@ -73,11 +87,11 @@ public class MPSGraphLSTMDescriptor extends NSObject implements NSCopying {
     public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
-     * [@property] bidirectional
+     * A parameter that defines a bidirectional LSTM layer.
      * 
-     * If set then the input sequence is traversed in both directions and the two results
+     * If set to `YES` then the input sequence is traversed in both directions and the two results
      * are concatenated together on the channel-axis.
-     * Default value: @code NO @endcode
+     * Default value: `NO`.
      */
     @Generated
     @Selector("bidirectional")
@@ -95,10 +109,8 @@ public class MPSGraphLSTMDescriptor extends NSObject implements NSCopying {
             @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
     /**
-     * [@property] cellGateActivation
-     * 
-     * Activation function to use with the cell gate of the LSTM op.
-     * Default value: @code MPSGraphRNNActivationTanh @endcode
+     * A parameter which defines the activation function used with the cell gate of the LSTM operation.
+     * Default value: `MPSGraphRNNActivationTanh`.
      */
     @Generated
     @Selector("cellGateActivation")
@@ -130,15 +142,16 @@ public class MPSGraphLSTMDescriptor extends NSObject implements NSCopying {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * Creates an LSTM descriptor with default values.
+     */
     @Generated
     @Selector("descriptor")
     public static native MPSGraphLSTMDescriptor descriptor();
 
     /**
-     * [@property] forgetGateActivation
-     * 
-     * Activation function to use with the forget gate of the LSTM op.
-     * Default value: @code MPSGraphRNNActivationSigmoid @endcode
+     * A parameter which defines the activation function used with the forget gate of the LSTM operation.
+     * Default value: `MPSGraphRNNActivationSigmoid`.
      */
     @Generated
     @Selector("forgetGateActivation")
@@ -146,10 +159,10 @@ public class MPSGraphLSTMDescriptor extends NSObject implements NSCopying {
     public native long forgetGateActivation();
 
     /**
-     * [@property] forgetGateLast
+     * A parameter that controls the internal order of the LSTM gates.
      * 
-     * If set then the layer will use the gate-ordering `[ i, z, f, o ]` instead of default `[ i, f, z, o ]`.
-     * Default value: @code NO @endcode
+     * If set to `YES` then the layer will use the gate-ordering `[ i, z, f, o ]` instead of default `[ i, f, z, o ]`.
+     * Default value: `NO`
      */
     @Generated
     @Selector("forgetGateLast")
@@ -165,10 +178,8 @@ public class MPSGraphLSTMDescriptor extends NSObject implements NSCopying {
     public native MPSGraphLSTMDescriptor init();
 
     /**
-     * [@property] inputGateActivation
-     * 
-     * Activation function to use with the input gate of the LSTM op.
-     * Default value: @code MPSGraphRNNActivationSigmoid @endcode
+     * A parameter which defines the activation function used with the input gate of the LSTM operation.
+     * Default value: `MPSGraphRNNActivationSigmoid`.
      */
     @Generated
     @Selector("inputGateActivation")
@@ -203,10 +214,8 @@ public class MPSGraphLSTMDescriptor extends NSObject implements NSCopying {
     public static native MPSGraphLSTMDescriptor new_objc();
 
     /**
-     * [@property] outputGateActivation
-     * 
-     * Activation function to use with the output gate of the LSTM op.
-     * Default value: @code MPSGraphRNNActivationSigmoid @endcode
+     * A parameter which defines the activation function used with the output gate of the LSTM operation.
+     * Default value: `MPSGraphRNNActivationSigmoid`.
      */
     @Generated
     @Selector("outputGateActivation")
@@ -214,10 +223,10 @@ public class MPSGraphLSTMDescriptor extends NSObject implements NSCopying {
     public native long outputGateActivation();
 
     /**
-     * [@property] produceCell
+     * A parameter that controls whether or not to return the output cell from the LSTM layer.
      * 
-     * If set then this layer will produce the internal cell of the LSTM unit as secondary output.
-     * Default value: @code NO @endcode
+     * If set to `YES` then this layer will produce the internal cell of the LSTM unit as secondary output.
+     * Default value: `NO`.
      */
     @Generated
     @Selector("produceCell")
@@ -232,113 +241,103 @@ public class MPSGraphLSTMDescriptor extends NSObject implements NSCopying {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * [@property] reverse
+     * A parameter that defines time direction of the input sequence.
      * 
-     * If set then the input sequence is passed in reverse time order to the layer.
-     * Note: Ignored when @code bidirectional = YES @endcode.
-     * Default value: @code NO @endcode
+     * If set to `YES` then the input sequence is passed in reverse time order to the layer.
+     * Note: Ignored when `bidirectional = YES`.
+     * Default value: `NO`.
      */
     @Generated
     @Selector("reverse")
     public native boolean reverse();
 
     /**
-     * [@property] activation
-     * 
-     * Activation function to use with the current cell value of the LSTM op.
-     * Default value: @code MPSGraphRNNActivationTanh @endcode
+     * A parameter which defines the activation function used with the current cell value of the LSTM operation.
+     * Default value: `MPSGraphRNNActivationTanh`.
      */
     @Generated
     @Selector("setActivation:")
     public native void setActivation(@NUInt long value);
 
     /**
-     * [@property] bidirectional
+     * A parameter that defines a bidirectional LSTM layer.
      * 
-     * If set then the input sequence is traversed in both directions and the two results
+     * If set to `YES` then the input sequence is traversed in both directions and the two results
      * are concatenated together on the channel-axis.
-     * Default value: @code NO @endcode
+     * Default value: `NO`.
      */
     @Generated
     @Selector("setBidirectional:")
     public native void setBidirectional(boolean value);
 
     /**
-     * [@property] cellGateActivation
-     * 
-     * Activation function to use with the cell gate of the LSTM op.
-     * Default value: @code MPSGraphRNNActivationTanh @endcode
+     * A parameter which defines the activation function used with the cell gate of the LSTM operation.
+     * Default value: `MPSGraphRNNActivationTanh`.
      */
     @Generated
     @Selector("setCellGateActivation:")
     public native void setCellGateActivation(@NUInt long value);
 
     /**
-     * [@property] forgetGateActivation
-     * 
-     * Activation function to use with the forget gate of the LSTM op.
-     * Default value: @code MPSGraphRNNActivationSigmoid @endcode
+     * A parameter which defines the activation function used with the forget gate of the LSTM operation.
+     * Default value: `MPSGraphRNNActivationSigmoid`.
      */
     @Generated
     @Selector("setForgetGateActivation:")
     public native void setForgetGateActivation(@NUInt long value);
 
     /**
-     * [@property] forgetGateLast
+     * A parameter that controls the internal order of the LSTM gates.
      * 
-     * If set then the layer will use the gate-ordering `[ i, z, f, o ]` instead of default `[ i, f, z, o ]`.
-     * Default value: @code NO @endcode
+     * If set to `YES` then the layer will use the gate-ordering `[ i, z, f, o ]` instead of default `[ i, f, z, o ]`.
+     * Default value: `NO`
      */
     @Generated
     @Selector("setForgetGateLast:")
     public native void setForgetGateLast(boolean value);
 
     /**
-     * [@property] inputGateActivation
-     * 
-     * Activation function to use with the input gate of the LSTM op.
-     * Default value: @code MPSGraphRNNActivationSigmoid @endcode
+     * A parameter which defines the activation function used with the input gate of the LSTM operation.
+     * Default value: `MPSGraphRNNActivationSigmoid`.
      */
     @Generated
     @Selector("setInputGateActivation:")
     public native void setInputGateActivation(@NUInt long value);
 
     /**
-     * [@property] outputGateActivation
-     * 
-     * Activation function to use with the output gate of the LSTM op.
-     * Default value: @code MPSGraphRNNActivationSigmoid @endcode
+     * A parameter which defines the activation function used with the output gate of the LSTM operation.
+     * Default value: `MPSGraphRNNActivationSigmoid`.
      */
     @Generated
     @Selector("setOutputGateActivation:")
     public native void setOutputGateActivation(@NUInt long value);
 
     /**
-     * [@property] produceCell
+     * A parameter that controls whether or not to return the output cell from the LSTM layer.
      * 
-     * If set then this layer will produce the internal cell of the LSTM unit as secondary output.
-     * Default value: @code NO @endcode
+     * If set to `YES` then this layer will produce the internal cell of the LSTM unit as secondary output.
+     * Default value: `NO`.
      */
     @Generated
     @Selector("setProduceCell:")
     public native void setProduceCell(boolean value);
 
     /**
-     * [@property] reverse
+     * A parameter that defines time direction of the input sequence.
      * 
-     * If set then the input sequence is passed in reverse time order to the layer.
-     * Note: Ignored when @code bidirectional = YES @endcode.
-     * Default value: @code NO @endcode
+     * If set to `YES` then the input sequence is passed in reverse time order to the layer.
+     * Note: Ignored when `bidirectional = YES`.
+     * Default value: `NO`.
      */
     @Generated
     @Selector("setReverse:")
     public native void setReverse(boolean value);
 
     /**
-     * [@property] training
+     * A parameter that makes the LSTM layer support training.
      * 
-     * If set then the layer will produce training state tensor as a secondary or third output.
-     * Default value: @code NO @endcode
+     * If set to `YES` then the layer will produce training state tensor as a secondary output.
+     * Default value: `NO`.
      */
     @Generated
     @Selector("setTraining:")
@@ -353,10 +352,10 @@ public class MPSGraphLSTMDescriptor extends NSObject implements NSCopying {
     public static native Class superclass_static();
 
     /**
-     * [@property] training
+     * A parameter that makes the LSTM layer support training.
      * 
-     * If set then the layer will produce training state tensor as a secondary or third output.
-     * Default value: @code NO @endcode
+     * If set to `YES` then the layer will produce training state tensor as a secondary output.
+     * Default value: `NO`.
      */
     @Generated
     @Selector("training")
@@ -366,4 +365,9 @@ public class MPSGraphLSTMDescriptor extends NSObject implements NSCopying {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

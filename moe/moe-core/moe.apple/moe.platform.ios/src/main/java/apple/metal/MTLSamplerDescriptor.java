@@ -512,4 +512,9 @@ public class MTLSamplerDescriptor extends NSObject implements NSCopying {
     @Generated
     @Selector("setBorderColor:")
     public native void setBorderColor(@NUInt long value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

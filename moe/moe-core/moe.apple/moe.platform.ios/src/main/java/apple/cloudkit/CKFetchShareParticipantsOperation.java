@@ -167,6 +167,8 @@ public class CKFetchShareParticipantsOperation extends CKOperation {
      * to errors keyed off of @c CKPartialErrorsByItemIDKey. These errors are repeats of those sent back in previous @c
      * perShareParticipantCompletionBlock invocations
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
+     * This block may share mutable state with other blocks assigned to this operation, but any such mutable state
+     * should not be concurrently used outside of blocks assigned to this operation.
      */
     @Nullable
     @Generated
@@ -191,6 +193,8 @@ public class CKFetchShareParticipantsOperation extends CKOperation {
      * to errors keyed off of @c CKPartialErrorsByItemIDKey. These errors are repeats of those sent back in previous @c
      * perShareParticipantCompletionBlock invocations
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
+     * This block may share mutable state with other blocks assigned to this operation, but any such mutable state
+     * should not be concurrently used outside of blocks assigned to this operation.
      */
     @Generated
     @Selector("setFetchShareParticipantsCompletionBlock:")
@@ -202,6 +206,8 @@ public class CKFetchShareParticipantsOperation extends CKOperation {
      * 
      * If the replacement callback @c perShareParticipantCompletionBlock is set, this callback block is ignored.
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
+     * This block may share mutable state with other blocks assigned to this operation, but any such mutable state
+     * should not be concurrently used outside of blocks assigned to this operation.
      * 
      * API-Since: 10.0
      * Deprecated-Since: 15.0
@@ -222,6 +228,8 @@ public class CKFetchShareParticipantsOperation extends CKOperation {
      * 
      * If the replacement callback @c perShareParticipantCompletionBlock is set, this callback block is ignored.
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
+     * This block may share mutable state with other blocks assigned to this operation, but any such mutable state
+     * should not be concurrently used outside of blocks assigned to this operation.
      * 
      * API-Since: 10.0
      * Deprecated-Since: 15.0
@@ -271,6 +279,8 @@ public class CKFetchShareParticipantsOperation extends CKOperation {
      * Called once for each lookup info.
      * 
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
+     * This block may share mutable state with other blocks assigned to this operation, but any such mutable state
+     * should not be concurrently used outside of blocks assigned to this operation.
      */
     @Nullable
     @Generated
@@ -290,6 +300,8 @@ public class CKFetchShareParticipantsOperation extends CKOperation {
      * Called once for each lookup info.
      * 
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
+     * This block may share mutable state with other blocks assigned to this operation, but any such mutable state
+     * should not be concurrently used outside of blocks assigned to this operation.
      */
     @Generated
     @Selector("setPerShareParticipantCompletionBlock:")
@@ -303,4 +315,9 @@ public class CKFetchShareParticipantsOperation extends CKOperation {
         void call_setPerShareParticipantCompletionBlock(@NotNull CKUserIdentityLookupInfo arg0,
                 @Nullable CKShareParticipant arg1, @Nullable NSError arg2);
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

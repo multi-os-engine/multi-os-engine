@@ -354,4 +354,9 @@ public class ABPeoplePickerNavigationController extends UINavigationController {
     @Generated
     @Selector("setPredicateForSelectionOfProperty:")
     public native void setPredicateForSelectionOfProperty(@Nullable NSPredicate value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

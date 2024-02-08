@@ -364,4 +364,9 @@ public class UIActivityItemsConfiguration extends NSObject implements UIActivity
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

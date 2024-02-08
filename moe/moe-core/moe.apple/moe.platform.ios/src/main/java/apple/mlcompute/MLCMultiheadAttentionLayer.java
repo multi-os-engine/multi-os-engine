@@ -38,7 +38,10 @@ import org.jetbrains.annotations.Nullable;
  * For details refer to: https://pytorch.org/docs/stable/nn.html#multiheadattention
  * 
  * API-Since: 14.0
+ * Deprecated-Since: 100000.0
+ * Deprecated-Message: Use Metal Performance Shaders Graph or BNNS instead.
  */
+@Deprecated
 @Generated
 @Library("MLCompute")
 @Runtime(ObjCRuntime.class)
@@ -234,4 +237,9 @@ public class MLCMultiheadAttentionLayer extends MLCLayer {
     @Generated
     @Selector("weightsParameters")
     public native NSArray<? extends MLCTensorParameter> weightsParameters();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

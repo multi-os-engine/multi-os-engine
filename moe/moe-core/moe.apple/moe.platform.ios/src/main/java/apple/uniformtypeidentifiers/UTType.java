@@ -736,4 +736,9 @@ public class UTType extends NSObject implements NSCopying, NSSecureCoding {
     @Generated
     @Selector("SHSignatureContentType")
     public static native UTType SHSignatureContentType();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

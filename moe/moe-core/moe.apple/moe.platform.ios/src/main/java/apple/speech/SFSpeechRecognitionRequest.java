@@ -269,4 +269,24 @@ public class SFSpeechRecognitionRequest extends NSObject {
     @Generated
     @Selector("setAddsPunctuation:")
     public native void setAddsPunctuation(boolean value);
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("customizedLanguageModel")
+    @Nullable
+    public native SFSpeechLanguageModelConfiguration customizedLanguageModel();
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("setCustomizedLanguageModel:")
+    public native void setCustomizedLanguageModel(@Nullable SFSpeechLanguageModelConfiguration value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

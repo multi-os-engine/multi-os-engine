@@ -27,13 +27,11 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
- * AVCustomRoutingController
+ * An object that manages the connection from a device to a destination.
  * 
- * When a user selects / deselects a 3rd party device in the route picker, this class delegates the activation /
- * deactivation of that device to the client of this class via AVCustomRoutingEvents.
- * 
- * This class also informs the client which routes have been previously authorized, allowing them to reconnect if
- * appropriate.
+ * A routing controller also informs its ``AVCustomRoutingController/delegate``
+ * object about which routes the user previously authorized, so it can
+ * reconnect, if appropriate.
  * 
  * API-Since: 16.0
  */
@@ -66,12 +64,13 @@ public class AVCustomRoutingController extends NSObject {
     public static native AVCustomRoutingController allocWithZone(VoidPtr zone);
 
     /**
-     * [@property] authorizedRoutes
+     * A list of authorized routes.
      * 
-     * The list of authorized routes. Once a route has been activated, it remains authorized for a certain amount of
-     * time even if the connection to the route temporarily goes down.
-     * The app may reactivate any one of these routes if they deem it appropriate, but must inform the system by calling
-     * -setActive:forRoute:.
+     * After a user activates a route, it remains authorized for a certain amount
+     * of time even if the connection to the route is temporarily unavailable. Your
+     * app may reactivate any one of these routes when appropriate, but it needs to
+     * inform the system by calling
+     * ``AVCustomRoutingController/setActive:forRoute:``.
      * 
      * API-Since: 16.0
      */
@@ -106,9 +105,7 @@ public class AVCustomRoutingController extends NSObject {
     public static native Class classForKeyedUnarchiver();
 
     /**
-     * [@property] customActionItems
-     * 
-     * An array of custom action items to be added in the picker.
+     * An array of custom action items to add to a route picker.
      * 
      * API-Since: 16.0
      */
@@ -122,9 +119,7 @@ public class AVCustomRoutingController extends NSObject {
     public static native String debugDescription_static();
 
     /**
-     * [@property] delegate
-     * 
-     * The receiver's delegate.
+     * A delegate object for a routing controller.
      * 
      * API-Since: 16.0
      */
@@ -161,25 +156,27 @@ public class AVCustomRoutingController extends NSObject {
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
     /**
-     * invalidateAuthorization
+     * Revokes an app’s authorization to connect to a route.
      * 
-     * Calling this method revokes the app's authorization to connect to a route. The route will only become authorized
-     * again if the user selects it via the route picker.
+     * The route only becomes authorized again if the user selects it using the
+     * route picker.
      * 
-     * @param route
-     *              The route for which to invalidate authorization.
+     * - Parameters:
+     * - route: The route to invalidate authorization for.
      */
     @Generated
     @Selector("invalidateAuthorizationForRoute:")
     public native void invalidateAuthorizationForRoute(@NotNull AVCustomDeviceRoute route);
 
     /**
-     * isRouteActive:
+     * Returns a Boolean value that indicates whether a route is active.
      * 
-     * Returns whether or not the given route is active.
+     * - Parameters:
+     * - route: A route for determining its active state.
      * 
-     * @param route
-     *              The route for which to check active status.
+     * - Returns: <doc://com.apple.documentation/documentation/objectivec/yes> if
+     * the route is in an active state; otherwise,
+     * <doc://com.apple.documentation/documentation/objectivec/no>.
      */
     @Generated
     @Selector("isRouteActive:")
@@ -195,9 +192,7 @@ public class AVCustomRoutingController extends NSObject {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
-     * [@property] knownRouteIPs
-     * 
-     * An array of route IPs known to be on the local network.
+     * An array of route addresses known to be on the local network.
      * 
      * API-Since: 16.1
      */
@@ -220,24 +215,24 @@ public class AVCustomRoutingController extends NSObject {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * setActive:forRoute:
+     * Sets the active state of a route.
      * 
-     * Set this to NO if the connection to the route temporarily drops, and set it to YES once the connection is
-     * reestablished.
+     * Set the value to <doc://com.apple.documentation/documentation/objectivec/no>
+     * if the connection to the route becomes unavailable, and set it to
+     * <doc://com.apple.documentation/documentation/objectivec/yes> after you
+     * reestablish the connection.
      * 
-     * @param active
-     *               Whether or not the route is active.
-     * @param route
-     *               The route to set as active or inactive.
+     * - Parameters:
+     * - active: A Boolean value that indicates whether the route is active.
+     * 
+     * - route: A route to change the active state for.
      */
     @Generated
     @Selector("setActive:forRoute:")
     public native void setActiveForRoute(boolean active, @NotNull AVCustomDeviceRoute route);
 
     /**
-     * [@property] customActionItems
-     * 
-     * An array of custom action items to be added in the picker.
+     * An array of custom action items to add to a route picker.
      * 
      * API-Since: 16.0
      */
@@ -246,9 +241,7 @@ public class AVCustomRoutingController extends NSObject {
     public native void setCustomActionItems(@NotNull NSArray<? extends AVCustomRoutingActionItem> value);
 
     /**
-     * [@property] delegate
-     * 
-     * The receiver's delegate.
+     * A delegate object for a routing controller.
      * 
      * API-Since: 16.0
      */
@@ -258,9 +251,7 @@ public class AVCustomRoutingController extends NSObject {
             @Nullable @Mapped(ObjCObjectMapper.class) AVCustomRoutingControllerDelegate value);
 
     /**
-     * [@property] delegate
-     * 
-     * The receiver's delegate.
+     * A delegate object for a routing controller.
      * 
      * API-Since: 16.0
      */
@@ -277,9 +268,7 @@ public class AVCustomRoutingController extends NSObject {
     }
 
     /**
-     * [@property] knownRouteIPs
-     * 
-     * An array of route IPs known to be on the local network.
+     * An array of route addresses known to be on the local network.
      * 
      * API-Since: 16.1
      */
@@ -299,4 +288,9 @@ public class AVCustomRoutingController extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

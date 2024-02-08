@@ -250,4 +250,9 @@ public class UIContextMenuConfiguration extends NSObject {
     @Generated
     @Selector("setSecondaryItemIdentifiers:")
     public native void setSecondaryItemIdentifiers(@NotNull NSSet<?> value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

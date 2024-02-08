@@ -1188,4 +1188,9 @@ public class MPSCNNBinaryKernel extends MPSKernel {
             @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, @NotNull MPSImage primaryImage,
             @NotNull MPSImage secondaryImage, @Nullable NSArray<? extends MPSState> sourceStates,
             @NotNull MPSImage destinationImage);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

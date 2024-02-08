@@ -207,4 +207,9 @@ public class NSPersistentHistoryChange extends NSObject implements NSCopying {
     @Generated
     @Selector("fetchRequest")
     public static native NSFetchRequest<?> fetchRequest();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -660,7 +660,8 @@ public class PKPaymentRequest extends NSObject {
      * will receive a merchant-specific payment token if the payment network supports merchant-specific
      * payment tokens.
      * 
-     * This property cannot be used simultaneously with multi token contexts or recurring payment requests.
+     * This property cannot be used simultaneously with multi token contexts, recurring payment requests or deferred
+     * payment requests.
      * 
      * Merchant-specific payment tokens are not supported on watchOS.
      * 
@@ -678,7 +679,7 @@ public class PKPaymentRequest extends NSObject {
      * The sum of all context amounts must be less than or equal to the total amount of the enclosing
      * payment request, as indicated by the last payment summary item.
      * 
-     * This property cannot be used simultaneously with recurring or automatic reload payment requests.
+     * This property cannot be used simultaneously with recurring, automatic reload or deferred payment requests.
      * 
      * Multiple payment tokens are not supported on watchOS.
      * 
@@ -694,7 +695,8 @@ public class PKPaymentRequest extends NSObject {
      * will receive a merchant-specific payment token if the payment network supports merchant-specific
      * payment tokens.
      * 
-     * This property cannot be used simultaneously with multi token contexts or automatic reload payment requests.
+     * This property cannot be used simultaneously with multi token contexts, automatic reload or deferred payment
+     * requests.
      * 
      * Merchant-specific payment tokens are not supported on watchOS.
      * 
@@ -710,7 +712,8 @@ public class PKPaymentRequest extends NSObject {
      * will receive a merchant-specific payment token if the payment network supports merchant-specific
      * payment tokens.
      * 
-     * This property cannot be used simultaneously with multi token contexts or recurring payment requests.
+     * This property cannot be used simultaneously with multi token contexts, recurring payment requests or deferred
+     * payment requests.
      * 
      * Merchant-specific payment tokens are not supported on watchOS.
      * 
@@ -727,7 +730,7 @@ public class PKPaymentRequest extends NSObject {
      * The sum of all context amounts must be less than or equal to the total amount of the enclosing
      * payment request, as indicated by the last payment summary item.
      * 
-     * This property cannot be used simultaneously with recurring or automatic reload payment requests.
+     * This property cannot be used simultaneously with recurring, automatic reload or deferred payment requests.
      * 
      * Multiple payment tokens are not supported on watchOS.
      * 
@@ -742,7 +745,8 @@ public class PKPaymentRequest extends NSObject {
      * will receive a merchant-specific payment token if the payment network supports merchant-specific
      * payment tokens.
      * 
-     * This property cannot be used simultaneously with multi token contexts or automatic reload payment requests.
+     * This property cannot be used simultaneously with multi token contexts, automatic reload or deferred payment
+     * requests.
      * 
      * Merchant-specific payment tokens are not supported on watchOS.
      * 
@@ -751,4 +755,65 @@ public class PKPaymentRequest extends NSObject {
     @Generated
     @Selector("setRecurringPaymentRequest:")
     public native void setRecurringPaymentRequest(@Nullable PKRecurringPaymentRequest value);
+
+    /**
+     * Opt out of Apple Pay Later. Defaults to enabled.
+     * Only set this property if you have a specific requirement to disable Apple Pay Later.
+     * Be sure to select the correct mode that matches your requirement, since this will be displayed to the user.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("applePayLaterAvailability")
+    @NInt
+    public native long applePayLaterAvailability();
+
+    /**
+     * Optional request to set up a deferred payment, such as a hospitality booking or a pre-order. This payment request
+     * will receive a merchant-specific payment token if the payment network supports merchant-specific
+     * payment tokens.
+     * 
+     * This property cannot be used simultaneously with: multi token contexts, recurring payment requests or automatic
+     * reload payment requests.
+     * 
+     * Merchant-specific payment tokens are not supported on watchOS.
+     * 
+     * API-Since: 16.4
+     */
+    @Generated
+    @Selector("deferredPaymentRequest")
+    @Nullable
+    public native PKDeferredPaymentRequest deferredPaymentRequest();
+
+    /**
+     * Opt out of Apple Pay Later. Defaults to enabled.
+     * Only set this property if you have a specific requirement to disable Apple Pay Later.
+     * Be sure to select the correct mode that matches your requirement, since this will be displayed to the user.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("setApplePayLaterAvailability:")
+    public native void setApplePayLaterAvailability(@NInt long value);
+
+    /**
+     * Optional request to set up a deferred payment, such as a hospitality booking or a pre-order. This payment request
+     * will receive a merchant-specific payment token if the payment network supports merchant-specific
+     * payment tokens.
+     * 
+     * This property cannot be used simultaneously with: multi token contexts, recurring payment requests or automatic
+     * reload payment requests.
+     * 
+     * Merchant-specific payment tokens are not supported on watchOS.
+     * 
+     * API-Since: 16.4
+     */
+    @Generated
+    @Selector("setDeferredPaymentRequest:")
+    public native void setDeferredPaymentRequest(@Nullable PKDeferredPaymentRequest value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

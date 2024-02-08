@@ -199,4 +199,9 @@ public class PHObjectChangeDetails<_ObjectType> extends NSObject {
     @Generated
     @Selector("objectWasDeleted")
     public native boolean objectWasDeleted();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

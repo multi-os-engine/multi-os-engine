@@ -48,9 +48,6 @@ import apple.corefoundation.struct.CGRect;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-/**
- * API-Since: 8.0
- */
 @Generated
 @Library("CoreImage")
 @Runtime(ObjCRuntime.class)
@@ -231,4 +228,9 @@ public class CIQRCodeFeature extends CIFeature implements NSSecureCoding, NSCopy
     @Generated
     @Selector("symbolDescriptor")
     public native CIQRCodeDescriptor symbolDescriptor();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

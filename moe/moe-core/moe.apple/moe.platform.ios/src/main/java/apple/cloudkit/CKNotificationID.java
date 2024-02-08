@@ -46,6 +46,8 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
+ * NS_SWIFT_SENDABLE on swift(4.2)
+ * 
  * API-Since: 8.0
  */
 @Generated
@@ -190,4 +192,9 @@ public class CKNotificationID extends NSObject implements NSCopying, NSSecureCod
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

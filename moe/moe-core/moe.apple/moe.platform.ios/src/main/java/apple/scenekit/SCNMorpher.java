@@ -388,4 +388,9 @@ public class SCNMorpher extends NSObject implements SCNAnimatable, NSSecureCodin
     @Generated
     @Selector("removeAllAnimationsWithBlendOutDuration:")
     public native void removeAllAnimationsWithBlendOutDuration(@NFloat double duration);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

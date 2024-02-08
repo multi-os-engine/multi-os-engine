@@ -52,8 +52,6 @@ import org.jetbrains.annotations.Nullable;
  * to the player in question, extrapolating the potential moves opposing players may take, projecting out
  * maxLookAheadDepth number of turns. The selected update will result in the greatest potential gain, balanced
  * against the potential gain of other players.
- * 
- * API-Since: 9.0
  */
 @Generated
 @Library("GameplayKit")
@@ -238,4 +236,9 @@ public class GKMinmaxStrategist extends NSObject implements GKStrategist {
     @Generated
     @Selector("setRandomSource:")
     public native void setRandomSource(@Nullable @Mapped(ObjCObjectMapper.class) GKRandom value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

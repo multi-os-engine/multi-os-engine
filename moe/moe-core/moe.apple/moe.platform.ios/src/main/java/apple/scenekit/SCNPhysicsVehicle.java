@@ -236,4 +236,9 @@ public class SCNPhysicsVehicle extends SCNPhysicsBehavior {
     @Generated
     @Selector("wheels")
     public native NSArray<? extends SCNPhysicsVehicleWheel> wheels();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

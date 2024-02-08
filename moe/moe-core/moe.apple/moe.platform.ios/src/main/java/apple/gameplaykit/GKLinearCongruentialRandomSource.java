@@ -50,8 +50,6 @@ import org.jetbrains.annotations.Nullable;
  * 
  * While deterministic, this is not a cryptographic random source. It is also not suitable
  * for obfuscation of gameplay data.
- * 
- * API-Since: 9.0
  */
 @Generated
 @Library("GameplayKit")
@@ -218,4 +216,9 @@ public class GKLinearCongruentialRandomSource extends GKRandomSource {
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

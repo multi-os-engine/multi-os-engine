@@ -45,6 +45,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.foundation.NSNumber;
 
 /**
  * API-Since: 10.0
@@ -285,14 +286,17 @@ public class INMessage extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("serviceName")
     public native String serviceName();
 
+    /**
+     * API-Since: 16.0
+     * Deprecated-Since: 17.0
+     * Deprecated-Message: Use attachmentFile instead
+     */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("audioMessageFile")
     public native INFile audioMessageFile();
 
-    /**
-     * API-Since: 16.0
-     */
     @Generated
     @Selector("initWithIdentifier:conversationIdentifier:content:dateSent:sender:recipients:groupName:messageType:serviceName:audioMessageFile:")
     public native INMessage initWithIdentifierConversationIdentifierContentDateSentSenderRecipientsGroupNameMessageTypeServiceNameAudioMessageFile(
@@ -300,4 +304,66 @@ public class INMessage extends NSObject implements NSCopying, NSSecureCoding {
             @Nullable NSDate dateSent, @Nullable INPerson sender, @Nullable NSArray<? extends INPerson> recipients,
             @Nullable INSpeakableString groupName, @NInt long messageType, @Nullable String serviceName,
             @Nullable INFile audioMessageFile);
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("attachmentFiles")
+    @Nullable
+    public native NSArray<? extends INFile> attachmentFiles();
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("initWithIdentifier:conversationIdentifier:content:dateSent:sender:recipients:groupName:messageType:serviceName:attachmentFiles:")
+    public native INMessage initWithIdentifierConversationIdentifierContentDateSentSenderRecipientsGroupNameMessageTypeServiceNameAttachmentFiles(
+            @NotNull String identifier, @Nullable String conversationIdentifier, @Nullable String content,
+            @Nullable NSDate dateSent, @Nullable INPerson sender, @Nullable NSArray<? extends INPerson> recipients,
+            @Nullable INSpeakableString groupName, @NInt long messageType, @Nullable String serviceName,
+            @Nullable NSArray<? extends INFile> attachmentFiles);
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("initWithIdentifier:conversationIdentifier:content:dateSent:sender:recipients:groupName:serviceName:linkMetadata:")
+    public native INMessage initWithIdentifierConversationIdentifierContentDateSentSenderRecipientsGroupNameServiceNameLinkMetadata(
+            @NotNull String identifier, @Nullable String conversationIdentifier, @Nullable String content,
+            @Nullable NSDate dateSent, @Nullable INPerson sender, @Nullable NSArray<? extends INPerson> recipients,
+            @Nullable INSpeakableString groupName, @Nullable String serviceName,
+            @Nullable INMessageLinkMetadata linkMetadata);
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("initWithIdentifier:conversationIdentifier:content:dateSent:sender:recipients:groupName:serviceName:messageType:numberOfAttachments:")
+    public native INMessage initWithIdentifierConversationIdentifierContentDateSentSenderRecipientsGroupNameServiceNameMessageTypeNumberOfAttachments(
+            @NotNull String identifier, @Nullable String conversationIdentifier, @Nullable String content,
+            @Nullable NSDate dateSent, @Nullable INPerson sender, @Nullable NSArray<? extends INPerson> recipients,
+            @Nullable INSpeakableString groupName, @Nullable String serviceName, @NInt long messageType,
+            @Nullable NSNumber numberOfAttachments);
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("linkMetadata")
+    @Nullable
+    public native INMessageLinkMetadata linkMetadata();
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("numberOfAttachments")
+    @Nullable
+    public native NSNumber numberOfAttachments();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

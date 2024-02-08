@@ -303,4 +303,9 @@ public class SCNReferenceNode extends SCNNode {
     @Selector("localUp")
     @ByValue
     public static native SCNVector3 localUp();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

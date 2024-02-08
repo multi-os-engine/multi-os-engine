@@ -202,4 +202,9 @@ public class UISnapBehavior extends UIDynamicBehavior {
     @Selector("snapPoint")
     @ByValue
     public native CGPoint snapPoint();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

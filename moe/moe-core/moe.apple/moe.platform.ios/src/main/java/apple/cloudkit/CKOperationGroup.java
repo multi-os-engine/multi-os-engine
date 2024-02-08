@@ -28,17 +28,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
- * CKOperationGroup
- * 
- * A mechanism for your app to group several operations at the granularity of a user action.
- * 
- * For example, when building a Calendar application, these things might warrant being their own operation groups:
- * - an initial fetch of data from the server, consisting of many queries, fetchChanges, and fetch operations
- * - doing an incremental fetch of data in response to a push notification
- * - saving several records due to a user saving a calendar event
- * 
- * You associate @c CKOperationGroup s with@c CKOperation s by setting the @c CKOperation.group property. Create a
- * new @c CKOperationGroup instance for each distinct user action.
+ * NS_SWIFT_SENDABLE on macos(13.3), macCatalyst(16.4), ios(16.4), tvos(16.4), watchos(9.4)
  * 
  * API-Since: 11.0
  */
@@ -345,4 +335,9 @@ public class CKOperationGroup extends NSObject implements NSSecureCoding {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

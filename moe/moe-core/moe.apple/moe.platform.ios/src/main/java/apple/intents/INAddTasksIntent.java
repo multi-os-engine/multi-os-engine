@@ -209,4 +209,9 @@ public class INAddTasksIntent extends INIntent {
     @Selector("priority")
     @NInt
     public native long priority();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

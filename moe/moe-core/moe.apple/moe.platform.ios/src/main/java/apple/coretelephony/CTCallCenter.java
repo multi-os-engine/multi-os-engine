@@ -41,12 +41,6 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-/**
- * API-Since: 4.0
- * Deprecated-Since: 10.0
- * Deprecated-Message: Replaced by CXCallObserver from CallKit.framework
- */
-@Deprecated
 @Generated
 @Library("CoreTelephony")
 @Runtime(ObjCRuntime.class)
@@ -233,4 +227,9 @@ public class CTCallCenter extends NSObject {
         @Generated
         void call_setCallEventHandler(@NotNull CTCall arg0);
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

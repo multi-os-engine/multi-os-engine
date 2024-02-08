@@ -243,4 +243,9 @@ public class NEFilterReport extends NSObject implements NSSecureCoding, NSCopyin
     @Selector("event")
     @NInt
     public native long event();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

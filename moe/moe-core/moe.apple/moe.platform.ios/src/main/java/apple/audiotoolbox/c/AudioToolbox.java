@@ -16,8 +16,6 @@ limitations under the License.
 
 package apple.audiotoolbox.c;
 
-import apple.NSObject;
-import apple.OS_os_workgroup;
 import apple.audiotoolbox.opaque.AUGraph;
 import apple.audiotoolbox.opaque.AudioComponent;
 import apple.audiotoolbox.opaque.AudioComponentInstance;
@@ -90,6 +88,8 @@ import apple.audiotoolbox.opaque.AUParameterListenerRef;
 import apple.audiotoolbox.struct.AudioUnitParameter;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.opaque.dispatch_queue_t;
+import apple.opaque.os_workgroup_t;
 
 @Generated
 @Library("AudioToolbox")
@@ -2804,7 +2804,7 @@ public final class AudioToolbox {
     @CFunction
     public static native int AudioQueueNewOutputWithDispatchQueue(@NotNull Ptr<AudioQueueRef> outAQ,
             @NotNull @UncertainArgument("Options: reference, array Fallback: reference") AudioStreamBasicDescription inFormat,
-            int inFlags, @NotNull NSObject inCallbackDispatchQueue,
+            int inFlags, @NotNull dispatch_queue_t inCallbackDispatchQueue,
             @NotNull @ObjCBlock(name = "call_AudioQueueNewOutputWithDispatchQueue") Block_AudioQueueNewOutputWithDispatchQueue inCallbackBlock);
 
     /**
@@ -2844,7 +2844,7 @@ public final class AudioToolbox {
     @CFunction
     public static native int AudioQueueNewInputWithDispatchQueue(@NotNull Ptr<AudioQueueRef> outAQ,
             @NotNull @UncertainArgument("Options: reference, array Fallback: reference") AudioStreamBasicDescription inFormat,
-            int inFlags, @NotNull NSObject inCallbackDispatchQueue,
+            int inFlags, @NotNull dispatch_queue_t inCallbackDispatchQueue,
             @NotNull @ObjCBlock(name = "call_AudioQueueNewInputWithDispatchQueue") Block_AudioQueueNewInputWithDispatchQueue inCallbackBlock);
 
     /**
@@ -7023,7 +7023,7 @@ public final class AudioToolbox {
     @NotNull
     @Generated
     @CFunction
-    public static native OS_os_workgroup AudioWorkIntervalCreate(
+    public static native os_workgroup_t AudioWorkIntervalCreate(
             @NotNull @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String name,
             int clock,
             @Nullable @UncertainArgument("Options: reference, array Fallback: reference") os_workgroup_attr_opaque_s attr);
@@ -7092,23 +7092,7 @@ public final class AudioToolbox {
             @NotNull Ptr<CFDictionaryRef> outConfigurationInfo);
 
     /**
-     * [@function] AudioComponentValidate
-     * 
-     * Tests a specified AudioComponent for API and behavioral conformance.
-     * 
-     * Currently, only AudioUnits can can be validated.
-     * 
-     * @param inComponent
-     *                               The AudioComponent to validate.
-     * @param inValidationParameters
-     *                               A CFDictionaryRef that contains parameters for the validation operation.
-     *                               Passing NULL for this argument tells the system to use the default
-     *                               parameters.
-     * @param outValidationResult
-     *                               On exit, this is an AudioComponentValidationResult.
-     * @return an OSStatus result code.
-     * 
-     *         API-Since: 16.0
+     * API-Since: 16.0
      */
     @Generated
     @CFunction
@@ -7197,7 +7181,7 @@ public final class AudioToolbox {
     @Generated
     @CFunction
     public static native int AUListenerCreateWithDispatchQueue(@NotNull Ptr<AUParameterListenerRef> outListener,
-            float inNotificationInterval, @NotNull NSObject inDispatchQueue,
+            float inNotificationInterval, @NotNull dispatch_queue_t inDispatchQueue,
             @NotNull @ObjCBlock(name = "call_AUListenerCreateWithDispatchQueue") Block_AUListenerCreateWithDispatchQueue inBlock);
 
     @Runtime(CRuntime.class)
@@ -7437,7 +7421,7 @@ public final class AudioToolbox {
     @Generated
     @CFunction
     public static native int AUEventListenerCreateWithDispatchQueue(@NotNull Ptr<AUParameterListenerRef> outListener,
-            float inNotificationInterval, float inValueChangeGranularity, @NotNull NSObject inDispatchQueue,
+            float inNotificationInterval, float inValueChangeGranularity, @NotNull dispatch_queue_t inDispatchQueue,
             @NotNull @ObjCBlock(name = "call_AUEventListenerCreateWithDispatchQueue") Block_AUEventListenerCreateWithDispatchQueue inBlock);
 
     @Runtime(CRuntime.class)
@@ -7650,4 +7634,42 @@ public final class AudioToolbox {
     @Generated public static final double AUDIO_TOOLBOX_VERSION = 1060.0;
     @Generated public static final double AU_SUPPORT_INTERAPP_AUDIO = 1.0;
     @Generated public static final double AUDIO_UNIT_VERSION = 1070.0;
+
+    /**
+     * [@function] AudioFileGetUserDataSize64
+     * 
+     * Get the 64-bit size of user data in a file
+     * 
+     * @param inAudioFile     an AudioFileID.
+     * @param inUserDataID    the four char code of the chunk.
+     * @param inIndex         an index specifying which chunk if there are more than one.
+     * @param outUserDataSize on output, if successful, the size of the user data chunk.
+     * @return returns noErr if successful.
+     * 
+     *         API-Since: 17.0
+     */
+    @Generated
+    @CFunction
+    public static native int AudioFileGetUserDataSize64(@NotNull AudioFileID inAudioFile, int inUserDataID, int inIndex,
+            @NotNull LongPtr outUserDataSize);
+
+    /**
+     * [@function] AudioFileGetUserDataAtOffset
+     * 
+     * Get a part of the data of a chunk in a file.
+     * 
+     * @param inAudioFile    an AudioFileID.
+     * @param inUserDataID   the four char code of the chunk.
+     * @param inIndex        an index specifying which chunk if there are more than one.
+     * @param inOffset       offset from the first byte of the chunk to the first byte to get.
+     * @param ioUserDataSize the size of the buffer on input, size of bytes copied to buffer on output
+     * @param outUserData    a pointer to a buffer in which to copy the chunk data.
+     * @return returns noErr if successful.
+     * 
+     *         API-Since: 17.0
+     */
+    @Generated
+    @CFunction
+    public static native int AudioFileGetUserDataAtOffset(@NotNull AudioFileID inAudioFile, int inUserDataID,
+            int inIndex, long inOffset, @NotNull IntPtr ioUserDataSize, @NotNull VoidPtr outUserData);
 }

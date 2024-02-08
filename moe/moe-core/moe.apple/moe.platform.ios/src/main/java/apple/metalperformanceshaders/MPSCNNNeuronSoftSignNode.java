@@ -170,4 +170,9 @@ public class MPSCNNNeuronSoftSignNode extends MPSCNNNeuronNode {
     @Selector("nodeWithSource:descriptor:")
     public static native MPSCNNNeuronSoftSignNode nodeWithSourceDescriptor(@NotNull MPSNNImageNode sourceNode,
             @NotNull MPSNNNeuronDescriptor descriptor);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

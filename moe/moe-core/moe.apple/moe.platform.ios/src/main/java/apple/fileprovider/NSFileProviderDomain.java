@@ -334,4 +334,9 @@ public class NSFileProviderDomain extends NSObject {
     @Generated
     @Selector("userEnabled")
     public native boolean userEnabled();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

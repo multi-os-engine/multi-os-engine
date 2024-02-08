@@ -295,4 +295,9 @@ public class PHCollectionListChangeRequest extends PHChangeRequest {
     @Selector("changeRequestForTopLevelCollectionListUserCollections:")
     public static native PHCollectionListChangeRequest changeRequestForTopLevelCollectionListUserCollections(
             @NotNull PHFetchResult<? extends PHCollection> childCollections);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

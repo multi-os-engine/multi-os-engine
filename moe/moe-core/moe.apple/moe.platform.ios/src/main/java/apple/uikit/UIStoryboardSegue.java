@@ -210,4 +210,9 @@ public class UIStoryboardSegue extends NSObject {
         @Generated
         void call_segueWithIdentifierSourceDestinationPerformHandler();
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

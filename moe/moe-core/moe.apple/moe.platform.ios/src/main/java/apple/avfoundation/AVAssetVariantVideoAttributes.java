@@ -28,6 +28,12 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
+ * AVAssetVariantVideoAttributes
+ * 
+ * Video attributes for an asset variant.
+ * 
+ * Subclasses of this type that are used from Swift must fulfill the requirements of a Sendable type.
+ * 
  * API-Since: 15.0
  */
 @Generated
@@ -187,4 +193,24 @@ public class AVAssetVariantVideoAttributes extends NSObject {
     @Generated
     @Selector("videoRange")
     public native String videoRange();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
+
+    /**
+     * [@property] videoLayoutAttributes
+     * 
+     * Describes the video layout attributes.
+     * 
+     * videoLayoutAttributes' count may be greater than one if this variant contains a collection of differing video
+     * layout media attributes over time.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("videoLayoutAttributes")
+    @NotNull
+    public native NSArray<? extends AVAssetVariantVideoLayoutAttributes> videoLayoutAttributes();
 }

@@ -136,7 +136,9 @@ import org.jetbrains.annotations.Nullable;
  * See MPSAccelerationStructure for more information
  * 
  * API-Since: 12.0
+ * Deprecated-Since: 17.0
  */
+@Deprecated
 @Generated
 @Library("MetalPerformanceShaders")
 @Runtime(ObjCRuntime.class)
@@ -447,4 +449,9 @@ public class MPSInstanceAccelerationStructure extends MPSAccelerationStructure {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

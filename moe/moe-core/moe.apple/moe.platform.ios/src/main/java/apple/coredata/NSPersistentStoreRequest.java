@@ -192,4 +192,9 @@ public class NSPersistentStoreRequest extends NSObject implements NSCopying {
     @Generated
     @Selector("setAffectedStores:")
     public native void setAffectedStores(@Nullable NSArray<? extends NSPersistentStore> value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

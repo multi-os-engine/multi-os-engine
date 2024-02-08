@@ -221,4 +221,16 @@ public final class INIntentErrorCode {
      * API-Since: 10.0
      */
     @Generated @NInt public static final long DecodingGeneric = 0x0000000000002328L;
+    /**
+     * AppIntents
+     * 
+     * API-Since: 10.0
+     */
+    @Generated @NInt public static final long UnableToCreateAppIntentRepresentation = 0x0000000000002710L;
+    /**
+     * AppIntents
+     * 
+     * API-Since: 10.0
+     */
+    @Generated @NInt public static final long NoAppIntent = 0x0000000000002711L;
 }

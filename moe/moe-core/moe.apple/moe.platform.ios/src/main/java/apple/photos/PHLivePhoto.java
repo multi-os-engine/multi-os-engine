@@ -273,4 +273,9 @@ public class PHLivePhoto extends NSObject implements NSCopying, NSSecureCoding, 
     public NSArray<String> _readableTypeIdentifiersForItemProvider() {
         return readableTypeIdentifiersForItemProvider();
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

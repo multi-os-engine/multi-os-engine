@@ -309,4 +309,9 @@ public class GCDualSenseAdaptiveTrigger extends GCControllerButtonInput {
     @Selector("setModeVibrationWithAmplitudes:frequency:")
     public native void setModeVibrationWithAmplitudesFrequency(
             @ByValue GCDualSenseAdaptiveTriggerPositionalAmplitudes positionalAmplitudes, float frequency);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

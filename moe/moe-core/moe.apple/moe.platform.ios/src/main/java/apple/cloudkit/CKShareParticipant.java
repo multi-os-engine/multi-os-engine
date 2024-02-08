@@ -46,6 +46,9 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
+ * This class should not be subclassed. If it is, Sendable may no longer apply.
+ * NS_SWIFT_SENDABLE on macos(14.0), ios(17.0), tvos(17.0), watchos(10.0)
+ * 
  * API-Since: 10.0
  */
 @Generated
@@ -257,4 +260,9 @@ public class CKShareParticipant extends NSObject implements NSSecureCoding, NSCo
     @Generated
     @Selector("setRole:")
     public native void setRole(@NInt long value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

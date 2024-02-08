@@ -242,4 +242,9 @@ public class INSpeakableString extends NSObject implements INSpeakable, NSCopyin
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -201,4 +201,9 @@ public class INSpatialEventTriggerResolutionResult extends INIntentResolutionRes
     @Generated
     @Selector("unsupportedWithReason:")
     public static native INSpatialEventTriggerResolutionResult unsupportedWithReason(@NInt long reason);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

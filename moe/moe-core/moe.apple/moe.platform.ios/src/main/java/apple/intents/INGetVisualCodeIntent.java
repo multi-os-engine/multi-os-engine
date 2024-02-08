@@ -172,4 +172,9 @@ public class INGetVisualCodeIntent extends INIntent {
     @Selector("visualCodeType")
     @NInt
     public native long visualCodeType();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -752,14 +752,12 @@ public class AVCaptureDeviceFormat extends NSObject {
     /**
      * [@property] supportedVideoZoomFactorsForDepthDataDelivery
      * 
-     * Indicates the sorted zoom factors available for the AVCaptureDevice's videoZoomFactor property when delivering
-     * depth data to one or more outputs.
-     * 
-     * Virtual devices support limited zoom factors when delivering depth data to any output. If this device format has
-     * no -supportedDepthDataFormats, this property returns an empty array.
+     * A deprecated property. Please use supportedVideoZoomRangesForDepthDataDelivery
      * 
      * API-Since: 16.0
+     * Deprecated-Since: 17.2
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("supportedVideoZoomFactorsForDepthDataDelivery")
@@ -779,4 +777,82 @@ public class AVCaptureDeviceFormat extends NSObject {
     @Generated
     @Selector("videoFrameRateRangeForStudioLight")
     public native AVFrameRateRange videoFrameRateRangeForStudioLight();
+
+    /**
+     * [@property] reactionEffectsSupported
+     * 
+     * Indicates whether the format supports the Reaction Effects feature.
+     * 
+     * This property returns YES if the format supports Reaction Effects. See +AVCaptureDevice.reactionEffectsEnabled.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("reactionEffectsSupported")
+    public native boolean reactionEffectsSupported();
+
+    /**
+     * [@property] supportedVideoZoomRangesForDepthDataDelivery
+     * 
+     * This property returns the zoom ranges within which depth data can be delivered.
+     * 
+     * Virtual devices support limited zoom ranges when delivering depth data to any output. If this device format has
+     * no -supportedDepthDataFormats, this property returns an empty array.
+     * The presence of one or more ranges where the min and max zoom factors are not equal means that "continuous zoom"
+     * with depth is supported.
+     * For example:
+     * a) ranges: @[ [2..2], [4..4] ]
+     * only zoom factors 2 and 4 are allowed to be set when depthDataDelivery is enabled. Any other zoom factor results
+     * in an exception.
+     * b) ranges: @[ [2..5] ]
+     * depthDataDelivery is supported with zoom factors [2..5]. Zoom factors outside of this range may be set, but will
+     * result in loss of depthDataDeliery. Whenever zoom is set back to a value within the range of [2..5],
+     * depthDataDelivery will resume.
+     * 
+     * When depth data delivery is enabled, the effective videoZoomFactorUpscaleThreshold will be 1.0, meaning that all
+     * zoom factors that are not native zoom factors (see AVCaptureDevice.virtualDeviceSwitchOverVideoZoomFactors and
+     * AVCaptureDevice.secondaryNativeResolutionZoomFactors) result in digital upscaling.
+     * 
+     * API-Since: 17.2
+     */
+    @Generated
+    @Selector("supportedVideoZoomRangesForDepthDataDelivery")
+    @NotNull
+    public native NSArray<? extends AVZoomRange> supportedVideoZoomRangesForDepthDataDelivery();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
+
+    /**
+     * [@property] videoFrameRateRangeForReactionEffectsInProgress
+     * 
+     * Indicates the minimum / maximum frame rates available when a reaction effect is running.
+     * 
+     * Unlike the other video effects, enabling reaction effects does not limit the stream's frame rate because most of
+     * the time no rendering is being performed. The frame rate will only ramp down when a reaction is actually being
+     * rendered on the stream (see AVCaptureDevice.reactionEffectsInProgress)
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("videoFrameRateRangeForReactionEffectsInProgress")
+    @Nullable
+    public native AVFrameRateRange videoFrameRateRangeForReactionEffectsInProgress();
+
+    /**
+     * [@property] zoomFactorsOutsideOfVideoZoomRangesForDepthDeliverySupported
+     * 
+     * This property returns whether the format supports zoom factors outside of the
+     * supportedVideoZoomFactorRangesForDepthDataDelivery.
+     * 
+     * When a zoom factor outside of the supportedVideoZoomFactorRangesForDepthDataDelivery is set, depth data delivery
+     * will be suspended until a zoom factor within the supportedVideoZoomFactorRangesForDepthDataDelivery is set.
+     * 
+     * API-Since: 17.2
+     */
+    @Generated
+    @Selector("zoomFactorsOutsideOfVideoZoomRangesForDepthDeliverySupported")
+    public native boolean zoomFactorsOutsideOfVideoZoomRangesForDepthDeliverySupported();
 }

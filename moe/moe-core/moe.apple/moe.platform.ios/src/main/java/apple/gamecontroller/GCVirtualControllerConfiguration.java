@@ -27,7 +27,6 @@ import org.jetbrains.annotations.Nullable;
 /**
  * GCVirtualControllerConfiguration
  * 
- * 
  * API-Since: 15.0
  */
 @Generated
@@ -92,7 +91,8 @@ public class GCVirtualControllerConfiguration extends NSObject {
     public static native String description_static();
 
     /**
-     * The set of controller elements e.g. [GCInputDirectionPad, GCInputLeftShoulder, etc...]
+     * The set of controller elements to be made available on \c GCVirtualController instances created with this
+     * configuration. e.g. [GCInputDirectionPad, GCInputLeftShoulder, etc...]
      */
     @NotNull
     @Generated
@@ -144,7 +144,8 @@ public class GCVirtualControllerConfiguration extends NSObject {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * The set of controller elements e.g. [GCInputDirectionPad, GCInputLeftShoulder, etc...]
+     * The set of controller elements to be made available on \c GCVirtualController instances created with this
+     * configuration. e.g. [GCInputDirectionPad, GCInputLeftShoulder, etc...]
      */
     @Generated
     @Selector("setElements:")
@@ -162,4 +163,35 @@ public class GCVirtualControllerConfiguration extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * Defaults to false, indicating that the default system touch control elements will be drawn using a touchable
+     * full-screen overlay. When set to true,
+     * the application is responsible for drawing its own control UI and should call \c -setValue: and \c -setPosition:
+     * methods on the \c GCVirtualController
+     * in response to touch or other events, which will then be translated into \c GCController events.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("isHidden")
+    public native boolean isHidden();
+
+    /**
+     * Defaults to false, indicating that the default system touch control elements will be drawn using a touchable
+     * full-screen overlay. When set to true,
+     * the application is responsible for drawing its own control UI and should call \c -setValue: and \c -setPosition:
+     * methods on the \c GCVirtualController
+     * in response to touch or other events, which will then be translated into \c GCController events.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("setHidden:")
+    public native void setHidden(boolean value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -186,4 +186,9 @@ public class NSLock extends NSObject implements NSLocking {
     @Generated
     @Selector("unlock")
     public native void unlock();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

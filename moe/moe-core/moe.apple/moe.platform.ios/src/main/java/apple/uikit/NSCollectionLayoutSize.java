@@ -168,4 +168,9 @@ public class NSCollectionLayoutSize extends NSObject implements NSCopying {
     @Generated
     @Selector("widthDimension")
     public native NSCollectionLayoutDimension widthDimension();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

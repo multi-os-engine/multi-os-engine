@@ -57,4 +57,10 @@ public final class UIUserInterfaceIdiom {
      * API-Since: 14.0
      */
     @Generated @NInt public static final long Mac = 0x0000000000000005L;
+    /**
+     * Vision UI
+     * 
+     * API-Since: 17.0
+     */
+    @Generated @NInt public static final long Vision = 0x0000000000000006L;
 }

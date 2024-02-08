@@ -25,6 +25,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.foundation.NSError;
+import org.moe.natj.general.ann.ReferenceInfo;
+import org.moe.natj.general.ptr.Ptr;
 
 /**
  * A base class for all tracking requests.
@@ -242,4 +245,34 @@ public class VNTrackingRequest extends VNImageBasedRequest {
     @Generated
     @Selector("supportedRevisions")
     public static native NSIndexSet supportedRevisions();
+
+    /**
+     * This class method returns a maximum number of allowed simultaneously executed trackers for [request revision x
+     * tracking level] combination
+     * 
+     * The total number of simultaneously running trackes is limited due to performance concerns. There is a limit for
+     * each combination of
+     * [request revision x tracking level] and this method could be used to query that limit
+     * 
+     * @param revision      The revision of a specific tracking request (an object of a subclass of VNTrackingRequest).
+     * @param trackingLevel Tracking level of a specific tracking request (an object of a subclass of
+     *                      VNTrackingRequest).
+     * @param error         The address of a variable that will be populated with an error upon failure. If the caller
+     *                      does not need this information, NULL can be passed.
+     * 
+     * @return Maximum number of trackers for a given combination [request revision x tracking level], or 0 if such
+     *         combination doesn't exist
+     * 
+     *         API-Since: 17.0
+     */
+    @Generated
+    @Selector("supportedNumberOfTrackersAndReturnError:")
+    @NUInt
+    public native long supportedNumberOfTrackersAndReturnError(
+            @ReferenceInfo(type = NSError.class) @Nullable Ptr<NSError> error);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

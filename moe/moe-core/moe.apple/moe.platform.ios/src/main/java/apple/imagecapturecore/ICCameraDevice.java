@@ -521,4 +521,9 @@ public class ICCameraDevice extends ICDevice {
             @NotNull NSData command, @Nullable NSData data,
             @NotNull @Mapped(ObjCObjectMapper.class) Object sendCommandDelegate, @NotNull SEL selector,
             @Nullable VoidPtr contextInfo);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

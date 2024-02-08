@@ -54,8 +54,6 @@ import org.jetbrains.annotations.Nullable;
  * CSSearchableItemAttribute encapsulates a set of properties of an CSSearchableItem.
  * CSSearchableItemAttribute set should only be mutated from one thread at a time. Concurrent access to properties has
  * undefined behavior.
- * 
- * API-Since: 9.0
  */
 @Generated
 @Library("CoreSpotlight")
@@ -3169,4 +3167,9 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
     @Generated
     @Selector("sharedItemContentType")
     public native UTType sharedItemContentType();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

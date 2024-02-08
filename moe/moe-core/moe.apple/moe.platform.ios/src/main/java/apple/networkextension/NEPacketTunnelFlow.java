@@ -249,4 +249,9 @@ public class NEPacketTunnelFlow extends NSObject {
         void call_readPacketsWithCompletionHandler(@NotNull NSArray<? extends NSData> packets,
                 @NotNull NSArray<? extends NSNumber> protocols);
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

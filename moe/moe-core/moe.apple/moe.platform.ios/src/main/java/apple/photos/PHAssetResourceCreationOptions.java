@@ -233,4 +233,9 @@ public class PHAssetResourceCreationOptions extends NSObject implements NSCopyin
     @Generated
     @Selector("uniformTypeIdentifier")
     public native String uniformTypeIdentifier();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

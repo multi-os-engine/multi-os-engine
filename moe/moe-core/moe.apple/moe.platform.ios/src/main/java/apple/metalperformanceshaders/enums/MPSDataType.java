@@ -38,7 +38,7 @@ public final class MPSDataType {
      */
     @Generated public static final int Invalid = 0x00000000;
     /**
-     * API-Since: 11.0
+     * API-Since: 10.0
      */
     @Generated public static final int Float16 = 0x10000010;
     /**
@@ -141,4 +141,10 @@ public final class MPSDataType {
      * API-Since: 16.2
      */
     @Generated public static final int ComplexFloat16 = 0x11000020;
+    /**
+     * unsigned integers. Range: [0, UTYPE_MAX]
+     * 
+     * API-Since: 16.0
+     */
+    @Generated public static final int BFloat16 = 0x90000010;
 }

@@ -197,10 +197,30 @@ public class SRApplicationUsage extends NSObject {
      * 
      * Additional categories that describe this app
      * 
-     * API-Since: 16.0
+     * API-Since: 16.4
      */
     @NotNull
     @Generated
     @Selector("supplementalCategories")
     public native NSArray<? extends SRSupplementalCategory> supplementalCategories();
+
+    /**
+     * [@property] relativeStartTime
+     * 
+     * App start time relative to the first app start time in the report interval
+     * 
+     * relativeStartTime value for the very first app in the report interval is equal to 0, N seconds for the seccond
+     * app and so on.
+     * This will allow to order app uses and determine the time between app uses.
+     * 
+     * API-Since: 16.4
+     */
+    @Generated
+    @Selector("relativeStartTime")
+    public native double relativeStartTime();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

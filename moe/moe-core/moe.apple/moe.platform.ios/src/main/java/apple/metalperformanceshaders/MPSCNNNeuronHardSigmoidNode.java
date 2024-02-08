@@ -187,4 +187,9 @@ public class MPSCNNNeuronHardSigmoidNode extends MPSCNNNeuronNode {
     @Selector("nodeWithSource:descriptor:")
     public static native MPSCNNNeuronHardSigmoidNode nodeWithSourceDescriptor(@NotNull MPSNNImageNode sourceNode,
             @NotNull MPSNNNeuronDescriptor descriptor);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

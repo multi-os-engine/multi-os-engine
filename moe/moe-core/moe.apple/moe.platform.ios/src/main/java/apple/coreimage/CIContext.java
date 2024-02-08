@@ -60,9 +60,6 @@ import apple.corefoundation.struct.CGSize;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-/**
- * API-Since: 5.0
- */
 @Generated
 @Library("CoreImage")
 @Runtime(ObjCRuntime.class)
@@ -784,4 +781,34 @@ public class CIContext extends NSObject {
     public native boolean writeHEIF10RepresentationOfImageToURLColorSpaceOptionsError(@NotNull CIImage image,
             @NotNull NSURL url, @NotNull CGColorSpaceRef colorSpace, @NotNull NSDictionary<String, ?> options,
             @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> errorPtr);
+
+    /**
+     * Render a CIImage to OpenEXR data. Image must have a finite non-empty extent.
+     * No options keys are supported at this time.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("OpenEXRRepresentationOfImage:options:error:")
+    @Nullable
+    public native NSData OpenEXRRepresentationOfImageOptionsError(@NotNull CIImage image,
+            @NotNull NSDictionary<String, ?> options,
+            @ReferenceInfo(type = NSError.class) @Nullable Ptr<NSError> errorPtr);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
+
+    /**
+     * Render a CIImage to OpenEXR file. Image must have a finite non-empty extent.
+     * No options keys are supported at this time.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("writeOpenEXRRepresentationOfImage:toURL:options:error:")
+    public native boolean writeOpenEXRRepresentationOfImageToURLOptionsError(@NotNull CIImage image, @NotNull NSURL url,
+            @NotNull NSDictionary<String, ?> options,
+            @ReferenceInfo(type = NSError.class) @Nullable Ptr<NSError> errorPtr);
 }

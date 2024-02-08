@@ -53,9 +53,6 @@ import org.jetbrains.annotations.Nullable;
  * published <code>CBService</code>, it is considered a dynamic value and will be requested on-demand. Dynamic values
  * are identified by a
  * <i>value</i> of <i>nil</i>.
- * 
- * 
- * API-Since: 6.0
  */
 @Generated
 @Library("CoreBluetooth")
@@ -185,6 +182,9 @@ public class CBMutableCharacteristic extends CBCharacteristic {
      * 
      * Returns an initialized characteristic.
      * 
+     * 
+     * API-Since: 6.0
+     * 
      * @param UUID        The Bluetooth UUID of the characteristic.
      * @param properties  The properties of the characteristic.
      * @param value       The characteristic value to be cached. If <i>nil</i>, the value will be dynamic and requested
@@ -252,4 +252,9 @@ public class CBMutableCharacteristic extends CBCharacteristic {
     @Generated
     @Selector("value")
     public native NSData value();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

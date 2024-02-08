@@ -25,9 +25,6 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-/**
- * API-Since: 12.0
- */
 @Generated
 @Library("CoreTelephony")
 @Runtime(ObjCRuntime.class)
@@ -174,4 +171,9 @@ public class CTCellularPlanProvisioning extends NSObject {
     @Generated
     @Selector("supportsEmbeddedSIM")
     public native boolean supportsEmbeddedSIM();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

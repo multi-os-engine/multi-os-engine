@@ -34,7 +34,9 @@ import org.jetbrains.annotations.Nullable;
  * See MPSAccelerationStructure for more information
  * 
  * API-Since: 13.0
+ * Deprecated-Since: 17.0
  */
+@Deprecated
 @Generated
 @Library("MetalPerformanceShaders")
 @Runtime(ObjCRuntime.class)
@@ -492,4 +494,9 @@ public class MPSPolygonAccelerationStructure extends MPSAccelerationStructure {
     @Selector("vertexStride")
     @NUInt
     public native long vertexStride();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

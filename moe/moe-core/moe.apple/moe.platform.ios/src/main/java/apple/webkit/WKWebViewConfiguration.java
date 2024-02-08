@@ -625,4 +625,35 @@ public class WKWebViewConfiguration extends NSObject implements NSSecureCoding, 
     @Generated
     @Selector("upgradeKnownHostsToHTTPS")
     public native boolean upgradeKnownHostsToHTTPS();
+
+    /**
+     * A Boolean value indicating whether inline predictions are allowed.
+     * 
+     * The default value is `NO`. If false, inline predictions
+     * are disabled regardless of the system setting. If true, they are enabled based
+     * on the system setting.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("allowsInlinePredictions")
+    public native boolean allowsInlinePredictions();
+
+    /**
+     * A Boolean value indicating whether inline predictions are allowed.
+     * 
+     * The default value is `NO`. If false, inline predictions
+     * are disabled regardless of the system setting. If true, they are enabled based
+     * on the system setting.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("setAllowsInlinePredictions:")
+    public native void setAllowsInlinePredictions(boolean value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

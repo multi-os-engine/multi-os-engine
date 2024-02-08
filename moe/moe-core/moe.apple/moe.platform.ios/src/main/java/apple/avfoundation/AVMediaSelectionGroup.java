@@ -341,4 +341,9 @@ public class AVMediaSelectionGroup extends NSObject implements NSCopying {
     @Generated
     @Selector("options")
     public native NSArray<? extends AVMediaSelectionOption> options();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

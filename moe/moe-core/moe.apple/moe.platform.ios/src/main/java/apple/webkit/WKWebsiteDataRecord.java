@@ -178,4 +178,9 @@ public class WKWebsiteDataRecord extends NSObject {
     @Generated
     @Selector("init")
     public native WKWebsiteDataRecord init();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -246,4 +246,9 @@ public class CPAlertAction extends NSObject implements NSSecureCoding {
         @Generated
         void call_initWithTitleColorHandler(@NotNull CPAlertAction arg0);
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

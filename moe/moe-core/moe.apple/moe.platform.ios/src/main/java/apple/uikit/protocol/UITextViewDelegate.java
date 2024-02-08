@@ -36,6 +36,9 @@ import org.moe.natj.general.ann.Mapped;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.uikit.UIAction;
+import apple.uikit.UITextItem;
+import apple.uikit.UITextItemMenuConfiguration;
 
 @Generated
 @Library("UIKit")
@@ -65,7 +68,11 @@ public interface UITextViewDelegate extends UIScrollViewDelegate {
 
     /**
      * API-Since: 10.0
+     * Deprecated-Since: 17.0
+     * Deprecated-Message: Replaced by primaryActionForTextItem: and menuConfigurationForTextItem: for additional
+     * customization options.
      */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("textView:shouldInteractWithTextAttachment:inRange:interaction:")
@@ -89,7 +96,11 @@ public interface UITextViewDelegate extends UIScrollViewDelegate {
 
     /**
      * API-Since: 10.0
+     * Deprecated-Since: 17.0
+     * Deprecated-Message: Replaced by primaryActionForTextItem: and menuConfigurationForTextItem: for additional
+     * customization options.
      */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("textView:shouldInteractWithURL:inRange:interaction:")
@@ -190,6 +201,87 @@ public interface UITextViewDelegate extends UIScrollViewDelegate {
     @Selector("textView:willPresentEditMenuWithAnimator:")
     default void textViewWillPresentEditMenuWithAnimator(@NotNull UITextView textView,
             @NotNull @Mapped(ObjCObjectMapper.class) UIEditMenuInteractionAnimating animator) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    /**
+     * Asks the delegate for the menu configuration to be performed when interacting with a text item.
+     * 
+     * @param textView    The text view requesting the menu.
+     * @param textItem    The text item for performing said action.
+     * @param defaultMenu The default menu for the specified text item.
+     * 
+     * @return Return a menu configuration to be presented when the text item is interacted with. Return @c nil to
+     *         prevent the menu from being presented.
+     * 
+     *         API-Since: 17.0
+     */
+    @Generated
+    @IsOptional
+    @Selector("textView:menuConfigurationForTextItem:defaultMenu:")
+    @Nullable
+    default UITextItemMenuConfiguration textViewMenuConfigurationForTextItemDefaultMenu(@NotNull UITextView textView,
+            @NotNull UITextItem textItem, @NotNull UIMenu defaultMenu) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    /**
+     * Asks the delegate for the action to be performed when interacting with a text item. If a nil action is provided,
+     * the text view
+     * will request a menu to be presented on primary action if possible.
+     * 
+     * @param textView      The text view requesting the primary action.
+     * @param textItem      The text item for performing said action.
+     * @param defaultAction The default action for the text item. Return this to perform the default action.
+     * 
+     * @return Return a UIAction to be performed when the text item is interacted with. Return @c nil to prevent the
+     *         action from being performed.
+     * 
+     *         API-Since: 17.0
+     */
+    @Generated
+    @IsOptional
+    @Selector("textView:primaryActionForTextItem:defaultAction:")
+    @Nullable
+    default UIAction textViewPrimaryActionForTextItemDefaultAction(@NotNull UITextView textView,
+            @NotNull UITextItem textItem, @NotNull UIAction defaultAction) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    /**
+     * Informs the delegate that a text item menu is about to be presented with the specified animator.
+     * 
+     * @param textView The text view showing the menu.
+     * @param textItem The text item for performing said action.
+     * @param animator Appearance animator. Add animations to this object to run them alongside the appearance
+     *                 transition.
+     * 
+     *                 API-Since: 17.0
+     */
+    @Generated
+    @IsOptional
+    @Selector("textView:textItemMenuWillDisplayForTextItem:animator:")
+    default void textViewTextItemMenuWillDisplayForTextItemAnimator(@NotNull UITextView textView,
+            @NotNull UITextItem textItem,
+            @Mapped(ObjCObjectMapper.class) @NotNull UIContextMenuInteractionAnimating animator) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    /**
+     * Informs the delegate that a text item menu is about to be dismissed with the specified animator.
+     * 
+     * @param textView The text view showing the menu.
+     * @param textItem The text item for performing said action.
+     * @param animator Dismissal animator. Add animations to this object to run them alongside the dismissal transition.
+     * 
+     *                 API-Since: 17.0
+     */
+    @Generated
+    @IsOptional
+    @Selector("textView:textItemMenuWillEndForTextItem:animator:")
+    default void textViewTextItemMenuWillEndForTextItemAnimator(@NotNull UITextView textView,
+            @NotNull UITextItem textItem,
+            @Mapped(ObjCObjectMapper.class) @NotNull UIContextMenuInteractionAnimating animator) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

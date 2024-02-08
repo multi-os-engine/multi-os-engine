@@ -25,6 +25,13 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
+ * An object that contains parcel tracking information that the data detection
+ * system matches.
+ * 
+ * The DataDetection framework returns a shipment tracking number match in a
+ * `DDMatchShipmentTrackingNumber` object, which contains a carrier name and
+ * tracking identifier.
+ * 
  * API-Since: 15.0
  */
 @Generated
@@ -70,6 +77,9 @@ public class DDMatchShipmentTrackingNumber extends DDMatch {
             @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
             @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    /**
+     * The name of a parcel carrier.
+     */
     @NotNull
     @Generated
     @Selector("carrier")
@@ -145,6 +155,9 @@ public class DDMatchShipmentTrackingNumber extends DDMatch {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    /**
+     * A string that represents a carrier’s tracking identifier for a parcel.
+     */
     @NotNull
     @Generated
     @Selector("trackingNumber")
@@ -154,4 +167,9 @@ public class DDMatchShipmentTrackingNumber extends DDMatch {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

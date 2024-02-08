@@ -365,4 +365,9 @@ public class ARConfiguration extends NSObject implements NSCopying {
     @Generated
     @Selector("videoHDRAllowed")
     public native boolean videoHDRAllowed();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

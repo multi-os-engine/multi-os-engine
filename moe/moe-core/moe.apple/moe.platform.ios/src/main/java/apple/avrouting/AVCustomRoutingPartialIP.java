@@ -26,9 +26,9 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
- * AVCustomRoutingPartialIP
+ * Represents a full or partial IP address.
  * 
- * Represents a full or partial IP address. To be used in conjunction with AVCustomRoutingController.knownRouteIPs
+ * Use this class in conjunction with ``knownRouteIPs``.
  * 
  * API-Since: 16.1
  */
@@ -51,16 +51,16 @@ public class AVCustomRoutingPartialIP extends NSObject {
     public static native boolean accessInstanceVariablesDirectly();
 
     /**
-     * [@property] address
+     * A full or partial IP address for a device known to be on the network.
      * 
-     * Bytes of the IP address. A full or partial IP address for a device known to be on the network.
+     * Use the following code to create a full known IP address.
      * 
-     * To create full known IP, the app would do the following:
-     * var anIPAddressInBytes:[Byte] = [192, 168, 10, 5]
+     * ```var anIPAddressInBytes:[Byte] = [192, 168, 10, 5]
      * var address = Data(bytes: anAddressInBytes, length: anAddressInBytes.count)
      * var aMaskInBytes:[Byte] = [255, 255, 255, 255]
      * var mask = Data(bytes: aMaskInBytes, length: aMaskInBytes.count)
      * var partialIP = AVCustomRoutingPartialIP(address: address, mask: mask)
+     * ```
      * 
      * API-Since: 16.1
      */
@@ -122,9 +122,10 @@ public class AVCustomRoutingPartialIP extends NSObject {
     public native AVCustomRoutingPartialIP init();
 
     /**
-     * initWithAddress:mask:
-     * 
-     * Initializes an IP fragment.
+     * Creates an IP fragment.
+     * - Parameters:
+     * - address: The IP address.
+     * - mask: The address mask.
      * 
      * API-Since: 16.1
      */
@@ -155,17 +156,16 @@ public class AVCustomRoutingPartialIP extends NSObject {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
-     * [@property] mask
+     * A mask representing how many octets of the IP address to respect.
      * 
-     * A mask representing how many octets of the ip address to respect.
+     * Use this mask to pass the last two bytes of the IP address instead of passing all four bytes.
      * 
-     * An app can use this mask to only pass e.g. the last two bytes of the IP address. So instead of passing the full
-     * IP address, the app can pass just the last two bytes by masking the first two.
-     * var anIPAddressInBytes:[Byte] = [0, 0, 10, 5]
+     * ```var anIPAddressInBytes:[Byte] = [0, 0, 10, 5]
      * var address = Data(bytes: anAddressInBytes, length: anAddressInBytes.count)
      * var aMaskInBytes:[Byte] = [0, 0, 255, 255]
      * var mask = Data(bytes: aMaskInBytes, length: aMaskInBytes.count)
      * var partialIP =AVCustomRoutingPartialIP(address: address, mask: mask)
+     * ```
      * 
      * API-Since: 16.1
      */
@@ -199,4 +199,9 @@ public class AVCustomRoutingPartialIP extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

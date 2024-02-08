@@ -237,4 +237,9 @@ public class VNCircle extends NSObject implements NSCopying, NSSecureCoding {
     @Generated
     @Selector("zeroCircle")
     public static native VNCircle zeroCircle();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

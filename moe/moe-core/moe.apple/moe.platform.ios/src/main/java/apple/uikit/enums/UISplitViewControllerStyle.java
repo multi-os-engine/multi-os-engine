@@ -12,9 +12,6 @@ public final class UISplitViewControllerStyle {
     private UISplitViewControllerStyle() {
     }
 
-    /**
-     * API-Since: 14.0
-     */
     @Generated @NInt public static final long Unspecified = 0x0000000000000000L;
     /**
      * API-Since: 14.0

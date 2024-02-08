@@ -274,4 +274,9 @@ public class MPSMatrixCopy extends MPSKernel {
             @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
             @NotNull MPSMatrixCopyDescriptor copyDescriptor, @Nullable MPSVector rowPermuteIndices,
             @NUInt long rowPermuteOffset, @Nullable MPSVector columnPermuteIndices, @NUInt long columnPermuteOffset);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

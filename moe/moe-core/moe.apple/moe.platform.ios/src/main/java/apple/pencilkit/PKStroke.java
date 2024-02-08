@@ -230,4 +230,19 @@ public class PKStroke extends NSObject implements NSCopying {
     @Generated
     @Selector("randomSeed")
     public native int randomSeed();
+
+    /**
+     * The PencilKit version required to use this stroke.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("requiredContentVersion")
+    @NInt
+    public native long requiredContentVersion();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -184,4 +184,9 @@ public class UNTextInputNotificationResponse extends UNNotificationResponse {
     @Generated
     @Selector("userText")
     public native String userText();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

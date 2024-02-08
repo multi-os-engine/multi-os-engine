@@ -189,4 +189,9 @@ public class MDLNormalMapTexture extends MDLTexture {
     @Selector("textureNamed:assetResolver:")
     public static native MDLNormalMapTexture textureNamedAssetResolver(@NotNull String name,
             @NotNull @Mapped(ObjCObjectMapper.class) MDLAssetResolver resolver);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

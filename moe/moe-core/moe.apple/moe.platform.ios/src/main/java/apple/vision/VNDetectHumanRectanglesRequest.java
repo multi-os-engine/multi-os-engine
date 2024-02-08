@@ -198,4 +198,9 @@ public class VNDetectHumanRectanglesRequest extends VNImageBasedRequest {
     @Generated
     @Selector("upperBodyOnly")
     public native boolean upperBodyOnly();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

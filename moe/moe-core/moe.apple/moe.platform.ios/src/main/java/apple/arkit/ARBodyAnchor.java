@@ -196,4 +196,9 @@ public class ARBodyAnchor extends ARAnchor implements ARTrackable {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

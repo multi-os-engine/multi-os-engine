@@ -77,4 +77,8 @@ public final class PHAssetResourceType {
      * API-Since: 13.0
      */
     @Generated @NInt public static final long AdjustmentBaseVideo = 0x000000000000000CL;
+    /**
+     * API-Since: 17.0
+     */
+    @Generated @NInt public static final long PhotoProxy = 0x0000000000000013L;
 }

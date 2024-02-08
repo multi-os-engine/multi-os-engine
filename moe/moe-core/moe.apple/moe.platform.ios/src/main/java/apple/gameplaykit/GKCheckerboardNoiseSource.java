@@ -42,8 +42,6 @@ import org.jetbrains.annotations.Nullable;
 
 /**
  * Produces noise in a checkerboard pattern.
- * 
- * API-Since: 10.0
  */
 @Generated
 @Library("GameplayKit")
@@ -179,4 +177,9 @@ public class GKCheckerboardNoiseSource extends GKNoiseSource {
     @Generated
     @Selector("squareSize")
     public native double squareSize();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

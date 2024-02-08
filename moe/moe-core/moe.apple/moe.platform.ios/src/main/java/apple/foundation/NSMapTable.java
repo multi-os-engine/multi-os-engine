@@ -309,4 +309,9 @@ public class NSMapTable<_KeyType, _ObjectType> extends NSObject implements NSCop
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -30,8 +30,6 @@ import org.jetbrains.annotations.Nullable;
  * CBL2CAPChannel
  * 
  * A CBL2CAPChannel represents a live L2CAP connection to a remote device
- * 
- * API-Since: 11.0
  */
 @Generated
 @Library("CoreBluetooth")
@@ -186,4 +184,9 @@ public class CBL2CAPChannel extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

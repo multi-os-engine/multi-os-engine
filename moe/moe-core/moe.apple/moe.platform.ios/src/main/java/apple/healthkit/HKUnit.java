@@ -774,4 +774,29 @@ public class HKUnit extends NSObject implements NSSecureCoding, NSCopying {
     @Generated
     @Selector("wattUnitWithMetricPrefix:")
     public static native HKUnit wattUnitWithMetricPrefix(@NInt long prefix);
+
+    /**
+     * lx
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("luxUnit")
+    @NotNull
+    public static native HKUnit luxUnit();
+
+    /**
+     * lx
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("luxUnitWithMetricPrefix:")
+    @NotNull
+    public static native HKUnit luxUnitWithMetricPrefix(@NInt long prefix);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

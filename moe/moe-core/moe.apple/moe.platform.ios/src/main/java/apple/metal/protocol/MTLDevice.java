@@ -16,7 +16,6 @@ limitations under the License.
 
 package apple.metal.protocol;
 
-import apple.NSObject;
 import apple.coregraphics.opaque.IOSurfaceRef;
 import apple.foundation.NSArray;
 import apple.foundation.NSBundle;
@@ -70,6 +69,8 @@ import apple.metal.MTLIOCommandQueueDescriptor;
 import apple.metal.MTLMeshRenderPipelineDescriptor;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.metal.MTLArchitecture;
+import apple.opaque.dispatch_data_t;
 
 /**
  * [@protocol] MTLDevice
@@ -351,7 +352,7 @@ public interface MTLDevice {
     @Generated
     @Selector("newLibraryWithData:error:")
     @MappedReturn(ObjCObjectMapper.class)
-    MTLLibrary newLibraryWithDataError(@NotNull NSObject data,
+    MTLLibrary newLibraryWithDataError(@NotNull dispatch_data_t data,
             @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
@@ -1455,7 +1456,9 @@ public interface MTLDevice {
      * with details of the error.
      * 
      * API-Since: 16.0
+     * Deprecated-Since: 17.0
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("newIOHandleWithURL:compressionMethod:error:")
@@ -1472,7 +1475,9 @@ public interface MTLDevice {
      * with details of the error.
      * 
      * API-Since: 16.0
+     * Deprecated-Since: 17.0
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("newIOHandleWithURL:error:")
@@ -1542,4 +1547,79 @@ public interface MTLDevice {
     @ByValue
     MTLSize sparseTileSizeWithTextureTypePixelFormatSampleCountSparsePageSize(@NUInt long textureType,
             @NUInt long pixelFormat, @NUInt long sampleCount, @NInt long sparsePageSize);
+
+    /**
+     * [@property] architecture
+     * 
+     * Returns the device's architecture information.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("architecture")
+    @NotNull
+    MTLArchitecture architecture();
+
+    /**
+     * newIOFileHandleWithURL:compressionMethod:error:
+     * 
+     * Create and return a handle that points to a compressed file on disk (a file that was
+     * created with MTLIOCompressionContext). This object can be used by
+     * MTLIOCommandBuffer load commands to source data for MTLResources. If the creation
+     * of the handle fails the return value will be nil and the optional error if passed in will be non-nil
+     * with details of the error.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("newIOFileHandleWithURL:compressionMethod:error:")
+    @MappedReturn(ObjCObjectMapper.class)
+    @Nullable
+    MTLIOFileHandle newIOFileHandleWithURLCompressionMethodError(@NotNull NSURL url, @NInt long compressionMethod,
+            @ReferenceInfo(type = NSError.class) @Nullable Ptr<NSError> error);
+
+    /**
+     * newIOFileHandleWithURL:error:
+     * 
+     * Create and return a handle that points to a raw file on disk. This object can be used by
+     * MTLIOCommandBuffer load commands to source data for MTLResources. If the creation
+     * of the handle fails the return value will be nil and the optional error if passed in will be non-nil
+     * with details of the error.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("newIOFileHandleWithURL:error:")
+    @MappedReturn(ObjCObjectMapper.class)
+    @Nullable
+    MTLIOFileHandle newIOFileHandleWithURLError(@NotNull NSURL url,
+            @ReferenceInfo(type = NSError.class) @Nullable Ptr<NSError> error);
+
+    /**
+     * [@property] recommendedMaxWorkingSetSize
+     * 
+     * Returns an approximation of how much memory this device can use with good performance.
+     * 
+     * Performance may be improved by keeping the total size of all resources (texture and buffers)
+     * and heaps less than this threshold, beyond which the device is likely to be overcommitted and incur a
+     * performance penalty.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("recommendedMaxWorkingSetSize")
+    long recommendedMaxWorkingSetSize();
+
+    /**
+     * [@property] supportsBCTextureCompression
+     * 
+     * Query device for BC Texture format support
+     * 
+     * @return BOOL value. If YES, the device supports compressed BC Texture formats. If NO, the device does not.
+     * 
+     *         API-Since: 16.4
+     */
+    @Generated
+    @Selector("supportsBCTextureCompression")
+    boolean supportsBCTextureCompression();
 }

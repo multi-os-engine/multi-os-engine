@@ -267,4 +267,9 @@ public class MPSNNLossGradient extends MPSCNNBinaryKernel {
     @Generated
     @Selector("reduceAcrossBatch")
     public native boolean reduceAcrossBatch();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

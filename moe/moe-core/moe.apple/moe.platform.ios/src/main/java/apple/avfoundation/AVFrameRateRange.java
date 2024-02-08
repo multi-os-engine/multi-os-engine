@@ -221,4 +221,9 @@ public class AVFrameRateRange extends NSObject {
     @Generated
     @Selector("minFrameRate")
     public native double minFrameRate();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

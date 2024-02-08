@@ -46,11 +46,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
- * CKDatabaseSubscription
- * 
- * A subscription fires whenever any change happens in the database that this subscription was saved in.
- * 
- * [@c] CKDatabaseSubscription is only supported in the Private and Shared databases.
+ * NS_SWIFT_SENDABLE on macos(13.3), macCatalyst(16.4), ios(16.4), tvos(16.4), watchos(9.4)
  * 
  * API-Since: 10.0
  */
@@ -183,6 +179,11 @@ public class CKDatabaseSubscription extends CKSubscription implements NSSecureCo
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(@NotNull NSCoder coder);
 
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 10.0
+     */
+    @Deprecated
     @Generated
     @Selector("init")
     public native CKDatabaseSubscription init();
@@ -215,4 +216,9 @@ public class CKDatabaseSubscription extends CKSubscription implements NSSecureCo
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

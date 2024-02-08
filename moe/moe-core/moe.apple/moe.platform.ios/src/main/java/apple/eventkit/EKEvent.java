@@ -45,8 +45,6 @@ import org.jetbrains.annotations.Nullable;
  * EKEvent
  * 
  * The EKEvent class represents an occurrence of an event.
- * 
- * API-Since: 4.0
  */
 @Generated
 @Library("EventKit")
@@ -451,4 +449,9 @@ public class EKEvent extends EKCalendarItem {
     @Generated
     @Selector("structuredLocation")
     public native EKStructuredLocation structuredLocation();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

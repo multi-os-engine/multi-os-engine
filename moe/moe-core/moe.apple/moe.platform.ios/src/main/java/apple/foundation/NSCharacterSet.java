@@ -380,4 +380,9 @@ public class NSCharacterSet extends NSObject implements NSCopying, NSMutableCopy
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

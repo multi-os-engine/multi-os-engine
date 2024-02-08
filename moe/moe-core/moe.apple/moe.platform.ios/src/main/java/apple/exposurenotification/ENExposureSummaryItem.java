@@ -174,4 +174,9 @@ public class ENExposureSummaryItem extends NSObject {
     @Generated
     @Selector("weightedDurationSum")
     public native double weightedDurationSum();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

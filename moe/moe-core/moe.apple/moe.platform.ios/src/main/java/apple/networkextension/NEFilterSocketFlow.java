@@ -271,4 +271,9 @@ public class NEFilterSocketFlow extends NEFilterFlow implements NSSecureCoding, 
     @Generated
     @Selector("remoteHostname")
     public native String remoteHostname();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

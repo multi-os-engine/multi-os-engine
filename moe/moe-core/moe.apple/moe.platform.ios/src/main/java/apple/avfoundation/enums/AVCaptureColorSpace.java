@@ -25,12 +25,16 @@ import org.moe.natj.general.ann.NInt;
  * Constants indicating active or supported video color space.
  * 
  * [@constant] AVCaptureColorSpace_sRGB
- * The sGRB color space ( https://www.w3.org/Graphics/Color/srgb )
+ * The sRGB color space ( https://www.w3.org/Graphics/Color/srgb )
  * [@constant] AVCaptureColorSpace_P3_D65
  * The P3 D65 wide color space which uses Illuminant D65 as the white point.
  * [@constant] AVCaptureColorSpace_HLG_BT2020
  * The BT2020 wide color space which uses Illuminant D65 as the white point and Hybrid Log-Gamma as the transfer
  * function.
+ * [@constant] AVCaptureColorSpace_AppleLog
+ * The Apple Log Color space, which uses BT2020 as the color primaries, and an Apple defined Log curve as a transfer
+ * function. When this is set as the active color space on an AVCaptureDevice, any AVCapturePhotoOutput or
+ * AVCaptureStillImageOutput connected to the same AVCaptureDevice will have its video connection disabled.
  * 
  * API-Since: 10.0
  */
@@ -53,4 +57,8 @@ public final class AVCaptureColorSpace {
      * API-Since: 14.1
      */
     @Generated @NInt public static final long _HLG_BT2020 = 0x0000000000000002L;
+    /**
+     * API-Since: 17.0
+     */
+    @Generated @NInt public static final long _AppleLog = 0x0000000000000003L;
 }

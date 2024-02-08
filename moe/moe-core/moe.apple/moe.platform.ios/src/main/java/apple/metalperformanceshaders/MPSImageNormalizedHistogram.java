@@ -312,4 +312,9 @@ public class MPSImageNormalizedHistogram extends MPSKernel {
     @Generated
     @Selector("zeroHistogram")
     public native boolean zeroHistogram();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

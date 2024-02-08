@@ -241,4 +241,9 @@ public class SFTranscriptionSegment extends NSObject implements NSCopying, NSSec
     @Generated
     @Selector("voiceAnalytics")
     public native SFVoiceAnalytics voiceAnalytics();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -45,9 +45,6 @@ import apple.corefoundation.struct.CGPoint;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-/**
- * API-Since: 7.0
- */
 @Generated
 @Library("MapKit")
 @Runtime(ObjCRuntime.class)
@@ -183,4 +180,9 @@ public class MKMapSnapshot extends NSObject {
     @Generated
     @Selector("traitCollection")
     public native UITraitCollection traitCollection();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

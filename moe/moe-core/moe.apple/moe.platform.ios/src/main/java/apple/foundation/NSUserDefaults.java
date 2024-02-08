@@ -541,4 +541,9 @@ public class NSUserDefaults extends NSObject {
     @Generated
     @Selector("volatileDomainNames")
     public native NSArray<String> volatileDomainNames();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

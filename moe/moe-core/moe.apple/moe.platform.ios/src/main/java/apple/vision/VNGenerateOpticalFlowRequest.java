@@ -126,8 +126,6 @@ public class VNGenerateOpticalFlowRequest extends VNTargetedImageRequest {
      * 
      * The computational time typically trends with the accuracy level. This parameter allows for selective tuning by
      * the client application.
-     * Computational accuracy settings are only available for VNGenerateOpticalFlowRequestRevision1.
-     * VNGenerateOpticalFlowRequestRevision2 uses a neural network to generate the optical flow.
      */
     @Generated
     @Selector("computationAccuracy")
@@ -348,8 +346,6 @@ public class VNGenerateOpticalFlowRequest extends VNTargetedImageRequest {
      * 
      * The computational time typically trends with the accuracy level. This parameter allows for selective tuning by
      * the client application.
-     * Computational accuracy settings are only available for VNGenerateOpticalFlowRequestRevision1.
-     * VNGenerateOpticalFlowRequestRevision2 uses a neural network to generate the optical flow.
      */
     @Generated
     @Selector("setComputationAccuracy:")
@@ -391,7 +387,7 @@ public class VNGenerateOpticalFlowRequest extends VNTargetedImageRequest {
     public native NSArray<? extends VNPixelBufferObservation> results();
 
     /**
-     * Setting this to YES will keep the raw pixel buffer coming the the ML network. The default is NO.
+     * Setting this to YES will keep the raw pixel buffer coming from the the ML network. The default is NO.
      * 
      * When set to YES, the outputPixelFormat is ignored. Setting this for revision 1 is a no-op as it is not ML-based.
      * 
@@ -402,7 +398,7 @@ public class VNGenerateOpticalFlowRequest extends VNTargetedImageRequest {
     public native boolean keepNetworkOutput();
 
     /**
-     * Setting this to YES will keep the raw pixel buffer coming the the ML network. The default is NO.
+     * Setting this to YES will keep the raw pixel buffer coming from the the ML network. The default is NO.
      * 
      * When set to YES, the outputPixelFormat is ignored. Setting this for revision 1 is a no-op as it is not ML-based.
      * 
@@ -411,4 +407,9 @@ public class VNGenerateOpticalFlowRequest extends VNTargetedImageRequest {
     @Generated
     @Selector("setKeepNetworkOutput:")
     public native void setKeepNetworkOutput(boolean value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

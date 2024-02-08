@@ -319,4 +319,9 @@ public class CNSaveRequest extends NSObject {
     @Generated
     @Selector("shouldRefetchContacts")
     public native boolean shouldRefetchContacts();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -35,9 +35,6 @@ import apple.corefoundation.struct.CGRect;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-/**
- * API-Since: 10.0
- */
 @Generated
 @Library("CoreImage")
 @Runtime(ObjCRuntime.class)
@@ -109,7 +106,7 @@ public interface CIImageProcessorOutput {
     IOSurfaceRef surface();
 
     /**
-     * A 64-bit digest that uniquely descibes the contents of the output of a processor.
+     * A 64-bit digest that uniquely describes the contents of the output of a processor.
      * This digest will change if the graph up to and including the output of the processor changes in any way.
      * 
      * API-Since: 16.0

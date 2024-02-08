@@ -188,4 +188,9 @@ public class AVAudioMix extends NSObject implements NSCopying, NSMutableCopying 
     @Selector("mutableCopyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
     public native Object mutableCopyWithZone(@Nullable VoidPtr zone);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

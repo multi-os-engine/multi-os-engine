@@ -49,8 +49,6 @@ import org.jetbrains.annotations.Nullable;
 
 /**
  * A scene stores and handles loading of data related to a particular scene.
- * 
- * API-Since: 10.0
  */
 @Generated
 @Library("GameplayKit")
@@ -281,4 +279,9 @@ public class GKScene extends NSObject implements NSCopying, NSSecureCoding {
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

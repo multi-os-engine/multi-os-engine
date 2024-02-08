@@ -1049,4 +1049,48 @@ public final class CoreData {
     @Generated public static final double NSCoreDataVersionNumber_iPhoneOS_9_0 = 640.0;
     @Generated public static final double NSCoreDataVersionNumber_iPhoneOS_9_2 = 641.4;
     @Generated public static final double NSCoreDataVersionNumber_iPhoneOS_9_3 = 641.6;
+
+    /**
+     * To perform a staged lightweight migration, this key must be set with an NSStagedMigrationManager.
+     * This class encapsulates developer-described NSCustomMigrationStage's and supplementary
+     * NSLightweightMigrationStage's.
+     * The NSCustomMigrationStage's will be applied in the order in which they are indexed in the .stages property at
+     * the
+     * appropriate time (when the model matches the stage model references). The stages array must contain a total
+     * ordering
+     * of all models to be applied to the store using the aforementioned sub-classes.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String NSPersistentStoreStagedMigrationManagerOptionKey();
+
+    /**
+     * During a Lightweight Migration, an Entity that has a migration transformation that requires dropping a column in
+     * a table would require a copy of the old table into a new table. If
+     * NSPersistentStoreDeferredLightweightMigrationOptionKey
+     * is set to @YES, this table transformation can be delayed until the developer deems that the resources are
+     * available
+     * to perform the table transformation.
+     * 
+     * Examples of Lightweight Migration Scenarios that can be delayed:
+     * An Entitiy removed Attributes/Relationships
+     * Relationships where a ForeignEntityKey is no longer needed
+     * 
+     * The Persistent Store's metadata contains the key - NSPersistentStoreDeferredLightweightMigrationOptionKey - to
+     * signal to the developer that work needs to be done. The delayed
+     * table transformations can be processed by invoking finishDeferredLightweightMigration on the Persistent Store
+     * Coordinator.
+     * 
+     * 
+     * API-Since: 14.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String NSPersistentStoreDeferredLightweightMigrationOptionKey();
 }

@@ -52,4 +52,11 @@ public final class PKMerchantCapability {
     @Generated
     private PKMerchantCapability() {
     }
+
+    /**
+     * Merchant supports instant funds out
+     * 
+     * API-Since: 17.0
+     */
+    @Generated @NUInt public static final long CapabilityInstantFundsOut = 0x0000000000000080L;
 }

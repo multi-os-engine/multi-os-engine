@@ -197,4 +197,9 @@ public class PHAdjustmentData extends NSObject {
     @Selector("initWithFormatIdentifier:formatVersion:data:")
     public native PHAdjustmentData initWithFormatIdentifierFormatVersionData(@NotNull String formatIdentifier,
             @NotNull String formatVersion, @NotNull NSData data);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

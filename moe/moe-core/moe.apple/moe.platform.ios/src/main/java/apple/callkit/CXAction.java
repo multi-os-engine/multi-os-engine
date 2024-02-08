@@ -226,4 +226,9 @@ public class CXAction extends NSObject implements NSCopying, NSSecureCoding {
     @Generated
     @Selector("timeoutDate")
     public native NSDate timeoutDate();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -166,4 +166,9 @@ public class CXCallDirectoryProvider extends NSObject implements NSExtensionRequ
     @Generated
     @Selector("init")
     public native CXCallDirectoryProvider init();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

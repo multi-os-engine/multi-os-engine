@@ -165,4 +165,9 @@ public class MDLAnimatedMatrix4x4 extends MDLAnimatedValue {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -43,6 +43,8 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.foundation.protocol.NSCopying;
+import org.moe.natj.general.ann.MappedReturn;
 
 /**
  * API-Since: 8.0
@@ -51,7 +53,7 @@ import org.jetbrains.annotations.Nullable;
 @Library("Photos")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class PHVideoRequestOptions extends NSObject {
+public class PHVideoRequestOptions extends NSObject implements NSCopying {
     static {
         NatJ.register();
     }
@@ -232,4 +234,16 @@ public class PHVideoRequestOptions extends NSObject {
         void call_setProgressHandler(double progress, @Nullable NSError error, @NotNull BoolPtr stop,
                 @Nullable NSDictionary<?, ?> info);
     }
+
+    @Generated
+    @Owned
+    @Selector("copyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    @NotNull
+    public native Object copyWithZone(@Nullable VoidPtr zone);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

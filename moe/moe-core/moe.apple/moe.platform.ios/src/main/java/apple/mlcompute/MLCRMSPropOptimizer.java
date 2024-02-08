@@ -225,4 +225,9 @@ public class MLCRMSPropOptimizer extends MLCOptimizer implements NSCopying {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

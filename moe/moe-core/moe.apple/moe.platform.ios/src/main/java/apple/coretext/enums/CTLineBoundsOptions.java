@@ -44,7 +44,8 @@ import org.moe.natj.general.ann.NUInt;
  * default typographic bounds.
  * 
  * [@constant] kCTLineBoundsUseOpticalBounds
- * Pass this option to use optical bounds. This option overrides
+ * Pass this option to use optical bounds, as determined by
+ * CTFontGetOpticalBoundsForGlyphs. This option overrides
  * kCTLineBoundsUseGlyphPathBounds.
  * 
  * [@constant] kCTLineBoundsIncludeLanguageExtents

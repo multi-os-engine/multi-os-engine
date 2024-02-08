@@ -191,4 +191,9 @@ public class INVocabulary extends NSObject {
     @Generated
     @Selector("setVocabulary:ofType:")
     public native void setVocabularyOfType(@NotNull NSOrderedSet<?> vocabulary, @NInt long type);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

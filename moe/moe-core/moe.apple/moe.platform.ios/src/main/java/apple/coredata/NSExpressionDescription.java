@@ -189,4 +189,9 @@ public class NSExpressionDescription extends NSPropertyDescription {
     @Generated
     @Selector("setExpressionResultType:")
     public native void setExpressionResultType(@NUInt long value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

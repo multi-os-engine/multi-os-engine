@@ -157,4 +157,9 @@ public class PKObject extends NSObject {
     @Generated
     @Selector("init")
     public native PKObject init();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

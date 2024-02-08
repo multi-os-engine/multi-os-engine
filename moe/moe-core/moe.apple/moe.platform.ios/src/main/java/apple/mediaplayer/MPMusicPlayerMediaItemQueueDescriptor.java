@@ -196,4 +196,9 @@ public class MPMusicPlayerMediaItemQueueDescriptor extends MPMusicPlayerQueueDes
     @Generated
     @Selector("startItem")
     public native MPMediaItem startItem();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

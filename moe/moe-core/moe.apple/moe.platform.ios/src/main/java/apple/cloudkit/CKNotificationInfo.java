@@ -46,14 +46,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
- * CKNotificationInfo
- * 
- * The payload of a push notification delivered in the UIApplication @c application:didReceiveRemoteNotification:
- * delegate method contains information about the firing subscription.
- * 
- * Use @code +[CKNotification notificationFromRemoteNotificationDictionary:] @endcode to parse that payload.
- * On tvOS, alerts, badges, sounds, and categories are not handled in push notifications. However, CKSubscriptions
- * remain available to help you avoid polling the server.
+ * NS_SWIFT_SENDABLE on macos(13.3), macCatalyst(16.4), ios(16.4), tvos(16.4), watchos(9.4)
  * 
  * API-Since: 8.0
  */
@@ -558,4 +551,9 @@ public class CKNotificationInfo extends NSObject implements NSSecureCoding, NSCo
     @Generated
     @Selector("titleLocalizationKey")
     public native String titleLocalizationKey();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

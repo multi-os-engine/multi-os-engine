@@ -669,4 +669,9 @@ public class UICollectionViewController extends UIViewController implements UICo
     @Selector("collectionView:performPrimaryActionForItemAtIndexPath:")
     public native void collectionViewPerformPrimaryActionForItemAtIndexPath(@NotNull UICollectionView collectionView,
             @NotNull NSIndexPath indexPath);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

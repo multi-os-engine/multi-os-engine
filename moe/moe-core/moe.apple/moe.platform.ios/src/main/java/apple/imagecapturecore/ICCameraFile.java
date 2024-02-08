@@ -29,6 +29,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.foundation.NSURL;
 
 /**
  * -----------------------------------------------------------------------------------------------------------------
@@ -562,4 +563,33 @@ public class ICCameraFile extends ICCameraItem {
     @Selector("width")
     @NInt
     public native long width();
+
+    /**
+     * requestSecurityScopedURLWithCompletion
+     * 
+     * ￼Requests a security scoped NSURL* for a media file on a mass storage volume. The returned NSURL* requires the
+     * use of
+     * startAccessingSecurityScopedResource, and stopAccessingSecurityScopedResource for access.
+     * [@note] The completion block will execute on an any available queue, often this will not be the main queue.
+     * 
+     * API-Since: 17.0
+     * 
+     * @param completion Completion block called with an NSURL*, and an NSError* for status.
+     */
+    @Generated
+    @Selector("requestSecurityScopedURLWithCompletion:")
+    public native void requestSecurityScopedURLWithCompletion(
+            @ObjCBlock(name = "call_requestSecurityScopedURLWithCompletion") @NotNull Block_requestSecurityScopedURLWithCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_requestSecurityScopedURLWithCompletion {
+        @Generated
+        void call_requestSecurityScopedURLWithCompletion(@Nullable NSURL arg0, @Nullable NSError arg1);
+    }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

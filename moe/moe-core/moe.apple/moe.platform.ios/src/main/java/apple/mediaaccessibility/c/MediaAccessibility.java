@@ -484,4 +484,31 @@ public final class MediaAccessibility {
     @Generated
     @CFunction
     public static native CFStringRef MAImageCaptioningCopyMetadataTagPath();
+
+    /**
+     * [@function] MADimFlashingLightsEnabled
+     * 
+     * Returns whether the user has enabled the setting to reduce flashing or strobing lights in video content. This
+     * setting can also be used to determine if UI in playback controls should be shown.
+     * 
+     * @return A boolean
+     * 
+     *         API-Since: 16.4
+     */
+    @Generated
+    @CFunction
+    public static native boolean MADimFlashingLightsEnabled();
+
+    /**
+     * [@constant] kMADimFlashingLightsChangedNotification
+     * 
+     * CFNotification sent to local notification center when mitigation for flashing or strobing lights settings are
+     * changed.
+     * 
+     * API-Since: 16.4
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kMADimFlashingLightsChangedNotification();
 }

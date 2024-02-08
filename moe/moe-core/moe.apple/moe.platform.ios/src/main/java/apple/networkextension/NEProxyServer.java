@@ -306,4 +306,9 @@ public class NEProxyServer extends NSObject implements NSSecureCoding, NSCopying
     @Generated
     @Selector("username")
     public native String username();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

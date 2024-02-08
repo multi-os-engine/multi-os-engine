@@ -191,4 +191,9 @@ public class INCallDestinationTypeResolutionResult extends INIntentResolutionRes
     @Generated
     @Selector("unsupportedWithReason:")
     public static native INCallDestinationTypeResolutionResult unsupportedWithReason(@NInt long reason);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

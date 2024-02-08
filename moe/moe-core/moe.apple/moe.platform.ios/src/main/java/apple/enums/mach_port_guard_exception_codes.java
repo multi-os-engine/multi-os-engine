@@ -92,4 +92,6 @@ public final class mach_port_guard_exception_codes {
     @Generated public static final int IMMOVABLE_NON_FATAL = 0x00400000;
     @Generated public static final int INVALID_OPTIONS = 0x00000003;
     @Generated public static final int REQUIRE_REPLY_PORT_SEMANTICS = 0x00800000;
+    @Generated public static final int THREAD_SET_STATE = 0x00000005;
+    @Generated public static final int EXCEPTION_BEHAVIOR_ENFORCE = 0x00000006;
 }

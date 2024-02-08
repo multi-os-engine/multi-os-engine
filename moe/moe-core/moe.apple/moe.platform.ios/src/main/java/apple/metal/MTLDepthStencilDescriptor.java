@@ -241,4 +241,9 @@ public class MTLDepthStencilDescriptor extends NSObject implements NSCopying {
     @Generated
     @Selector("setLabel:")
     public native void setLabel(@Nullable String value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

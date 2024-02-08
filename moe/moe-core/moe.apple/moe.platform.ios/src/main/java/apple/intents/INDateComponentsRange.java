@@ -239,4 +239,9 @@ public class INDateComponentsRange extends NSObject implements NSCopying, NSSecu
     @Generated
     @Selector("recurrenceRule")
     public native INRecurrenceRule recurrenceRule();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

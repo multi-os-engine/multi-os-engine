@@ -275,4 +275,9 @@ public class NSCoreDataCoreSpotlightDelegate extends NSObject {
     @Generated
     @Selector("stopSpotlightIndexing")
     public native void stopSpotlightIndexing();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

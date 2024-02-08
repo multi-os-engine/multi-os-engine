@@ -490,4 +490,9 @@ public class AVAssetImageGenerator extends NSObject {
         void call_generateCGImageAsynchronouslyForTimeCompletionHandler(@Nullable CGImageRef image,
                 @ByValue CMTime actualTime, @Nullable NSError error);
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

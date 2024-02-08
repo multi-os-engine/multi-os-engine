@@ -279,4 +279,9 @@ public class NSPredicate extends NSObject implements NSSecureCoding, NSCopying {
         boolean call_predicateWithBlock(@Nullable @Mapped(ObjCObjectMapper.class) Object evaluatedObject,
                 @Nullable NSDictionary<String, ?> bindings);
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

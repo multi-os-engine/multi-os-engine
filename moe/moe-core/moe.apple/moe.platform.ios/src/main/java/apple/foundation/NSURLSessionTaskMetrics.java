@@ -196,4 +196,9 @@ public class NSURLSessionTaskMetrics extends NSObject {
     @Generated
     @Selector("transactionMetrics")
     public native NSArray<? extends NSURLSessionTaskTransactionMetrics> transactionMetrics();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -49,8 +49,6 @@ import org.jetbrains.annotations.Nullable;
  * 
  * While deterministic, this is not a cryptographic random source, however it may be useful
  * for obfuscation of gameplay data in manner similar to a stream cipher.
- * 
- * API-Since: 9.0
  */
 @Generated
 @Library("GameplayKit")
@@ -224,4 +222,9 @@ public class GKARC4RandomSource extends GKRandomSource {
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

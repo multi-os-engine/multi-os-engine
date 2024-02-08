@@ -625,4 +625,9 @@ public class SCNScene extends NSObject implements NSSecureCoding, GKSceneRootNod
     @Generated
     @Selector("wantsScreenSpaceReflection")
     public native boolean wantsScreenSpaceReflection();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -392,4 +392,9 @@ public class SCNBox extends SCNGeometry {
     @Selector("widthSegmentCount")
     @NInt
     public native long widthSegmentCount();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

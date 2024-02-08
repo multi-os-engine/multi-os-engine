@@ -183,6 +183,8 @@ public class CKFetchNotificationChangesOperation extends CKOperation {
      * and the client should toss its local cache and re-fetch notification changes starting with a nil @c
      * previousServerChangeToken.
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
+     * This block may share mutable state with other blocks assigned to this operation, but any such mutable state
+     * should not be concurrently used outside of blocks assigned to this operation.
      */
     @Nullable
     @Generated
@@ -214,6 +216,8 @@ public class CKFetchNotificationChangesOperation extends CKOperation {
      * Called once for each updated notification fetch from the server
      * 
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
+     * This block may share mutable state with other blocks assigned to this operation, but any such mutable state
+     * should not be concurrently used outside of blocks assigned to this operation.
      */
     @Nullable
     @Generated
@@ -242,6 +246,8 @@ public class CKFetchNotificationChangesOperation extends CKOperation {
      * and the client should toss its local cache and re-fetch notification changes starting with a nil @c
      * previousServerChangeToken.
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
+     * This block may share mutable state with other blocks assigned to this operation, but any such mutable state
+     * should not be concurrently used outside of blocks assigned to this operation.
      */
     @Generated
     @Selector("setFetchNotificationChangesCompletionBlock:")
@@ -252,6 +258,8 @@ public class CKFetchNotificationChangesOperation extends CKOperation {
      * Called once for each updated notification fetch from the server
      * 
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
+     * This block may share mutable state with other blocks assigned to this operation, but any such mutable state
+     * should not be concurrently used outside of blocks assigned to this operation.
      */
     @Generated
     @Selector("setNotificationChangedBlock:")
@@ -295,4 +303,9 @@ public class CKFetchNotificationChangesOperation extends CKOperation {
         @Generated
         void call_setNotificationChangedBlock(@NotNull CKNotification arg0);
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

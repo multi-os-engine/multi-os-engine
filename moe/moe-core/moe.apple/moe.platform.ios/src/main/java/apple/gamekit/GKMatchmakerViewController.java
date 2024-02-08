@@ -46,9 +46,6 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-/**
- * API-Since: 4.1
- */
 @Generated
 @Library("GameKit")
 @Runtime(ObjCRuntime.class)
@@ -275,7 +272,6 @@ public class GKMatchmakerViewController extends UINavigationController {
      * 
      * API-Since: 5.0
      * Deprecated-Since: 8.0
-     * Deprecated-Message: This is never invoked and its implementation does nothing, use setHostedPlayer:didConnect:
      */
     @Generated
     @Deprecated
@@ -364,4 +360,9 @@ public class GKMatchmakerViewController extends UINavigationController {
     @Generated
     @Selector("setCanStartWithMinimumPlayers:")
     public native void setCanStartWithMinimumPlayers(boolean value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

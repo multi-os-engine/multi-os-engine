@@ -62,8 +62,6 @@ import org.jetbrains.annotations.Nullable;
  * batches of detailed contacts by identifiers.
  * 4) When CNContactStoreDidChangeNotification is posted, if you cache any fetched contacts/groups/containers then they
  * must be refetched and the old cached objects released.
- * 
- * API-Since: 9.0
  */
 @Generated
 @Library("Contacts")
@@ -412,4 +410,9 @@ public class CNContactStore extends NSObject {
     @Selector("enumeratorForContactFetchRequest:error:")
     public native CNFetchResult<NSEnumerator<CNContact>> enumeratorForContactFetchRequestError(
             @NotNull CNContactFetchRequest request, @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

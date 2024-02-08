@@ -288,4 +288,9 @@ public class NSMeasurementFormatter extends NSFormatter implements NSSecureCodin
     @Selector("unitStyle")
     @NInt
     public native long unitStyle();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

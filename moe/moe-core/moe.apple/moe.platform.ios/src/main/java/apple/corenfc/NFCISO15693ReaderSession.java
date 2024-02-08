@@ -24,6 +24,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.opaque.dispatch_queue_t;
 
 /**
  * NFCISO15693ReaderSession
@@ -40,7 +41,9 @@ import org.jetbrains.annotations.Nullable;
  * iOS11.
  * 
  * API-Since: 11.0
+ * Deprecated-Since: 17.0
  */
+@Deprecated
 @Generated
 @Library("CoreNFC")
 @Runtime(ObjCRuntime.class)
@@ -121,11 +124,17 @@ public class NFCISO15693ReaderSession extends NFCReaderSession {
      *                 retain the provided dispatch queue.
      * 
      * @return A new NFCISO15693ReaderSession instance.
+     * 
+     *         API-Since: 11.0
+     *         Deprecated-Since: 17.0
+     *         Deprecated-Message: No longer supported
      */
+    @Deprecated
     @Generated
     @Selector("initWithDelegate:queue:")
     public native NFCISO15693ReaderSession initWithDelegateQueue(
-            @NotNull @Mapped(ObjCObjectMapper.class) NFCReaderSessionDelegate delegate, @Nullable NSObject queue);
+            @NotNull @Mapped(ObjCObjectMapper.class) NFCReaderSessionDelegate delegate,
+            @Nullable dispatch_queue_t queue);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -174,7 +183,12 @@ public class NFCISO15693ReaderSession extends NFCReaderSession {
      * @link/ will become invalid, and all references to these tags shall be removed to properly release the resources.
      * Calling this method on an invalidated session
      * will have no effect; a new reader session is required to restart the reader.
+     * 
+     * API-Since: 11.0
+     * Deprecated-Since: 17.0
+     * Deprecated-Message: No longer supported
      */
+    @Deprecated
     @Generated
     @Selector("restartPolling")
     public native void restartPolling();
@@ -191,4 +205,9 @@ public class NFCISO15693ReaderSession extends NFCReaderSession {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

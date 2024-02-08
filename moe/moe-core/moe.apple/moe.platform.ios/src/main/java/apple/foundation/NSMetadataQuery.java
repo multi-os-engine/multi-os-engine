@@ -397,4 +397,9 @@ public class NSMetadataQuery extends NSObject {
         void call_enumerateResultsWithOptionsUsingBlock(@NotNull @Mapped(ObjCObjectMapper.class) Object result,
                 @NUInt long idx, @NotNull BoolPtr stop);
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

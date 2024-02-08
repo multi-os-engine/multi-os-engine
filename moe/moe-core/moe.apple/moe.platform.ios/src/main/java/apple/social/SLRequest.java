@@ -48,9 +48,6 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-/**
- * API-Since: 6.0
- */
 @Generated
 @Library("Social")
 @Runtime(ObjCRuntime.class)
@@ -241,4 +238,9 @@ public class SLRequest extends NSObject {
     @Generated
     @Selector("setAccount:")
     public native void setAccount(ACAccount value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

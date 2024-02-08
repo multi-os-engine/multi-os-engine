@@ -407,4 +407,9 @@ public class NSFileVersion extends NSObject {
     @Generated
     @Selector("originatorNameComponents")
     public native NSPersonNameComponents originatorNameComponents();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

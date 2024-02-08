@@ -218,4 +218,9 @@ public class MPMovieAccessLog extends NSObject implements NSCopying {
     @Generated
     @Selector("init")
     public native MPMovieAccessLog init();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

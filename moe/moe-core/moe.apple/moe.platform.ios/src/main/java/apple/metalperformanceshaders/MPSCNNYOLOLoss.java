@@ -317,4 +317,9 @@ public class MPSCNNYOLOLoss extends MPSCNNKernel {
     @Generated
     @Selector("reduceAcrossBatch")
     public native boolean reduceAcrossBatch();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

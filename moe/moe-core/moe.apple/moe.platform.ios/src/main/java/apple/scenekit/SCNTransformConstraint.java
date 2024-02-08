@@ -262,4 +262,9 @@ public class SCNTransformConstraint extends SCNConstraint {
         @ByValue
         SCNVector3 call_positionConstraintInWorldSpaceWithBlock(@NotNull SCNNode node, @ByValue SCNVector3 position);
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -243,6 +243,8 @@ public class UIGraphicsImageRendererFormat extends UIGraphicsRendererFormat {
     public static native UIGraphicsImageRendererFormat preferredFormat();
 
     /**
+     * indicates if the format supports high dynamic range rendering.
+     * 
      * API-Since: 12.0
      */
     @Generated
@@ -251,9 +253,23 @@ public class UIGraphicsImageRendererFormat extends UIGraphicsRendererFormat {
     public native long preferredRange();
 
     /**
+     * indicates if the format supports high dynamic range rendering.
+     * 
      * API-Since: 12.0
      */
     @Generated
     @Selector("setPreferredRange:")
     public native void setPreferredRange(@NInt long value);
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("supportsHighDynamicRange")
+    public native boolean supportsHighDynamicRange();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

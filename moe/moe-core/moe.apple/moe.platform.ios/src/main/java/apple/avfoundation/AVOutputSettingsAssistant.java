@@ -419,4 +419,9 @@ public class AVOutputSettingsAssistant extends NSObject {
     @Generated
     @Selector("videoSettings")
     public native NSDictionary<String, ?> videoSettings();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

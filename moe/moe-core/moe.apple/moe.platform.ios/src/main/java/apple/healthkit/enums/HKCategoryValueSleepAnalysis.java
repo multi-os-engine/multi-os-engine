@@ -22,18 +22,20 @@ import org.moe.natj.general.ann.NInt;
 /**
  * [@enum] HKCategoryValueSleepAnalysis
  * 
- * Set of values that may be used for HKCategorySamples with the HKCategoryTypeIdentifierSleepAnalysis type.
+ * Set of values that may be used for HKCategorySamples with the HKCategoryTypeIdentifierSleepAnalysis
+ * type.
  * 
- * To represent the user being both in bed and asleep, use two or more samples with overlapping times. By comparing the
- * start and end times of these samples, it is possible to calculate a number of secondary statistics:
+ * To represent the user being both in bed and asleep, use two or more samples with overlapping times. By
+ * comparing the start and end times of these samples, it is possible to calculate a number of secondary
+ * statistics:
  * 1) The amount of time it took for the user to fall asleep
  * 2) The percentage of time in bed that the user actually spent sleeping,
  * 3) The number of times the user woke while in bed
  * 4) The total amount of time spent both in bed and asleep.
  * 
  * [@constant] HKCategoryValueSleepAnalysisInBed The user is in bed.
- * [@constant] HKCategoryValueSleepAnalysisAwake The user is awake.
  * [@constant] HKCategoryValueSleepAnalysisAsleepUnspecified The user is asleep and no specific stage is specified.
+ * [@constant] HKCategoryValueSleepAnalysisAwake The user is awake.
  * [@constant] HKCategoryValueSleepAnalysisAsleepCore Corresponds to Stages 1 and 2 of AASM scoring model.
  * [@constant] HKCategoryValueSleepAnalysisAsleepDeep Corresponds to Stage 3 of AASM scoring model.
  * [@constant] HKCategoryValueSleepAnalysisAsleepREM Corresponds to REM stage of AASM scoring model.

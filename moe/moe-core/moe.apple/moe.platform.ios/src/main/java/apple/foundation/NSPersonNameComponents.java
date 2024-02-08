@@ -297,4 +297,9 @@ public class NSPersonNameComponents extends NSObject implements NSCopying, NSSec
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

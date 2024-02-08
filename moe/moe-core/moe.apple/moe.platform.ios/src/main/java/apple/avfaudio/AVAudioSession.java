@@ -334,7 +334,7 @@ public class AVAudioSession extends NSObject {
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
     /**
-     * True if input hardware is available.
+     * True if input hardware is available. Key-value observable.
      * 
      * API-Since: 6.0
      */
@@ -585,7 +585,10 @@ public class AVAudioSession extends NSObject {
      * not been asked
      * 
      * API-Since: 8.0
+     * Deprecated-Since: 17.0
+     * Deprecated-Message: Please use AVAudioApplication recordPermission
      */
+    @Deprecated
     @Generated
     @Selector("recordPermission")
     @NUInt
@@ -600,7 +603,10 @@ public class AVAudioSession extends NSObject {
      * granted. Note that the block may be called in a different thread context.
      * 
      * API-Since: 7.0
+     * Deprecated-Since: 17.0
+     * Deprecated-Message: Please use AVAudioApplication requestRecordPermissionWithCompletionHandler
      */
+    @Deprecated
     @Generated
     @Selector("requestRecordPermission:")
     public native void requestRecordPermission(
@@ -1004,4 +1010,59 @@ public class AVAudioSession extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * Indicates if session will be interrupted on route disconnect.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("prefersInterruptionOnRouteDisconnect")
+    public native boolean prefersInterruptionOnRouteDisconnect();
+
+    /**
+     * Get the currently resolved rendering mode to badge content appropriately.
+     * Clients should use this property to determine what to badge content as.
+     * 
+     * API-Since: 17.2
+     */
+    @Generated
+    @Selector("renderingMode")
+    @NInt
+    public native long renderingMode();
+
+    /**
+     * Use this method to opt in or opt out of interruption on route disconnect policy.
+     * 
+     * As described in the Audio Session Programming Guide, most media playback apps are expected
+     * to pause playback if the route change reason is AVAudioSessionRouteChangeReasonOldDeviceUnavailable.
+     * 
+     * Starting in iOS 17, by default Now Playing sessions will be interrupted if they are active
+     * when a route change occurs because of a disconnect event. All other sessions will not be
+     * interrupted due to a disconnect event.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("setPrefersInterruptionOnRouteDisconnect:error:")
+    public native boolean setPrefersInterruptionOnRouteDisconnectError(boolean inValue,
+            @ReferenceInfo(type = NSError.class) @Nullable Ptr<NSError> outError);
+
+    /**
+     * Get an array of channel layouts that the current route supports.
+     * This property is only supported when the output is routed to ports of type AVAudioSessionPortCarAudio
+     * Otherwise, an empty array will be returned. Note that this will return an empty array if session is inactive.
+     * Clients should listen to AVAudioSessionRenderingCapabilitiesChangeNotification to be notified when this changes.
+     * 
+     * API-Since: 17.2
+     */
+    @Generated
+    @Selector("supportedOutputChannelLayouts")
+    @NotNull
+    public native NSArray<? extends AVAudioChannelLayout> supportedOutputChannelLayouts();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

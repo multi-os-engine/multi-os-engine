@@ -403,4 +403,9 @@ public class NSError extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("fileProviderErrorForRejectedDeletionOfItem:")
     public static native NSError fileProviderErrorForRejectedDeletionOfItem(
             @NotNull @Mapped(ObjCObjectMapper.class) NSFileProviderItem updatedVersion);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

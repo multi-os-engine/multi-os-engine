@@ -73,8 +73,6 @@ public class GKGameSession extends NSObject {
     /**
      * API-Since: 10.0
      * Deprecated-Since: 12.0
-     * Deprecated-Message: Use GKLocalPlayer's registerListener: to register for GKLocalPlayerListener event
-     * notifications.
      */
     @Deprecated
     @Generated
@@ -185,8 +183,7 @@ public class GKGameSession extends NSObject {
     /**
      * API-Since: 10.0
      * Deprecated-Since: 12.0
-     * Deprecated-Message: Use GKLocalPlayer's unregisterListener: or unregisterAllListeners to unregister from
-     * GKLocalPlayerListener event notifications.
+     * Deprecated-Message: -[GKLocalPlayer unregisterListener:] or -[GKLocalPlayer unregisterAllListeners:]
      */
     @Deprecated
     @Generated
@@ -420,4 +417,9 @@ public class GKGameSession extends NSObject {
         @Generated
         void call_setConnectionStateCompletionHandler(@Nullable NSError error);
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

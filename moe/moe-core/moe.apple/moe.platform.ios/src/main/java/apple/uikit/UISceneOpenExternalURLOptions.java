@@ -179,4 +179,9 @@ public class UISceneOpenExternalURLOptions extends NSObject {
     @Generated
     @Selector("setEventAttribution:")
     public native void setEventAttribution(@Nullable UIEventAttribution value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

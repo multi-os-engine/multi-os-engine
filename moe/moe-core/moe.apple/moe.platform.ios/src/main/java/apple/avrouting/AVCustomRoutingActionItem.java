@@ -26,13 +26,14 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
- * AVCustomRoutingActionItem
+ * An object that represents a custom action item to display in a device route
+ * picker.
  * 
- * AVCustomRoutingActionItem objects can be created by 3rd parties to inject custom action items into the route picker.
- * 
- * An item can be any action the app wants to provide as menu items besides the discovered routes.
- * Tapping on the custom items dismisses the picker and invokes a callback to the app telling it which item was tapped.
- * (See -[AVCustomRoutingController customRoutingController:didSelectItem:])
+ * Use this class to specify supplemental action items to display in the list
+ * of discovered routes. Tapping a custom item dismisses the picker and calls
+ * the
+ * ``AVCustomRoutingControllerDelegate/customRoutingController:didSelectItem:``
+ * method of ``AVCustomRoutingControllerDelegate``.
  * 
  * API-Since: 16.0
  */
@@ -134,11 +135,9 @@ public class AVCustomRoutingActionItem extends NSObject {
     public static native AVCustomRoutingActionItem new_objc();
 
     /**
-     * [@property] overrideTitle
+     * A string to use to override the title of the item’s type.
      * 
-     * A title which overrides the title of the UTType.
-     * 
-     * Use this to dynamically override the title of the custom item.
+     * Use this value to dynamically override the title of the custom item.
      * 
      * API-Since: 16.0
      */
@@ -156,11 +155,9 @@ public class AVCustomRoutingActionItem extends NSObject {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * [@property] overrideTitle
+     * A string to use to override the title of the item’s type.
      * 
-     * A title which overrides the title of the UTType.
-     * 
-     * Use this to dynamically override the title of the custom item.
+     * Use this value to dynamically override the title of the custom item.
      * 
      * API-Since: 16.0
      */
@@ -169,11 +166,10 @@ public class AVCustomRoutingActionItem extends NSObject {
     public native void setOverrideTitle(@Nullable String value);
 
     /**
-     * [@property] type
+     * A type with an identifier that matches a value in the app’s configuration.
      * 
-     * A UTType with an identifier which matches a UTType in the info.plist.
-     * 
-     * Provide a UTTypeSymbolName and description in the info.plist.
+     * Provide a `UTType` symbol name and description in your app’s `Info.plist`
+     * file.
      * 
      * API-Since: 16.0
      */
@@ -190,11 +186,10 @@ public class AVCustomRoutingActionItem extends NSObject {
     public static native Class superclass_static();
 
     /**
-     * [@property] type
+     * A type with an identifier that matches a value in the app’s configuration.
      * 
-     * A UTType with an identifier which matches a UTType in the info.plist.
-     * 
-     * Provide a UTTypeSymbolName and description in the info.plist.
+     * Provide a `UTType` symbol name and description in your app’s `Info.plist`
+     * file.
      * 
      * API-Since: 16.0
      */
@@ -207,4 +202,9 @@ public class AVCustomRoutingActionItem extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

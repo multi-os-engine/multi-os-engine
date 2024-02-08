@@ -169,4 +169,9 @@ public class UISelectionFeedbackGenerator extends UIFeedbackGenerator {
     @Generated
     @Selector("selectionChanged")
     public native void selectionChanged();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

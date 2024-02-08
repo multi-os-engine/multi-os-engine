@@ -414,4 +414,9 @@ public class MPSCNNLossDescriptor extends NSObject implements NSCopying {
     @Generated
     @Selector("setReduceAcrossBatch:")
     public native void setReduceAcrossBatch(boolean value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

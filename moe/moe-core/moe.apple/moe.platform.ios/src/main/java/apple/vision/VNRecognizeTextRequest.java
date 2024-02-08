@@ -354,4 +354,9 @@ public class VNRecognizeTextRequest extends VNImageBasedRequest implements VNReq
     @Generated
     @Selector("setAutomaticallyDetectsLanguage:")
     public native void setAutomaticallyDetectsLanguage(boolean value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

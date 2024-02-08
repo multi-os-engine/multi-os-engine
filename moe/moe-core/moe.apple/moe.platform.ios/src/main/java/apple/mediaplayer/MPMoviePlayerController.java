@@ -717,4 +717,9 @@ public class MPMoviePlayerController extends NSObject implements MPMediaPlayback
     @Generated
     @Selector("view")
     public native UIView view();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

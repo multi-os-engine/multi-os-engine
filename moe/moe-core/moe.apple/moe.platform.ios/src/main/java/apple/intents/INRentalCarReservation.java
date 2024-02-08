@@ -218,4 +218,9 @@ public class INRentalCarReservation extends INReservation implements NSCopying, 
             @Nullable NSArray<? extends INReservationAction> actions, @Nullable NSURL URL,
             @NotNull INRentalCar rentalCar, @NotNull INDateComponentsRange rentalDuration,
             @Nullable CLPlacemark pickupLocation, @Nullable CLPlacemark dropOffLocation);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

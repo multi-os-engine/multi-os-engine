@@ -28,11 +28,6 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.jetbrains.annotations.NotNull;
 
-/**
- * [@enum] EKEventEditViewDelegate
- * 
- * Delegate protocol for event edit view controller.
- */
 @Generated
 @Library("EventKitUI")
 @Runtime(ObjCRuntime.class)

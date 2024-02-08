@@ -478,4 +478,9 @@ public class SCNPhysicsField extends NSObject implements NSCopying, NSSecureCodi
         SCNVector3 call_customFieldWithEvaluationBlock(@ByValue SCNVector3 position, @ByValue SCNVector3 velocity,
                 float mass, float charge, double time);
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

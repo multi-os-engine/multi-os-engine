@@ -14,6 +14,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.foundation.NSSet;
 
 /**
  * API-Since: 16.0
@@ -120,4 +121,15 @@ public interface GCSwitchPositionInput {
         void call_setPositionDidChangeHandler(@NotNull @Mapped(ObjCObjectMapper.class) Object arg0,
                 @NotNull @Mapped(ObjCObjectMapper.class) Object arg1, @NInt long arg2);
     }
+
+    /**
+     * An object describing the physical action(s) the user performs to manipulate
+     * this input.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("sources")
+    @NotNull
+    NSSet<?> sources();
 }

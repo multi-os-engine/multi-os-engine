@@ -50,6 +50,8 @@ public class SKOverlayTransitionContext extends NSObject {
 
     /**
      * Adds an animation that will be synchronized with an overlay's presentation/dismissal.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("addAnimationBlock:")
@@ -106,6 +108,9 @@ public class SKOverlayTransitionContext extends NSObject {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("endFrame")
     @ByValue
@@ -159,6 +164,9 @@ public class SKOverlayTransitionContext extends NSObject {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("startFrame")
     @ByValue
@@ -172,4 +180,9 @@ public class SKOverlayTransitionContext extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

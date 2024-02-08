@@ -192,4 +192,9 @@ public class MPNowPlayingInfoLanguageOptionGroup extends NSObject {
     @Generated
     @Selector("languageOptions")
     public native NSArray<? extends MPNowPlayingInfoLanguageOption> languageOptions();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

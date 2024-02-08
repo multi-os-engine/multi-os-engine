@@ -2,7 +2,6 @@ package apple.passkit;
 
 import apple.NSObject;
 import apple.foundation.NSArray;
-import apple.foundation.NSDecimalNumber;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import org.moe.natj.c.ann.FunctionPtr;
@@ -24,9 +23,11 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.foundation.NSData;
+import apple.foundation.NSError;
 
 /**
- * PKDisbursementRequest defines an application's request to disburse an amount
+ * API-Since: 17.0
  */
 @Generated
 @Library("PassKit")
@@ -56,16 +57,6 @@ public class PKDisbursementRequest extends NSObject {
     @Selector("allocWithZone:")
     public static native PKDisbursementRequest allocWithZone(VoidPtr zone);
 
-    /**
-     * An amount is always required. If the disbursement amount is pending, the amount should be zero
-     * 
-     * API-Since: 12.2
-     */
-    @NotNull
-    @Generated
-    @Selector("amount")
-    public native NSDecimalNumber amount();
-
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
@@ -92,21 +83,9 @@ public class PKDisbursementRequest extends NSObject {
     public static native Class classForKeyedUnarchiver();
 
     /**
-     * The merchant's ISO country code.
-     * 
-     * API-Since: 12.2
+     * Currency code for this disbursement.
      */
     @NotNull
-    @Generated
-    @Selector("countryCode")
-    public native String countryCode();
-
-    /**
-     * Currency code for this disbursement. The currency code is required unless the requestType is future
-     * 
-     * API-Since: 12.2
-     */
-    @Nullable
     @Generated
     @Selector("currencyCode")
     public native String currencyCode();
@@ -155,16 +134,6 @@ public class PKDisbursementRequest extends NSObject {
     @Selector("new")
     public static native PKDisbursementRequest new_objc();
 
-    /**
-     * Specifies if the disbursement is a one time request or a future request
-     * 
-     * API-Since: 12.2
-     */
-    @Generated
-    @Selector("requestSchedule")
-    @NInt
-    public native long requestSchedule();
-
     @Generated
     @Selector("resolveClassMethod:")
     public static native boolean resolveClassMethod(SEL sel);
@@ -174,60 +143,29 @@ public class PKDisbursementRequest extends NSObject {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * An amount is always required. If the disbursement amount is pending, the amount should be zero
-     * 
-     * API-Since: 12.2
-     */
-    @Generated
-    @Selector("setAmount:")
-    public native void setAmount(@NotNull NSDecimalNumber value);
-
-    /**
-     * The merchant's ISO country code.
-     * 
-     * API-Since: 12.2
-     */
-    @Generated
-    @Selector("setCountryCode:")
-    public native void setCountryCode(@NotNull String value);
-
-    /**
-     * Currency code for this disbursement. The currency code is required unless the requestType is future
-     * 
-     * API-Since: 12.2
+     * Currency code for this disbursement.
      */
     @Generated
     @Selector("setCurrencyCode:")
-    public native void setCurrencyCode(@Nullable String value);
+    public native void setCurrencyCode(@NotNull String value);
 
     /**
-     * Specifies if the disbursement is a one time request or a future request
-     * 
-     * API-Since: 12.2
-     */
-    @Generated
-    @Selector("setRequestSchedule:")
-    public native void setRequestSchedule(@NInt long value);
-
-    /**
-     * The summary items are optional. The final amount summary item will be prepopulated by the amount specified above.
-     * 
-     * API-Since: 12.2
+     * Array of PKPaymentSummaryItem objects which should be presented to the user.
+     * The last item should be the total you wish to disburse, and should not be pending.
      */
     @Generated
     @Selector("setSummaryItems:")
-    public native void setSummaryItems(@Nullable NSArray<? extends PKPaymentSummaryItem> value);
+    public native void setSummaryItems(@NotNull NSArray<? extends PKPaymentSummaryItem> value);
 
     @Generated
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
     /**
-     * The summary items are optional. The final amount summary item will be prepopulated by the amount specified above.
-     * 
-     * API-Since: 12.2
+     * Array of PKPaymentSummaryItem objects which should be presented to the user.
+     * The last item should be the total you wish to disburse, and should not be pending.
      */
-    @Nullable
+    @NotNull
     @Generated
     @Selector("summaryItems")
     public native NSArray<? extends PKPaymentSummaryItem> summaryItems();
@@ -240,4 +178,169 @@ public class PKDisbursementRequest extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * Optional merchant-supplied information about the disbursement request.
+     * It will be signed and included in the resulting PKPaymentToken.
+     */
+    @Generated
+    @Selector("applicationData")
+    @Nullable
+    public native NSData applicationData();
+
+    /**
+     * Convenience method to create an error indicating that the selected card does not support receiving
+     * funds via disbursements.
+     */
+    @Generated
+    @Selector("disbursementCardUnsupportedError")
+    @NotNull
+    public static native NSError disbursementCardUnsupportedError();
+
+    /**
+     * Convenience method to create a receipient contact error with the supplied field
+     * You may optionally provide a localized description to be displayed to the user.
+     * Available display space for descriptions may be limited, so you should keep your messages concise
+     */
+    @Generated
+    @Selector("disbursementContactInvalidErrorWithContactField:localizedDescription:")
+    @NotNull
+    public static native NSError disbursementContactInvalidErrorWithContactFieldLocalizedDescription(
+            @NotNull String field, @Nullable String localizedDescription);
+
+    /**
+     * Initialise a disbursement request with all required fields.
+     */
+    @Generated
+    @Selector("initWithMerchantIdentifier:currencyCode:regionCode:supportedNetworks:merchantCapabilities:summaryItems:")
+    public native PKDisbursementRequest initWithMerchantIdentifierCurrencyCodeRegionCodeSupportedNetworksMerchantCapabilitiesSummaryItems(
+            @NotNull String merchantIdentifier, @NotNull String currencyCode, @NotNull String regionCode,
+            @NotNull NSArray<String> supportedNetworks, @NUInt long merchantCapabilities,
+            @NotNull NSArray<? extends PKPaymentSummaryItem> summaryItems);
+
+    /**
+     * The payment processing capabilities of the merchant.
+     */
+    @Generated
+    @Selector("merchantCapabilities")
+    @NUInt
+    public native long merchantCapabilities();
+
+    /**
+     * Identifies the merchant, as previously agreed with Apple. Must match one of the merchant
+     * identifiers in the application's entitlement.
+     */
+    @Generated
+    @Selector("merchantIdentifier")
+    @NotNull
+    public native String merchantIdentifier();
+
+    /**
+     * If the merchant already has recipient contact information on file, set it here.
+     */
+    @Generated
+    @Selector("recipientContact")
+    @Nullable
+    public native PKContact recipientContact();
+
+    /**
+     * The merchant's ISO 3166 region code.
+     */
+    @Generated
+    @Selector("regionCode")
+    @NotNull
+    public native String regionCode();
+
+    /**
+     * Indicates which of the recipient's contact details the merchant requires in order to process a disbursement.
+     * The order of the elements is ignored.
+     */
+    @Generated
+    @Selector("requiredRecipientContactFields")
+    @NotNull
+    public native NSArray<String> requiredRecipientContactFields();
+
+    /**
+     * Optional merchant-supplied information about the disbursement request.
+     * It will be signed and included in the resulting PKPaymentToken.
+     */
+    @Generated
+    @Selector("setApplicationData:")
+    public native void setApplicationData(@Nullable NSData value);
+
+    /**
+     * The payment processing capabilities of the merchant.
+     */
+    @Generated
+    @Selector("setMerchantCapabilities:")
+    public native void setMerchantCapabilities(@NUInt long value);
+
+    /**
+     * Identifies the merchant, as previously agreed with Apple. Must match one of the merchant
+     * identifiers in the application's entitlement.
+     */
+    @Generated
+    @Selector("setMerchantIdentifier:")
+    public native void setMerchantIdentifier(@NotNull String value);
+
+    /**
+     * If the merchant already has recipient contact information on file, set it here.
+     */
+    @Generated
+    @Selector("setRecipientContact:")
+    public native void setRecipientContact(@Nullable PKContact value);
+
+    /**
+     * The merchant's ISO 3166 region code.
+     */
+    @Generated
+    @Selector("setRegionCode:")
+    public native void setRegionCode(@NotNull String value);
+
+    /**
+     * Indicates which of the recipient's contact details the merchant requires in order to process a disbursement.
+     * The order of the elements is ignored.
+     */
+    @Generated
+    @Selector("setRequiredRecipientContactFields:")
+    public native void setRequiredRecipientContactFields(@NotNull NSArray<String> value);
+
+    /**
+     * The payment networks supported by the merchant, for example `@[ PKPaymentNetworkVisa,
+     * PKPaymentNetworkMasterCard ]`. This property constrains payment cards that may receive the funds.
+     */
+    @Generated
+    @Selector("setSupportedNetworks:")
+    public native void setSupportedNetworks(@NotNull NSArray<String> value);
+
+    /**
+     * Set of two-letter ISO 3166 region codes. When provided, it will filter the selectable payment passes to those
+     * issued in the supported regions. The order of the elements is ignored.
+     */
+    @Generated
+    @Selector("setSupportedRegions:")
+    public native void setSupportedRegions(@Nullable NSArray<String> value);
+
+    /**
+     * The payment networks supported by the merchant, for example `@[ PKPaymentNetworkVisa,
+     * PKPaymentNetworkMasterCard ]`. This property constrains payment cards that may receive the funds.
+     */
+    @Generated
+    @Selector("supportedNetworks")
+    @NotNull
+    public native NSArray<String> supportedNetworks();
+
+    /**
+     * Set of two-letter ISO 3166 region codes. When provided, it will filter the selectable payment passes to those
+     * issued in the supported regions. The order of the elements is ignored.
+     */
+    @Generated
+    @Selector("supportedRegions")
+    @Nullable
+    public native NSArray<String> supportedRegions();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

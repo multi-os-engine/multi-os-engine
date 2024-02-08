@@ -453,4 +453,9 @@ public class NEAppPushManager extends NSObject {
     @Generated
     @Selector("setMatchPrivateLTENetworks:")
     public native void setMatchPrivateLTENetworks(@NotNull NSArray<? extends NEPrivateLTENetwork> value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

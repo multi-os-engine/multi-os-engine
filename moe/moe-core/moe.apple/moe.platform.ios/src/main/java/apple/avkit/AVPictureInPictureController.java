@@ -462,4 +462,9 @@ public class AVPictureInPictureController extends NSObject {
     @Generated
     @Selector("setContentSource:")
     public native void setContentSource(@Nullable AVPictureInPictureControllerContentSource value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

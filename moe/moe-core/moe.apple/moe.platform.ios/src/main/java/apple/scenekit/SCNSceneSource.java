@@ -368,4 +368,9 @@ public class SCNSceneSource extends NSObject {
         void call_sceneWithOptionsStatusHandler(float totalProgress, @NInt long status, @Nullable NSError error,
                 @NotNull BoolPtr stop);
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

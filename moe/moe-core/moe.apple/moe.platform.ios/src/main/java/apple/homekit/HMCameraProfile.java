@@ -204,4 +204,9 @@ public class HMCameraProfile extends HMAccessoryProfile {
     @Generated
     @Selector("streamControl")
     public native HMCameraStreamControl streamControl();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -222,4 +222,9 @@ public class MLUpdateTask extends MLTask {
             @NotNull @Mapped(ObjCObjectMapper.class) MLBatchProvider trainingData,
             @NotNull MLUpdateProgressHandlers progressHandlers,
             @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

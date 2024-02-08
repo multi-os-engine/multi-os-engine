@@ -174,4 +174,9 @@ public class NSCollectionLayoutGroupCustomItem extends NSObject implements NSCop
     @Selector("zIndex")
     @NInt
     public native long zIndex();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

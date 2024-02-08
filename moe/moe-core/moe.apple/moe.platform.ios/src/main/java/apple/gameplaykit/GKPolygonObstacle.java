@@ -45,8 +45,6 @@ import org.jetbrains.annotations.Nullable;
 
 /**
  * An obstacle with an impassible closed polygon
- * 
- * API-Since: 9.0
  */
 @Generated
 @Library("GameplayKit")
@@ -191,4 +189,9 @@ public class GKPolygonObstacle extends GKObstacle implements NSSecureCoding {
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

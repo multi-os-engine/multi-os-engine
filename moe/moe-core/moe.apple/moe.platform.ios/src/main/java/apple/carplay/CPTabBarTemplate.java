@@ -153,9 +153,9 @@ public class CPTabBarTemplate extends CPTemplate {
      * [@warning] The system will throw an exception if your app attempts to display more
      * than this number of tabs in your tab bar template.
      */
+    @NInt
     @Generated
     @Selector("maximumTabCount")
-    @NUInt
     public static native long maximumTabCount();
 
     @Generated
@@ -240,4 +240,34 @@ public class CPTabBarTemplate extends CPTemplate {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * Update the currently-selected tab in this tab bar template, switching to the first tab
+     * that is currently hosting @c newTemplate.
+     * 
+     * @param newTemplate The template that should become selected in the tab bar.
+     * 
+     *                    API-Since: 17.0
+     */
+    @Generated
+    @Selector("selectTemplate:")
+    public native void selectTemplate(@NotNull CPTemplate newTemplate);
+
+    /**
+     * Update the currently-selected tab in this tab bar template, switching to the tab
+     * at the specified index.
+     * 
+     * @param index The index of the tab to select. This must be less than the number
+     *              of tabs in this tab bar template.
+     * 
+     *              API-Since: 17.0
+     */
+    @Generated
+    @Selector("selectTemplateAtIndex:")
+    public native void selectTemplateAtIndex(@NInt long index);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

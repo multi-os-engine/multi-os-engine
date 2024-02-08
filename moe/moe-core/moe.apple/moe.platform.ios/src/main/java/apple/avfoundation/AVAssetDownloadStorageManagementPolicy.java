@@ -185,4 +185,9 @@ public class AVAssetDownloadStorageManagementPolicy extends NSObject implements 
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

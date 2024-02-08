@@ -32,7 +32,7 @@ import org.jetbrains.annotations.Nullable;
 /**
  * API-Since: 10.3
  * Deprecated-Since: 15.0
- * Deprecated-Message: INBillPayee is deprecated. There is no replacement
+ * Deprecated-Message: INBillPayee is deprecated. There is no replacement.
  */
 @Deprecated
 @Generated
@@ -197,4 +197,9 @@ public class INBillPayee extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

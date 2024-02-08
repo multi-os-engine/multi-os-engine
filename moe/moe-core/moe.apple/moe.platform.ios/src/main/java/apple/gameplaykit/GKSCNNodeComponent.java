@@ -31,8 +31,6 @@ import org.jetbrains.annotations.Nullable;
 
 /**
  * A component that encapsulates a SceneKit node.
- * 
- * API-Since: 11.0
  */
 @Generated
 @Library("GameplayKit")
@@ -205,4 +203,9 @@ public class GKSCNNodeComponent extends GKComponent implements GKAgentDelegate {
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -203,4 +203,9 @@ public class NSSaveChangesRequest extends NSPersistentStoreRequest {
     @Generated
     @Selector("updatedObjects")
     public native NSSet<? extends NSManagedObject> updatedObjects();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

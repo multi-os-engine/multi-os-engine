@@ -27,6 +27,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.foundation.protocol.NSCopying;
+import apple.foundation.protocol.NSSecureCoding;
+import org.moe.natj.general.ann.MappedReturn;
 
 /**
  * HKVisionPrescription
@@ -39,7 +42,7 @@ import org.jetbrains.annotations.Nullable;
 @Library("HealthKit")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class HKVisionPrescription extends HKSample {
+public class HKVisionPrescription extends HKSample implements NSSecureCoding, NSCopying {
     static {
         NatJ.register();
     }
@@ -211,4 +214,20 @@ public class HKVisionPrescription extends HKSample {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Owned
+    @Selector("copyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    @NotNull
+    public native Object copyWithZone(@Nullable VoidPtr zone);
+
+    @Generated
+    @Selector("encodeWithCoder:")
+    public native void encodeWithCoder(@NotNull NSCoder coder);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

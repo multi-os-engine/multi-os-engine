@@ -21,5 +21,6 @@ public final class MPSDeviceCapsValues {
     @Generated public static final int MPSDeviceSupportsFloat16BicubicFiltering = 0x00000200;
     @Generated public static final int MPSDeviceIsAppleDevice = 0x00000400;
     @Generated public static final int MPSDeviceSupportsSimdShuffleAndFill = 0x00000800;
-    @Generated public static final int MPSDeviceCapsLast = 0x00001000;
+    @Generated public static final int MPSDeviceCapsLast = 0x00002000;
+    @Generated public static final int MPSDeviceSupportsBFloat16Arithmetic = 0x00001000;
 }

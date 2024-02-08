@@ -16,7 +16,6 @@ limitations under the License.
 
 package apple.coremedia.c;
 
-import apple.NSObject;
 import apple.coreaudiotypes.struct.AudioBufferList;
 import apple.coreaudiotypes.struct.AudioChannelLayout;
 import apple.coreaudiotypes.struct.AudioFormatListItem;
@@ -79,6 +78,12 @@ import apple.corefoundation.struct.CGRect;
 import apple.corefoundation.struct.CGSize;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.coremedia.opaque.CMMutableTagCollectionRef;
+import apple.coremedia.opaque.CMTagCollectionRef;
+import apple.coremedia.opaque.CMTaggedBufferGroupRef;
+import apple.coremedia.struct.CMTag;
+import apple.opaque.dispatch_source_t;
+import org.moe.natj.general.ptr.ConstIntPtr;
 
 @Generated
 @Library("CoreMedia")
@@ -3806,7 +3811,7 @@ public final class CoreMedia {
     @Generated
     @CFunction
     public static native int CMTimebaseAddTimerDispatchSource(@NotNull CMTimebaseRef timebase,
-            @NotNull NSObject timerSource);
+            @NotNull dispatch_source_t timerSource);
 
     /**
      * [@function] CMTimebaseRemoveTimerDispatchSource
@@ -3822,7 +3827,7 @@ public final class CoreMedia {
     @Generated
     @CFunction
     public static native int CMTimebaseRemoveTimerDispatchSource(@NotNull CMTimebaseRef timebase,
-            @NotNull NSObject timerSource);
+            @NotNull dispatch_source_t timerSource);
 
     /**
      * [@function] CMTimebaseSetTimerDispatchSourceNextFireTime
@@ -3848,7 +3853,7 @@ public final class CoreMedia {
     @Generated
     @CFunction
     public static native int CMTimebaseSetTimerDispatchSourceNextFireTime(@NotNull CMTimebaseRef timebase,
-            @NotNull NSObject timerSource, @ByValue CMTime fireTime, int flags);
+            @NotNull dispatch_source_t timerSource, @ByValue CMTime fireTime, int flags);
 
     /**
      * [@function] CMTimebaseSetTimerDispatchSourceToFireImmediately
@@ -3866,7 +3871,7 @@ public final class CoreMedia {
     @Generated
     @CFunction
     public static native int CMTimebaseSetTimerDispatchSourceToFireImmediately(@NotNull CMTimebaseRef timebase,
-            @NotNull NSObject timerSource);
+            @NotNull dispatch_source_t timerSource);
 
     /**
      * [@function] CMSyncGetRelativeRate
@@ -4699,11 +4704,16 @@ public final class CoreMedia {
      * This follows CF "Get" semantics -- it does not retain the returned buffer.
      * Note that with non-FIFO queues it's not guaranteed that the next dequeue will return
      * this particular buffer (if an intervening Enqueue adds a buffer that will dequeue next).
+     * This function is deprecated in favor of CMBufferQueueCopyHead() which returns a
+     * retained buffer. When adopting CMBufferQueueCopyHead(), existing CFRetain() call
+     * on the buffer returned from this function must be removed.
      * 
      * @return The buffer. Will be NULL if the queue is empty.
      * 
      *         API-Since: 4.0
+     *         Deprecated-Since: 100000.0
      */
+    @Deprecated
     @Nullable
     @Generated
     @CFunction
@@ -5464,7 +5474,7 @@ public final class CoreMedia {
      * This clock will not drift from audio output, but may drift from CMClockGetHostTimeClock().
      * When audio output is completely stopped, the clock continues to advance, tracking CMClockGetHostTimeClock()
      * until audio output starts up again.
-     * This clock is suitable for use as AVPlayer.masterClock when synchronizing video-only playback
+     * This clock is suitable for use as AVPlayer.sourceClock when synchronizing video-only playback
      * with audio played through other APIs or objects.
      * 
      * @param allocator
@@ -9155,4 +9165,1912 @@ public final class CoreMedia {
     public static native CFStringRef kCMTextMarkupAttribute_FontFamilyNameList();
 
     @Generated public static final double CMTIMEBASE_USE_SOURCE_TERMINOLOGY = 0.0;
+
+    /**
+     * [@function] CMVideoFormatDescriptionCopyTagCollectionArray
+     * 
+     * Copies the multi-image encoding properties as an array of CMTagCollections.
+     * 
+     * On return, the caller owns the returned CFArrayRef and must release it when done with it.
+     * This function copies the VideoLayerIDs and LeftAndRightViewIDs from hvcC and 3D Reference Displays Info SEI in
+     * the formatDescription.
+     * The returned values can be used to enable the multi-image decoding with
+     * kVTDecompressionPropertyKey_RequestedMVHEVCVideoLayerIDs.
+     * It also gives the eye mapping information for the pixel buffers of the decoded CMTaggedBufferGroups.
+     * 
+     * @param formatDescription CMVideoFormatDescription being interrogated.
+     * @param tagCollectionsOut Returned TagCollections with CMTags such as kCMTagCategory_VideoLayerID and
+     *                          kCMTagCategory_StereoViewType.
+     * @return Array of CMTagCollections. The result will be NULL if the CMVideoFormatDescription does not contain
+     *         multi-image encoding parameters, or if there is some other error.
+     * 
+     *         API-Since: 17.0
+     */
+    @Generated
+    @CFunction
+    public static native int CMVideoFormatDescriptionCopyTagCollectionArray(
+            @NotNull CMFormatDescriptionRef formatDescription, @Nullable Ptr<CFArrayRef> tagCollectionsOut);
+
+    /**
+     * [@function] CMTagIsValid
+     * 
+     * Tests if a CMTag is valid.
+     * 
+     * @param tag The CMTag to evaluate.
+     * @return Returns false if the tag's dataType is kCMTagDataType_Invalid, true otherwise.
+     * 
+     *         API-Since: 17.0
+     */
+    @Generated
+    @Inline
+    @CFunction
+    public static native byte CMTagIsValid(@ByValue CMTag tag);
+
+    /**
+     * [@function] CMTagGetValueDataType
+     * 
+     * Returns the dataType field of the CMTag.
+     * 
+     * @param tag CMTag from which to extract the data type.
+     * @return kCMTagDataType_* value.
+     * 
+     *         API-Since: 17.0
+     */
+    @Generated
+    @CFunction
+    public static native int CMTagGetValueDataType(@ByValue CMTag tag);
+
+    /**
+     * [@function] CMTagGetCategory
+     * 
+     * Returns the CMTagCategory field of the CMTag.
+     * 
+     * @param tag CMTag to access.
+     * @return CMTagCategory of the tag.
+     * 
+     *         API-Since: 17.0
+     */
+    @Generated
+    @Inline
+    @CFunction
+    public static native int CMTagGetCategory(@ByValue CMTag tag);
+
+    /**
+     * [@function] CMTagCategoryEqualToTagCategory
+     * 
+     * Tests if the CMTagCategory fields of two CMTags are equal.
+     * 
+     * Function evaluates if two tag categories are structurally equivalent. This can also be performed using the ==
+     * operator with the fields but this inline can be useful if one wants to catch invocations.
+     * 
+     * @param tag1 First CMTag to test.
+     * @param tag2 Second CMTag to test.
+     * @return Boolean indicating if the tag categories are equal.
+     * 
+     *         API-Since: 17.0
+     */
+    @Generated
+    @Inline
+    @CFunction
+    public static native byte CMTagCategoryEqualToTagCategory(@ByValue CMTag tag1, @ByValue CMTag tag2);
+
+    /**
+     * [@function] CMTagGetValue
+     * 
+     * Returns the raw 64-bit CMTagValue field of the CMTag.
+     * 
+     * The CMTagValue is returned without consideration for the encoded data type.
+     * 
+     * @param tag CMTag to access.
+     * @return CMTagValue of the tag.
+     * 
+     *         API-Since: 17.0
+     */
+    @Generated
+    @Inline
+    @CFunction
+    public static native long CMTagGetValue(@ByValue CMTag tag);
+
+    /**
+     * [@function] CMTagHasCategory
+     * 
+     * Returns true if the CMTag has the specified CMTagCategory.
+     * 
+     * @param tag      CMTag to evaluate.
+     * @param category CMTagCategory to check for.
+     * @return CMTagCategory of the tag.
+     * 
+     *         API-Since: 17.0
+     */
+    @Generated
+    @Inline
+    @CFunction
+    public static native byte CMTagHasCategory(@ByValue CMTag tag, int category);
+
+    /**
+     * [@function] CMTagHasSInt64Value
+     * 
+     * Checks if the tag represents a signed 64-bit value.
+     * 
+     * @param tag CMTag to evaluate.
+     * @return Returns true if the CMTag carries a signed 64-bit value indicated by a data type of
+     *         kCMTagDataType_SInt64, false otherwise.
+     * 
+     *         API-Since: 17.0
+     */
+    @Generated
+    @CFunction
+    public static native byte CMTagHasSInt64Value(@ByValue CMTag tag);
+
+    /**
+     * [@function] CMTagGetSInt64Value
+     * 
+     * Returns the signed 64-bit value carried by the CMTag.
+     * 
+     * This should only be called on a CMTag with a data type of kCMTagDataType_SInt64. Calling it with a CMTag having
+     * another data type is undefined.
+     * 
+     * @param tag CMTag to evaluate.
+     * @return Signed 64-bit integer.
+     * 
+     *         API-Since: 17.0
+     */
+    @Generated
+    @CFunction
+    public static native long CMTagGetSInt64Value(@ByValue CMTag tag);
+
+    /**
+     * [@function] CMTagHasFloat64Value
+     * 
+     * Checks if the tag represents a 64-bit float value.
+     * 
+     * @param tag CMTag to evaluate.
+     * @return Returns true if the CMTag carries a 64-bit float indicated by a data type of kCMTagDataType_Float64,
+     *         false otherwise.
+     * 
+     *         API-Since: 17.0
+     */
+    @Generated
+    @CFunction
+    public static native byte CMTagHasFloat64Value(@ByValue CMTag tag);
+
+    /**
+     * [@function] CMTagGetFloat64Value
+     * 
+     * Returns the 64-bit floating point value carried by the CMTag.
+     * 
+     * This should only be called on a CMTag with a data type of kCMTagDataType_Float64. Calling it with a CMTag having
+     * another data type is undefined.
+     * 
+     * @param tag CMTag to evaluate.
+     * @return 64-bit float.
+     * 
+     *         API-Since: 17.0
+     */
+    @Generated
+    @CFunction
+    public static native double CMTagGetFloat64Value(@ByValue CMTag tag);
+
+    /**
+     * [@function] CMTagHasOSTypeValue
+     * 
+     * Checks if the tag represents an OSType value.
+     * 
+     * @param tag CMTag to evaluate.
+     * @return Returns true if the CMTag carries an OSType indicated by a data type of kCMTagDataType_OSType, false
+     *         otherwise.
+     * 
+     *         API-Since: 17.0
+     */
+    @Generated
+    @CFunction
+    public static native byte CMTagHasOSTypeValue(@ByValue CMTag tag);
+
+    /**
+     * [@function] CMTagGetOSTypeValue
+     * 
+     * Returns the single OSType value carried by the CMTag.
+     * 
+     * This should only be called on a CMTag with a data type of kCMTagDataType_OSType. Calling it with a CMTag having
+     * another data type is undefined.
+     * 
+     * @param tag CMTag to evaluate.
+     * @return OSType.
+     * 
+     *         API-Since: 17.0
+     */
+    @Generated
+    @CFunction
+    public static native int CMTagGetOSTypeValue(@ByValue CMTag tag);
+
+    /**
+     * [@function] CMTagHasFlagsValue
+     * 
+     * Checks if the tag represents an flags value.
+     * 
+     * @param tag CMTag to evaluate.
+     * @return Returns true if the CMTag carries 64 bits of flags indicated by a data type of kCMTagDataType_Flags,
+     *         false otherwise.
+     * 
+     *         API-Since: 17.0
+     */
+    @Generated
+    @CFunction
+    public static native byte CMTagHasFlagsValue(@ByValue CMTag tag);
+
+    /**
+     * [@function] CMTagGetFlagsValue
+     * 
+     * Returns the 64 bits of flags as an unsigned 64-bit integer carried by the CMTag.
+     * 
+     * This should only be called on a CMTag with a data type of kCMTagDataType_Flags. Calling it with a CMTag having
+     * another data type is undefined.
+     * 
+     * @param tag CMTag to evaluate.
+     * @return Unsigned 64-bit integer holding the flags value.
+     * 
+     *         API-Since: 17.0
+     */
+    @Generated
+    @CFunction
+    public static native long CMTagGetFlagsValue(@ByValue CMTag tag);
+
+    /**
+     * [@function] CMTagMakeWithSInt64Value
+     * 
+     * Create a CMTag holding a signed 64-bit integer.
+     * 
+     * This function creates a valid CMTag with the data type kCMTagDataType_SInt64 and have a signed 64-bit integer
+     * value.
+     * 
+     * @param category CMTagCategory for the created CMTag.
+     * @param value    A signed 64-bit integer to encode in the returned CMTag.
+     * @return A CMTag.
+     * 
+     *         API-Since: 17.0
+     */
+    @Generated
+    @CFunction
+    @ByValue
+    public static native CMTag CMTagMakeWithSInt64Value(int category, long value);
+
+    /**
+     * [@function] CMTagMakeWithFloat64Value
+     * 
+     * Create a CMTag holding a 64-bit float.
+     * 
+     * This function creates a valid CMTag with the data type kCMTagDataType_Float64 and have a 64-bit floating point
+     * value.
+     * 
+     * @param category CMTagCategory for the created CMTag.
+     * @param value    A 64-bit float to encode in the returned CMTag.
+     * @return A CMTag.
+     * 
+     *         API-Since: 17.0
+     */
+    @Generated
+    @CFunction
+    @ByValue
+    public static native CMTag CMTagMakeWithFloat64Value(int category, double value);
+
+    /**
+     * [@function] CMTagMakeWithOSTypeValue
+     * 
+     * Create a CMTag holding an OSType.
+     * 
+     * This function creates a valid CMTag with the data type kCMTagDataType_OSType and have an OSType value.
+     * 
+     * @param category CMTagCategory for the created CMTag.
+     * @param value    An OSType to encode in the returned CMTag.
+     * @return A CMTag.
+     * 
+     *         API-Since: 17.0
+     */
+    @Generated
+    @CFunction
+    @ByValue
+    public static native CMTag CMTagMakeWithOSTypeValue(int category, int value);
+
+    /**
+     * [@function] CMTagMakeWithFlagsValue
+     * 
+     * Create a CMTag holding a 64 bits of flags.
+     * 
+     * This function creates a valid CMTag with the data type kCMTagDataType_Flags and has an unsigned 64-bit integer
+     * value holding the flags.
+     * 
+     * @param category    CMTagCategory for the created CMTag.
+     * @param flagsForTag An unsigned 64-bit integer to encode in the returned CMTag.
+     * @return A CMTag.
+     * 
+     *         API-Since: 17.0
+     */
+    @Generated
+    @CFunction
+    @ByValue
+    public static native CMTag CMTagMakeWithFlagsValue(int category, long flagsForTag);
+
+    /**
+     * [@function] CMTagEqualToTag
+     * 
+     * Tests if two CMTags are equal.
+     * 
+     * Function evaluates if two tags are structurally equivalent. It performs a field by field comparison.
+     * 
+     * @param tag1 First CMTag to test for equality.
+     * @param tag2 Second CMTag to test for equality.
+     * @return Returns true if the two tags are equal, false otherwise.
+     * 
+     *         API-Since: 17.0
+     */
+    @Generated
+    @CFunction
+    public static native byte CMTagEqualToTag(@ByValue CMTag tag1, @ByValue CMTag tag2);
+
+    /**
+     * [@function] CMTagCompare
+     * 
+     * Compares two CMTags in an ordered fashion returning a CFComparisonResult based upon the ordering of the tags.
+     * 
+     * The entirety of a CMTag can be compared against a second CMTag in an ordered way. The details of how the
+     * comparison is performed is an internal implementation detail. The comparison is performed as tag1 COMPARISON tag2
+     * where COMPARISON is the ordering operation. The ordering will be stable under a release of the framework but may
+     * change in the future. Therefore, an ordered CMTag array serialized in one version of the framework should not be
+     * assumed to be ordered the same in another version of the framework. This is best handled by retrieving the
+     * original array of CMTags and then reinserting with the new order.
+     * 
+     * @param tag1 First CMTag to compare in ordered fashion.
+     * @param tag2 Second CMTag to compare in ordered fashion.
+     * @return The CFComparisonResult indicating the order of tag1 compared to tag2.
+     * 
+     *         API-Since: 17.0
+     */
+    @Generated
+    @CFunction
+    @NInt
+    public static native long CMTagCompare(@ByValue CMTag tag1, @ByValue CMTag tag2);
+
+    /**
+     * [@function] CMTagCategoryValueEqualToValue
+     * 
+     * Compares two CMTagCategory values for equality.
+     * 
+     * Equality can also be tested by comparing the values with == but this is provided for consistency with other tests
+     * here.
+     * 
+     * @param tag1 First CMTag to test for equality.
+     * @param tag2 Second CMTag to test for equality.
+     * @return Boolean indicating if the tag values are equal.
+     * 
+     *         API-Since: 17.0
+     */
+    @Generated
+    @Inline
+    @CFunction
+    public static native byte CMTagCategoryValueEqualToValue(@ByValue CMTag tag1, @ByValue CMTag tag2);
+
+    /**
+     * [@function] CMTagHash
+     * 
+     * Calculates a hash code for the CMTag.
+     * 
+     * @param tag CMTag to hash.
+     * @return The created CFHashCode.
+     * 
+     *         API-Since: 17.0
+     */
+    @Generated
+    @CFunction
+    @NUInt
+    public static native long CMTagHash(@ByValue CMTag tag);
+
+    /**
+     * [@function] CMTagCopyDescription
+     * 
+     * Creates a CFString with a description of a CMTag (just like CFCopyDescription).
+     * 
+     * This can be used from within CFShow on an object that contains CMTag fields. It is also useful from other client
+     * debugging code. The caller owns the returned CFString, and is responsible for releasing it. Descriptions are not
+     * localized so are likely suitable only for debugging.
+     * 
+     * @param allocator CFAllocator to use in creating the description string. Pass kCFAllocatorDefault to use the
+     *                  default allocator.
+     * @param tag       CMTag to describe.
+     * @return The created CFString description.
+     * 
+     *         API-Since: 17.0
+     */
+    @Generated
+    @CFunction
+    @Nullable
+    public static native CFStringRef CMTagCopyDescription(@Nullable CFAllocatorRef allocator, @ByValue CMTag tag);
+
+    /**
+     * [@function] CMTagCopyAsDictionary
+     * 
+     * Returns a CFDictionary version of a CMTag.
+     * 
+     * This is useful when putting CMTag in CF container types. The caller owns the returned CFDictionary, and is
+     * responsible for releasing it.
+     * 
+     * @param tag       The CMTag from which to create the dictionary.
+     * @param allocator CFAllocator with which to create a dictionary. Pass kCFAllocatorDefault to use the default
+     *                  allocator.
+     * @return A CFDictionary version of the CMTag.
+     * 
+     *         API-Since: 17.0
+     */
+    @Generated
+    @CFunction
+    @Nullable
+    public static native CFDictionaryRef CMTagCopyAsDictionary(@ByValue CMTag tag, @Nullable CFAllocatorRef allocator);
+
+    /**
+     * [@function] CMTagMakeFromDictionary
+     * 
+     * Reconstitutes a CMTag struct from a CFDictionary previously created by CMTagCopyAsDictionary.
+     * 
+     * This is useful when getting CMTag from CF container types. If the CFDictionary does not have the requisite keyed
+     * values, kCMTagInvalid is returned.
+     * 
+     * @param dict A CFDictionary from which to create a CMTag.
+     * @return The created CMTag.
+     * 
+     *         API-Since: 17.0
+     */
+    @Generated
+    @CFunction
+    @ByValue
+    public static native CMTag CMTagMakeFromDictionary(@NotNull CFDictionaryRef dict);
+
+    /**
+     * [@function] CMTagCollectionGetTypeID
+     * 
+     * Obtains the CoreFoundation type ID for the CMTagCollection type.
+     * 
+     * Obtains the CoreFoundation type ID for the CMTagCollection type.
+     * 
+     * @return Returns the CFTypeID corresponding to CMTagCollection.
+     * 
+     *         API-Since: 17.0
+     */
+    @Generated
+    @CFunction
+    @NUInt
+    public static native long CMTagCollectionGetTypeID();
+
+    /**
+     * [@function] CMTagCollectionCreate
+     * 
+     * Creates a CMTagCollectionRef described by a number of parameters.
+     * 
+     * This can be used to construct a CMTagCollectionRef from zero or more CMTags.
+     * 
+     * @param allocator        CFAllocator to use to create the collection and internal data structures.
+     * @param tags             Zero or more CMTag structs to copy into the collection. May pass NULL if tagCount is also
+     *                         zero (0).
+     * @param tagCount         Number of tags in the 'tags' array.
+     * @param newCollectionOut Address of a location to return the newly created CMTagCollectionRef. The client is
+     *                         responsible for releasing the returned CMTagCollection.
+     * @return OSStatus with error or noErr if successful.
+     * 
+     *         API-Since: 17.0
+     */
+    @Generated
+    @CFunction
+    public static native int CMTagCollectionCreate(@Nullable CFAllocatorRef allocator,
+            @UncertainArgument("Options: reference, array Fallback: reference") @Nullable CMTag tags,
+            @NInt long tagCount, @NotNull Ptr<CMTagCollectionRef> newCollectionOut);
+
+    /**
+     * [@function] CMTagCollectionCreateMutable
+     * 
+     * Creates a CMMutableTagCollectionRef.
+     * 
+     * This can be used to construct a mutable CMTagCollectionRef with a capacity limit or without a capacity limit. A
+     * capacity greater than zero indicates a maximum number of CMTags the collection can contain. The actual number of
+     * tags may be less than this value depending upon how many tags have been added to the collection.
+     * If capacity is 0, the mutable collection can contain any number of tags.
+     * 
+     * @param allocator               CFAllocator to use to create the collection and internal data structures.
+     * @param capacity                Capacity limit set to zero to indicate no limit or a value greater than zero for a
+     *                                limit.
+     * @param newMutableCollectionOut Address of a location to return the newly created CMMutabbleTagCollectionRef. The
+     *                                client is responsible for releasing the returned CMMutableTagCollection.
+     * @return OSStatus with error, or noErr if successful.
+     * 
+     *         API-Since: 17.0
+     */
+    @Generated
+    @CFunction
+    public static native int CMTagCollectionCreateMutable(@Nullable CFAllocatorRef allocator, @NInt long capacity,
+            @NotNull Ptr<CMMutableTagCollectionRef> newMutableCollectionOut);
+
+    /**
+     * [@function] CMTagCollectionCreateCopy
+     * 
+     * Creates a duplicate CMTagCollectionRef.
+     * 
+     * This can be used to construct a CMTagCollectionRef that contains all the same tags as another collection.
+     * 
+     * @param tagCollection        CMTagCollectionRef used to create the copy.
+     * @param allocator            CFAllocator used to create the copy.
+     * @param newCollectionCopyOut Address of a location to return the newly created CMTagCollectionRef. The client is
+     *                             responsible for releasing the returned CMTagCollection.
+     * @return OSStatus with error or noErr if successful.
+     * 
+     *         API-Since: 17.0
+     */
+    @Generated
+    @CFunction
+    public static native int CMTagCollectionCreateCopy(@NotNull CMTagCollectionRef tagCollection,
+            @Nullable CFAllocatorRef allocator, @NotNull Ptr<CMTagCollectionRef> newCollectionCopyOut);
+
+    /**
+     * [@function] CMTagCollectionCreateMutableCopy
+     * 
+     * Creates a duplicate mutable CMTagCollectionRef.
+     * 
+     * This can be used to construct a CMMutableTagCollectionRef that contains all the same tags as another collection.
+     * 
+     * @param tagCollection               CMTagCollectionRef used to create the copy.
+     * @param allocator                   CFAllocator used to create the copy.
+     * @param newMutableCollectionCopyOut Address of a location to return the newly created CMMutableTagCollectionRef.
+     *                                    The client is responsible for releasing the returned CMMutableTagCollection.
+     * @return OSStatus with error or noErr if successful.
+     * 
+     *         API-Since: 17.0
+     */
+    @Generated
+    @CFunction
+    public static native int CMTagCollectionCreateMutableCopy(@NotNull CMTagCollectionRef tagCollection,
+            @Nullable CFAllocatorRef allocator, @NotNull Ptr<CMMutableTagCollectionRef> newMutableCollectionCopyOut);
+
+    /**
+     * [@function] CMTagCollectionCopyDescription
+     * 
+     * Creates a CFString with a description of a CMTagCollection.
+     * 
+     * This can be used from within CFShow on a CMTagCollection object. It is also useful from other client debugging
+     * code. The caller owns the returned CFString, and is responsible for releasing it. Descriptions are not localized
+     * so are likely suitable only for debugging.
+     * 
+     * @param allocator     CFAllocator to use in creating the description string.
+     * @param tagCollection CMTagCollectionRef to describe.
+     * @return The created CFString description.
+     * 
+     *         API-Since: 17.0
+     */
+    @Generated
+    @CFunction
+    @Nullable
+    public static native CFStringRef CMTagCollectionCopyDescription(@Nullable CFAllocatorRef allocator,
+            @Nullable CMTagCollectionRef tagCollection);
+
+    /**
+     * [@function] CMTagCollectionGetCount
+     * 
+     * Returns the number of CMTags held in the CMTagCollectionRef.
+     * 
+     * @param tagCollection CMTagCollectionRef to evaluate for the tag count.
+     * @return CMItemCount holding the count.
+     * 
+     *         API-Since: 17.0
+     */
+    @Generated
+    @CFunction
+    @NInt
+    public static native long CMTagCollectionGetCount(@NotNull CMTagCollectionRef tagCollection);
+
+    /**
+     * [@function] CMTagCollectionContainsTag
+     * 
+     * Checks if the tag collection contains a specific tag.
+     * 
+     * @param tagCollection CMTagCollection to check.
+     * @param tag           CMTag to find.
+     * @return Returns true if the indicated CMTag is contained within the CMTagCollection, false otherwise.
+     * 
+     *         API-Since: 17.0
+     */
+    @Generated
+    @CFunction
+    public static native byte CMTagCollectionContainsTag(@NotNull CMTagCollectionRef tagCollection, @ByValue CMTag tag);
+
+    /**
+     * [@function] CMTagCollectionContainsTagsOfCollection
+     * 
+     * Checks if all the tags in a tag collection are present in another tag collection.
+     * 
+     * Tests if a collection of tags specified by a CMTagCollection are contained within another tag collection in its
+     * entirety. Partial containment will report false. Complete containment will report true.
+     * 
+     * @param tagCollection          CMTagCollectionRef used to check.
+     * @param containedTagCollection CMTagCollectionRef whose contents should be checked for containment in
+     *                               tagCollection.
+     * @return Returns true if all CMTags in a collection are contained within the specified CMTagCollection, false
+     *         otherwise.
+     * 
+     *         API-Since: 17.0
+     */
+    @Generated
+    @CFunction
+    public static native byte CMTagCollectionContainsTagsOfCollection(@NotNull CMTagCollectionRef tagCollection,
+            @NotNull CMTagCollectionRef containedTagCollection);
+
+    /**
+     * [@function] CMTagCollectionContainsSpecifiedTags
+     * 
+     * Checks if all the specified tags are contained in a tag collection.
+     * 
+     * Tests if the tags specified by a buffer of CMTags are contained within another tag collection in its entirety.
+     * Partial containment will report false. Complete containment will report true.
+     * 
+     * @param tagCollection     CMTagCollectionRef to check.
+     * @param containedTags     The non-NULL address to a CMTag array whose CMTags should be checked for containment in
+     *                          tagCollection.
+     * @param containedTagCount The number of CMTag elements in the buffer containedTags. Zero is allowed but will
+     *                          report true.
+     * @return Returns true if all CMTags in a buffer of CMTags are contained within the CMTagCollection, false
+     *         otherwise.
+     * 
+     *         API-Since: 17.0
+     */
+    @Generated
+    @CFunction
+    public static native byte CMTagCollectionContainsSpecifiedTags(@NotNull CMTagCollectionRef tagCollection,
+            @UncertainArgument("Options: reference, array Fallback: reference") @NotNull CMTag containedTags,
+            @NInt long containedTagCount);
+
+    /**
+     * [@function] CMTagCollectionContainsCategory
+     * 
+     * Tests if a CMTagCategory is used by any CMTags within the tag container.
+     * 
+     * @param tagCollection CMTagCollectionRef to check.
+     * @param category      CMTagCategory whose value should be checked for containment in tagCollection.
+     * @return Returns true if tagCollection contains at least one CMTag with the specified category, false otherwise.
+     * 
+     *         API-Since: 17.0
+     */
+    @Generated
+    @CFunction
+    public static native byte CMTagCollectionContainsCategory(@NotNull CMTagCollectionRef tagCollection, int category);
+
+    /**
+     * [@function] CMTagCollectionGetCountOfCategory
+     * 
+     * Counts an returns the number of tags in the tag collection matching the specified category.
+     * 
+     * Returns the count of tags having the specified category. It will return 0 if there are no tags.
+     * 
+     * @param tagCollection CMTagCollectionRef to evaluate.
+     * @param category      CMTagCategory to check for.
+     * @return Returns the count of tags having the specified category.
+     * 
+     *         API-Since: 17.0
+     */
+    @Generated
+    @CFunction
+    @NInt
+    public static native long CMTagCollectionGetCountOfCategory(@NotNull CMTagCollectionRef tagCollection,
+            int category);
+
+    /**
+     * [@function] CMTagCollectionGetTags
+     * 
+     * Retrieve all CMTags and copy into a supplied buffer.
+     * 
+     * The function retrieves a specified number of CMTags from the CMTagCollectionRef and copies them to a supplied
+     * buffer. The routine populates a provided sized buffer with each CMTag in the collection. If the provided buffer
+     * is smaller than needed to retrieve all tags, the routine will fill the buffer, return the number actually copied
+     * and return kCMTagCollectionError_ExhaustedBufferSize. If the provided buffer is larger than the number of CMTags
+     * in the collection to retrieve, the routine will fill the buffer with the number of available CMTags, return the
+     * number copied and fill the remainder of the buffer with kCMTagInvalid while returning noErr.
+     * 
+     * @param tagCollection      CMTagCollectionRef to iterate.
+     * @param tagBuffer          A non-NULL address of a buffer to fill with CMTags with CMTagCategory 'category'.
+     * @param tagBufferCount     The number of CMTags the buffer 'tagBuffer' can hold.
+     * @param numberOfTagsCopied The address of a CMItemCount that is filled with the number of tags retrieved, may be
+     *                           NULL.
+     * @return OSStatus with an error or noErr if successful.
+     * 
+     *         API-Since: 17.0
+     */
+    @Generated
+    @CFunction
+    public static native int CMTagCollectionGetTags(@NotNull CMTagCollectionRef tagCollection,
+            @UncertainArgument("Options: reference, array Fallback: reference") @NotNull CMTag tagBuffer,
+            @NInt long tagBufferCount, @Nullable NIntPtr numberOfTagsCopied);
+
+    /**
+     * [@function] CMTagCollectionGetTagsWithCategory
+     * 
+     * Retrieve CMTags having a specified CMTagCategory and copy to a supplied buffer.
+     * 
+     * Populates a provided buffer with each CMTag in the collection that has the specified CMTagCategory. If the
+     * provided buffer is smaller than needed, the routine will fill the buffer, return the number of CMTags actually
+     * copied and return kCMTagCollectionError_ExhaustedBufferSize. If the provided buffer is larger than needed, it
+     * will fill the buffer with the number of available CMTags, return the number copied and fill the remainder of the
+     * buffer with kCMTagInvalid.
+     * 
+     * @param tagCollection      CMTagCollectionRef to iterate.
+     * @param category           CMTagCategory to match.
+     * @param tagBuffer          A non-NULL address of a buffer to fill with CMTags with CMTagCategory 'category'.
+     * @param tagBufferCount     The number of CMTags the buffer 'tagBuffer' can hold.
+     * @param numberOfTagsCopied The address of a CMItemCount that is filled with the number of tags retrieved, may be
+     *                           NULL.
+     * @return OSStatus with an error or noErr if successful.
+     * 
+     *         API-Since: 17.0
+     */
+    @Generated
+    @CFunction
+    public static native int CMTagCollectionGetTagsWithCategory(@NotNull CMTagCollectionRef tagCollection, int category,
+            @UncertainArgument("Options: reference, array Fallback: reference") @NotNull CMTag tagBuffer,
+            @NInt long tagBufferCount, @Nullable NIntPtr numberOfTagsCopied);
+
+    /**
+     * [@function] CMTagCollectionCountTagsWithFilterFunction
+     * 
+     * Count the number of tags satisfying a callback.
+     * 
+     * Iterates over the CMTags of the tag collection calling the supplied callback and incrementing a counter for each
+     * tag satisfying the callback. Returns this counter value upon completing iteration.
+     * 
+     * @param tagCollection CMTagCollectionRef to iterate.
+     * @param filterApplier The CMTagCollectionTagFilterFunction callback to call with each tag.
+     * @param context       A void * or NULL to pass to applier.
+     * @return CMItemCount indicating the number of CMTags satisfying 'filterApplier'.
+     * 
+     *         API-Since: 17.0
+     */
+    @Generated
+    @CFunction
+    @NInt
+    public static native long CMTagCollectionCountTagsWithFilterFunction(@NotNull CMTagCollectionRef tagCollection,
+            @FunctionPtr(name = "call_CMTagCollectionCountTagsWithFilterFunction") @NotNull Function_CMTagCollectionCountTagsWithFilterFunction filterApplier,
+            @Nullable VoidPtr context);
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_CMTagCollectionCountTagsWithFilterFunction {
+        @Generated
+        byte call_CMTagCollectionCountTagsWithFilterFunction(@ByValue CMTag arg0, @Nullable VoidPtr arg1);
+    }
+
+    /**
+     * [@function] CMTagCollectionGetTagsWithFilterFunction
+     * 
+     * Retrieve CMTags satisfying a callback function and copy them to a supplied buffer.
+     * 
+     * Applies a CMTagCollectionTagFilterFunction predicate and populates a provided buffer with each CMTag that for
+     * each tag when the filter returns true. If the provided buffer is smaller than the number of tags the predicate
+     * satisfies, the routine will fill the buffer, return the copy CMTags actually copied and return
+     * kCMTagCollectionError_ExhaustedBufferSize. If the provided buffer is larger than needed, it will fill the buffer
+     * with the number of available CMTags, fill the remainder of the buffer with kCMTagInvalid and return a result of
+     * noErr.
+     * 
+     * @param tagCollection      CMTagCollectionRef to iterate.
+     * @param tagBuffer          A non-NULL address of a buffer to fill with CMTags with CMTagCategory 'category'.
+     * @param tagBufferCount     The number of CMTags the buffer 'tagBuffer' can hold.
+     * @param numberOfTagsCopied The address of a CMItemCount that is filled with the number of tags retrieved, may be
+     *                           NULL.
+     * @param filter             The CMTagCollectionTagFilterFunction callback to call with each tag.
+     * @param context            A void * or NULL to pass to filter.
+     * @return OSStatus with an error or noErr if successful.
+     * 
+     *         API-Since: 17.0
+     */
+    @Generated
+    @CFunction
+    public static native int CMTagCollectionGetTagsWithFilterFunction(@NotNull CMTagCollectionRef tagCollection,
+            @UncertainArgument("Options: reference, array Fallback: reference") @NotNull CMTag tagBuffer,
+            @NInt long tagBufferCount, @Nullable NIntPtr numberOfTagsCopied,
+            @FunctionPtr(name = "call_CMTagCollectionGetTagsWithFilterFunction") @NotNull Function_CMTagCollectionGetTagsWithFilterFunction filter,
+            @Nullable VoidPtr context);
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_CMTagCollectionGetTagsWithFilterFunction {
+        @Generated
+        byte call_CMTagCollectionGetTagsWithFilterFunction(@ByValue CMTag arg0, @Nullable VoidPtr arg1);
+    }
+
+    /**
+     * [@function] CMTagCollectionCopyTagsOfCategories
+     * 
+     * Copies all tags belonging to a specified list of CMTagCategory from one tag collection to a newly created tag
+     * collection.
+     * 
+     * This routine copies all tags belonging to a specified list of CMTagCategory from one tag collection to a newly
+     * created tag collection.
+     * 
+     * @param allocator                      CFAllocatorRef to use in allocations of the operation.
+     * @param tagCollection                  CMTagCollectionRef from which to copy tags.
+     * @param categories                     A non-NULL address of a buffer containing a list of CMTagCategory.
+     * @param categoriesCount                The number of CMTagCategory the buffer 'categories' is holding.
+     * @param collectionWithTagsOfCategories The address of a CMTagCollectionRef that contains all tags copied from
+     *                                       'tagCollection'. The client is responsible for releasing the returned
+     *                                       CMTagCollection.
+     * @return OSStatus indicating if the operation succeeded.
+     * 
+     *         API-Since: 17.0
+     */
+    @Generated
+    @CFunction
+    public static native int CMTagCollectionCopyTagsOfCategories(@Nullable CFAllocatorRef allocator,
+            @NotNull CMTagCollectionRef tagCollection, @NotNull ConstIntPtr categories, @NInt long categoriesCount,
+            @NotNull Ptr<CMTagCollectionRef> collectionWithTagsOfCategories);
+
+    /**
+     * [@function] CMTagCollectionApply
+     * 
+     * Iterate over a tag collection calling the provided callback.
+     * 
+     * Iterates over the CMTags of the tag collection executing the callback with each tag.
+     * 
+     * @param tagCollection CMTagCollectionRef to iterate.
+     * @param applier       The CMTagCollectionApplierFunction callback to call with each tag.
+     * @param context       A void * or NULL to pass to applier.
+     * 
+     *                      API-Since: 17.0
+     */
+    @Generated
+    @CFunction
+    public static native void CMTagCollectionApply(@NotNull CMTagCollectionRef tagCollection,
+            @FunctionPtr(name = "call_CMTagCollectionApply") @NotNull Function_CMTagCollectionApply applier,
+            @Nullable VoidPtr context);
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_CMTagCollectionApply {
+        @Generated
+        void call_CMTagCollectionApply(@ByValue CMTag arg0, @Nullable VoidPtr arg1);
+    }
+
+    /**
+     * [@function] CMTagCollectionApplyUntil
+     * 
+     * Iterate over a tag collection until the callback is satisfied.
+     * 
+     * Function iterates over the CMTags of the tag collection until the function returns true and then returns the
+     * CMTag at that position. Once the callback is satisfied by returning true, CMTagCollectionApplyUntil() stops
+     * iteration and returns the CMTag that evaluated to true. If no CMTags satisfy the callback, the value
+     * kCMTagInvalid will be returned.
+     * 
+     * @param tagCollection CMTagCollectionRef to iterate.
+     * @param applier       The CMTagCollectionTagFilterFunction callback to call with each tag.
+     * @param context       A void * or NULL to pass to applier.
+     * @return CMTag having the value of the first tag the callback returned true for or kCMTagInvalid if none was
+     *         found.
+     * 
+     *         API-Since: 17.0
+     */
+    @Generated
+    @CFunction
+    @ByValue
+    public static native CMTag CMTagCollectionApplyUntil(@NotNull CMTagCollectionRef tagCollection,
+            @FunctionPtr(name = "call_CMTagCollectionApplyUntil") @NotNull Function_CMTagCollectionApplyUntil applier,
+            @Nullable VoidPtr context);
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Function_CMTagCollectionApplyUntil {
+        @Generated
+        byte call_CMTagCollectionApplyUntil(@ByValue CMTag arg0, @Nullable VoidPtr arg1);
+    }
+
+    /**
+     * [@function] CMTagCollectionIsEmpty
+     * 
+     * Reports if the tag collection contains no tags.
+     * 
+     * This is a convenience name for set like use but is the same as the expression: CMTagCollectionIsEmptyGetCount()
+     * == 0.
+     * 
+     * @param tagCollection CMTagCollectionRef to iterate.
+     * @return True if there are no tags, false otherwise.
+     * 
+     *         API-Since: 17.0
+     */
+    @Generated
+    @CFunction
+    public static native byte CMTagCollectionIsEmpty(@NotNull CMTagCollectionRef tagCollection);
+
+    /**
+     * [@function] CMTagCollectionCreateIntersection
+     * 
+     * Calculates the intersection of two tag collections to produce a new tag collection.
+     * 
+     * This routine creates an intersection of two tag collection by finding common tags among two source tag
+     * collections and produces a new tag collection containing those common tags.
+     * 
+     * @param tagCollection1   CMTagCollectionRef to use in the intersection operation.
+     * @param tagCollection2   CMTagCollectionRef to use in the intersection operation.
+     * @param tagCollectionOut The address of a CMTagCollectionRef that contains all tags that are common to
+     *                         'tagCollection1' and 'tagCollection2'. The client is responsible for releasing the
+     *                         returned CMTagCollection.
+     * @return OSStatus indicating if the operation succeeded.
+     * 
+     *         API-Since: 17.0
+     */
+    @Generated
+    @CFunction
+    public static native int CMTagCollectionCreateIntersection(@Nullable CMTagCollectionRef tagCollection1,
+            @Nullable CMTagCollectionRef tagCollection2, @NotNull Ptr<CMTagCollectionRef> tagCollectionOut);
+
+    /**
+     * [@function] CMTagCollectionCreateUnion
+     * 
+     * Calculates the union of two tag collections to produce a new tag collection.
+     * 
+     * This routine creates an union of two tag collection by adding all tags from two tag collections and produces a
+     * new tag collection containing all the tags. Duplicate tags will not be added twice. Note that if no tags are
+     * common among the source tag collections, the new tag collection will contain as many tags as the sum of the
+     * number of tags in each source tag collection. If two source tag collections contain the same tags, the resulting
+     * tag collection will have the same number of tags as each source tag collection.
+     * 
+     * @param tagCollection1   CMTagCollectionRef to use in the union operation.
+     * @param tagCollection2   CMTagCollectionRef to use in the union operation.
+     * @param tagCollectionOut The address of a CMTagCollectionRef that contains all tags that are common to
+     *                         'tagCollection1' and 'tagCollection2'. The client is responsible for releasing the
+     *                         returned CMTagCollection.
+     * @return OSStatus indicating if the operation succeeded.
+     * 
+     *         API-Since: 17.0
+     */
+    @Generated
+    @CFunction
+    public static native int CMTagCollectionCreateUnion(@Nullable CMTagCollectionRef tagCollection1,
+            @Nullable CMTagCollectionRef tagCollection2, @NotNull Ptr<CMTagCollectionRef> tagCollectionOut);
+
+    /**
+     * [@function] CMTagCollectionCreateDifference
+     * 
+     * Calculates the difference of two tag collections to produce a new tag collection.
+     * 
+     * This routine creates the difference by considering a first source tag collection and removing all tags found in
+     * the first tag collection to produce a new tag collection containing only the tags not in the second tag
+     * collection. Note that if the second tag collection has no tags found in the first tag collection, the produced
+     * tag collection will have the same tags as the first tag collection. If the second tag collection is empty, the
+     * produced tag collection will also have the same tags as the first tag collection. If the second tag collection
+     * contains all the tags found in the source tag collection, the produced tag collection will be empty. The order of
+     * parameters is important. Given two tag collections 'A' and 'B', the calculaton of 'A' - 'B' is not the same as
+     * 'B' - 'A'.
+     * 
+     * @param tagCollectionMinuend    CMTagCollectionRef from which to remove tags.
+     * @param tagCollectionSubtrahend CMTagCollectionRef to consult to determine tags to remove from
+     *                                'tagCollectionMinuend'.
+     * @param tagCollectionOut        The address of a CMTagCollectionRef that contains tags from a first tag collection
+     *                                without tags found in a second tag collection. The client is responsible for
+     *                                releasing the returned CMTagCollection.
+     * @return OSStatus indicating if the operation succeeded.
+     * 
+     *         API-Since: 17.0
+     */
+    @Generated
+    @CFunction
+    public static native int CMTagCollectionCreateDifference(@Nullable CMTagCollectionRef tagCollectionMinuend,
+            @Nullable CMTagCollectionRef tagCollectionSubtrahend, @NotNull Ptr<CMTagCollectionRef> tagCollectionOut);
+
+    /**
+     * [@function] CMTagCollectionCreateExclusiveOr
+     * 
+     * Calculates the exclusive OR of two tag collections to produce a new tag collection.
+     * 
+     * This routine determines tags that are in only one of two source tag collections and adds only those to produce a
+     * new tag collection. If both source tag collections have no tags in common, the produced tag collection will
+     * contain a union of both source tag collections. If both source tag collections have the same tags, the produced
+     * tag collection will be empty.
+     * 
+     * @param tagCollection1   CMTagCollectionRef to use in the xor operation.
+     * @param tagCollection2   CMTagCollectionRef to use in the xor operation.
+     * @param tagCollectionOut The address of a CMTagCollectionRef that contains the xor of the tags from the two tag
+     *                         collections. The client is responsible for releasing the returned CMTagCollection.
+     * @return OSStatus indicating if the operation succeeded.
+     * 
+     *         API-Since: 17.0
+     */
+    @Generated
+    @CFunction
+    public static native int CMTagCollectionCreateExclusiveOr(@Nullable CMTagCollectionRef tagCollection1,
+            @Nullable CMTagCollectionRef tagCollection2, @NotNull Ptr<CMTagCollectionRef> tagCollectionOut);
+
+    /**
+     * [@function] CMTagCollectionAddTag
+     * 
+     * Adds a tag to a mutable tag collection guaranteeing it is only added once.
+     * 
+     * This routine adds a CMTag to a CMMutableTagCollection. If the CMTag already exists in the tag collection, the tag
+     * is not added again. If the tag doesn't exist in the tag collection, the tag collection is updated to contain the
+     * tag. Note that there is no ordering for tags within a tag collection.
+     * 
+     * @param tagCollection CMMutableTagCollectionRef to which to add a tag.
+     * @param tagToAdd      A CMTag to add to the tag collection.
+     * @return OSStatus indicating if the operation succeeded. Returns noErr if the tag was already in the collection.
+     * 
+     *         API-Since: 17.0
+     */
+    @Generated
+    @CFunction
+    public static native int CMTagCollectionAddTag(@NotNull CMMutableTagCollectionRef tagCollection,
+            @ByValue CMTag tagToAdd);
+
+    /**
+     * [@function] CMTagCollectionRemoveTag
+     * 
+     * Removes one tag from a mutable tag collection.
+     * 
+     * This routine removes a CMTag if present from a CMMutableTagCollection. If the CMTag exists in the tag collection,
+     * the tag collection is updated to no longer contain the tag. If the tag doesn't exist in the tag collection, the
+     * tag collection is left unchanged. The OSStatus will return kCMTagCollectionError_TagNotFound if the tag does not
+     * exist in the collection or if the tag collection is empty.
+     * 
+     * @param tagCollection CMMutableTagCollectionRef from which to remove a tag.
+     * @param tagToRemove   A CMTag to match to the tag collection.
+     * @return OSStatus indicating if the operation succeeded.
+     * 
+     *         API-Since: 17.0
+     */
+    @Generated
+    @CFunction
+    public static native int CMTagCollectionRemoveTag(@NotNull CMMutableTagCollectionRef tagCollection,
+            @ByValue CMTag tagToRemove);
+
+    /**
+     * [@function] CMTagCollectionRemoveAllTags
+     * 
+     * Removes all tags from a mutable tag collection.
+     * 
+     * This routine removes all CMTags from a CMMutableTagCollection producing an empty collection.
+     * 
+     * @param tagCollection CMMutableTagCollectionRef from which to remove all tags.
+     * @return OSStatus indicating if the operation succeeded.
+     * 
+     *         API-Since: 17.0
+     */
+    @Generated
+    @CFunction
+    public static native int CMTagCollectionRemoveAllTags(@NotNull CMMutableTagCollectionRef tagCollection);
+
+    /**
+     * [@function] CMTagCollectionRemoveAllTagsOfCategory
+     * 
+     * Removes all tags having a specified category from a mutable tag collection.
+     * 
+     * This routine removes all CMTags having a specified CMTagCategory from a CMMutableTagCollection perhaps producing
+     * an empty collection.
+     * 
+     * @param tagCollection CMMutableTagCollectionRef from which to remove all tags.
+     * @param category      CMTagCategory to match.
+     * @return OSStatus indicating if the operation succeeded.
+     * 
+     *         API-Since: 17.0
+     */
+    @Generated
+    @CFunction
+    public static native int CMTagCollectionRemoveAllTagsOfCategory(@NotNull CMMutableTagCollectionRef tagCollection,
+            int category);
+
+    /**
+     * [@function] CMTagCollectionAddTagsFromCollection
+     * 
+     * Add all tags from one tag collection to a mutable tag collection. Tags already existing in tagCollection will not
+     * be added.
+     * 
+     * @param tagCollection           CMMutableTagCollectionRef to which to add tags.
+     * @param collectionWithTagsToAdd CMTagCollectionRef from which to copy all tags.
+     * @return OSStatus indicating if the operation succeeded.
+     * 
+     *         API-Since: 17.0
+     */
+    @Generated
+    @CFunction
+    public static native int CMTagCollectionAddTagsFromCollection(@NotNull CMMutableTagCollectionRef tagCollection,
+            @NotNull CMTagCollectionRef collectionWithTagsToAdd);
+
+    /**
+     * [@function] CMTagCollectionAddTagsFromArray
+     * 
+     * Adds all tags specified in a C array to a mutable tag collection. Tags already existing in tagCollection will not
+     * be added.
+     * 
+     * @param tagCollection CMMutableTagCollectionRef to which to add tags.
+     * @param tags          The address of a buffer of CMTags.
+     * @param tagCount      CMItemCount of the number of tags in 'tags' array.
+     * @return OSStatus indicating if the operation succeeded.
+     * 
+     *         API-Since: 17.0
+     */
+    @Generated
+    @CFunction
+    public static native int CMTagCollectionAddTagsFromArray(@NotNull CMMutableTagCollectionRef tagCollection,
+            @UncertainArgument("Options: reference, array Fallback: reference") @NotNull CMTag tags,
+            @NInt long tagCount);
+
+    /**
+     * [@function] CMTagCollectionCopyAsDictionary
+     * 
+     * Returns a CFDictionary representation of a CMTagCollection.
+     * 
+     * This is useful when putting CMTagCollections in CF container types.
+     * 
+     * @param tagCollection CMTagCollection to serialize as a CFDictionary.
+     * @param allocator     CFAllocator with which to create a dictionary. Pass kCFAllocatorDefault to use the default
+     *                      allocator.
+     * @return A CFDictionaryRef holding the serialized contents of the CMTagCollection. The client is responsible for
+     *         releasing the returned CFDictionary.
+     * 
+     *         API-Since: 17.0
+     */
+    @Generated
+    @CFunction
+    @Nullable
+    public static native CFDictionaryRef CMTagCollectionCopyAsDictionary(@NotNull CMTagCollectionRef tagCollection,
+            @Nullable CFAllocatorRef allocator);
+
+    /**
+     * [@function] CMTagCollectionCreateFromDictionary
+     * 
+     * Reconstitutes a CMTagCollection from a CFDictionary previously created by CMTagCollectionCopyAsDictionary.
+     * 
+     * This is useful when getting CMTagCollection from CF container types. If the CFDictionary does not have the
+     * requisite keyed values, newCollectionOut will contain NULL.
+     * 
+     * @param dict             A CFDictionary from which to create a CMTagCollection.
+     * @param allocator        CFAllocator to use in allocation CMTagCollectionRef
+     * @param newCollectionOut Address of an CMTagCollectionRef to return the newly created tag collection. The client
+     *                         is responsible for releasing the returned CMTagCollection.
+     * @return OSStatus with error or noErr if successful.
+     * 
+     *         API-Since: 17.0
+     */
+    @Generated
+    @CFunction
+    public static native int CMTagCollectionCreateFromDictionary(@NotNull CFDictionaryRef dict,
+            @Nullable CFAllocatorRef allocator, @NotNull Ptr<CMTagCollectionRef> newCollectionOut);
+
+    /**
+     * [@function] CMTagCollectionCopyAsData
+     * 
+     * Returns a CFDataRef version of a CMTagCollection.
+     * 
+     * This is useful when putting CMTagCollections in CF container types.
+     * 
+     * @param tagCollection CMTagCollection to serialize as a CFData.
+     * @param allocator     CFAllocator with which to create a CFData. Pass kCFAllocatorDefault to use the default
+     *                      allocator.
+     * @return A CFDataRef holding the serialized contents of the CMTagCollection. The client is responsible for
+     *         releasing the returned CFData.
+     * 
+     *         API-Since: 17.0
+     */
+    @Generated
+    @CFunction
+    @Nullable
+    public static native CFDataRef CMTagCollectionCopyAsData(@NotNull CMTagCollectionRef tagCollection,
+            @Nullable CFAllocatorRef allocator);
+
+    /**
+     * [@function] CMTagCollectionCreateFromData
+     * 
+     * Reconstitutes a CMTagCollection from a CFData previously created by CMTagCollectionCopyAsData.
+     * 
+     * This is useful when getting CMTagCollection from CF container types. If the CFData does not
+     * have the requisite keyed values, newCollectionOut will contain NULL.
+     * 
+     * @param data             A CFData from which to create a CMTagCollection.
+     * @param allocator        CFAllocator to use in allocation CMTagCollectionRef. Pass kCFAllocatorDefault to use the
+     *                         default allocator.
+     * @param newCollectionOut Address of an CMTagCollectionRef to return the newly created tag collection. The client
+     *                         is responsible for releasing the returned CMTagCollection.
+     * @return OSStatus with error or noErr if successful.
+     * 
+     *         API-Since: 17.0
+     */
+    @Generated
+    @CFunction
+    public static native int CMTagCollectionCreateFromData(@NotNull CFDataRef data, @Nullable CFAllocatorRef allocator,
+            @NotNull Ptr<CMTagCollectionRef> newCollectionOut);
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @CFunction
+    @NUInt
+    public static native long CMTaggedBufferGroupGetTypeID();
+
+    /**
+     * [@function] CMTaggedBufferGroupCreate
+     * 
+     * Creates a new tagged buffer group.
+     * 
+     * @param allocator      The CFAllocator to use for allocating this buffer group. May be NULL.
+     * @param tagCollections A CFArray of CMTagCollections for the buffers.
+     * @param buffers        A CFArray of buffers, each of type CMSampleBuffer or CVPixelBuffer. The group will retain
+     *                       these sample buffers and pixel buffers.
+     *                       The number of tagCollections must match the number of buffers.
+     * @param groupOut       The newly created group will be placed here. The caller has a responsibility to call
+     *                       CFRelease on it.
+     * @return Returns noErr on success.
+     * 
+     *         API-Since: 17.0
+     */
+    @Generated
+    @CFunction
+    public static native int CMTaggedBufferGroupCreate(@Nullable CFAllocatorRef allocator,
+            @NotNull CFArrayRef tagCollections, @NotNull CFArrayRef buffers,
+            @NotNull Ptr<CMTaggedBufferGroupRef> groupOut);
+
+    /**
+     * [@function] CMTaggedBufferGroupCreateCombined
+     * 
+     * Creates a new tagged buffer group by combining all the tagged buffer groups in an array.
+     * 
+     * @param allocator          The CFAllocator to use for allocating this buffer group. May be NULL.
+     * @param taggedBufferGroups A CFArray of CMTaggedBufferGroups.
+     * @param groupOut           The newly created group will be placed here. The caller has a responsibility to call
+     *                           CFRelease on it.
+     * @return Returns noErr on success.
+     * 
+     *         API-Since: 17.0
+     */
+    @Generated
+    @CFunction
+    public static native int CMTaggedBufferGroupCreateCombined(@Nullable CFAllocatorRef allocator,
+            @NotNull CFArrayRef taggedBufferGroups, @NotNull Ptr<CMTaggedBufferGroupRef> groupOut);
+
+    /**
+     * [@function] CMTaggedBufferGroupGetCount
+     * 
+     * Returns the number of buffers in a CMTaggedBufferGroup.
+     * 
+     * @param group The CMTaggedBufferGroupRef to retrieve the count from.
+     * @return Returns the number of buffers, or 0 on failure or if the group is empty.
+     * 
+     *         API-Since: 17.0
+     */
+    @Generated
+    @CFunction
+    @NInt
+    public static native long CMTaggedBufferGroupGetCount(@NotNull CMTaggedBufferGroupRef group);
+
+    /**
+     * [@function] CMTaggedBufferGroupGetTagCollectionAtIndex
+     * 
+     * Returns a CMTagCollection from a CMTaggedBufferGroup by sequential indexing.
+     * 
+     * @param group The CMTaggedBufferGroupRef to retrieve the tag collection from.
+     * @param index An index from 0 to count-1.
+     * @return Returns the tag collection, or NULL on failure.
+     * 
+     *         API-Since: 17.0
+     */
+    @Generated
+    @CFunction
+    @Nullable
+    public static native CMTagCollectionRef CMTaggedBufferGroupGetTagCollectionAtIndex(
+            @NotNull CMTaggedBufferGroupRef group, @NInt long index);
+
+    /**
+     * [@function] CMTaggedBufferGroupGetCVPixelBufferAtIndex
+     * 
+     * Returns a CVPixelBuffer from a CMTaggedBufferGroup by sequential indexing.
+     * 
+     * @param group The CMTaggedBufferGroupRef to retrieve the CVPixelBuffer from.
+     * @param index An index from 0 to count-1.
+     * @return Returns the CVPixelBuffer, or NULL on failure (including if the buffer at this index is not a
+     *         CVPixelBuffer).
+     * 
+     *         API-Since: 17.0
+     */
+    @Generated
+    @CFunction
+    @Nullable
+    public static native CVBufferRef CMTaggedBufferGroupGetCVPixelBufferAtIndex(@NotNull CMTaggedBufferGroupRef group,
+            @NInt long index);
+
+    /**
+     * [@function] CMTaggedBufferGroupGetCVPixelBufferForTag
+     * 
+     * Returns a CVPixelBuffer from a CMTaggedBufferGroup by looking for a unique match for the provided tag.
+     * 
+     * @param group    The CMTaggedBufferGroupRef to retrieve the CVPixelBuffer from.
+     * @param tag      The tag to look up. If more than one buffer's tag collection includes this tag, the lookup will
+     *                 fail.
+     * @param indexOut On success, index of the returned CVPixelBuffer. May be NULL.
+     * @return Returns the CVPixelBuffer, or NULL on failure (including if the buffer at this index is not a
+     *         CVPixelBuffer).
+     * 
+     *         API-Since: 17.0
+     */
+    @Generated
+    @CFunction
+    @Nullable
+    public static native CVBufferRef CMTaggedBufferGroupGetCVPixelBufferForTag(@NotNull CMTaggedBufferGroupRef group,
+            @ByValue CMTag tag, @Nullable NIntPtr indexOut);
+
+    /**
+     * [@function] CMTaggedBufferGroupGetCVPixelBufferForTagCollection
+     * 
+     * Returns a CVPixelBuffer from a CMTaggedBufferGroup by looking for a unique match for the provided tag collection.
+     * 
+     * @param group         The CMTaggedBufferGroupRef to retrieve the CVPixelBuffer from.
+     * @param tagCollection The tag collection to look up. If more than one buffer's tag collection includes this tag
+     *                      collection, the lookup will fail.
+     * @param indexOut      On success, index of the returned CVPixelBuffer. May be NULL.
+     * @return Returns the CVPixelBuffer, or NULL on failure (including if the buffer at this index is not a
+     *         CVPixelBuffer).
+     * 
+     *         API-Since: 17.0
+     */
+    @Generated
+    @CFunction
+    @Nullable
+    public static native CVBufferRef CMTaggedBufferGroupGetCVPixelBufferForTagCollection(
+            @NotNull CMTaggedBufferGroupRef group, @NotNull CMTagCollectionRef tagCollection,
+            @Nullable NIntPtr indexOut);
+
+    /**
+     * [@function] CMTaggedBufferGroupGetCMSampleBufferAtIndex
+     * 
+     * Returns a CMSampleBuffer from a CMTaggedBufferGroup by sequential indexing.
+     * 
+     * @param group The CMTaggedBufferGroupRef to retrieve the CMSampleBuffer from.
+     * @param index An index from 0 to count-1.
+     * @return Returns the CMSampleBuffer, or NULL on failure (including if the buffer at this index is not a
+     *         CMSampleBuffer).
+     * 
+     *         API-Since: 17.0
+     */
+    @Generated
+    @CFunction
+    @Nullable
+    public static native CMSampleBufferRef CMTaggedBufferGroupGetCMSampleBufferAtIndex(
+            @NotNull CMTaggedBufferGroupRef group, @NInt long index);
+
+    /**
+     * [@function] CMTaggedBufferGroupGetCMSampleBufferForTag
+     * 
+     * Returns a CMSampleBuffer from a CMTaggedBufferGroup by looking for a unique match for the provided tag.
+     * 
+     * @param group    The CMTaggedBufferGroupRef to retrieve the CMSampleBuffer from.
+     * @param tag      The tag to look up. If more than one buffer's tag collection includes this tag, the lookup will
+     *                 fail.
+     * @param indexOut On success, index of the returned CMSampleBuffer. May be NULL.
+     * @return Returns the CMSampleBuffer, or NULL on failure (including if the buffer at this index is not a
+     *         CMSampleBuffer).
+     * 
+     *         API-Since: 17.0
+     */
+    @Generated
+    @CFunction
+    @Nullable
+    public static native CMSampleBufferRef CMTaggedBufferGroupGetCMSampleBufferForTag(
+            @NotNull CMTaggedBufferGroupRef group, @ByValue CMTag tag, @Nullable NIntPtr indexOut);
+
+    /**
+     * [@function] CMTaggedBufferGroupGetCMSampleBufferForTagCollection
+     * 
+     * Returns a CMSampleBuffer from a CMTaggedBufferGroup by looking for a unique match for the provided tag
+     * collection.
+     * 
+     * @param group         The CMTaggedBufferGroupRef to retrieve the CMSampleBuffer from.
+     * @param tagCollection The tag collection to look up. If more than one buffer's tag collection includes this tag
+     *                      collection, the lookup will fail.
+     * @param indexOut      On success, index of the returned CMSampleBuffer. May be NULL.
+     * @return Returns the CMSampleBuffer, or NULL on failure (including if the buffer at this index is not a
+     *         CMSampleBuffer).
+     * 
+     *         API-Since: 17.0
+     */
+    @Generated
+    @CFunction
+    @Nullable
+    public static native CMSampleBufferRef CMTaggedBufferGroupGetCMSampleBufferForTagCollection(
+            @NotNull CMTaggedBufferGroupRef group, @NotNull CMTagCollectionRef tagCollection,
+            @Nullable NIntPtr indexOut);
+
+    /**
+     * [@function] CMTaggedBufferGroupGetNumberOfMatchesForTagCollection
+     * 
+     * Returns the number of matches that a tag collection has in a CMTaggedBufferGroup.
+     * 
+     * If the returned count is less than or greater than 1, buffer lookups using this tag collection will fail and
+     * return NULL, since the lookups must be unique and unambiguous.
+     * 
+     * @param group         The CMTaggedBufferGroupRef to examine.
+     * @param tagCollection The tag collection to look up.
+     * @return Returns the number of entries in the CMTaggedBufferGroup that match tagCollection.
+     * 
+     *         API-Since: 17.0
+     */
+    @Generated
+    @CFunction
+    @NInt
+    public static native long CMTaggedBufferGroupGetNumberOfMatchesForTagCollection(
+            @NotNull CMTaggedBufferGroupRef group, @NotNull CMTagCollectionRef tagCollection);
+
+    /**
+     * [@function] CMTaggedBufferGroupFormatDescriptionCreateForTaggedBufferGroup
+     * 
+     * Creates a format description for a CMTaggedBufferGroup.
+     * 
+     * The returned CMTaggedBufferGroupFormatDescription could be used to create a CMSampleBuffer
+     * wrapping the CMTaggedBufferGroup using CMSampleBufferCreateForTaggedBufferGroup.
+     * If you are going to call CMSampleBufferCreateForTaggedBufferGroup on a series of matching
+     * CMTaggedBufferGroups, it is more efficient to create the CMTaggedBufferGroupFormatDescription
+     * once and use it for all of the CMSampleBuffers.
+     * The caller owns the returned CMFormatDescription, and must release it when done with it.
+     * 
+     * API-Since: 17.0
+     * 
+     * @param allocator
+     *                             CFAllocator to be used when creating the CMFormatDescription. Pass
+     *                             kCFAllocatorDefault to use the default allocator.
+     * @param taggedBufferGroup
+     *                             The tagged buffer group for which we are creating the format description.
+     * @param formatDescriptionOut
+     *                             Returned newly-created tagged buffer group CMFormatDescription
+     */
+    @Generated
+    @CFunction
+    public static native int CMTaggedBufferGroupFormatDescriptionCreateForTaggedBufferGroup(
+            @Nullable CFAllocatorRef allocator, @NotNull CMTaggedBufferGroupRef taggedBufferGroup,
+            @NotNull Ptr<CMFormatDescriptionRef> formatDescriptionOut);
+
+    /**
+     * [@function] CMTaggedBufferGroupFormatDescriptionMatchesTaggedBufferGroup
+     * 
+     * Checks to see if a given format description matches a tagged buffer group.
+     * 
+     * Returns true if the CMTaggedBufferGroupFormatDescription could be used to create a
+     * CMSampleBuffer wrapping the CMTaggedBufferGroup using CMSampleBufferCreateForTaggedBufferGroup.
+     * 
+     * API-Since: 17.0
+     * 
+     * @param desc
+     *                          The format description to validate.
+     * @param taggedBufferGroup
+     *                          The tagged buffer group to validate against.
+     */
+    @Generated
+    @CFunction
+    public static native byte CMTaggedBufferGroupFormatDescriptionMatchesTaggedBufferGroup(
+            @NotNull CMFormatDescriptionRef desc, @NotNull CMTaggedBufferGroupRef taggedBufferGroup);
+
+    /**
+     * [@function] CMSampleBufferCreateForTaggedBufferGroup
+     * 
+     * Creates a new CMSampleBuffer object with the specified CMTaggedBufferGroup.
+     * 
+     * @param allocator
+     *                          CFAllocator with which to create the CMSampleBuffer object. Pass kCFAllocatorDefault to
+     *                          use the default allocator.
+     * @param taggedBufferGroup
+     *                          The CMTaggedBufferGroup to be stored in the sample buffer. The CMSampleBuffer will
+     *                          retain the CMTaggedBufferGroup internally.
+     * @param sbufPTS
+     *                          Media time PTS of the sample buffer.
+     * @param sbufDuration
+     *                          Media time duration of the sample buffer. Can be kCMTimeInvalid if not known or not
+     *                          defined.
+     * @param formatDescription
+     *                          A CMTaggedBufferGroupFormatDescription describing the CMTaggedBufferGroup.
+     *                          You may create this with CMTaggedBufferGroupFormatDescriptionCreateForTaggedBufferGroup.
+     *                          If you are creating a lot of CMSampleBuffers containing matching CMTaggedBufferGroups,
+     *                          it is more efficient to create the CMTaggedBufferGroupFormatDescription once and use it
+     *                          for all of the CMSampleBuffers.
+     *                          You may call CMTaggedBufferGroupFormatDescriptionMatchesTaggedBufferGroup to confirm
+     *                          that
+     *                          a reused CMTaggedBufferGroupFormatDescription matches a new CMTaggedBufferGroup.
+     * @param sBufOut
+     *                          Returned newly created CMSampleBuffer.
+     * @return OSStatus with error or noErr if successful.
+     * 
+     *         API-Since: 17.0
+     */
+    @Generated
+    @CFunction
+    public static native int CMSampleBufferCreateForTaggedBufferGroup(@Nullable CFAllocatorRef allocator,
+            @NotNull CMTaggedBufferGroupRef taggedBufferGroup, @ByValue CMTime sbufPTS, @ByValue CMTime sbufDuration,
+            @NotNull CMFormatDescriptionRef formatDescription, @NotNull Ptr<CMSampleBufferRef> sBufOut);
+
+    /**
+     * [@function] CMSampleBufferGetTaggedBufferGroup
+     * 
+     * Returns a CMSampleBuffer's TaggedBufferGroup of media data.
+     * 
+     * The caller does not own the returned CMTaggedBufferGroup, and must retain it explicitly if the caller needs to
+     * maintain a reference to it.
+     * 
+     * @param sbuf CMSampleBuffer being interrogated.
+     * @return CMTaggedBufferGroup of media data. The result will be NULL if the CMSampleBuffer does not contain a
+     *         CMTaggedBufferGroup, or if there is some other error.
+     * 
+     *         API-Since: 17.0
+     */
+    @Generated
+    @CFunction
+    @Nullable
+    public static native CMTaggedBufferGroupRef CMSampleBufferGetTaggedBufferGroup(@NotNull CMSampleBufferRef sbuf);
+
+    /**
+     * [@function] CMBufferQueueCopyHead
+     * 
+     * Retrieves & retains the next-to-dequeue buffer from a CMBufferQueue but leaves it in the queue.
+     * 
+     * This follows CF "Copy" semantics -- it retains the returned buffer.
+     * Note that with non-FIFO queues it's not guaranteed that the next dequeue will return
+     * this particular buffer (if an intervening Enqueue adds a buffer that will dequeue next).
+     * 
+     * @return The retained buffer. Will be NULL if the queue is empty.
+     * 
+     *         API-Since: 17.0
+     */
+    @Generated
+    @CFunction
+    @Nullable
+    public static native ConstVoidPtr CMBufferQueueCopyHead(@NotNull CMBufferQueueRef queue);
+
+    /**
+     * CFData; big-endian structure; same as kCVImageBufferContentColorVolumeKey (to be added); matches payload of
+     * ITU-T-H.265:11/2019, D.2.40 Content Colour Volume SEI message
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kCMFormatDescriptionExtension_ContentColorVolume();
+
+    /**
+     * [@constant] kCMFormatDescriptionExtension_LogTransferFunction
+     * Indicates that the transfer function or gamma of the content is a log format and identifies the specific log
+     * curve.
+     * 
+     * The value is a CFString holding fully specified reverse DNS identifier.
+     * Content captured in Apple Log will have this key set to kCMFormatDescriptionLogTransferFunction_AppleLog.
+     * [@constant] kCMFormatDescriptionLogTransferFunction_AppleLog
+     * Indicates the Apple Log identifier.
+     * 
+     * You can download the Apple Log Profile White Paper from the Apple Developer Downloads website.
+     * 
+     * API-Since: 17.2
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kCMFormatDescriptionExtension_LogTransferFunction();
+
+    /**
+     * same as kCVImageBufferLogTransferFunction_AppleLog
+     * 
+     * API-Since: 17.2
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kCMFormatDescriptionLogTransferFunction_AppleLog();
+
+    /**
+     * CFString, one of
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kCMFormatDescriptionExtension_HeroEye();
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kCMFormatDescriptionHeroEye_Left();
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kCMFormatDescriptionHeroEye_Right();
+
+    /**
+     * CFNumber(uint32) as micrometers
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kCMFormatDescriptionExtension_StereoCameraBaseline();
+
+    /**
+     * CFNumber(int32) from -10000 to 10000 for the uniform range [-1.0...1.0]
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kCMFormatDescriptionExtension_HorizontalDisparityAdjustment();
+
+    /**
+     * CFBoolean
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kCMFormatDescriptionExtension_HasLeftStereoEyeView();
+
+    /**
+     * CFBoolean
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kCMFormatDescriptionExtension_HasRightStereoEyeView();
+
+    /**
+     * CFBoolean
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kCMFormatDescriptionExtension_HasAdditionalViews();
+
+    /**
+     * [@constant] kCMTagInvalid
+     * 
+     * CMTag with an unspecified or "null" value.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @ByValue
+    public static native CMTag kCMTagInvalid();
+
+    /**
+     * [@constant] kCMTagMediaTypeVideo
+     * 
+     * A CMTag of category kCMTagCategory_MediaType and the value kCMMediaType_Video (OSType).
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @ByValue
+    public static native CMTag kCMTagMediaTypeVideo();
+
+    /**
+     * [@constant] kCMTagMediaSubTypeMebx
+     * 
+     * A CMTag of category kCMTagCategory_MediaType and the value kCMMetadataFormatType_Boxed (OSType).
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @ByValue
+    public static native CMTag kCMTagMediaSubTypeMebx();
+
+    /**
+     * [@constant] kCMTagMediaTypeAudio
+     * 
+     * A CMTag of category kCMTagCategory_MediaType and the value kCMMediaType_Audio (OSType).
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @ByValue
+    public static native CMTag kCMTagMediaTypeAudio();
+
+    /**
+     * [@constant] kCMTagMediaTypeMetadata
+     * 
+     * A CMTag of category kCMTagCategory_MediaType and the value kCMMediaType_Metadata (OSType).
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @ByValue
+    public static native CMTag kCMTagMediaTypeMetadata();
+
+    /**
+     * [@constant] kCMTagStereoLeftEye
+     * 
+     * A CMTag of category kCMTagCategory_StereoView and the value kCMTagStereoViewComponent_LeftEye (Flags).
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @ByValue
+    public static native CMTag kCMTagStereoLeftEye();
+
+    /**
+     * [@constant] kCMTagStereoRightEye
+     * 
+     * A CMTag of category kCMTagCategory_StereoView and the value kCMTagStereoViewComponent_RightEye (Flags).
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @ByValue
+    public static native CMTag kCMTagStereoRightEye();
+
+    /**
+     * [@constant] kCMTagStereoLeftAndRightEye
+     * 
+     * A CMTag of category kCMTagCategory_StereoView and the value of the bitwise OR of
+     * kCMTagStereoViewComponent_LeftEye and kCMTagStereoViewComponent_RightEye (Flags).
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @ByValue
+    public static native CMTag kCMTagStereoLeftAndRightEye();
+
+    /**
+     * [@constant] kCMTagStereoNone
+     * 
+     * A CMTag of category kCMTagCategory_StereoView and the value of kCMTagStereoViewComponent_None. (Flags)
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @ByValue
+    public static native CMTag kCMTagStereoNone();
+
+    /**
+     * [@constant] kCMTagStereoInterpretationOrderReversed
+     * 
+     * A CMTag of category kCMTagCategory_StereoViewInterpretation and the value of
+     * kCMStereoViewInterpretation_StereoOrderReversed (Flags).
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @ByValue
+    public static native CMTag kCMTagStereoInterpretationOrderReversed();
+
+    /**
+     * [@constant] kCMTagProjectionTypeRectangular
+     * 
+     * A CMTag of category kCMTagCategory_ProjectionType and the value kCMTagProjectionType_Rectangular (OSType).
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @ByValue
+    public static native CMTag kCMTagProjectionTypeRectangular();
+
+    /**
+     * [@constant] kCMTagProjectionTypeEquirectangular
+     * 
+     * A CMTag of category kCMTagCategory_ProjectionType and the value kCMTagProjectionType_Equirectangular (OSType).
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @ByValue
+    public static native CMTag kCMTagProjectionTypeEquirectangular();
+
+    /**
+     * [@constant] kCMTagProjectionTypeFisheye
+     * 
+     * A CMTag of category kCMTagCategory_ProjectionType and the value kCMTagProjectionType_Fisheye (OSType).
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @ByValue
+    public static native CMTag kCMTagProjectionTypeFisheye();
+
+    /**
+     * [@constant] kCMTagPackingTypeNone
+     * 
+     * A CMTag of category kCMTagCategory_PackingType and the value kCMTagPackingType_None (OStype).
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @ByValue
+    public static native CMTag kCMTagPackingTypeNone();
+
+    /**
+     * [@constant] kCMTagPackingTypeSideBySide
+     * 
+     * A CMTag of category kCMTagCategory_PackingType and the value kCMTagPackingType_SideBySide (OStype).
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @ByValue
+    public static native CMTag kCMTagPackingTypeSideBySide();
+
+    /**
+     * [@constant] kCMTagPackingTypeOverUnder
+     * 
+     * A CMTag of category kCMTagCategory_PackingType and the value kCMTagPackingType_OverUnder (OStype).
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @ByValue
+    public static native CMTag kCMTagPackingTypeOverUnder();
+
+    /**
+     * [@constant] kCMTagValueKey
+     * 
+     * CFDictionary key for value field of a CMTag.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kCMTagValueKey();
+
+    /**
+     * [@constant] kCMTagCategoryKey
+     * 
+     * CFDictionary key for category field of a CMTag.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kCMTagCategoryKey();
+
+    /**
+     * [@constant] kCMTagDataTypeKey
+     * 
+     * CFDictionary key for dataType field of a CMTag.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kCMTagDataTypeKey();
+
+    /**
+     * [@constant] kCMTagCollectionTagsArrayKey
+     * 
+     * CFDictionary key for a CFArray of serialized CMTag dictionaries of a CMTagCollection as used with
+     * CMTagCollectionCopyAsDictionary
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kCMTagCollectionTagsArrayKey();
 }

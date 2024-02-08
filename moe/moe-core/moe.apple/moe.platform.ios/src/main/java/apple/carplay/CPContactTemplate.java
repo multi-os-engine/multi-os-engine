@@ -212,4 +212,9 @@ public class CPContactTemplate extends CPTemplate implements CPBarButtonProvidin
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

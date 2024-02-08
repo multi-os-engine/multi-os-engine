@@ -619,6 +619,8 @@ public class NSItemProvider extends NSObject implements NSCopying {
      * \param coordinated Pass \c YES to use file coordination to access this file, even if it is not opened in place.
      * If \c openInPlace is set to \c YES file coordination will be used and this parameter is ignored.
      * \param visibility The visibility of this representation.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("initWithContentsOfURL:contentType:openInPlace:coordinated:visibility:")
@@ -637,6 +639,8 @@ public class NSItemProvider extends NSObject implements NSCopying {
      * \param completionHandler A block that will be called when loading is complete. It will either have a non-nil
      * \c data or a non-nil \c error parameter.
      * \return A progress object. Use it to monitor loading progress, or to cancel loading.
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated
@@ -672,6 +676,8 @@ public class NSItemProvider extends NSObject implements NSCopying {
      * \c YES if the file was successfully opened in place, or \c NO if a copy of the file was
      * created in a temporary directory.
      * \return A progress object. Use it to monitor loading progress, or to cancel loading.
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated
@@ -740,6 +746,8 @@ public class NSItemProvider extends NSObject implements NSCopying {
      * \param contentType The content type associated with the data representation.
      * \param visibility Specifies which processes have access to this representation.
      * \param loadHandler A block called to provide the data representation.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("registerDataRepresentationForContentType:visibility:loadHandler:")
@@ -782,6 +790,8 @@ public class NSItemProvider extends NSObject implements NSCopying {
      * \param visibility Specifies which processes have access to this representation.
      * \param openInPlace Specifies whether the file should be openable in place.
      * \param loadHandler A block called to provide the file representation.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("registerFileRepresentationForContentType:visibility:openInPlace:loadHandler:")
@@ -811,6 +821,8 @@ public class NSItemProvider extends NSObject implements NSCopying {
      * \discussion Content types should be registered in order of fidelity. Prefer using content types that appear
      * earlier
      * in the array.
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated
@@ -821,6 +833,8 @@ public class NSItemProvider extends NSObject implements NSCopying {
      * Return an array of registered content types that conform to a given content type.
      * \discussion The returned content types are given in order of fidelity. Prefer content types that appear earlier
      * in the array.
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated
@@ -829,9 +843,16 @@ public class NSItemProvider extends NSObject implements NSCopying {
 
     /**
      * Registered content types that can be loaded as files opened in place
+     * 
+     * API-Since: 16.0
      */
     @NotNull
     @Generated
     @Selector("registeredContentTypesForOpenInPlace")
     public native NSArray<? extends UTType> registeredContentTypesForOpenInPlace();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

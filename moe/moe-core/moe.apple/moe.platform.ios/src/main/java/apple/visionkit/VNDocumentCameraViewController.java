@@ -30,6 +30,17 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
+ * A view controller that shows what the document camera sees.
+ * 
+ * Present this view controller, as follows, and add it to your view controller
+ * hierarchy to scan documents.
+ * 
+ * ```occ VNDocumentCameraViewController* documentCameraViewController =
+ * [[VNDocumentCameraViewController alloc] init];
+ * documentCameraViewController.delegate = self; [self
+ * presentViewController:documentCameraViewController animated:YES
+ * completion:nil]; ```
+ * 
  * API-Since: 13.0
  */
 @Generated
@@ -99,7 +110,21 @@ public class VNDocumentCameraViewController extends UIViewController {
     public static native String debugDescription_static();
 
     /**
-     * The delegate to be notified when the user saves or cancels
+     * The delegate to be notified when the user saves or cancels the document
+     * scanner.
+     * 
+     * The delegate receives one of the following three calls:
+     * 
+     * -
+     * ``VisionKit/VNDocumentCameraViewControllerDelegate/documentCameraViewController(_:didFinishWith:)``
+     * when the camera successfully completes a scan. -
+     * ``VisionKit/VNDocumentCameraViewControllerDelegate/documentCameraViewControllerDidCancel(_:)``
+     * when the user cancels out of the document camera interface. -
+     * ``VisionKit/VNDocumentCameraViewControllerDelegate/documentCameraViewController(_:didFailWithError:)``
+     * when the document scan fails or is unable to capture a photo.
+     * 
+     * Your app is responsible for dismissing the document camera in all delegate
+     * callback methods.
      */
     @Nullable
     @Generated
@@ -147,7 +172,9 @@ public class VNDocumentCameraViewController extends UIViewController {
     public static native boolean isSubclassOfClass(Class aClass);
 
     /**
-     * Returns false for unsupported hardware
+     * A Boolean variable that indicates whether or not the current device supports document scanning.
+     * 
+     * This class method returns `false` for unsupported hardware.
      */
     @Generated
     @Selector("isSupported")
@@ -172,7 +199,21 @@ public class VNDocumentCameraViewController extends UIViewController {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * The delegate to be notified when the user saves or cancels
+     * The delegate to be notified when the user saves or cancels the document
+     * scanner.
+     * 
+     * The delegate receives one of the following three calls:
+     * 
+     * -
+     * ``VisionKit/VNDocumentCameraViewControllerDelegate/documentCameraViewController(_:didFinishWith:)``
+     * when the camera successfully completes a scan. -
+     * ``VisionKit/VNDocumentCameraViewControllerDelegate/documentCameraViewControllerDidCancel(_:)``
+     * when the user cancels out of the document camera interface. -
+     * ``VisionKit/VNDocumentCameraViewControllerDelegate/documentCameraViewController(_:didFailWithError:)``
+     * when the document scan fails or is unable to capture a photo.
+     * 
+     * Your app is responsible for dismissing the document camera in all delegate
+     * callback methods.
      */
     @Generated
     @Selector("setDelegate:")
@@ -180,7 +221,21 @@ public class VNDocumentCameraViewController extends UIViewController {
             @Nullable @Mapped(ObjCObjectMapper.class) VNDocumentCameraViewControllerDelegate value);
 
     /**
-     * The delegate to be notified when the user saves or cancels
+     * The delegate to be notified when the user saves or cancels the document
+     * scanner.
+     * 
+     * The delegate receives one of the following three calls:
+     * 
+     * -
+     * ``VisionKit/VNDocumentCameraViewControllerDelegate/documentCameraViewController(_:didFinishWith:)``
+     * when the camera successfully completes a scan. -
+     * ``VisionKit/VNDocumentCameraViewControllerDelegate/documentCameraViewControllerDidCancel(_:)``
+     * when the user cancels out of the document camera interface. -
+     * ``VisionKit/VNDocumentCameraViewControllerDelegate/documentCameraViewController(_:didFailWithError:)``
+     * when the document scan fails or is unable to capture a photo.
+     * 
+     * Your app is responsible for dismissing the document camera in all delegate
+     * callback methods.
      */
     @Generated
     public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) VNDocumentCameraViewControllerDelegate value) {
@@ -206,4 +261,9 @@ public class VNDocumentCameraViewController extends UIViewController {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

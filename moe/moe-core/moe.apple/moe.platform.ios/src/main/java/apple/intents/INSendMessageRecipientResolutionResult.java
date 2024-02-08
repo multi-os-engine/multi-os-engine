@@ -198,4 +198,9 @@ public class INSendMessageRecipientResolutionResult extends INPersonResolutionRe
     @Generated
     @Selector("unsupportedWithReason:")
     public static native INSendMessageRecipientResolutionResult unsupportedWithReason(@NInt long reason);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

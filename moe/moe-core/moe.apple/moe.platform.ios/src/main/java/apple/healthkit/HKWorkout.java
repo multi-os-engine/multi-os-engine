@@ -175,7 +175,12 @@ public class HKWorkout extends HKSample {
      * @param workoutActivityType The activity type of the workout
      * @param startDate           The point in time that the workout was started
      * @param endDate             The point in time that the workout was ended
+     * 
+     *                            API-Since: 8.0
+     *                            Deprecated-Since: 17.0
+     *                            Deprecated-Message: Use HKWorkoutBuilder
      */
+    @Deprecated
     @Generated
     @Selector("workoutWithActivityType:startDate:endDate:")
     public static native HKWorkout workoutWithActivityTypeStartDateEndDate(@NUInt long workoutActivityType,
@@ -198,7 +203,10 @@ public class HKWorkout extends HKSample {
      * @param metadata            Metadata for the workout. (Optional)
      * 
      *                            API-Since: 9.0
+     *                            Deprecated-Since: 17.0
+     *                            Deprecated-Message: Use HKWorkoutBuilder
      */
+    @Deprecated
     @Generated
     @Selector("workoutWithActivityType:startDate:endDate:duration:totalEnergyBurned:totalDistance:device:metadata:")
     public static native HKWorkout workoutWithActivityTypeStartDateEndDateDurationTotalEnergyBurnedTotalDistanceDeviceMetadata(
@@ -220,7 +228,12 @@ public class HKWorkout extends HKSample {
      * @param totalEnergyBurned   The amount of energy that was burned during the workout. (Optional)
      * @param totalDistance       The total distance that was traveled during the workout. (Optional)
      * @param metadata            Metadata for the workout. (Optional)
+     * 
+     *                            API-Since: 8.0
+     *                            Deprecated-Since: 17.0
+     *                            Deprecated-Message: Use HKWorkoutBuilder
      */
+    @Deprecated
     @Generated
     @Selector("workoutWithActivityType:startDate:endDate:duration:totalEnergyBurned:totalDistance:metadata:")
     public static native HKWorkout workoutWithActivityTypeStartDateEndDateDurationTotalEnergyBurnedTotalDistanceMetadata(
@@ -245,7 +258,10 @@ public class HKWorkout extends HKSample {
      * @param metadata            Metadata for the workout. (Optional)
      * 
      *                            API-Since: 9.0
+     *                            Deprecated-Since: 17.0
+     *                            Deprecated-Message: Use HKWorkoutBuilder
      */
+    @Deprecated
     @Generated
     @Selector("workoutWithActivityType:startDate:endDate:workoutEvents:totalEnergyBurned:totalDistance:device:metadata:")
     public static native HKWorkout workoutWithActivityTypeStartDateEndDateWorkoutEventsTotalEnergyBurnedTotalDistanceDeviceMetadata(
@@ -267,7 +283,12 @@ public class HKWorkout extends HKSample {
      * @param totalEnergyBurned   The amount of energy that was burned during the workout. (Optional)
      * @param totalDistance       The total distance that was traveled during the workout. (Optional)
      * @param metadata            Metadata for the workout. (Optional)
+     * 
+     *                            API-Since: 8.0
+     *                            Deprecated-Since: 17.0
+     *                            Deprecated-Message: Use HKWorkoutBuilder
      */
+    @Deprecated
     @Generated
     @Selector("workoutWithActivityType:startDate:endDate:workoutEvents:totalEnergyBurned:totalDistance:metadata:")
     public static native HKWorkout workoutWithActivityTypeStartDateEndDateWorkoutEventsTotalEnergyBurnedTotalDistanceMetadata(
@@ -294,7 +315,10 @@ public class HKWorkout extends HKSample {
      * @param metadata                 Metadata for the workout. (Optional)
      * 
      *                                 API-Since: 10.0
+     *                                 Deprecated-Since: 17.0
+     *                                 Deprecated-Message: Use HKWorkoutBuilder
      */
+    @Deprecated
     @Generated
     @Selector("workoutWithActivityType:startDate:endDate:workoutEvents:totalEnergyBurned:totalDistance:totalSwimmingStrokeCount:device:metadata:")
     public static native HKWorkout workoutWithActivityTypeStartDateEndDateWorkoutEventsTotalEnergyBurnedTotalDistanceTotalSwimmingStrokeCountDeviceMetadata(
@@ -446,7 +470,10 @@ public class HKWorkout extends HKSample {
      * @param metadata            Metadata for the workout. (Optional)
      * 
      *                            API-Since: 11.0
+     *                            Deprecated-Since: 17.0
+     *                            Deprecated-Message: Use HKWorkoutBuilder
      */
+    @Deprecated
     @Generated
     @Selector("workoutWithActivityType:startDate:endDate:workoutEvents:totalEnergyBurned:totalDistance:totalFlightsClimbed:device:metadata:")
     public static native HKWorkout workoutWithActivityTypeStartDateEndDateWorkoutEventsTotalEnergyBurnedTotalDistanceTotalFlightsClimbedDeviceMetadata(
@@ -499,4 +526,9 @@ public class HKWorkout extends HKSample {
     @Generated
     @Selector("workoutActivities")
     public native NSArray<? extends HKWorkoutActivity> workoutActivities();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -698,4 +698,9 @@ public class NSOrderedSet<_ObjectType> extends NSObject implements NSCopying, NS
     @Selector("orderedSetByApplyingDifference:")
     public native NSOrderedSet<_ObjectType> orderedSetByApplyingDifference(
             @NotNull NSOrderedCollectionDifference<_ObjectType> difference);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

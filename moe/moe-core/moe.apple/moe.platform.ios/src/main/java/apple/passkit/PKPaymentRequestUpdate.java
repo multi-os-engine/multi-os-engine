@@ -287,4 +287,40 @@ public class PKPaymentRequestUpdate extends NSObject {
     @Generated
     @Selector("setRecurringPaymentRequest:")
     public native void setRecurringPaymentRequest(@Nullable PKRecurringPaymentRequest value);
+
+    /**
+     * The new deferred payment request to update the payment request with.
+     * The default value is `nil`, which indicates no update is needed.
+     * 
+     * The billing agreeement cannot be changed.
+     * 
+     * This property cannot be used simultaneously with: multi token contexts, recurring payment requests or automatic
+     * reload payment requests.
+     * 
+     * API-Since: 16.4
+     */
+    @Generated
+    @Selector("deferredPaymentRequest")
+    @Nullable
+    public native PKDeferredPaymentRequest deferredPaymentRequest();
+
+    /**
+     * The new deferred payment request to update the payment request with.
+     * The default value is `nil`, which indicates no update is needed.
+     * 
+     * The billing agreeement cannot be changed.
+     * 
+     * This property cannot be used simultaneously with: multi token contexts, recurring payment requests or automatic
+     * reload payment requests.
+     * 
+     * API-Since: 16.4
+     */
+    @Generated
+    @Selector("setDeferredPaymentRequest:")
+    public native void setDeferredPaymentRequest(@Nullable PKDeferredPaymentRequest value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

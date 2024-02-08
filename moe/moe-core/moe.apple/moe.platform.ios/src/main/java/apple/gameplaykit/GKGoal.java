@@ -45,8 +45,6 @@ import org.jetbrains.annotations.Nullable;
 /**
  * Defines a spatial directive.
  * The various goals cause force to be applied to agents to try to achieve said goal.
- * 
- * API-Since: 9.0
  */
 @Generated
 @Library("GameplayKit")
@@ -297,4 +295,9 @@ public class GKGoal extends NSObject implements NSCopying {
     @Generated
     @Selector("init")
     public native GKGoal init();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -599,4 +599,9 @@ public class AVCaptureStillImageOutput extends AVCaptureOutput {
         void call_prepareToCaptureStillImageBracketFromConnectionWithSettingsArrayCompletionHandler(boolean prepared,
                 @Nullable NSError error);
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -394,4 +394,9 @@ public class AVMediaSelectionOption extends NSObject implements NSCopying {
     @Selector("propertyList")
     @MappedReturn(ObjCObjectMapper.class)
     public native Object propertyList();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

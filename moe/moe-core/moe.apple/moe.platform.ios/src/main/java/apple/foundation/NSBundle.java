@@ -589,4 +589,9 @@ public class NSBundle extends NSObject {
     @Selector("localizedAttributedStringForKey:value:table:")
     public native NSAttributedString localizedAttributedStringForKeyValueTable(@NotNull String key,
             @Nullable String value, @Nullable String tableName);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

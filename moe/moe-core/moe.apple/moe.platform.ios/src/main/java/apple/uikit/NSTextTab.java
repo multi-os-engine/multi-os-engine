@@ -241,4 +241,9 @@ public class NSTextTab extends NSObject implements NSCopying, NSCoding, NSSecure
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

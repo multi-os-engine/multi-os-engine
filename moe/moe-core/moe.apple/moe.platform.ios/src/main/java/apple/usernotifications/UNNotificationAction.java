@@ -241,4 +241,9 @@ public class UNNotificationAction extends NSObject implements NSCopying, NSSecur
     @Generated
     @Selector("icon")
     public native UNNotificationActionIcon icon();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

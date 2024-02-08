@@ -354,4 +354,9 @@ public class INInteraction extends NSObject implements NSSecureCoding, NSCopying
     @Selector("parameterValueForParameter:")
     @MappedReturn(ObjCObjectMapper.class)
     public native Object parameterValueForParameter(@NotNull INParameter parameter);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

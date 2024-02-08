@@ -470,4 +470,9 @@ public class CAAnimation extends NSObject implements NSSecureCoding, NSCopying, 
     @Generated
     @Selector("setPreferredFrameRateRange:")
     public native void setPreferredFrameRateRange(@ByValue CAFrameRateRange value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -48,25 +48,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
- * CKQuery
- * 
- * Only AND compound predicates are allowed.
- * 
- * Key names must begin with either an upper or lower case character ([a-zA-Z]) and may be followed by characters,
- * numbers, or underscores ([0-9a-zA-Z_]). Keypaths may only resolve to the currently evaluated object, so the '.'
- * character is not allowed in key names.
- * 
- * A limited subset of classes are allowed as predicate arguments:
- * - NSString
- * - NSDate
- * - NSData
- * - NSNumber
- * - NSArray
- * - CKReference
- * - CKRecord
- * - CLLocation
- * 
- * Any other class as an argument will result in an error when executing the query.
+ * NS_SWIFT_SENDABLE on macos(14.0), ios(17.0), tvos(17.0), watchos(10.0)
  * 
  * API-Since: 8.0
  */
@@ -239,4 +221,9 @@ public class CKQuery extends NSObject implements NSSecureCoding, NSCopying {
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

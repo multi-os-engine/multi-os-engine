@@ -214,4 +214,9 @@ public class MDLScatteringFunction extends NSObject implements MDLNamed {
     @Generated
     @Selector("specular")
     public native MDLMaterialProperty specular();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

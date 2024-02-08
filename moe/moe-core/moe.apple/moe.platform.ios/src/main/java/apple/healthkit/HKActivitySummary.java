@@ -505,4 +505,9 @@ public class HKActivitySummary extends NSObject implements NSSecureCoding, NSCop
     @Generated
     @Selector("standHoursGoal")
     public native HKQuantity standHoursGoal();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

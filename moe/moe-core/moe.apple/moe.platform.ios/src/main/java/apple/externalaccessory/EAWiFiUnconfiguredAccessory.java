@@ -45,9 +45,6 @@ import org.jetbrains.annotations.Nullable;
  * 
  * This class models an unconfigured MFi Wireless Accessory Configuration accessory
  * discovered via a EAWiFiUnconfiguredAccessoryBrowser search.
- * 
- * 
- * API-Since: 8.0
  */
 @Generated
 @Library("ExternalAccessory")
@@ -226,4 +223,9 @@ public class EAWiFiUnconfiguredAccessory extends NSObject {
     @Generated
     @Selector("ssid")
     public native String ssid();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

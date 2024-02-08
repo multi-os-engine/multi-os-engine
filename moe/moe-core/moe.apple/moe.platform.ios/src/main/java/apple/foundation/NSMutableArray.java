@@ -728,4 +728,9 @@ public class NSMutableArray<_ObjectType> extends NSArray<_ObjectType> {
     @Generated
     @Selector("applyDifference:")
     public native void applyDifference(@NotNull NSOrderedCollectionDifference<_ObjectType> difference);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

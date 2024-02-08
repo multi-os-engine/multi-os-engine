@@ -256,4 +256,9 @@ public class MDLPhysicallyPlausibleScatteringFunction extends MDLScatteringFunct
     @Selector("version")
     @NInt
     public native long version();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

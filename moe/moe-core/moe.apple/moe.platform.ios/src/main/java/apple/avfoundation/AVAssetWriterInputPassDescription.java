@@ -47,6 +47,8 @@ import org.jetbrains.annotations.Nullable;
  * Defines an interface for querying information about the requirements of the current pass, such as the time ranges of
  * media data to append.
  * 
+ * Subclasses of this type that are used from Swift must fulfill the requirements of a Sendable type.
+ * 
  * API-Since: 8.0
  */
 @Generated
@@ -179,4 +181,9 @@ public class AVAssetWriterInputPassDescription extends NSObject {
     @Generated
     @Selector("sourceTimeRanges")
     public native NSArray<? extends NSValue> sourceTimeRanges();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

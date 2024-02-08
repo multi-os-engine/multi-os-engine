@@ -174,4 +174,9 @@ public class MPFeedbackCommandEvent extends MPRemoteCommandEvent {
     @Generated
     @Selector("isNegative")
     public native boolean isNegative();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

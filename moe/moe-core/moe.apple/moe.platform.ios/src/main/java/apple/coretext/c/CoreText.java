@@ -293,7 +293,7 @@ public final class CoreText {
             @NotNull CTFontDescriptorRef original, @NotNull CFDictionaryRef attributes);
 
     /**
-     * [@function] CTFontCreateCopyWithFamily
+     * [@function] CTFontDescriptorCreateCopyWithFamily
      * 
      * Returns a new font descriptor in the specified family based on the traits of the original descriptor.
      * 

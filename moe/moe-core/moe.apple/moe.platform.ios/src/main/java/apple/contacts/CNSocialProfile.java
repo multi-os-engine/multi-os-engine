@@ -49,8 +49,6 @@ import org.jetbrains.annotations.Nullable;
  * An immutable value object representing a social profile.
  * 
  * CNSocialProfile is thread safe.
- * 
- * API-Since: 9.0
  */
 @Generated
 @Library("Contacts")
@@ -235,4 +233,9 @@ public class CNSocialProfile extends NSObject implements NSCopying, NSSecureCodi
     @Generated
     @Selector("username")
     public native String username();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

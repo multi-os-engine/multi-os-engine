@@ -216,4 +216,9 @@ public class PKSuicaPassProperties extends PKTransitPassProperties {
     @Generated
     @Selector("isLowBalanceGateNotificationEnabled")
     public native boolean isLowBalanceGateNotificationEnabled();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

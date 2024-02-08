@@ -289,4 +289,9 @@ public class NEPacketTunnelNetworkSettings extends NETunnelNetworkSettings {
     @Generated
     @Selector("tunnelOverheadBytes")
     public native NSNumber tunnelOverheadBytes();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

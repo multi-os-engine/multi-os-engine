@@ -134,6 +134,12 @@ public class HMEvent extends NSObject {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    /**
+     * API-Since: 9.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: HMEvent is abstract
+     */
+    @Deprecated
     @Generated
     @Owned
     @Selector("new")
@@ -160,6 +166,12 @@ public class HMEvent extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 9.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: HMEvent is abstract
+     */
+    @Deprecated
     @Generated
     @Selector("init")
     public native HMEvent init();
@@ -180,4 +192,9 @@ public class HMEvent extends NSObject {
     @Generated
     @Selector("isSupportedForHome:")
     public static native boolean isSupportedForHome(@NotNull HMHome home);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

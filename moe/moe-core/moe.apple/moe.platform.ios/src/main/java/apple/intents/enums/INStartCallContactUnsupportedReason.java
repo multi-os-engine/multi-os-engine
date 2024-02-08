@@ -41,4 +41,8 @@ public final class INStartCallContactUnsupportedReason {
      * API-Since: 13.0
      */
     @Generated @NInt public static final long NoUsableHandleForRedial = 0x0000000000000007L;
+    /**
+     * API-Since: 17.0
+     */
+    @Generated @NInt public static final long RequiringInAppAuthentication = 0x0000000000000008L;
 }

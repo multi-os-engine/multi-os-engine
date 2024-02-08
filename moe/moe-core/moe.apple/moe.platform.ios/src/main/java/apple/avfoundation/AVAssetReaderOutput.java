@@ -203,6 +203,11 @@ public class AVAssetReaderOutput extends NSObject {
      * reading more media data. When this method returns NULL, clients should check the value of the associated
      * AVAssetReader's status property to determine why no more samples could be read.
      * 
+     * In certain configurations, such as when outputSettings is nil, copyNextSampleBuffer may return marker-only sample
+     * buffers as well as sample buffers containing media data. Marker-only sample buffers can be identified by
+     * CMSampleBufferGetNumSamples returning 0. Clients who do not need the information attached to marker-only sample
+     * buffers may skip them.
+     * 
      * This method throws an exception if this output is not added to an instance of AVAssetReader (using -addOutput:)
      * and -startReading is not called on that asset reader.
      * 
@@ -360,4 +365,9 @@ public class AVAssetReaderOutput extends NSObject {
     @Generated
     @Selector("supportsRandomAccess")
     public native boolean supportsRandomAccess();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

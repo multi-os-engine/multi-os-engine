@@ -225,4 +225,30 @@ public class PKStrokePoint extends NSObject implements NSCopying {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * Create a new point with the provided properties.
+     */
+    @Generated
+    @Selector("initWithLocation:timeOffset:size:opacity:force:azimuth:altitude:secondaryScale:")
+    public native PKStrokePoint initWithLocationTimeOffsetSizeOpacityForceAzimuthAltitudeSecondaryScale(
+            @ByValue CGPoint location, double timeOffset, @ByValue CGSize size, @NFloat double opacity,
+            @NFloat double force, @NFloat double azimuth, @NFloat double altitude, @NFloat double secondaryScale);
+
+    /**
+     * The scaling of the point for secondary effects.
+     * 
+     * For example the scaling of the pigment in the watercolor ink.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("secondaryScale")
+    @NFloat
+    public native double secondaryScale();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -541,4 +541,9 @@ public class UIPasteboard extends NSObject {
         void call_detectValuesForPatternsInItemSetCompletionHandler(
                 @Nullable NSArray<? extends NSDictionary<String, ?>> arg0, @Nullable NSError arg1);
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

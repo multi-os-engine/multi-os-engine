@@ -38,20 +38,26 @@ public final class NEVPNIKEv2DiffieHellmanGroup {
      * [@const] NEVPNIKEv2DiffieHellmanGroup1 Diffie Hellman group 1 (768-bit MODP)
      * 
      * API-Since: 8.0
+     * Deprecated-Since: 17.0
+     * Deprecated-Message: Use Diffie Hellman group 14 or greater instead
      */
-    @Generated @NInt public static final long Group1 = 0x0000000000000001L;
+    @Deprecated @Generated @NInt public static final long Group1 = 0x0000000000000001L;
     /**
      * [@const] NEVPNIKEv2DiffieHellmanGroup2 Diffie Hellman group 2 (1024-bit MODP)
      * 
      * API-Since: 8.0
+     * Deprecated-Since: 17.0
+     * Deprecated-Message: Use Diffie Hellman group 14 or greater instead
      */
-    @Generated @NInt public static final long Group2 = 0x0000000000000002L;
+    @Deprecated @Generated @NInt public static final long Group2 = 0x0000000000000002L;
     /**
      * [@const] NEVPNIKEv2DiffieHellmanGroup5 Diffie Hellman group 5 (1536-bit MODP)
      * 
      * API-Since: 8.0
+     * Deprecated-Since: 17.0
+     * Deprecated-Message: Use Diffie Hellman group 14 or greater instead
      */
-    @Generated @NInt public static final long Group5 = 0x0000000000000005L;
+    @Deprecated @Generated @NInt public static final long Group5 = 0x0000000000000005L;
     /**
      * [@const] NEVPNIKEv2DiffieHellmanGroup14 Diffie Hellman group 14 (2048-bit MODP)
      * 
@@ -111,4 +117,10 @@ public final class NEVPNIKEv2DiffieHellmanGroup {
      * API-Since: 13.0
      */
     @Generated @NInt public static final long Group31 = 0x000000000000001FL;
+    /**
+     * [@const] NEVPNIKEv2DiffieHellmanGroup32 Diffie Hellman group 32 (Curve448)
+     * 
+     * API-Since: 17.0
+     */
+    @Generated @NInt public static final long Group32 = 0x0000000000000020L;
 }

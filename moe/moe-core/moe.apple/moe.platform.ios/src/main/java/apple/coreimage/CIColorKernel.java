@@ -58,8 +58,6 @@ import org.jetbrains.annotations.Nullable;
  * The destination pixel location is obtained by calling destCoord().
  * The kernel should not call sample(), samplerCoord(), or samplerTransform().
  * The function must return a vec4 pixel color.
- * 
- * API-Since: 8.0
  */
 @Generated
 @Library("CoreImage")
@@ -237,4 +235,9 @@ public class CIColorKernel extends CIKernel {
     @Selector("kernelsWithMetalString:error:")
     public static native NSArray<? extends CIKernel> kernelsWithMetalStringError(@NotNull String source,
             @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -294,4 +294,9 @@ public class INRelevantShortcut extends NSObject implements NSSecureCoding, NSCo
     @Generated
     @Selector("widgetKind")
     public native String widgetKind();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

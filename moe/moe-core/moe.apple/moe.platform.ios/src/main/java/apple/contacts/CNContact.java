@@ -66,8 +66,6 @@ import org.jetbrains.annotations.Nullable;
  * If using a CNContact instance where you are not certain of the keys that were fetched, use isKeyAvailable: or
  * areKeysAvailable:. If these return NO you need to refetch the contact by the contact identifier with the keys you
  * want to fetch. Accessing a property that was not fetched will throw CNContactPropertyNotFetchedExceptionName.
- * 
- * API-Since: 9.0
  */
 @Generated
 @Library("Contacts")
@@ -578,4 +576,9 @@ public class CNContact extends NSObject implements NSCopying, NSMutableCopying, 
     @Generated
     @Selector("predicateForContactsMatchingPhoneNumber:")
     public static native NSPredicate predicateForContactsMatchingPhoneNumber(@NotNull CNPhoneNumber phoneNumber);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

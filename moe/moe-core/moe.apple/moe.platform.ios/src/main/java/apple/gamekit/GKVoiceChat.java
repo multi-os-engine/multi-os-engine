@@ -43,8 +43,6 @@ import org.jetbrains.annotations.Nullable;
 
 /**
  * GKVoiceChat represents an instance of a named voice communications channel
- * 
- * API-Since: 4.1
  */
 @Generated
 @Library("GameKit")
@@ -195,7 +193,6 @@ public class GKVoiceChat extends NSObject {
      * 
      * API-Since: 5.0
      * Deprecated-Since: 8.0
-     * Deprecated-Message: use players
      */
     @Nullable
     @Generated
@@ -206,7 +203,6 @@ public class GKVoiceChat extends NSObject {
     /**
      * API-Since: 4.1
      * Deprecated-Since: 8.0
-     * Deprecated-Message: use setPlayerVoiceChatStateDidChangeHandler:
      */
     @NotNull
     @Generated
@@ -239,7 +235,6 @@ public class GKVoiceChat extends NSObject {
      * 
      * API-Since: 5.0
      * Deprecated-Since: 8.0
-     * Deprecated-Message: This is never invoked and its implementation does nothing, use setPlayer:muted:
      */
     @Generated
     @Deprecated
@@ -258,7 +253,6 @@ public class GKVoiceChat extends NSObject {
     /**
      * API-Since: 4.1
      * Deprecated-Since: 8.0
-     * Deprecated-Message: use setPlayerVoiceChatStateDidChangeHandler:
      */
     @Generated
     @Deprecated
@@ -326,4 +320,9 @@ public class GKVoiceChat extends NSObject {
         @Generated
         void call_setPlayerVoiceChatStateDidChangeHandler(@NotNull GKPlayer arg0, @NInt long arg1);
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

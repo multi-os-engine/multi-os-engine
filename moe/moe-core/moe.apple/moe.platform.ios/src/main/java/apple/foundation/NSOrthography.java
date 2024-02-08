@@ -280,4 +280,9 @@ public class NSOrthography extends NSObject implements NSCopying, NSSecureCoding
     @Generated
     @Selector("defaultOrthographyForLanguage:")
     public static native NSOrthography defaultOrthographyForLanguage(@NotNull String language);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

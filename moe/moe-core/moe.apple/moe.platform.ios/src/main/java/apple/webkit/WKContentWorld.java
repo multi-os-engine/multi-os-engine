@@ -219,4 +219,9 @@ public class WKContentWorld extends NSObject {
     @Generated
     @Selector("worldWithName:")
     public static native WKContentWorld worldWithName(@NotNull String name);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

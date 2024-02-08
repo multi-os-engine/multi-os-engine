@@ -343,4 +343,9 @@ public class SCNPlane extends SCNGeometry {
     @Selector("widthSegmentCount")
     @NInt
     public native long widthSegmentCount();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

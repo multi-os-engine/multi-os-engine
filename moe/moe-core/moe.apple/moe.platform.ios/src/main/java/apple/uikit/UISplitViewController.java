@@ -655,4 +655,9 @@ public class UISplitViewController extends UIViewController {
     @Generated
     @Selector("setDisplayModeButtonVisibility:")
     public native void setDisplayModeButtonVisibility(@NInt long value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

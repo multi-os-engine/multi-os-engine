@@ -34,9 +34,6 @@ import org.jetbrains.annotations.Nullable;
  * PDF417 code symbol.
  * 
  * Refer to the ISO/IEC 15438:2006(E) for the PDF417 symbol specification.
- * 
- * 
- * API-Since: 11.0
  */
 @Generated
 @Library("CoreImage")
@@ -240,4 +237,9 @@ public class CIPDF417CodeDescriptor extends CIBarcodeDescriptor {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

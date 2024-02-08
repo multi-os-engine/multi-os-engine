@@ -275,4 +275,9 @@ public class QLThumbnailGenerationRequest extends NSObject implements NSCopying,
     @Generated
     @Selector("setContentType:")
     public native void setContentType(UTType value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

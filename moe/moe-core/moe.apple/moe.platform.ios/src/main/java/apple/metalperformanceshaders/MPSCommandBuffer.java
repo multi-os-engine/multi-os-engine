@@ -556,4 +556,9 @@ public class MPSCommandBuffer extends NSObject implements MTLCommandBuffer {
     @MappedReturn(ObjCObjectMapper.class)
     public native MTLAccelerationStructureCommandEncoder accelerationStructureCommandEncoderWithDescriptor(
             @NotNull MTLAccelerationStructurePassDescriptor descriptor);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

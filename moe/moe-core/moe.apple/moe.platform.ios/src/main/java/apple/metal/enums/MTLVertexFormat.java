@@ -241,4 +241,12 @@ public final class MTLVertexFormat {
      * API-Since: 11.0
      */
     @Generated @NUInt public static final long Half = 0x0000000000000035L;
+    /**
+     * API-Since: 17.0
+     */
+    @Generated @NUInt public static final long FloatRG11B10 = 0x0000000000000036L;
+    /**
+     * API-Since: 17.0
+     */
+    @Generated @NUInt public static final long FloatRGB9E5 = 0x0000000000000037L;
 }

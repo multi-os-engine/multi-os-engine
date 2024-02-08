@@ -1350,4 +1350,9 @@ public class SCNParticleSystem extends NSObject implements NSCopying, NSSecureCo
     @Generated
     @Selector("writesToDepthBuffer")
     public native boolean writesToDepthBuffer();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

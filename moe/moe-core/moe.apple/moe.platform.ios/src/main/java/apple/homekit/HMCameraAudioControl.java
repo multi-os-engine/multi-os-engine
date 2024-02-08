@@ -176,4 +176,9 @@ public class HMCameraAudioControl extends HMCameraControl {
     @Generated
     @Selector("volume")
     public native HMCharacteristic volume();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

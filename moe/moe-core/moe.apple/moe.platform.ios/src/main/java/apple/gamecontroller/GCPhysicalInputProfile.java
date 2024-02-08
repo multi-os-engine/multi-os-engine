@@ -409,4 +409,9 @@ public class GCPhysicalInputProfile extends NSObject {
         @Generated
         void call_valueDidChangeHandler_ret(@NotNull GCPhysicalInputProfile arg0, @NotNull GCControllerElement arg1);
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

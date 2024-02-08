@@ -462,4 +462,9 @@ public class UIPrintInteractionController extends NSObject {
     @Generated
     @Selector("showsPaperOrientation")
     public native boolean showsPaperOrientation();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -52,6 +52,8 @@ import org.jetbrains.annotations.Nullable;
  * of AVPlayerItemAccessLogEvent instances. Each AVPlayerItemAccessLogEvent instance collates the data
  * that relates to each uninterrupted period of playback.
  * 
+ * Subclasses of this type that are used from Swift must fulfill the requirements of a Sendable type.
+ * 
  * API-Since: 4.3
  */
 @Generated
@@ -221,4 +223,9 @@ public class AVPlayerItemAccessLog extends NSObject implements NSCopying {
     @Generated
     @Selector("init")
     public native AVPlayerItemAccessLog init();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

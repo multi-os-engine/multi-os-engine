@@ -322,4 +322,9 @@ public class SCNCone extends SCNGeometry {
     @Selector("topRadius")
     @NFloat
     public native double topRadius();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

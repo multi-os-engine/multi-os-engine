@@ -26,6 +26,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.foundation.NSLocale;
 
 /**
  * API-Since: 13.0
@@ -196,8 +197,7 @@ public class UIImageSymbolConfiguration extends UIImageConfiguration {
 
     /**
      * checks if the other configuration is equal to this one.
-     * the values have to match exactly. If you only want to check "specified"
-     * values, use `isEquivalentToConfiguration:`.
+     * the values have to match exactly.
      */
     @Generated
     @Selector("isEqualToConfiguration:")
@@ -285,4 +285,18 @@ public class UIImageSymbolConfiguration extends UIImageConfiguration {
     @Generated
     @Selector("configurationPreferringMonochrome")
     public static native UIImageSymbolConfiguration configurationPreferringMonochrome();
+
+    @Generated
+    @Selector("configurationWithLocale:")
+    public static native UIImageSymbolConfiguration configurationWithLocale_static(@Nullable NSLocale locale);
+
+    @Generated
+    @Selector("configurationWithTraitCollection:")
+    public static native UIImageSymbolConfiguration configurationWithTraitCollection_static(
+            @Nullable UITraitCollection traitCollection);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

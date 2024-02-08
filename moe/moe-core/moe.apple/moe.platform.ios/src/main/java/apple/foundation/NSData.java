@@ -491,4 +491,9 @@ public class NSData extends NSObject implements NSCopying, NSMutableCopying, NSS
     @Selector("decompressedDataUsingAlgorithm:error:")
     public native NSData decompressedDataUsingAlgorithmError(@NInt long algorithm,
             @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

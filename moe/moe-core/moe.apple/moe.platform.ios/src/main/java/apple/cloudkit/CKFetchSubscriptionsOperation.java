@@ -174,6 +174,8 @@ public class CKFetchSubscriptionsOperation extends CKDatabaseOperation {
      * [@c] subscriptionsBySubscriptionID and any @c CKPartialErrorsByItemIDKey errors are repeats of the data sent back
      * in previous @c perSubscriptionCompletionBlock invocations
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
+     * This block may share mutable state with other blocks assigned to this operation, but any such mutable state
+     * should not be concurrently used outside of blocks assigned to this operation.
      */
     @Nullable
     @Generated
@@ -198,6 +200,8 @@ public class CKFetchSubscriptionsOperation extends CKDatabaseOperation {
      * [@c] subscriptionsBySubscriptionID and any @c CKPartialErrorsByItemIDKey errors are repeats of the data sent back
      * in previous @c perSubscriptionCompletionBlock invocations
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
+     * This block may share mutable state with other blocks assigned to this operation, but any such mutable state
+     * should not be concurrently used outside of blocks assigned to this operation.
      */
     @Generated
     @Selector("setFetchSubscriptionCompletionBlock:")
@@ -233,6 +237,8 @@ public class CKFetchSubscriptionsOperation extends CKDatabaseOperation {
      * Called on success or failure for each subscriptionID.
      * 
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
+     * This block may share mutable state with other blocks assigned to this operation, but any such mutable state
+     * should not be concurrently used outside of blocks assigned to this operation.
      * 
      * API-Since: 15.0
      */
@@ -254,6 +260,8 @@ public class CKFetchSubscriptionsOperation extends CKDatabaseOperation {
      * Called on success or failure for each subscriptionID.
      * 
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
+     * This block may share mutable state with other blocks assigned to this operation, but any such mutable state
+     * should not be concurrently used outside of blocks assigned to this operation.
      * 
      * API-Since: 15.0
      */
@@ -269,4 +277,9 @@ public class CKFetchSubscriptionsOperation extends CKDatabaseOperation {
         void call_setPerSubscriptionCompletionBlock(@NotNull String arg0, @Nullable CKSubscription arg1,
                 @Nullable NSError arg2);
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

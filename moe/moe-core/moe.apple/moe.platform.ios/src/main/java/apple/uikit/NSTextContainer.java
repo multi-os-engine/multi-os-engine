@@ -415,4 +415,9 @@ public class NSTextContainer extends NSObject implements NSSecureCoding, NSTextL
     @Generated
     @Selector("textLayoutManager")
     public native NSTextLayoutManager textLayoutManager();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

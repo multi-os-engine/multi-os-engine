@@ -297,4 +297,9 @@ public class UICollectionViewLayoutInvalidationContext extends NSObject {
     @Generated
     @Selector("targetIndexPathsForInteractivelyMovingItems")
     public native NSArray<? extends NSIndexPath> targetIndexPathsForInteractivelyMovingItems();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

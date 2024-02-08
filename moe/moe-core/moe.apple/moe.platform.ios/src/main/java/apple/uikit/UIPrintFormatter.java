@@ -299,4 +299,9 @@ public class UIPrintFormatter extends NSObject implements NSCopying {
     @Generated
     @Selector("requiresMainThread")
     public native boolean requiresMainThread();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

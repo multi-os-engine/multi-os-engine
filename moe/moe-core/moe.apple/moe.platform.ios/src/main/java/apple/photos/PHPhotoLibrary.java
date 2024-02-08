@@ -423,4 +423,9 @@ public class PHPhotoLibrary extends NSObject {
     @Selector("fetchPersistentChangesSinceToken:error:")
     public native PHPersistentChangeFetchResult fetchPersistentChangesSinceTokenError(
             @NotNull PHPersistentChangeToken token, @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

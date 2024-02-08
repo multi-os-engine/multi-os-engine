@@ -54,8 +54,6 @@ import org.jetbrains.annotations.Nullable;
  * The primary use for a JSManagedValue is to store a JSValue in an Objective-C
  * or Swift object that is exported to JavaScript. It is incorrect to store a JSValue
  * in an object that is exported to JavaScript, since doing so creates a retain cycle.
- * 
- * API-Since: 7.0
  */
 @Generated
 @Library("JavaScriptCore")
@@ -212,4 +210,9 @@ public class JSManagedValue extends NSObject {
     @Generated
     @Selector("value")
     public native JSValue value();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

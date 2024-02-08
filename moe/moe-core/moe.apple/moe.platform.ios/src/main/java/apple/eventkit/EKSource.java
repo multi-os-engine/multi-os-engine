@@ -40,9 +40,6 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-/**
- * API-Since: 5.0
- */
 @Generated
 @Library("EventKit")
 @Runtime(ObjCRuntime.class)
@@ -213,4 +210,9 @@ public class EKSource extends EKObject {
     @Generated
     @Selector("isDelegate")
     public native boolean isDelegate();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

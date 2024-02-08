@@ -222,4 +222,9 @@ public class UICubicTimingParameters extends NSObject implements UITimingCurvePr
     @Selector("timingCurveType")
     @NInt
     public native long timingCurveType();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

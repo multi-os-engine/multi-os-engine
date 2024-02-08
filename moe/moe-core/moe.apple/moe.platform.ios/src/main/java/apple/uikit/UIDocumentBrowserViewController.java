@@ -497,4 +497,9 @@ public class UIDocumentBrowserViewController extends UIViewController implements
         @Generated
         void call_renameDocumentAtURLProposedNameCompletionHandler(@Nullable NSURL finalURL, @Nullable NSError error);
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

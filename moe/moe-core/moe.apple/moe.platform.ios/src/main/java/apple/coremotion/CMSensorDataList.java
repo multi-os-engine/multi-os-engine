@@ -45,15 +45,6 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
- * CMSensorDataList
- * 
- * Discussion:
- * Allows retrospective access to sensor data via enumeration.
- * If created with accelerometerDataFromDate:toDate:
- * each enumeration will yield an object of type CMRecordedAccelerometerData.
- * Due to the large number of samples that can be processed, the
- * enumeration should not be run on the main/UI thread.
- * 
  * API-Since: 9.0
  */
 @Generated
@@ -179,4 +170,9 @@ public class CMSensorDataList extends NSObject implements NSFastEnumeration {
     @Generated
     @Selector("init")
     public native CMSensorDataList init();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

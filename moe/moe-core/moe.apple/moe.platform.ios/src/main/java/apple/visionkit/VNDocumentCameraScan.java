@@ -26,6 +26,12 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
+ * A single document scanned in the document camera.
+ * 
+ * When the document camera scans a document, it returns the resulting
+ * information in this format, through the delegate method
+ * ``VisionKit/VNDocumentCameraViewControllerDelegate/documentCameraViewController(_:didFinishWith:)``.
+ * 
  * API-Since: 13.0
  */
 @Generated
@@ -96,6 +102,9 @@ public class VNDocumentCameraScan extends NSObject {
 
     /**
      * The image of the page at a specified index.
+     * 
+     * - Parameter index: The index of the image in the scanned document you'd like to return. Page `1` is at index `0`.
+     * - Returns: The image of the page at the specified index. If no page exists, this method returns `nil`.
      */
     @NotNull
     @Generated
@@ -169,4 +178,9 @@ public class VNDocumentCameraScan extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -247,4 +247,9 @@ public class UIGraphicsImageRenderer extends UIGraphicsRenderer {
     @Generated
     @Selector("rendererContextClass")
     public static native Class rendererContextClass();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

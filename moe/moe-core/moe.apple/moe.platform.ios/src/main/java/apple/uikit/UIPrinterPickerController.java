@@ -268,4 +268,9 @@ public class UIPrinterPickerController extends NSObject {
                 @NotNull UIPrinterPickerController printerPickerController, boolean userDidSelect,
                 @Nullable NSError error);
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -27,12 +27,10 @@ import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.objc.ann.ObjCBlock;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.opaque.dispatch_queue_t;
 
 /**
- * MPSGraphCompilationDescriptor
- * 
- * A structure which consists of all the levers users can use to compile their graphs
- * 
+ * This is a class that consists of all the levers for compiling graphs.
  * 
  * API-Since: 15.0
  */
@@ -40,7 +38,7 @@ import org.jetbrains.annotations.Nullable;
 @Library("MetalPerformanceShadersGraph")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class MPSGraphCompilationDescriptor extends NSObject implements NSCopying {
+public class MPSGraphCompilationDescriptor extends MPSGraphObject implements NSCopying {
     static {
         NatJ.register();
     }
@@ -98,7 +96,7 @@ public class MPSGraphCompilationDescriptor extends NSObject implements NSCopying
     public static native String description_static();
 
     /**
-     * Turns off type inference and we rely on type inference during runtime
+     * Turns off type inference and relies on type inference during runtime.
      */
     @Generated
     @Selector("disableTypeInference")
@@ -162,10 +160,7 @@ public class MPSGraphCompilationDescriptor extends NSObject implements NSCopying
     public static native long version_static();
 
     /**
-     * [@property] compilationCompletionHandler
-     * 
-     * compilationCompletionHandler for the compilation, default value is nil, it is called after compilation is
-     * completed
+     * The graph calls this handler at the completion of the compilation, default value is nil.
      * 
      * API-Since: 16.0
      */
@@ -190,21 +185,17 @@ public class MPSGraphCompilationDescriptor extends NSObject implements NSCopying
     public native Object copyWithZone(@Nullable VoidPtr zone);
 
     /**
-     * [@property] dispatchQueue
-     * 
-     * dispatchQueue for the compilation, default value is nil
+     * The dispatch queue used for the compilation, default value is nil.
      * 
      * API-Since: 16.0
      */
     @NotNull
     @Generated
     @Selector("dispatchQueue")
-    public native NSObject dispatchQueue();
+    public native dispatch_queue_t dispatchQueue();
 
     /**
-     * [@property] optimizationLevel
-     * 
-     * optimization level for the graph execution, default is MPSGraphOptimizationLevel0
+     * The optimization level for the graph execution, default is MPSGraphOptimizationLevel1.
      * 
      * API-Since: 15.4
      */
@@ -213,21 +204,18 @@ public class MPSGraphCompilationDescriptor extends NSObject implements NSCopying
     public native long optimizationLevel();
 
     /**
-     * [@property] optimizationProfile
-     * 
-     * optimization profile for the graph optimization, default is MPSGraphOptimizationProfilePerformance
+     * The optimization profile for the graph optimization, default is MPSGraphOptimizationProfilePerformance.
      * 
      * API-Since: 15.4
+     * Deprecated-Since: 17.0
      */
+    @Deprecated
     @Generated
     @Selector("optimizationProfile")
     public native long optimizationProfile();
 
     /**
-     * [@property] compilationCompletionHandler
-     * 
-     * compilationCompletionHandler for the compilation, default value is nil, it is called after compilation is
-     * completed
+     * The graph calls this handler at the completion of the compilation, default value is nil.
      * 
      * API-Since: 16.0
      */
@@ -244,20 +232,16 @@ public class MPSGraphCompilationDescriptor extends NSObject implements NSCopying
     }
 
     /**
-     * [@property] dispatchQueue
-     * 
-     * dispatchQueue for the compilation, default value is nil
+     * The dispatch queue used for the compilation, default value is nil.
      * 
      * API-Since: 16.0
      */
     @Generated
     @Selector("setDispatchQueue:")
-    public native void setDispatchQueue(@NotNull NSObject value);
+    public native void setDispatchQueue(@NotNull dispatch_queue_t value);
 
     /**
-     * [@property] optimizationLevel
-     * 
-     * optimization level for the graph execution, default is MPSGraphOptimizationLevel0
+     * The optimization level for the graph execution, default is MPSGraphOptimizationLevel1.
      * 
      * API-Since: 15.4
      */
@@ -266,20 +250,18 @@ public class MPSGraphCompilationDescriptor extends NSObject implements NSCopying
     public native void setOptimizationLevel(long value);
 
     /**
-     * [@property] optimizationProfile
-     * 
-     * optimization profile for the graph optimization, default is MPSGraphOptimizationProfilePerformance
+     * The optimization profile for the graph optimization, default is MPSGraphOptimizationProfilePerformance.
      * 
      * API-Since: 15.4
+     * Deprecated-Since: 17.0
      */
+    @Deprecated
     @Generated
     @Selector("setOptimizationProfile:")
     public native void setOptimizationProfile(long value);
 
     /**
-     * [@property] waitForCompilationCompletion
-     * 
-     * makes the compile or specialize call blocking till the entire compilation is completed, defaults to NO
+     * Flag that makes the compile or specialize call blocking till the entire compilation is complete, defaults to NO.
      * 
      * API-Since: 16.0
      */
@@ -288,13 +270,16 @@ public class MPSGraphCompilationDescriptor extends NSObject implements NSCopying
     public native void setWaitForCompilationCompletion(boolean value);
 
     /**
-     * [@property] waitForCompilationCompletion
-     * 
-     * makes the compile or specialize call blocking till the entire compilation is completed, defaults to NO
+     * Flag that makes the compile or specialize call blocking till the entire compilation is complete, defaults to NO.
      * 
      * API-Since: 16.0
      */
     @Generated
     @Selector("waitForCompilationCompletion")
     public native boolean waitForCompilationCompletion();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

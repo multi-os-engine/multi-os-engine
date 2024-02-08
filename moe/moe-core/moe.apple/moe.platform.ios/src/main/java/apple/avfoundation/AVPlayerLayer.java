@@ -345,4 +345,9 @@ public class AVPlayerLayer extends CALayer {
     @Generated
     @Selector("copyDisplayedPixelBuffer")
     public native CVBufferRef copyDisplayedPixelBuffer();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

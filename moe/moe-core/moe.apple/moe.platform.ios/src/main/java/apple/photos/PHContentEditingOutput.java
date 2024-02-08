@@ -40,6 +40,10 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.foundation.NSError;
+import apple.uniformtypeidentifiers.UTType;
+import org.moe.natj.general.ann.ReferenceInfo;
+import org.moe.natj.general.ptr.Ptr;
 
 /**
  * API-Since: 8.0
@@ -189,7 +193,7 @@ public class PHContentEditingOutput extends NSObject {
             @NotNull PHObjectPlaceholder placeholderForCreatedAsset);
 
     /**
-     * File URL where the rendered output, with adjustments baked-in, needs to be written to.
+     * File URL where the rendered output in the default format, with adjustments baked-in, needs to be written to.
      * 
      * API-Since: 8.0
      */
@@ -204,4 +208,42 @@ public class PHContentEditingOutput extends NSObject {
     @Generated
     @Selector("setAdjustmentData:")
     public native void setAdjustmentData(@Nullable PHAdjustmentData value);
+
+    /**
+     * Returns the default type for the rendered content output
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("defaultRenderedContentType")
+    @Nullable
+    public native UTType defaultRenderedContentType();
+
+    /**
+     * Returns a file URL where the rendered output in the specified format, with adjustments baked-in, needs to be
+     * written to. Returns nil and provides an error identifying the reason if the format is unsupported or the
+     * requested content URL cannot be provided
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("renderedContentURLForType:error:")
+    @Nullable
+    public native NSURL renderedContentURLForTypeError(@NotNull UTType type,
+            @ReferenceInfo(type = NSError.class) @Nullable Ptr<NSError> error);
+
+    /**
+     * Returns the supported types for the rendered content output
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("supportedRenderedContentTypes")
+    @NotNull
+    public native NSArray<? extends UTType> supportedRenderedContentTypes();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

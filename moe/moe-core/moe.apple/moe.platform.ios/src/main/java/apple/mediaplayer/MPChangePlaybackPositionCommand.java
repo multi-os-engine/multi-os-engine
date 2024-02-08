@@ -163,4 +163,9 @@ public class MPChangePlaybackPositionCommand extends MPRemoteCommand {
     @Generated
     @Selector("init")
     public native MPChangePlaybackPositionCommand init();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

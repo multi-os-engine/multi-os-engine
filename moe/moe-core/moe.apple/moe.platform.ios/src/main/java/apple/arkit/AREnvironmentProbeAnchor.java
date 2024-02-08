@@ -182,4 +182,9 @@ public class AREnvironmentProbeAnchor extends ARAnchor {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

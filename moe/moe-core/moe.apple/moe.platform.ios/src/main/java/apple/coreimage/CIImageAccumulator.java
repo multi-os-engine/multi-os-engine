@@ -43,9 +43,6 @@ import apple.corefoundation.struct.CGRect;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-/**
- * API-Since: 9.0
- */
 @Generated
 @Library("CoreImage")
 @Runtime(ObjCRuntime.class)
@@ -242,4 +239,9 @@ public class CIImageAccumulator extends NSObject {
     @Generated
     @Selector("setImage:dirtyRect:")
     public native void setImageDirtyRect(@NotNull CIImage image, @ByValue CGRect dirtyRect);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

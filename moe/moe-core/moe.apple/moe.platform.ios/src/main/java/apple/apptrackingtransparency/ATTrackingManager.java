@@ -26,6 +26,9 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
+ * A class that provides a tracking authorization request and the tracking
+ * authorization status of the app.
+ * 
  * API-Since: 14.0
  */
 @Generated
@@ -126,16 +129,34 @@ public class ATTrackingManager extends NSObject {
     public static native ATTrackingManager new_objc();
 
     /**
-     * requestTrackingAuthorizationWithCompletionHandler:completion:
+     * The request for user authorization to access app-related data.
      * 
-     * Request user tracking authorization with a completion handler returning the user's authorization status.
-     * Users are able to grant or deny developers tracking privileges on a per-app basis.
-     * This method allows developers to determine if access has been granted. On first use, this method will prompt the
-     * user to grant or deny access.
+     * The ``ATTrackingManager/requestTrackingAuthorizationWithCompletionHandler:``
+     * is a one-time request to authorize or deny access to app-related data that
+     * can be used for tracking the user or the device. The system remembers the
+     * user’s choice and doesn’t prompt again unless a user uninstalls and then
+     * reinstalls the app on the device.
      * 
-     * The completion handler will be called with the result of the user's decision for granting or denying permission
-     * to use application tracking.
-     * The completion handler will be called immediately if access to request authorization is restricted.
+     * Calls to the API only prompt when the application state
+     * is `UIApplicationStateActive`. The authorization prompt doesn’t display if
+     * another permission request is pending user confirmation. Concurrent requests
+     * aren’t preserved by iOS, and calls to the API through an app extension don’t
+     * prompt. Check the ``ATTrackingManager/trackingAuthorizationStatus`` for a
+     * status of
+     * ``ATTrackingManagerAuthorizationStatus/ATTrackingManagerAuthorizationStatusNotDetermined``
+     * to determine if you need to make an additional call.
+     * 
+     * The completion handler will be called with the result of the user's
+     * decision for granting or denying permission to use application tracking.
+     * The completion handler will be called immediately if access to request
+     * authorization is restricted.
+     * 
+     * - Important: To use
+     * ``ATTrackingManager/requestTrackingAuthorizationWithCompletionHandler:``,
+     * the
+     * <doc://com.apple.documentation/documentation/bundleresources/information_property_list/NSUserTrackingUsageDescription>
+     * key must be in the
+     * <doc://com.apple.documentation/documentation/bundleresources/information_property_list>.
      */
     @Generated
     @Selector("requestTrackingAuthorizationWithCompletionHandler:")
@@ -166,20 +187,23 @@ public class ATTrackingManager extends NSObject {
     public static native Class superclass_static();
 
     /**
-     * [@property] trackingAuthorizationStatus
+     * The authorization status that is current for the calling application.
      * 
-     * Returns information about your application’s tracking authorization status.
-     * Users are able to grant or deny developers tracking privileges on a per-app basis.
-     * Application developers must call `requestTrackingAuthorizationWithCompletionHandler:` for the ability to track
-     * users.
+     * If the user has not yet been prompted to approve access, the return value
+     * will either be ``ATTrackingManagerAuthorizationStatusNotDetermined``, or
+     * ``ATTrackingManagerAuthorizationStatusRestricted`` if this value is
+     * managed. Once the user has been prompted, the return value will be either
+     * ``ATTrackingManagerAuthorizationStatusDenied`` or
+     * ``ATTrackingManagerAuthorizationStatusAuthorized``.
      * 
-     * @return
-     *         The current authorization status. If the user has not yet been prompted to approve access, the return
-     *         value will either be
-     *         ATTrackingManagerAuthorizationStatusNotDetermined, or ATTrackingManagerAuthorizationStatusRestricted if
-     *         this value is managed.
-     *         Once the user has been prompted, the return value will be either
-     *         ATTrackingManagerAuthorizationStatusDenied or ATTrackingManagerAuthorizationStatusAuthorized.
+     * Use the ``ATTrackingManager/trackingAuthorizationStatus`` property to check
+     * authorization status.
+     * 
+     * - Returns: Information about your application’s tracking authorization
+     * status. Users are able to grant or deny developers tracking privileges on
+     * a per-app basis. Application developers must call
+     * `requestTrackingAuthorizationWithCompletionHandler:` for the ability to
+     * track users.
      */
     @Generated
     @Selector("trackingAuthorizationStatus")
@@ -190,4 +214,9 @@ public class ATTrackingManager extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

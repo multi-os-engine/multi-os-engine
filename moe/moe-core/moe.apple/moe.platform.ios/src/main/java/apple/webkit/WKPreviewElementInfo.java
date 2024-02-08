@@ -177,4 +177,9 @@ public class WKPreviewElementInfo extends NSObject implements NSCopying {
     @Generated
     @Selector("linkURL")
     public native NSURL linkURL();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -243,4 +243,9 @@ public class MPSNNReduceUnary extends MPSCNNKernel {
     @Generated
     @Selector("setOffset:")
     public native void setOffset(@ByValue MPSOffset value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

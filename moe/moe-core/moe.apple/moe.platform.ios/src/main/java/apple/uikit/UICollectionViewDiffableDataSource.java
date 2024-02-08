@@ -435,4 +435,9 @@ public class UICollectionViewDiffableDataSource<_SectionIdentifierType, _ItemIde
     @Selector("sectionIdentifierForIndex:")
     @MappedReturn(ObjCObjectMapper.class)
     public native _SectionIdentifierType sectionIdentifierForIndex(@NInt long index);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

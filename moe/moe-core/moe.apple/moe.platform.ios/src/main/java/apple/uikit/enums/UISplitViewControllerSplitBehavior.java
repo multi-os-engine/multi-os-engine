@@ -25,12 +25,6 @@ public final class UISplitViewControllerSplitBehavior {
      * API-Since: 14.0
      */
     @Generated @NInt public static final long Tile = 0x0000000000000001L;
-    /**
-     * API-Since: 14.0
-     */
     @Generated @NInt public static final long Overlay = 0x0000000000000002L;
-    /**
-     * API-Since: 14.0
-     */
     @Generated @NInt public static final long Displace = 0x0000000000000003L;
 }

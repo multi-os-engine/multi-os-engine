@@ -79,4 +79,7 @@ public final class Enums {
     @Generated public static final int kVTVideoDecoderCallbackMessagingErr = 0xFFFFBAE1;
     @Generated public static final int kVTPixelRotationNotSupportedErr = 0xFFFFCD8E;
     @Generated public static final int kVTVideoDecoderUnknownErr = 0xFFFFBAE0;
+    @Generated public static final int kVTExtensionDisabledErr = 0xFFFFBADF;
+    @Generated public static final int kVTVideoEncoderMVHEVCVideoLayerIDsMismatchErr = 0xFFFFBADE;
+    @Generated public static final int kVTCouldNotOutputTaggedBufferGroupErr = 0xFFFFBADD;
 }

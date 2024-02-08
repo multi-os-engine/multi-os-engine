@@ -278,4 +278,9 @@ public class TWTweetComposeViewController extends UIViewController {
         @Generated
         void call_setCompletionHandler(@NInt long result);
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -50,9 +50,6 @@ import org.jetbrains.annotations.Nullable;
  * 
  * A 16-bit, 32-bit, or 128-bit Bluetooth UUID.
  * 16-bit and 32-bit UUIDs are implicitly pre-filled with the Bluetooth Base UUID.
- * 
- * 
- * API-Since: 5.0
  */
 @Generated
 @Library("CoreBluetooth")
@@ -251,4 +248,9 @@ public class CBUUID extends NSObject implements NSCopying {
     @Generated
     @Selector("init")
     public native CBUUID init();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

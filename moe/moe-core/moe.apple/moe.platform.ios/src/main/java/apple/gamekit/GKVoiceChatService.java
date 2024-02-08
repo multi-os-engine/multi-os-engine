@@ -48,12 +48,7 @@ import org.jetbrains.annotations.Nullable;
 
 /**
  * GKVoiceChatService provides voice chat capabilities depending on your networking situation.
- * 
- * API-Since: 3.0
- * Deprecated-Since: 7.0
- * Deprecated-Message: Use GKVoiceChat instead
  */
-@Deprecated
 @Generated
 @Library("GameKit")
 @Runtime(ObjCRuntime.class)
@@ -327,4 +322,9 @@ public class GKVoiceChatService extends NSObject {
     @Generated
     @Selector("stopVoiceChatWithParticipantID:")
     public native void stopVoiceChatWithParticipantID(String participantID);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

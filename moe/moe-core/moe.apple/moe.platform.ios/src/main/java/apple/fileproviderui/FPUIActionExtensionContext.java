@@ -27,6 +27,8 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
+ * An extension context provided to File Provider UI extensions.
+ * 
  * API-Since: 11.0
  */
 @Generated
@@ -73,8 +75,11 @@ public class FPUIActionExtensionContext extends NSExtensionContext {
             @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
     /**
-     * The extension should call this method when the action failed.
-     * The error's Domain should be FPUIErrorDomain and the code should be a value of type FPUIErrorCode.
+     * Cancels the action and returns the provided error.
+     * 
+     * Call this method if the action fails. Set the error's domain to
+     * ``FPUIErrorDomain``. Set the error code to a ``FPUIExtensionErrorCode``
+     * value.
      */
     @Generated
     @Selector("cancelRequestWithError:")
@@ -91,7 +96,9 @@ public class FPUIActionExtensionContext extends NSExtensionContext {
     public static native Class classForKeyedUnarchiver();
 
     /**
-     * The extension should call this method when the action did terminate successfully.
+     * Marks the action as complete.
+     * 
+     * Call this method when the action completes successfully.
      */
     @Generated
     @Selector("completeRequest")
@@ -105,6 +112,9 @@ public class FPUIActionExtensionContext extends NSExtensionContext {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * The identifier for the domain managed by the current file provider.
+     */
     @Nullable
     @Generated
     @Selector("domainIdentifier")
@@ -166,4 +176,9 @@ public class FPUIActionExtensionContext extends NSExtensionContext {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

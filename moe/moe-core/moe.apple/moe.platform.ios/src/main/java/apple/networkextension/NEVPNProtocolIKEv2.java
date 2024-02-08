@@ -539,4 +539,9 @@ public class NEVPNProtocolIKEv2 extends NEVPNProtocolIPSec {
     @Generated
     @Selector("setMtu:")
     public native void setMtu(@NUInt long value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -372,4 +372,9 @@ public class NSKeyedArchiver extends NSCoder {
     @Generated
     @Selector("initRequiringSecureCoding:")
     public native NSKeyedArchiver initRequiringSecureCoding(boolean requiresSecureCoding);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -65,8 +65,6 @@ import org.jetbrains.annotations.Nullable;
  * 
  * A EKRecurrenceEnd initialized with an end date will return 0 for occurrenceCount.
  * One initialized with a number of occurrences will return nil for its endDate.
- * 
- * API-Since: 4.0
  */
 @Generated
 @Library("EventKit")
@@ -248,4 +246,9 @@ public class EKRecurrenceEnd extends NSObject implements NSCopying, NSSecureCodi
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

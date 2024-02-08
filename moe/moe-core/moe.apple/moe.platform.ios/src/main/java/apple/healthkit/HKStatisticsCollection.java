@@ -220,4 +220,9 @@ public class HKStatisticsCollection extends NSObject {
         @Generated
         void call_enumerateStatisticsFromDateToDateWithBlock(@NotNull HKStatistics result, @NotNull BoolPtr stop);
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

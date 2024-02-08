@@ -205,4 +205,9 @@ public class NSLayoutYAxisAnchor extends NSLayoutAnchor<NSLayoutYAxisAnchor> {
     @Selector("constraintLessThanOrEqualToSystemSpacingBelowAnchor:multiplier:")
     public native NSLayoutConstraint constraintLessThanOrEqualToSystemSpacingBelowAnchorMultiplier(
             @NotNull NSLayoutYAxisAnchor anchor, @NFloat double multiplier);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }
