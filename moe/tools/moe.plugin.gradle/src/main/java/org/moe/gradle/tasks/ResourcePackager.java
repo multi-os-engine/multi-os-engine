@@ -100,7 +100,7 @@ public class ResourcePackager {
         Action<Project> configureTask = _project -> {
             // Update settings
             resourcePackagerTask.getDestinationDirectory().set(project.file(project.getBuildDir().toPath().resolve(out).toFile()));
-            resourcePackagerTask.getArchiveBaseName().set("application");
+            resourcePackagerTask.getArchiveFileName().set("application.jar");
             resourcePackagerTask.from(project.zipTree(proguardTask.getOutJar()));
             resourcePackagerTask.exclude("**/*.class");
 
