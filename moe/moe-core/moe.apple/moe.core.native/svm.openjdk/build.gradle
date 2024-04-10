@@ -1,21 +1,30 @@
+import org.moe.prebuilts.XcodeBuild
 import org.moe.prebuilts.Script
 
-task('compile_libjava', type: Script) {
-    doFirst {
-        delete("build/xcode")
-    }
-    progress 'Build libjava'
-    rawWorkDir "${external.svm.root}/labs-openjdk-17"
-    exec 'sh', 'buildJdk.sh'
-    doLast {
-        copy {
-            from("${external.svm.root}/labs-openjdk-17/xcode/")
-            include("*.a")
-            into("build/xcode")
-        }
-        file("build/xcode/jdk-ios-d.a").renameTo(file("build/xcode/Debug-ios-iphoneos-libjava.a"))
-        file("build/xcode/jdk-ios-r.a").renameTo(file("build/xcode/Release-ios-iphoneos-libjava.a"))
-        file("build/xcode/jdk-ios-simulator-d.a").renameTo(file("build/xcode/Debug-ios-iphonesimulator-libjava.a"))
-        file("build/xcode/jdk-ios-simulator-r.a").renameTo(file("build/xcode/Release-ios-iphonesimulator-libjava.a"))
-    }
+task('jdk_gensrc', type: Script) {
+    progress 'Configure jdk'
+    rawWorkDir "${external.svm.openjdk}"
+    def JVMCI_VERSION = "jvmci_23.1_b15_candidate"
+    exec "sh", "configure", "--with-conf-name=labsjdk", "--with-version-opt=$JVMCI_VERSION", "--with-version-pre=",
+            "--with-vendor-name=GraalVM Community", "--with-vendor-url=https://www.graalvm.org/", "--with-vendor-bug-url=https://github.com/oracle/graal/issues",
+            "--with-vendor-vm-bug-url=https://github.com/oracle/graal/issues"
+    progress 'Make jdk'
+    exec "make", "CONF_NAME=labsjdk", "graal-builder-image"
 }
+
+XcodeBuild.createTask(project, "libjava", "ios", "iphoneos", "Debug")
+        .cond_buildopt(buildfilter.ios.archs, "ARCHS")
+        .cond_buildopt(buildfilter.ios.archs != null, "ONLY_ACTIVE_ARCH", "YES")
+        .dependsOn('jdk_gensrc')
+XcodeBuild.createTask(project, "libjava", "ios", "iphoneos", "Release")
+        .cond_buildopt(buildfilter.ios.archs, "ARCHS")
+        .cond_buildopt(buildfilter.ios.archs != null, "ONLY_ACTIVE_ARCH", "YES")
+        .dependsOn('jdk_gensrc')
+XcodeBuild.createTask(project, "libjava", "ios", "iphonesimulator", "Debug")
+        .cond_buildopt(buildfilter.ios.archs, "ARCHS")
+        .cond_buildopt(buildfilter.ios.archs != null, "ONLY_ACTIVE_ARCH", "YES")
+        .dependsOn('jdk_gensrc')
+XcodeBuild.createTask(project, "libjava", "ios", "iphonesimulator", "Release")
+        .cond_buildopt(buildfilter.ios.archs, "ARCHS")
+        .cond_buildopt(buildfilter.ios.archs != null, "ONLY_ACTIVE_ARCH", "YES")
+        .dependsOn('jdk_gensrc')

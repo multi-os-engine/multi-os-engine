@@ -37,7 +37,8 @@ apply plugin: 'base'
 def graalDeps = [
         projects: [
                 ':moe.apple:moe.core.native:external.javasqlite',
-                ':moe.apple:moe.core.native:svm.graal@libjvm'
+                ':moe.apple:moe.core.native:svm.graal@libjvm',
+                ':moe.apple:moe.core.native:svm.openjdk@libjava',
         ]
 ]
 
@@ -45,22 +46,22 @@ XcodeBuild.createTask(project, "sdk", "ios", "iphoneos", "Debug", graalDeps)
         .cond_buildopt(rootProject.version.toString(), 'GRADLE_BUILD_VERSION')
         .cond_buildopt(buildfilter.ios.archs, "ARCHS")
         .cond_buildopt(buildfilter.ios.archs != null, "ONLY_ACTIVE_ARCH", "YES")
-        .dependsOn(':ext_natj_ios', ':moe.apple:moe.core.native:svm.openjdk:compile_libjava')
+        .dependsOn(':ext_natj_ios')
 XcodeBuild.createTask(project, "sdk", "ios", "iphoneos", "Release", graalDeps)
         .cond_buildopt(rootProject.version.toString(), 'GRADLE_BUILD_VERSION')
         .cond_buildopt(buildfilter.ios.archs, "ARCHS")
         .cond_buildopt(buildfilter.ios.archs != null, "ONLY_ACTIVE_ARCH", "YES")
-        .dependsOn(':ext_natj_ios', ':moe.apple:moe.core.native:svm.openjdk:compile_libjava')
+        .dependsOn(':ext_natj_ios')
 XcodeBuild.createTask(project, "sdk", "ios", "iphonesimulator", "Debug", graalDeps)
         .cond_buildopt(rootProject.version.toString(), 'GRADLE_BUILD_VERSION')
         .cond_buildopt(buildfilter.ios.archs, "ARCHS")
         .cond_buildopt(buildfilter.ios.archs != null, "ONLY_ACTIVE_ARCH", "YES")
-        .dependsOn(':ext_natj_ios', ':moe.apple:moe.core.native:svm.openjdk:compile_libjava')
+        .dependsOn(':ext_natj_ios')
 XcodeBuild.createTask(project, "sdk", "ios", "iphonesimulator", "Release", graalDeps)
         .cond_buildopt(rootProject.version.toString(), 'GRADLE_BUILD_VERSION')
         .cond_buildopt(buildfilter.ios.archs, "ARCHS")
         .cond_buildopt(buildfilter.ios.archs != null, "ONLY_ACTIVE_ARCH", "YES")
-        .dependsOn(':ext_natj_ios', ':moe.apple:moe.core.native:svm.openjdk:compile_libjava')
+        .dependsOn(':ext_natj_ios')
 
 tasks.build {
     def configs = ['Release']
