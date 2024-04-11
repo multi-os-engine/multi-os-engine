@@ -63,7 +63,7 @@ class SubstrateExecutor(
                 "-Dmoe.platform.name=${config.target.os}",
 
                 "-H:TempDirectory=${config.outputDir.toAbsolutePath()}",
-                "-H:+UseCAPCache",
+                "-H:+NewCAPCache",
                 "-H:CAPCacheDir=${ensureCapCacheDir()}",
                 "--no-server",
                 *config.customOptions.toTypedArray(),
@@ -129,28 +129,11 @@ class SubstrateExecutor(
         if (!Files.exists(capPath)) {
             Files.createDirectories(capPath)
         }
-
-        CAP_CACHES.forEach {
-            javaClass.classLoader.getResourceAsStream("cap/$it").use { input ->
-                Files.copy(input, capPath.resolve(it))
-            }
-        }
-
         return capPath
     }
 
     companion object {
         private val LOG = LoggerFactory.getLogger(SubstrateExecutor::class.java)
-
-        private val CAP_CACHES = arrayOf(
-                "AArch64LibCHelperDirectives.cap",
-                "AMD64LibCHelperDirectives.cap",
-                "BuiltinDirectives.cap",
-                "JNIHeaderDirectives.cap",
-                "LLVMDirectives.cap",
-                "PosixDirectives.cap",
-                "RISCV64LibCHelperDirectives.cap"
-        )
 
         private fun Triplet.toSVMPlatform(): String = when (this) {
             Triplet.IPHONEOS_ARM64,
