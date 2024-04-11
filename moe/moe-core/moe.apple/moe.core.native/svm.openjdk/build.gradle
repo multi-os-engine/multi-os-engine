@@ -17,6 +17,7 @@ task('jdk_gensrc', type: Script) {
     def JVMCI_VERSION = "jvmci_23.1_b15_candidate"
     // For whatever reason setting "--with-boot-jdk" does not work
     env "JAVA_HOME", file(bootJDK + "/jdk21/Contents/Home").absolutePath
+    env 'MX_PYTHON', 'python3'
     exec "sh", "configure", "--with-conf-name=labsjdk", "--with-version-opt=$JVMCI_VERSION", "--with-version-pre=",
             "--with-vendor-name=GraalVM Community", "--with-vendor-url=https://www.graalvm.org/", "--with-vendor-bug-url=https://github.com/oracle/graal/issues",
             "--with-vendor-vm-bug-url=https://github.com/oracle/graal/issues"
