@@ -18,7 +18,6 @@ class GraalVM(
 ) {
 
     val bin: Path
-    val gu: Path
     val nativeImage: Path
     val version: JDKVersion
 
@@ -32,10 +31,8 @@ class GraalVM(
         }
 
         if (OsUtils.isWindows()) {
-            gu = bin.resolve("gu.cmd")
             nativeImage = bin.resolve("native-image.cmd")
         } else {
-            gu = bin.resolve("gu")
             nativeImage = bin.resolve("native-image")
         }
 
@@ -46,8 +43,8 @@ class GraalVM(
         version = parseVMVersion()
         println("Using GraalVM $version at $home")
 
-        require (version.feature == 17) {
-            "Support Java 17 based GraalVM only"
+        require (version.feature == 21) {
+            "Support Java 21 based GraalVM only"
         }
 
         require (version >= MIN_GRAALVM_VERSION) {
@@ -57,8 +54,6 @@ class GraalVM(
         if (version > MAX_GRAALVM_VERSION) {
             LOG.warn("Using GraalVM version higher than $MAX_GRAALVM_VERSION. This version has not been tested and might not work")
         }
-
-        ensureNativeImage()
     }
 
     private fun parseVMVersion(): JDKVersion {
@@ -81,28 +76,10 @@ class GraalVM(
     }
 
     /**
-     * Make sure the native-image (substrateVM) command is installed
-     */
-    private fun ensureNativeImage() {
-        if (!Files.exists(nativeImage)) {
-            println("Installing native-image")
-            ExecOutputCollector.collect(SimpleExec.getExec(gu, "--jvm", "install", "native-image"), true)
-        }
-    }
-
-    /**
      * Make sure the llvm-toolchain is installed
      */
     fun ensureLLVM() {
-        val llvmPath = if (version.feature <= 8) {
-            home.resolve(Paths.get("jre", "lib", "llvm", "bin", "llvm-config"))
-        } else {
-            home.resolve(Paths.get("lib", "llvm", "bin", "llvm-config"))
-        }
-        if (!Files.exists(llvmPath)) {
-            println("Installing llvm-toolchain")
-            ExecOutputCollector.collect(SimpleExec.getExec(gu, "--jvm", "install", "llvm-toolchain"), true)
-        }
+        throw IOException("The LLVM-Backend is currently unsupported")
     }
 
     /**
@@ -239,9 +216,9 @@ class GraalVM(
         private fun List<String>.parseComponent(index: Int): Int = getOrNull(index)?.toInt() ?: 0
 
         /** Minimum supported version, inclusive */
-        private val MIN_GRAALVM_VERSION = JDKVersion(17, 0, 7, 0)
+        private val MIN_GRAALVM_VERSION = JDKVersion(21, 0, 0, 0)
 
         /** Latest GraalVM version that has been tested with */
-        private val MAX_GRAALVM_VERSION = JDKVersion(17, 0, 7, 0)
+        private val MAX_GRAALVM_VERSION = JDKVersion(21, 0, 2, 0)
     }
 }
