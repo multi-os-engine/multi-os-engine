@@ -32,8 +32,9 @@ includeFlat 'moe.tools.natjgen'
 includeFlat 'moe.tools.substrate'
 includeFlat 'moe.tools.classvalidator'
 
-include 'proguard-core', 'proguard', 'proguard:base', 'proguard:app'
+include 'proguard-core', 'proguard-core:core-base', 'proguard', 'proguard:base', 'proguard:app'
 project(':proguard-core').projectDir = new File('../../../external/proguard/proguard-core')
+project(':proguard-core:core-base').projectDir = new File('../../../external/proguard/proguard-core/base')
 project(':proguard').projectDir = new File('../../../external/proguard/proguard')
 project(':proguard:base').projectDir = new File('../../../external/proguard/proguard/base')
 project(':proguard:app').projectDir = new File('../../../external/proguard/proguard/proguard-app')
