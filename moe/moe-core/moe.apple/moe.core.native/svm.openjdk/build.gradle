@@ -2,9 +2,21 @@ import org.moe.prebuilts.XcodeBuild
 import org.moe.prebuilts.Script
 
 task('jdk_gensrc', type: Script) {
+    progress 'Fetching boot JDK'
+    rawWorkDir external.svm.mx
+    def bootJDK = file("${external.svm.root}/bootJDK").absolutePath
+    exec "./mx",
+            "-y", "--no-warning",
+            "fetch-jdk",
+            "--java-distribution", "labsjdk-ce-21",
+            "--to", bootJDK,
+            "--alias", "jdk21"
+
     progress 'Configure jdk'
     rawWorkDir "${external.svm.openjdk}"
     def JVMCI_VERSION = "jvmci_23.1_b15_candidate"
+    // For whatever reason setting "--with-boot-jdk" does not work
+    env "JAVA_HOME", file(bootJDK + "/jdk21/Contents/Home").absolutePath
     exec "sh", "configure", "--with-conf-name=labsjdk", "--with-version-opt=$JVMCI_VERSION", "--with-version-pre=",
             "--with-vendor-name=GraalVM Community", "--with-vendor-url=https://www.graalvm.org/", "--with-vendor-bug-url=https://github.com/oracle/graal/issues",
             "--with-vendor-vm-bug-url=https://github.com/oracle/graal/issues"
