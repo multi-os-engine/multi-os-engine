@@ -43,11 +43,6 @@ JNIEXPORT jobject JNICALL JVM_CallStackWalk(JNIEnv *env) {
     return NULL;
 }
 
-JNIEXPORT jobject JNICALL JVM_Clone(JNIEnv *env) {
-    (*env)->FatalError(env, "JVM_Clone called:  Unimplemented");
-    return NULL;
-}
-
 JNIEXPORT jobject JNICALL JVM_ConstantPoolGetClassAt(JNIEnv *env) {
     (*env)->FatalError(env, "JVM_ConstantPoolGetClassAt called:  Unimplemented");
     return NULL;
@@ -138,13 +133,18 @@ JNIEXPORT jobject JNICALL JVM_ConstantPoolGetUTF8At(JNIEnv *env) {
     return NULL;
 }
 
-JNIEXPORT jobject JNICALL JVM_CountStackFrames(JNIEnv *env) {
-    (*env)->FatalError(env, "JVM_CountStackFrames called:  Unimplemented");
+JNIEXPORT jobject JNICALL JVM_CurrentCarrierThread(JNIEnv *env) {
+    (*env)->FatalError(env, "JVM_CurrentCarrierThread called:  Unimplemented");
     return NULL;
 }
 
 JNIEXPORT jobject JNICALL JVM_CurrentThread(JNIEnv *env) {
     (*env)->FatalError(env, "JVM_CurrentThread called:  Unimplemented");
+    return NULL;
+}
+
+JNIEXPORT jobject JNICALL JVM_DefineArchivedModules(JNIEnv *env) {
+    (*env)->FatalError(env, "JVM_DefineArchivedModules called:  Unimplemented");
     return NULL;
 }
 
@@ -163,8 +163,23 @@ JNIEXPORT jobject JNICALL JVM_DesiredAssertionStatus(JNIEnv *env) {
     return NULL;
 }
 
+JNIEXPORT jobject JNICALL JVM_DumpClassListToFile(JNIEnv *env) {
+    (*env)->FatalError(env, "JVM_DumpClassListToFile called:  Unimplemented");
+    return NULL;
+}
+
+JNIEXPORT jobject JNICALL JVM_DumpDynamicArchive(JNIEnv *env) {
+    (*env)->FatalError(env, "JVM_DumpDynamicArchive called:  Unimplemented");
+    return NULL;
+}
+
 JNIEXPORT jobject JNICALL JVM_DumpThreads(JNIEnv *env) {
     (*env)->FatalError(env, "JVM_DumpThreads called:  Unimplemented");
+    return NULL;
+}
+
+JNIEXPORT jobject JNICALL JVM_EnsureMaterializedForStackWalk_func(JNIEnv *env) {
+    (*env)->FatalError(env, "JVM_EnsureMaterializedForStackWalk_func called:  Unimplemented");
     return NULL;
 }
 
@@ -195,6 +210,11 @@ JNIEXPORT jobject JNICALL JVM_FindLoadedClass(JNIEnv *env) {
 
 JNIEXPORT jobject JNICALL JVM_FindPrimitiveClass(JNIEnv *env) {
     (*env)->FatalError(env, "JVM_FindPrimitiveClass called:  Unimplemented");
+    return NULL;
+}
+
+JNIEXPORT jobject JNICALL JVM_FindScopedValueBindings(JNIEnv *env) {
+    (*env)->FatalError(env, "JVM_FindScopedValueBindings called:  Unimplemented");
     return NULL;
 }
 
@@ -328,6 +348,11 @@ JNIEXPORT jobject JNICALL JVM_GetClassFieldsCount(JNIEnv *env) {
     return NULL;
 }
 
+JNIEXPORT jobject JNICALL JVM_GetClassFileVersion(JNIEnv *env) {
+    (*env)->FatalError(env, "JVM_GetClassFileVersion called:  Unimplemented");
+    return NULL;
+}
+
 JNIEXPORT jobject JNICALL JVM_GetClassInterfaces(JNIEnv *env) {
     (*env)->FatalError(env, "JVM_GetClassInterfaces called:  Unimplemented");
     return NULL;
@@ -375,6 +400,11 @@ JNIEXPORT jobject JNICALL JVM_GetDeclaringClass(JNIEnv *env) {
 
 JNIEXPORT jobject JNICALL JVM_GetEnclosingMethodInfo(JNIEnv *env) {
     (*env)->FatalError(env, "JVM_GetEnclosingMethodInfo called:  Unimplemented");
+    return NULL;
+}
+
+JNIEXPORT jobject JNICALL JVM_GetExtendedNPEMessage(JNIEnv *env) {
+    (*env)->FatalError(env, "JVM_GetExtendedNPEMessage called:  Unimplemented");
     return NULL;
 }
 
@@ -478,13 +508,38 @@ JNIEXPORT jobject JNICALL JVM_GetNestMembers(JNIEnv *env) {
     return NULL;
 }
 
+JNIEXPORT jobject JNICALL JVM_GetNextThreadIdOffset(JNIEnv *env) {
+    (*env)->FatalError(env, "JVM_GetNextThreadIdOffset called:  Unimplemented");
+    return NULL;
+}
+
+JNIEXPORT jobject JNICALL JVM_GetPermittedSubclasses(JNIEnv *env) {
+    (*env)->FatalError(env, "JVM_GetPermittedSubclasses called:  Unimplemented");
+    return NULL;
+}
+
 JNIEXPORT jobject JNICALL JVM_GetPrimitiveArrayElement(JNIEnv *env) {
     (*env)->FatalError(env, "JVM_GetPrimitiveArrayElement called:  Unimplemented");
     return NULL;
 }
 
+JNIEXPORT jobject JNICALL JVM_GetProperties(JNIEnv *env) {
+    (*env)->FatalError(env, "JVM_GetProperties called:  Unimplemented");
+    return NULL;
+}
+
 JNIEXPORT jobject JNICALL JVM_GetProtectionDomain(JNIEnv *env) {
     (*env)->FatalError(env, "JVM_GetProtectionDomain called:  Unimplemented");
+    return NULL;
+}
+
+JNIEXPORT jobject JNICALL JVM_GetRandomSeedForDumping(JNIEnv *env) {
+    (*env)->FatalError(env, "JVM_GetRandomSeedForDumping called:  Unimplemented");
+    return NULL;
+}
+
+JNIEXPORT jobject JNICALL JVM_GetRecordComponents(JNIEnv *env) {
+    (*env)->FatalError(env, "JVM_GetRecordComponents called:  Unimplemented");
     return NULL;
 }
 
@@ -495,6 +550,11 @@ JNIEXPORT jobject JNICALL JVM_GetSimpleBinaryName(JNIEnv *env) {
 
 JNIEXPORT jobject JNICALL JVM_GetStackAccessControlContext(JNIEnv *env) {
     (*env)->FatalError(env, "JVM_GetStackAccessControlContext called:  Unimplemented");
+    return NULL;
+}
+
+JNIEXPORT jobject JNICALL JVM_GetStackTrace(JNIEnv *env) {
+    (*env)->FatalError(env, "JVM_GetStackTrace called:  Unimplemented");
     return NULL;
 }
 
@@ -538,11 +598,6 @@ JNIEXPORT jobject JNICALL JVM_InitClassName(JNIEnv *env) {
     return NULL;
 }
 
-JNIEXPORT jobject JNICALL JVM_InitProperties(JNIEnv *env) {
-    (*env)->FatalError(env, "JVM_InitProperties called:  Unimplemented");
-    return NULL;
-}
-
 JNIEXPORT jobject JNICALL JVM_InitStackTraceElement(JNIEnv *env) {
     (*env)->FatalError(env, "JVM_InitStackTraceElement called:  Unimplemented");
     return NULL;
@@ -578,8 +633,38 @@ JNIEXPORT jobject JNICALL JVM_IsArrayClass(JNIEnv *env) {
     return NULL;
 }
 
+JNIEXPORT jobject JNICALL JVM_IsCDSDumpingEnabled(JNIEnv *env) {
+    (*env)->FatalError(env, "JVM_IsCDSDumpingEnabled called:  Unimplemented");
+    return NULL;
+}
+
 JNIEXPORT jobject JNICALL JVM_IsConstructorIx(JNIEnv *env) {
     (*env)->FatalError(env, "JVM_IsConstructorIx called:  Unimplemented");
+    return NULL;
+}
+
+JNIEXPORT jobject JNICALL JVM_IsContinuationsSupported(JNIEnv *env) {
+    (*env)->FatalError(env, "JVM_IsContinuationsSupported called:  Unimplemented");
+    return NULL;
+}
+
+JNIEXPORT jobject JNICALL JVM_IsDumpingClassList(JNIEnv *env) {
+    (*env)->FatalError(env, "JVM_IsDumpingClassList called:  Unimplemented");
+    return NULL;
+}
+
+JNIEXPORT jobject JNICALL JVM_IsFinalizationEnabled(JNIEnv *env) {
+    (*env)->FatalError(env, "JVM_IsFinalizationEnabled called:  Unimplemented");
+    return NULL;
+}
+
+JNIEXPORT jobject JNICALL JVM_IsForeignLinkerSupported(JNIEnv *env) {
+    (*env)->FatalError(env, "JVM_IsForeignLinkerSupported called:  Unimplemented");
+    return NULL;
+}
+
+JNIEXPORT jobject JNICALL JVM_IsHiddenClass(JNIEnv *env) {
+    (*env)->FatalError(env, "JVM_IsHiddenClass called:  Unimplemented");
     return NULL;
 }
 
@@ -588,8 +673,8 @@ JNIEXPORT jobject JNICALL JVM_IsInterface(JNIEnv *env) {
     return NULL;
 }
 
-JNIEXPORT jobject JNICALL JVM_IsInterrupted(JNIEnv *env) {
-    (*env)->FatalError(env, "JVM_IsInterrupted called:  Unimplemented");
+JNIEXPORT jobject JNICALL JVM_IsPreviewEnabled(JNIEnv *env) {
+    (*env)->FatalError(env, "JVM_IsPreviewEnabled called:  Unimplemented");
     return NULL;
 }
 
@@ -598,19 +683,24 @@ JNIEXPORT jobject JNICALL JVM_IsPrimitiveClass(JNIEnv *env) {
     return NULL;
 }
 
+JNIEXPORT jobject JNICALL JVM_IsRecord(JNIEnv *env) {
+    (*env)->FatalError(env, "JVM_IsRecord called:  Unimplemented");
+    return NULL;
+}
+
 JNIEXPORT jobject JNICALL JVM_IsSameClassPackage(JNIEnv *env) {
     (*env)->FatalError(env, "JVM_IsSameClassPackage called:  Unimplemented");
+    return NULL;
+}
+
+JNIEXPORT jobject JNICALL JVM_IsSharingEnabled(JNIEnv *env) {
+    (*env)->FatalError(env, "JVM_IsSharingEnabled called:  Unimplemented");
     return NULL;
 }
 
 JNIEXPORT void JNICALL JVM_IsSupportedJNIVersion() {
     fprintf(stderr, "JVM_IsSupportedJNIVersion called:  Unimplemented\n");
     abort();
-}
-
-JNIEXPORT jobject JNICALL JVM_IsThreadAlive(JNIEnv *env) {
-    (*env)->FatalError(env, "JVM_IsThreadAlive called:  Unimplemented");
-    return NULL;
 }
 
 JNIEXPORT jobject JNICALL JVM_IsVMGeneratedMethodIx(JNIEnv *env) {
@@ -628,6 +718,26 @@ JNIEXPORT void JNICALL JVM_LoadLibrary() {
     abort();
 }
 
+JNIEXPORT jobject JNICALL JVM_LoadZipLibrary(JNIEnv *env) {
+    (*env)->FatalError(env, "JVM_LoadZipLibrary called:  Unimplemented");
+    return NULL;
+}
+
+JNIEXPORT jobject JNICALL JVM_LogLambdaFormInvoker(JNIEnv *env) {
+    (*env)->FatalError(env, "JVM_LogLambdaFormInvoker called:  Unimplemented");
+    return NULL;
+}
+
+JNIEXPORT jobject JNICALL JVM_LookupDefineClass(JNIEnv *env) {
+    (*env)->FatalError(env, "JVM_LookupDefineClass called:  Unimplemented");
+    return NULL;
+}
+
+JNIEXPORT jobject JNICALL JVM_LookupLambdaProxyClassFromArchive(JNIEnv *env) {
+    (*env)->FatalError(env, "JVM_LookupLambdaProxyClassFromArchive called:  Unimplemented");
+    return NULL;
+}
+
 JNIEXPORT void JNICALL JVM_MaxMemory() {
     fprintf(stderr, "JVM_MaxMemory called:  Unimplemented\n");
     abort();
@@ -636,21 +746,6 @@ JNIEXPORT void JNICALL JVM_MaxMemory() {
 JNIEXPORT void JNICALL JVM_MaxObjectInspectionAge() {
     fprintf(stderr, "JVM_MaxObjectInspectionAge called:  Unimplemented\n");
     abort();
-}
-
-JNIEXPORT jobject JNICALL JVM_MonitorNotify(JNIEnv *env) {
-    (*env)->FatalError(env, "JVM_MonitorNotify called:  Unimplemented");
-    return NULL;
-}
-
-JNIEXPORT jobject JNICALL JVM_MonitorNotifyAll(JNIEnv *env) {
-    (*env)->FatalError(env, "JVM_MonitorNotifyAll called:  Unimplemented");
-    return NULL;
-}
-
-JNIEXPORT jobject JNICALL JVM_MonitorWait(JNIEnv *env) {
-    (*env)->FatalError(env, "JVM_MonitorWait called:  Unimplemented");
-    return NULL;
 }
 
 JNIEXPORT jobject JNICALL JVM_MoreStackWalk(JNIEnv *env) {
@@ -675,6 +770,16 @@ JNIEXPORT jobject JNICALL JVM_NewInstanceFromConstructor(JNIEnv *env) {
 
 JNIEXPORT jobject JNICALL JVM_NewMultiArray(JNIEnv *env) {
     (*env)->FatalError(env, "JVM_NewMultiArray called:  Unimplemented");
+    return NULL;
+}
+
+JNIEXPORT jobject JNICALL JVM_PhantomReferenceRefersTo(JNIEnv *env) {
+    (*env)->FatalError(env, "JVM_PhantomReferenceRefersTo called:  Unimplemented");
+    return NULL;
+}
+
+JNIEXPORT jobject JNICALL JVM_PrintWarningAtDynamicAgentLoad(JNIEnv *env) {
+    (*env)->FatalError(env, "JVM_PrintWarningAtDynamicAgentLoad called:  Unimplemented");
     return NULL;
 }
 
@@ -703,6 +808,26 @@ JNIEXPORT void JNICALL JVM_RawMonitorExit() {
     abort();
 }
 
+JNIEXPORT jobject JNICALL JVM_ReferenceClear(JNIEnv *env) {
+    (*env)->FatalError(env, "JVM_ReferenceClear called:  Unimplemented");
+    return NULL;
+}
+
+JNIEXPORT jobject JNICALL JVM_ReferenceRefersTo(JNIEnv *env) {
+    (*env)->FatalError(env, "JVM_ReferenceRefersTo called:  Unimplemented");
+    return NULL;
+}
+
+JNIEXPORT jobject JNICALL JVM_RegisterContinuationMethods(JNIEnv *env) {
+    (*env)->FatalError(env, "JVM_RegisterContinuationMethods called:  Unimplemented");
+    return NULL;
+}
+
+JNIEXPORT jobject JNICALL JVM_RegisterLambdaProxyClassForArchiving(JNIEnv *env) {
+    (*env)->FatalError(env, "JVM_RegisterLambdaProxyClassForArchiving called:  Unimplemented");
+    return NULL;
+}
+
 JNIEXPORT void JNICALL JVM_RegisterSignal() {
     fprintf(stderr, "JVM_RegisterSignal called:  Unimplemented\n");
     abort();
@@ -713,8 +838,13 @@ JNIEXPORT void JNICALL JVM_ReleaseUTF() {
     abort();
 }
 
-JNIEXPORT jobject JNICALL JVM_ResumeThread(JNIEnv *env) {
-    (*env)->FatalError(env, "JVM_ResumeThread called:  Unimplemented");
+JNIEXPORT jobject JNICALL JVM_ReportFinalizationComplete(JNIEnv *env) {
+    (*env)->FatalError(env, "JVM_ReportFinalizationComplete called:  Unimplemented");
+    return NULL;
+}
+
+JNIEXPORT jobject JNICALL JVM_ScopedValueCache(JNIEnv *env) {
+    (*env)->FatalError(env, "JVM_ScopedValueCache called:  Unimplemented");
     return NULL;
 }
 
@@ -733,6 +863,11 @@ JNIEXPORT jobject JNICALL JVM_SetClassSigners(JNIEnv *env) {
     return NULL;
 }
 
+JNIEXPORT jobject JNICALL JVM_SetCurrentThread(JNIEnv *env) {
+    (*env)->FatalError(env, "JVM_SetCurrentThread called:  Unimplemented");
+    return NULL;
+}
+
 JNIEXPORT jobject JNICALL JVM_SetNativeThreadName(JNIEnv *env) {
     (*env)->FatalError(env, "JVM_SetNativeThreadName called:  Unimplemented");
     return NULL;
@@ -740,6 +875,16 @@ JNIEXPORT jobject JNICALL JVM_SetNativeThreadName(JNIEnv *env) {
 
 JNIEXPORT jobject JNICALL JVM_SetPrimitiveArrayElement(JNIEnv *env) {
     (*env)->FatalError(env, "JVM_SetPrimitiveArrayElement called:  Unimplemented");
+    return NULL;
+}
+
+JNIEXPORT jobject JNICALL JVM_SetScopedValueCache(JNIEnv *env) {
+    (*env)->FatalError(env, "JVM_SetScopedValueCache called:  Unimplemented");
+    return NULL;
+}
+
+JNIEXPORT jobject JNICALL JVM_SetStackWalkContinuation(JNIEnv *env) {
+    (*env)->FatalError(env, "JVM_SetStackWalkContinuation called:  Unimplemented");
     return NULL;
 }
 
@@ -758,19 +903,9 @@ JNIEXPORT jobject JNICALL JVM_StartThread(JNIEnv *env) {
     return NULL;
 }
 
-JNIEXPORT jobject JNICALL JVM_StopThread(JNIEnv *env) {
-    (*env)->FatalError(env, "JVM_StopThread called:  Unimplemented");
-    return NULL;
-}
-
 JNIEXPORT void JNICALL JVM_SupportsCX8() {
     fprintf(stderr, "JVM_SupportsCX8 called:  Unimplemented\n");
     abort();
-}
-
-JNIEXPORT jobject JNICALL JVM_SuspendThread(JNIEnv *env) {
-    (*env)->FatalError(env, "JVM_SuspendThread called:  Unimplemented");
-    return NULL;
 }
 
 JNIEXPORT void JNICALL JVM_TotalMemory() {
@@ -783,6 +918,31 @@ JNIEXPORT void JNICALL JVM_UnloadLibrary() {
     abort();
 }
 
+JNIEXPORT jobject JNICALL JVM_VirtualThreadEnd(JNIEnv *env) {
+    (*env)->FatalError(env, "JVM_VirtualThreadEnd called:  Unimplemented");
+    return NULL;
+}
+
+JNIEXPORT jobject JNICALL JVM_VirtualThreadHideFrames(JNIEnv *env) {
+    (*env)->FatalError(env, "JVM_VirtualThreadHideFrames called:  Unimplemented");
+    return NULL;
+}
+
+JNIEXPORT jobject JNICALL JVM_VirtualThreadMount(JNIEnv *env) {
+    (*env)->FatalError(env, "JVM_VirtualThreadMount called:  Unimplemented");
+    return NULL;
+}
+
+JNIEXPORT jobject JNICALL JVM_VirtualThreadStart(JNIEnv *env) {
+    (*env)->FatalError(env, "JVM_VirtualThreadStart called:  Unimplemented");
+    return NULL;
+}
+
+JNIEXPORT jobject JNICALL JVM_VirtualThreadUnmount(JNIEnv *env) {
+    (*env)->FatalError(env, "JVM_VirtualThreadUnmount called:  Unimplemented");
+    return NULL;
+}
+
 JNIEXPORT jobject JNICALL JVM_WaitForReferencePendingList(JNIEnv *env) {
     (*env)->FatalError(env, "JVM_WaitForReferencePendingList called:  Unimplemented");
     return NULL;
@@ -792,99 +952,3 @@ JNIEXPORT jobject JNICALL JVM_Yield(JNIEnv *env) {
     (*env)->FatalError(env, "JVM_Yield called:  Unimplemented");
     return NULL;
 }
-
-JNIEXPORT jobject JNICALL JVM_DefineArchivedModules(JNIEnv *env, jobject platform_loader, jobject system_loader) {
-    (*env)->FatalError(env, "JVM_DefineArchivedModules called:  Unimplemented");
-    return NULL;
-}
-JNIEXPORT jobject JNICALL JVM_DumpClassListToFile(JNIEnv *env, jstring listFileName) {
-    (*env)->FatalError(env, "JVM_DumpClassListToFile called:  Unimplemented");
-    return NULL;
-}
-JNIEXPORT jobject JNICALL JVM_DumpDynamicArchive(JNIEnv *env, jstring archiveName) {
-    (*env)->FatalError(env, "JVM_DumpDynamicArchive called:  Unimplemented");
-    return NULL;
-}
-JNIEXPORT jobject JNICALL JVM_GetExtendedNPEMessage(JNIEnv *env, jthrowable throwable) {
-    (*env)->FatalError(env, "JVM_GetExtendedNPEMessage called:  Unimplemented");
-    return NULL;
-}
-JNIEXPORT jobject JNICALL JVM_GetPermittedSubclasses(JNIEnv *env, jclass current) {
-    (*env)->FatalError(env, "JVM_GetPermittedSubclasses called:  Unimplemented");
-    return NULL;
-}
-JNIEXPORT jobject JNICALL JVM_GetProperties(JNIEnv *env) {
-    (*env)->FatalError(env, "JVM_GetProperties called:  Unimplemented");
-    return NULL;
-}
-JNIEXPORT void JNICALL JVM_GetRandomSeedForDumping() {
-    fprintf(stderr, "JVM_GetRandomSeedForDumping called:  Unimplemented\n");
-    abort();
-}
-JNIEXPORT jobject JNICALL JVM_GetRecordComponents(JNIEnv *env, jclass ofClass) {
-    (*env)->FatalError(env, "JVM_GetRecordComponents called:  Unimplemented");
-    return NULL;
-}
-JNIEXPORT jobject JNICALL JVM_IsCDSDumpingEnabled(JNIEnv *env) {
-    (*env)->FatalError(env, "JVM_IsCDSDumpingEnabled called:  Unimplemented");
-    return NULL;
-}
-JNIEXPORT jobject JNICALL JVM_IsDumpingClassList(JNIEnv *env) {
-    (*env)->FatalError(env, "JVM_IsDumpingClassList called:  Unimplemented");
-    return NULL;
-}
-JNIEXPORT jobject JNICALL JVM_IsHiddenClass(JNIEnv *env, jclass cls) {
-    (*env)->FatalError(env, "JVM_IsHiddenClass called:  Unimplemented");
-    return NULL;
-}
-JNIEXPORT jobject JNICALL JVM_IsRecord(JNIEnv *env, jclass cls) {
-    (*env)->FatalError(env, "JVM_IsRecord called:  Unimplemented");
-    return NULL;
-}
-JNIEXPORT jobject JNICALL JVM_IsSharingEnabled(JNIEnv *env) {
-    (*env)->FatalError(env, "JVM_IsSharingEnabled called:  Unimplemented");
-    return NULL;
-}
-JNIEXPORT jobject JNICALL JVM_LogLambdaFormInvoker(JNIEnv *env, jstring line) {
-    (*env)->FatalError(env, "JVM_LogLambdaFormInvoker called:  Unimplemented");
-    return NULL;
-}
-JNIEXPORT jobject JNICALL JVM_LookupDefineClass(JNIEnv *env, jclass lookup, const char *name, const jbyte *buf,
-                                                jsize len, jobject pd, jboolean initialize, int flags, jobject classData) {
-    (*env)->FatalError(env, "JVM_LookupDefineClass called:  Unimplemented");
-    return NULL;
-}
-JNIEXPORT jobject JNICALL JVM_LookupLambdaProxyClassFromArchive(JNIEnv *env) {
-    (*env)->FatalError(env, "JVM_LookupLambdaProxyClassFromArchive called:  Unimplemented");
-    return NULL;
-}
-JNIEXPORT jobject JNICALL JVM_PhantomReferenceRefersTo(JNIEnv *env,
-                                                       jclass caller,
-                                                       jstring interfaceMethodName,
-                                                       jobject factoryType,
-                                                       jobject interfaceMethodType,
-                                                       jobject implementationMember,
-                                                       jobject dynamicMethodType) {
-    (*env)->FatalError(env, "JVM_PhantomReferenceRefersTo called:  Unimplemented");
-    return NULL;
-}
-JNIEXPORT jobject JNICALL JVM_ReferenceClear(JNIEnv *env, jobject ref) {
-    (*env)->FatalError(env, "JVM_ReferenceClear called:  Unimplemented");
-    return NULL;
-}
-JNIEXPORT jobject JNICALL JVM_ReferenceRefersTo(JNIEnv *env, jobject ref, jobject o) {
-    (*env)->FatalError(env, "JVM_ReferenceRefersTo called:  Unimplemented");
-    return NULL;
-}
-JNIEXPORT jobject JNICALL JVM_RegisterLambdaProxyClassForArchiving(JNIEnv *env,
-                                                                   jclass caller,
-                                                                   jstring interfaceMethodName,
-                                                                   jobject factoryType,
-                                                                   jobject interfaceMethodType,
-                                                                   jobject implementationMember,
-                                                                   jobject dynamicMethodType,
-                                                                   jclass lambdaProxyClass) {
-    (*env)->FatalError(env, "JVM_RegisterLambdaProxyClassForArchiving called:  Unimplemented");
-    return NULL;
-}
-
