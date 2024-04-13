@@ -1,0 +1,15 @@
+--- a/libstdc++-v3/src/c++20/tzdb.cc 2024-04-13 19:38:19
++++ b/libstdc++-v3/src/c++20/tzdb.cc  2024-04-13 19:38:08
+@@ -86,12 +27,10 @@
+ #endif
+ }
+
+-#if ! defined _GLIBCXX_ZONEINFO_DIR && ! defined _GLIBCXX_STATIC_TZDATA
+ # define TZDB_DISABLED
+   [[noreturn]] void __throw_disabled()
+   {
+     std::__throw_runtime_error("tzdb: support for loading tzdata is disabled");
+   }
+-#endif
+
+ namespace std::chrono

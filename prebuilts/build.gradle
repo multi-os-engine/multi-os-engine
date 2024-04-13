@@ -62,7 +62,7 @@ task linuxCrosscompiler(type: Script) {
 
 def binutils_version = 'binutils-2.33.1'
 def mingw_version = 'mingw-w64-v7.0.0'
-def gcc_version = 'gcc-9.2.0'
+def gcc_version = 'gcc-13.2.0'
 
 task mingw(type: Script) {
     progress 'Checking system dependencies'
@@ -134,11 +134,11 @@ task mingw(type: Script) {
     exec 'rm', '-f', 'mingw'
     exec 'ln', '-s', 'x86_64-w64-mingw32', 'mingw'
 
-    if (isAppleSilicon) {
-        // Patch for apple silicon
-        workDir "mingw/${gcc_version}"
-        exec 'git', 'apply', '../../../mingw-apple-silicon.patch'
-    }
+    // https://gcc.gnu.org/bugzilla/show_bug.cgi?id=111632
+    workDir "mingw/${gcc_version}"
+    exec 'git', 'apply', '../../../mingw-xcode15-fix.patch'
+    exec 'git', 'apply', '../../../mingw-fix-libc.patch'
+    exec 'git', 'apply', '../../../mingw-disable-tzdb.patch'
 
     workDir "mingw/${gcc_version}/build64"
     exec '../configure', '--target=x86_64-w64-mingw32',
