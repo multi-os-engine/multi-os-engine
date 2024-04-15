@@ -1,0 +1,92 @@
+From c3973bb18db1d93513065fb7db78957f5872fa49 Mon Sep 17 00:00:00 2001
+From: Berstanio <berstaniodev@gmail.com>
+Date: Wed, 10 Apr 2024 12:13:32 +0200
+Subject: [PATCH] feat: Add iOS build support
+
+---
+ .../macosx/native/libjava/java_props_macosx.c     | 15 +++++++++++++--
+ .../macosx/native/libnet/DefaultProxySelector.c   |  1 +
+ .../unix/native/libnet/NetworkInterface.c         |  4 ++++
+ 3 files changed, 18 insertions(+), 2 deletions(-)
+
+diff --git a/src/java.base/macosx/native/libjava/java_props_macosx.c b/src/java.base/macosx/native/libjava/java_props_macosx.c
+index f50daac13cb..c9dd42f6c7f 100644
+--- a/src/java.base/macosx/native/libjava/java_props_macosx.c
++++ b/src/java.base/macosx/native/libjava/java_props_macosx.c
+@@ -26,12 +26,15 @@
+ #include <sys/socket.h>
+ #include <netinet/in.h>
+ #include <arpa/inet.h>
+-#include <objc/objc-runtime.h>
+ 
+ #include <CoreFoundation/CoreFoundation.h>
+ #include <SystemConfiguration/SystemConfiguration.h>
+ #include <Foundation/Foundation.h>
+ 
++#if !(TARGET_OS_IPHONE || TARGET_OS_SIMULATOR)
++#include <objc/objc-runtime.h>
++#endif
++
+ #include "java_props_macosx.h"
+ 
+ char *getPosixLocale(int cat) {
+@@ -232,7 +235,13 @@ typedef struct {
+ 
+ void setOSNameAndVersion(java_props_t *sprops) {
+     // Hardcode os_name, and fill in os_version
+-    sprops->os_name = strdup("Mac OS X");
++#if TARGET_OS_IPHONE
++    sprops->os_name = "iOS";
++#elif TARGET_OS_SIMULATOR
++    sprops->os_name = "iOS Simulator";
++#else
++    sprops->os_name = "Mac OS X";
++#endif
+ 
+     NSString *nsVerStr = NULL;
+     char* osVersionCStr = NULL;
+@@ -419,6 +428,7 @@ void setUserHome(java_props_t *sprops) {
+  * Method for fetching proxy info and storing it in the property list.
+  */
+ void setProxyProperties(java_props_t *sProps) {
++#if  !(TARGET_OS_IPHONE || TARGET_OS_SIMULATOR)
+     if (sProps == NULL) return;
+ 
+     char buf[16];    /* Used for %d of an int - 16 is plenty */
+@@ -491,4 +501,5 @@ void setProxyProperties(java_props_t *sProps) {
+ #undef CHECK_PROXY
+ 
+     CFRelease(dict);
++#endif
+ }
+diff --git a/src/java.base/macosx/native/libnet/DefaultProxySelector.c b/src/java.base/macosx/native/libnet/DefaultProxySelector.c
+index a176699bebb..e2d218cd1c2 100644
+--- a/src/java.base/macosx/native/libnet/DefaultProxySelector.c
++++ b/src/java.base/macosx/native/libnet/DefaultProxySelector.c
+@@ -27,6 +27,7 @@
+ #include <string.h>
+ #include <CoreFoundation/CoreFoundation.h>
+ #include <CoreServices/CoreServices.h>
++#include <CFNetwork/CFNetwork.h>
+ 
+ #include "jni.h"
+ #include "jni_util.h"
+diff --git a/src/java.base/unix/native/libnet/NetworkInterface.c b/src/java.base/unix/native/libnet/NetworkInterface.c
+index 0cd69399d91..5eb58ecf25a 100644
+--- a/src/java.base/unix/native/libnet/NetworkInterface.c
++++ b/src/java.base/unix/native/libnet/NetworkInterface.c
+@@ -25,7 +25,11 @@
+ #include <arpa/inet.h>
+ #include <errno.h>
+ #include <net/if.h>
++
++#if !defined(__APPLE__)
+ #include <net/if_arp.h>
++#endif
++
+ #include <stdlib.h>
+ #include <string.h>
+ #include <sys/ioctl.h>
+-- 
+2.39.0
+

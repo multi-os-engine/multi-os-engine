@@ -14,7 +14,7 @@ task('jdk_gensrc', type: Script) {
 
     progress 'Configure jdk'
     rawWorkDir "${external.svm.openjdk}"
-    def JVMCI_VERSION = "jvmci_23.1_b15_candidate"
+    def JVMCI_VERSION = "jvmci-23.1-b33"
     // For whatever reason setting "--with-boot-jdk" does not work
     env "JAVA_HOME", file(bootJDK + "/jdk21/Contents/Home").absolutePath
     env 'MX_PYTHON', 'python3'
