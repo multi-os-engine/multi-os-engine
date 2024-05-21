@@ -22,8 +22,12 @@ import org.gradle.api.Project;
 import org.gradle.api.Task;
 import org.gradle.api.logging.Logger;
 import org.gradle.api.logging.Logging;
-import org.gradle.api.plugins.JavaPlugin;
 import org.gradle.internal.reflect.Instantiator;
+import org.gradle.jvm.toolchain.JavaLanguageVersion;
+import org.gradle.jvm.toolchain.JavaLauncher;
+import org.gradle.jvm.toolchain.JavaToolchainService;
+import org.gradle.jvm.toolchain.JvmImplementation;
+import org.gradle.jvm.toolchain.JvmVendorSpec;
 import org.gradle.tooling.provider.model.ToolingModelBuilderRegistry;
 import org.moe.gradle.anns.NotNull;
 import org.moe.gradle.anns.Nullable;
@@ -119,8 +123,17 @@ public class MoePlugin extends AbstractMoePlugin {
     public void apply(Project project) {
         super.apply(project);
 
-        // Setup GraalVM
-        graalVM = new GraalVM(Paths.get(PropertiesUtil.getProperty(project, MOE_GRAALVM_HOME_PROPERTY)));
+        if (PropertiesUtil.tryGetProperty(project, MOE_GRAALVM_HOME_PROPERTY) != null) {
+            graalVM = new GraalVM(Paths.get(PropertiesUtil.getProperty(project, MOE_GRAALVM_HOME_PROPERTY)));
+        } else {
+            JavaToolchainService toolchains = project.getExtensions().getByType(JavaToolchainService.class);
+            JavaLauncher launcher = toolchains.launcherFor(spec -> {
+                spec.getLanguageVersion().set(JavaLanguageVersion.of(GraalVM.SUPPORTED_JAVA_MAJOR));  // Set as per your GraalVM version
+                spec.getVendor().set(JvmVendorSpec.GRAAL_VM);
+                spec.getImplementation().set(JvmImplementation.VENDOR_SPECIFIC);
+            }).get();
+            graalVM = new GraalVM(launcher.getExecutablePath().getAsFile().getParentFile().getParentFile().toPath());
+        }
 
         // Setup explicit archs
         String archsProp = PropertiesUtil.tryGetProperty(project, MOE_ARCHS_PROPERTY);
