@@ -43,8 +43,8 @@ class GraalVM(
         version = parseVMVersion()
         println("Using GraalVM $version at $home")
 
-        require (version.feature == 21) {
-            "Support Java 21 based GraalVM only"
+        require (version.feature == SUPPORTED_JAVA_MAJOR) {
+            "Support Java $SUPPORTED_JAVA_MAJOR based GraalVM only"
         }
 
         require (version >= MIN_GRAALVM_VERSION) {
@@ -213,12 +213,14 @@ class GraalVM(
 
         private const val MAC_ATTR_COM_APPLE_QUARANTINE = "com.apple.quarantine"
 
+        const val SUPPORTED_JAVA_MAJOR = 21
+
         private fun List<String>.parseComponent(index: Int): Int = getOrNull(index)?.toInt() ?: 0
 
         /** Minimum supported version, inclusive */
-        private val MIN_GRAALVM_VERSION = JDKVersion(21, 0, 0, 0)
+        private val MIN_GRAALVM_VERSION = JDKVersion(SUPPORTED_JAVA_MAJOR, 0, 0, 0)
 
         /** Latest GraalVM version that has been tested with */
-        private val MAX_GRAALVM_VERSION = JDKVersion(21, 0, 2, 0)
+        private val MAX_GRAALVM_VERSION = JDKVersion(SUPPORTED_JAVA_MAJOR, 0, 2, 0)
     }
 }
