@@ -26,6 +26,7 @@ import com.intellij.openapi.fileEditor.FileEditorManager;
 import com.intellij.openapi.module.Module;
 import com.intellij.openapi.ui.DialogWrapper;
 import com.intellij.openapi.vfs.VirtualFile;
+import com.intellij.openapi.vfs.VirtualFileManager;
 import org.moe.idea.MOESdkPlugin;
 import org.moe.idea.ui.NewBindingDialog;
 import org.moe.idea.utils.ModuleUtils;
@@ -66,7 +67,9 @@ public class MOENewBindingAction extends AnAction {
                             LOG.info("Unable create file" + e.getMessage());
                         }
 
-                        file = module.getModuleFile().getParent().getFileSystem().refreshAndFindFileByPath(newConfFile.getPath());
+                        String filePath = ModuleUtils.getModulePath(module) + "/" + newConfFile.getPath();
+                        file = VirtualFileManager.getInstance().refreshAndFindFileByUrl("file://" + filePath);
+
                         if (file != null && file.exists()) {
                             FileEditorManager.getInstance(module.getProject()).openFile(file, true);
                         }
