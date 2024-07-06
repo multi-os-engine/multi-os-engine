@@ -9,6 +9,10 @@
     ]]></description>
 
     <change-notes><![CDATA[
+      1.5.3<br>
+      - Improve SDK management<br>
+      - Set GraalVM JDK as SDK<br>
+      <br>
       1.5.2<br>
       - Improve SDK management<br>
       - Fix "Module SDK not configured or it's not a valid JDK" issue<br>
