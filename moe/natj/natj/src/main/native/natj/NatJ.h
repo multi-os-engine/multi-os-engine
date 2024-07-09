@@ -32,9 +32,7 @@ limitations under the License.
 #include <dlfcn.h>
 #endif
 
-#ifdef __linux__
 #include <functional>
-#endif
 
 #include <mutex>
 #include <vector>

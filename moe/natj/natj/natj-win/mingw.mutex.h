@@ -21,6 +21,9 @@ limitations under the License.
     #define STDTHREAD_STRICT_NONRECURSIVE_LOCKS
 #endif
 
+#include <stdio.h>
+#include <system_error>
+
 namespace std
 {
 class recursive_mutex
