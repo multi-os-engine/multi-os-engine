@@ -479,8 +479,8 @@ public class ProGuard extends AbstractBaseTask {
 
             final JavaCompile javaCompileTask = getMoePlugin().getTaskByName(compileJavaTaskName);
             javaCompileTaskDep = javaCompileTask;
-            javaCompileTask.setSourceCompatibility("1.8");
-            javaCompileTask.setTargetCompatibility("1.8");
+            javaCompileTask.setSourceCompatibility("11");
+            javaCompileTask.setTargetCompatibility("11");
 
             // A hack that forces gradle to generate jars of dependency projects
             runtimeClasspath.clear();
