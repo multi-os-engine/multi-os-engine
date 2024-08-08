@@ -1308,6 +1308,7 @@
 					"-Wno-comment",
 					"-Wformat",
 					"-Wformat-security",
+					"-Wno-enum-constexpr-conversion",
 				);
 			};
 			name = "Debug-macos";
@@ -1349,6 +1350,7 @@
 					"-Wno-comment",
 					"-Wformat",
 					"-Wformat-security",
+					"-Wno-enum-constexpr-conversion",
 				);
 			};
 			name = "Release-macos";
