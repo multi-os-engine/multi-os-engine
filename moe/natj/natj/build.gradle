@@ -25,6 +25,16 @@ for (target in ['ios', 'macos', 'windows', 'ndk', 'linux']) {
         FileOutputStream ostream = new FileOutputStream(log);
         setErrorOutput(ostream)
         setStandardOutput(ostream)
+        ignoreExitValue = true
+
+        doLast {
+            if (getExecutionResult().get().getExitValue() != 0) {
+                logger.error("--------- COMMAND LOG START ---------")
+                logger.error(log.getText("UTF-8"))
+                logger.error("--------- COMMAND LOG END ---------")
+            }
+            getExecutionResult().get().assertNormalExitValue()
+        }
     }
 }
 
