@@ -45,6 +45,17 @@ for (target in [[name: 'ios'],
         FileOutputStream ostream = new FileOutputStream(log);
         setErrorOutput(ostream)
         setStandardOutput(ostream)
+
+        ignoreExitValue = true
+
+        doLast {
+            if (getExecutionResult().get().getExitValue() != 0) {
+                logger.error("--------- COMMAND LOG START ---------")
+                logger.error(log.getText("UTF-8"))
+                logger.error("--------- COMMAND LOG END ---------")
+            }
+            getExecutionResult().get().assertNormalExitValue()
+        }
     }
 }
 
@@ -71,6 +82,17 @@ for (target in [[name: 'macos', outputs: ["${external.libimobiledevice.root}/bui
         FileOutputStream ostream = new FileOutputStream(log);
         setErrorOutput(ostream)
         setStandardOutput(ostream)
+
+        ignoreExitValue = true
+
+        doLast {
+            if (getExecutionResult().get().getExitValue() != 0) {
+                logger.error("--------- COMMAND LOG START ---------")
+                logger.error(log.getText("UTF-8"))
+                logger.error("--------- COMMAND LOG END ---------")
+            }
+            getExecutionResult().get().assertNormalExitValue()
+        }
     }
 }
 
@@ -105,6 +127,16 @@ for (target in [[name: 'ios', outputs: ["${external.natj.root}/natj-ios/build/xc
         FileOutputStream ostream = new FileOutputStream(log);
         setErrorOutput(ostream)
         setStandardOutput(ostream)
+        ignoreExitValue = true
+
+        doLast {
+            if (getExecutionResult().get().getExitValue() != 0) {
+                logger.error("--------- COMMAND LOG START ---------")
+                logger.error(log.getText("UTF-8"))
+                logger.error("--------- COMMAND LOG END ---------")
+            }
+            getExecutionResult().get().assertNormalExitValue()
+        }
     }
 
     task("ext_natj_${target.name}") {
@@ -165,6 +197,16 @@ task("build_ext_moe_core", type: Exec) {
     FileOutputStream ostream = new FileOutputStream(log);
     setErrorOutput(ostream)
     setStandardOutput(ostream)
+    ignoreExitValue = true
+
+    doLast {
+        if (getExecutionResult().get().getExitValue() != 0) {
+            logger.error("--------- COMMAND LOG START ---------")
+            logger.error(log.getText("UTF-8"))
+            logger.error("--------- COMMAND LOG END ---------")
+        }
+        getExecutionResult().get().assertNormalExitValue()
+    }
 }
 
 task("ext_moe_core") {
