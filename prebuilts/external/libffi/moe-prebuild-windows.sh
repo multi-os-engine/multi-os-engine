@@ -34,6 +34,10 @@ for SDK in $SDKS; do
 	--enable-static \
 	--enable-portable-binary \
 	PKG_CONFIG_LIBDIR="$__MOE_TARGET/lib/pkgconfig"
+
+  # TODO: REMOVE THIS
+  sed -i '' 's/%:.*//' Makefile
+
 	make
 	make install
 done

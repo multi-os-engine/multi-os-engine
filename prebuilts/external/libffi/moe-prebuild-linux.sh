@@ -47,6 +47,7 @@ for SDK in $SDKS; do
 	--with-sysroot="$SYSROOT"
 	PKG_CONFIG_LIBDIR="$__MOE_TARGET/lib/pkgconfig"
 
+  # TODO: REMOVE THIS
 	sed -i '' 's/%:.*//' Makefile
 
 	make -j$(sysctl -n hw.logicalcpu)
