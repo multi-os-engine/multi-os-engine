@@ -16,7 +16,7 @@
                 description="Create new Multi-OS Engine project"
                 class="org.moe.idea.actions.MOENewProjectAction"
                 icon="/icons/moe_small.png">
-            <add-to-group group-id="WelcomeScreen.QuickStart.IDEA" anchor="after" relative-to-action="WelcomeScreen.CreateNewProject"/>
+            <add-to-group group-id="WelcomeScreen.QuickStart" anchor="after" relative-to-action="WelcomeScreen.CreateNewProject"/>
         </action>
 
         <!-- Add a new MOE Module option to menu -->
