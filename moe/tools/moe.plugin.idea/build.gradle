@@ -39,6 +39,8 @@ def PLUGIN_NAME = 'moe_intellij_plugin'
 //}
 
 intellij {
+    // to test with Android Studio, use:
+    // version = 'AI-231.9392.1.2311.11076708'
     version = 'IC-2022.2'
     plugins = ['com.intellij.gradle', 'com.intellij.java']
     pluginName = PLUGIN_NAME

@@ -24,7 +24,7 @@ import com.intellij.openapi.fileEditor.FileEditorState;
 import com.intellij.openapi.fileEditor.FileEditorStateLevel;
 import com.intellij.openapi.fileEditor.impl.text.TextEditorProvider;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.util.Key;
+import com.intellij.openapi.util.UserDataHolderBase;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.VirtualFileListener;
 import org.jetbrains.annotations.NotNull;
@@ -34,7 +34,7 @@ import org.moe.idea.ui.BindingEditorForm;
 import javax.swing.*;
 import java.beans.PropertyChangeListener;
 
-public class BindingEditor implements VirtualFileListener, FileEditor {
+public class BindingEditor extends UserDataHolderBase implements VirtualFileListener, FileEditor {
 
     @NotNull
     private final VirtualFile myFile;
@@ -121,17 +121,6 @@ public class BindingEditor implements VirtualFileListener, FileEditor {
     @Override
     public void dispose() {
         TextEditorProvider.getInstance().disposeEditor(this);
-    }
-
-    @Nullable
-    @Override
-    public <T> T getUserData(@NotNull Key<T> key) {
-        return null;
-    }
-
-    @Override
-    public <T> void putUserData(@NotNull Key<T> key, @Nullable T t) {
-
     }
 
     @Override
