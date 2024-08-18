@@ -82,7 +82,7 @@ public class ModuleUtils {
         String modulePath = ExternalSystemApiUtil.getExternalProjectPath(module);
 
         if ((modulePath == null) || modulePath.isEmpty())
-            throw new IllegalStateException("Module path is null or empty");
+            throw new IllegalStateException("Module path is null or empty for module: " + module);
 
         return modulePath;
     }
