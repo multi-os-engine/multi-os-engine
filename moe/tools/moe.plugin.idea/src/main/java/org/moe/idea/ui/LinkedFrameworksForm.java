@@ -16,6 +16,7 @@ limitations under the License.
 
 package org.moe.idea.ui;
 
+import com.intellij.icons.AllIcons;
 import com.intellij.openapi.ui.DialogWrapper;
 import org.moe.editors.Framework;
 import org.moe.editors.XcodeEditorManager;
@@ -37,6 +38,8 @@ public class LinkedFrameworksForm extends JPanel {
 
     public LinkedFrameworksForm() {
         super();
+        addButton.setIcon(AllIcons.General.Add);
+        removeButton.setIcon(AllIcons.General.Remove);
         this.listModel = new DefaultListModel();
         frameworkList.setModel(listModel);
 
