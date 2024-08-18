@@ -164,6 +164,7 @@ open class Desugar : AbstractBaseTask() {
             
             # Backport to Java 7
             -target 7
+            -allowaccessmodification
             """.trimIndent()
         )
 
