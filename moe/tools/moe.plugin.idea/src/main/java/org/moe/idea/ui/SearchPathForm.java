@@ -16,6 +16,7 @@ limitations under the License.
 
 package org.moe.idea.ui;
 
+import com.intellij.icons.AllIcons;
 import org.moe.idea.utils.ModuleUtils;
 
 import javax.swing.*;
@@ -35,6 +36,8 @@ public class SearchPathForm extends JPanel {
     private HeaderBindingEditorForm bindingEditorForm;
 
     public SearchPathForm() {
+        addButton.setIcon(AllIcons.General.Add);
+        removeButton.setIcon(AllIcons.General.Remove);
 
         this.listModel = new DefaultListModel();
         pathList.setModel(listModel);
