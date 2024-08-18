@@ -170,8 +170,9 @@ publishing {
     }
 }
 
-if (project.hasProperty("signing.keyId")) {
+if (project.hasProperty("signing.gnupg.keyId")) {
     signing {
+        useGpgCmd()
         sign publishing.publications.mavenJava
     }
 }
