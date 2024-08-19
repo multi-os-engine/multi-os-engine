@@ -16,6 +16,7 @@ limitations under the License.
 
 package org.moe.idea.actions;
 
+import com.intellij.openapi.actionSystem.ActionUpdateThread;
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
@@ -25,6 +26,7 @@ import com.intellij.openapi.actionSystem.Presentation;
 import com.intellij.openapi.module.Module;
 import com.intellij.openapi.ui.Messages;
 import com.intellij.openapi.vfs.VirtualFile;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.moe.common.developer.NativeSDKUtil;
 import org.moe.common.utils.OsUtils;
@@ -135,5 +137,10 @@ public class MOEOpenXcodeAction extends AnAction {
 
         presentation.setEnabled(enabled);
         presentation.setVisible(enabled);
+    }
+
+    @Override
+    public @NotNull ActionUpdateThread getActionUpdateThread() {
+        return ActionUpdateThread.BGT;
     }
 }

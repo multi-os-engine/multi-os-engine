@@ -16,6 +16,7 @@ limitations under the License.
 
 package org.moe.idea.actions;
 
+import com.intellij.openapi.actionSystem.ActionUpdateThread;
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
@@ -30,6 +31,7 @@ import com.intellij.openapi.roots.SourceFolder;
 import com.intellij.openapi.ui.DialogWrapper;
 import com.intellij.openapi.vfs.VirtualFile;
 
+import org.jetbrains.annotations.NotNull;
 import org.moe.idea.MOESdkPlugin;
 import org.moe.idea.utils.logger.LoggerFactory;
 import org.moe.template.MOEClassTemplate;
@@ -103,6 +105,11 @@ public class MOENewClassAction extends AnAction {
             }
         }
         return false;
+    }
+
+    @Override
+    public @NotNull ActionUpdateThread getActionUpdateThread() {
+        return ActionUpdateThread.BGT;
     }
 }
 
