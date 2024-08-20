@@ -16,6 +16,7 @@ limitations under the License.
 
 package org.moe.idea.actions;
 
+import com.intellij.openapi.actionSystem.ActionUpdateThread;
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.DataContext;
@@ -27,6 +28,7 @@ import com.intellij.openapi.module.Module;
 import com.intellij.openapi.ui.DialogWrapper;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.VirtualFileManager;
+import org.jetbrains.annotations.NotNull;
 import org.moe.idea.MOESdkPlugin;
 import org.moe.idea.ui.NewBindingDialog;
 import org.moe.idea.utils.ModuleUtils;
@@ -92,5 +94,10 @@ public class MOENewBindingAction extends AnAction {
         Presentation presentation = e.getPresentation();
         presentation.setEnabled(enabled);
         presentation.setVisible(enabled);
+    }
+
+    @Override
+    public @NotNull ActionUpdateThread getActionUpdateThread() {
+        return ActionUpdateThread.BGT;
     }
 }

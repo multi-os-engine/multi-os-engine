@@ -199,7 +199,7 @@ public class XcodeEditor extends UserDataHolderBase implements VirtualFileListen
         String root = virtualFile.getParent().getParent().getPath();
         File mainInfoPlist = getFileFromXcodeConfiguration(root, xcodeEditorManager.getInfoMainPlist());
 
-        VirtualFile mainInfoVirtualFile = project.getBaseDir().getFileSystem().findFileByPath(mainInfoPlist.getAbsolutePath());
+        VirtualFile mainInfoVirtualFile = virtualFile.getFileSystem().findFileByPath(mainInfoPlist.getAbsolutePath());
         this.mainInfoPlistDocument = fileDocumentManager.getDocument(mainInfoVirtualFile);
         try {
             this.mainInfoPlistManager = new InfoPlistManager(mainInfoPlistDocument.getText());
