@@ -1,0 +1,107 @@
+/*
+Copyright (C) 2016 Migeran
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+*/
+
+import org.moe.prebuilts.Prebuild
+import org.moe.prebuilts.Script
+
+task prebuild {}
+
+task prebuild_macos_static(type: Prebuild) {
+    sourcePath 'external/libimobiledevice/libimobiledevice'
+    buildScript 'moe-prebuild-macos.sh'
+    targetName 'macos'
+    preBuildCopySpec project.copySpec {
+        from('.') {
+            include 'moe-prebuild-macos.sh'
+            include 'libimobiledevice-fix-ssl_read_with_timeout.patch'
+        }
+    }
+}
+prebuild_macos_static.dependsOn ':external:libimobiledevice:libusbmuxd:prebuild_macos'
+prebuild_macos_static.dependsOn ':external:libimobiledevice:openssl:prebuild_macos'
+
+task prebuild_macos(type: Script, dependsOn: prebuild_macos_static) {
+    workDir 'macos'
+    exec 'cc', '-arch', 'x86_64', '-arch', 'arm64',
+            '-dynamiclib', '-o', 'libimobiledevice.dylib',
+            '../../../libusbmuxd/build/macos/lib/libusbmuxd-2.0.a',
+            '../../../libplist/build/macos/lib/libplist-2.0.a',
+            '-force_load', 'x86_64/lib/libimobiledevice-1.0.a',
+            '-force_load', 'arm64/lib/libimobiledevice-1.0.a',
+            '../../../openssl/build/macos/x86_64/lib/libcrypto.a',
+            '../../../openssl/build/macos/x86_64/lib/libssl.a',
+            '../../../openssl/build/macos/arm64/lib/libcrypto.a',
+            '../../../openssl/build/macos/arm64/lib/libssl.a',
+            '-lz', '-liconv', '-llzma'
+}
+prebuild.dependsOn prebuild_macos
+
+task prebuild_linux_static(type: Prebuild) {
+    sourcePath 'external/libimobiledevice/libimobiledevice'
+    buildScript 'moe-prebuild-linux.sh'
+    targetName 'linux'
+    preBuildCopySpec project.copySpec {
+        from('.') {
+            include 'moe-prebuild-linux.sh'
+            include 'libimobiledevice-fix-ssl_read_with_timeout.patch'
+        }
+    }
+}
+prebuild_linux_static.dependsOn ':linuxCrosscompiler'
+prebuild_linux_static.dependsOn ':external:libimobiledevice:libusbmuxd:prebuild_linux'
+prebuild_linux_static.dependsOn ':external:libimobiledevice:openssl:prebuild_linux'
+
+task prebuild_linux(type: Script, dependsOn: prebuild_linux_static) {
+    workDir 'linux'
+    env 'CROSSCOMPILER', file("../../../build/linux-crosscompiler/").absolutePath
+    exec 'sh', '../../moe-dybuild-linux.sh'
+}
+prebuild.dependsOn prebuild_linux
+
+task prebuild_windows_static(type: Prebuild) {
+    sourcePath 'external/libimobiledevice/libimobiledevice'
+    buildScript 'moe-prebuild-windows.sh'
+    targetName 'windows'
+    env 'PATH', "${System.getenv('PATH')}:${rootProject.file('mingw/bin').absolutePath}"
+    preBuildCopySpec project.copySpec {
+        from('.') {
+            include 'moe-prebuild-windows.sh'
+            include 'libimobiledevice-fix-ssl_read_with_timeout.patch'
+        }
+    }
+}
+prebuild_windows_static.dependsOn ':mingwPresence'
+prebuild_windows_static.dependsOn ':external:libimobiledevice:libusbmuxd:prebuild_windows'
+prebuild_windows_static.dependsOn ':external:libimobiledevice:openssl:prebuild_windows'
+
+task prebuild_windows(type: Script, dependsOn: prebuild_windows_static) {
+    workDir 'windows/x86_64-w64-mingw32'
+    exec rootProject.file('mingw/bin/x86_64-w64-mingw32-g++').absolutePath, '-shared', '-o', 'libimobiledevice.dll',
+            '-Wl,--whole-archive', 'lib/libimobiledevice-1.0.a',
+            '-Wl,--no-whole-archive',
+            '../../../../libusbmuxd/build/windows/x86_64-w64-mingw32/lib/libusbmuxd-2.0.a',
+            '../../../../libplist/build/windows/x86_64-w64-mingw32/lib/libplist-2.0.a',
+            '../../../../openssl/build/windows/x86_64-w64-mingw32/lib/libssl.a',
+            '../../../../openssl/build/windows/x86_64-w64-mingw32/lib/libcrypto.a',
+            '-lole32', '-lws2_32', '-lgdi32', "-lcrypt32"
+}
+prebuild.dependsOn prebuild_windows
+
+task clean {
+    doLast {
+        delete('build')
+    }
+}
