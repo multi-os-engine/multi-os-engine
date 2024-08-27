@@ -1,0 +1,17 @@
+diff --git a/Configurations/10-main.conf b/Configurations/10-main.conf
+--- a/Configurations/10-main.conf	(revision fe824ce0c5d51e7e7cf36c31db6c49c1c0c04a25)
++++ b/Configurations/10-main.conf	(date 1699185963596)
+@@ -1611,6 +1611,13 @@
+         shared_cflag     => "-fPIC",
+         shared_extension => ".so.\$(SHLIB_VERSION_NUMBER)",
+     },
++    "darwin64-arm64-cc" => {
++        inherit_from     => [ "darwin-common", asm("aarch64_asm") ],
++        cflags           => add("-arch arm64 -DL_ENDIAN -Wall"),
++        bn_ops           => "SIXTY_FOUR_BIT_LONG",
++        perlasm_scheme   => "macosx",
++        shared_ldflag    => "-arch arm64 -dynamiclib",
++    },
+
+ ##### VxWorks for various targets
+     "vxworks-ppc60x" => {

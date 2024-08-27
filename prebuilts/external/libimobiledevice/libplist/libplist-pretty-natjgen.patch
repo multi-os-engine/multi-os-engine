@@ -1,0 +1,37 @@
+diff --git a/include/plist/plist.h b/include/plist/plist.h
+index 29b1fce..0e53adc 100644
+--- a/include/plist/plist.h
++++ b/include/plist/plist.h
+@@ -86,17 +86,32 @@ extern "C"
+     /**
+      * The basic plist abstract data type.
+      */
++#ifndef MOE_NATJGEN
+     typedef void *plist_t;
++#else
++    typedef struct plist_private_t plist_private_t;
++    typedef plist_private_t *plist_t;
++#endif
+ 
+     /**
+      * The plist dictionary iterator.
+      */
++#ifndef MOE_NATJGEN
+     typedef void* plist_dict_iter;
++#else
++    typedef struct plist_dict_iter_private_t plist_dict_iter_private_t;
++    typedef plist_dict_iter_private_t *plist_dict_iter;
++#endif
+ 
+     /**
+      * The plist array iterator.
+      */
++#ifndef MOE_NATJGEN
+     typedef void* plist_array_iter;
++#else
++    typedef struct plist_array_iter_private_t plist_array_iter_private_t;
++    typedef plist_array_iter_private_t *plist_array_iter;
++#endif
+ 
+     /**
+      * The enumeration of plist node types.
