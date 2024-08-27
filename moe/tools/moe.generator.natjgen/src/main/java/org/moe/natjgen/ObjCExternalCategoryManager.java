@@ -160,7 +160,7 @@ public final class ObjCExternalCategoryManager extends ObjCClassManager {
             if (editor != null && editor.isEditable()) {
                 editor.setName(method.getJavaName());
                 if (isCreatorMethod(method)) {
-                    editor.setType(new Type(categoryClassManager.getUnitName()), methCreatorRetTResolver);
+                    editor.setType(categoryClassManager.toInstanceType(), methCreatorRetTResolver);
                 } else {
                     editor.setType(method.getType(), methTResolver);
                 }

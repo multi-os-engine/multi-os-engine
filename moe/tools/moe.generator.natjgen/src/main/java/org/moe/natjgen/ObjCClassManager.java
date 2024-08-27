@@ -24,6 +24,9 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.List;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
 public class ObjCClassManager extends AbstractUnitManager {
 
@@ -457,7 +460,7 @@ public class ObjCClassManager extends AbstractUnitManager {
             isValid = false;
         } else {
             if (isCreatorMethod(method)) {
-                if (!methCreatorRetTResolver.supports(new Type(getUnitName()), false)) {
+                if (!methCreatorRetTResolver.supports(toInstanceType(), false)) {
                     problems.add(
                             methCreatorRetTResolver.getName() + " resolver doesn't handle type [" + method.getType()
                                     + "]");
@@ -596,6 +599,7 @@ public class ObjCClassManager extends AbstractUnitManager {
             ObjCMethod inheritedCopy = m.getInheritedCopy(this);
             // Inherit external property from container
             inheritedCopy.setExternalUnit(isExternal);
+            container.removeIf(it->m.getSelector().equals(it.getSelector()));
             container.add(inheritedCopy);
         }
     }
@@ -639,6 +643,7 @@ public class ObjCClassManager extends AbstractUnitManager {
             ObjCMethod inheritedCopy = m.getInheritedCopy(this);
             // Inherit external property from container
             inheritedCopy.setExternalUnit(isExternal);
+            container.removeIf(it->m.getSelector().equals(it.getSelector()));
             container.add(inheritedCopy);
         }
     }
@@ -955,15 +960,20 @@ public class ObjCClassManager extends AbstractUnitManager {
                 canUpdateUnsafe = true;
 
                 editor.setName(methodName);
+                boolean methodCouldClash = method.isAlloc() || method.isInheritedFromNonTemplateClass();
                 if (isCreatorMethod(method)) {
-                    editor.setType(new Type(getUnitName()), methCreatorRetTResolver);
+                    if (methodCouldClash) {
+                        editor.setType(new Type(getUnitName()), methCreatorRetTResolver);
+                    } else {
+                        editor.setType(toInstanceType(), methCreatorRetTResolver);
+                    }
                 } else {
                     editor.setType(method.getType(), methTResolver);
                 }
-                if (method.isStatic() && !method.isAlloc() && !method.isInheritedFromNonTemplateClass()) {
+                if (method.isStatic() && !methodCouldClash) {
                     editor.setTemplates(genericParamTypes);
                 } else {
-                    editor.setTemplates(Collections.emptyList());
+                    editor.setTemplates(new ArrayList<>());
                 }
                 editor.setArgumentCount(numArgs);
                 int idx = 0;
@@ -1133,7 +1143,7 @@ public class ObjCClassManager extends AbstractUnitManager {
             if (editor != null && editor.isEditable()) {
                 editor.setName(methodName);
                 if (isCreatorMethod(method)) {
-                    editor.setType(new Type(getUnitName()), methCreatorRetTResolver);
+                    editor.setType(toInstanceType(), methCreatorRetTResolver);
                 } else {
                     editor.setType(method.getType(), methTResolver);
                 }
@@ -1339,6 +1349,20 @@ public class ObjCClassManager extends AbstractUnitManager {
     }
 
     public Type toInstanceType() {
-        return new Type(getUnitName());
+        Type t = new Type(getUnitName());
+        if (!genericParamTypes.isEmpty()) {
+            List<Type> typeArgs = genericParamTypes
+                    .stream()
+                    .map(objCGenericParamType -> {
+                        Type argType = new Type(Type.ObjCId, "id");
+                        argType.setObjCGenericParamType(objCGenericParamType);
+
+                        return argType;
+                    })
+                    .collect(Collectors.toList());
+
+            t.setTypeArgs(new ArrayList<>(typeArgs));
+        }
+        return t;
     }
 }
