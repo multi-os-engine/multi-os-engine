@@ -547,13 +547,16 @@ public class ObjCMethod extends AbstractModelElement implements IParameterizedCa
      * @return true if is alloc otherwise false
      */
     public boolean isAlloc() {
-        return isStatic && clangFirstWord().equals("alloc");
+        return isStatic == true && (getName().equals("alloc") || getName().equals("allocWithZone:") || clangFirstWord().equals("new"));
     }
 
     public boolean isRetainedReturn() {
         String firstWord = clangFirstWord();
+        if (isAlloc()) {
+            return true;
+        }
         if (isStatic) {
-            return firstWord.equals("alloc") || firstWord.equals("new");
+            return false;
         } else {
             return firstWord.equals("copy") || (getName().startsWith("mutableCopy") && clangFirstWord(
                     "mutableC".length()).equals("opy"));
