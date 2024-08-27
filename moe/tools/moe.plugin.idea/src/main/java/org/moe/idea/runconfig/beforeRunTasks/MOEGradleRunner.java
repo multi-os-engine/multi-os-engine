@@ -127,11 +127,10 @@ public class MOEGradleRunner extends Task.Backgroundable {
         try {
             LOG.debug("Start build process");
             final org.moe.idea.compiler.MOEGradleRunner gradleRunner = new org.moe.idea.compiler.MOEGradleRunner(runConfig);
-            final boolean isDebug = runConfig.getActionType().equals("Debug");
 
             final MOEToolWindow toolWindow = MOEToolWindow.getInstance(runConfig.getProject());
 
-            final GeneralCommandLine commandLine = gradleRunner.construct(isDebug, false);
+            final GeneralCommandLine commandLine = gradleRunner.construct(false);
             final OSProcessHandler handler = new OSProcessHandler(commandLine);
             try {
                 handler.setShouldDestroyProcessRecursively(true);

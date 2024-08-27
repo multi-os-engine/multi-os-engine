@@ -90,10 +90,9 @@ public class MOERunProfileState extends CommandLineState {
         }
 
         final MOEGradleRunner gradleRunner = new MOEGradleRunner(runConfiguration);
-        final boolean isDebug = runConfiguration.getActionType().equals("Debug");
         final GeneralCommandLine commandLine;
         try {
-            commandLine = gradleRunner.construct(isDebug, true);
+            commandLine = gradleRunner.construct(true);
         } catch (IOException e) {
             throw new ExecutionException(e);
         }

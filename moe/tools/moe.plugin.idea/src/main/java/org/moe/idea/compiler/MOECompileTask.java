@@ -163,8 +163,7 @@ public class MOECompileTask implements CompileTask {
         private void unsafeRun() throws ExecutionException, IOException, InterruptedException {
             // Configure Gradle
             final MOEGradleRunner gradleRunner = new MOEGradleRunner(runConfig);
-            final boolean isDebug = runConfig.getActionType().equals("Debug");
-            final GeneralCommandLine commandLine = gradleRunner.construct(isDebug, false);
+            final GeneralCommandLine commandLine = gradleRunner.construct(false);
             handler = new OSProcessHandler(commandLine);
             handler.setShouldDestroyProcessRecursively(true);
 
