@@ -1,21 +1,27 @@
 package org.moe.idea.runconfig.beforeRunTasks
 
 import com.google.common.collect.Sets
+import com.intellij.build.AbstractViewManager
 import com.intellij.build.BuildConsoleUtils
 import com.intellij.build.BuildViewManager
 import com.intellij.build.DefaultBuildDescriptor
+import com.intellij.build.events.impl.FailureResultImpl
 import com.intellij.build.events.impl.FinishBuildEventImpl
 import com.intellij.build.events.impl.SkippedResultImpl
 import com.intellij.build.events.impl.StartBuildEventImpl
 import com.intellij.build.events.impl.SuccessResultImpl
+import com.intellij.compiler.CompilerConfiguration
 import com.intellij.compiler.CompilerManagerImpl
 import com.intellij.compiler.CompilerWorkspaceConfiguration
 import com.intellij.notification.NotificationGroup
+import com.intellij.openapi.actionSystem.DataProvider
 import com.intellij.openapi.compiler.CompilerManager
 import com.intellij.openapi.components.ServiceManager
 import com.intellij.openapi.externalSystem.model.ExternalSystemException
+import com.intellij.openapi.externalSystem.model.ProjectSystemId
 import com.intellij.openapi.externalSystem.model.task.ExternalSystemTaskId
 import com.intellij.openapi.externalSystem.model.task.ExternalSystemTaskNotificationEvent
+import com.intellij.openapi.externalSystem.model.task.ExternalSystemTaskNotificationListener
 import com.intellij.openapi.externalSystem.model.task.ExternalSystemTaskNotificationListenerAdapter
 import com.intellij.openapi.externalSystem.model.task.ExternalSystemTaskType
 import com.intellij.openapi.externalSystem.model.task.event.ExternalSystemBuildEvent
@@ -30,13 +36,15 @@ import com.intellij.openapi.project.Project
 import com.intellij.openapi.ui.MessageType
 import com.intellij.openapi.wm.ex.ProgressIndicatorEx
 import com.intellij.ui.AppIcon
-import com.intellij.util.SystemProperties
 import com.intellij.util.ui.UIUtil
 import org.gradle.tooling.BuildCancelledException
 import org.gradle.tooling.CancellationTokenSource
 import org.gradle.tooling.GradleConnector
+import org.gradle.tooling.ProjectConnection
+import org.gradle.tooling.model.build.BuildEnvironment
 import org.jetbrains.plugins.gradle.service.execution.GradleExecutionHelper
 import org.jetbrains.plugins.gradle.service.project.GradleProjectResolver
+import org.jetbrains.plugins.gradle.settings.GradleExecutionSettings
 import org.jetbrains.plugins.gradle.util.GradleConstants
 import org.moe.common.configuration.RemoteSettings
 import org.moe.idea.compiler.MOEGradleRunner
@@ -171,8 +179,31 @@ class MOEGradleRunner2(
             }
 
             override fun onFailure(id: ExternalSystemTaskId, e: Exception) {
-                val dataProvider = BuildConsoleUtils.getDataProvider(id, buildViewManager)
-                val failureResult = ExternalSystemUtil.createFailureResult("Build failed", e, GradleConstants.SYSTEM_ID, project, dataProvider)
+                fun buildFailureResult(): FailureResultImpl {
+                    try {
+                        val dataContext = BuildConsoleUtils.getDataContext(id, buildViewManager)
+                        return ExternalSystemUtil.createFailureResult("Build failed", e, GradleConstants.SYSTEM_ID, project, dataContext)
+                    } catch (e: NoSuchMethodError) {
+                        LOGGER.warn("buildFailureResult failed with data context", e)
+                    }
+
+                    try {
+                        val dataProvider = BuildConsoleUtils::class.java.getDeclaredMethod(
+                            "getDataProvider",
+                            java.lang.Object::class.java, AbstractViewManager::class.java
+                        ).invoke(null, id, buildViewManager) as DataProvider
+                        return ExternalSystemUtil::class.java.getDeclaredMethod(
+                            "createFailureResult",
+                            String::class.java, Exception::class.java, ProjectSystemId::class.java, Project::class.java, DataProvider::class.java
+                        ).invoke(null, "Build failed", e, GradleConstants.SYSTEM_ID, project, dataProvider) as FailureResultImpl
+                    } catch (e: NoSuchMethodException) {
+                        LOGGER.warn("buildFailureResult failed with data provider", e)
+                    }
+
+                    return FailureResultImpl("Build failed", e)
+                }
+
+                val failureResult = buildFailureResult()
                 buildEventDispatcher.onEvent(id, FinishBuildEventImpl(id, null, System.currentTimeMillis(), "failed", failureResult))
             }
 
@@ -196,13 +227,12 @@ class MOEGradleRunner2(
                 var buildError: Throwable? = null
 
                 taskListener.onStart(taskId, modulePath)
-                taskListener.onTaskOutput(taskId, "$executingTasksText${SystemProperties.getLineSeparator()}${SystemProperties.getLineSeparator()}", true)
+                taskListener.onTaskOutput(taskId, "$executingTasksText${System.lineSeparator()}${System.lineSeparator()}", true)
 
                 try {
                     val commandLineArguments = MOEGradleRunner.getCommandLineOptions(runConfig, false).toMutableList()
 
-                    if (OPTION_PARALLEL !in commandLineArguments &&
-                            CompilerWorkspaceConfiguration.getInstance(project).PARALLEL_COMPILATION) {
+                    if (OPTION_PARALLEL !in commandLineArguments && project.isParallelBuildEnabled()) {
                         commandLineArguments.add(OPTION_PARALLEL)
                     }
 
@@ -250,7 +280,7 @@ class MOEGradleRunner2(
                         if (e.hasCause(BuildCancelledException::class.java)) {
                             taskListener.onCancel(taskId)
                         } else {
-                            val buildEnvironment = GradleExecutionHelper.getBuildEnvironment(connection, taskId, taskListener, cancellationTokenSource)
+                            val buildEnvironment = getBuildEnvironment(connection, taskId, taskListener, cancellationTokenSource, executionSettings)
                             val projectResolverChain = GradleProjectResolver.createProjectResolverChain()
                             val userFriendlyError = projectResolverChain.getUserFriendlyError(buildEnvironment, e, modulePath, null)
                             taskListener.onFailure(taskId, userFriendlyError)
@@ -320,5 +350,57 @@ class MOEGradleRunner2(
         const val OPTION_PARALLEL = "--parallel"
 
         private val LOGGER = LoggerFactory.getLogger(MOEGradleRunner2::class.java)
+
+        private fun Project.isParallelBuildEnabled(): Boolean {
+            try {
+                return CompilerConfiguration.getInstance(this).isParallelCompilationEnabled
+            } catch (e: NoSuchMethodError) {
+                LOGGER.warn("Unable to determine parallel build with CompilerConfiguration.isParallelCompilationEnabled", e)
+            }
+
+            @Suppress("UnstableApiUsage")
+            try {
+                return CompilerWorkspaceConfiguration.getInstance(this).PARALLEL_COMPILATION ?: false
+            } catch (e: NoSuchFieldError) {
+                LOGGER.warn("Unable to determine parallel build with CompilerWorkspaceConfiguration.PARALLEL_COMPILATION", e)
+            }
+
+            return false
+        }
+
+        fun getBuildEnvironment(
+            connection: ProjectConnection,
+            taskId: ExternalSystemTaskId,
+            listener: ExternalSystemTaskNotificationListener,
+            cancellationTokenSource: CancellationTokenSource?,
+            settings: GradleExecutionSettings?
+        ): BuildEnvironment? {
+            try {
+                return GradleExecutionHelper.getBuildEnvironment(connection, taskId, listener, cancellationTokenSource, settings)
+            } catch (e: NoSuchMethodError) {
+                LOGGER.warn("GradleExecutionHelper.getBuildEnvironment() with execution settings param not found", e)
+            }
+
+            try {
+                val oldMethod = GradleExecutionHelper::class.java.getDeclaredMethod(
+                    "getBuildEnvironment",
+                    ProjectConnection::class.java,
+                    ExternalSystemTaskId::class.java,
+                    ExternalSystemTaskNotificationListener::class.java,
+                    CancellationTokenSource::class.java
+                )
+                return oldMethod.invoke(
+                    null,
+                    connection,
+                    taskId,
+                    listener,
+                    cancellationTokenSource
+                ) as BuildEnvironment?
+            } catch (e: NoSuchMethodException) {
+                LOGGER.warn("GradleExecutionHelper.getBuildEnvironment() with execution settings param not found", e)
+            }
+
+            return null
+        }
     }
 }
