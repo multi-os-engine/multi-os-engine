@@ -37,7 +37,7 @@ public class Prebuild extends BaseTask {
 
     @InputDirectory
     public File getSourceFile() {
-        return sourcePath == null ? null : getProject().getRootProject().file("../" + sourcePath);
+        return sourcePath == null ? null : getProject().getRootProject().file("../../" + sourcePath);
     }
 
     private int ramdiskSizeMB = 256;
