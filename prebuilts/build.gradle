@@ -210,7 +210,7 @@ task llvm(type: Script) {
                 '-DLLVM_BUILD_EXAMPLES=OFF',
                 '-DLLVM_ENABLE_PROJECTS=clang',
                 '-G', 'Unix Makefiles',
-                file('../external/llvm/llvm').absolutePath
+                file('../../external/llvm/llvm').absolutePath
     }
 
     progress 'Building LLVM'
