@@ -16,7 +16,10 @@ limitations under the License.
 
 package org.moe.idea.ui;
 
+import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.diagnostic.Logger;
+import com.intellij.openapi.editor.Document;
+import com.intellij.openapi.fileEditor.FileDocumentManager;
 import com.intellij.openapi.module.Module;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.Messages;
@@ -34,6 +37,8 @@ import javax.swing.*;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.StringReader;
+import java.io.StringWriter;
 
 public class BindingEditorForm {
 
@@ -48,7 +53,8 @@ public class BindingEditorForm {
     private JPanel panel;
     private Project project;
     private Module module;
-    private File configurationFile;
+    private VirtualFile configurationFile;
+    private boolean saveInProgress;
 
     private String modulePath;
 
@@ -56,35 +62,38 @@ public class BindingEditorForm {
 
     public BindingEditorForm(Project project, VirtualFile virtualFile) {
         this.project = project;
+        this.configurationFile = virtualFile;
         this.module = MOESdkPlugin.findModuleForFile(project, virtualFile);
         this.modulePath = ModuleUtils.getModulePath(module);
-        this.configurationFile = new File(virtualFile.getCanonicalPath());
         this.bindings = new Bindings();
-        loadBindings();
-
-        if (bindings.isEmpty()) {
-            editorTabbedPane.setVisible(false);
-        }
-
         bindingsListPanel.setEditorForm(this);
         bindingsListPanel.setFrameworkBindingEditorForm(frameworkEditor);
         bindingsListPanel.setHeaderBindingEditorForm(headerEditor);
-        bindingsListPanel.init();
     }
 
     public JComponent getComponent() {
         return content;
     }
 
-    private void loadBindings() {
-
-        if (configurationFile.length() > 0) {
-            try {
-                bindings.load(configurationFile);
-            } catch (Exception e) {
-                LOG.info("Wrong configuration: " + e.getMessage());
-            }
+    public void loadBindings() {
+        Document document = FileDocumentManager.getInstance().getDocument(configurationFile);
+        try {
+            String text = document.getTextLength() > 0 ? document.getText() : "{}";
+            bindings.load(new StringReader(text));
+        } catch (Exception e) {
+            LOG.info("Wrong configuration: " + e.getMessage());
         }
+
+        editorTabbedPane.setVisible(!bindings.isEmpty());
+
+        bindingsListPanel.init();
+    }
+
+    public void documentChanged() {
+        if (saveInProgress) return;
+        // This method may still hold a writelock, and we are doing a UI update.
+        // Avoid deadlocks, break out of writelock psi/thread for UI update.
+        ApplicationManager.getApplication().invokeLater(this::loadBindings);
     }
 
     public void showFrameworkEditorTab() {
@@ -109,10 +118,20 @@ public class BindingEditorForm {
 
     public void save() {
         try {
-            bindings.save(configurationFile);
-        } catch (IOException e) {
+            saveInProgress = true;
+            StringWriter writer = new StringWriter();
+            bindings.save(writer);
+            ApplicationManager.getApplication().runWriteAction(() -> {
+                FileDocumentManager.getInstance().getDocument(configurationFile).setText(writer.toString());
+            });
+        }
+        catch (IOException e) {
             LOG.info("Unable save binding configuration: " + e.getMessage());
         }
+        finally {
+            saveInProgress = false;
+        }
+
         if (!bindings.isEmpty()) {
             editorTabbedPane.setVisible(true);
         } else {
@@ -129,7 +148,7 @@ public class BindingEditorForm {
         try {
             validateBinding(binding);
             GeneratorRunner testGeneratorRunner = new GeneratorRunner(module);
-            testGeneratorRunner.generateBinding(configurationFile, test, bindingsListPanel.isKeepGeneratedNatjgen());
+            testGeneratorRunner.generateBinding(new File(configurationFile.getCanonicalPath()), test, bindingsListPanel.isKeepGeneratedNatjgen());
         } catch (Exception e) {
             Messages.showErrorDialog(e.getMessage(), "Generate Binding Error");
         }

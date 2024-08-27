@@ -238,6 +238,7 @@ public class BindingEditorListForm extends JPanel {
 
         String path = bindings.getOutputDirectory();
 
+        // set sensible defaults and save
         if (path == null || path.isEmpty()) {
             path = "src/main/java";
             bindings.setOutputDirectory(path);
@@ -245,6 +246,7 @@ public class BindingEditorListForm extends JPanel {
         }
         outputDirectoryTextField.setText(path);
 
+        // set sensible defaults and save
         String platform = bindings.getPlatform();
         if (platform == null || platform.isEmpty()) {
             platform = Bindings.PLATFORM_IOS;
