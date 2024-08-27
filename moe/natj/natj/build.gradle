@@ -1,0 +1,104 @@
+/*
+Copyright 2014-2016 Intel Corporation
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+*/
+
+for (target in ['ios', 'macos', 'windows', 'ndk', 'linux']) {
+    task("prebuild_libffi_$target", type: Exec) {
+        workingDir '../../../prebuilts'
+        executable './gradlew'
+        args ":external:libffi:prebuild_$target"
+
+        def log = file("build/prebuild_libffi_${target}.log")
+        mkdir log.parentFile
+        FileOutputStream ostream = new FileOutputStream(log);
+        setErrorOutput(ostream)
+        setStandardOutput(ostream)
+    }
+}
+
+allprojects {
+    group 'org.moe'
+    version '1.1.5'
+}
+
+/****************************
+ *  Java part (NatJ API)
+ ****************************/
+
+apply plugin: 'maven-publish'
+apply plugin: 'java'
+
+repositories {
+    mavenCentral()
+}
+
+sourceCompatibility = "1.8"
+targetCompatibility = "1.8"
+
+dependencies {
+    testImplementation 'junit:junit:[4,)'
+}
+
+tasks.withType(Test) {
+    def nativeConfiguration = 'Release'
+    dependsOn ":natj-mac:build_TestClasses_${nativeConfiguration}_macosx"
+
+    systemProperty 'java.library.path', file("natj-mac/build/xcode/${nativeConfiguration}")
+}
+
+tasks.build.dependsOn ':natj-ios:build'
+tasks.build.dependsOn ':natj-mac:build'
+tasks.build.dependsOn ':natj-win:build'
+
+test {
+    exclude 'org/moe/xosrt/binding/core/test/memory/**'
+    if (rootProject.hasProperty("moe.use.addresssanitizer")) {
+        environment['DYLD_INSERT_LIBRARIES'] = '/Applications/Xcode.app/Contents/Developer/Toolchains/' +
+                'XcodeDefault.xctoolchain/usr/lib/clang/8.0.0/lib/darwin/libclang_rt.asan_osx_dynamic.dylib'
+        environment['ASAN_OPTIONS'] = 'handle_segv=0:allow_user_segv_handler=1'
+    }
+}
+
+task sourcesJar(type: Jar) {
+    archiveClassifier = 'sources'
+    from sourceSets.main.allSource
+}
+
+artifacts {
+    archives sourcesJar
+}
+
+task buildAll {
+    dependsOn 'build'
+    dependsOn ':natj-ios:buildAll'
+    dependsOn ':natj-mac:buildAll'
+    dependsOn ':natj-win:buildAll'
+}
+
+tasks.publish.dependsOn('build')
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            artifactId 'natj-api'
+
+            from components.java
+
+            artifact(sourcesJar) {
+                classifier = 'sources'
+            }
+        }
+    }
+}

@@ -1,0 +1,132 @@
+/*
+Copyright 2014-2016 Intel Corporation
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+*/
+
+
+apply plugin: 'maven-publish'
+
+ext {
+    nativeOutputs = []
+}
+
+def createXcodeTask(xcodeproject, configuration, sdk, target) {
+    task("build_${target}_${configuration}_${sdk}") {
+        // Calculate product directory
+        def productDest = "$buildDir/xcode/${configuration}"
+
+        // Disable incremental build, leave it to Xcode
+        inputs.property('timestamp', new Date().toString())
+
+        // Set inputs and outputs
+        inputs.dir rootProject.file('src')
+        inputs.dir 'natj.xcodeproj'
+        if (target == 'natj') {
+            outputs.file "${productDest}/libnatj.dylib"
+            project.nativeOutputs.plus "${productDest}/libnatj.dylib"
+        } else {
+            dependsOn "build_natj_${configuration}_${sdk}"
+        }
+        dependsOn ":prebuild_libffi_macos"
+
+        // Prepare log file
+        def log = file("${productDest}/build-${target}.log")
+        mkdir log.parentFile
+        outputs.file(log)
+
+        // Add action
+        doLast {
+            try {
+                exec {
+                    executable 'xcodebuild'
+
+                    args '-project', xcodeproject
+                    args '-target', target
+                    args '-sdk', sdk
+                    args '-configuration', configuration
+
+                    if (rootProject.hasProperty("moe.use.addresssanitizer")) {
+                        args '-enableAddressSanitizer', 'YES'
+                    }
+
+                    /*
+                     * Uncomment to enable build with address sanitizer, Xcode 7+ required
+                     */
+                    // args 'OTHER_CFLAGS=$(OTHER_CFLAGS) -fsanitize=address'
+
+                    setIgnoreExitValue false
+
+                    FileOutputStream ostream = new FileOutputStream(log);
+                    setErrorOutput(ostream)
+                    setStandardOutput(ostream)
+                }
+            } catch (GradleException ex) {
+                logger.error(log.text)
+                throw new GradleException("Failed to build native components", ex)
+            }
+        }
+    }
+}
+
+// Create build task
+task build {
+    dependsOn createXcodeTask("natj.xcodeproj", "Release", "macosx", "natj")
+    dependsOn createXcodeTask("natj.xcodeproj", "Debug", "macosx", "natj")
+}
+
+// Create test tasks
+task build_TestClasses_macosx {
+    dependsOn createXcodeTask("natj.xcodeproj", "Release", "macosx", "TestClasses")
+    dependsOn createXcodeTask("natj.xcodeproj", "Debug", "macosx", "TestClasses")
+}
+
+task build_TestClassesC_macosx {
+    dependsOn createXcodeTask("natj.xcodeproj", "Release", "macosx", "TestClassesC")
+    dependsOn createXcodeTask("natj.xcodeproj", "Debug", "macosx", "TestClassesC")
+}
+
+task build_TestClassesCxx_macosx {
+    dependsOn createXcodeTask("natj.xcodeproj", "Release", "macosx", "TestClassesCxx")
+    dependsOn createXcodeTask("natj.xcodeproj", "Debug", "macosx", "TestClassesCxx")
+}
+
+task build_TestClassesObjC_macosx {
+    dependsOn createXcodeTask("natj.xcodeproj", "Release", "macosx", "TestClassesObjC")
+    dependsOn createXcodeTask("natj.xcodeproj", "Debug", "macosx", "TestClassesObjC")
+}
+
+task buildAll {
+    dependsOn build, build_TestClasses_macosx, build_TestClassesC_macosx, build_TestClassesCxx_macosx, build_TestClassesObjC_macosx
+}
+
+// Create clean task
+task clean {
+    doLast {
+        delete buildDir
+    }
+}
+
+// Setup publishing
+tasks.publish.dependsOn build
+publishing {
+    publications {
+        mavenNative(MavenPublication) {
+            artifactId 'natj-mac'
+
+            for (o in nativeOutputs) {
+                artifact source: o, extension: 'dylib', classifier: new File(o).getParentFile().getName()
+            }
+        }
+    }
+}
