@@ -1,0 +1,16 @@
+---
+- hosts: win-test-servers
+  tasks:
+  - name: Pre-Clean test directory
+    win_file: path=testing-moe-natj-c state=absent
+  - name: Create test directory
+    win_file: path=testing-moe-natj-c state=directory
+  - name: Copy files
+    win_copy: src=build/distributions/win-test.tar dest=testing-moe-natj-c/
+  - name: Unzip tests
+    win_unzip:
+      src: testing-moe-natj-c/win-test.tar
+      dest: testing-moe-natj-c/win-test
+      rm: yes
+  - name: Run tests
+    raw: powershell -command ./testing-moe-natj-c/win-test/run.ps1

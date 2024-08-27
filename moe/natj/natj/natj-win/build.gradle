@@ -1,0 +1,135 @@
+/*
+Copyright 2014-2016 Intel Corporation
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+*/
+
+apply plugin: 'maven-publish'
+
+def pm5_configs = ['Debug', 'Release']
+def pm5_platforms = [
+        // [name: 'Win32', mingw: 'i686-w64-mingw32'],
+        [name: 'Win64', mingw: 'x86_64-w64-mingw32']
+]
+def pm5_allOutputs = []
+
+def createBuildTask(pmProj, gDeps, pmConf, pmPlat, pmProducts, pm5_allOutputs) {
+    def tName = "build_${pmProj}_${pmConf}_${pmPlat['name']}"
+    def tOutputs = [
+            "build/obj/${pmPlat['name']}/${pmConf}/${pmProj}",
+            "build/${pmConf}-${pmPlat['name']}"
+    ]
+    pm5_allOutputs.addAll(tOutputs)
+
+    tasks.create(name: tName, type: Exec) {
+        for (dep in gDeps) {
+            if (dep instanceof Task) {
+                dependsOn dep
+            } else {
+                dependsOn "build_${dep}_${pmConf}_${pmPlat['name']}"
+            }
+        }
+        dependsOn ":prebuild_libffi_windows"
+
+        workingDir 'build'
+        executable "make"
+        environment 'PATH', "${System.getenv('PATH')}:${file('../../../../prebuilts/mingw/bin').absolutePath}"
+        args "CC=${pmPlat['mingw']}-g++"
+        args "CXX=${pmPlat['mingw']}-g++"
+        args "AR=${pmPlat['mingw']}-ar"
+        args "LD=${pmPlat['mingw']}-ld"
+        args "config=${"${pmConf}_${pmPlat['name']}".toLowerCase()}"
+        args pmProj
+        args "-j${Runtime.getRuntime().availableProcessors()}"
+        args 'verbose=1'
+        inputs.property 'fake-time', System.currentTimeMillis()
+        def stdoutfile = file("build/native-logs/${tName}.log")
+        stdoutfile.parentFile.mkdirs()
+        outputs.dirs tOutputs
+        outputs.files stdoutfile
+        standardOutput = new FileOutputStream(stdoutfile)
+    }
+}
+
+task premake(type: Exec) {
+    doFirst {
+        delete pm5_allOutputs
+    }
+    executable "premake5"
+    environment 'MOE_PREBUILTS', file('../../../../prebuilts').absolutePath
+    args 'gmake', '--os=windows', '--verbose'
+    inputs.files files('premake5.lua')
+    outputs.files files('build/Makefile', 'build/NatJ.make', 'build/NatJStatic.make', 'build/TestClassesCxx.make')
+    def stdoutfile = file("build/native-logs/premake5.log")
+    stdoutfile.parentFile.mkdirs()
+    standardOutput = new FileOutputStream(stdoutfile)
+}
+
+def pm_NatJStaticTasks = []
+def pm_NatJTasks = []
+def pm_TestClassesCxxTasks = []
+def pm_TestClassesCTasks = []
+
+for (conf in pm5_configs) {
+    for (plat in pm5_platforms) {
+        pm_NatJStaticTasks += createBuildTask('NatJStatic',
+                [premake], conf, plat, ['natj-static.a'], pm5_allOutputs)
+        pm_NatJTasks += createBuildTask('NatJ',
+                ['NatJStatic'], conf, plat, ['natj.lib', 'natj.dll'], pm5_allOutputs)
+        pm_TestClassesCxxTasks += createBuildTask('TestClassesCxx',
+                ['NatJStatic'], conf, plat, ['TestClassesCxx.lib', 'TestClassesCxx.dll'], pm5_allOutputs)
+        pm_TestClassesCTasks += createBuildTask('TestClassesC',
+                ['NatJStatic'], conf, plat, ['TestClassesC.lib', 'TestClassesC.dll'], pm5_allOutputs)
+    }
+}
+
+task buildStaticNative {
+    dependsOn pm_NatJStaticTasks
+}
+
+task buildNative {
+    dependsOn pm_NatJTasks
+}
+
+task buildTestClassesCxx {
+    dependsOn pm_TestClassesCxxTasks
+}
+
+task buildTestClassesC {
+    dependsOn pm_TestClassesCTasks
+}
+
+task build {
+    dependsOn buildNative
+}
+
+task buildAll {
+    dependsOn build, buildStaticNative, buildTestClassesCxx, buildTestClassesC
+}
+
+// Configure publishing
+tasks.publish.dependsOn buildNative
+publishing {
+    publications {
+        mavenNative(MavenPublication) {
+            artifactId 'natj-win'
+
+            for (conf in pm5_configs) {
+                for (plat in pm5_platforms) {
+                    def o = "build/${conf}-${plat['name']}/natj.dll"
+                    artifact source: o, extension: 'dll', classifier: new File(o).parentFile.name
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,81 @@
+/************************/
+/** Build Script Setup **/
+/************************/
+
+buildscript {
+    repositories {
+        jcenter()
+        mavenLocal()
+    }
+    dependencies {
+        // Multi-OS Engine plugin
+        classpath group: 'org.multi-os-engine', name: 'moe-gradle', version: '1.3.+'
+    }
+}
+
+/*******************/
+/** Project Setup **/
+/*******************/
+
+// Apply plugins
+apply plugin: 'moe'
+apply plugin: 'eclipse'
+
+// Set source and target to Java 8
+sourceCompatibility = "1.8"
+targetCompatibility = "1.8"
+
+sourceSets {
+    test {
+        java {
+            srcDirs file('../../natj-ctests/src/test/java')
+            srcDirs file('../../natj-objctests/src/test/java')
+        }
+    }
+}
+
+task copyCTestResources(type: Copy) {
+    from file('../../natj-ctests/src/test/resources')
+    into 'build/external_resources/ctests'
+}
+tasks.testClasses.dependsOn copyCTestResources
+
+task copyObjCTestResources(type: Copy) {
+    from file('../../natj-objctests/src/test/resources')
+    into 'build/external_resources/objctests'
+}
+tasks.testClasses.dependsOn copyObjCTestResources
+
+task compilePrerequisites(type: Exec) {
+    workingDir '../../'
+    commandLine './gradlew', ':natj-ctests:testClasses', ':natj-cxxtests:processCxxTests',
+            ':natj-objctests:testClasses'
+}
+tasks.testClasses.dependsOn compilePrerequisites
+
+// Exclude all files from Gradle's test runner
+test { exclude '**' }
+
+// Setup MOE
+moe {
+    xcode {
+        project 'xcode/NatJTestRunner.xcodeproj'
+        mainTarget 'NatJTestRunner'
+        testTarget 'NatJTestRunner-Test'
+    }
+}
+
+// Set dependencies
+dependencies {
+    // Compile with 'jar' files in the project's 'lib' directory
+    compile fileTree(dir: 'lib', include: '*.jar')
+    testCompile files('../../natj-cxxtests/build/classes/processedCxxTest')
+}
+
+// Setup Eclipse
+eclipse {
+    // Set MOE natures and build commands
+    project {
+        natures 'org.multi-os-engine.project'
+    }
+}

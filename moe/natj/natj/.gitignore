@@ -1,0 +1,12 @@
+bin
+.gradle
+build
+workspace.xml
+**/xcuserdata
+moe.sdk.localbuild
+.idea
+local.properties
+.project
+.classpath
+.settings
+bin/

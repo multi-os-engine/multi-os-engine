@@ -1,0 +1,106 @@
+/*
+Copyright 2014-2016 Intel Corporation
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+*/
+
+apply plugin: 'base'
+apply plugin: 'maven-publish'
+
+task buildNative(type: Exec) {
+    if (System.getenv('NDK_PATH') == null) {
+        logger.warn('NDK_PATH env var is not set')
+    }
+
+    doFirst {
+        if (System.getenv('NDK_PATH') == null) {
+            throw new GradleException('NDK_PATH env var is not set')
+        }
+    }
+
+    dependsOn ":prebuild_libffi_ndk"
+
+    executable "${System.getenv('NDK_PATH')}/ndk-build"
+    args 'NDK_OUT=build/Release/obj'
+    args 'NDK_APP_LIBS_OUT=build/Release/libs'
+    def stdoutfile = file("build/ndk-build.log")
+    stdoutfile.parentFile.mkdirs()
+    standardOutput = new FileOutputStream(stdoutfile)
+}
+
+task buildNativeDebug(type: Exec) {
+    if (System.getenv('NDK_PATH') == null) {
+        logger.warn('NDK_PATH env var is not set')
+    }
+
+    doFirst {
+        if (System.getenv('NDK_PATH') == null) {
+            throw new GradleException('NDK_PATH env var is not set')
+        }
+    }
+
+    dependsOn ":prebuild_libffi_ndk"
+
+    executable "${System.getenv('NDK_PATH')}/ndk-build"
+    args 'NDK_OUT=build/Debug/obj'
+    args 'NDK_APP_LIBS_OUT=build/Debug/libs'
+    args 'DEBUG=1'
+    def stdoutfile = file("build/ndk-build-debug.log")
+    stdoutfile.parentFile.mkdirs()
+    standardOutput = new FileOutputStream(stdoutfile)
+}
+
+String[] outputs = []
+for (arch in ['arm64-v8a', 'armeabi-v7a', 'mips', 'mips64', 'x86', 'x86_64']) {
+    for (conf in ['Release', 'Debug']) {
+        for (targ in ['natj', 'c++_shared']) {
+            outputs += "build/${conf}/libs/${arch}/lib${targ}.so"
+        }
+    }
+}
+
+buildNative.inputs.files rootProject.file('../../../prebuilts/external/libffi/build/ndk/aarch64/lib/libffi.a')
+buildNative.inputs.files rootProject.file('../../../prebuilts/external/libffi/build/ndk/arm/lib/libffi.a')
+buildNative.inputs.files rootProject.file('../../../prebuilts/external/libffi/build/ndk/mips64el/lib/libffi.a')
+buildNative.inputs.files rootProject.file('../../../prebuilts/external/libffi/build/ndk/mipsel/lib/libffi.a')
+buildNative.inputs.files rootProject.file('../../../prebuilts/external/libffi/build/ndk/x86/lib/libffi.a')
+buildNative.inputs.files rootProject.file('../../../prebuilts/external/libffi/build/ndk/x86_64/lib/libffi.a')
+
+buildNative.inputs.files file('jni/Android.mk')
+buildNative.inputs.files file('jni/Application.mk')
+
+buildNative.inputs.files fileTree('../src/main/native').getFiles().toArray()
+buildNative.outputs.files outputs
+
+tasks.build.dependsOn(buildNative)
+tasks.build.dependsOn(buildNativeDebug)
+
+publishing {
+    publications {
+        mavenNative(MavenPublication) {
+            artifactId 'natj-ndk'
+
+            for (o in outputs) {
+                def conf = new File(o).getParentFile().getParentFile().getParentFile().getName()
+                def arch = new File(o).getParentFile().getName()
+
+                def clser = "$conf-$arch"
+                if (new File(o).getName() != "libnatj.so") {
+                    clser += "-c++"
+                }
+
+                artifact source: o, extension: "so", classifier: clser
+            }
+        }
+    }
+}
