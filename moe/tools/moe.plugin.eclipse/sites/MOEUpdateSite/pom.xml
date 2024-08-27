@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>MOEUpdateSite</artifactId>
+    <packaging>eclipse-repository</packaging>
+    <parent>
+        <relativePath>../../pom.xml</relativePath>
+        <groupId>org.multi-os-engine</groupId>
+        <artifactId>eclipse-ide</artifactId>
+        <version>1.4.2-SNAPSHOT</version>
+    </parent>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.eclipse.tycho.extras</groupId>
+                <artifactId>tycho-p2-extras-plugin</artifactId>
+                <version>${tycho-version}</version>
+                <executions>
+                    <execution>
+                        <id>add-to-update-site</id>
+                        <phase>install</phase>
+                        <goals>
+                            <goal>mirror</goal>
+                        </goals>
+                        <configuration>
+                            <source>
+                                <repository>
+                                    <url>${project.build.directory}/repository</url>
+                                </repository>
+                            </source>
+                            <destination>${plugin.rsynch.dir}</destination>
+                            <append>true</append>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>

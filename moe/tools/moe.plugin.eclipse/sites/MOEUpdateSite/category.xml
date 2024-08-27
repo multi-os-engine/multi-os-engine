@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature url="features/MOEFeature_1.4.2.qualifier.jar" id="MOEFeature" version="1.4.2.qualifier">
+      <category name="org.multi-os-engine"/>
+   </feature>
+   <category-def name="org.multi-os-engine" label="Multi-OS Engine"/>
+</site>
