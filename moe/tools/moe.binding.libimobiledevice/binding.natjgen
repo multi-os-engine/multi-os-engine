@@ -5,8 +5,8 @@
   "base-sdk": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk",
   "header-search-paths": [
     "${PROJECT}/src/main/headers",
-    "${PROJECT}/../../../prebuilts/external/libimobiledevice/libimobiledevice/build/macos/include",
-    "${PROJECT}/../../../prebuilts/external/libimobiledevice/libplist/build/macos/include"
+    "${PROJECT}/../../prebuilts/external/libimobiledevice/libimobiledevice/build/macos/include",
+    "${PROJECT}/../../prebuilts/external/libimobiledevice/libplist/build/macos/include"
   ],
   "user-header-search-paths": [],
   "framework-search-paths": [],
@@ -38,7 +38,7 @@
       "conditions": [
         {
           "condition": "path-prefix",
-          "value": "${PROJECT}/../../../prebuilts/external/libimobiledevice/libimobiledevice/build/macos/include"
+          "value": "${PROJECT}/../../prebuilts/external/libimobiledevice/libimobiledevice/build/macos/include"
         }
       ],
       "actions": [
@@ -53,7 +53,7 @@
       "conditions": [
         {
           "condition": "path-prefix",
-          "value": "${PROJECT}/../../../prebuilts/external/libimobiledevice/libplist/build/macos/include"
+          "value": "${PROJECT}/../../prebuilts/external/libimobiledevice/libplist/build/macos/include"
         }
       ],
       "actions": [

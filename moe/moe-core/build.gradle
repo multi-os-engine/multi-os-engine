@@ -28,7 +28,7 @@ allprojects {
 
 ext {
     external = [:]
-    external.prebuilts = file('../../prebuilts').absolutePath
+    external.prebuilts = file('../prebuilts').absolutePath
 }
 
 /*

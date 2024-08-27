@@ -4,7 +4,7 @@ def createTask(configuration) {
         outputs.file("build/${configuration}/libnatj.so")
         dependsOn ":prebuild_libffi_linux"
 
-        environment 'MOE_PREBUILTS_DIR', file('../../../../prebuilts').absolutePath
+        environment 'MOE_PREBUILTS_DIR', file('../../../prebuilts').absolutePath
         environment 'BUILD_DIR', buildDir.absolutePath
 
         executable 'sh'
