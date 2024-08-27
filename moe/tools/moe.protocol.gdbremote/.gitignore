@@ -1,0 +1,15 @@
+# Output directories & Gradle
+.gradle
+bin
+build
+out
+
+# Idea
+moe.protocol.gdbremote.iml
+moe.protocol.gdbremote.ipr
+moe.protocol.gdbremote.iws
+
+# Eclipse
+.classpath
+.project
+.settings
