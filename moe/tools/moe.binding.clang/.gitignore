@@ -1,0 +1,21 @@
+# Output directories & Gradle
+.gradle
+bin
+build
+out
+
+# Idea
+moe.binding.clang.iml
+moe.binding.clang.ipr
+moe.binding.clang.iws
+
+# Eclipse
+.classpath
+.project
+.settings
+
+# Other
+log
+logs
+downloaded
+binding.out.ngtconf
