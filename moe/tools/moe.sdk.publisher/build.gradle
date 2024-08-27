@@ -1,0 +1,243 @@
+/*
+Copyright (C) 2016 Migeran
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+*/
+
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+}
+
+group 'org.multi-os-engine'
+version '1.10.0'
+
+apply plugin: 'base'
+apply plugin: 'maven-publish'
+apply plugin: 'signing'
+
+def projectDeps = [
+        ':moe.binding.clang',
+        ':moe.binding.libimobiledevice',
+        ':moe.generator.natjgen',
+        ':moe.ios.device.launcher',
+        ':proguard:app',
+]
+
+projectDeps.each { evaluationDependsOn it }
+
+mkdir buildDir
+
+task buildDeps {
+    projectDeps.each { dependsOn project(it).tasks.build }
+}
+
+if (!rootProject.hasProperty('moe.tools.sdk.exclude_mac')) {
+    tasks.buildDeps.dependsOn ':ext_natj_mac'
+    tasks.buildDeps.dependsOn ':prebuild_libimobiledevice_macos'
+}
+
+if (!rootProject.hasProperty('moe.tools.sdk.exclude_win')) {
+    tasks.buildDeps.dependsOn ':ext_natj_win'
+    tasks.buildDeps.dependsOn ':prebuild_libimobiledevice_windows'
+}
+
+if (!rootProject.hasProperty('moe.tools.sdk.exclude_linux')) {
+    tasks.buildDeps.dependsOn ':ext_natj_linux'
+    tasks.buildDeps.dependsOn ':prebuild_libimobiledevice_linux'
+}
+
+def buildfiles(def proj, def subpath, def closure) {
+    files("${project(proj).buildDir.absolutePath}/$subpath", closure)
+}
+
+def getSDKCopySpec() {
+    copySpec {
+        into('sdk') {
+            from files(rootProject.external.moe_core.out.moe_core_jar) {
+                rename rootProject.external.moe_core.out.moe_core_jar.name, 'moe-core.jar'
+            }
+            from files(rootProject.external.moe_core.out.moe_core_sources_jar) {
+                rename rootProject.external.moe_core.out.moe_core_sources_jar.name, 'moe-core-sources.jar'
+            }
+            from files(rootProject.external.moe_core.out.moe_core_javadoc_jar) {
+                rename rootProject.external.moe_core.out.moe_core_javadoc_jar.name, 'moe-core-javadoc.jar'
+            }
+            from files(rootProject.external.moe_core.out.moe_ios_jar) {
+                rename rootProject.external.moe_core.out.moe_ios_jar.name, 'moe-ios.jar'
+            }
+            from files(rootProject.external.moe_core.out.moe_ios_sources_jar) {
+                rename rootProject.external.moe_core.out.moe_ios_sources_jar.name, 'moe-ios-sources.jar'
+            }
+            from files(rootProject.external.moe_core.out.moe_ios_javadoc_jar) {
+                rename rootProject.external.moe_core.out.moe_ios_javadoc_jar.name, 'moe-ios-javadoc.jar'
+            }
+            from files(rootProject.external.moe_core.out.moe_ios_junit_jar) {
+                rename rootProject.external.moe_core.out.moe_ios_junit_jar.name, 'moe-ios-junit.jar'
+            }
+            from files(rootProject.external.moe_core.out.moe_ios_junit_sources_jar) {
+                rename rootProject.external.moe_core.out.moe_ios_junit_sources_jar.name, 'moe-ios-junit-sources.jar'
+            }
+            from files(rootProject.external.moe_core.out.moe_ios_junit_javadoc_jar) {
+                rename rootProject.external.moe_core.out.moe_ios_junit_javadoc_jar.name, 'moe-ios-junit-javadoc.jar'
+            }
+            from files(rootProject.external.moe_core.out.moe_core_certificates_zip) {
+                rename rootProject.external.moe_core.out.moe_core_certificates_zip.name, 'moe-core-certificates.zip'
+            }
+        }
+        into('sdk/iphoneos/MOE.framework') {
+            from files(rootProject.external.moe_core.out.iphoneos_MOE_framework)
+        }
+        into('sdk/iphonesimulator/MOE.framework') {
+            from files(rootProject.external.moe_core.out.iphonesimulator_MOE_framework)
+        }
+        into('tools') {
+            from files(rootProject.external.moe_core.out.dex2oat_exec.parentFile) {
+                include rootProject.external.moe_core.out.dex2oat_exec.name
+            }
+            from files(rootProject.external.moe_core.out.dx_exec.parentFile) {
+                include rootProject.external.moe_core.out.dx_exec.name
+            }
+            from files(rootProject.external.moe_core.out.dx_jar.parentFile) {
+                include rootProject.external.moe_core.out.dx_jar.name
+            }
+
+            from buildfiles(':moe.ios.device.launcher', 'libs') {
+                include 'moe.ios.device.launcher.jar'
+                rename 'moe.ios.device.launcher.jar', 'ios-device.jar'
+            }
+
+            from files(rootProject.external.moe_core.out.java8support_jar.parentFile) {
+                include rootProject.external.moe_core.out.java8support_jar.name
+                include rootProject.external.moe_core.out.proguard_full_cfg.name
+                include rootProject.external.moe_core.out.proguard_cfg.name
+            }
+            from files(rootProject.external.moe_core.out.preloaded_classes.parentFile) {
+                include rootProject.external.moe_core.out.preloaded_classes.name
+            }
+
+            from buildfiles(':moe.generator.natjgen', 'libs') {
+                include 'moe.generator.natjgen.jar'
+                rename 'moe.generator.natjgen.jar', 'wrapnatjgen.jar'
+            }
+
+            from buildfiles(':proguard:app', 'libs') {
+                include 'proguard.jar'
+            }
+
+            from files('.') {
+                include 'gradlew.zip'
+            }
+        }
+
+        into('tools/macosx') {
+            if (!rootProject.hasProperty('moe.tools.sdk.exclude_mac')) {
+                from files(external.llvm.macos)
+                from files(external.libimobiledevice.macos)
+                from files(external.natj.mac)
+            } else {
+                from files('.placeholder')
+            }
+        }
+
+        into('tools/windows/x86_64') {
+            if (!rootProject.hasProperty('moe.tools.sdk.exclude_win')) {
+                from files(external.libimobiledevice.windows)
+                from files(external.natj.win)
+            } else {
+                from files('.placeholder')
+            }
+        }
+
+        into('tools/linux/x86_64') {
+            if (!rootProject.hasProperty('moe.tools.sdk.exclude_linux')) {
+                from files(external.libimobiledevice.linux)
+                from files(external.natj.linux)
+            } else {
+                from files('.placeholder')
+            }
+        }
+
+        eachFile { println "${it}" }
+    }
+}
+
+task sdk(type: Zip, dependsOn: buildDeps) {
+    with getSDKCopySpec()
+}
+
+task devsdk(type: Copy, dependsOn: buildDeps) {
+    destinationDir = file("$buildDir/dev-sdk")
+    with getSDKCopySpec()
+}
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            artifact sdk {}
+            artifactId = 'moe-sdk'
+
+            pom {
+                name = 'moe-sdk'
+                packaging = 'zip'
+                description = 'MOE sdk'
+                url = 'https://discuss.multi-os-engine.org'
+
+                scm {
+                    url = 'https://github.com/multi-os-engine/multi-os-engine'
+                }
+
+                licenses {
+                    license {
+                        name = 'The Apache License, Version 2.0'
+                        url = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                    }
+                }
+
+                developers {
+                    developer {
+                        id = 'MOE'
+                        name = 'Multi-OS Engine Dev'
+                        organization = 'Multi-OS Engine'
+                        organizationUrl = 'https://www.multi-os-engine.org/'
+                    }
+                }
+            }
+        }
+    }
+    repositories {
+        maven {
+            name = 'MavenCentral'
+            def releasesRepoUrl = 'https://oss.sonatype.org/service/local/staging/deploy/maven2/'
+            def snapshotsRepoUrl = 'https://oss.sonatype.org/content/repositories/snapshots/'
+            url = version.endsWith('SNAPSHOT') ? snapshotsRepoUrl : releasesRepoUrl
+
+            credentials {
+                if (project.hasProperty('ossrhUsername')) {
+                    username = ossrhUsername
+                }
+                if (project.hasProperty('ossrhPassword')) {
+                    password = ossrhPassword
+                }
+            }
+        }
+    }
+}
+
+if (project.hasProperty("signing.gnupg.keyId")) {
+    signing {
+        useGpgCmd()
+        sign publishing.publications.mavenJava
+    }
+}
