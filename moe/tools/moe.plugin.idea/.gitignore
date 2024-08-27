@@ -1,0 +1,75 @@
+*~
+
+# CMake intermidiate files
+__cmake
+*.tlog
+
+
+*.idb
+*.cache
+*.pyc
+*.log
+
+
+# OS generated files #
+######################
+.DS_Store*
+ehthumbs.db
+Thumbs.db
+
+## MacOS files
+*.mode1v3
+*.mode2v3
+*.perspectivev3
+*.pbxuser
+.DS_Store
+xcuserdata/
+project.xcworkspace/
+_build
+
+# Eclipse specific files/directories
+.classpath
+.project
+.settings
+.metadata
+
+# IntelliJ specific files/directories
+out
+*.ipr
+*.iws
+local.properties
+atlassian-ide-plugin.xml
+__pycache__
+
+# Build output directies
+target
+build
+repo
+repos
+bin
+
+# Editor Files #
+################
+*~
+*.swp
+
+# Gradle Files #
+################
+.gradle
+.m2
+
+# Temporary custom files #
+##########################
+libiosimlib.dylib
+xrt_intellij_plugin.zip
+
+# Unit tests reports #
+##########################
+idea/integration/xrt_intellij_plugin/tmp
+
+*.iml
+.idea/
+.idea/workspace.xml
+BuildTools/.idea
+idea/integration/.idea
+idea/integration/xrt_intellij_plugin/META-INF

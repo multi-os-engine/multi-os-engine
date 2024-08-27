@@ -1,0 +1,79 @@
+/*
+Copyright (C) 2016 Migeran
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+*/
+
+plugins {
+    id "org.jetbrains.intellij" version "1.16.0"
+    id "org.jetbrains.kotlin.jvm"
+}
+
+apply plugin: 'idea'
+apply plugin: 'maven-publish'
+
+group 'org.multi-os-engine'
+version '1.5.3'
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
+}
+
+def PLUGIN_NAME = 'moe_intellij_plugin'
+
+// Uncomment to debug via `./gradlew :moe.plugin.idea:runIdea`
+//tasks.runIdea {
+//    jvmArgs '-Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=5005'
+//}
+
+intellij {
+    // to test with Android Studio, use:
+    // version = 'AI-231.9392.1.2311.11076708'
+    version = 'IC-2022.2'
+    plugins = ['com.intellij.gradle', 'com.intellij.java']
+    pluginName = PLUGIN_NAME
+    downloadSources = false
+    updateSinceUntilBuild = false
+}
+
+publishPlugin {
+    if (project.hasProperty('intellij.publishToken')) {
+        token = project.property('intellij.publishToken')
+    }
+}
+
+dependencies {
+    implementation project(':moe.tools.common')
+    implementation project(':moe.document.pbxproj')
+    implementation project(':moe.generator.project')
+    implementation project(':moe.tools.natjgen')
+    implementation project(':moe.plugin.common')
+
+    implementation "org.jetbrains.kotlin:kotlin-reflect"
+
+    testImplementation group: 'junit', name: 'junit', version: '4.12'
+    implementation group: 'org.slf4j', name: 'slf4j-simple', version: '1.7.+'
+}
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            groupId 'org.multi-os-engine'
+            artifactId PLUGIN_NAME
+
+            artifact file("build/distributions/${PLUGIN_NAME}.zip")
+        }
+    }
+}
