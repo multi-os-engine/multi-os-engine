@@ -49,6 +49,7 @@ public class BindingEditor extends UserDataHolderBase implements FileEditor, Doc
         FileDocumentManager.getInstance().getDocument(myFile).addDocumentListener(this, this);
     }
 
+    @Override
     public void documentChanged(@NotNull DocumentEvent event) {
         if (getComponent().isShowing()) {
             bindingEditorForm.documentChanged();
