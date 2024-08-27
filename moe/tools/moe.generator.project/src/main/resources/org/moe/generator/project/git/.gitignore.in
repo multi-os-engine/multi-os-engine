@@ -1,0 +1,25 @@
+# Gradle work files
+.gradle
+
+# Build folders
+build
+target
+
+# Eclipse project files
+bin
+.settings
+.classpath
+.project
+
+# Idea / Android Studio files
+.idea
+*.iml
+*.ipr
+*.iws
+
+# Xcode user specific data
+*.xcodeproj/project.xcworkspace/xcuserdata/
+*.xcodeproj/xcuserdata/
+
+# Mac Finder
+.DS_Store
