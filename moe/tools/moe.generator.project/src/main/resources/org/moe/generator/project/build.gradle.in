@@ -1,0 +1,72 @@
+buildscript {
+//<<---REGION:USE_KOTLIN_PLUGIN
+    ext.kotlin_version = '${_PLACEHOLDER_KOTLIN_VERSION}'
+//>>---REGION:USE_KOTLIN_PLUGIN
+    repositories {
+        mavenCentral()
+        mavenLocal()
+    }
+    dependencies {
+        // Multi-OS Engine plugin
+        classpath group: 'org.multi-os-engine', name: 'moe-gradle', version: '${_PLACEHOLDER_MOE_VERSION}'
+//<<---REGION:USE_KOTLIN_PLUGIN
+
+        // Kotlin plugin
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+//>>---REGION:USE_KOTLIN_PLUGIN
+    }
+}
+
+// Apply plugins
+apply plugin: 'eclipse'
+//<<---REGION:USE_KOTLIN_PLUGIN
+apply plugin: 'kotlin'
+//>>---REGION:USE_KOTLIN_PLUGIN
+apply plugin: 'moe'
+
+// Set source and target to Java 8
+sourceCompatibility = "1.8"
+targetCompatibility = "1.8"
+
+// Set maven repository
+repositories {
+    mavenCentral()
+//<<---REGION:USE_KOTLIN_PLUGIN
+    maven {
+        url 'http://oss.sonatype.org/content/repositories/snapshots'
+    }
+//>>---REGION:USE_KOTLIN_PLUGIN
+}
+
+// Exclude all files from Gradle's test runner
+test { exclude '**' }
+
+// Setup Multi-OS Engine
+moe {
+    xcode {
+        project 'xcode/${_PLACEHOLDER_MOE_PROJECT_NAME}.xcodeproj'
+        mainTarget '${_PLACEHOLDER_MOE_PROJECT_NAME}'
+        testTarget '${_PLACEHOLDER_MOE_PROJECT_NAME}-Test'
+
+        // Uncomment and change these settings if you are working with a Xcode workspace
+        // workspace 'xcode/${_PLACEHOLDER_MOE_PROJECT_NAME}.xcworkspace'
+        // mainScheme '${_PLACEHOLDER_MOE_PROJECT_NAME}'
+        // testScheme '${_PLACEHOLDER_MOE_PROJECT_NAME}-Test'
+    }
+}
+
+dependencies {
+    // Compile with 'jar' files in the project's 'lib' directory
+    implementation fileTree(dir: 'lib', include: '*.jar')
+//<<---REGION:USE_KOTLIN_PLUGIN
+
+    // Add Kotlin dependency
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+//>>---REGION:USE_KOTLIN_PLUGIN
+}
+//<<---REGION:USE_KOTLIN_PLUGIN
+
+sourceSets {
+    main.java.srcDirs += 'src/main/kotlin'
+}
+//>>---REGION:USE_KOTLIN_PLUGIN

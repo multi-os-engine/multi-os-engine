@@ -1,0 +1,40 @@
+{
+  "tasks": [
+    {
+      "condition": "language:java",
+      "task": "copy-package-source",
+      "source-set": "main",
+      "root": "java",
+      "from": [
+        "Main.java",
+        "ui/GameViewController.java"
+      ]
+    },
+    {
+      "condition": "language:kotlin",
+      "task": "copy-package-source",
+      "source-set": "main",
+      "root": "kotlin",
+      "from": [
+        "Main.kt",
+        "ui/GameViewController.kt"
+      ]
+    },
+    {
+      "task": "copy",
+      "from": [
+        "xcode/__main_target__/Assets.xcassets/AppIcon.appiconset/Contents.json",
+        "xcode/__main_target__/Base.lproj/LaunchScreen.storyboard",
+        "xcode/__main_target__/Base.lproj/Main.storyboard",
+        "xcode/__main_target__/Shaders/Shader.fsh",
+        "xcode/__main_target__/Shaders/Shader.vsh",
+        "xcode/__main_target__/Info.plist",
+        "xcode/__test_target__/Info.plist"
+      ]
+    },
+    {
+      "task": "xcodeproj",
+      "from": "xcode/__project__.xcodeproj/project.pbxproj"
+    }
+  ]
+}
