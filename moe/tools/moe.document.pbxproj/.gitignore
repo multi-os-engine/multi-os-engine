@@ -1,0 +1,15 @@
+# Output directories & Gradle
+.gradle
+bin
+build
+out
+
+# Idea
+moe.document.pbxproj.iml
+moe.document.pbxproj.ipr
+moe.document.pbxproj.iws
+
+# Eclipse
+.classpath
+.project
+.settings
