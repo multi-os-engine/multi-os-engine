@@ -1,0 +1,20 @@
+# Output directories & Gradle
+.gradle
+bin
+build
+out
+
+# Idea
+moe.binding.libimobiledevice.iml
+moe.binding.libimobiledevice.ipr
+moe.binding.libimobiledevice.iws
+
+# Eclipse
+.classpath
+.project
+.settings
+
+# Other
+log
+logs
+binding.out.ngtconf
