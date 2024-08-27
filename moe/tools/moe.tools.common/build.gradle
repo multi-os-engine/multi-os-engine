@@ -1,0 +1,50 @@
+/*
+Copyright 2014-2016 Intel Corporation
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+*/
+
+plugins {
+    id "org.jetbrains.kotlin.jvm"
+}
+
+targetCompatibility = 1.8
+sourceCompatibility = 1.8
+
+sourceSets {
+    testCommon {
+        java { srcDir 'src/test-common/java' }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'lib', include: ['*.jar'])
+    implementation group: 'org.slf4j', name: 'slf4j-api', version: '1.7.+'
+    api group: 'commons-io', name: 'commons-io', version: '2.4'
+    api group: 'com.googlecode.plist', name: 'dd-plist', version: '1.19'
+    implementation group: 'com.google.code.gson', name: 'gson', version: '2.7'
+    testImplementation group: 'junit', name: 'junit', version: '4.12'
+    testCommonImplementation sourceSets.main.output
+    testCommonImplementation group: 'junit', name: 'junit', version: '4.12'
+}
+
+jar {
+    exclude 'META-INF/*.RSA', 'META-INF/*.SF', 'META-INF/*.DSA'
+}
+
+compileKotlin {
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
