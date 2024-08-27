@@ -1,0 +1,44 @@
+package __PACKAGE_NAME__;
+
+import org.moe.natj.general.NatJ;
+import org.moe.natj.general.Pointer;
+import org.moe.natj.general.ann.Generated;
+import org.moe.natj.general.ann.Owned;
+import org.moe.natj.general.ann.RegisterOnStartup;
+import org.moe.natj.objc.ObjCRuntime;
+import org.moe.natj.objc.ann.ObjCClassName;
+import org.moe.natj.objc.ann.Selector;
+
+import apple.uikit.__SUBCLASS_NAME__;
+
+@org.moe.natj.general.ann.Runtime(ObjCRuntime.class)
+@ObjCClassName("__CLASS_NAME__")
+@RegisterOnStartup
+public class __CLASS_NAME__ extends __SUBCLASS_NAME__ {
+
+    static {
+        NatJ.register();
+    }
+
+    protected __CLASS_NAME__(Pointer peer) {
+        super(peer);
+    }
+
+    @Generated("NatJ")
+    @Owned
+    @Selector("alloc")
+    public static native __CLASS_NAME__ alloc();
+
+    @Generated("NatJ")
+    @Owned
+    @Selector("init")
+    public native __CLASS_NAME__ init();
+
+
+    @Selector("viewDidLoad")
+    @Override
+    public void viewDidLoad() {
+
+    }
+
+}
