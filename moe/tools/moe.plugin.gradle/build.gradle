@@ -1,0 +1,208 @@
+/*
+Copyright (C) 2016 Migeran
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+*/
+
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+}
+
+plugins {
+    id "org.jetbrains.kotlin.jvm"
+    id "maven-publish"
+    id "signing"
+}
+
+if (name != 'moe-gradle') {
+    throw new GradleException('Incorrect name')
+}
+group 'org.multi-os-engine'
+
+String loadPluginVersion() {
+    final Properties props = new Properties()
+    props.load(new FileInputStream(file('src/main/resources/org/moe/gradle/moe.properties')))
+    return props.getProperty('MOE-Plugin-Version')
+}
+
+version loadPluginVersion()
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+configurations {
+    included
+
+    compileOnly {
+        extendsFrom included
+    }
+
+    testCompile {
+        extendsFrom included
+    }
+
+    // Make sure the transitive dependencies are not packed into the jar
+    included_no_transitive {
+        extendsFrom included
+        transitive = false
+    }
+}
+
+dependencies {
+    implementation gradleApi()
+
+    implementation group: 'org.apache.commons', name: 'commons-lang3', version: '3.4'
+    implementation group: 'commons-io', name: 'commons-io', version: '2.4'
+    implementation group: 'com.jcraft', name: 'jsch', version: '0.1.53'
+
+    implementation group: 'org.ow2.asm', name: 'asm', version: '9.1'
+    implementation group: 'com.google.code.gson', name: 'gson', version: '2.7'
+
+    included project(':moe.tools.common')
+    included project(':moe.document.pbxproj')
+    included project(':moe.generator.project')
+    included project(':moe.tools.classvalidator')
+
+    testImplementation group: 'junit', name: 'junit', version: '4.12'
+    testImplementation gradleTestKit()
+}
+
+// Add transitive dependencies into current project so they will be included into the pom file
+def topDeps = configurations.included.resolvedConfiguration.firstLevelModuleDependencies
+topDeps.each {topDep ->
+    topDep.children.each { child ->
+        if(!(child in topDeps)) {
+            child.allModuleArtifacts.each { artifact ->
+                def mvi = artifact.moduleVersion.id
+                def dep = [
+                        group  : mvi.group,
+                        name   : mvi.name,
+                        version: mvi.version,
+                        ext    : artifact.extension
+                ]
+                if (artifact.classifier) {
+                    dep['classifier'] = artifact.classifier
+                }
+                dependencies.implementation(dep) {
+                    transitive = true
+                }
+            }
+        }
+    }
+}
+
+tasks.test.dependsOn ':moe-sdk:devsdk'
+
+task javadocJar(type: Jar, dependsOn: javadoc) {
+    archiveClassifier = 'javadoc'
+    from javadoc.destinationDir
+}
+
+task sourceJar(type: Jar) {
+    archiveClassifier = 'sources'
+    from sourceSets.main.allSource
+}
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            from components.java
+            artifact(javadocJar)
+            artifact(sourceJar)
+            artifactId = 'moe-gradle'
+
+            pom {
+                name = 'moe-gradle'
+                packaging = 'jar'
+                description = 'MOE Gradle Plugin'
+                url = 'https://discuss.multi-os-engine.org'
+
+                scm {
+                    url = 'https://github.com/multi-os-engine/moe-plugin-gradle'
+                }
+
+                licenses {
+                    license {
+                        name = 'The Apache License, Version 2.0'
+                        url = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                    }
+                }
+
+                developers {
+                    developer {
+                        id = 'MOE'
+                        name = 'Multi-OS Engine Dev'
+                        organization = 'Multi-OS Engine'
+                        organizationUrl = 'https://www.multi-os-engine.org/'
+                    }
+                }
+            }
+        }
+    }
+    repositories {
+        maven {
+            name = 'MavenCentral'
+            def releasesRepoUrl = 'https://oss.sonatype.org/service/local/staging/deploy/maven2/'
+            def snapshotsRepoUrl = 'https://oss.sonatype.org/content/repositories/snapshots/'
+            url = version.endsWith('SNAPSHOT') ? snapshotsRepoUrl : releasesRepoUrl
+
+            credentials {
+                if (project.hasProperty('ossrhUsername')) {
+                    username = ossrhUsername
+                }
+                if (project.hasProperty('ossrhPassword')) {
+                    password = ossrhPassword
+                }
+            }
+        }
+    }
+}
+
+if (project.hasProperty("signing.gnupg.keyId")) {
+    signing {
+        useGpgCmd()
+        sign publishing.publications.mavenJava
+    }
+}
+
+jar {
+    from { configurations.included_no_transitive.collect {it.isDirectory() ? it : zipTree(it) } }
+}
+
+// Write the plugin's classpath to a file to share with the tests
+task createClasspathManifest {
+    def outputDir = file("$buildDir/$name")
+
+    inputs.files sourceSets.main.runtimeClasspath
+    outputs.dir outputDir
+
+    doLast {
+        outputDir.mkdirs()
+        file("$outputDir/plugin-classpath.txt").text = (sourceSets.main.runtimeClasspath + configurations.included).join("\n")
+        file("$outputDir/plugin-sdk-localbuild.txt").text = project(':moe-sdk').file('build/dev-sdk')
+        file("$outputDir/plugin-version.txt").text = project.version
+    }
+}
+
+// Add the classpath file to the test runtime classpath
+dependencies {
+    testRuntimeOnly files(createClasspathManifest)
+}
+
+compileKotlin {
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
