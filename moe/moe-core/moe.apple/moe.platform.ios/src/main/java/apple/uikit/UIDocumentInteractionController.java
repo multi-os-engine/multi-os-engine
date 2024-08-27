@@ -382,4 +382,9 @@ public class UIDocumentInteractionController extends NSObject implements UIActio
     @Deprecated
     @Selector("willPresentActionSheet:")
     public native void willPresentActionSheet(@NotNull UIActionSheet actionSheet);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

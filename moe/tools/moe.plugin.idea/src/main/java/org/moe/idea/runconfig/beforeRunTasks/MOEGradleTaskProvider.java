@@ -17,7 +17,6 @@
 
 package org.moe.idea.runconfig.beforeRunTasks;
 
-import com.esotericsoftware.minlog.Log;
 import com.intellij.execution.BeforeRunTaskProvider;
 import com.intellij.execution.configurations.RunConfiguration;
 import com.intellij.execution.runners.ExecutionEnvironment;
@@ -147,7 +146,7 @@ public class MOEGradleTaskProvider extends BeforeRunTaskProvider<MOEGradleTask> 
             doneSemaphore.waitFor();
 
         } catch (Exception e) {
-            Log.debug("Unable execute task", e);
+            LOG.debug("Unable execute task", e);
             return false;
         }
 
@@ -186,7 +185,7 @@ public class MOEGradleTaskProvider extends BeforeRunTaskProvider<MOEGradleTask> 
             try {
                 Thread.sleep(100);
             } catch (InterruptedException e) {
-                Log.debug("InterruptedException", e);
+                LOG.debug("InterruptedException", e);
             }
         }
     }

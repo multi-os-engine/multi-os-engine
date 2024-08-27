@@ -247,4 +247,9 @@ public class NEFilterProvider extends NEProvider {
     @Generated
     @Selector("handleReport:")
     public native void handleReport(@NotNull NEFilterReport report);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

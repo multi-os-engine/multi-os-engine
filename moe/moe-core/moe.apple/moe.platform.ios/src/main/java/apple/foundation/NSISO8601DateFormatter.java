@@ -222,4 +222,9 @@ public class NSISO8601DateFormatter extends NSFormatter implements NSSecureCodin
     @Generated
     @Selector("timeZone")
     public native NSTimeZone timeZone();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

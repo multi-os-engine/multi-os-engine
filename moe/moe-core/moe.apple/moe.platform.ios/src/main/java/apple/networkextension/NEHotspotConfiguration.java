@@ -380,4 +380,9 @@ public class NEHotspotConfiguration extends NSObject implements NSCopying, NSSec
     @Generated
     @Selector("setHidden:")
     public native void setHidden(boolean value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

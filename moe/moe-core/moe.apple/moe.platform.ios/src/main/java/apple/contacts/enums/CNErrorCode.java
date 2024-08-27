@@ -137,4 +137,8 @@ public final class CNErrorCode {
      * API-Since: 9.0
      */
     @Generated @NInt public static final long ChangeHistoryInvalidFetchRequest = 0x000000000000025DL;
+    /**
+     * API-Since: 17.0
+     */
+    @Generated @NInt public static final long FeatureNotAvailable = 0x0000000000000068L;
 }

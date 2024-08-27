@@ -32,7 +32,10 @@ import org.jetbrains.annotations.Nullable;
  * The MLCLossDescriptor specifies a loss filter descriptor.
  * 
  * API-Since: 14.0
+ * Deprecated-Since: 100000.0
+ * Deprecated-Message: Use Metal Performance Shaders Graph or BNNS instead.
  */
+@Deprecated
 @Generated
 @Library("MLCompute")
 @Runtime(ObjCRuntime.class)
@@ -287,4 +290,9 @@ public class MLCLossDescriptor extends NSObject implements NSCopying {
     @Generated
     @Selector("weight")
     public native float weight();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

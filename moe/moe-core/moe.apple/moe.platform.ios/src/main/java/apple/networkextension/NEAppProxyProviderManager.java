@@ -200,4 +200,9 @@ public class NEAppProxyProviderManager extends NETunnelProviderManager {
         void call_loadAllFromPreferencesWithCompletionHandler(
                 @Nullable NSArray<? extends NEAppProxyProviderManager> managers, @Nullable NSError error);
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

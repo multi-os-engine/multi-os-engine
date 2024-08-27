@@ -48,11 +48,6 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
- * CLRegion
- * 
- * Discussion:
- * A logical area.
- * 
  * API-Since: 4.0
  */
 @Generated
@@ -174,13 +169,6 @@ public class CLRegion extends NSObject implements NSCopying, NSSecureCoding {
     public static native long version_static();
 
     /**
-     * center
-     * 
-     * Discussion:
-     * Returns the coordinate of the center of the region.
-     * 
-     * This method has been deprecated, please see CLCircularRegion.
-     * 
      * API-Since: 4.0
      * Deprecated-Since: 7.0
      * Deprecated-Message: Please see CLCircularRegion
@@ -192,13 +180,6 @@ public class CLRegion extends NSObject implements NSCopying, NSSecureCoding {
     public native CLLocationCoordinate2D center();
 
     /**
-     * containsCoordinate:
-     * 
-     * Discussion:
-     * Returns YES if the coordinate lies inside the region, and NO otherwise.
-     * 
-     * This method has been deprecated, please see CLCircularRegion.
-     * 
      * API-Since: 4.0
      * Deprecated-Since: 7.0
      * Deprecated-Message: Please see CLCircularRegion
@@ -287,13 +268,6 @@ public class CLRegion extends NSObject implements NSCopying, NSSecureCoding {
     public native boolean notifyOnExit();
 
     /**
-     * radius
-     * 
-     * Discussion:
-     * Returns the radius of the region.
-     * 
-     * This method has been deprecated, please see CLCircularRegion.
-     * 
      * API-Since: 4.0
      * Deprecated-Since: 7.0
      * Deprecated-Message: Please see CLCircularRegion
@@ -334,4 +308,9 @@ public class CLRegion extends NSObject implements NSCopying, NSSecureCoding {
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

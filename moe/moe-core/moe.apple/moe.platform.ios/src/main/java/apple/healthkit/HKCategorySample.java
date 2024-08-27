@@ -251,4 +251,9 @@ public class HKCategorySample extends HKSample {
     @Selector("value")
     @NInt
     public native long value();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

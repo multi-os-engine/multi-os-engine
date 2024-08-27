@@ -230,4 +230,9 @@ public class UICollectionViewDiffableDataSourceReorderingHandlers<_SectionType, 
         @Generated
         void call_willReorderHandler_ret(@NotNull NSDiffableDataSourceTransaction<Object, Object> arg0);
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

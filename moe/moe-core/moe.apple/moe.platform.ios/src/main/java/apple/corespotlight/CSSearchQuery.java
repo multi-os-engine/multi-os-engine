@@ -282,4 +282,9 @@ public class CSSearchQuery extends NSObject {
     @Selector("initWithQueryString:queryContext:")
     public native CSSearchQuery initWithQueryStringQueryContext(@NotNull String queryString,
             @Nullable CSSearchQueryContext queryContext);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

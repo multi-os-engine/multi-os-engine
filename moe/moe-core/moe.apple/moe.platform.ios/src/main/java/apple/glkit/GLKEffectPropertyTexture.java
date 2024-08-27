@@ -224,4 +224,9 @@ public class GLKEffectPropertyTexture extends GLKEffectProperty {
     @Generated
     @Selector("target")
     public native int target();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

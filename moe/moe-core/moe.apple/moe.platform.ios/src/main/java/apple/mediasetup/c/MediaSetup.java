@@ -21,14 +21,14 @@ public final class MediaSetup {
     }
 
     /**
-     * ! Project version number for MediaSetup.
+     * ! The version number of the Media Setup framework.
      */
     @Generated
     @CVariable()
     public static native double MediaSetupVersionNumber();
 
     /**
-     * ! Project version string for MediaSetup.
+     * ! The version of the Media Setup framework.
      */
     @Generated
     @CVariable()

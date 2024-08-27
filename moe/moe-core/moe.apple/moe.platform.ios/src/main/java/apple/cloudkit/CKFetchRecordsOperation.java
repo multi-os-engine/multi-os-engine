@@ -186,6 +186,8 @@ public class CKFetchRecordsOperation extends CKDatabaseOperation {
      * [@c] recordsByRecordID and any @c CKPartialErrorsByItemIDKey errors are repeats of the data sent back in
      * previous @c perRecordCompletionBlock invocations
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
+     * This block may share mutable state with other blocks assigned to this operation, but any such mutable state
+     * should not be concurrently used outside of blocks assigned to this operation.
      */
     @Nullable
     @Generated
@@ -205,6 +207,8 @@ public class CKFetchRecordsOperation extends CKDatabaseOperation {
      * Called on success or failure for each record.
      * 
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
+     * This block may share mutable state with other blocks assigned to this operation, but any such mutable state
+     * should not be concurrently used outside of blocks assigned to this operation.
      */
     @Nullable
     @Generated
@@ -219,6 +223,8 @@ public class CKFetchRecordsOperation extends CKDatabaseOperation {
      * reported for records that contain assets.
      * It is possible for progress to regress when a retry is automatically triggered.
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
+     * This block may share mutable state with other blocks assigned to this operation, but any such mutable state
+     * should not be concurrently used outside of blocks assigned to this operation.
      */
     @Nullable
     @Generated
@@ -251,6 +257,8 @@ public class CKFetchRecordsOperation extends CKDatabaseOperation {
      * [@c] recordsByRecordID and any @c CKPartialErrorsByItemIDKey errors are repeats of the data sent back in
      * previous @c perRecordCompletionBlock invocations
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
+     * This block may share mutable state with other blocks assigned to this operation, but any such mutable state
+     * should not be concurrently used outside of blocks assigned to this operation.
      */
     @Generated
     @Selector("setFetchRecordsCompletionBlock:")
@@ -261,6 +269,8 @@ public class CKFetchRecordsOperation extends CKDatabaseOperation {
      * Called on success or failure for each record.
      * 
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
+     * This block may share mutable state with other blocks assigned to this operation, but any such mutable state
+     * should not be concurrently used outside of blocks assigned to this operation.
      */
     @Generated
     @Selector("setPerRecordCompletionBlock:")
@@ -274,6 +284,8 @@ public class CKFetchRecordsOperation extends CKDatabaseOperation {
      * reported for records that contain assets.
      * It is possible for progress to regress when a retry is automatically triggered.
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
+     * This block may share mutable state with other blocks assigned to this operation, but any such mutable state
+     * should not be concurrently used outside of blocks assigned to this operation.
      */
     @Generated
     @Selector("setPerRecordProgressBlock:")
@@ -329,4 +341,9 @@ public class CKFetchRecordsOperation extends CKDatabaseOperation {
         @Generated
         void call_setPerRecordProgressBlock(@NotNull CKRecordID arg0, double arg1);
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

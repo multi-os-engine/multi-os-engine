@@ -734,4 +734,9 @@ public class NSFileProviderExtension extends NSObject {
         void call_untrashItemWithIdentifierToParentItemIdentifierCompletionHandler(
                 @Nullable @Mapped(ObjCObjectMapper.class) Object untrashedItem, @Nullable NSError error);
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -49,8 +49,6 @@ import org.jetbrains.annotations.Nullable;
  * EKParticipant
  * 
  * Abstract class representing a participant attached to an event.
- * 
- * API-Since: 4.0
  */
 @Generated
 @Library("EventKit")
@@ -276,4 +274,9 @@ public class EKParticipant extends EKObject implements NSCopying {
     @Selector("participantType")
     @NInt
     public native long participantType();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

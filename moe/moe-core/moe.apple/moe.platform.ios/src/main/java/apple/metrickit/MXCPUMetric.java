@@ -199,4 +199,9 @@ public class MXCPUMetric extends MXMetric {
     @Generated
     @Selector("cumulativeCPUInstructions")
     public native NSMeasurement<NSUnit> cumulativeCPUInstructions();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

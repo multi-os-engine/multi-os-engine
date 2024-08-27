@@ -23,6 +23,8 @@ public final class AppClip {
     }
 
     /**
+     * A string that identifies the activation payload’s error domain.
+     * 
      * API-Since: 14.0
      */
     @NotNull

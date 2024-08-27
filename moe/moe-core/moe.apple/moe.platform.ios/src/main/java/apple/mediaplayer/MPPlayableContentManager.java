@@ -283,4 +283,9 @@ public class MPPlayableContentManager extends NSObject {
     @Generated
     @Selector("setNowPlayingIdentifiers:")
     public native void setNowPlayingIdentifiers(@NotNull NSArray<String> value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

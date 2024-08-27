@@ -215,4 +215,9 @@ public class GCControllerAxisInput extends GCControllerElement {
     @Generated
     @Selector("setValue:")
     public native void setValue(float value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

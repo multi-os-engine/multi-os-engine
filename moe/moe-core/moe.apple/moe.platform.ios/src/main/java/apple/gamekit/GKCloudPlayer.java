@@ -45,7 +45,6 @@ import org.jetbrains.annotations.Nullable;
 /**
  * API-Since: 10.0
  * Deprecated-Since: 12.0
- * Deprecated-Message: GKGameSession is deprecated. Use GKPlayer for both real-time and turn-based matchmaking APIs.
  */
 @Deprecated
 @Generated
@@ -182,4 +181,9 @@ public class GKCloudPlayer extends GKBasePlayer {
         void call_getCurrentSignedInPlayerForContainerCompletionHandler(@Nullable GKCloudPlayer player,
                 @Nullable NSError error);
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

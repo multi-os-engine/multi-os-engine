@@ -204,4 +204,9 @@ public class VNDetectedObjectObservation extends VNObservation {
     @Generated
     @Selector("globalSegmentationMask")
     public native VNPixelBufferObservation globalSegmentationMask();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -282,4 +282,9 @@ public class NEFilterDataVerdict extends NEFilterVerdict implements NSSecureCodi
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

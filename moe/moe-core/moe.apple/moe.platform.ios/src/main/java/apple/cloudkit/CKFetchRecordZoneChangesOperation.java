@@ -195,6 +195,8 @@ public class CKFetchRecordZoneChangesOperation extends CKDatabaseOperation {
      * If the error is @c CKErrorPartialFailure, the error's userInfo dictionary contains a dictionary of recordIDs and
      * zoneIDs to errors keyed off of @c CKPartialErrorsByItemIDKey.
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
+     * This block may share mutable state with other blocks assigned to this operation, but any such mutable state
+     * should not be concurrently used outside of blocks assigned to this operation.
      */
     @Nullable
     @Generated
@@ -230,6 +232,8 @@ public class CKFetchRecordZoneChangesOperation extends CKDatabaseOperation {
     /**
      * If the replacement callback @c recordWasChangedBlock is set, this callback block is ignored.
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
+     * This block may share mutable state with other blocks assigned to this operation, but any such mutable state
+     * should not be concurrently used outside of blocks assigned to this operation.
      * 
      * API-Since: 10.0
      * Deprecated-Since: 15.0
@@ -243,8 +247,9 @@ public class CKFetchRecordZoneChangesOperation extends CKDatabaseOperation {
     public native Block_recordChangedBlock_ret recordChangedBlock();
 
     /**
-     * ! @discussion Each @c CKOperation instance has a private serial queue. This queue is used for all callback block
-     * invocations.
+     * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
+     * This block may share mutable state with other blocks assigned to this operation, but any such mutable state
+     * should not be concurrently used outside of blocks assigned to this operation.
      */
     @Nullable
     @Generated
@@ -266,6 +271,8 @@ public class CKFetchRecordZoneChangesOperation extends CKDatabaseOperation {
      * this record zone starting with a nil @c serverChangeToken.
      * [@c] recordZoneChangeTokensUpdatedBlock will not be called if @c fetchAllChanges is NO.
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
+     * This block may share mutable state with other blocks assigned to this operation, but any such mutable state
+     * should not be concurrently used outside of blocks assigned to this operation.
      */
     @Nullable
     @Generated
@@ -310,6 +317,8 @@ public class CKFetchRecordZoneChangesOperation extends CKDatabaseOperation {
      * If the error is @c CKErrorPartialFailure, the error's userInfo dictionary contains a dictionary of recordIDs and
      * zoneIDs to errors keyed off of @c CKPartialErrorsByItemIDKey.
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
+     * This block may share mutable state with other blocks assigned to this operation, but any such mutable state
+     * should not be concurrently used outside of blocks assigned to this operation.
      */
     @Generated
     @Selector("setFetchRecordZoneChangesCompletionBlock:")
@@ -329,6 +338,8 @@ public class CKFetchRecordZoneChangesOperation extends CKDatabaseOperation {
     /**
      * If the replacement callback @c recordWasChangedBlock is set, this callback block is ignored.
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
+     * This block may share mutable state with other blocks assigned to this operation, but any such mutable state
+     * should not be concurrently used outside of blocks assigned to this operation.
      * 
      * API-Since: 10.0
      * Deprecated-Since: 15.0
@@ -341,8 +352,9 @@ public class CKFetchRecordZoneChangesOperation extends CKDatabaseOperation {
             @Nullable @ObjCBlock(name = "call_setRecordChangedBlock") Block_setRecordChangedBlock value);
 
     /**
-     * ! @discussion Each @c CKOperation instance has a private serial queue. This queue is used for all callback block
-     * invocations.
+     * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
+     * This block may share mutable state with other blocks assigned to this operation, but any such mutable state
+     * should not be concurrently used outside of blocks assigned to this operation.
      */
     @Generated
     @Selector("setRecordWithIDWasDeletedBlock:")
@@ -363,6 +375,8 @@ public class CKFetchRecordZoneChangesOperation extends CKDatabaseOperation {
      * this record zone starting with a nil @c serverChangeToken.
      * [@c] recordZoneChangeTokensUpdatedBlock will not be called if @c fetchAllChanges is NO.
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
+     * This block may share mutable state with other blocks assigned to this operation, but any such mutable state
+     * should not be concurrently used outside of blocks assigned to this operation.
      */
     @Generated
     @Selector("setRecordZoneChangeTokensUpdatedBlock:")
@@ -481,6 +495,8 @@ public class CKFetchRecordZoneChangesOperation extends CKDatabaseOperation {
      * If a record fails in post-processing (say, a network failure materializing a @c CKAsset record field), the
      * per-record error will be passed here.
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
+     * This block may share mutable state with other blocks assigned to this operation, but any such mutable state
+     * should not be concurrently used outside of blocks assigned to this operation.
      * 
      * API-Since: 15.0
      */
@@ -501,6 +517,8 @@ public class CKFetchRecordZoneChangesOperation extends CKDatabaseOperation {
      * If a record fails in post-processing (say, a network failure materializing a @c CKAsset record field), the
      * per-record error will be passed here.
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
+     * This block may share mutable state with other blocks assigned to this operation, but any such mutable state
+     * should not be concurrently used outside of blocks assigned to this operation.
      * 
      * API-Since: 15.0
      */
@@ -515,4 +533,9 @@ public class CKFetchRecordZoneChangesOperation extends CKDatabaseOperation {
         @Generated
         void call_setRecordWasChangedBlock(@NotNull CKRecordID arg0, @Nullable CKRecord arg1, @Nullable NSError arg2);
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

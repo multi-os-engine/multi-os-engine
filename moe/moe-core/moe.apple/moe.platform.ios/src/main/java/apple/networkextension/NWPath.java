@@ -212,4 +212,9 @@ public class NWPath extends NSObject {
     @Generated
     @Selector("isConstrained")
     public native boolean isConstrained();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

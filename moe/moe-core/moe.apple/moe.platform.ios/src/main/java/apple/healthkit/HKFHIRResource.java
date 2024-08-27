@@ -242,4 +242,9 @@ public class HKFHIRResource extends NSObject implements NSSecureCoding, NSCopyin
     @Generated
     @Selector("FHIRVersion")
     public native HKFHIRVersion FHIRVersion();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

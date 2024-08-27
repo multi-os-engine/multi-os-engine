@@ -50,6 +50,10 @@ import apple.corefoundation.struct.CGRect;
 import apple.corefoundation.struct.CGSize;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.uikit.protocol.UITraitChangeObservable;
+import apple.uikit.protocol.UITraitChangeRegistration;
+import apple.uikit.protocol.UITraitOverrides;
+import org.moe.natj.objc.ann.ObjCBlock;
 
 /**
  * API-Since: 8.0
@@ -59,7 +63,7 @@ import org.jetbrains.annotations.Nullable;
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
 public class UIPresentationController extends NSObject implements UIAppearanceContainer, UITraitEnvironment,
-        UIContentContainer, UIFocusEnvironment {
+        UIContentContainer, UIFocusEnvironment, UITraitChangeObservable {
     static {
         NatJ.register();
     }
@@ -246,7 +250,12 @@ public class UIPresentationController extends NSObject implements UIAppearanceCo
 
     /**
      * Modifies the trait collection for the presentation controller.
+     * 
+     * API-Since: 8.0
+     * Deprecated-Since: 17.0
+     * Deprecated-Message: Use the traitOverrides property instead
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("overrideTraitCollection")
@@ -330,7 +339,12 @@ public class UIPresentationController extends NSObject implements UIAppearanceCo
 
     /**
      * Modifies the trait collection for the presentation controller.
+     * 
+     * API-Since: 8.0
+     * Deprecated-Since: 17.0
+     * Deprecated-Message: Use the traitOverrides property instead
      */
+    @Deprecated
     @Generated
     @Selector("setOverrideTraitCollection:")
     public native void setOverrideTraitCollection(@Nullable UITraitCollection value);
@@ -374,6 +388,7 @@ public class UIPresentationController extends NSObject implements UIAppearanceCo
     @Selector("traitCollection")
     public native UITraitCollection traitCollection();
 
+    @Deprecated
     @Generated
     @Selector("traitCollectionDidChange:")
     public native void traitCollectionDidChange(@Nullable UITraitCollection previousTraitCollection);
@@ -410,4 +425,41 @@ public class UIPresentationController extends NSObject implements UIAppearanceCo
     @IsOptional
     @Selector("focusGroupIdentifier")
     public native String focusGroupIdentifier();
+
+    @Generated
+    @Selector("registerForTraitChanges:withAction:")
+    @MappedReturn(ObjCObjectMapper.class)
+    @NotNull
+    public native UITraitChangeRegistration registerForTraitChangesWithAction(@NotNull NSArray<?> traits,
+            @NotNull SEL action);
+
+    @Generated
+    @Selector("registerForTraitChanges:withHandler:")
+    @MappedReturn(ObjCObjectMapper.class)
+    @NotNull
+    public native UITraitChangeRegistration registerForTraitChangesWithHandler(@NotNull NSArray<?> traits,
+            @ObjCBlock(name = "call_registerForTraitChangesWithHandler") @NotNull UITraitChangeObservable.Block_registerForTraitChangesWithHandler handler);
+
+    @Generated
+    @Selector("registerForTraitChanges:withTarget:action:")
+    @MappedReturn(ObjCObjectMapper.class)
+    @NotNull
+    public native UITraitChangeRegistration registerForTraitChangesWithTargetAction(@NotNull NSArray<?> traits,
+            @Mapped(ObjCObjectMapper.class) @NotNull Object target, @NotNull SEL action);
+
+    @Generated
+    @Selector("traitOverrides")
+    @MappedReturn(ObjCObjectMapper.class)
+    @NotNull
+    public native UITraitOverrides traitOverrides();
+
+    @Generated
+    @Selector("unregisterForTraitChanges:")
+    public native void unregisterForTraitChanges(
+            @Mapped(ObjCObjectMapper.class) @NotNull UITraitChangeRegistration registration);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

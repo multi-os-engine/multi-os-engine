@@ -41,6 +41,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.opaque.dispatch_queue_t;
 
 /**
  * [@interface] NEHotspotHelper
@@ -211,7 +212,7 @@ public class NEHotspotHelper extends NSObject {
     @Generated
     @Selector("registerWithOptions:queue:handler:")
     public static native boolean registerWithOptionsQueueHandler(
-            @Nullable NSDictionary<String, ? extends NSObject> options, @NotNull NSObject queue,
+            @Nullable NSDictionary<String, ? extends NSObject> options, @NotNull dispatch_queue_t queue,
             @NotNull @ObjCBlock(name = "call_registerWithOptionsQueueHandler") Block_registerWithOptionsQueueHandler handler);
 
     @Generated
@@ -255,4 +256,9 @@ public class NEHotspotHelper extends NSObject {
         @Generated
         void call_registerWithOptionsQueueHandler(@NotNull NEHotspotHelperCommand cmd);
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

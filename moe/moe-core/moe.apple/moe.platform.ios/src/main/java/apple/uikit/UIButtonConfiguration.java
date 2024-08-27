@@ -662,4 +662,43 @@ public class UIButtonConfiguration extends NSObject implements NSCopying, NSSecu
         @Generated
         UIColor call_setIndicatorColorTransformer(@NotNull UIColor color);
     }
+
+    /**
+     * Default is WordWrapping. WordWrapping and CharWrapping both allow for multi-line text, other modes will restrict
+     * the subtitle to a single line of text.
+     */
+    @Generated
+    @Selector("setSubtitleLineBreakMode:")
+    public native void setSubtitleLineBreakMode(@NInt long value);
+
+    /**
+     * Default is WordWrapping. WordWrapping and CharWrapping both allow for multi-line text, other modes will restrict
+     * the title to a single line of text.
+     */
+    @Generated
+    @Selector("setTitleLineBreakMode:")
+    public native void setTitleLineBreakMode(@NInt long value);
+
+    /**
+     * Default is WordWrapping. WordWrapping and CharWrapping both allow for multi-line text, other modes will restrict
+     * the subtitle to a single line of text.
+     */
+    @Generated
+    @Selector("subtitleLineBreakMode")
+    @NInt
+    public native long subtitleLineBreakMode();
+
+    /**
+     * Default is WordWrapping. WordWrapping and CharWrapping both allow for multi-line text, other modes will restrict
+     * the title to a single line of text.
+     */
+    @Generated
+    @Selector("titleLineBreakMode")
+    @NInt
+    public native long titleLineBreakMode();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -42,6 +42,15 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
+ * An object that encapsulates the device token you use to deliver push notifications
+ * to your app.
+ * 
+ * When registering your app's push types, PushKit creates a ``PushKit/PKPushCredentials``
+ * object for each type your app supports and delivers it to your delegate's
+ * ``PushKit/PKPushRegistryDelegate/pushRegistry:didUpdatePushCredentials:forType:``
+ * method. Don't create ``PushKit/PKPushCredentials`` objects yourself.
+ * 
+ * 
  * API-Since: 8.0
  */
 @Generated
@@ -162,13 +171,30 @@ public class PKPushCredentials extends NSObject {
     @Selector("init")
     public native PKPushCredentials init();
 
+    /**
+     * A unique device token to use when sending push notifications to the current device.
+     * 
+     * Forward this token to the server you use to generate push notifications. When preparing
+     * to deliver a push notification to the current device, include the token in the HTTP
+     * request you send to Apple Push Notification service (APNs).
+     */
     @NotNull
     @Generated
     @Selector("token")
     public native NSData token();
 
+    /**
+     * The push type constant associated with the token.
+     * 
+     * For possible values, see ``PushKit/PKPushType``.
+     */
     @NotNull
     @Generated
     @Selector("type")
     public native String type();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

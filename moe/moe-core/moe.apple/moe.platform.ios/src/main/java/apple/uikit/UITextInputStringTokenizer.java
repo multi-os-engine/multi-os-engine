@@ -190,4 +190,9 @@ public class UITextInputStringTokenizer extends NSObject implements UITextInputT
     @Selector("rangeEnclosingPosition:withGranularity:inDirection:")
     public native UITextRange rangeEnclosingPositionWithGranularityInDirection(@NotNull UITextPosition position,
             @NInt long granularity, @NInt long direction);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

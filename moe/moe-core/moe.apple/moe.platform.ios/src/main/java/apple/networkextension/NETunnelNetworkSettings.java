@@ -270,4 +270,9 @@ public class NETunnelNetworkSettings extends NSObject implements NSSecureCoding,
     @Generated
     @Selector("tunnelRemoteAddress")
     public native String tunnelRemoteAddress();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

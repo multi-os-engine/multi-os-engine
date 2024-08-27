@@ -369,4 +369,9 @@ public class NSUnitInformationStorage extends NSDimension implements NSSecureCod
     @Generated
     @Selector("zettabytes")
     public static native NSUnitInformationStorage zettabytes();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

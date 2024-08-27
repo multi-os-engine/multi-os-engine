@@ -237,4 +237,9 @@ public class GCControllerDirectionPad extends GCControllerElement {
     @Generated
     @Selector("setValueForXAxis:yAxis:")
     public native void setValueForXAxisYAxis(float xAxis, float yAxis);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

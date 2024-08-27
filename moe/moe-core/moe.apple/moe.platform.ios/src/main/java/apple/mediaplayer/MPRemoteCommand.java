@@ -219,4 +219,9 @@ public class MPRemoteCommand extends NSObject {
         @NInt
         long call_addTargetWithHandler(@NotNull MPRemoteCommandEvent event);
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

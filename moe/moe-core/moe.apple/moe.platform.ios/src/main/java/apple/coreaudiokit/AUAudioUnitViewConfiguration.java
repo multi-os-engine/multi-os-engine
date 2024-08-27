@@ -230,4 +230,9 @@ public class AUAudioUnitViewConfiguration extends NSObject implements NSSecureCo
     @Selector("width")
     @NFloat
     public native double width();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

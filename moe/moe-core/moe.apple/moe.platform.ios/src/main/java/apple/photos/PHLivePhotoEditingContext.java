@@ -332,4 +332,9 @@ public class PHLivePhotoEditingContext extends NSObject {
         CIImage call_setFrameProcessor(@NotNull @Mapped(ObjCObjectMapper.class) Object frame,
                 @NotNull @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

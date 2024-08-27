@@ -220,4 +220,9 @@ public class NSUnitConverterLinear extends NSUnitConverter implements NSSecureCo
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

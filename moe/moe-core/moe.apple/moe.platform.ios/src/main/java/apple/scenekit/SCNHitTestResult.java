@@ -253,4 +253,9 @@ public class SCNHitTestResult extends NSObject {
     @Selector("worldNormal")
     @ByValue
     public native SCNVector3 worldNormal();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

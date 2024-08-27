@@ -257,7 +257,13 @@ public class UICloudSharingController extends UIViewController {
      * The preparation handler is called when it is time to save the share to the server.
      * After ensuring the share and record have been saved to the server, invoke the preparationCompletionHandler
      * with either the resulting CKShare, or an NSError if saving failed.
+     * 
+     * API-Since: 10.0
+     * Deprecated-Since: 17.0
+     * Deprecated-Message: Use -[UIActivityViewController initWithActivityItemsConfiguration:] and pass it a
+     * UIActivityItemsConfigurationReading-conforming object with an NSItemProvider and registered preparation handler
      */
+    @Deprecated
     @Generated
     @Selector("initWithPreparationHandler:")
     public native UICloudSharingController initWithPreparationHandler(
@@ -278,4 +284,9 @@ public class UICloudSharingController extends UIViewController {
         void call_initWithPreparationHandler(@NotNull UICloudSharingController controller,
                 @NotNull @ObjCBlock(name = "call_Block_initWithPreparationHandler") Block_Block_initWithPreparationHandler preparationCompletionHandler);
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

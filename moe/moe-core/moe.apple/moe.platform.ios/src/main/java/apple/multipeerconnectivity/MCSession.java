@@ -89,9 +89,6 @@ import org.jetbrains.annotations.Nullable;
  * Delegate calls occur on a private serial queue. If your app needs to
  * perform an action on a particular run loop or operation queue, its
  * delegate method should explicitly dispatch or schedule that work.
- * 
- * 
- * API-Since: 7.0
  */
 @Generated
 @Library("MultipeerConnectivity")
@@ -354,4 +351,9 @@ public class MCSession extends NSObject {
         @Generated
         void call_sendResourceAtURLWithNameToPeerWithCompletionHandler(@Nullable NSError error);
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

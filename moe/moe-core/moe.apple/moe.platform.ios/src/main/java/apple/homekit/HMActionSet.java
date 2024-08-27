@@ -285,4 +285,9 @@ public class HMActionSet extends NSObject {
         @Generated
         void call_updateNameCompletionHandler(@Nullable NSError error);
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -228,4 +228,9 @@ public class PKShippingMethod extends PKPaymentSummaryItem {
     @Generated
     @Selector("setDateComponentsRange:")
     public native void setDateComponentsRange(@Nullable PKDateComponentsRange value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

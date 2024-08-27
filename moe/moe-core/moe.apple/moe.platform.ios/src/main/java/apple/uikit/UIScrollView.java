@@ -1087,4 +1087,40 @@ public class UIScrollView extends UIView implements NSCoding, UIFocusItemScrolla
     @Selector("visibleSize")
     @ByValue
     public native CGSize visibleSize();
+
+    /**
+     * Set this to YES to make the scroll view animate its content offset in response to keys like Page Up/Down,
+     * Home/End, and the arrow keys.
+     * The scroll view must be focused or first responder in order to receive these key events. Default is YES for apps
+     * linked after iOS 17.0.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("allowsKeyboardScrolling")
+    public native boolean allowsKeyboardScrolling();
+
+    @Generated
+    @Selector("animateWithSpringDuration:bounce:initialSpringVelocity:delay:options:animations:completion:")
+    public static native void animateWithSpringDurationBounceInitialSpringVelocityDelayOptionsAnimationsCompletion(
+            double duration, @NFloat double bounce, @NFloat double velocity, double delay, @NUInt long options,
+            @ObjCBlock(name = "call_animateWithSpringDurationBounceInitialSpringVelocityDelayOptionsAnimationsCompletion_5") @NotNull UIView.Block_animateWithSpringDurationBounceInitialSpringVelocityDelayOptionsAnimationsCompletion_5 animations,
+            @ObjCBlock(name = "call_animateWithSpringDurationBounceInitialSpringVelocityDelayOptionsAnimationsCompletion_6") @Nullable UIView.Block_animateWithSpringDurationBounceInitialSpringVelocityDelayOptionsAnimationsCompletion_6 completion);
+
+    /**
+     * Set this to YES to make the scroll view animate its content offset in response to keys like Page Up/Down,
+     * Home/End, and the arrow keys.
+     * The scroll view must be focused or first responder in order to receive these key events. Default is YES for apps
+     * linked after iOS 17.0.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("setAllowsKeyboardScrolling:")
+    public native void setAllowsKeyboardScrolling(boolean value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -51,6 +51,8 @@ import org.jetbrains.annotations.Nullable;
  * An AVPlayerItemAccessLogEvent provides named properties for accessing the data
  * fields of each log event. None of the properties of this class are observable.
  * 
+ * Subclasses of this type that are used from Swift must fulfill the requirements of a Sendable type.
+ * 
  * API-Since: 4.3
  */
 @Generated
@@ -556,4 +558,9 @@ public class AVPlayerItemAccessLogEvent extends NSObject implements NSCopying {
     @Generated
     @Selector("transferDuration")
     public native double transferDuration();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

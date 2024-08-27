@@ -222,4 +222,9 @@ public class UIGravityBehavior extends UIDynamicBehavior {
     @Generated
     @Selector("setMagnitude:")
     public native void setMagnitude(@NFloat double value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

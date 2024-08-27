@@ -23,6 +23,11 @@ task prebuild_ios(type: Prebuild) {
     ramdiskSizeMB 128
     buildScript 'moe-prebuild-ios.sh'
     targetName 'ios'
+    preBuildCopySpec copySpec {
+        from('.') {
+            include 'moe-prebuild-ios.sh'
+        }
+    }
 }
 prebuild.dependsOn prebuild_ios
 
@@ -31,6 +36,11 @@ task prebuild_macos(type: Prebuild) {
     ramdiskSizeMB 128
     buildScript 'moe-prebuild-macos.sh'
     targetName 'macos'
+    preBuildCopySpec copySpec {
+        from('.') {
+            include 'moe-prebuild-macos.sh'
+        }
+    }
 }
 prebuild.dependsOn prebuild_macos
 
@@ -40,6 +50,11 @@ task prebuild_windows(type: Prebuild) {
     buildScript 'moe-prebuild-windows.sh'
     targetName 'windows'
     env 'PATH', "${System.getenv('PATH')}:${rootProject.file('mingw/bin').absolutePath}"
+    preBuildCopySpec copySpec {
+        from('.') {
+            include 'moe-prebuild-windows.sh'
+        }
+    }
 }
 prebuild_windows.dependsOn ':mingwPresence'
 prebuild.dependsOn prebuild_windows
@@ -50,7 +65,7 @@ task prebuild_linux(type: Prebuild) {
     buildScript 'moe-prebuild-linux.sh'
     targetName 'linux'
     env 'PATH', "${System.getenv('PATH')}"
-    preBuildCopySpec project.copySpec {
+    preBuildCopySpec copySpec {
         from('.') {
             include 'moe-prebuild-linux.sh'
         }

@@ -46,12 +46,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
- * CKRecordZoneSubscription
- * 
- * A subscription that fires whenever any change happens in the indicated Record Zone.
- * 
- * The RecordZone must have the capability @c CKRecordZoneCapabilityFetchChanges
- * [@c] CKRecordZoneSubscriptions are not supported in a @c sharedCloudDatabase
+ * NS_SWIFT_SENDABLE on macos(13.3), macCatalyst(16.4), ios(16.4), tvos(16.4), watchos(9.4)
  * 
  * API-Since: 10.0
  */
@@ -192,6 +187,11 @@ public class CKRecordZoneSubscription extends CKSubscription implements NSSecure
     @Selector("initWithCoder:")
     public native CKRecordZoneSubscription initWithCoder(@NotNull NSCoder aDecoder);
 
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 10.0
+     */
+    @Deprecated
     @Generated
     @Selector("initWithZoneID:")
     public native CKRecordZoneSubscription initWithZoneID(@NotNull CKRecordZoneID zoneID);
@@ -226,4 +226,9 @@ public class CKRecordZoneSubscription extends CKSubscription implements NSSecure
     @Generated
     @Selector("zoneID")
     public native CKRecordZoneID zoneID();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

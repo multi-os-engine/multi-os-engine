@@ -167,8 +167,9 @@ public class AVAssetResourceLoadingRequest extends NSObject {
     /**
      * [@property] contentInformationRequest
      * 
-     * An instance of AVAssetResourceLoadingContentInformationRequest that you should populate with information about
-     * the resource. The value of this property will be nil if no such information is being requested.
+     * An instance of AVAssetResourceLoadingContentInformationRequest that you must populate with information about the
+     * resource before responding to any AVAssetResourceLoadingDataRequests for the resource. The value of this property
+     * will be nil if no such information is being requested.
      * 
      * API-Since: 7.0
      */
@@ -181,7 +182,9 @@ public class AVAssetResourceLoadingRequest extends NSObject {
      * [@property] dataRequest
      * 
      * An instance of AVAssetResourceLoadingDataRequest that indicates the range of resource data that's being
-     * requested. The value of this property will be nil if no data is being requested.
+     * requested. If an AVAssetResourceLoadingContentInformationRequest has been provided, you must set its properties
+     * appropriately before responding to any AVAssetResourceLoadingDataRequests. The value of this property will be nil
+     * if no data is being requested.
      * 
      * API-Since: 7.0
      */
@@ -419,4 +422,9 @@ public class AVAssetResourceLoadingRequest extends NSObject {
     @Generated
     @Selector("requestor")
     public native AVAssetResourceLoadingRequestor requestor();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -44,8 +44,6 @@ import org.jetbrains.annotations.Nullable;
 
 /**
  * Generic feature found by a CIDetector.
- * 
- * API-Since: 5.0
  */
 @Generated
 @Library("CoreImage")
@@ -180,4 +178,9 @@ public class CIFeature extends NSObject {
     @Generated
     @Selector("type")
     public native String type();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

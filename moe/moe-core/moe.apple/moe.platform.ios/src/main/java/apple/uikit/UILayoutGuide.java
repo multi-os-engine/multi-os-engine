@@ -327,4 +327,14 @@ public class UILayoutGuide extends NSObject implements NSCoding, UIPopoverPresen
     @Generated
     @Selector("widthAnchor")
     public native NSLayoutDimension widthAnchor();
+
+    @Generated
+    @Selector("frameInView:")
+    @ByValue
+    public native CGRect frameInView(@NotNull UIView referenceView);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

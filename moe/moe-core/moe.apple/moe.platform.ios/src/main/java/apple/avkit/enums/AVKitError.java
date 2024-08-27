@@ -25,6 +25,17 @@ import org.moe.natj.general.ann.NInt;
  * [@constant] AVKitErrorPictureInPictureStartFailed
  * Failed to start Picture in Picture.
  * 
+ * [@constant] AVKitErrorContentRatingUnknown
+ * Media content rating missing or unrecognized.
+ * [@constant] AVKitErrorContentDisallowedByPasscode
+ * Restriction settings disallow access to this content, but the user can override by entering the passcode.
+ * [@constant] AVKitErrorContentDisallowedByProfile
+ * An installed profile sets restriction settings that disallow access to this content; the user cannot override by
+ * entering the passcode (they may be able to override in Settings).
+ * 
+ * [@constant] AVKitErrorRecordingFailed
+ * The recording failed.
+ * 
  * API-Since: 9.0
  */
 @Generated
@@ -33,9 +44,6 @@ public final class AVKitError {
      * API-Since: 9.0
      */
     @Generated @NInt public static final long Unknown = 0xFFFFFFFFFFFFFC18L;
-    /**
-     * API-Since: 9.0
-     */
     @Generated @NInt public static final long PictureInPictureStartFailed = 0xFFFFFFFFFFFFFC17L;
 
     @Generated

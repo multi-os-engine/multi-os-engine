@@ -319,4 +319,9 @@ public class PHFetchResult<_ObjectType> extends NSObject implements NSCopying, N
         void call_enumerateObjectsWithOptionsUsingBlock(@NotNull @Mapped(ObjCObjectMapper.class) Object obj,
                 @NUInt long idx, @NotNull BoolPtr stop);
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

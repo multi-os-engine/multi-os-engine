@@ -36,4 +36,13 @@ public interface NIDeviceCapability {
     @Generated
     @Selector("supportsPreciseDistanceMeasurement")
     boolean supportsPreciseDistanceMeasurement();
+
+    /**
+     * Whether or not this device is capable of extended distance measurement capabilities
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("supportsExtendedDistanceMeasurement")
+    boolean supportsExtendedDistanceMeasurement();
 }

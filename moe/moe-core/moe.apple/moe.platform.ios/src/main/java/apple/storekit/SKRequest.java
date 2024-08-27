@@ -212,4 +212,9 @@ public class SKRequest extends NSObject {
     @Generated
     @Selector("start")
     public native void start();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

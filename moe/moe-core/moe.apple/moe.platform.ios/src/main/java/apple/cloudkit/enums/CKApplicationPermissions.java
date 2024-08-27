@@ -28,8 +28,10 @@ public final class CKApplicationPermissions {
      * Allows the user's record in CloudKit to be discoverable via the user's email address
      * 
      * API-Since: 8.0
+     * Deprecated-Since: 17.0
+     * Deprecated-Message: No longer supported. Please see Sharing CloudKit Data with Other iCloud Users.
      */
-    @Generated @NUInt public static final long CKApplicationPermissionUserDiscoverability = 0x0000000000000001L;
+    @Deprecated @Generated @NUInt public static final long CKApplicationPermissionUserDiscoverability = 0x0000000000000001L;
 
     @Generated
     private CKApplicationPermissions() {

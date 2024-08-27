@@ -41,6 +41,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.opaque.dispatch_queue_t;
 
 /**
  * API-Since: 6.0
@@ -184,7 +185,7 @@ public class AVAssetResourceLoader extends NSObject {
     @Nullable
     @Generated
     @Selector("delegateQueue")
-    public native NSObject delegateQueue();
+    public native dispatch_queue_t delegateQueue();
 
     @Generated
     @Selector("init")
@@ -231,7 +232,7 @@ public class AVAssetResourceLoader extends NSObject {
     @Selector("setDelegate:queue:")
     public native void setDelegateQueue(
             @Nullable @Mapped(ObjCObjectMapper.class) AVAssetResourceLoaderDelegate delegate,
-            @Nullable NSObject delegateQueue);
+            @Nullable dispatch_queue_t delegateQueue);
 
     /**
      * [@property] preloadsEligibleContentKeys
@@ -246,4 +247,9 @@ public class AVAssetResourceLoader extends NSObject {
     @Generated
     @Selector("setPreloadsEligibleContentKeys:")
     public native void setPreloadsEligibleContentKeys(boolean value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

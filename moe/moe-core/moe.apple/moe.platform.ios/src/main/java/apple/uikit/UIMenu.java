@@ -273,4 +273,9 @@ public class UIMenu extends UIMenuElement {
     @Generated
     @Selector("setPreferredElementSize:")
     public native void setPreferredElementSize(@NInt long value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

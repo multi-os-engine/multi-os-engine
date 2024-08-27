@@ -25,6 +25,12 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
+ * AVAssetVariantAudioRenditionSpecificAttributes
+ * 
+ * Audio rendition attributes for an asset variant.
+ * 
+ * Subclasses of this type that are used from Swift must fulfill the requirements of a Sendable type.
+ * 
  * API-Since: 15.0
  */
 @Generated
@@ -74,6 +80,8 @@ public class AVAssetVariantAudioRenditionSpecificAttributes extends NSObject {
      * [@property] channelCount
      * 
      * If it is not declared, the value will be negative.
+     * 
+     * A channel count greater than two indicates that the variant offers a rich multichannel authoring.
      */
     @Generated
     @Selector("channelCount")
@@ -154,4 +162,52 @@ public class AVAssetVariantAudioRenditionSpecificAttributes extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * [@property] binaural
+     * 
+     * Indicates that the variant is best suited for delivery to headphones.
+     * 
+     * A binaural variant may originate from a direct binaural recording or from the processing of a multichannel audio
+     * source.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("isBinaural")
+    public native boolean isBinaural();
+
+    /**
+     * [@property] downmix
+     * 
+     * Indicates that this variant is declared as a downmix derivative of other media of greater channel count.
+     * 
+     * If one or more multichannel variants are also provided, the dowmix is assumed to be compatible in its internal
+     * timing and other attributes with those variants. Typically this is because it has been derived from the same
+     * source. A downmix can be used as a suitable substitute for a multichannel variant under some conditions.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("isDownmix")
+    public native boolean isDownmix();
+
+    /**
+     * [@property] immersive
+     * 
+     * Indicates that this variant contains virtualized or otherwise pre-processed audio content that is suitable for a
+     * variety of purposes.
+     * 
+     * If a variant audio redition is immersive it is eligible for rendering either to headphones or speakers.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("isImmersive")
+    public native boolean isImmersive();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

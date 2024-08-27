@@ -174,4 +174,9 @@ public class NSMetadataItem extends NSObject {
     @Generated
     @Selector("valuesForAttributes:")
     public native NSDictionary<String, ?> valuesForAttributes(@NotNull NSArray<String> keys);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

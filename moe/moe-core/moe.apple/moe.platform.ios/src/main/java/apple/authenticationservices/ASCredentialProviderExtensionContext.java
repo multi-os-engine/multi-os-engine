@@ -192,4 +192,63 @@ public class ASCredentialProviderExtensionContext extends NSExtensionContext {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * Complete the assertion request by providing the user selected passkey credential.
+     * 
+     * Calling this method will eventually dismiss the associated view controller.
+     * 
+     * API-Since: 17.0
+     * 
+     * @param credential        the credential that the user has selected. Includes assertion response.
+     * @param completionHandler optionally contains any work which the extension may need to perform after the request
+     *                          has been completed,
+     *                          as a background-priority task. The `expired` parameter will be YES if the system decides
+     *                          to prematurely terminate a previous
+     *                          non-expiration invocation of the completionHandler.
+     */
+    @Generated
+    @Selector("completeAssertionRequestWithSelectedPasskeyCredential:completionHandler:")
+    public native void completeAssertionRequestWithSelectedPasskeyCredentialCompletionHandler(
+            @NotNull ASPasskeyAssertionCredential credential,
+            @ObjCBlock(name = "call_completeAssertionRequestWithSelectedPasskeyCredentialCompletionHandler") @Nullable Block_completeAssertionRequestWithSelectedPasskeyCredentialCompletionHandler completionHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_completeAssertionRequestWithSelectedPasskeyCredentialCompletionHandler {
+        @Generated
+        void call_completeAssertionRequestWithSelectedPasskeyCredentialCompletionHandler(boolean expired);
+    }
+
+    /**
+     * Complete the registration request by providing the newly created passkey credential.
+     * 
+     * Calling this method will eventually dismiss the associated view controller.
+     * 
+     * API-Since: 17.0
+     * 
+     * @param credential        the credential that was created in response to the registration request.
+     * @param completionHandler optionally contains any work which the extension may need to perform after the request
+     *                          has been completed,
+     *                          as a background-priority task. The `expired` parameter will be YES if the system decides
+     *                          to prematurely terminate a previous
+     *                          non-expiration invocation of the completionHandler.
+     */
+    @Generated
+    @Selector("completeRegistrationRequestWithSelectedPasskeyCredential:completionHandler:")
+    public native void completeRegistrationRequestWithSelectedPasskeyCredentialCompletionHandler(
+            @NotNull ASPasskeyRegistrationCredential credential,
+            @ObjCBlock(name = "call_completeRegistrationRequestWithSelectedPasskeyCredentialCompletionHandler") @Nullable Block_completeRegistrationRequestWithSelectedPasskeyCredentialCompletionHandler completionHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_completeRegistrationRequestWithSelectedPasskeyCredentialCompletionHandler {
+        @Generated
+        void call_completeRegistrationRequestWithSelectedPasskeyCredentialCompletionHandler(boolean expired);
+    }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

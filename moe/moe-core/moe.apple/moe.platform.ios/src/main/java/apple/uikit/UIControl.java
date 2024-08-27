@@ -884,4 +884,36 @@ public class UIControl extends UIView implements UIContextMenuInteractionDelegat
     public native UITargetedPreview contextMenuInteractionConfigurationHighlightPreviewForItemWithIdentifier(
             @NotNull UIContextMenuInteraction interaction, @NotNull UIContextMenuConfiguration configuration,
             @NotNull @Mapped(ObjCObjectMapper.class) Object identifier);
+
+    @Generated
+    @Selector("animateWithSpringDuration:bounce:initialSpringVelocity:delay:options:animations:completion:")
+    public static native void animateWithSpringDurationBounceInitialSpringVelocityDelayOptionsAnimationsCompletion(
+            double duration, @NFloat double bounce, @NFloat double velocity, double delay, @NUInt long options,
+            @ObjCBlock(name = "call_animateWithSpringDurationBounceInitialSpringVelocityDelayOptionsAnimationsCompletion_5") @NotNull UIView.Block_animateWithSpringDurationBounceInitialSpringVelocityDelayOptionsAnimationsCompletion_5 animations,
+            @ObjCBlock(name = "call_animateWithSpringDurationBounceInitialSpringVelocityDelayOptionsAnimationsCompletion_6") @Nullable UIView.Block_animateWithSpringDurationBounceInitialSpringVelocityDelayOptionsAnimationsCompletion_6 completion);
+
+    /**
+     * Whether or not symbol animations are enabled for this control.
+     * The default value varies depending on the control.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("isSymbolAnimationEnabled")
+    public native boolean isSymbolAnimationEnabled();
+
+    /**
+     * Whether or not symbol animations are enabled for this control.
+     * The default value varies depending on the control.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("setSymbolAnimationEnabled:")
+    public native void setSymbolAnimationEnabled(boolean value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

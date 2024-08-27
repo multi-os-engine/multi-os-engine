@@ -72,6 +72,9 @@ import apple.corefoundation.struct.CGRect;
 import apple.corefoundation.struct.CGSize;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.uikit.protocol.UITraitChangeObservable;
+import apple.uikit.protocol.UITraitChangeRegistration;
+import apple.uikit.protocol.UITraitOverrides;
 
 /**
  * API-Since: 2.0
@@ -82,7 +85,8 @@ import org.jetbrains.annotations.Nullable;
 @ObjCClassBinding
 public class UIView extends UIResponder implements NSCoding, UIAppearance, UIAppearanceContainer, UIDynamicItem,
         UITraitEnvironment, UICoordinateSpace, UIFocusItem, UIFocusItemContainer, CALayerDelegate,
-        UIAccessibilityIdentification, UILargeContentViewerItem, UIPopoverPresentationControllerSourceItem {
+        UITraitChangeObservable, UIAccessibilityIdentification, UILargeContentViewerItem,
+        UIPopoverPresentationControllerSourceItem {
     static {
         NatJ.register();
     }
@@ -1853,6 +1857,7 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
     @Selector("traitCollection")
     public native UITraitCollection traitCollection();
 
+    @Deprecated
     @Generated
     @Selector("traitCollectionDidChange:")
     public native void traitCollectionDidChange(@Nullable UITraitCollection previousTraitCollection);
@@ -2262,19 +2267,12 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
      * Reading this property does not return the current `UIUserInterfaceStyle`. Use
      * `traitCollection.userInterfaceStyle` instead.
      * 
-     * Whenever possible, use the `overrideUserInterfaceStyle` property on `UIViewController` instead.
-     * 
-     * Use this property only when:
-     * - You want a particular style on a single view or small view hierarchy.
-     * - You want a particular style on an entire `UIWindow` and its view controllers and presentations,
-     * but don't want to force your entire application to have that style.
-     * 
      * (If you do want your entire application to have a certain style, don't use this, but instead
      * set the `UIUserInterfaceStyle" key in your Info.plist.)
      * 
      * When set on an ordinary `UIView`:
-     * - This property affects only the traits of this view and its subviews.
-     * - It does not affect any view controllers, or any subviews that are owned by different view controllers.
+     * - This property affects the user interface style of this view and its subviews.
+     * - Starting in iOS 17, this also affects any nested view controllers and subviews of those view controllers.
      * 
      * When set on a `UIWindow`:
      * - This property affects the `rootViewController` and thus the entire view controller and view hierarchy.
@@ -2329,19 +2327,12 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
      * Reading this property does not return the current `UIUserInterfaceStyle`. Use
      * `traitCollection.userInterfaceStyle` instead.
      * 
-     * Whenever possible, use the `overrideUserInterfaceStyle` property on `UIViewController` instead.
-     * 
-     * Use this property only when:
-     * - You want a particular style on a single view or small view hierarchy.
-     * - You want a particular style on an entire `UIWindow` and its view controllers and presentations,
-     * but don't want to force your entire application to have that style.
-     * 
      * (If you do want your entire application to have a certain style, don't use this, but instead
      * set the `UIUserInterfaceStyle" key in your Info.plist.)
      * 
      * When set on an ordinary `UIView`:
-     * - This property affects only the traits of this view and its subviews.
-     * - It does not affect any view controllers, or any subviews that are owned by different view controllers.
+     * - This property affects the user interface style of this view and its subviews.
+     * - Starting in iOS 17, this also affects any nested view controllers and subviews of those view controllers.
      * 
      * When set on a `UIWindow`:
      * - This property affects the `rootViewController` and thus the entire view controller and view hierarchy.
@@ -2439,8 +2430,7 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
     public native boolean isTransparentFocusItem();
 
     /**
-     * Follows the keyboard when on screen and docked. When the keyboard is offscreen or undocked,
-     * keyboardLayoutGuide.topAnchor matches the view's safeAreaLayoutGuide.bottomAnchor.
+     * Follows the keyboard when on screen and docked. See UIKeyboardLayoutGuide.h for additional options.
      * 
      * API-Since: 15.0
      */
@@ -2556,4 +2546,109 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
     @Generated
     @Selector("setAnchorPoint:")
     public native void setAnchorPoint(@ByValue CGPoint value);
+
+    /**
+     * Performs `animations` using a timing curve described by the motion of a spring. The `duration` specified here is
+     * a perceptual duration that defines the pace of the spring. This is approximately equal to the settling duration,
+     * but for very bouncy springs, will be the duration of the period of oscillation for the spring. When `bounce` is
+     * 0, there are no bounces, positive values indicate increasing amounts of bounciness up to a maximum of 1.0
+     * (corresponding to undamped oscillation), and negative values indicate overdamped springs with a minimum value of
+     * -1.0. You can use the initial spring velocity to specify how fast the object at the end of the simulated spring
+     * was moving before it was attached. It's a unit coordinate system, where 1 is defined as traveling the total
+     * animation distance in a second. So if you're changing an object's position by 200pt in this animation, and you
+     * want the animation to behave as if the object was moving at 100pt/s before the animation started, you'd pass 0.5.
+     * You'll typically want to pass 0 for the velocity.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("animateWithSpringDuration:bounce:initialSpringVelocity:delay:options:animations:completion:")
+    public static native void animateWithSpringDurationBounceInitialSpringVelocityDelayOptionsAnimationsCompletion(
+            double duration, @NFloat double bounce, @NFloat double velocity, double delay, @NUInt long options,
+            @ObjCBlock(name = "call_animateWithSpringDurationBounceInitialSpringVelocityDelayOptionsAnimationsCompletion_5") @NotNull Block_animateWithSpringDurationBounceInitialSpringVelocityDelayOptionsAnimationsCompletion_5 animations,
+            @ObjCBlock(name = "call_animateWithSpringDurationBounceInitialSpringVelocityDelayOptionsAnimationsCompletion_6") @Nullable Block_animateWithSpringDurationBounceInitialSpringVelocityDelayOptionsAnimationsCompletion_6 completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_animateWithSpringDurationBounceInitialSpringVelocityDelayOptionsAnimationsCompletion_5 {
+        @Generated
+        void call_animateWithSpringDurationBounceInitialSpringVelocityDelayOptionsAnimationsCompletion_5();
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_animateWithSpringDurationBounceInitialSpringVelocityDelayOptionsAnimationsCompletion_6 {
+        @Generated
+        void call_animateWithSpringDurationBounceInitialSpringVelocityDelayOptionsAnimationsCompletion_6(
+                boolean finished);
+    }
+
+    @Generated
+    @Selector("frameInView:")
+    @ByValue
+    public native CGRect frameInView(@NotNull UIView referenceView);
+
+    /**
+     * The hover style associated with this view. Defaults to `nil`,
+     * indicating that this view should not have any hover effect.
+     * Subclasses may configure this style to use a different default value.
+     */
+    @Generated
+    @Selector("hoverStyle")
+    @Nullable
+    public native UIHoverStyle hoverStyle();
+
+    @Generated
+    @Selector("registerForTraitChanges:withAction:")
+    @MappedReturn(ObjCObjectMapper.class)
+    @NotNull
+    public native UITraitChangeRegistration registerForTraitChangesWithAction(@NotNull NSArray<?> traits,
+            @NotNull SEL action);
+
+    @Generated
+    @Selector("registerForTraitChanges:withHandler:")
+    @MappedReturn(ObjCObjectMapper.class)
+    @NotNull
+    public native UITraitChangeRegistration registerForTraitChangesWithHandler(@NotNull NSArray<?> traits,
+            @ObjCBlock(name = "call_registerForTraitChangesWithHandler") @NotNull UITraitChangeObservable.Block_registerForTraitChangesWithHandler handler);
+
+    @Generated
+    @Selector("registerForTraitChanges:withTarget:action:")
+    @MappedReturn(ObjCObjectMapper.class)
+    @NotNull
+    public native UITraitChangeRegistration registerForTraitChangesWithTargetAction(@NotNull NSArray<?> traits,
+            @Mapped(ObjCObjectMapper.class) @NotNull Object target, @NotNull SEL action);
+
+    /**
+     * The hover style associated with this view. Defaults to `nil`,
+     * indicating that this view should not have any hover effect.
+     * Subclasses may configure this style to use a different default value.
+     */
+    @Generated
+    @Selector("setHoverStyle:")
+    public native void setHoverStyle(@Nullable UIHoverStyle value);
+
+    @Generated
+    @Selector("traitOverrides")
+    @MappedReturn(ObjCObjectMapper.class)
+    @NotNull
+    public native UITraitOverrides traitOverrides();
+
+    @Generated
+    @Selector("unregisterForTraitChanges:")
+    public native void unregisterForTraitChanges(
+            @Mapped(ObjCObjectMapper.class) @NotNull UITraitChangeRegistration registration);
+
+    /**
+     * Forces an immediate trait update for this view (and its view controller, if applicable) and any subviews,
+     * including any view controllers or views in its subtree. Any trait change callbacks are sent synchronously.
+     */
+    @Generated
+    @Selector("updateTraitsIfNeeded")
+    public native void updateTraitsIfNeeded();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

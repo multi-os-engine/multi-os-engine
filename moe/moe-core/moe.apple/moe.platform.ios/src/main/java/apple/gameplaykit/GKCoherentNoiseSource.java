@@ -44,8 +44,6 @@ import org.jetbrains.annotations.Nullable;
  * Coherent noise is smoothly-changing, semi-random noise. A given input always produces the same output.
  * A small change in input produces a small change in output. A large change in input produces a random
  * change in output. This class is not intended to be instantiated.
- * 
- * API-Since: 10.0
  */
 @Generated
 @Library("GameplayKit")
@@ -197,4 +195,9 @@ public class GKCoherentNoiseSource extends GKNoiseSource {
     @Generated
     @Selector("setSeed:")
     public native void setSeed(int value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

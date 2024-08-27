@@ -182,4 +182,9 @@ public class UIStoryboardUnwindSegueSource extends NSObject {
     @Generated
     @Selector("unwindAction")
     public native SEL unwindAction();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

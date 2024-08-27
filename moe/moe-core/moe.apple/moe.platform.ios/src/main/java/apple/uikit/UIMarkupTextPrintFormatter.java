@@ -181,4 +181,9 @@ public class UIMarkupTextPrintFormatter extends UIPrintFormatter {
     @Generated
     @Selector("setMarkupText:")
     public native void setMarkupText(@Nullable String value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

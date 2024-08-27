@@ -34,8 +34,6 @@ import org.jetbrains.annotations.Nullable;
  * NLModelConfiguration is a class representing the metadata about a model, including specifying whether it is a
  * sequence or classifier model, what language it is intended to support, and what revision of the model training was
  * used to produce the model.
- * 
- * API-Since: 12.0
  */
 @Generated
 @Library("NaturalLanguage")
@@ -229,4 +227,9 @@ public class NLModelConfiguration extends NSObject implements NSCopying, NSSecur
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

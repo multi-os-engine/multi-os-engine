@@ -884,4 +884,9 @@ public class UINavigationItem extends NSObject implements NSCoding {
     @Generated
     @Selector("trailingItemGroups")
     public native NSArray<? extends UIBarButtonItemGroup> trailingItemGroups();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

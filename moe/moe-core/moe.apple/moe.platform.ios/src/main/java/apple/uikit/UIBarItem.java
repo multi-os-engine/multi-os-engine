@@ -443,4 +443,9 @@ public class UIBarItem extends NSObject implements NSCoding, UIAppearance, UIAcc
     @Generated
     @Selector("setLargeContentSizeImageInsets:")
     public native void setLargeContentSizeImageInsets(@ByValue UIEdgeInsets value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

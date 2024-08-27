@@ -231,4 +231,9 @@ public class INRelativeReferenceResolutionResult extends INIntentResolutionResul
     @Generated
     @Selector("unsupportedWithReason:")
     public static native INRelativeReferenceResolutionResult unsupportedWithReason(@NInt long reason);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

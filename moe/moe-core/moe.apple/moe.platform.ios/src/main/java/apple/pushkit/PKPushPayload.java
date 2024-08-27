@@ -42,6 +42,16 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
+ * An object that contains information about a received PushKit notification.
+ * 
+ * ## Topics
+ * 
+ * ### Payload Data
+ * 
+ * - ``PushKit/PKPushPayload/dictionaryPayload``
+ * - ``PushKit/PKPushPayload/type``
+ * 
+ * 
  * API-Since: 8.0
  */
 @Generated
@@ -158,6 +168,12 @@ public class PKPushPayload extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * The contents of the received payload.
+     * 
+     * For VoIP pushes, the sender is free to specify any fields for the contained data
+     * as long as it is provided in a text-encodable JSON format.
+     */
     @NotNull
     @Generated
     @Selector("dictionaryPayload")
@@ -167,8 +183,18 @@ public class PKPushPayload extends NSObject {
     @Selector("init")
     public native PKPushPayload init();
 
+    /**
+     * The type value indicating how to interpret the payload.
+     * 
+     * For possible values, see ``PushKit/PKPushType``.
+     */
     @NotNull
     @Generated
     @Selector("type")
     public native String type();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

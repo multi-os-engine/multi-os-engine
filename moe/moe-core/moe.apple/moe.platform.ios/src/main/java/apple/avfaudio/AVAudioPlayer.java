@@ -496,4 +496,9 @@ public class AVAudioPlayer extends NSObject {
     @Generated
     @Selector("volume")
     public native float volume();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -218,4 +218,9 @@ public class AVAsynchronousCIImageFilteringRequest extends NSObject implements N
     @Generated
     @Selector("sourceImage")
     public native CIImage sourceImage();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

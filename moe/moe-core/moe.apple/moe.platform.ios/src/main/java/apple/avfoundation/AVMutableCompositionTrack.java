@@ -215,7 +215,7 @@ public class AVMutableCompositionTrack extends AVCompositionTrack {
      *                  Specifies the timeRange of the track to be inserted.
      * @param track
      *                  Specifies the source track to be inserted. Only AVAssetTracks of AVURLAssets and AVCompositions
-     *                  are supported (AVCompositions starting in MacOS X 10.10 and iOS 8.0).
+     *                  are supported (AVCompositions starting in macOS 10.10 and iOS 8.0).
      * @param startTime
      *                  Specifies the time at which the inserted track is to be presented by the composition track. You
      *                  may pass kCMTimeInvalid for startTime to indicate that the timeRange should be appended to the
@@ -248,7 +248,7 @@ public class AVMutableCompositionTrack extends AVCompositionTrack {
      *                   +[NSValue valueWithCMTimeRange:] in AVTime.h.)
      * @param tracks
      *                   Specifies the source tracks to be inserted. Only AVAssetTracks of AVURLAssets and
-     *                   AVCompositions are supported (AVCompositions starting in MacOS X 10.10 and iOS 8.0).
+     *                   AVCompositions are supported (AVCompositions starting in macOS 10.10 and iOS 8.0).
      * @param startTime
      *                   Specifies the time at which the inserted tracks are to be presented by the composition track.
      *                   You may pass kCMTimeInvalid for startTime to indicate that the timeRanges should be appended to
@@ -544,4 +544,9 @@ public class AVMutableCompositionTrack extends AVCompositionTrack {
     @Generated
     @Selector("setEnabled:")
     public native void setEnabled(boolean value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

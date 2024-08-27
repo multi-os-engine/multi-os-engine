@@ -418,4 +418,9 @@ public class NSXPCConnection extends NSObject implements NSXPCProxyCreating {
     @Generated
     @Selector("activate")
     public native void activate();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

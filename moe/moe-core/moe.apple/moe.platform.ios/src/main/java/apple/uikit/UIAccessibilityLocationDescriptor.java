@@ -215,4 +215,9 @@ public class UIAccessibilityLocationDescriptor extends NSObject {
     @Generated
     @Selector("view")
     public native UIView view();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

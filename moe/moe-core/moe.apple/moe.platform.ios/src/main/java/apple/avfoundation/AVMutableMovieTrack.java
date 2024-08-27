@@ -876,4 +876,9 @@ public class AVMutableMovieTrack extends AVMovieTrack {
     @Generated
     @Selector("segmentForTrackTime:")
     public native AVAssetTrackSegment segmentForTrackTime(@ByValue CMTime trackTime);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

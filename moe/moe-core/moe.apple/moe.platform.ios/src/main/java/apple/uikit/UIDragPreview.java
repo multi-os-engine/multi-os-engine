@@ -196,4 +196,9 @@ public class UIDragPreview extends NSObject implements NSCopying {
     @Generated
     @Selector("view")
     public native UIView view();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

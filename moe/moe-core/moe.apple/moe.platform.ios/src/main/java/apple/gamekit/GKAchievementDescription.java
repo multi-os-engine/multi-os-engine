@@ -46,12 +46,11 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.foundation.NSNumber;
 
 /**
  * GKAchievementDescription is a full description of the achievement as defined before app submission in App Store
  * Connect.
- * 
- * API-Since: 4.1
  */
 @Generated
 @Library("GameKit")
@@ -228,7 +227,6 @@ public class GKAchievementDescription extends NSObject implements NSCoding, NSSe
      * 
      * API-Since: 4.1
      * Deprecated-Since: 7.0
-     * Deprecated-Message: Use loadImageWithCompletionHandler: instead
      */
     @Nullable
     @Generated
@@ -313,4 +311,20 @@ public class GKAchievementDescription extends NSObject implements NSCoding, NSSe
         @Generated
         void call_loadImageWithCompletionHandler(@Nullable UIImage image, @Nullable NSError error);
     }
+
+    /**
+     * If present, the rarity of the achievement expressed as a percentage of players that earned it. Null if not enough
+     * data is available to compute it.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("rarityPercent")
+    @Nullable
+    public native NSNumber rarityPercent();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

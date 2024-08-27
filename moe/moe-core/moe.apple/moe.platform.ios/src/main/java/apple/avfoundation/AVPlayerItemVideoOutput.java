@@ -45,6 +45,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.opaque.dispatch_queue_t;
 
 /**
  * API-Since: 6.0
@@ -207,7 +208,7 @@ public class AVPlayerItemVideoOutput extends AVPlayerItemOutput {
     @Nullable
     @Generated
     @Selector("delegateQueue")
-    public native NSObject delegateQueue();
+    public native dispatch_queue_t delegateQueue();
 
     /**
      * hasNewPixelBufferForItemTime:
@@ -268,9 +269,6 @@ public class AVPlayerItemVideoOutput extends AVPlayerItemOutput {
      * Returns an instance of AVPlayerItemVideoOutput, initialized with the specified pixel buffer attributes, for video
      * image output.
      * 
-     * This method throws an exception if the pixel buffer attributes contain keys that are not pixel buffer attribute
-     * keys.
-     * 
      * @param pixelBufferAttributes
      *                              The client requirements for output CVPixelBuffers, expressed using the constants in
      *                              <CoreVideo/CVPixelBuffer.h>.
@@ -313,5 +311,10 @@ public class AVPlayerItemVideoOutput extends AVPlayerItemOutput {
     @Selector("setDelegate:queue:")
     public native void setDelegateQueue(
             @Nullable @Mapped(ObjCObjectMapper.class) AVPlayerItemOutputPullDelegate delegate,
-            @Nullable NSObject delegateQueue);
+            @Nullable dispatch_queue_t delegateQueue);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

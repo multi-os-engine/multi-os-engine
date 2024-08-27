@@ -661,4 +661,9 @@ public class UIResponder extends NSObject implements UIResponderStandardEditActi
     @IsOptional
     @Selector("useSelectionForFind:")
     public native void useSelectionForFind(@Nullable @Mapped(ObjCObjectMapper.class) Object sender);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

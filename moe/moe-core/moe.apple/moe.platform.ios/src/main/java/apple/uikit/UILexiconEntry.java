@@ -185,4 +185,9 @@ public class UILexiconEntry extends NSObject implements NSCopying {
     @Generated
     @Selector("userInput")
     public native String userInput();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

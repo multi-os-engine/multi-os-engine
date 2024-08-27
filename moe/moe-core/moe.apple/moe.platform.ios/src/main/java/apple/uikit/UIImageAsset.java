@@ -225,4 +225,9 @@ public class UIImageAsset extends NSObject implements NSSecureCoding {
     @Generated
     @Selector("unregisterImageWithConfiguration:")
     public native void unregisterImageWithConfiguration(@NotNull UIImageConfiguration configuration);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -54,6 +54,7 @@ import apple.corefoundation.struct.CGSize;
 import apple.corefoundation.struct.CGVector;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.opaque.dispatch_queue_t;
 
 /**
  * An SKAction object is an action that is executed by a node in the scene.
@@ -919,7 +920,8 @@ public class SKAction extends NSObject implements NSCopying, NSSecureCoding {
     @Generated
     @Selector("runBlock:queue:")
     public static native SKAction runBlockQueue(
-            @NotNull @ObjCBlock(name = "call_runBlockQueue") Block_runBlockQueue block, @NotNull NSObject queue);
+            @NotNull @ObjCBlock(name = "call_runBlockQueue") Block_runBlockQueue block,
+            @NotNull dispatch_queue_t queue);
 
     /**
      * Creates an action that changes the x and y scale values of a node by a relative value
@@ -1319,4 +1321,9 @@ public class SKAction extends NSObject implements NSCopying, NSSecureCoding {
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

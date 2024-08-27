@@ -214,4 +214,9 @@ public class SCNPhysicsContact extends NSObject {
     @Selector("sweepTestFraction")
     @NFloat
     public native double sweepTestFraction();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -32,8 +32,6 @@ import org.jetbrains.annotations.NotNull;
  * 
  * API-Since: 5.0
  * Deprecated-Since: 7.0
- * Deprecated-Message: Use registerListener on GKLocalPlayer with an object that implements the GKTurnBasedEventListener
- * protocol
  */
 @Deprecated
 @Generated

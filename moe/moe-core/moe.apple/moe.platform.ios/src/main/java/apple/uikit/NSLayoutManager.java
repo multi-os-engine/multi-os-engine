@@ -1204,4 +1204,9 @@ public class NSLayoutManager extends NSObject implements NSSecureCoding {
     @Generated
     @Selector("usesDefaultHyphenation")
     public native boolean usesDefaultHyphenation();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

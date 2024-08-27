@@ -209,4 +209,9 @@ public class MPSNDArrayBinaryPrimaryGradientKernel extends MPSNDArrayMultiaryGra
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

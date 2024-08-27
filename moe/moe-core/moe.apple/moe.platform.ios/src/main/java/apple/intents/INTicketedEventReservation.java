@@ -205,4 +205,9 @@ public class INTicketedEventReservation extends INReservation implements NSCopyi
             @NInt long reservationStatus, @Nullable String reservationHolderName,
             @Nullable NSArray<? extends INReservationAction> actions, @Nullable NSURL URL,
             @Nullable INSeat reservedSeat, @NotNull INTicketedEvent event);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

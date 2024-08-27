@@ -42,9 +42,6 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-/**
- * API-Since: 10.0
- */
 @Generated
 @Library("GameplayKit")
 @Runtime(ObjCRuntime.class)
@@ -203,4 +200,9 @@ public class GKDecisionNode extends NSObject {
     @Generated
     @Selector("init")
     public native GKDecisionNode init();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

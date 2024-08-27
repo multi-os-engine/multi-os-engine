@@ -27,7 +27,6 @@ import org.moe.natj.objc.ann.Selector;
 /**
  * API-Since: 4.1
  * Deprecated-Since: 7.0
- * Deprecated-Message: Use GKGameCenterViewController instead
  */
 @Deprecated
 @Generated

@@ -288,4 +288,9 @@ public class CPTemplate extends NSObject implements NSSecureCoding {
     @Generated
     @Selector("tabTitle")
     public native String tabTitle();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

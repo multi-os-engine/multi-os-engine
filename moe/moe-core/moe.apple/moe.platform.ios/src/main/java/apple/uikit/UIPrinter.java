@@ -284,4 +284,9 @@ public class UIPrinter extends NSObject {
         @Generated
         void call_contactPrinter(boolean available);
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -246,4 +246,9 @@ public class UIRegion extends NSObject implements NSCopying, NSCoding {
     @Generated
     @Selector("regionByUnionWithRegion:")
     public native UIRegion regionByUnionWithRegion(@NotNull UIRegion region);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

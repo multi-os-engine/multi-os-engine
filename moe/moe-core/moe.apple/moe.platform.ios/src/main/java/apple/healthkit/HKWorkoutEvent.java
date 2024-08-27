@@ -282,4 +282,9 @@ public class HKWorkoutEvent extends NSObject implements NSSecureCoding, NSCopyin
     @Selector("workoutEventWithType:dateInterval:metadata:")
     public static native HKWorkoutEvent workoutEventWithTypeDateIntervalMetadata(@NInt long type,
             @NotNull NSDateInterval dateInterval, @Nullable NSDictionary<String, ?> metadata);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

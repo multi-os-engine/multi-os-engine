@@ -377,4 +377,9 @@ public class SCNFloor extends SCNGeometry {
     @Selector("width")
     @NFloat
     public native double width();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -200,4 +200,9 @@ public class NSAsynchronousFetchRequest<_ResultType> extends NSPersistentStoreRe
         @Generated
         void call_initWithFetchRequestCompletionBlock(@NotNull NSAsynchronousFetchResult<Object> arg0);
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

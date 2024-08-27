@@ -226,4 +226,9 @@ public class MPSNNDefaultPadding extends NSObject implements MPSNNPadding {
     @Generated
     @Selector("paddingForTensorflowAveragePoolingValidOnly")
     public static native MPSNNDefaultPadding paddingForTensorflowAveragePoolingValidOnly();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

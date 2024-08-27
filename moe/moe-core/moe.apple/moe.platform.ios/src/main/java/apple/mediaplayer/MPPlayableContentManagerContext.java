@@ -207,4 +207,9 @@ public class MPPlayableContentManagerContext extends NSObject {
     @Generated
     @Selector("init")
     public native MPPlayableContentManagerContext init();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

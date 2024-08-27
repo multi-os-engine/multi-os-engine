@@ -196,4 +196,9 @@ public class MTLAttributeDescriptor extends NSObject implements NSCopying {
     @Generated
     @Selector("setOffset:")
     public native void setOffset(@NUInt long value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

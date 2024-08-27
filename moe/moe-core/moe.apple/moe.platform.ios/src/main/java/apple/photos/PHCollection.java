@@ -207,4 +207,9 @@ public class PHCollection extends PHObject {
     @Generated
     @Selector("localizedTitle")
     public native String localizedTitle();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

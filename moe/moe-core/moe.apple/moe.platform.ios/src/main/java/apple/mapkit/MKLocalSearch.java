@@ -42,9 +42,6 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-/**
- * API-Since: 6.1
- */
 @Generated
 @Library("MapKit")
 @Runtime(ObjCRuntime.class)
@@ -204,4 +201,9 @@ public class MKLocalSearch extends NSObject {
     @Generated
     @Selector("initWithPointsOfInterestRequest:")
     public native MKLocalSearch initWithPointsOfInterestRequest(@NotNull MKLocalPointsOfInterestRequest request);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

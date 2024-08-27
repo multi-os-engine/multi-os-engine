@@ -261,4 +261,9 @@ public class GCGamepad extends GCPhysicalInputProfile {
         @Generated
         void call_valueChangedHandler_ret(@NotNull GCGamepad arg0, @NotNull GCControllerElement arg1);
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

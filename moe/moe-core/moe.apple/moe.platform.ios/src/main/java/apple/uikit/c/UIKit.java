@@ -285,11 +285,18 @@ public final class UIKit {
             @Nullable @Mapped(ObjCStringMapper.class) String principalClassName,
             @Nullable @Mapped(ObjCStringMapper.class) String delegateClassName);
 
+    /**
+     * return image as PNG. May return nil if image has no CGImageRef or invalid bitmap format
+     */
     @Nullable
     @Generated
     @CFunction
     public static native NSData UIImagePNGRepresentation(@NotNull UIImage image);
 
+    /**
+     * return image as JPEG. May return nil if image has no CGImageRef or invalid bitmap format. compression is
+     * 0(most)..1(least)
+     */
     @Nullable
     @Generated
     @CFunction
@@ -580,24 +587,46 @@ public final class UIKit {
     /**
      * The following methods will only return a 8-bit per channel context in the DeviceRGB color space.
      * Any new bitmap drawing code is encouraged to use UIGraphicsImageRenderer in lieu of this API.
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Replace usage of UIGraphicsBeginImageContext with UIGraphicsImageRenderer.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native void UIGraphicsBeginImageContext(@ByValue CGSize size);
 
     /**
      * API-Since: 4.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Replace usage of UIGraphicsBeginImageContextWithOptions with UIGraphicsImageRenderer.
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native void UIGraphicsBeginImageContextWithOptions(@ByValue CGSize size, boolean opaque,
             @NFloat double scale);
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Replace usage of UIGraphicsGetImageFromCurrentImageContext with
+     * UIGraphicsImageRendererContext.currentImage.
+     */
+    @Deprecated
     @Nullable
     @Generated
     @CFunction
     public static native UIImage UIGraphicsGetImageFromCurrentImageContext();
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: UIGraphicsEndImageContext should only be used alongside
+     * UIGraphicsBeginImageContext[WithOptions].
+     */
+    @Deprecated
     @Generated
     @CFunction
     public static native void UIGraphicsEndImageContext();
@@ -3814,7 +3843,10 @@ public final class UIKit {
      * NSNumber containing floating point value; skew to be applied to glyphs, default 0: no skew
      * 
      * API-Since: 7.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: This attribute is no longer supported with TextKit 2
      */
+    @Deprecated
     @NotNull
     @Generated
     @CVariable()
@@ -3826,7 +3858,10 @@ public final class UIKit {
      * expansion
      * 
      * API-Since: 7.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: This attribute is no longer supported with TextKit 2
      */
+    @Deprecated
     @NotNull
     @Generated
     @CVariable()
@@ -3855,7 +3890,10 @@ public final class UIKit {
      * for any other value is undefined.
      * 
      * API-Since: 6.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: This attribute is no longer supported with TextKit 2
      */
+    @Deprecated
     @NotNull
     @Generated
     @CVariable()
@@ -5335,7 +5373,6 @@ public final class UIKit {
     public static native String NSSourceTextScalingDocumentOption();
 
     /**
-     * Deprecated ***********************
      * NSUnderlineByWord and the NSUnderlinePattern* values are soft deprecated starting with macOS 10.14/iOS 12 and
      * will be officially deprecated in a future release. Please use the NSUnderlineStyle* equivalents instead.
      * Underlines will be drawn with a solid pattern by default, so NSUnderlinePatternSolid does not need to be
@@ -6417,4 +6454,290 @@ public final class UIKit {
     @Generated public static final double NSLAYOUTCONSTRAINT_H = 1.0;
     @Generated public static final double NSLAYOUTANCHOR_H = 1.0;
     @Generated public static final double __NSLAYOUT_MANAGER_SHARED_SECTION__ = 1.0;
+
+    /**
+     * Returns HEIC data representing the image, or nil if such a representation could not be generated. HEIC is
+     * recommended for efficiently storing all kinds of images, including those with high dynamic range content.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @CFunction
+    @Nullable
+    public static native NSData UIImageHEICRepresentation(@NotNull UIImage image);
+
+    /**
+     * Used when the element should be treated as a toggle.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    public static native long UIAccessibilityTraitToggleButton();
+
+    /**
+     * Used when the element has zoom functionality.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    public static native long UIAccessibilityTraitSupportsZoom();
+
+    /**
+     * Announcements will interrupt other speech and cannot be interrupted once started.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String UIAccessibilityPriorityHigh();
+
+    /**
+     * Announcements will interrupt existing speech, but are interruptible if a new speech utterance is started.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String UIAccessibilityPriorityDefault();
+
+    /**
+     * Announcements are queued and spoken when other speech utterances have completed.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String UIAccessibilityPriorityLow();
+
+    /**
+     * Use with a UIAccessibilityAnnouncementPriority value to specify whether this announcement can be queued or
+     * interrupted.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String UIAccessibilitySpeechAttributeAnnouncementPriority();
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String UIFontTextStyleExtraLargeTitle();
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String UIFontTextStyleExtraLargeTitle2();
+
+    /**
+     * for HTML writing only; NSNumber containing a BOOL, when true the HTML writer will not include font information
+     * unless specified
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String NSDefaultFontExcludedDocumentAttribute();
+
+    /**
+     * AutoFill menu
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String UIMenuAutoFill();
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String UITextContentTypeBirthdate();
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String UITextContentTypeBirthdateDay();
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String UITextContentTypeBirthdateMonth();
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String UITextContentTypeBirthdateYear();
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String UITextContentTypeCreditCardSecurityCode();
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String UITextContentTypeCreditCardName();
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String UITextContentTypeCreditCardGivenName();
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String UITextContentTypeCreditCardMiddleName();
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String UITextContentTypeCreditCardFamilyName();
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String UITextContentTypeCreditCardExpiration();
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String UITextContentTypeCreditCardExpirationMonth();
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String UITextContentTypeCreditCardExpirationYear();
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String UITextContentTypeCreditCardType();
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @NFloat
+    public static native double UICollectionLayoutSectionOrthogonalScrollingDecelerationRateAutomatic();
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @NFloat
+    public static native double UICollectionLayoutSectionOrthogonalScrollingDecelerationRateNormal();
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @NFloat
+    public static native double UICollectionLayoutSectionOrthogonalScrollingDecelerationRateFast();
+
+    /**
+     * API-Since: 16.4
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String UIActivityItemsConfigurationInteractionCopy();
+
+    /**
+     * The attribute name for adding a text item with a specified custom tag. The value of the attribute must be an
+     * `NSString`.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String UITextItemTagAttributeName();
+
+    /**
+     * API-Since: 16.4
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String UIActivityTypeAddToHomeScreen();
 }

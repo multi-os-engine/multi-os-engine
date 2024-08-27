@@ -218,4 +218,9 @@ public class UIPreviewParameters extends NSObject implements NSCopying {
     @Generated
     @Selector("shadowPath")
     public native UIBezierPath shadowPath();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -252,4 +252,9 @@ public class MDLStereoscopicCamera extends MDLCamera {
     @Generated
     @Selector("setRightVergence:")
     public native void setRightVergence(float value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

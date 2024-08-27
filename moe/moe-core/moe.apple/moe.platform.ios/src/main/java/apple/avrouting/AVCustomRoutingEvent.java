@@ -25,12 +25,10 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
- * AVCustomRoutingEvent
+ * An object that represents an event that occurs on a route.
  * 
- * This class represents an event that occurs on a route.
- * 
- * Depending on the reason for the event, clients are expected to establish or tear down the connection to the given
- * route.
+ * Depending on the route’s reason, apps establish or tear down a connection to
+ * a specified route.
  * 
  * API-Since: 16.0
  */
@@ -132,9 +130,8 @@ public class AVCustomRoutingEvent extends NSObject {
     public static native AVCustomRoutingEvent new_objc();
 
     /**
-     * [@property] reason
-     * 
-     * The reason for the event.
+     * A reason for an event, such as a user request to activate or deactivate a
+     * route.
      * 
      * API-Since: 16.0
      */
@@ -152,9 +149,7 @@ public class AVCustomRoutingEvent extends NSObject {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * [@property] route
-     * 
-     * The route associated with the event.
+     * A route for the event.
      * 
      * API-Since: 16.0
      */
@@ -175,4 +170,9 @@ public class AVCustomRoutingEvent extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

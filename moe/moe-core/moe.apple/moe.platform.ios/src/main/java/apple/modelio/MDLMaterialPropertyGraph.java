@@ -192,4 +192,9 @@ public class MDLMaterialPropertyGraph extends MDLMaterialPropertyNode {
     @Generated
     @Selector("nodes")
     public native NSArray<? extends MDLMaterialPropertyNode> nodes();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

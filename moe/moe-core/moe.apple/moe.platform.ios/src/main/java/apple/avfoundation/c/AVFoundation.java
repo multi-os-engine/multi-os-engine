@@ -36,6 +36,9 @@ import apple.corefoundation.struct.CGRect;
 import apple.corefoundation.struct.CGSize;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.corefoundation.opaque.CFAllocatorRef;
+import apple.coremedia.opaque.CMTagCollectionRef;
+import org.moe.natj.general.ann.Mapped;
 
 @Generated
 @Library("AVFoundation")
@@ -750,10 +753,12 @@ public final class AVFoundation {
 
     /**
      * [@constant] AVCaptureDeviceTypeBuiltInMicrophone
-     * A built-in microphone.
+     * A deprecated synonym for AVCaptureDeviceTypeMicrophone. Please use AVCaptureDeviceTypeMicrophone instead.
      * 
      * API-Since: 10.0
+     * Deprecated-Since: 17.0
      */
+    @Deprecated
     @NotNull
     @Generated
     @CVariable()
@@ -7368,8 +7373,8 @@ public final class AVFoundation {
      * The value for this key is an NSDictionary containing AVVideoPixelAspectRatio*Key keys. If no value is specified
      * for this key, the default value for the codec is used. Usually this is 1:1, meaning square pixels.
      * 
-     * Note that prior to OS X 10.9 and iOS 7.0, this key could only be specified as part of the dictionary given for
-     * AVVideoCompressionPropertiesKey. As of OS X 10.9 and iOS 7.0, the top level of an AVVideoSettings dictionary is
+     * Note that prior to macOS 10.9 and iOS 7.0, this key could only be specified as part of the dictionary given for
+     * AVVideoCompressionPropertiesKey. As of macOS 10.9 and iOS 7.0, the top level of an AVVideoSettings dictionary is
      * the preferred place to specify this key.
      * 
      * API-Since: 4.0
@@ -7412,8 +7417,8 @@ public final class AVFoundation {
      * 
      * If no clean aperture region is specified, the entire frame will be displayed during playback.
      * 
-     * Note that prior to OS X 10.9 and iOS 7.0, this key could only be specified as part of the dictionary given for
-     * AVVideoCompressionPropertiesKey. As of OS X 10.9 and iOS 7.0, the top level of an AVVideoSettings dictionary is
+     * Note that prior to macOS 10.9 and iOS 7.0, this key could only be specified as part of the dictionary given for
+     * AVVideoCompressionPropertiesKey. As of macOS 10.9 and iOS 7.0, the top level of an AVVideoSettings dictionary is
      * the preferred place to specify this key.
      * 
      * API-Since: 4.0
@@ -10020,4 +10025,536 @@ public final class AVFoundation {
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String AVMetadataObjectTypeMicroPDF417Code();
+
+    /**
+     * [@function] CMTagCollectionCreateWithVideoOutputPreset
+     * 
+     * Creates a CMTagCollection with the required tags to describe the specified video output requirements.
+     * 
+     * Convenience constructor to create a CMTagCollection with all of the required tags for use with video output
+     * interfaces.
+     * 
+     * @param allocator
+     *                         CFAllocator to use to create the collection and internal data structures.
+     * @param preset
+     *                         CMTagCollectionVideoOutputPreset representing the desired video output scenario.
+     * @param newCollectionOut
+     *                         Address of a location to the newly created CMTagCollection. The client is responsible for
+     *                         releasing the returned CMTagCollection.
+     * @return noErr if successful. Otherwise, an error describing why a tag collection could not be created.
+     * 
+     *         API-Since: 17.2
+     */
+    @Generated
+    @CFunction
+    public static native int CMTagCollectionCreateWithVideoOutputPreset(@Nullable CFAllocatorRef allocator, int preset,
+            @NotNull Ptr<CMTagCollectionRef> newCollectionOut);
+
+    /**
+     * [@function] AVCaptureReactionSystemImageNameForType
+     * 
+     * Returns the name for UIImage or NSImage systemImageNamed: method to obtain the recommended iconography for a
+     * specified reaction type.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @CFunction
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String AVCaptureReactionSystemImageNameForType(
+            @Mapped(ObjCStringMapper.class) @NotNull String reactionType);
+
+    /**
+     * API-Since: 10.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVMediaTypeHaptic();
+
+    /**
+     * [@constant] AVMediaCharacteristicEnhancesSpeechIntelligibility
+     * 
+     * A media characteristic that indicates that a track or media selection option includes audio that has been
+     * prepared or otherwise processed to heighten the intelligibility of speech.
+     * 
+     * The value of this characteristic is @"public.accessibility.enhances-speech-intelligibility".
+     * 
+     * Note for content authors: for QuickTime movie and .m4v files a media option is considered to have the
+     * characteristic AVMediaCharacteristicEnhancesSpeechIntelligibility only if it's explicitly tagged with that
+     * characteristic.
+     * See the discussion of the tagging of tracks with media characteristics below.
+     * 
+     * Also see -[AVAssetTrack hasMediaCharacteristic:] and -[AVMediaSelectionOption hasMediaCharacteristic:].
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVMediaCharacteristicEnhancesSpeechIntelligibility();
+
+    /**
+     * [@constant] AVMediaCharacteristicTactileMinimal
+     * 
+     * A media characteristic that indicates that a track or media selection option includes haptic content that's
+     * marked by the content author as providing minimal tactile stimulation.
+     * 
+     * Example: an option that presents low strength haptics feedback when user is actively attending the device, would
+     * typically have this characteristic.
+     * See -[AVAssetTrack hasMediaCharacteristic:] and -[AVMediaSelectionOption hasMediaCharacteristic:].
+     * The value of this characteristic is @"public.haptics.minimal".
+     * Note for content authors: for QuickTime movie and MPEG-4 files a track is considered to have the characteristic
+     * AVMediaCharacteristicTactileMinimal only if it's explicitly tagged with that characteristic.
+     * See the discussion of the tagging of tracks with media characteristics below.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVMediaCharacteristicTactileMinimal();
+
+    /**
+     * [@constant] AVMediaCharacteristicContainsStereoMultiviewVideo
+     * 
+     * A media characteristic that indicates that a track contains stereoscopic video captured in a multiview
+     * compression format.
+     * 
+     * Stereoscopic video contains two views with one view for the left eye and one view for the right eye. Multiview
+     * video contains more than one view (not necessarily stereoscopic) in the same compressed video sample. The
+     * combination of stereoscopic and multiview indicates that multiview carriage is used to carry at least two
+     * stereoscopic views. It does not imply that there might not be more than two views. Access to the two stereo views
+     * may require opt-in to retrieve both views. Accessing only one of the left or right stereoscopic views as a
+     * fallback for playback or compositing where stereoscopic rendering is not supported may itself not be supported.
+     * The value of this characteristic is @“public.contains-stereo-multiview-video".
+     * Note for content authors: the presence of this characteristic is strictly inferred from the format description of
+     * the associated track.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVMediaCharacteristicContainsStereoMultiviewVideo();
+
+    /**
+     * [@constant] AVMediaCharacteristicCarriesVideoStereoMetadata
+     * 
+     * A media characteristic that indicates that the stereoscopic video track carries additional information related to
+     * the stereoscopic video.
+     * 
+     * This is not an indication that the encoded video carries stereoscopic views. It instead indicates that it carries
+     * additional information that may influence the interpretation of those views and contribute to a better
+     * experience.
+     * The value of this characteristic is @“com.apple.quicktime.video.stereo-metadata".
+     * Note for content authors: the presence of this characteristic is strictly inferred from the format description of
+     * the associated track.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVMediaCharacteristicCarriesVideoStereoMetadata();
+
+    /**
+     * [@constant] AVMediaCharacteristicIndicatesHorizontalFieldOfView
+     * 
+     * A media characteristic that indicates the video track carries information related to the horizontal field of
+     * view.
+     * 
+     * This media characteristic is currently synthesized if the CMVideoFormatDescription includes a
+     * kCMFormatDescriptionExtension_HorizontalFieldOfView extension. This is not an indication that the field of view
+     * is expanded beyond or more narrow than typical horizontal fields of view.
+     * The value of this characteristic is @“public.indicates-horizontal-field-of-view".
+     * Note for content authors: the presence of this characteristic is strictly inferred from the format description of
+     * the associated track.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVMediaCharacteristicIndicatesHorizontalFieldOfView();
+
+    /**
+     * [@constant] AVFileTypeAHAP
+     * 
+     * A UTI for the Apple Haptics Audio Pattern file format.
+     * 
+     * The value of this UTI is @"public.haptics-content".
+     * Files are identified with the .ahap extension.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVFileTypeAHAP();
+
+    /**
+     * NSDictionary
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVVideoDecompressionPropertiesKey();
+
+    /**
+     * [@constant] AVURLAssetOverrideMIMETypeKey
+     * 
+     * Indicates the MIME type that should be used to identify the format of the media resource.
+     * 
+     * When a value for this key is provided, only the specified MIME type is considered in determining how to handle or
+     * parse the media resource. Any other information that may be available, such as the URL path extension or a
+     * server-provided MIME type, is ignored.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String AVURLAssetOverrideMIMETypeKey();
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String AVAssetExportPresetMVHEVC960x960();
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String AVAssetExportPresetMVHEVC1440x1440();
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String AVVideoCompositionPerFrameHDRDisplayMetadataPolicyPropagate();
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String AVVideoCompositionPerFrameHDRDisplayMetadataPolicyGenerate();
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String AVOutputSettingsPresetMVHEVC960x960();
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String AVOutputSettingsPresetMVHEVC1440x1440();
+
+    /**
+     * [@constant] AVPlayerInterstitialEventMonitorAssetListResponseStatusDidChangeNotification
+     * 
+     * A notification that is posted whenever an AVPlayerInterstitialEvent's asset list response status changes.
+     * 
+     * Carries a userInfo dictionary that can contain the following keys and values:
+     * 1. AVPlayerInterstitialEventMonitorAssetListResponseStatusDidChangeEventKey, with a value that indicates the
+     * AVPlayerInterstitialEvent for which the asset response status has changed.
+     * 2. AVPlayerInterstitialEventMonitorAssetListResponseStatusDidChangeStatusKey, with a value of type
+     * AVPlayerInterstitialEventAssetListResponseStatus, indicating the changed asset response status.
+     * 3. AVPlayerInterstitialEventMonitorAssetListResponseStatusDidChangeErrorKey, with a value of type NSError that
+     * carries additional information about the failure to read the asset list. This key is only present when the new
+     * AVPlayerInterstitialEventAssetListResponseStatus is AVPlayerInterstitialEventAssetListResponseStatusUnavailable.
+     * 
+     * API-Since: 16.4
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String AVPlayerInterstitialEventMonitorAssetListResponseStatusDidChangeNotification();
+
+    /**
+     * [@constant] AVPlayerInterstitialEventMonitorAssetListResponseStatusDidChangeEventKey
+     * 
+     * The dictionary key for the AVPlayerInterstitial event that had its asset list response status changed in the
+     * payload of the AVPlayerInterstitialEventMonitorAssetListResponseStatusDidChangeNotification.
+     * 
+     * The value corresponding to this key is of type AVPlayerInterstitialEvent.
+     * 
+     * API-Since: 16.4
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String AVPlayerInterstitialEventMonitorAssetListResponseStatusDidChangeEventKey();
+
+    /**
+     * [@constant] AVPlayerInterstitialEventMonitorAssetListResponseStatusDidChangeStatusKey
+     * 
+     * The dictionary key for the asset list response status in the payload of the
+     * AVPlayerInterstitialEventMonitorAssetListResponseStatusDidChangeNotification.
+     * 
+     * The value corresponding to this key is of type AVPlayerInterstitialEventAssetListResponseStatus.
+     * 
+     * API-Since: 16.4
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String AVPlayerInterstitialEventMonitorAssetListResponseStatusDidChangeStatusKey();
+
+    /**
+     * [@constant] AVPlayerInterstitialEventMonitorAssetListResponseStatusDidChangeErrorKey
+     * 
+     * The dictionary key for the NSError in the payload of the
+     * AVPlayerInterstitialEventMonitorAssetListResponseStatusDidChangeNotification.
+     * 
+     * The value corresponding to this key is of type NSError. This key only exists in the payload of
+     * AVPlayerInterstitialEventMonitorAssetListResponseStatusDidChangeNotification if
+     * AVPlayerInterstitialEventMonitorAssetListResponseStatusDidChangeStatusKey in the same payload points to a value
+     * of AVPlayerInterstitialEventAssetListResponseStatusUnavailable.
+     * 
+     * API-Since: 16.4
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String AVPlayerInterstitialEventMonitorAssetListResponseStatusDidChangeErrorKey();
+
+    /**
+     * decode failed, see NSError in notification payload
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String AVSampleBufferVideoRendererDidFailToDecodeNotification();
+
+    /**
+     * NSError
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String AVSampleBufferVideoRendererDidFailToDecodeNotificationErrorKey();
+
+    /**
+     * see requiresFlushToResumeDecoding property
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String AVSampleBufferVideoRendererRequiresFlushToResumeDecodingDidChangeNotification();
+
+    /**
+     * [@constant] AVCaptureReactionTypeThumbsUp
+     * 
+     * Indicates a reaction which features a thumbs-up symbol.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String AVCaptureReactionTypeThumbsUp();
+
+    /**
+     * [@constant] AVCaptureReactionTypeThumbsDown
+     * 
+     * Indicates a reaction which features a thumbs-down symbol.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String AVCaptureReactionTypeThumbsDown();
+
+    /**
+     * [@constant] AVCaptureReactionTypeBalloons
+     * 
+     * Indicates a reaction which features balloons rising through the scene.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String AVCaptureReactionTypeBalloons();
+
+    /**
+     * [@constant] AVCaptureReactionTypeHeart
+     * 
+     * Indicates a reaction which features one or more heart symbols.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String AVCaptureReactionTypeHeart();
+
+    /**
+     * [@constant] AVCaptureReactionTypeFireworks
+     * 
+     * Indicates a reaction which features fireworks bursting in the background.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String AVCaptureReactionTypeFireworks();
+
+    /**
+     * [@constant] AVCaptureReactionTypeRain
+     * 
+     * Indicates a reaction which features a dark and stormy night.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String AVCaptureReactionTypeRain();
+
+    /**
+     * [@constant] AVCaptureReactionTypeConfetti
+     * 
+     * Indicates a reaction which features festive spots of color falling through the scene.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String AVCaptureReactionTypeConfetti();
+
+    /**
+     * [@constant] AVCaptureReactionTypeLasers
+     * 
+     * Indicates a reaction which features a bright laser display projecting into the scene.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String AVCaptureReactionTypeLasers();
+
+    /**
+     * [@constant] AVCaptureDeviceTypeExternal
+     * An external device type. On iPad, external devices are those that conform to the UVC (USB Video Class)
+     * specification.
+     * 
+     * Starting in Mac Catalyst 17.0, apps may opt in for using AVCaptureDeviceTypeExternal by adding the following key
+     * to their Info.plist:
+     * <key>NSCameraUseExternalDeviceType</key>
+     * <true/>
+     * 
+     * Otherwise, external cameras on Mac Catalyst report that their device type is
+     * AVCaptureDeviceTypeBuiltInWideAngleCamera.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String AVCaptureDeviceTypeExternal();
+
+    /**
+     * [@constant] AVCaptureDeviceTypeMicrophone
+     * A microphone. On iOS and tvOS, only one AVCaptureDevice of type AVCaptureDeviceTypeMicrophone is exposed to the
+     * system. The audio routing subsystem decides which physical microphone to use, be it a built in microphone, a
+     * wired headset, an external microphone, etc. The microphone device's `localizedName` will change as the audio
+     * subsystem switches to a different physical device.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String AVCaptureDeviceTypeMicrophone();
+
+    /**
+     * [@constant] AVCaptureDeviceTypeContinuityCamera
+     * A continuity camera device. These devices are suitable for general purpose use. Note that devices of this type
+     * may only be discovered using an AVCaptureDeviceDiscoverySession or -[AVCaptureDevice
+     * defaultDeviceWithDeviceType:mediaType:position:].
+     * 
+     * Starting in macOS 14.0 and Mac Catalyst 17.0, apps may opt in for using AVCaptureDeviceTypeContinuityCamera by
+     * adding the following key to their Info.plist:
+     * <key>NSCameraUseContinuityCameraDeviceType</key>
+     * <true/>
+     * 
+     * Otherwise, continuity cameras on macOS and Mac Catalyst report that their device type is
+     * AVCaptureDeviceTypeBuiltInWideAngleCamera.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String AVCaptureDeviceTypeContinuityCamera();
+
+    /**
+     * [@constant] AVMetadataObjectTypeHumanFullBody
+     * 
+     * An identifier for an instance of AVMetadataHumanFullBodyObject.
+     * 
+     * AVMetadataHumanFullBodyObject objects return this constant as their type.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String AVMetadataObjectTypeHumanFullBody();
 }

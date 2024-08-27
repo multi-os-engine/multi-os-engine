@@ -257,4 +257,9 @@ public class VSAccountManager extends NSObject {
         void call_enqueueAccountMetadataRequestCompletionHandler(@Nullable VSAccountMetadata metadata,
                 @Nullable NSError error);
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -44,8 +44,6 @@ import org.jetbrains.annotations.Nullable;
 /**
  * Represents a user-configurable option for the compose session.
  * For allowing the user to choose which account to post from, what privacy settings to use, etc.
- * 
- * API-Since: 8.0
  */
 @Generated
 @Library("Social")
@@ -242,4 +240,9 @@ public class SLComposeSheetConfigurationItem extends NSObject {
         @Generated
         void call_tapHandler_ret();
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

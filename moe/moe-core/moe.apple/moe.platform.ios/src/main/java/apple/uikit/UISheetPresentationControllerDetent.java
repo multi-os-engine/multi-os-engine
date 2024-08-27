@@ -220,4 +220,9 @@ public class UISheetPresentationControllerDetent extends NSObject {
     @NFloat
     public native double resolvedValueInContext(
             @NotNull @Mapped(ObjCObjectMapper.class) UISheetPresentationControllerDetentResolutionContext context);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

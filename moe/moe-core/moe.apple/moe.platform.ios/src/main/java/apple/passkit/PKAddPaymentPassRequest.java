@@ -203,4 +203,9 @@ public class PKAddPaymentPassRequest extends NSObject {
     @Generated
     @Selector("wrappedKey")
     public native NSData wrappedKey();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -208,4 +208,9 @@ public class HKQueryDescriptor extends NSObject implements NSCopying, NSSecureCo
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

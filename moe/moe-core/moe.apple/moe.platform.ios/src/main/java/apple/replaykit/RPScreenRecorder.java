@@ -511,4 +511,9 @@ public class RPScreenRecorder extends NSObject {
         @Generated
         void call_stopClipBufferingWithCompletionHandler(@Nullable NSError error);
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

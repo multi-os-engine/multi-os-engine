@@ -398,4 +398,9 @@ public class UIPopoverPresentationController extends UIPresentationController {
     @Selector("sourceItem")
     @MappedReturn(ObjCObjectMapper.class)
     public native UIPopoverPresentationControllerSourceItem sourceItem();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

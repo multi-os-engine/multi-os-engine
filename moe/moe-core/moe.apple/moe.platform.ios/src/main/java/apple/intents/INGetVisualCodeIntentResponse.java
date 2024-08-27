@@ -192,4 +192,9 @@ public class INGetVisualCodeIntentResponse extends INIntentResponse {
     @Generated
     @Selector("visualCodeImage")
     public native INImage visualCodeImage();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

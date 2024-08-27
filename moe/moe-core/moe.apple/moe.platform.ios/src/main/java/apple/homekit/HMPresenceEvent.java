@@ -197,4 +197,9 @@ public class HMPresenceEvent extends HMEvent implements NSCopying, NSMutableCopy
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

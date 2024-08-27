@@ -321,4 +321,9 @@ public class ALAssetsGroup extends NSObject {
         @Generated
         void call_enumerateAssetsWithOptionsUsingBlock(ALAsset result, @NUInt long index, BoolPtr stop);
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

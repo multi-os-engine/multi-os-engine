@@ -601,4 +601,9 @@ public class VNTargetedImageRequest extends VNImageBasedRequest {
         void call_initWithTargetedCMSampleBufferOrientationOptionsCompletionHandler(@NotNull VNRequest request,
                 @Nullable NSError error);
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

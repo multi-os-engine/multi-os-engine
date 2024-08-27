@@ -210,4 +210,9 @@ public class MPMediaQuerySection extends NSObject implements NSSecureCoding, NSC
     @Generated
     @Selector("title")
     public native String title();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

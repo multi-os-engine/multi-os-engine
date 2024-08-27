@@ -220,4 +220,9 @@ public class UIAccessibilityCustomRotorItemResult extends NSObject {
     @Generated
     @Selector("targetRange")
     public native UITextRange targetRange();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

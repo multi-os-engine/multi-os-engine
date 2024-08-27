@@ -195,4 +195,9 @@ public class UILargeContentViewerInteraction extends NSObject implements UIInter
     @Generated
     @Selector("willMoveToView:")
     public native void willMoveToView(@Nullable UIView view);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

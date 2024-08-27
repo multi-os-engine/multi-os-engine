@@ -349,4 +349,9 @@ public class ABPersonViewController extends UIViewController implements UIViewCo
             @NotNull NSArray<String> identifierComponents, @NotNull NSCoder coder) {
         return viewControllerWithRestorationIdentifierPathCoder(identifierComponents, coder);
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

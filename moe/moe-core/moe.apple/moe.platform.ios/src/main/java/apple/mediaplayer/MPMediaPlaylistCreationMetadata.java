@@ -195,4 +195,9 @@ public class MPMediaPlaylistCreationMetadata extends NSObject {
     @Generated
     @Selector("setDescriptionText:")
     public native void setDescriptionText(@NotNull String value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

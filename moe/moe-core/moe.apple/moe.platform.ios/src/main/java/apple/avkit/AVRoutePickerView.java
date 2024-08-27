@@ -40,12 +40,6 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
- * AVRoutePickerView
- * 
- * AVRoutePickerView is a subclass of UIView that displays controls for picking playback routes.
- * 
- * Media from AVPlayer or AVSampleBufferAudioRenderer can be routed to compatible AirPlay destinations.
- * 
  * API-Since: 11.0
  */
 @Generated
@@ -70,6 +64,8 @@ public class AVRoutePickerView extends UIView {
      * [@property] activeTintColor
      * 
      * The view's tint color when AirPlay is active.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("activeTintColor")
@@ -351,6 +347,8 @@ public class AVRoutePickerView extends UIView {
      * [@property] activeTintColor
      * 
      * The view's tint color when AirPlay is active.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setActiveTintColor:")
@@ -531,4 +529,16 @@ public class AVRoutePickerView extends UIView {
     @Generated
     @Selector("setCustomRoutingController:")
     public native void setCustomRoutingController(@Nullable AVCustomRoutingController value);
+
+    @Generated
+    @Selector("animateWithSpringDuration:bounce:initialSpringVelocity:delay:options:animations:completion:")
+    public static native void animateWithSpringDurationBounceInitialSpringVelocityDelayOptionsAnimationsCompletion(
+            double duration, @NFloat double bounce, @NFloat double velocity, double delay, @NUInt long options,
+            @ObjCBlock(name = "call_animateWithSpringDurationBounceInitialSpringVelocityDelayOptionsAnimationsCompletion_5") @NotNull UIView.Block_animateWithSpringDurationBounceInitialSpringVelocityDelayOptionsAnimationsCompletion_5 animations,
+            @ObjCBlock(name = "call_animateWithSpringDurationBounceInitialSpringVelocityDelayOptionsAnimationsCompletion_6") @Nullable UIView.Block_animateWithSpringDurationBounceInitialSpringVelocityDelayOptionsAnimationsCompletion_6 completion);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

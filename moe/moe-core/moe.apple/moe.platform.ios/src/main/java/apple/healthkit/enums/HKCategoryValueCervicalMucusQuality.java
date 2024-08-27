@@ -22,7 +22,8 @@ import org.moe.natj.general.ann.NInt;
 /**
  * [@enum] HKCategoryValueCervicalMucusQuality
  * 
- * Set of values that may be used for HKCategorySamples with the HKCategoryTypeIdentifierCervicalMucusQuality type.
+ * Set of values that may be used for HKCategorySamples with the
+ * HKCategoryTypeIdentifierCervicalMucusQuality type.
  * 
  * These cervical mucus quality values are ordered from least-fertile (Dry) to most-fertile (EggWhite).
  * 

@@ -277,4 +277,9 @@ public class VNFaceObservation extends VNDetectedObjectObservation {
     @Generated
     @Selector("pitch")
     public native NSNumber pitch();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

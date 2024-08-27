@@ -171,4 +171,9 @@ public class UIFeedbackGenerator extends NSObject {
     @Generated
     @Selector("prepare")
     public native void prepare();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -187,4 +187,9 @@ public class AUViewController extends UIViewController implements NSExtensionReq
     @Selector("initWithNibName:bundle:")
     public native AUViewController initWithNibNameBundle(@Nullable String nibNameOrNil,
             @Nullable NSBundle nibBundleOrNil);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

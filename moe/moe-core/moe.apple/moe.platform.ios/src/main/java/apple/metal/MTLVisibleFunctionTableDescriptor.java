@@ -182,4 +182,9 @@ public class MTLVisibleFunctionTableDescriptor extends NSObject implements NSCop
     @Generated
     @Selector("visibleFunctionTableDescriptor")
     public static native MTLVisibleFunctionTableDescriptor visibleFunctionTableDescriptor();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

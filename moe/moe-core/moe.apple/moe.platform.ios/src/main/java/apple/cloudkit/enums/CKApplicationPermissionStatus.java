@@ -29,25 +29,36 @@ import org.moe.natj.general.ann.NInt;
  * [@constant] CKApplicationPermissionStatusGranted The user has granted this application permission
  * 
  * API-Since: 8.0
+ * Deprecated-Since: 17.0
+ * Deprecated-Message: No longer supported. Please see Sharing CloudKit Data with Other iCloud Users.
  */
+@Deprecated
 @Generated
 public final class CKApplicationPermissionStatus {
     /**
      * API-Since: 8.0
+     * Deprecated-Since: 17.0
+     * Deprecated-Message: No longer supported. Please see Sharing CloudKit Data with Other iCloud Users.
      */
-    @Generated @NInt public static final long InitialState = 0x0000000000000000L;
+    @Deprecated @Generated @NInt public static final long InitialState = 0x0000000000000000L;
     /**
      * API-Since: 8.0
+     * Deprecated-Since: 17.0
+     * Deprecated-Message: No longer supported. Please see Sharing CloudKit Data with Other iCloud Users.
      */
-    @Generated @NInt public static final long CouldNotComplete = 0x0000000000000001L;
+    @Deprecated @Generated @NInt public static final long CouldNotComplete = 0x0000000000000001L;
     /**
      * API-Since: 8.0
+     * Deprecated-Since: 17.0
+     * Deprecated-Message: No longer supported. Please see Sharing CloudKit Data with Other iCloud Users.
      */
-    @Generated @NInt public static final long Denied = 0x0000000000000002L;
+    @Deprecated @Generated @NInt public static final long Denied = 0x0000000000000002L;
     /**
      * API-Since: 8.0
+     * Deprecated-Since: 17.0
+     * Deprecated-Message: No longer supported. Please see Sharing CloudKit Data with Other iCloud Users.
      */
-    @Generated @NInt public static final long Granted = 0x0000000000000003L;
+    @Deprecated @Generated @NInt public static final long Granted = 0x0000000000000003L;
 
     @Generated
     private CKApplicationPermissionStatus() {

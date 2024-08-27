@@ -31,9 +31,6 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-/**
- * API-Since: 12.0
- */
 @Generated
 @Library("NaturalLanguage")
 @Runtime(ObjCRuntime.class)
@@ -215,4 +212,9 @@ public class NLModel extends NSObject {
     @Selector("predictedLabelHypothesesForTokens:maximumCount:")
     public native NSArray<? extends NSDictionary<String, ? extends NSNumber>> predictedLabelHypothesesForTokensMaximumCount(
             @NotNull NSArray<String> tokens, @NUInt long maximumCount);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

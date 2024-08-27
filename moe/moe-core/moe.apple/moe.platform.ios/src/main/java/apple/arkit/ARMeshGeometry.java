@@ -199,4 +199,9 @@ public class ARMeshGeometry extends NSObject implements NSSecureCoding {
     @Generated
     @Selector("vertices")
     public native ARGeometrySource vertices();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

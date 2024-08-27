@@ -51,9 +51,6 @@ import apple.corefoundation.struct.CGRect;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-/**
- * API-Since: 5.0
- */
 @Generated
 @Library("CoreImage")
 @Runtime(ObjCRuntime.class)
@@ -375,4 +372,9 @@ public class CIVector extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("valueAtIndex:")
     @NFloat
     public native double valueAtIndex(@NUInt long index);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

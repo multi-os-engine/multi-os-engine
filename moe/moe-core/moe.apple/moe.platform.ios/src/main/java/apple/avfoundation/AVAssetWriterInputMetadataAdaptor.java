@@ -260,4 +260,9 @@ public class AVAssetWriterInputMetadataAdaptor extends NSObject {
     @Generated
     @Selector("initWithAssetWriterInput:")
     public native AVAssetWriterInputMetadataAdaptor initWithAssetWriterInput(@NotNull AVAssetWriterInput input);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

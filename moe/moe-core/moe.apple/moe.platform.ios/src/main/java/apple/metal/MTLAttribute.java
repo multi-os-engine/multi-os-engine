@@ -193,4 +193,9 @@ public class MTLAttribute extends NSObject {
     @Generated
     @Selector("name")
     public native String name();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

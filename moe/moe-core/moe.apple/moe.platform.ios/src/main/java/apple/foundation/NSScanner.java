@@ -320,4 +320,9 @@ public class NSScanner extends NSObject implements NSCopying {
     @Generated
     @Selector("string")
     public native String string();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

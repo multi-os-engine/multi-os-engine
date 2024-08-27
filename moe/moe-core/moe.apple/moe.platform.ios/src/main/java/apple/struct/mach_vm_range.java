@@ -6,6 +6,7 @@ import org.moe.natj.c.ann.StructureField;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
 import org.moe.natj.general.ann.Generated;
+import org.moe.natj.general.ann.NUInt;
 
 @Generated
 @Structure()
@@ -26,25 +27,27 @@ public final class mach_vm_range extends StructObject {
     }
 
     @Generated
-    public mach_vm_range(long min_address, long max_address) {
+    public mach_vm_range(@NUInt long min_address, @NUInt long max_address) {
         super(mach_vm_range.class);
         setMin_address(min_address);
         setMax_address(max_address);
     }
 
+    @NUInt
     @Generated
     @StructureField(order = 0, isGetter = true)
     public native long min_address();
 
     @Generated
     @StructureField(order = 0, isGetter = false)
-    public native void setMin_address(long value);
+    public native void setMin_address(@NUInt long value);
 
+    @NUInt
     @Generated
     @StructureField(order = 1, isGetter = true)
     public native long max_address();
 
     @Generated
     @StructureField(order = 1, isGetter = false)
-    public native void setMax_address(long value);
+    public native void setMax_address(@NUInt long value);
 }

@@ -55,20 +55,16 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.corefoundation.struct.CGRect;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.uikit.protocol.UILookToDictateCapable;
 
 /**
- * UISearchBar officially conformed to UITextInputTraits in iOS 8.0 and privately conformed in iOS 7.0. Prior to 7.0,
- * UISearchBar only implemented these four traits: autocapitalizationType, autocorrectionType, spellCheckingType and
- * keyboardType. If your deployment target is <7.0 and you are using any trait other than one of the four mentioned, you
- * must check its availability with respondsToSelector:
- * 
  * API-Since: 2.0
  */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class UISearchBar extends UIView implements UIBarPositioning, UITextInputTraits {
+public class UISearchBar extends UIView implements UIBarPositioning, UITextInputTraits, UILookToDictateCapable {
     static {
         NatJ.register();
     }
@@ -1123,4 +1119,53 @@ public class UISearchBar extends UIView implements UIBarPositioning, UITextInput
     @Generated
     @Selector("setShowsScopeBar:animated:")
     public native void setShowsScopeBarAnimated(boolean show, boolean animate);
+
+    @Generated
+    @Selector("animateWithSpringDuration:bounce:initialSpringVelocity:delay:options:animations:completion:")
+    public static native void animateWithSpringDurationBounceInitialSpringVelocityDelayOptionsAnimationsCompletion(
+            double duration, @NFloat double bounce, @NFloat double velocity, double delay, @NUInt long options,
+            @ObjCBlock(name = "call_animateWithSpringDurationBounceInitialSpringVelocityDelayOptionsAnimationsCompletion_5") @NotNull UIView.Block_animateWithSpringDurationBounceInitialSpringVelocityDelayOptionsAnimationsCompletion_5 animations,
+            @ObjCBlock(name = "call_animateWithSpringDurationBounceInitialSpringVelocityDelayOptionsAnimationsCompletion_6") @Nullable UIView.Block_animateWithSpringDurationBounceInitialSpringVelocityDelayOptionsAnimationsCompletion_6 completion);
+
+    @Generated
+    @IsOptional
+    @Selector("inlinePredictionType")
+    @NInt
+    public native long inlinePredictionType();
+
+    /**
+     * Default YES
+     * 
+     * API-Since: 16.4
+     */
+    @Generated
+    @Selector("isEnabled")
+    public native boolean isEnabled();
+
+    @Generated
+    @Selector("isLookToDictateEnabled")
+    public native boolean isLookToDictateEnabled();
+
+    /**
+     * Default YES
+     * 
+     * API-Since: 16.4
+     */
+    @Generated
+    @Selector("setEnabled:")
+    public native void setEnabled(boolean value);
+
+    @Generated
+    @IsOptional
+    @Selector("setInlinePredictionType:")
+    public native void setInlinePredictionType(@NInt long value);
+
+    @Generated
+    @Selector("setLookToDictateEnabled:")
+    public native void setLookToDictateEnabled(boolean value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

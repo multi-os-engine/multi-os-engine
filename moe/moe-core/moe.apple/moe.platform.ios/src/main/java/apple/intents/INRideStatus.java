@@ -374,4 +374,9 @@ public class INRideStatus extends NSObject implements NSCopying, NSSecureCoding 
     @Generated
     @Selector("setScheduledPickupTime:")
     public native void setScheduledPickupTime(@Nullable INDateComponentsRange value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

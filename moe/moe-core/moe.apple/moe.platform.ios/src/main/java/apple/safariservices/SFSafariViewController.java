@@ -176,9 +176,6 @@ public class SFSafariViewController extends UIViewController {
     @NInt
     public static native long version_static();
 
-    /**
-     * The view controller's delegate.
-     */
     @Nullable
     @Generated
     @Selector("delegate")
@@ -208,15 +205,8 @@ public class SFSafariViewController extends UIViewController {
     public native SFSafariViewController initWithURL(@NotNull NSURL URL);
 
     /**
-     * Returns a view controller that loads a URL.
-     * 
-     * @param URL                     the initial URL to navigate to. Only supports initial URLs with http:// or
-     *                                https:// schemes.
-     * @param entersReaderIfAvailable indicates if the Safari Reader version of content should be shown automatically
-     *                                when Safari Reader is available on a web page.
-     * 
-     *                                API-Since: 9.0
-     *                                Deprecated-Since: 11.0
+     * API-Since: 9.0
+     * Deprecated-Since: 11.0
      */
     @Deprecated
     @Generated
@@ -225,12 +215,6 @@ public class SFSafariViewController extends UIViewController {
             boolean entersReaderIfAvailable);
 
     /**
-     * The preferred color to tint the background of the navigation bar and toolbar. If SFSafariViewController is in
-     * Private
-     * Browsing mode or is displaying an anti-phishing warning page, this color will be ignored. Changes made after the
-     * view controller
-     * has been presented will not be reflected.
-     * 
      * API-Since: 10.0
      */
     @Nullable
@@ -239,12 +223,6 @@ public class SFSafariViewController extends UIViewController {
     public native UIColor preferredBarTintColor();
 
     /**
-     * The preferred color to tint the control buttons on the navigation bar and toolbar. If SFSafariViewController is
-     * in Private
-     * Browsing mode or is displaying an anti-phishing warning page, this color will be ignored. Changes made after the
-     * view controller
-     * has been presented will not be reflected.
-     * 
      * API-Since: 10.0
      */
     @Nullable
@@ -252,17 +230,11 @@ public class SFSafariViewController extends UIViewController {
     @Selector("preferredControlTintColor")
     public native UIColor preferredControlTintColor();
 
-    /**
-     * The view controller's delegate.
-     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(
             @Nullable @Mapped(ObjCObjectMapper.class) SFSafariViewControllerDelegate value);
 
-    /**
-     * The view controller's delegate.
-     */
     @Generated
     public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) SFSafariViewControllerDelegate value) {
         Object __old = delegate();
@@ -276,12 +248,6 @@ public class SFSafariViewController extends UIViewController {
     }
 
     /**
-     * The preferred color to tint the background of the navigation bar and toolbar. If SFSafariViewController is in
-     * Private
-     * Browsing mode or is displaying an anti-phishing warning page, this color will be ignored. Changes made after the
-     * view controller
-     * has been presented will not be reflected.
-     * 
      * API-Since: 10.0
      */
     @Generated
@@ -289,12 +255,6 @@ public class SFSafariViewController extends UIViewController {
     public native void setPreferredBarTintColor(@Nullable UIColor value);
 
     /**
-     * The preferred color to tint the control buttons on the navigation bar and toolbar. If SFSafariViewController is
-     * in Private
-     * Browsing mode or is displaying an anti-phishing warning page, this color will be ignored. Changes made after the
-     * view controller
-     * has been presented will not be reflected.
-     * 
      * API-Since: 10.0
      */
     @Generated
@@ -313,12 +273,6 @@ public class SFSafariViewController extends UIViewController {
     public native SFSafariViewControllerConfiguration configuration();
 
     /**
-     * The style of dismiss button to use in the navigation bar to close SFSafariViewController.
-     * The default value is SFSafariViewControllerDismissButtonStyleDone, which makes the button title the localized
-     * string "Done". You can use other values such as "Close" to provide consistency with your app. "Cancel" is
-     * ideal when using SFSafariViewController to log in to an external service. All values will show a string localized
-     * to the user's locale. Changing this property after SFSafariViewController is presented will animate the change.
-     * 
      * API-Since: 11.0
      */
     @Generated
@@ -344,12 +298,6 @@ public class SFSafariViewController extends UIViewController {
             @NotNull SFSafariViewControllerConfiguration configuration);
 
     /**
-     * The style of dismiss button to use in the navigation bar to close SFSafariViewController.
-     * The default value is SFSafariViewControllerDismissButtonStyleDone, which makes the button title the localized
-     * string "Done". You can use other values such as "Close" to provide consistency with your app. "Cancel" is
-     * ideal when using SFSafariViewController to log in to an external service. All values will show a string localized
-     * to the user's locale. Changing this property after SFSafariViewController is presented will animate the change.
-     * 
      * API-Since: 11.0
      */
     @Generated
@@ -357,26 +305,16 @@ public class SFSafariViewController extends UIViewController {
     public native void setDismissButtonStyle(@NInt long value);
 
     /**
-     * Prewarms a connection to each URL. SFSafariViewController will automatically use a
-     * prewarmed connection if possible when loading its initial URL.
-     * 
-     * This method uses a best-effort approach to prewarming connections, but may delay
-     * or drop requests based on the volume of requests made by your app. Use this method when you expect
-     * to present SFSafariViewController soon. Many HTTP servers time out connections after a few minutes.
-     * After a timeout, prewarming delivers less performance benefit.
-     * 
      * API-Since: 15.0
-     * 
-     * @param URLs the URLs of servers that SFSafariViewController should prewarm connections to.
-     *             Only supports URLs with http:// or https:// schemes.
-     * @return Returns a token object that corresponds to the requested URLs. You must keep a strong
-     *         reference to this token as long as you expect the prewarmed connections to remain open. If the same
-     *         server is requested in multiple calls to this method, all of the corresponding tokens must be
-     *         invalidated or released to end the prewarmed connection to that server.
      */
     @NotNull
     @Generated
     @Selector("prewarmConnectionsToURLs:")
     public static native SFSafariViewControllerPrewarmingToken prewarmConnectionsToURLs(
             @NotNull NSArray<? extends NSURL> URLs);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

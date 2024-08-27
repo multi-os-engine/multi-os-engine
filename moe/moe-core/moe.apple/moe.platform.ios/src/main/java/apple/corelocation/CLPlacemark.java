@@ -192,12 +192,6 @@ public class CLPlacemark extends NSObject implements NSCopying, NSSecureCoding {
     public native String ISOcountryCode();
 
     /**
-     * addressDictionary
-     * 
-     * Discussion:
-     * This dictionary can be formatted as an address using ABCreateStringWithAddressDictionary,
-     * defined in the AddressBookUI framework.
-     * 
      * API-Since: 5.0
      * Deprecated-Since: 11.0
      * Deprecated-Message: Use @properties
@@ -312,12 +306,6 @@ public class CLPlacemark extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("postalCode")
     public native String postalCode();
 
-    /**
-     * region
-     * 
-     * Discussion:
-     * Returns the geographic region associated with the placemark.
-     */
     @Nullable
     @Generated
     @Selector("region")
@@ -381,4 +369,9 @@ public class CLPlacemark extends NSObject implements NSCopying, NSSecureCoding {
     @Generated
     @Selector("postalAddress")
     public native CNPostalAddress postalAddress();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

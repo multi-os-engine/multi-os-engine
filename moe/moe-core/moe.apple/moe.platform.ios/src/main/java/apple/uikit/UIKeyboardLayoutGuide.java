@@ -24,6 +24,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.moe.natj.general.ann.NFloat;
 
 /**
  * API-Since: 15.0
@@ -90,9 +91,7 @@ public class UIKeyboardLayoutGuide extends UITrackingLayoutGuide {
     public static native String description_static();
 
     /**
-     * The automatic behavior is to track the keyboard only when docked. When offscreen or undocked, the topAnchor is
-     * tied to the safeAreaLayoutGuide's bottomAnchor. To instead follow all keyboard anchors even when undocked or
-     * floating, set followsUndockedKeyboard to YES.
+     * Defaults to @c NO.
      */
     @Generated
     @Selector("followsUndockedKeyboard")
@@ -147,9 +146,7 @@ public class UIKeyboardLayoutGuide extends UITrackingLayoutGuide {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * The automatic behavior is to track the keyboard only when docked. When offscreen or undocked, the topAnchor is
-     * tied to the safeAreaLayoutGuide's bottomAnchor. To instead follow all keyboard anchors even when undocked or
-     * floating, set followsUndockedKeyboard to YES.
+     * Defaults to @c NO.
      */
     @Generated
     @Selector("setFollowsUndockedKeyboard:")
@@ -167,4 +164,52 @@ public class UIKeyboardLayoutGuide extends UITrackingLayoutGuide {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * Defaults to 0.0. When a user scrolls to dismiss the keyboard (see @c UIScrollViewKeyboardDismissMode), the
+     * gesture waits to start the dismiss until it intersects with the keyboard. This adds padding above the keyboard to
+     * start the dismiss earlier. Negative values will be treated as 0.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("keyboardDismissPadding")
+    @NFloat
+    public native double keyboardDismissPadding();
+
+    /**
+     * Defaults to 0.0. When a user scrolls to dismiss the keyboard (see @c UIScrollViewKeyboardDismissMode), the
+     * gesture waits to start the dismiss until it intersects with the keyboard. This adds padding above the keyboard to
+     * start the dismiss earlier. Negative values will be treated as 0.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("setKeyboardDismissPadding:")
+    public native void setKeyboardDismissPadding(@NFloat double value);
+
+    /**
+     * Defaults to @c YES. When the keyboard is offscreen, the layout guide is tied to the bottomAnchor of the view's
+     * safeAreaLayoutGuide. Set this to @c NO to instead have the guide use the bottomAnchor of the view.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("setUsesBottomSafeArea:")
+    public native void setUsesBottomSafeArea(boolean value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
+
+    /**
+     * Defaults to @c YES. When the keyboard is offscreen, the layout guide is tied to the bottomAnchor of the view's
+     * safeAreaLayoutGuide. Set this to @c NO to instead have the guide use the bottomAnchor of the view.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("usesBottomSafeArea")
+    public native boolean usesBottomSafeArea();
 }

@@ -202,4 +202,9 @@ public class INIntentResolutionResult extends NSObject {
     @Generated
     @Selector("unsupportedWithReason:")
     public static native INIntentResolutionResult unsupportedWithReason(@NInt long reason);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

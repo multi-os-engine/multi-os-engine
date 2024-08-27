@@ -232,4 +232,9 @@ public class NETunnelProviderProtocol extends NEVPNProtocol {
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

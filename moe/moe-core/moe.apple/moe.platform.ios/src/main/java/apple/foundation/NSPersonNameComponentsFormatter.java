@@ -262,4 +262,9 @@ public class NSPersonNameComponentsFormatter extends NSFormatter {
     @Generated
     @Selector("setLocale:")
     public native void setLocale(NSLocale value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -24,7 +24,9 @@ public final class MTLAccelerationStructureInstanceOptions {
      */
     @Generated public static final int DisableTriangleCulling = 0x00000001;
     /**
-     * Disable triangle back or front face culling
+     * Override triangle front-facing winding. By default, the winding is
+     * assumed to be clockwise unless overridden by the intersector object. This overrides
+     * the intersector's winding order.
      * 
      * API-Since: 14.0
      */

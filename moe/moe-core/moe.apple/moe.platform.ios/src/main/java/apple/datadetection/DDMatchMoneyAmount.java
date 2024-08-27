@@ -25,6 +25,13 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
+ * An object that contains an amount of money that the data detection system
+ * matches.
+ * 
+ * The DataDetection framework returns a match for an amount of money in a
+ * `DDMatchMoneyAmount` object, which contains an amount of money and an ISO
+ * currency code.
+ * 
  * API-Since: 15.0
  */
 @Generated
@@ -55,6 +62,9 @@ public class DDMatchMoneyAmount extends DDMatch {
     @Selector("allocWithZone:")
     public static native DDMatchMoneyAmount allocWithZone(VoidPtr zone);
 
+    /**
+     * A number that represents an amount of money.
+     */
     @Generated
     @Selector("amount")
     public native double amount();
@@ -84,6 +94,10 @@ public class DDMatchMoneyAmount extends DDMatch {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * A string that contains an ISO currency code, which the data detection system
+     * identifies from the matched string and user preferences.
+     */
     @NotNull
     @Generated
     @Selector("currency")
@@ -153,4 +167,9 @@ public class DDMatchMoneyAmount extends DDMatch {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

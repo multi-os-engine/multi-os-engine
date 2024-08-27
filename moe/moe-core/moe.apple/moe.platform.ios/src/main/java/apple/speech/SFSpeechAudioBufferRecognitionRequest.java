@@ -191,4 +191,9 @@ public class SFSpeechAudioBufferRecognitionRequest extends SFSpeechRecognitionRe
     @Generated
     @Selector("nativeAudioFormat")
     public native AVAudioFormat nativeAudioFormat();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

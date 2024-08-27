@@ -15,10 +15,10 @@ limitations under the License.
 */
 
 #import <CoreFoundation/CFCGTypes.h>
-#import <UIKit/UIApplication.h>
 #import <UIKit/UIAttachmentBehavior.h>
 #import <UIKit/UIDevice.h>
 #import <UIKit/UIGeometry.h>
+#import <UIKit/UIOrientation.h>
 #import <UIKit/UIPointerAccessory.h>
 
 
@@ -68,16 +68,16 @@ EXPORT BOOL __natj_inline_UIDeviceOrientationIsValidInterfaceOrientation(UIDevic
 	return UIDeviceOrientationIsValidInterfaceOrientation(orientation);
 }
 
-EXPORT UIUserInterfaceIdiom __natj_inline_UI_USER_INTERFACE_IDIOM() {
-	return UI_USER_INTERFACE_IDIOM();
-}
-
 EXPORT BOOL __natj_inline_UIInterfaceOrientationIsPortrait(UIInterfaceOrientation orientation) {
 	return UIInterfaceOrientationIsPortrait(orientation);
 }
 
 EXPORT BOOL __natj_inline_UIInterfaceOrientationIsLandscape(UIInterfaceOrientation orientation) {
 	return UIInterfaceOrientationIsLandscape(orientation);
+}
+
+EXPORT UIUserInterfaceIdiom __natj_inline_UI_USER_INTERFACE_IDIOM() {
+	return UI_USER_INTERFACE_IDIOM();
 }
 
 EXPORT UIFloatRange __natj_inline_UIFloatRangeMake(CGFloat minimum, CGFloat maximum) {

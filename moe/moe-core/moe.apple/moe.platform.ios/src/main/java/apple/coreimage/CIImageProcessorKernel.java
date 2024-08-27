@@ -51,8 +51,6 @@ import org.jetbrains.annotations.Nullable;
  * In order to use a CIImageProcessorInput & CIImageProcessorOutput you must
  * subclass from a CIImageProcessorKernel and override the methods you need to
  * produce the desired output.
- * 
- * API-Since: 10.0
  */
 @Generated
 @Library("CoreImage")
@@ -85,7 +83,7 @@ public class CIImageProcessorKernel extends NSObject {
     /**
      * Call this method on your CIImageProcessorKernel subclass to create a new CIImage of the specified extent.
      * The inputs and arguments will be retained so that your subclass can be called when the image is drawn.
-     * Arguments is a dictionary containing inmutable objects of type NSData, NSString, NSNumber,
+     * Arguments is a dictionary containing immutable objects of type NSData, NSString, NSNumber,
      * CIVector or CIColor.
      * 
      * This method will return [CIImage emptyImage] if extent is empty.
@@ -261,4 +259,29 @@ public class CIImageProcessorKernel extends NSObject {
     @Generated
     @Selector("outputIsOpaque")
     public static native boolean outputIsOpaque();
+
+    /**
+     * Returns an array of CIVectors that specify tile regions for 'input' that are needed to satisfy 'outputRect'.
+     * Each region tile in the array is a created by calling [CIVector vectorWithCGRect:roi]
+     * The tiles may overlap but should fully cover the area of 'input' that is needed.
+     * If a processor has multiple inputs, then each input should return the same number of region tiles.
+     * 
+     * If the processor implements this method, then when rendered;
+     * - as CoreImage prepares for a render, this method will be called for each input to return the roiArray.
+     * - as CoreImage performs the render, the method 'processWithInputs:arguments:output:' will be called once for for
+     * each tile.
+     * 
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("roiTileArrayForInput:arguments:outputRect:")
+    @NotNull
+    public static native NSArray<? extends CIVector> roiTileArrayForInputArgumentsOutputRect(int input,
+            @Nullable NSDictionary<String, ?> arguments, @ByValue CGRect outputRect);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

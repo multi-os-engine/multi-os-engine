@@ -405,4 +405,9 @@ public class MDLSubmeshTopology extends NSObject {
     @Selector("vertexCreases")
     @MappedReturn(ObjCObjectMapper.class)
     public native MDLMeshBuffer vertexCreases();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

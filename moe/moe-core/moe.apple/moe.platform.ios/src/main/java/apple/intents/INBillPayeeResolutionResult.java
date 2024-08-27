@@ -202,4 +202,9 @@ public class INBillPayeeResolutionResult extends INIntentResolutionResult {
     @Generated
     @Selector("unsupportedWithReason:")
     public static native INBillPayeeResolutionResult unsupportedWithReason(@NInt long reason);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -207,4 +207,9 @@ public class NSURLQueryItem extends NSObject implements NSSecureCoding, NSCopyin
     @Generated
     @Selector("value")
     public native String value();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

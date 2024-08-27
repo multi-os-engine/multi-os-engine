@@ -44,8 +44,6 @@ import org.jetbrains.annotations.Nullable;
 
 /**
  * GKMatchmaker is a singleton object to manage match creation from invites and automatching.
- * 
- * API-Since: 4.1
  */
 @Generated
 @Library("GameKit")
@@ -194,7 +192,6 @@ public class GKMatchmaker extends NSObject {
      * 
      * API-Since: 6.0
      * Deprecated-Since: 8.0
-     * Deprecated-Message: This is never invoked and its implementation does nothing, use cancelPendingInviteToPlayer:
      */
     @Generated
     @Deprecated
@@ -230,7 +227,6 @@ public class GKMatchmaker extends NSObject {
      * 
      * API-Since: 4.1
      * Deprecated-Since: 8.0
-     * Deprecated-Message: This is never invoked and its implementation does nothing, use findPlayersForHostedRequest:
      */
     @Generated
     @Deprecated
@@ -273,7 +269,7 @@ public class GKMatchmaker extends NSObject {
      * API-Since: 4.1
      * Deprecated-Since: 7.0
      * Deprecated-Message: Use registerListener on GKLocalPlayer to register an object that implements the
-     * GKInviteEventListenerProtocol instead
+     * GKInviteEventListener instead.
      */
     @Nullable
     @Generated
@@ -320,7 +316,7 @@ public class GKMatchmaker extends NSObject {
      * API-Since: 4.1
      * Deprecated-Since: 7.0
      * Deprecated-Message: Use registerListener on GKLocalPlayer to register an object that implements the
-     * GKInviteEventListenerProtocol instead
+     * GKInviteEventListener instead.
      */
     @Generated
     @Deprecated
@@ -346,8 +342,6 @@ public class GKMatchmaker extends NSObject {
      * 
      * API-Since: 6.0
      * Deprecated-Since: 8.0
-     * Deprecated-Message: This is never invoked and its implementation does nothing, Use
-     * startBrowsingForNearbyPlayersWithHandler: instead
      */
     @Generated
     @Deprecated
@@ -447,7 +441,7 @@ public class GKMatchmaker extends NSObject {
      * Activate a group activity by Game Center for your game, which allows people in the FaceTime call to join the
      * local player's game. The handler will be called for each player who joined from the activity.
      * 
-     * API-Since: 16.0
+     * API-Since: 16.2
      */
     @Generated
     @Selector("startGroupActivityWithPlayerHandler:")
@@ -464,9 +458,49 @@ public class GKMatchmaker extends NSObject {
     /**
      * End the group activity created by Game Center for your game, which was activated by the local player.
      * 
-     * API-Since: 16.0
+     * API-Since: 16.2
      */
     @Generated
     @Selector("stopGroupActivity")
     public native void stopGroupActivity();
+
+    /**
+     * Automatching or invites for host-client rule-based match request.
+     * 
+     * API-Since: 17.2
+     */
+    @Generated
+    @Selector("findMatchedPlayers:withCompletionHandler:")
+    public native void findMatchedPlayersWithCompletionHandler(@NotNull GKMatchRequest request,
+            @ObjCBlock(name = "call_findMatchedPlayersWithCompletionHandler") @NotNull Block_findMatchedPlayersWithCompletionHandler completionHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_findMatchedPlayersWithCompletionHandler {
+        @Generated
+        void call_findMatchedPlayersWithCompletionHandler(@Nullable GKMatchedPlayers matchedPlayers,
+                @Nullable NSError error);
+    }
+
+    /**
+     * Query the server for recent activity for the specified queue.
+     * 
+     * API-Since: 17.2
+     */
+    @Generated
+    @Selector("queryQueueActivity:withCompletionHandler:")
+    public native void queryQueueActivityWithCompletionHandler(@NotNull String queueName,
+            @ObjCBlock(name = "call_queryQueueActivityWithCompletionHandler") @Nullable Block_queryQueueActivityWithCompletionHandler completionHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_queryQueueActivityWithCompletionHandler {
+        @Generated
+        void call_queryQueueActivityWithCompletionHandler(@NInt long activity, @Nullable NSError error);
+    }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

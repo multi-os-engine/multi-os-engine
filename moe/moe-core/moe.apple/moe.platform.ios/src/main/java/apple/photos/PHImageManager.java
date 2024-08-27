@@ -378,4 +378,9 @@ public class PHImageManager extends NSObject {
         void call_requestImageDataAndOrientationForAssetOptionsResultHandler(@Nullable NSData imageData,
                 @Nullable String dataUTI, int orientation, @Nullable NSDictionary<?, ?> info);
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -305,4 +305,9 @@ public class MDLVertexDescriptor extends NSObject implements NSCopying {
     @Generated
     @Selector("setPackedStrides")
     public native void setPackedStrides();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

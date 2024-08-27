@@ -46,4 +46,12 @@ public final class VNErrorCode {
      * API-Since: 16.0
      */
     @Generated @NInt public static final long Timeout = 0x0000000000000014L;
+    /**
+     * API-Since: 17.0
+     */
+    @Generated @NInt public static final long UnsupportedComputeStage = 0x0000000000000015L;
+    /**
+     * API-Since: 17.0
+     */
+    @Generated @NInt public static final long UnsupportedComputeDevice = 0x0000000000000016L;
 }

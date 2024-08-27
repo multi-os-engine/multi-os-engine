@@ -458,4 +458,9 @@ public class SCNText extends SCNGeometry {
     @Generated
     @Selector("truncationMode")
     public native String truncationMode();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

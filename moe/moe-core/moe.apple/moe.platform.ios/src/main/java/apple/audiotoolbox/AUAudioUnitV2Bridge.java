@@ -222,4 +222,9 @@ public class AUAudioUnitV2Bridge extends AUAudioUnit {
     @Generated
     @Selector("audioUnit")
     public native AudioComponentInstance audioUnit();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

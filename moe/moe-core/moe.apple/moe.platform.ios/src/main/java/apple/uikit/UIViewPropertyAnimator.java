@@ -424,4 +424,9 @@ public class UIViewPropertyAnimator extends NSObject implements UIViewImplicitly
     @Generated
     @Selector("setScrubsLinearly:")
     public native void setScrubsLinearly(boolean value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -32,7 +32,10 @@ import org.jetbrains.annotations.Nullable;
  * The MLCActivationDescriptor specifies a neuron descriptor.
  * 
  * API-Since: 14.0
+ * Deprecated-Since: 100000.0
+ * Deprecated-Message: Use Metal Performance Shaders Graph or BNNS instead.
  */
+@Deprecated
 @Generated
 @Library("MLCompute")
 @Runtime(ObjCRuntime.class)
@@ -239,4 +242,9 @@ public class MLCActivationDescriptor extends NSObject implements NSCopying {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

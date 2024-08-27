@@ -25,4 +25,8 @@ public final class nw_quic_stream_type_t {
      * [@const] nw_quic_stream_type_unidirectional An unidirectional QUIC stream.
      */
     @Generated public static final int nw_quic_stream_type_unidirectional = 0x00000002;
+    /**
+     * [@const] nw_quic_stream_type_datagram A QUIC datagram stream.
+     */
+    @Generated public static final int nw_quic_stream_type_datagram = 0x00000003;
 }

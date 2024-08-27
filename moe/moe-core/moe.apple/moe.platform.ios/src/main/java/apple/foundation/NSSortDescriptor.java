@@ -305,4 +305,9 @@ public class NSSortDescriptor extends NSObject implements NSSecureCoding, NSCopy
         long call_sortDescriptorWithKeyAscendingComparator(@NotNull @Mapped(ObjCObjectMapper.class) Object obj1,
                 @NotNull @Mapped(ObjCObjectMapper.class) Object obj2);
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

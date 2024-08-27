@@ -452,4 +452,9 @@ public class GCMotion extends NSObject {
     @Generated
     @Selector("setSensorsActive:")
     public native void setSensorsActive(boolean value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

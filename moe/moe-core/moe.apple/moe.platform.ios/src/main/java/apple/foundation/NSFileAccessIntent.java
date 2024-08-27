@@ -176,4 +176,9 @@ public class NSFileAccessIntent extends NSObject {
     @Generated
     @Selector("init")
     public native NSFileAccessIntent init();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

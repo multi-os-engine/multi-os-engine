@@ -706,4 +706,9 @@ public class SCNPhysicsBody extends NSObject implements NSCopying, NSSecureCodin
     @Generated
     @Selector("setResting:")
     public native void setResting(boolean resting);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

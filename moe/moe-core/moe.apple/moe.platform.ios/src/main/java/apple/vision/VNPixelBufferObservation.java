@@ -191,4 +191,9 @@ public class VNPixelBufferObservation extends VNObservation {
     @Generated
     @Selector("featureName")
     public native String featureName();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

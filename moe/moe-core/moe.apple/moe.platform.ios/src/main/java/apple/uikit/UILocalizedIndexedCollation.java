@@ -213,4 +213,9 @@ public class UILocalizedIndexedCollation extends NSObject {
     @Selector("sortedArrayFromArray:collationStringSelector:")
     public native NSArray<?> sortedArrayFromArrayCollationStringSelector(@NotNull NSArray<?> array,
             @NotNull SEL selector);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

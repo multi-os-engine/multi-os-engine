@@ -222,4 +222,9 @@ public class AVPlayerItemTrack extends NSObject {
     @Generated
     @Selector("setEnabled:")
     public native void setEnabled(boolean value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

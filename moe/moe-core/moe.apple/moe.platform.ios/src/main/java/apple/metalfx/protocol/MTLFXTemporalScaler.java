@@ -17,8 +17,6 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
- * This is the object that gets created from the descriptor
- * 
  * API-Since: 16.0
  */
 @Generated

@@ -283,4 +283,9 @@ public class MLParameterKey extends MLKey {
     @Generated
     @Selector("weights")
     public static native MLParameterKey weights();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

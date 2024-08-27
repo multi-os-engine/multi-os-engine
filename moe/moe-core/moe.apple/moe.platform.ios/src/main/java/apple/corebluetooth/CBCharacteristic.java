@@ -45,9 +45,6 @@ import org.jetbrains.annotations.Nullable;
  * CBCharacteristic
  * 
  * Represents a service's characteristic.
- * 
- * 
- * API-Since: 5.0
  */
 @Generated
 @Library("CoreBluetooth")
@@ -229,4 +226,9 @@ public class CBCharacteristic extends CBAttribute {
     @Generated
     @Selector("value")
     public native NSData value();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

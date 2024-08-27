@@ -186,4 +186,9 @@ public class CXCall extends NSObject {
     @Generated
     @Selector("isOutgoing")
     public native boolean isOutgoing();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -213,4 +213,9 @@ public class UIStoryboard extends NSObject {
         @Generated
         UIViewController call_instantiateViewControllerWithIdentifierCreator(@NotNull NSCoder coder);
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

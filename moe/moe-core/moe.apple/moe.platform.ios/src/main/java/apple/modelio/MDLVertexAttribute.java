@@ -293,4 +293,9 @@ public class MDLVertexAttribute extends NSObject implements NSCopying {
     @Generated
     @Selector("time")
     public native double time();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

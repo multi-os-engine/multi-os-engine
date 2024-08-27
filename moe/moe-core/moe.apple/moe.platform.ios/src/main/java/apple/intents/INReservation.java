@@ -214,4 +214,9 @@ public class INReservation extends NSObject implements NSCopying, NSSecureCoding
     @Generated
     @Selector("URL")
     public native NSURL URL();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

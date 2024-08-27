@@ -25,4 +25,12 @@ public final class MPSGraphResizeNearestRoundingMode {
      * API-Since: 16.0
      */
     @Generated @NUInt public static final long Floor = 0x0000000000000003L;
+    /**
+     * API-Since: 16.3
+     */
+    @Generated @NUInt public static final long RoundToEven = 0x0000000000000004L;
+    /**
+     * API-Since: 16.3
+     */
+    @Generated @NUInt public static final long RoundToOdd = 0x0000000000000005L;
 }

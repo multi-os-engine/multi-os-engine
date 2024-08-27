@@ -204,4 +204,9 @@ public class PKPaymentAuthorizationResult extends NSObject {
     @Generated
     @Selector("setOrderDetails:")
     public native void setOrderDetails(@Nullable PKPaymentOrderDetails value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

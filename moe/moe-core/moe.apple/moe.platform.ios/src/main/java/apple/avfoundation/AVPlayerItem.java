@@ -344,11 +344,11 @@ public class AVPlayerItem extends NSObject implements NSCopying {
     public native NSArray<String> automaticallyLoadedAssetKeys();
 
     /**
-     * For releases of OS X prior to 10.9 and releases of iOS prior to 7.0, indicates whether the item can be played at
+     * For releases of macOS prior to 10.9 and releases of iOS prior to 7.0, indicates whether the item can be played at
      * rates greater than 1.0.
-     * Starting with OS X 10.9 and iOS 7.0, all AVPlayerItems with status AVPlayerItemReadyToPlay can be played at rates
-     * between 1.0 and 2.0, inclusive, even if canPlayFastForward is NO; for those releases canPlayFastForward indicates
-     * whether the item can be played at rates greater than 2.0.
+     * Starting with macOS 10.9 and iOS 7.0, all AVPlayerItems with status AVPlayerItemReadyToPlay can be played at
+     * rates between 1.0 and 2.0, inclusive, even if canPlayFastForward is NO; for those releases canPlayFastForward
+     * indicates whether the item can be played at rates greater than 2.0.
      * 
      * API-Since: 5.0
      */
@@ -423,7 +423,7 @@ public class AVPlayerItem extends NSObject implements NSCopying {
      * state up to date when paused. For example, when this property is set to YES, the seekableTimeRanges property will
      * be periodically updated to reflect the current state of the live stream.
      * 
-     * For clients linked on or after OS X 10.11 or iOS 9.0, the default value is NO. To minimize power usage, avoid
+     * For clients linked on or after macOS 10.11 or iOS 9.0, the default value is NO. To minimize power usage, avoid
      * setting this property to YES when you do not need playback state to stay up to date while paused.
      * 
      * API-Since: 9.0
@@ -762,7 +762,7 @@ public class AVPlayerItem extends NSObject implements NSCopying {
      * The size of the receiver as presented by the player.
      * 
      * Indicates the size at which the visual portion of the item is presented by the player; can be scaled from this
-     * size to fit within the bounds of an AVPlayerLayer via its videoGravity property. Can be scaled arbitarily for
+     * size to fit within the bounds of an AVPlayerLayer via its videoGravity property. Can be scaled arbitrarily for
      * presentation
      * via the frame property of an AVPlayerLayer.
      * 
@@ -1152,7 +1152,7 @@ public class AVPlayerItem extends NSObject implements NSCopying {
      * state up to date when paused. For example, when this property is set to YES, the seekableTimeRanges property will
      * be periodically updated to reflect the current state of the live stream.
      * 
-     * For clients linked on or after OS X 10.11 or iOS 9.0, the default value is NO. To minimize power usage, avoid
+     * For clients linked on or after macOS 10.11 or iOS 9.0, the default value is NO. To minimize power usage, avoid
      * setting this property to YES when you do not need playback state to stay up to date while paused.
      * 
      * API-Since: 9.0
@@ -2011,4 +2011,9 @@ public class AVPlayerItem extends NSObject implements NSCopying {
     @Generated
     @Selector("setNowPlayingInfo:")
     public native void setNowPlayingInfo(@Nullable NSDictionary<String, ?> value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

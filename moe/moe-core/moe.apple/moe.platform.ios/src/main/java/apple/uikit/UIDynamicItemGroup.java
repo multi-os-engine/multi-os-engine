@@ -210,4 +210,9 @@ public class UIDynamicItemGroup extends NSObject implements UIDynamicItem {
     @Selector("transform")
     @ByValue
     public native CGAffineTransform transform();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

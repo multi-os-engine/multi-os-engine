@@ -566,4 +566,9 @@ public class AVMusicTrack extends NSObject {
     @Generated
     @Selector("usesAutomatedParameters")
     public native boolean usesAutomatedParameters();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

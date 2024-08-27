@@ -197,4 +197,9 @@ public class INGetUserCurrentRestaurantReservationBookingsIntentResponse extends
     @Generated
     @Selector("userCurrentBookings")
     public native NSArray<? extends INRestaurantReservationUserBooking> userCurrentBookings();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

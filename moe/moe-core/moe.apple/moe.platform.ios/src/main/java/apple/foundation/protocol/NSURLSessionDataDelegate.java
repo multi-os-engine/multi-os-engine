@@ -85,9 +85,8 @@ public interface NSURLSessionDataDelegate extends NSURLSessionTaskDelegate {
     }
 
     /**
-     * Sent when data is available for the delegate to consume. It is
-     * assumed that the delegate will retain and not copy the data. As
-     * the data may be discontiguous, you should use
+     * Sent when data is available for the delegate to consume. As the
+     * data may be discontiguous, you should use
      * [NSData enumerateByteRangesUsingBlock:] to access it.
      */
     @Generated

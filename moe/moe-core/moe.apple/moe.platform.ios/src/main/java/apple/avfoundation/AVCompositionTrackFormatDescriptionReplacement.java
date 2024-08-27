@@ -29,6 +29,12 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
+ * AVCompositionTrackFormatDescriptionReplacement
+ * 
+ * A format description and its replacement.
+ * 
+ * Subclasses of this type that are used from Swift must fulfill the requirements of a Sendable type.
+ * 
  * API-Since: 13.0
  */
 @Generated
@@ -186,4 +192,9 @@ public class AVCompositionTrackFormatDescriptionReplacement extends NSObject imp
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

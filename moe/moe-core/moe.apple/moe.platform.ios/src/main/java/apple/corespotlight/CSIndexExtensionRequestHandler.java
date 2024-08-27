@@ -50,9 +50,6 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-/**
- * API-Since: 9.0
- */
 @Generated
 @Library("CoreSpotlight")
 @Runtime(ObjCRuntime.class)
@@ -213,4 +210,9 @@ public class CSIndexExtensionRequestHandler extends NSObject implements NSExtens
     public native NSURL fileURLForSearchableIndexItemIdentifierTypeIdentifierInPlaceError(
             @NotNull CSSearchableIndex searchableIndex, @NotNull String itemIdentifier, @NotNull String typeIdentifier,
             boolean inPlace, @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

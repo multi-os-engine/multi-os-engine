@@ -232,4 +232,9 @@ public class MDLTransformStack extends NSObject implements NSCopying, MDLTransfo
     @Generated
     @Selector("addOrientOp:inverse:")
     public native MDLTransformOrientOp addOrientOpInverse(@NotNull String animatedValueName, boolean inverse);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

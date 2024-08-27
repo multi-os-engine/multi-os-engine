@@ -167,4 +167,17 @@ public class INHangUpCallIntent extends INIntent {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * The identifier of the call that the user wishes to hang up.
+     */
+    @Generated
+    @Selector("callIdentifier")
+    @Nullable
+    public native String callIdentifier();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

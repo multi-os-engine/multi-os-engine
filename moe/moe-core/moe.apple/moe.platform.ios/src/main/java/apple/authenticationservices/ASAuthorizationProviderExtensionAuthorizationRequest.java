@@ -326,4 +326,9 @@ public class ASAuthorizationProviderExtensionAuthorizationRequest extends NSObje
     @Generated
     @Selector("isUserInterfaceEnabled")
     public native boolean isUserInterfaceEnabled();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

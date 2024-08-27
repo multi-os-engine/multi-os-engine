@@ -196,4 +196,9 @@ public class AVMutableAudioMix extends AVAudioMix {
     @Generated
     @Selector("setInputParameters:")
     public native void setInputParameters(@NotNull NSArray<? extends AVAudioMixInputParameters> value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

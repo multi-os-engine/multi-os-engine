@@ -200,4 +200,9 @@ public class CPAlertTemplate extends CPTemplate {
     @Selector("maximumActionCount")
     @NUInt
     public static native long maximumActionCount();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

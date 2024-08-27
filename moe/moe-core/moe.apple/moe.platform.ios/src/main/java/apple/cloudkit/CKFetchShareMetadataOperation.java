@@ -175,6 +175,8 @@ public class CKFetchShareMetadataOperation extends CKOperation {
      * errors keyed off of @c CKPartialErrorsByItemIDKey. These errors are repeats of those sent back in previous @c
      * perShareMetadataBlock invocations
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
+     * This block may share mutable state with other blocks assigned to this operation, but any such mutable state
+     * should not be concurrently used outside of blocks assigned to this operation.
      */
     @Nullable
     @Generated
@@ -194,6 +196,8 @@ public class CKFetchShareMetadataOperation extends CKOperation {
      * Called once for each share URL that the server processed
      * 
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
+     * This block may share mutable state with other blocks assigned to this operation, but any such mutable state
+     * should not be concurrently used outside of blocks assigned to this operation.
      */
     @Nullable
     @Generated
@@ -222,6 +226,8 @@ public class CKFetchShareMetadataOperation extends CKOperation {
      * errors keyed off of @c CKPartialErrorsByItemIDKey. These errors are repeats of those sent back in previous @c
      * perShareMetadataBlock invocations
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
+     * This block may share mutable state with other blocks assigned to this operation, but any such mutable state
+     * should not be concurrently used outside of blocks assigned to this operation.
      */
     @Generated
     @Selector("setFetchShareMetadataCompletionBlock:")
@@ -232,6 +238,8 @@ public class CKFetchShareMetadataOperation extends CKOperation {
      * Called once for each share URL that the server processed
      * 
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
+     * This block may share mutable state with other blocks assigned to this operation, but any such mutable state
+     * should not be concurrently used outside of blocks assigned to this operation.
      */
     @Generated
     @Selector("setPerShareMetadataBlock:")
@@ -307,4 +315,9 @@ public class CKFetchShareMetadataOperation extends CKOperation {
         @Generated
         void call_setPerShareMetadataBlock(@NotNull NSURL arg0, @Nullable CKShareMetadata arg1, @Nullable NSError arg2);
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

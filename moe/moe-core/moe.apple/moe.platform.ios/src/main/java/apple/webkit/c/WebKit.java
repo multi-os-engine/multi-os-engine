@@ -228,4 +228,37 @@ public final class WebKit {
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String WKWebsiteDataTypeFileSystem();
+
+    /**
+     * [@constant] WKWebsiteDataTypeSearchFieldRecentSearches Search field history.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String WKWebsiteDataTypeSearchFieldRecentSearches();
+
+    /**
+     * [@constant] WKWebsiteDataTypeMediaKeys MediaKeys storage
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String WKWebsiteDataTypeMediaKeys();
+
+    /**
+     * [@constant] WKWebsiteDataTypeHashSalt Hash salt for deviceId
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String WKWebsiteDataTypeHashSalt();
 }

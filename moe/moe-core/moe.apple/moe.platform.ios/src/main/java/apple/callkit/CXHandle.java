@@ -208,4 +208,9 @@ public class CXHandle extends NSObject implements NSCopying, NSSecureCoding {
     @Generated
     @Selector("value")
     public native String value();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

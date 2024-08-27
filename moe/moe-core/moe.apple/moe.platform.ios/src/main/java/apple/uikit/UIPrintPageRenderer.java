@@ -295,4 +295,9 @@ public class UIPrintPageRenderer extends NSObject {
     @Selector("currentRenderingQualityForRequestedRenderingQuality:")
     @NInt
     public native long currentRenderingQualityForRequestedRenderingQuality(@NInt long requestedRenderingQuality);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

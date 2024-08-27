@@ -164,4 +164,9 @@ public class SFContentBlockerState extends NSObject {
     @Generated
     @Selector("isEnabled")
     public native boolean isEnabled();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -197,4 +197,9 @@ public class NSCondition extends NSObject implements NSLocking {
     @Generated
     @Selector("waitUntilDate:")
     public native boolean waitUntilDate(@NotNull NSDate limit);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -419,4 +419,9 @@ public class NSTextAttachment extends NSObject implements NSTextAttachmentLayout
     public native NSTextAttachmentViewProvider viewProviderForParentViewLocationTextContainer(
             @Nullable UIView parentView, @NotNull @Mapped(ObjCObjectMapper.class) NSTextLocation location,
             @Nullable NSTextContainer textContainer);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

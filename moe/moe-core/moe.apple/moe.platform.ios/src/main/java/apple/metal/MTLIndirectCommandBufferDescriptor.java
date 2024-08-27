@@ -273,4 +273,115 @@ public class MTLIndirectCommandBufferDescriptor extends NSObject implements NSCo
     @Generated
     @Selector("supportRayTracing")
     public native boolean supportRayTracing();
+
+    /**
+     * The maximum bind index of kernel (or tile) threadgroup memory that can be set per command.
+     * The default value is 31.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("maxKernelThreadgroupMemoryBindCount")
+    @NUInt
+    public native long maxKernelThreadgroupMemoryBindCount();
+
+    /**
+     * The maximum bind index of mesh stage buffers that can be set per render command.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("maxMeshBufferBindCount")
+    @NUInt
+    public native long maxMeshBufferBindCount();
+
+    /**
+     * The maximum bind index of object stage buffers that can be set per render command.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("maxObjectBufferBindCount")
+    @NUInt
+    public native long maxObjectBufferBindCount();
+
+    /**
+     * The maximum bind index of object threadgroup memory that can be set per render command.
+     * The default value is 0.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("maxObjectThreadgroupMemoryBindCount")
+    @NUInt
+    public native long maxObjectThreadgroupMemoryBindCount();
+
+    /**
+     * The maximum bind index of kernel (or tile) threadgroup memory that can be set per command.
+     * The default value is 31.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("setMaxKernelThreadgroupMemoryBindCount:")
+    public native void setMaxKernelThreadgroupMemoryBindCount(@NUInt long value);
+
+    /**
+     * The maximum bind index of mesh stage buffers that can be set per render command.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("setMaxMeshBufferBindCount:")
+    public native void setMaxMeshBufferBindCount(@NUInt long value);
+
+    /**
+     * The maximum bind index of object stage buffers that can be set per render command.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("setMaxObjectBufferBindCount:")
+    public native void setMaxObjectBufferBindCount(@NUInt long value);
+
+    /**
+     * The maximum bind index of object threadgroup memory that can be set per render command.
+     * The default value is 0.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("setMaxObjectThreadgroupMemoryBindCount:")
+    public native void setMaxObjectThreadgroupMemoryBindCount(@NUInt long value);
+
+    /**
+     * allows binding pipelines that have at least one MTLBufferLayout with a
+     * stride of `MTLBufferLayoutStrideDynamic`
+     * 
+     * will allow setting attributeStride in `setVertexBuffer` / `setKernelBuffer`
+     * calls
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("setSupportDynamicAttributeStride:")
+    public native void setSupportDynamicAttributeStride(boolean value);
+
+    /**
+     * allows binding pipelines that have at least one MTLBufferLayout with a
+     * stride of `MTLBufferLayoutStrideDynamic`
+     * 
+     * will allow setting attributeStride in `setVertexBuffer` / `setKernelBuffer`
+     * calls
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("supportDynamicAttributeStride")
+    public native boolean supportDynamicAttributeStride();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -70,4 +70,16 @@ public interface MTLIndirectComputeCommand {
     @Generated
     @Selector("setImageblockWidth:height:")
     void setImageblockWidthHeight(@NUInt long width, @NUInt long height);
+
+    /**
+     * sets kernel buffer at specified index with provided offset and stride.
+     * only call this when the buffer-index is part of the stageInputDescriptor
+     * and has set its stride to `MTLBufferLayoutStrideDynamic`
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("setKernelBuffer:offset:attributeStride:atIndex:")
+    void setKernelBufferOffsetAttributeStrideAtIndex(@Mapped(ObjCObjectMapper.class) @NotNull MTLBuffer buffer,
+            @NUInt long offset, @NUInt long stride, @NUInt long index);
 }

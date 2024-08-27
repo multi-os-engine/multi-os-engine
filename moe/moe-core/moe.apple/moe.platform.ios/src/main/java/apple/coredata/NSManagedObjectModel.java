@@ -51,6 +51,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.foundation.NSError;
 
 /**
  * Models describe object graphs to be managed. Models (and their entities/properties/fetch request templates) are
@@ -410,4 +411,34 @@ public class NSManagedObjectModel extends NSObject implements NSCoding, NSCopyin
     @Generated
     @Selector("versionIdentifiers")
     public native NSSet<?> versionIdentifiers();
+
+    /**
+     * This method will retrieve the version checksums for all the models in a versioned model bundle. This method will
+     * return nil
+     * if there is an error loading the bundle at the specified URL. Potential errors that might be returned include
+     * failures due to a lack of
+     * permissions from sandboxing or data protection, a missing file or general read errors.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("checksumsForVersionedModelAtURL:error:")
+    @Nullable
+    public static native NSDictionary<String, String> checksumsForVersionedModelAtURLError(@NotNull NSURL modelURL,
+            @ReferenceInfo(type = NSError.class) @Nullable Ptr<NSError> error);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
+
+    /**
+     * Returns a Base-64 encoded string representation of the entity version hashes.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("versionChecksum")
+    @NotNull
+    public native String versionChecksum();
 }

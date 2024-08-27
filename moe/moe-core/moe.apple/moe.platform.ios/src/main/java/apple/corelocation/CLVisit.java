@@ -49,12 +49,6 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
- * CLVisit
- * 
- * Discussion
- * An instance of this class represents a possibly open-ended event
- * during which the device was at the specified coordinate.
- * 
  * API-Since: 8.0
  */
 @Generated
@@ -245,4 +239,9 @@ public class CLVisit extends NSObject implements NSSecureCoding, NSCopying {
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

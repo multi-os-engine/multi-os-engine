@@ -503,4 +503,9 @@ public class NSFileHandle extends NSObject implements NSSecureCoding {
     @Selector("writeData:error:")
     public native boolean writeDataError(@NotNull NSData data,
             @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

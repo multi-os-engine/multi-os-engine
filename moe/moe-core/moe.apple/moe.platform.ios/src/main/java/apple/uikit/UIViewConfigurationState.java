@@ -254,4 +254,9 @@ public class UIViewConfigurationState extends NSObject implements UIConfiguratio
     @Generated
     @Selector("setPinned:")
     public native void setPinned(boolean value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -4375,10 +4375,10 @@ public final class ImageIO {
     public static native long CGImageSourceGetPrimaryImageIndex(@NotNull CGImageSourceRef isrc);
 
     /**
-     * Animate the sequence of images contained in the file at `url'. Currently supported image
-     * formats are GIF and APNG. The `options' dictionary may be used to request additional playback
+     * Animate the sequence of images contained in the file at `url`. Currently supported image
+     * formats are GIF and APNG. The `options` dictionary may be used to request additional playback
      * options; see the list of keys above for more information. The block is called on the main queue
-     * at time intervals specified by the `delay time' of the image. The animation can be stopped by
+     * at time intervals specified by the `delay time` of the image. The animation can be stopped by
      * setting the boolean parameter of the block to true.
      * 
      * API-Since: 13.0
@@ -4396,10 +4396,10 @@ public final class ImageIO {
     }
 
     /**
-     * Animate the sequence of images contained in `data'. Currently supported image
-     * formats are GIF and APNG. The `options' dictionary may be used to request additional playback
+     * Animate the sequence of images contained in `data`. Currently supported image
+     * formats are GIF and APNG. The `options` dictionary may be used to request additional playback
      * options; see the list of keys above for more information. The block is called on the main queue
-     * at time intervals specified by the `delay time' of the image. The animation can be stopped by
+     * at time intervals specified by the `delay time` of the image. The animation can be stopped by
      * setting the boolean parameter of the block to true.
      * 
      * API-Since: 13.0
@@ -6658,7 +6658,7 @@ public final class ImageIO {
     public static native CFStringRef kCGImageAnimationStartIndex();
 
     /**
-     * The value of this key overrides the `delay time' specified by the image
+     * The value of this key overrides the `delay time` specified by the image
      * Value is a CFNumber of kCFNumberDoubleType.
      * 
      * API-Since: 13.0
@@ -6669,7 +6669,7 @@ public final class ImageIO {
     public static native CFStringRef kCGImageAnimationDelayTime();
 
     /**
-     * The value of this key overrides the `loop count' specified by the image
+     * The value of this key overrides the `loop count` specified by the image
      * Value is a CFNumber; kCFNumberPositiveInfinity may be used.
      * 
      * API-Since: 13.0
@@ -6786,7 +6786,7 @@ public final class ImageIO {
     public static native CFStringRef kCGImageAuxiliaryDataTypeHDRGainMap();
 
     /**
-     * API-Since: 19.0
+     * API-Since: 15.0
      */
     @NotNull
     @Generated
@@ -7012,4 +7012,49 @@ public final class ImageIO {
     @Generated public static final double IMAGEIO_PNG_FILTER_UP = 32.0;
     @Generated public static final double IMAGEIO_PNG_FILTER_AVG = 64.0;
     @Generated public static final double IMAGEIO_PNG_FILTER_PAETH = 128.0;
+
+    /**
+     * kCGImageSourceDecodeRequest - value is one of the predefined keys (kCGImageSourceDecodeToHDR,
+     * kCGImageSourceDecodeToSDR, ...)
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kCGImageSourceDecodeRequest();
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kCGImageSourceDecodeToHDR();
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kCGImageSourceDecodeToSDR();
+
+    /**
+     * kCGImageSourceDecodeRequestOptions - CFDictionaryRef to specify additional options
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kCGImageSourceDecodeRequestOptions();
+
+    /**
+     * API-Since: 16.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kCGImagePropertyAVISDictionary();
 }

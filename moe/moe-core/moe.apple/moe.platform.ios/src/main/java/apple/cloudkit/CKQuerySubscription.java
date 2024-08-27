@@ -47,11 +47,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
- * CKQuerySubscription
- * 
- * A subscription that fires whenever a change matching the predicate occurs.
- * 
- * [@c] CKQuerySubscriptions are not supported in a @c sharedCloudDatabase
+ * NS_SWIFT_SENDABLE on macos(14.0), ios(17.0), tvos(17.0), watchos(10.0)
  * 
  * API-Since: 10.0
  */
@@ -192,6 +188,11 @@ public class CKQuerySubscription extends CKSubscription implements NSSecureCodin
     @Selector("initWithCoder:")
     public native CKQuerySubscription initWithCoder(@NotNull NSCoder aDecoder);
 
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 10.0
+     */
+    @Deprecated
     @Generated
     @Selector("initWithRecordType:predicate:options:")
     public native CKQuerySubscription initWithRecordTypePredicateOptions(@NotNull String recordType,
@@ -256,4 +257,9 @@ public class CKQuerySubscription extends CKSubscription implements NSSecureCodin
     @Generated
     @Selector("zoneID")
     public native CKRecordZoneID zoneID();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

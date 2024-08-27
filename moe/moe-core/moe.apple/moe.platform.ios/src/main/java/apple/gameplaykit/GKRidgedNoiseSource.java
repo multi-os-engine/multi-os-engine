@@ -42,8 +42,6 @@ import org.jetbrains.annotations.Nullable;
 
 /**
  * Ridged noise is similar to Perlin noise, with sharply-defined, relatively thin peaks.
- * 
- * API-Since: 10.0
  */
 @Generated
 @Library("GameplayKit")
@@ -172,4 +170,9 @@ public class GKRidgedNoiseSource extends GKCoherentNoiseSource {
     @Selector("initWithFrequency:octaveCount:lacunarity:seed:")
     public native GKRidgedNoiseSource initWithFrequencyOctaveCountLacunaritySeed(double frequency,
             @NInt long octaveCount, double lacunarity, int seed);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

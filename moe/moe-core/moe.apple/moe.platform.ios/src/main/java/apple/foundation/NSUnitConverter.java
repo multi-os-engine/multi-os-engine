@@ -182,4 +182,9 @@ public class NSUnitConverter extends NSObject {
     @Generated
     @Selector("valueFromBaseUnitValue:")
     public native double valueFromBaseUnitValue(double baseUnitValue);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

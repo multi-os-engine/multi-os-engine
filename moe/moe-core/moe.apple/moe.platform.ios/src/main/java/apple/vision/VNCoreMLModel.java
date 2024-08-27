@@ -215,4 +215,9 @@ public class VNCoreMLModel extends NSObject {
     @Generated
     @Selector("setInputImageFeatureName:")
     public native void setInputImageFeatureName(@NotNull String value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

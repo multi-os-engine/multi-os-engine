@@ -440,7 +440,7 @@ public final class CoreServices {
      * 
      * API-Since: 3.0
      * Deprecated-Since: 15.0
-     * Deprecated-Message: Use UTTypeItem instead.
+     * Deprecated-Message: Use UTTypeItem or UTType.item (swift) instead.
      */
     @NotNull
     @Deprecated
@@ -451,7 +451,7 @@ public final class CoreServices {
     /**
      * API-Since: 3.0
      * Deprecated-Since: 15.0
-     * Deprecated-Message: Use UTTypeContent instead.
+     * Deprecated-Message: Use UTTypeContent or UTType.content (swift) instead.
      */
     @NotNull
     @Deprecated
@@ -462,7 +462,7 @@ public final class CoreServices {
     /**
      * API-Since: 3.0
      * Deprecated-Since: 15.0
-     * Deprecated-Message: Use UTTypeCompositeContent instead.
+     * Deprecated-Message: Use UTTypeCompositeContent or UTType.compositeContent (swift) instead.
      */
     @NotNull
     @Deprecated
@@ -473,7 +473,7 @@ public final class CoreServices {
     /**
      * API-Since: 3.0
      * Deprecated-Since: 15.0
-     * Deprecated-Message: Use UTTypeMessage instead.
+     * Deprecated-Message: Use UTTypeMessage or UTType.message (swift) instead.
      */
     @NotNull
     @Deprecated
@@ -484,7 +484,7 @@ public final class CoreServices {
     /**
      * API-Since: 3.0
      * Deprecated-Since: 15.0
-     * Deprecated-Message: Use UTTypeContact instead.
+     * Deprecated-Message: Use UTTypeContact or UTType.contact (swift) instead.
      */
     @NotNull
     @Deprecated
@@ -495,7 +495,7 @@ public final class CoreServices {
     /**
      * API-Since: 3.0
      * Deprecated-Since: 15.0
-     * Deprecated-Message: Use UTTypeArchive instead.
+     * Deprecated-Message: Use UTTypeArchive or UTType.archive (swift) instead.
      */
     @NotNull
     @Deprecated
@@ -506,13 +506,90 @@ public final class CoreServices {
     /**
      * API-Since: 3.0
      * Deprecated-Since: 15.0
-     * Deprecated-Message: Use UTTypeDiskImage instead.
+     * Deprecated-Message: Use UTTypeDiskImage or UTType.diskImage (swift) instead.
      */
     @NotNull
     @Deprecated
     @Generated
     @CVariable()
     public static native CFStringRef kUTTypeDiskImage();
+
+    /**
+     * API-Since: 3.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: Use UTTypeData or UTType.data (swift) instead.
+     */
+    @NotNull
+    @Deprecated
+    @Generated
+    @CVariable()
+    public static native CFStringRef kUTTypeData();
+
+    /**
+     * API-Since: 3.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: Use UTTypeDirectory or UTType.directory (swift) instead.
+     */
+    @NotNull
+    @Deprecated
+    @Generated
+    @CVariable()
+    public static native CFStringRef kUTTypeDirectory();
+
+    /**
+     * API-Since: 3.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: Use UTTypeResolvable or UTType.resolvable (swift) instead.
+     */
+    @NotNull
+    @Deprecated
+    @Generated
+    @CVariable()
+    public static native CFStringRef kUTTypeResolvable();
+
+    /**
+     * API-Since: 3.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: Use UTTypeSymLink or UTType.symbolicLink (swift) instead.
+     */
+    @NotNull
+    @Deprecated
+    @Generated
+    @CVariable()
+    public static native CFStringRef kUTTypeSymLink();
+
+    /**
+     * API-Since: 8.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: Use UTTypeExecutable or UTType.executable (swift) instead.
+     */
+    @NotNull
+    @Deprecated
+    @Generated
+    @CVariable()
+    public static native CFStringRef kUTTypeExecutable();
+
+    /**
+     * API-Since: 3.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: Use UTTypeMountPoint or UTType.mountPoint (swift) instead.
+     */
+    @NotNull
+    @Deprecated
+    @Generated
+    @CVariable()
+    public static native CFStringRef kUTTypeMountPoint();
+
+    /**
+     * API-Since: 3.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: Use UTTypeAliasFile or UTType.aliasFile (swift) instead.
+     */
+    @NotNull
+    @Deprecated
+    @Generated
+    @CVariable()
+    public static native CFStringRef kUTTypeAliasFile();
 
     /**
      * kUTTypeData *** DEPRECATED ***
@@ -589,83 +666,6 @@ public final class CoreServices {
      * 
      * API-Since: 3.0
      * Deprecated-Since: 15.0
-     * Deprecated-Message: Use UTTypeData instead.
-     */
-    @NotNull
-    @Deprecated
-    @Generated
-    @CVariable()
-    public static native CFStringRef kUTTypeData();
-
-    /**
-     * API-Since: 3.0
-     * Deprecated-Since: 15.0
-     * Deprecated-Message: Use UTTypeDirectory instead.
-     */
-    @NotNull
-    @Deprecated
-    @Generated
-    @CVariable()
-    public static native CFStringRef kUTTypeDirectory();
-
-    /**
-     * API-Since: 3.0
-     * Deprecated-Since: 15.0
-     * Deprecated-Message: Use UTTypeResolvable instead.
-     */
-    @NotNull
-    @Deprecated
-    @Generated
-    @CVariable()
-    public static native CFStringRef kUTTypeResolvable();
-
-    /**
-     * API-Since: 3.0
-     * Deprecated-Since: 15.0
-     * Deprecated-Message: Use UTTypeSymLink instead.
-     */
-    @NotNull
-    @Deprecated
-    @Generated
-    @CVariable()
-    public static native CFStringRef kUTTypeSymLink();
-
-    /**
-     * API-Since: 8.0
-     * Deprecated-Since: 15.0
-     * Deprecated-Message: Use UTTypeExecutable instead.
-     */
-    @NotNull
-    @Deprecated
-    @Generated
-    @CVariable()
-    public static native CFStringRef kUTTypeExecutable();
-
-    /**
-     * API-Since: 3.0
-     * Deprecated-Since: 15.0
-     * Deprecated-Message: Use UTTypeMountPoint instead.
-     */
-    @NotNull
-    @Deprecated
-    @Generated
-    @CVariable()
-    public static native CFStringRef kUTTypeMountPoint();
-
-    /**
-     * API-Since: 3.0
-     * Deprecated-Since: 15.0
-     * Deprecated-Message: Use UTTypeAliasFile instead.
-     */
-    @NotNull
-    @Deprecated
-    @Generated
-    @CVariable()
-    public static native CFStringRef kUTTypeAliasFile();
-
-    /**
-     * API-Since: 3.0
-     * Deprecated-Since: 15.0
      * Deprecated-Message: The Alias Manager is obsolete.
      */
     @NotNull
@@ -677,7 +677,7 @@ public final class CoreServices {
     /**
      * API-Since: 8.0
      * Deprecated-Since: 15.0
-     * Deprecated-Message: Use UTTypeURLBookmarkData instead.
+     * Deprecated-Message: Use UTTypeURLBookmarkData or UTType.urlBookmarkData (swift) instead.
      */
     @NotNull
     @Deprecated
@@ -706,7 +706,7 @@ public final class CoreServices {
      * 
      * API-Since: 3.0
      * Deprecated-Since: 15.0
-     * Deprecated-Message: Use UTTypeURL instead.
+     * Deprecated-Message: Use UTTypeURL or UTType.url (swift) instead.
      */
     @NotNull
     @Deprecated
@@ -717,7 +717,7 @@ public final class CoreServices {
     /**
      * API-Since: 3.0
      * Deprecated-Since: 15.0
-     * Deprecated-Message: Use UTTypeFileURL instead.
+     * Deprecated-Message: Use UTTypeFileURL or UTType.fileURL (swift) instead.
      */
     @NotNull
     @Deprecated
@@ -814,7 +814,7 @@ public final class CoreServices {
      * 
      * API-Since: 3.0
      * Deprecated-Since: 15.0
-     * Deprecated-Message: Use UTTypeText instead.
+     * Deprecated-Message: Use UTTypeText or UTType.text (swift) instead.
      */
     @NotNull
     @Deprecated
@@ -825,7 +825,7 @@ public final class CoreServices {
     /**
      * API-Since: 3.0
      * Deprecated-Since: 15.0
-     * Deprecated-Message: Use UTTypePlainText instead.
+     * Deprecated-Message: Use UTTypePlainText or UTType.plainText (swift) instead.
      */
     @NotNull
     @Deprecated
@@ -836,7 +836,7 @@ public final class CoreServices {
     /**
      * API-Since: 3.0
      * Deprecated-Since: 15.0
-     * Deprecated-Message: Use UTTypeUTF8PlainText instead.
+     * Deprecated-Message: Use UTTypeUTF8PlainText or UTType.utf8PlainText (swift) instead.
      */
     @NotNull
     @Deprecated
@@ -847,7 +847,7 @@ public final class CoreServices {
     /**
      * API-Since: 3.0
      * Deprecated-Since: 15.0
-     * Deprecated-Message: Use UTTypeUTF16ExternalPlainText instead.
+     * Deprecated-Message: Use UTTypeUTF16ExternalPlainText or UTType.utf16ExternalPlainText (swift) instead.
      */
     @NotNull
     @Deprecated
@@ -858,7 +858,7 @@ public final class CoreServices {
     /**
      * API-Since: 3.0
      * Deprecated-Since: 15.0
-     * Deprecated-Message: Use UTTypeUTF16PlainText instead.
+     * Deprecated-Message: Use UTTypeUTF16PlainText or UTType.utf16PlainText (swift) instead.
      */
     @NotNull
     @Deprecated
@@ -869,7 +869,7 @@ public final class CoreServices {
     /**
      * API-Since: 8.0
      * Deprecated-Since: 15.0
-     * Deprecated-Message: Use UTTypeDelimitedText instead.
+     * Deprecated-Message: Use UTTypeDelimitedText or UTType.delimitedText (swift) instead.
      */
     @NotNull
     @Deprecated
@@ -880,7 +880,7 @@ public final class CoreServices {
     /**
      * API-Since: 8.0
      * Deprecated-Since: 15.0
-     * Deprecated-Message: Use UTTypeCommaSeparatedText instead.
+     * Deprecated-Message: Use UTTypeCommaSeparatedText or UTType.commaSeparatedText (swift) instead.
      */
     @NotNull
     @Deprecated
@@ -891,7 +891,7 @@ public final class CoreServices {
     /**
      * API-Since: 8.0
      * Deprecated-Since: 15.0
-     * Deprecated-Message: Use UTTypeTabSeparatedText instead.
+     * Deprecated-Message: Use UTTypeTabSeparatedText or UTType.tabSeparatedText (swift) instead.
      */
     @NotNull
     @Deprecated
@@ -902,7 +902,7 @@ public final class CoreServices {
     /**
      * API-Since: 8.0
      * Deprecated-Since: 15.0
-     * Deprecated-Message: Use UTTypeUTF8TabSeparatedText instead.
+     * Deprecated-Message: Use UTTypeUTF8TabSeparatedText or UTType.utf8tabSeparatedText (swift) instead.
      */
     @NotNull
     @Deprecated
@@ -913,7 +913,7 @@ public final class CoreServices {
     /**
      * API-Since: 3.0
      * Deprecated-Since: 15.0
-     * Deprecated-Message: Use UTTypeRTF instead.
+     * Deprecated-Message: Use UTTypeRTF or UTType.rtf (swift) instead.
      */
     @NotNull
     @Deprecated
@@ -940,7 +940,7 @@ public final class CoreServices {
      * 
      * API-Since: 3.0
      * Deprecated-Since: 15.0
-     * Deprecated-Message: Use UTTypeHTML instead.
+     * Deprecated-Message: Use UTTypeHTML or UTType.html (swift) instead.
      */
     @NotNull
     @Deprecated
@@ -951,13 +951,112 @@ public final class CoreServices {
     /**
      * API-Since: 3.0
      * Deprecated-Since: 15.0
-     * Deprecated-Message: Use UTTypeXML instead.
+     * Deprecated-Message: Use UTTypeXML or UTType.xml (swift) instead.
      */
     @NotNull
     @Deprecated
     @Generated
     @CVariable()
     public static native CFStringRef kUTTypeXML();
+
+    /**
+     * API-Since: 3.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: Use UTTypeSourceCode or UTType.sourceCode (swift) instead.
+     */
+    @NotNull
+    @Deprecated
+    @Generated
+    @CVariable()
+    public static native CFStringRef kUTTypeSourceCode();
+
+    /**
+     * API-Since: 8.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: Use UTTypeAssemblyLanguageSource or UTType.assemblyLanguageSource (swift) instead.
+     */
+    @NotNull
+    @Deprecated
+    @Generated
+    @CVariable()
+    public static native CFStringRef kUTTypeAssemblyLanguageSource();
+
+    /**
+     * API-Since: 3.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: Use UTTypeCSource or UTType.cSource (swift) instead.
+     */
+    @NotNull
+    @Deprecated
+    @Generated
+    @CVariable()
+    public static native CFStringRef kUTTypeCSource();
+
+    /**
+     * API-Since: 3.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: Use UTTypeObjectiveCSource or UTType.objectiveCSource (swift) instead.
+     */
+    @NotNull
+    @Deprecated
+    @Generated
+    @CVariable()
+    public static native CFStringRef kUTTypeObjectiveCSource();
+
+    /**
+     * API-Since: 9.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: Use UTTypeSwiftSource or UTType.swiftSource (swift) instead.
+     */
+    @NotNull
+    @Deprecated
+    @Generated
+    @CVariable()
+    public static native CFStringRef kUTTypeSwiftSource();
+
+    /**
+     * API-Since: 3.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: Use UTTypeCPlusPlusSource or UTType.cPlusPlusSource (swift) instead.
+     */
+    @NotNull
+    @Deprecated
+    @Generated
+    @CVariable()
+    public static native CFStringRef kUTTypeCPlusPlusSource();
+
+    /**
+     * API-Since: 3.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: Use UTTypeObjectiveCPlusPlusSource or UTType.objectiveCPlusPlusSource (swift) instead.
+     */
+    @NotNull
+    @Deprecated
+    @Generated
+    @CVariable()
+    public static native CFStringRef kUTTypeObjectiveCPlusPlusSource();
+
+    /**
+     * API-Since: 3.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: Use UTTypeCHeader or UTType.cHeader (swift) instead.
+     */
+    @NotNull
+    @Deprecated
+    @Generated
+    @CVariable()
+    public static native CFStringRef kUTTypeCHeader();
+
+    /**
+     * API-Since: 3.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: Use UTTypeCPlusPlusHeader or UTType.cPlusPlusHeader (swift) instead.
+     */
+    @NotNull
+    @Deprecated
+    @Generated
+    @CVariable()
+    public static native CFStringRef kUTTypeCPlusPlusHeader();
 
     /**
      * kUTTypeSourceCode *** DEPRECATED ***
@@ -1040,105 +1139,6 @@ public final class CoreServices {
      * conforms to: public.source-code
      * 
      * 
-     * API-Since: 3.0
-     * Deprecated-Since: 15.0
-     * Deprecated-Message: Use UTTypeSourceCode instead.
-     */
-    @NotNull
-    @Deprecated
-    @Generated
-    @CVariable()
-    public static native CFStringRef kUTTypeSourceCode();
-
-    /**
-     * API-Since: 8.0
-     * Deprecated-Since: 15.0
-     * Deprecated-Message: Use UTTypeAssemblyLanguageSource instead.
-     */
-    @NotNull
-    @Deprecated
-    @Generated
-    @CVariable()
-    public static native CFStringRef kUTTypeAssemblyLanguageSource();
-
-    /**
-     * API-Since: 3.0
-     * Deprecated-Since: 15.0
-     * Deprecated-Message: Use UTTypeCSource instead.
-     */
-    @NotNull
-    @Deprecated
-    @Generated
-    @CVariable()
-    public static native CFStringRef kUTTypeCSource();
-
-    /**
-     * API-Since: 3.0
-     * Deprecated-Since: 15.0
-     * Deprecated-Message: Use UTTypeObjectiveCSource instead.
-     */
-    @NotNull
-    @Deprecated
-    @Generated
-    @CVariable()
-    public static native CFStringRef kUTTypeObjectiveCSource();
-
-    /**
-     * API-Since: 9.0
-     * Deprecated-Since: 15.0
-     * Deprecated-Message: Use UTTypeSwiftSource instead.
-     */
-    @NotNull
-    @Deprecated
-    @Generated
-    @CVariable()
-    public static native CFStringRef kUTTypeSwiftSource();
-
-    /**
-     * API-Since: 3.0
-     * Deprecated-Since: 15.0
-     * Deprecated-Message: Use UTTypeCPlusPlusSource instead.
-     */
-    @NotNull
-    @Deprecated
-    @Generated
-    @CVariable()
-    public static native CFStringRef kUTTypeCPlusPlusSource();
-
-    /**
-     * API-Since: 3.0
-     * Deprecated-Since: 15.0
-     * Deprecated-Message: Use UTTypeObjectiveCPlusPlusSource instead.
-     */
-    @NotNull
-    @Deprecated
-    @Generated
-    @CVariable()
-    public static native CFStringRef kUTTypeObjectiveCPlusPlusSource();
-
-    /**
-     * API-Since: 3.0
-     * Deprecated-Since: 15.0
-     * Deprecated-Message: Use UTTypeCHeader instead.
-     */
-    @NotNull
-    @Deprecated
-    @Generated
-    @CVariable()
-    public static native CFStringRef kUTTypeCHeader();
-
-    /**
-     * API-Since: 3.0
-     * Deprecated-Since: 15.0
-     * Deprecated-Message: Use UTTypeCPlusPlusHeader instead.
-     */
-    @NotNull
-    @Deprecated
-    @Generated
-    @CVariable()
-    public static native CFStringRef kUTTypeCPlusPlusHeader();
-
-    /**
      * API-Since: 3.0
      * Deprecated-Since: 15.0
      * Deprecated-Message: Java support is no longer provided by this operating system. Install a JDK to use Java.
@@ -1232,7 +1232,7 @@ public final class CoreServices {
      * 
      * API-Since: 8.0
      * Deprecated-Since: 15.0
-     * Deprecated-Message: Use UTTypeScript instead.
+     * Deprecated-Message: Use UTTypeScript or UTType.script (swift) instead.
      */
     @NotNull
     @Deprecated
@@ -1243,7 +1243,7 @@ public final class CoreServices {
     /**
      * API-Since: 8.0
      * Deprecated-Since: 15.0
-     * Deprecated-Message: Use UTTypeAppleScript instead.
+     * Deprecated-Message: Use UTTypeAppleScript or UTType.appleScript (swift) instead.
      */
     @NotNull
     @Deprecated
@@ -1254,7 +1254,7 @@ public final class CoreServices {
     /**
      * API-Since: 8.0
      * Deprecated-Since: 15.0
-     * Deprecated-Message: Use UTTypeOSAScript instead.
+     * Deprecated-Message: Use UTTypeOSAScript or UTType.osaScript (swift) instead.
      */
     @NotNull
     @Deprecated
@@ -1265,7 +1265,7 @@ public final class CoreServices {
     /**
      * API-Since: 8.0
      * Deprecated-Since: 15.0
-     * Deprecated-Message: Use UTTypeOSAScriptBundle instead.
+     * Deprecated-Message: Use UTTypeOSAScriptBundle or UTType.osaScriptBundle (swift) instead.
      */
     @NotNull
     @Deprecated
@@ -1276,7 +1276,7 @@ public final class CoreServices {
     /**
      * API-Since: 8.0
      * Deprecated-Since: 15.0
-     * Deprecated-Message: Use UTTypeJavaScript instead.
+     * Deprecated-Message: Use UTTypeJavaScript or UTType.javaScript (swift) instead.
      */
     @NotNull
     @Deprecated
@@ -1287,7 +1287,7 @@ public final class CoreServices {
     /**
      * API-Since: 8.0
      * Deprecated-Since: 15.0
-     * Deprecated-Message: Use UTTypeShellScript instead.
+     * Deprecated-Message: Use UTTypeShellScript or UTType.shellScript (swift) instead.
      */
     @NotNull
     @Deprecated
@@ -1298,7 +1298,7 @@ public final class CoreServices {
     /**
      * API-Since: 8.0
      * Deprecated-Since: 15.0
-     * Deprecated-Message: Use UTTypePerlScript instead.
+     * Deprecated-Message: Use UTTypePerlScript or UTType.perlScript (swift) instead.
      */
     @NotNull
     @Deprecated
@@ -1309,7 +1309,7 @@ public final class CoreServices {
     /**
      * API-Since: 8.0
      * Deprecated-Since: 15.0
-     * Deprecated-Message: Use UTTypePythonScript instead.
+     * Deprecated-Message: Use UTTypePythonScript or UTType.pythonScript (swift) instead.
      */
     @NotNull
     @Deprecated
@@ -1320,7 +1320,7 @@ public final class CoreServices {
     /**
      * API-Since: 8.0
      * Deprecated-Since: 15.0
-     * Deprecated-Message: Use UTTypeRubyScript instead.
+     * Deprecated-Message: Use UTTypeRubyScript or UTType.rubyScript (swift) instead.
      */
     @NotNull
     @Deprecated
@@ -1331,7 +1331,7 @@ public final class CoreServices {
     /**
      * API-Since: 8.0
      * Deprecated-Since: 15.0
-     * Deprecated-Message: Use UTTypePHPScript instead.
+     * Deprecated-Message: Use UTTypePHPScript or UTType.phpScript (swift) instead.
      */
     @NotNull
     @Deprecated
@@ -1376,7 +1376,7 @@ public final class CoreServices {
      * 
      * API-Since: 8.0
      * Deprecated-Since: 15.0
-     * Deprecated-Message: Use UTTypeJSON instead.
+     * Deprecated-Message: Use UTTypeJSON or UTType.json (swift) instead.
      */
     @NotNull
     @Deprecated
@@ -1387,7 +1387,7 @@ public final class CoreServices {
     /**
      * API-Since: 8.0
      * Deprecated-Since: 15.0
-     * Deprecated-Message: Use UTTypePropertyList instead.
+     * Deprecated-Message: Use UTTypePropertyList or UTType.propertyList (swift) instead.
      */
     @NotNull
     @Deprecated
@@ -1398,7 +1398,7 @@ public final class CoreServices {
     /**
      * API-Since: 8.0
      * Deprecated-Since: 15.0
-     * Deprecated-Message: Use UTTypeXMLPropertyList instead.
+     * Deprecated-Message: Use UTTypeXMLPropertyList or UTType.xmlPropertyList (swift) instead.
      */
     @NotNull
     @Deprecated
@@ -1409,13 +1409,46 @@ public final class CoreServices {
     /**
      * API-Since: 8.0
      * Deprecated-Since: 15.0
-     * Deprecated-Message: Use UTTypeBinaryPropertyList instead.
+     * Deprecated-Message: Use UTTypeBinaryPropertyList or UTType.binaryPropertyList (swift) instead.
      */
     @NotNull
     @Deprecated
     @Generated
     @CVariable()
     public static native CFStringRef kUTTypeBinaryPropertyList();
+
+    /**
+     * API-Since: 3.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: Use UTTypePDF or UTType.pdf (swift) instead.
+     */
+    @NotNull
+    @Deprecated
+    @Generated
+    @CVariable()
+    public static native CFStringRef kUTTypePDF();
+
+    /**
+     * API-Since: 3.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: Use UTTypeRTFD or UTType.RTFD (swift) instead.
+     */
+    @NotNull
+    @Deprecated
+    @Generated
+    @CVariable()
+    public static native CFStringRef kUTTypeRTFD();
+
+    /**
+     * API-Since: 3.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: Use UTTypeFlatRTFD or UTType.flatRTFD (swift) instead.
+     */
+    @NotNull
+    @Deprecated
+    @Generated
+    @CVariable()
+    public static native CFStringRef kUTTypeFlatRTFD();
 
     /**
      * kUTTypePDF *** DEPRECATED ***
@@ -1461,39 +1494,6 @@ public final class CoreServices {
      * 
      * API-Since: 3.0
      * Deprecated-Since: 15.0
-     * Deprecated-Message: Use UTTypePDF instead.
-     */
-    @NotNull
-    @Deprecated
-    @Generated
-    @CVariable()
-    public static native CFStringRef kUTTypePDF();
-
-    /**
-     * API-Since: 3.0
-     * Deprecated-Since: 15.0
-     * Deprecated-Message: Use UTTypeRTFD instead.
-     */
-    @NotNull
-    @Deprecated
-    @Generated
-    @CVariable()
-    public static native CFStringRef kUTTypeRTFD();
-
-    /**
-     * API-Since: 3.0
-     * Deprecated-Since: 15.0
-     * Deprecated-Message: Use UTTypeFlatRTFD instead.
-     */
-    @NotNull
-    @Deprecated
-    @Generated
-    @CVariable()
-    public static native CFStringRef kUTTypeFlatRTFD();
-
-    /**
-     * API-Since: 3.0
-     * Deprecated-Since: 15.0
      * Deprecated-Message: The Multilingual Text Engine is obsolete.
      */
     @NotNull
@@ -1505,13 +1505,35 @@ public final class CoreServices {
     /**
      * API-Since: 3.0
      * Deprecated-Since: 15.0
-     * Deprecated-Message: Use UTTypeWebArchive instead.
+     * Deprecated-Message: Use UTTypeWebArchive or UTType.webArchive (swift) instead.
      */
     @NotNull
     @Deprecated
     @Generated
     @CVariable()
     public static native CFStringRef kUTTypeWebArchive();
+
+    /**
+     * API-Since: 3.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: Use UTTypeImage or UTType.image (swift) instead.
+     */
+    @NotNull
+    @Deprecated
+    @Generated
+    @CVariable()
+    public static native CFStringRef kUTTypeImage();
+
+    /**
+     * API-Since: 3.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: Use UTTypeJPEG or UTType.jpeg (swift) instead.
+     */
+    @NotNull
+    @Deprecated
+    @Generated
+    @CVariable()
+    public static native CFStringRef kUTTypeJPEG();
 
     /**
      * kUTTypeImage *** DEPRECATED ***
@@ -1627,28 +1649,6 @@ public final class CoreServices {
      * 
      * API-Since: 3.0
      * Deprecated-Since: 15.0
-     * Deprecated-Message: Use UTTypeImage instead.
-     */
-    @NotNull
-    @Deprecated
-    @Generated
-    @CVariable()
-    public static native CFStringRef kUTTypeImage();
-
-    /**
-     * API-Since: 3.0
-     * Deprecated-Since: 15.0
-     * Deprecated-Message: Use UTTypeJPEG instead.
-     */
-    @NotNull
-    @Deprecated
-    @Generated
-    @CVariable()
-    public static native CFStringRef kUTTypeJPEG();
-
-    /**
-     * API-Since: 3.0
-     * Deprecated-Since: 15.0
      * Deprecated-Message: JPEG2000 is no longer supported by this operating system.
      */
     @NotNull
@@ -1660,7 +1660,7 @@ public final class CoreServices {
     /**
      * API-Since: 3.0
      * Deprecated-Since: 15.0
-     * Deprecated-Message: Use UTTypeTIFF instead.
+     * Deprecated-Message: Use UTTypeTIFF or UTType.tiff (swift) instead.
      */
     @NotNull
     @Deprecated
@@ -1682,7 +1682,7 @@ public final class CoreServices {
     /**
      * API-Since: 3.0
      * Deprecated-Since: 15.0
-     * Deprecated-Message: Use UTTypeGIF instead.
+     * Deprecated-Message: Use UTTypeGIF or UTType.gif (swift) instead.
      */
     @NotNull
     @Deprecated
@@ -1693,7 +1693,7 @@ public final class CoreServices {
     /**
      * API-Since: 3.0
      * Deprecated-Since: 15.0
-     * Deprecated-Message: Use UTTypePNG instead.
+     * Deprecated-Message: Use UTTypePNG or UTType.png (swift) instead.
      */
     @NotNull
     @Deprecated
@@ -1715,7 +1715,7 @@ public final class CoreServices {
     /**
      * API-Since: 3.0
      * Deprecated-Since: 15.0
-     * Deprecated-Message: Use UTTypeICNS instead.
+     * Deprecated-Message: Use UTTypeICNS or UTType.icns (swift) instead.
      */
     @NotNull
     @Deprecated
@@ -1726,7 +1726,7 @@ public final class CoreServices {
     /**
      * API-Since: 3.0
      * Deprecated-Since: 15.0
-     * Deprecated-Message: Use UTTypeBMP instead.
+     * Deprecated-Message: Use UTTypeBMP or UTType.bmp (swift) instead.
      */
     @NotNull
     @Deprecated
@@ -1737,7 +1737,7 @@ public final class CoreServices {
     /**
      * API-Since: 3.0
      * Deprecated-Since: 15.0
-     * Deprecated-Message: Use UTTypeICO instead.
+     * Deprecated-Message: Use UTTypeICO or UTType.ico (swift) instead.
      */
     @NotNull
     @Deprecated
@@ -1748,7 +1748,7 @@ public final class CoreServices {
     /**
      * API-Since: 8.0
      * Deprecated-Since: 15.0
-     * Deprecated-Message: Use UTTypeRAWImage instead.
+     * Deprecated-Message: Use UTTypeRAWImage or UTType.rawImage (swift) instead.
      */
     @NotNull
     @Deprecated
@@ -1759,7 +1759,7 @@ public final class CoreServices {
     /**
      * API-Since: 8.0
      * Deprecated-Since: 15.0
-     * Deprecated-Message: Use UTTypeSVG instead.
+     * Deprecated-Message: Use UTTypeSVG or UTType.svg (swift) instead.
      */
     @NotNull
     @Deprecated
@@ -1770,7 +1770,7 @@ public final class CoreServices {
     /**
      * API-Since: 9.1
      * Deprecated-Since: 15.0
-     * Deprecated-Message: Use UTTypeLivePhoto instead.
+     * Deprecated-Message: Use UTTypeLivePhoto or UTType.livePhoto (swift) instead.
      */
     @NotNull
     @Deprecated
@@ -1920,7 +1920,7 @@ public final class CoreServices {
      * 
      * API-Since: 3.0
      * Deprecated-Since: 15.0
-     * Deprecated-Message: Use UTTypeAudiovisualContent instead.
+     * Deprecated-Message: Use UTTypeAudiovisualContent or UTType.audiovisualcontent (swift) instead.
      */
     @NotNull
     @Deprecated
@@ -1931,7 +1931,7 @@ public final class CoreServices {
     /**
      * API-Since: 3.0
      * Deprecated-Since: 15.0
-     * Deprecated-Message: Use UTTypeMovie instead.
+     * Deprecated-Message: Use UTTypeMovie or UTType.movie (swift) instead.
      */
     @NotNull
     @Deprecated
@@ -1942,7 +1942,7 @@ public final class CoreServices {
     /**
      * API-Since: 3.0
      * Deprecated-Since: 15.0
-     * Deprecated-Message: Use UTTypeVideo instead.
+     * Deprecated-Message: Use UTTypeVideo or UTType.video (swift) instead.
      */
     @NotNull
     @Deprecated
@@ -1953,7 +1953,7 @@ public final class CoreServices {
     /**
      * API-Since: 3.0
      * Deprecated-Since: 15.0
-     * Deprecated-Message: Use UTTypeAudio instead.
+     * Deprecated-Message: Use UTTypeAudio or UTType.audio (swift) instead.
      */
     @NotNull
     @Deprecated
@@ -1964,7 +1964,7 @@ public final class CoreServices {
     /**
      * API-Since: 3.0
      * Deprecated-Since: 15.0
-     * Deprecated-Message: Use UTTypeQuickTimeMovie instead.
+     * Deprecated-Message: Use UTTypeQuickTimeMovie or UTType.quickTimeMovie (swift) instead.
      */
     @NotNull
     @Deprecated
@@ -1975,7 +1975,7 @@ public final class CoreServices {
     /**
      * API-Since: 3.0
      * Deprecated-Since: 15.0
-     * Deprecated-Message: Use UTTypeMPEG instead.
+     * Deprecated-Message: Use UTTypeMPEG or UTType.mpeg (swift) instead.
      */
     @NotNull
     @Deprecated
@@ -1986,7 +1986,7 @@ public final class CoreServices {
     /**
      * API-Since: 8.0
      * Deprecated-Since: 15.0
-     * Deprecated-Message: Use UTTypeMPEG2Video instead.
+     * Deprecated-Message: Use UTTypeMPEG2Video or UTType.mpeg2Video (swift) instead.
      */
     @NotNull
     @Deprecated
@@ -1997,7 +1997,7 @@ public final class CoreServices {
     /**
      * API-Since: 8.0
      * Deprecated-Since: 15.0
-     * Deprecated-Message: Use UTTypeMPEG2TransportStream instead.
+     * Deprecated-Message: Use UTTypeMPEG2TransportStream or UTType.mpeg2TransportStream (swift) instead.
      */
     @NotNull
     @Deprecated
@@ -2008,7 +2008,7 @@ public final class CoreServices {
     /**
      * API-Since: 3.0
      * Deprecated-Since: 15.0
-     * Deprecated-Message: Use UTTypeMP3 instead.
+     * Deprecated-Message: Use UTTypeMP3 or UTType.mp3 (swift) instead.
      */
     @NotNull
     @Deprecated
@@ -2019,7 +2019,7 @@ public final class CoreServices {
     /**
      * API-Since: 3.0
      * Deprecated-Since: 15.0
-     * Deprecated-Message: Use UTTypeMPEG4Movie instead.
+     * Deprecated-Message: Use UTTypeMPEG4Movie or UTType.mpeg4 (swift) instead.
      */
     @NotNull
     @Deprecated
@@ -2030,7 +2030,7 @@ public final class CoreServices {
     /**
      * API-Since: 3.0
      * Deprecated-Since: 15.0
-     * Deprecated-Message: Use UTTypeMPEG4Audio instead.
+     * Deprecated-Message: Use UTTypeMPEG4Audio or UTType.mpeg4Audio (swift) instead.
      */
     @NotNull
     @Deprecated
@@ -2041,7 +2041,7 @@ public final class CoreServices {
     /**
      * API-Since: 3.0
      * Deprecated-Since: 15.0
-     * Deprecated-Message: Use UTTypeAppleProtectedMPEG4Audio instead.
+     * Deprecated-Message: Use UTTypeAppleProtectedMPEG4Audio or UTType.appleProtectedMPEG4Audio (swift) instead.
      */
     @NotNull
     @Deprecated
@@ -2052,7 +2052,7 @@ public final class CoreServices {
     /**
      * API-Since: 8.0
      * Deprecated-Since: 15.0
-     * Deprecated-Message: Use UTTypeAppleProtectedMPEG4Video instead.
+     * Deprecated-Message: Use UTTypeAppleProtectedMPEG4Video or UTType.appleProtectedMPEG4Video (swift) instead.
      */
     @NotNull
     @Deprecated
@@ -2063,7 +2063,7 @@ public final class CoreServices {
     /**
      * API-Since: 8.0
      * Deprecated-Since: 15.0
-     * Deprecated-Message: Use UTTypeAVI instead.
+     * Deprecated-Message: Use UTTypeAVI or UTType.avi (swift) instead.
      */
     @NotNull
     @Deprecated
@@ -2074,7 +2074,7 @@ public final class CoreServices {
     /**
      * API-Since: 8.0
      * Deprecated-Since: 15.0
-     * Deprecated-Message: Use UTTypeAIFF instead.
+     * Deprecated-Message: Use UTTypeAIFF or UTType.aiff (swift) instead.
      */
     @NotNull
     @Deprecated
@@ -2085,7 +2085,7 @@ public final class CoreServices {
     /**
      * API-Since: 8.0
      * Deprecated-Since: 15.0
-     * Deprecated-Message: Use UTTypeWAV instead.
+     * Deprecated-Message: Use UTTypeWAV or UTType.wav (swift) instead.
      */
     @NotNull
     @Deprecated
@@ -2096,7 +2096,7 @@ public final class CoreServices {
     /**
      * API-Since: 8.0
      * Deprecated-Since: 15.0
-     * Deprecated-Message: Use UTTypeMIDI instead.
+     * Deprecated-Message: Use UTTypeMIDI or UTType.MIDIAudio (swift) instead.
      */
     @NotNull
     @Deprecated
@@ -2122,7 +2122,7 @@ public final class CoreServices {
      * 
      * API-Since: 8.0
      * Deprecated-Since: 15.0
-     * Deprecated-Message: Use UTTypePlaylist instead.
+     * Deprecated-Message: Use UTTypePlaylist or UTType.playlist (swift) instead.
      */
     @NotNull
     @Deprecated
@@ -2133,7 +2133,7 @@ public final class CoreServices {
     /**
      * API-Since: 8.0
      * Deprecated-Since: 15.0
-     * Deprecated-Message: Use UTTypeM3UPlaylist instead.
+     * Deprecated-Message: Use UTTypeM3UPlaylist or UTType.m3uPlaylist (swift) instead.
      */
     @NotNull
     @Deprecated
@@ -2216,7 +2216,7 @@ public final class CoreServices {
      * 
      * API-Since: 3.0
      * Deprecated-Since: 15.0
-     * Deprecated-Message: Use UTTypeFolder instead.
+     * Deprecated-Message: Use UTTypeFolder or UTType.folder (swift) instead.
      */
     @NotNull
     @Deprecated
@@ -2227,7 +2227,7 @@ public final class CoreServices {
     /**
      * API-Since: 3.0
      * Deprecated-Since: 15.0
-     * Deprecated-Message: Use UTTypeVolume instead.
+     * Deprecated-Message: Use UTTypeVolume or UTType.volume (swift) instead.
      */
     @NotNull
     @Deprecated
@@ -2238,7 +2238,7 @@ public final class CoreServices {
     /**
      * API-Since: 3.0
      * Deprecated-Since: 15.0
-     * Deprecated-Message: Use UTTypePackage instead.
+     * Deprecated-Message: Use UTTypePackage or UTType.package (swift) instead.
      */
     @NotNull
     @Deprecated
@@ -2249,7 +2249,7 @@ public final class CoreServices {
     /**
      * API-Since: 3.0
      * Deprecated-Since: 15.0
-     * Deprecated-Message: Use UTTypeBundle instead.
+     * Deprecated-Message: Use UTTypeBundle or UTType.bundle (swift) instead.
      */
     @NotNull
     @Deprecated
@@ -2260,7 +2260,7 @@ public final class CoreServices {
     /**
      * API-Since: 8.0
      * Deprecated-Since: 15.0
-     * Deprecated-Message: Use UTTypePluginBundle instead.
+     * Deprecated-Message: Use UTTypePluginBundle or UTType.pluginBundle (swift) instead.
      */
     @NotNull
     @Deprecated
@@ -2271,7 +2271,7 @@ public final class CoreServices {
     /**
      * API-Since: 8.0
      * Deprecated-Since: 15.0
-     * Deprecated-Message: Use UTTypeSpotlightImporter instead.
+     * Deprecated-Message: Use UTTypeSpotlightImporter or UTType.spotlightImporter (swift) instead.
      */
     @NotNull
     @Deprecated
@@ -2282,7 +2282,7 @@ public final class CoreServices {
     /**
      * API-Since: 8.0
      * Deprecated-Since: 15.0
-     * Deprecated-Message: Use UTTypeQuickLookGenerator instead.
+     * Deprecated-Message: Use UTTypeQuickLookGenerator or UTType.quickLookGenerator (swift) instead.
      */
     @NotNull
     @Deprecated
@@ -2293,7 +2293,7 @@ public final class CoreServices {
     /**
      * API-Since: 8.0
      * Deprecated-Since: 15.0
-     * Deprecated-Message: Use UTTypeXPCService instead.
+     * Deprecated-Message: Use UTTypeXPCService or UTType.xpcService (swift) instead.
      */
     @NotNull
     @Deprecated
@@ -2304,7 +2304,7 @@ public final class CoreServices {
     /**
      * API-Since: 3.0
      * Deprecated-Since: 15.0
-     * Deprecated-Message: Use UTTypeFramework instead.
+     * Deprecated-Message: Use UTTypeFramework or UTType.framework (swift) instead.
      */
     @NotNull
     @Deprecated
@@ -2380,7 +2380,7 @@ public final class CoreServices {
      * 
      * API-Since: 3.0
      * Deprecated-Since: 15.0
-     * Deprecated-Message: Use UTTypeApplication instead.
+     * Deprecated-Message: Use UTTypeApplication or UTType.application (swift) instead.
      */
     @NotNull
     @Deprecated
@@ -2391,7 +2391,7 @@ public final class CoreServices {
     /**
      * API-Since: 3.0
      * Deprecated-Since: 15.0
-     * Deprecated-Message: Use UTTypeApplicationBundle instead.
+     * Deprecated-Message: Use UTTypeApplicationBundle or UTType.applicationBundle (swift) instead.
      */
     @NotNull
     @Deprecated
@@ -2413,7 +2413,7 @@ public final class CoreServices {
     /**
      * API-Since: 8.0
      * Deprecated-Since: 15.0
-     * Deprecated-Message: Use UTTypeUnixExecutable instead.
+     * Deprecated-Message: Use UTTypeUnixExecutable or UTType.unixExecutable (swift) instead.
      */
     @NotNull
     @Deprecated
@@ -2422,11 +2422,9 @@ public final class CoreServices {
     public static native CFStringRef kUTTypeUnixExecutable();
 
     /**
-     * Other platform binaries
-     * 
      * API-Since: 8.0
      * Deprecated-Since: 15.0
-     * Deprecated-Message: Use UTTypeEXE instead.
+     * Deprecated-Message: Use UTTypeEXE or UTType.windowsExecutable (swift) instead.
      */
     @NotNull
     @Deprecated
@@ -2435,6 +2433,8 @@ public final class CoreServices {
     public static native CFStringRef kUTTypeWindowsExecutable();
 
     /**
+     * Other platform binaries
+     * 
      * API-Since: 8.0
      * Deprecated-Since: 15.0
      * Deprecated-Message: Java support is no longer provided by this operating system. Install a JDK to use Java.
@@ -2461,7 +2461,7 @@ public final class CoreServices {
      * 
      * API-Since: 8.0
      * Deprecated-Since: 15.0
-     * Deprecated-Message: Use UTTypeSystemPreferencesPane instead.
+     * Deprecated-Message: Use UTTypeSystemPreferencesPane or UTType.systemPreferencesPane (swift) instead.
      */
     @NotNull
     @Deprecated
@@ -2496,7 +2496,7 @@ public final class CoreServices {
      * 
      * API-Since: 8.0
      * Deprecated-Since: 15.0
-     * Deprecated-Message: Use UTTypeGZIP instead.
+     * Deprecated-Message: Use UTTypeGZIP or UTType.gnu (swift) instead.
      */
     @NotNull
     @Deprecated
@@ -2507,7 +2507,7 @@ public final class CoreServices {
     /**
      * API-Since: 8.0
      * Deprecated-Since: 15.0
-     * Deprecated-Message: Use UTTypeBZ2 instead.
+     * Deprecated-Message: Use UTTypeBZ2 or UTType.bzip2 (swift) instead.
      */
     @NotNull
     @Deprecated
@@ -2518,7 +2518,7 @@ public final class CoreServices {
     /**
      * API-Since: 8.0
      * Deprecated-Since: 15.0
-     * Deprecated-Message: Use UTTypeZIP instead.
+     * Deprecated-Message: Use UTTypeZIP or UTType.zip (swift) instead.
      */
     @NotNull
     @Deprecated
@@ -2552,7 +2552,7 @@ public final class CoreServices {
      * 
      * API-Since: 8.0
      * Deprecated-Since: 15.0
-     * Deprecated-Message: Use UTTypeSpreadsheet instead.
+     * Deprecated-Message: Use UTTypeSpreadsheet or UTType.spreadsheet (swift) instead.
      */
     @NotNull
     @Deprecated
@@ -2563,7 +2563,7 @@ public final class CoreServices {
     /**
      * API-Since: 8.0
      * Deprecated-Since: 15.0
-     * Deprecated-Message: Use UTTypePresentation instead.
+     * Deprecated-Message: Use UTTypePresentation or UTType.presentation (swift) instead.
      */
     @NotNull
     @Deprecated
@@ -2574,7 +2574,7 @@ public final class CoreServices {
     /**
      * API-Since: 8.0
      * Deprecated-Since: 15.0
-     * Deprecated-Message: Use UTTypeDatabase instead.
+     * Deprecated-Message: Use UTTypeDatabase or UTType.database (swift) instead.
      */
     @NotNull
     @Deprecated
@@ -2615,7 +2615,7 @@ public final class CoreServices {
      * 
      * API-Since: 3.0
      * Deprecated-Since: 15.0
-     * Deprecated-Message: Use UTTypeVCard instead.
+     * Deprecated-Message: Use UTTypeVCard or UTType.vCard (swift) instead.
      */
     @NotNull
     @Deprecated
@@ -2626,7 +2626,7 @@ public final class CoreServices {
     /**
      * API-Since: 8.0
      * Deprecated-Since: 15.0
-     * Deprecated-Message: Use UTTypeToDoItem instead.
+     * Deprecated-Message: Use UTTypeToDoItem or UTType.toDoItem (swift) instead.
      */
     @NotNull
     @Deprecated
@@ -2637,7 +2637,7 @@ public final class CoreServices {
     /**
      * API-Since: 8.0
      * Deprecated-Since: 15.0
-     * Deprecated-Message: Use UTTypeCalendarEvent instead.
+     * Deprecated-Message: Use UTTypeCalendarEvent or UTType.calendarEvent (swift) instead.
      */
     @NotNull
     @Deprecated
@@ -2648,7 +2648,7 @@ public final class CoreServices {
     /**
      * API-Since: 8.0
      * Deprecated-Since: 15.0
-     * Deprecated-Message: Use UTTypeEmailMessage instead.
+     * Deprecated-Message: Use UTTypeEmailMessage or UTType.emailMessage (swift) instead.
      */
     @NotNull
     @Deprecated
@@ -2667,7 +2667,7 @@ public final class CoreServices {
      * 
      * API-Since: 8.0
      * Deprecated-Since: 15.0
-     * Deprecated-Message: Use UTTypeInternetLocation instead.
+     * Deprecated-Message: Use UTTypeInternetLocation or UTType.internetLocation (swift) instead.
      */
     @NotNull
     @Deprecated
@@ -2750,7 +2750,7 @@ public final class CoreServices {
     /**
      * API-Since: 8.0
      * Deprecated-Since: 15.0
-     * Deprecated-Message: Use UTTypeFont instead.
+     * Deprecated-Message: Use UTTypeFont or UTType.font (swift) instead.
      */
     @NotNull
     @Deprecated
@@ -2761,7 +2761,7 @@ public final class CoreServices {
     /**
      * API-Since: 8.0
      * Deprecated-Since: 15.0
-     * Deprecated-Message: Use UTTypeBookmark instead.
+     * Deprecated-Message: Use UTTypeBookmark or UTType.bookmark (swift) instead.
      */
     @NotNull
     @Deprecated
@@ -2772,7 +2772,7 @@ public final class CoreServices {
     /**
      * API-Since: 8.0
      * Deprecated-Since: 15.0
-     * Deprecated-Message: Use UTType3DContent instead.
+     * Deprecated-Message: Use UTType3DContent or UTType.threeDContent (swift) instead.
      */
     @NotNull
     @Deprecated
@@ -2783,7 +2783,7 @@ public final class CoreServices {
     /**
      * API-Since: 8.0
      * Deprecated-Since: 15.0
-     * Deprecated-Message: Use UTTypePKCS12 instead.
+     * Deprecated-Message: Use UTTypePKCS12 or UTType.pkcs12 (swift) instead.
      */
     @NotNull
     @Deprecated
@@ -2794,7 +2794,7 @@ public final class CoreServices {
     /**
      * API-Since: 8.0
      * Deprecated-Since: 15.0
-     * Deprecated-Message: Use UTTypeX509Certificate instead.
+     * Deprecated-Message: Use UTTypeX509Certificate or UTType.x509Certificate (swift) instead.
      */
     @NotNull
     @Deprecated
@@ -2805,7 +2805,7 @@ public final class CoreServices {
     /**
      * API-Since: 8.0
      * Deprecated-Since: 15.0
-     * Deprecated-Message: Use UTTypeEPUB instead.
+     * Deprecated-Message: Use UTTypeEPUB or UTType.electronicPublication (swift) instead.
      */
     @NotNull
     @Deprecated
@@ -2816,7 +2816,7 @@ public final class CoreServices {
     /**
      * API-Since: 8.0
      * Deprecated-Since: 15.0
-     * Deprecated-Message: Use UTTypeLog instead.
+     * Deprecated-Message: Use UTTypeLog or UTType.log (swift) instead.
      */
     @NotNull
     @Deprecated

@@ -433,4 +433,9 @@ public class INPerson extends NSObject implements NSCopying, NSSecureCoding, INS
     @Generated
     @Selector("isContactSuggestion")
     public native boolean isContactSuggestion();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

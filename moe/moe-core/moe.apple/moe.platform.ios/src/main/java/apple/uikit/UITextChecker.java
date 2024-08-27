@@ -239,4 +239,9 @@ public class UITextChecker extends NSObject {
     @Generated
     @Selector("setIgnoredWords:")
     public native void setIgnoredWords(@Nullable NSArray<String> value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

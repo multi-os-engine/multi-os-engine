@@ -211,4 +211,9 @@ public class NEHotspotHelperResponse extends NSObject {
     @Generated
     @Selector("setNetworkList:")
     public native void setNetworkList(@NotNull NSArray<? extends NEHotspotNetwork> networkList);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

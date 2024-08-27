@@ -75,7 +75,9 @@ public class GKLeaderboardEntry extends NSObject {
 
     /**
      * API-Since: 14.0
+     * Deprecated-Since: 17.0
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("challengeComposeControllerWithMessage:players:completionHandler:")
@@ -196,4 +198,27 @@ public class GKLeaderboardEntry extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("challengeComposeControllerWithMessage:players:completion:")
+    @NotNull
+    public native UIViewController challengeComposeControllerWithMessagePlayersCompletion(@Nullable String message,
+            @Nullable NSArray<? extends GKPlayer> players,
+            @ObjCBlock(name = "call_challengeComposeControllerWithMessagePlayersCompletion") @Nullable Block_challengeComposeControllerWithMessagePlayersCompletion completionHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_challengeComposeControllerWithMessagePlayersCompletion {
+        @Generated
+        void call_challengeComposeControllerWithMessagePlayersCompletion(@NotNull UIViewController composeController,
+                boolean didIssueChallenge, @Nullable NSArray<? extends GKPlayer> sentPlayers);
+    }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

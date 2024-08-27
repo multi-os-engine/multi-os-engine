@@ -229,4 +229,9 @@ public class MXAppLaunchMetric extends MXMetric {
     @Generated
     @Selector("histogrammedExtendedLaunch")
     public native MXHistogram<NSUnitDuration> histogrammedExtendedLaunch();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -781,4 +781,88 @@ public final class MTLPixelFormat {
      * API-Since: 13.0
      */
     @Generated @NUInt public static final long Depth16Unorm = 0x00000000000000FAL;
+    /**
+     * S3TC/DXT
+     * 
+     * API-Since: 16.4
+     */
+    @Generated @NUInt public static final long BC1_RGBA = 0x0000000000000082L;
+    /**
+     * S3TC/DXT
+     * 
+     * API-Since: 16.4
+     */
+    @Generated @NUInt public static final long BC1_RGBA_sRGB = 0x0000000000000083L;
+    /**
+     * S3TC/DXT
+     * 
+     * API-Since: 16.4
+     */
+    @Generated @NUInt public static final long BC2_RGBA = 0x0000000000000084L;
+    /**
+     * S3TC/DXT
+     * 
+     * API-Since: 16.4
+     */
+    @Generated @NUInt public static final long BC2_RGBA_sRGB = 0x0000000000000085L;
+    /**
+     * S3TC/DXT
+     * 
+     * API-Since: 16.4
+     */
+    @Generated @NUInt public static final long BC3_RGBA = 0x0000000000000086L;
+    /**
+     * S3TC/DXT
+     * 
+     * API-Since: 16.4
+     */
+    @Generated @NUInt public static final long BC3_RGBA_sRGB = 0x0000000000000087L;
+    /**
+     * RGTC
+     * 
+     * API-Since: 16.4
+     */
+    @Generated @NUInt public static final long BC4_RUnorm = 0x000000000000008CL;
+    /**
+     * RGTC
+     * 
+     * API-Since: 16.4
+     */
+    @Generated @NUInt public static final long BC4_RSnorm = 0x000000000000008DL;
+    /**
+     * RGTC
+     * 
+     * API-Since: 16.4
+     */
+    @Generated @NUInt public static final long BC5_RGUnorm = 0x000000000000008EL;
+    /**
+     * RGTC
+     * 
+     * API-Since: 16.4
+     */
+    @Generated @NUInt public static final long BC5_RGSnorm = 0x000000000000008FL;
+    /**
+     * BPTC
+     * 
+     * API-Since: 16.4
+     */
+    @Generated @NUInt public static final long BC6H_RGBFloat = 0x0000000000000096L;
+    /**
+     * BPTC
+     * 
+     * API-Since: 16.4
+     */
+    @Generated @NUInt public static final long BC6H_RGBUfloat = 0x0000000000000097L;
+    /**
+     * BPTC
+     * 
+     * API-Since: 16.4
+     */
+    @Generated @NUInt public static final long BC7_RGBAUnorm = 0x0000000000000098L;
+    /**
+     * BPTC
+     * 
+     * API-Since: 16.4
+     */
+    @Generated @NUInt public static final long BC7_RGBAUnorm_sRGB = 0x0000000000000099L;
 }

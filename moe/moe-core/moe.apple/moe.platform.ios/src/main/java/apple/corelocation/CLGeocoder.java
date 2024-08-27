@@ -167,11 +167,6 @@ public class CLGeocoder extends NSObject {
     public native void cancelGeocode();
 
     /**
-     * forward geocode requests
-     * geocodeAddressDictionary:completionHandler: takes an address dictionary as defined by the AddressBook framework.
-     * You can obtain an address dictionary from an ABPerson by retrieving the kABPersonAddressProperty property.
-     * Alternately, one can be constructed using the kABPersonAddress* keys defined in <AddressBook/ABPerson.h>.
-     * 
      * API-Since: 5.0
      * Deprecated-Since: 11.0
      * Deprecated-Message: Use -geocodePostalAddress:completionHandler:
@@ -307,4 +302,9 @@ public class CLGeocoder extends NSObject {
         void call_reverseGeocodeLocationPreferredLocaleCompletionHandler(
                 @Nullable NSArray<? extends CLPlacemark> placemarks, @Nullable NSError error);
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

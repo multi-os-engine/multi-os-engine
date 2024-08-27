@@ -47,9 +47,13 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
+ * The GKSession handles networking between peers for a game, which includes establishing and maintaining connections
+ * over a game network, and network data transport.
+ * 
+ * This a not a Game Center feature. To support Game Center and online play, see GKMatch.
+ * 
  * API-Since: 3.0
  * Deprecated-Since: 7.0
- * Deprecated-Message: Use MCSession from the MultipeerConnectivity framework instead
  */
 @Deprecated
 @Generated
@@ -360,4 +364,9 @@ public class GKSession extends NSObject {
     @Generated
     @Selector("setDisconnectTimeout:")
     public native void setDisconnectTimeout(double value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

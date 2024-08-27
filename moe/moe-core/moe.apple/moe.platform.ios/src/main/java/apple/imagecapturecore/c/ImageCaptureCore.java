@@ -606,4 +606,17 @@ public final class ImageCaptureCore {
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String ICDeviceLocationDescriptionMassStorage();
+
+    /**
+     * [@const] ICTransportTypeProximity
+     * 
+     * Indicates that the device transport is based on proximity instead of a predefined phyiscal layer.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String ICTransportTypeProximity();
 }

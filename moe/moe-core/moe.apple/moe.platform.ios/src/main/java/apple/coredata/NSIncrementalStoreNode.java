@@ -221,4 +221,9 @@ public class NSIncrementalStoreNode extends NSObject {
     @Generated
     @Selector("version")
     public native long version();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

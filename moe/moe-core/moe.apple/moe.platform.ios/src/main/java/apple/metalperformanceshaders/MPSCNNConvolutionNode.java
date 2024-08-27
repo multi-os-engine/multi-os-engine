@@ -225,4 +225,9 @@ public class MPSCNNConvolutionNode extends MPSNNFilterNode implements MPSNNTrain
     @Selector("trainingStyle")
     @NUInt
     public native long trainingStyle();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

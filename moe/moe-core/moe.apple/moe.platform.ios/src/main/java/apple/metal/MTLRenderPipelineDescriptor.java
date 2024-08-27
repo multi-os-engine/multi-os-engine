@@ -721,4 +721,9 @@ public class MTLRenderPipelineDescriptor extends NSObject implements NSCopying {
     @Generated
     @Selector("vertexPreloadedLibraries")
     public native NSArray<?> vertexPreloadedLibraries();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

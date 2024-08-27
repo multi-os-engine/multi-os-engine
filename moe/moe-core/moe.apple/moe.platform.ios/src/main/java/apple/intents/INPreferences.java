@@ -183,4 +183,9 @@ public class INPreferences extends NSObject {
         @Generated
         void call_requestSiriAuthorization(@NInt long status);
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

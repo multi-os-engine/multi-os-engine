@@ -46,8 +46,6 @@ import org.jetbrains.annotations.Nullable;
 /**
  * A face feature found by a CIDetector.
  * All positions are relative to the original image.
- * 
- * API-Since: 5.0
  */
 @Generated
 @Library("CoreImage")
@@ -241,4 +239,9 @@ public class CIFaceFeature extends CIFeature {
     @Generated
     @Selector("trackingID")
     public native int trackingID();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

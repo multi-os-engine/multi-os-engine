@@ -98,10 +98,13 @@ public final class CloudKit {
     public static native String CKPartialErrorsByItemIDKey();
 
     /**
-     * If the server rejects a record save because it has been modified since the last time it was read, a @c
-     * CKErrorServerRecordChanged error will be returned and it will contain versions of the record in its userInfo
-     * dictionary. Apply your custom conflict resolution logic to the server record under @c CKServerRecordKey and
-     * attempt a save of that record.
+     * If the server rejects a record save because it has been modified since the last time it was read,
+     * a @c CKErrorServerRecordChanged will be returned. The error's @c userInfo dictionary will contain
+     * a @c CKRecord keyed by @c CKRecordChangedErrorAncestorRecordKey. This is the original
+     * record used as a basis for making your changes.
+     * 
+     * Note that if you had attempted to save a new @c CKRecord instance, this record may not have any
+     * key / value pairs set on it, as there was no @c CKRecord instance that represents an ancestor point.
      * 
      * API-Since: 8.0
      */
@@ -112,6 +115,13 @@ public final class CloudKit {
     public static native String CKRecordChangedErrorAncestorRecordKey();
 
     /**
+     * If the server rejects a record save because it has been modified since the last time it was read,
+     * a @c CKErrorServerRecordChanged will be returned. The error's @c userInfo dictionary will contain
+     * a @c CKRecord keyed by @c CKRecordChangedErrorServerRecordKey. This is the record
+     * object that was found on the server.
+     * 
+     * Use this record as the basis for merging your changes.
+     * 
      * API-Since: 8.0
      */
     @NotNull
@@ -121,6 +131,11 @@ public final class CloudKit {
     public static native String CKRecordChangedErrorServerRecordKey();
 
     /**
+     * If the server rejects a record save because it has been modified since the last time it was read,
+     * a @c CKErrorServerRecordChanged will be returned. The error's @c userInfo dictionary will contain
+     * a @c CKRecord keyed by @c CKRecordChangedErrorClientRecordKey. This is the record
+     * object that you tried to save.
+     * 
      * API-Since: 8.0
      */
     @NotNull
@@ -155,7 +170,7 @@ public final class CloudKit {
     public static native String CKRecordTypeUserRecord();
 
     /**
-     * Use these keys in queries to match on the record's parent or share reference
+     * For use in queries to match on record properties. Matches `record.parent`
      * 
      * API-Since: 10.0
      */
@@ -166,6 +181,8 @@ public final class CloudKit {
     public static native String CKRecordParentKey();
 
     /**
+     * For use in queries to match on record properties. Matches `record.share`
+     * 
      * API-Since: 10.0
      */
     @NotNull
@@ -260,4 +277,60 @@ public final class CloudKit {
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String CKRecordNameZoneWideShare();
+
+    /**
+     * For use in queries to match on record properties. Matches `record.recordID`. Value is a `CKRecordID`
+     * 
+     * API-Since: 8.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String CKRecordRecordIDKey();
+
+    /**
+     * For use in queries to match on record properties. Matches `record.creatorUserRecordID`. Value is a `CKRecordID`
+     * 
+     * API-Since: 8.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String CKRecordCreatorUserRecordIDKey();
+
+    /**
+     * For use in queries to match on record properties. Matches `record.creationDate`. Value is a `NSDate`
+     * 
+     * API-Since: 8.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String CKRecordCreationDateKey();
+
+    /**
+     * For use in queries to match on record properties. Matches `record.lastModifiedUserRecordID`. Value is a
+     * `CKRecordID`
+     * 
+     * API-Since: 8.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String CKRecordLastModifiedUserRecordIDKey();
+
+    /**
+     * For use in queries to match on record properties. Matches `record.modificationDate`. Value is a `NSDate`
+     * 
+     * API-Since: 8.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String CKRecordModificationDateKey();
 }

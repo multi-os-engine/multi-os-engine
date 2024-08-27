@@ -213,4 +213,9 @@ public class NSDataAsset extends NSObject implements NSCopying {
     @Generated
     @Selector("typeIdentifier")
     public native String typeIdentifier();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

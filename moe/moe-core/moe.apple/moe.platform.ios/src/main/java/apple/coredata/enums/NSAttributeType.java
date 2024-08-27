@@ -58,4 +58,8 @@ public final class NSAttributeType {
      * API-Since: 3.0
      */
     @Generated @NUInt public static final long NSObjectIDAttributeType = 0x00000000000007D0L;
+    /**
+     * API-Since: 17.0
+     */
+    @Generated @NUInt public static final long NSCompositeAttributeType = 0x0000000000000834L;
 }

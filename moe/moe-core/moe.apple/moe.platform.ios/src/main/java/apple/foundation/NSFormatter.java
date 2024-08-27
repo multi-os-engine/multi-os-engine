@@ -217,4 +217,9 @@ public class NSFormatter extends NSObject implements NSCopying, NSCoding {
     @Generated
     @Selector("stringForObjectValue:")
     public native String stringForObjectValue(@Nullable @Mapped(ObjCObjectMapper.class) Object obj);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

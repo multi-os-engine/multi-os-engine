@@ -493,4 +493,9 @@ public class NSIndexSet extends NSObject implements NSCopying, NSMutableCopying,
         @Generated
         boolean call_indexesWithOptionsPassingTest(@NUInt long idx, @NotNull BoolPtr stop);
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

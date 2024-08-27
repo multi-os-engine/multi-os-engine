@@ -54,4 +54,9 @@ public final class MTLTextureUsage {
     @Generated
     private MTLTextureUsage() {
     }
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated @NUInt public static final long ShaderAtomic = 0x0000000000000020L;
 }

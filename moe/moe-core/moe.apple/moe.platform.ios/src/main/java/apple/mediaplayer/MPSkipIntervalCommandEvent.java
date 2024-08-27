@@ -167,4 +167,9 @@ public class MPSkipIntervalCommandEvent extends MPRemoteCommandEvent {
     @Generated
     @Selector("interval")
     public native double interval();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

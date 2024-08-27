@@ -385,9 +385,6 @@ public class NSURL extends NSObject implements NSSecureCoding, NSCopying, NSItem
     public native NSURL URLByResolvingSymlinksInPath();
 
     /**
-     * The following methods work only on `file:` scheme URLs; for non-`file:` scheme URLs, these methods return the URL
-     * unchanged.
-     * 
      * API-Since: 4.0
      */
     @Nullable
@@ -919,7 +916,14 @@ public class NSURL extends NSObject implements NSSecureCoding, NSCopying, NSItem
             @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
-     * NS_SWIFT_SENDABLE
+     * Sets a temporary resource value on the URL object. Temporary resource values are for client use. Temporary
+     * resource values exist only in memory and are never written to the resource's backing store. Once set, a temporary
+     * resource value can be copied from the URL object with -getResourceValue:forKey:error: or
+     * -resourceValuesForKeys:error:. To remove a temporary resource value from the URL object, use
+     * -removeCachedResourceValueForKey:. Care should be taken to ensure the key that identifies a temporary resource
+     * value is unique and does not conflict with system defined keys (using reverse domain name notation in your
+     * temporary resource value keys is recommended). This method is currently applicable only to URLs for file system
+     * resources.
      * 
      * API-Since: 7.0
      */
@@ -935,9 +939,10 @@ public class NSURL extends NSObject implements NSSecureCoding, NSCopying, NSItem
 
     /**
      * Given a NSURL created by resolving a bookmark data created with security scope, make the resource referenced by
-     * the url accessible to the process. When access to this resource is no longer needed the client must call
-     * stopAccessingSecurityScopedResource. Each call to startAccessingSecurityScopedResource must be balanced with a
-     * call to stopAccessingSecurityScopedResource (Note: this is not reference counted).
+     * the url accessible to the process. Each call to startAccessingSecurityScopedResource that returns YES must be
+     * balanced with a call to stopAccessingSecurityScopedResource when access to this resource is no longer needed by
+     * the client. Calls to start and stop accessing the resource are reference counted and may be nested, which allows
+     * the pair of calls to be logically scoped.
      * 
      * API-Since: 8.0
      */
@@ -946,7 +951,8 @@ public class NSURL extends NSObject implements NSSecureCoding, NSCopying, NSItem
     public native boolean startAccessingSecurityScopedResource();
 
     /**
-     * Revokes the access granted to the url by a prior successful call to startAccessingSecurityScopedResource.
+     * Removes one "accessing" reference to the security scope. When all references are removed, it revokes the access
+     * granted to the url by the initial prior successful call to startAccessingSecurityScopedResource.
      * 
      * API-Since: 8.0
      */
@@ -1118,4 +1124,47 @@ public class NSURL extends NSObject implements NSSecureCoding, NSCopying, NSItem
     @Generated
     @Selector("URLByAppendingPathExtensionForType:")
     public native NSURL URLByAppendingPathExtensionForType(@NotNull UTType contentType);
+
+    /**
+     * Initializes and returns a newly created `NSURL` with a URL string and the option to add (or skip) IDNA- and
+     * percent-encoding of invalid characters.
+     * If `encodingInvalidCharacters` is false, and the URL string is invalid according to RFC 3986, `nil` is returned.
+     * If `encodingInvalidCharacters` is true, `NSURL` will try to encode the string to create a valid URL.
+     * If the URL string is still invalid after encoding, `nil` is returned.
+     * 
+     * - Parameter URLString: The URL string.
+     * - Parameter encodingInvalidCharacters: True if `NSURL` should try to encode an invalid URL string, false
+     * otherwise.
+     * - Returns: An `NSURL` instance for a valid URL, or `nil` if the URL is invalid.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("URLWithString:encodingInvalidCharacters:")
+    public static native NSURL URLWithStringEncodingInvalidCharacters(@NotNull String URLString,
+            boolean encodingInvalidCharacters);
+
+    /**
+     * Initializes an `NSURL` with a URL string and the option to add (or skip) IDNA- and percent-encoding of invalid
+     * characters.
+     * If `encodingInvalidCharacters` is false, and the URL string is invalid according to RFC 3986, `nil` is returned.
+     * If `encodingInvalidCharacters` is true, `NSURL` will try to encode the string to create a valid URL.
+     * If the URL string is still invalid after encoding, `nil` is returned.
+     * 
+     * - Parameter URLString: The URL string.
+     * - Parameter encodingInvalidCharacters: True if `NSURL` should try to encode an invalid URL string, false
+     * otherwise.
+     * - Returns: An `NSURL` instance for a valid URL, or `nil` if the URL is invalid.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("initWithString:encodingInvalidCharacters:")
+    public native NSURL initWithStringEncodingInvalidCharacters(@NotNull String URLString,
+            boolean encodingInvalidCharacters);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

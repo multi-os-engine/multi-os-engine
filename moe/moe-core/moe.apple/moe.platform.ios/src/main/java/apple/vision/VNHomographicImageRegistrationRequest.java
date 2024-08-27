@@ -321,4 +321,9 @@ public class VNHomographicImageRegistrationRequest extends VNImageRegistrationRe
     @Generated
     @Selector("results")
     public native NSArray<? extends VNImageHomographicAlignmentObservation> results();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

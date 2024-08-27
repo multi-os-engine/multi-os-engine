@@ -256,4 +256,9 @@ public class AVVideoCompositionInstruction extends NSObject implements NSSecureC
     @Generated
     @Selector("requiredSourceSampleDataTrackIDs")
     public native NSArray<? extends NSNumber> requiredSourceSampleDataTrackIDs();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

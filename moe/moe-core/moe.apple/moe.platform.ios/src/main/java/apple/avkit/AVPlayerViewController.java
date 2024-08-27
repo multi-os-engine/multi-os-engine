@@ -49,6 +49,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.corefoundation.struct.CGRect;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.uikit.UIAction;
 
 /**
  * AVPlayerViewController
@@ -464,7 +465,7 @@ public class AVPlayerViewController extends UIViewController {
     /**
      * [@property] requiresLinearPlayback
      * 
-     * Disables certain user operations (fast forward, forward skip, and scrubbing).
+     * Disables certain user operations, such as scanning, skipping, and scrubbing.
      * 
      * This can be used to enforce playback of mandatory content (such as legalese or advertisements).
      * 
@@ -477,7 +478,7 @@ public class AVPlayerViewController extends UIViewController {
     /**
      * [@property] requiresLinearPlayback
      * 
-     * Disables certain user operations (fast forward, forward skip, and scrubbing).
+     * Disables certain user operations, such as scanning, skipping, and scrubbing.
      * 
      * This can be used to enforce playback of mandatory content (such as legalese or advertisements).
      * 
@@ -604,9 +605,8 @@ public class AVPlayerViewController extends UIViewController {
      * 
      * By default this property will be set to the systemDefaultSpeeds class property. Setting this property to an empty
      * list will hide the playback speed selection UI.
-     * 
      * To set the currently selected playback speed programmatically, either set the defaultRate on the AVPlayer
-     * associated with this view controller or use the selectSpeed method on AVPlayerViewController.
+     * associated with this view controller or use the selectSpeed: method on AVPlayerViewController.
      * 
      * API-Since: 16.0
      */
@@ -621,9 +621,8 @@ public class AVPlayerViewController extends UIViewController {
      * 
      * By default this property will be set to the systemDefaultSpeeds class property. Setting this property to an empty
      * list will hide the playback speed selection UI.
-     * 
      * To set the currently selected playback speed programmatically, either set the defaultRate on the AVPlayer
-     * associated with this view controller or use the selectSpeed method on AVPlayerViewController.
+     * associated with this view controller or use the selectSpeed: method on AVPlayerViewController.
      * 
      * API-Since: 16.0
      */
@@ -631,4 +630,51 @@ public class AVPlayerViewController extends UIViewController {
     @Generated
     @Selector("speeds")
     public native NSArray<? extends AVPlaybackSpeed> speeds();
+
+    /**
+     * [@property] videoFrameAnalysisTypes
+     * 
+     * The types of analysis AVPlayerViewController will perform on a paused video frame. The default value is
+     * AVVideoFrameAnalysisDefault.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("setVideoFrameAnalysisTypes:")
+    public native void setVideoFrameAnalysisTypes(@NUInt long value);
+
+    /**
+     * [@property] toggleLookupAction
+     * 
+     * A UIAction used for enabling the visual lookup interface.
+     * 
+     * Use this action to toggle visual lookup UI. This action's attributes will be set to disabled when there is no
+     * visual lookup data available or when the media is playing. Make sure to update your user interface to reflect
+     * this change. When the lookup UI is toggled, the state property is set to UIMenuElementStateOn; otherwise it will
+     * be set to UIMenuElementStateOff.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("toggleLookupAction")
+    @NotNull
+    public native UIAction toggleLookupAction();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
+
+    /**
+     * [@property] videoFrameAnalysisTypes
+     * 
+     * The types of analysis AVPlayerViewController will perform on a paused video frame. The default value is
+     * AVVideoFrameAnalysisDefault.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("videoFrameAnalysisTypes")
+    @NUInt
+    public native long videoFrameAnalysisTypes();
 }

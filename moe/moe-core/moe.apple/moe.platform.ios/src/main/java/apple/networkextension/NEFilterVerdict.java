@@ -233,4 +233,9 @@ public class NEFilterVerdict extends NSObject implements NSSecureCoding, NSCopyi
     @Generated
     @Selector("shouldReport")
     public native boolean shouldReport();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

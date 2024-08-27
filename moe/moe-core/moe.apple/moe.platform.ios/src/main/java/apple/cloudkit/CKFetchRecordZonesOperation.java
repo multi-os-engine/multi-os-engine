@@ -174,6 +174,8 @@ public class CKFetchRecordZonesOperation extends CKDatabaseOperation {
      * [@c] recordZonesByZoneID and any @c CKPartialErrorsByItemIDKey errors are repeats of the data sent back in
      * previous @c perRecordZoneCompletionBlock invocations
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations
+     * This block may share mutable state with other blocks assigned to this operation, but any such mutable state
+     * should not be concurrently used outside of blocks assigned to this operation.
      */
     @Nullable
     @Generated
@@ -203,6 +205,8 @@ public class CKFetchRecordZonesOperation extends CKDatabaseOperation {
      * [@c] recordZonesByZoneID and any @c CKPartialErrorsByItemIDKey errors are repeats of the data sent back in
      * previous @c perRecordZoneCompletionBlock invocations
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations
+     * This block may share mutable state with other blocks assigned to this operation, but any such mutable state
+     * should not be concurrently used outside of blocks assigned to this operation.
      */
     @Generated
     @Selector("setFetchRecordZonesCompletionBlock:")
@@ -233,6 +237,8 @@ public class CKFetchRecordZonesOperation extends CKDatabaseOperation {
      * Called on success or failure for each record zone.
      * 
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
+     * This block may share mutable state with other blocks assigned to this operation, but any such mutable state
+     * should not be concurrently used outside of blocks assigned to this operation.
      * 
      * API-Since: 15.0
      */
@@ -254,6 +260,8 @@ public class CKFetchRecordZonesOperation extends CKDatabaseOperation {
      * Called on success or failure for each record zone.
      * 
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
+     * This block may share mutable state with other blocks assigned to this operation, but any such mutable state
+     * should not be concurrently used outside of blocks assigned to this operation.
      * 
      * API-Since: 15.0
      */
@@ -269,4 +277,9 @@ public class CKFetchRecordZonesOperation extends CKDatabaseOperation {
         void call_setPerRecordZoneCompletionBlock(@NotNull CKRecordZoneID arg0, @Nullable CKRecordZone arg1,
                 @Nullable NSError arg2);
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

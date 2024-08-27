@@ -239,4 +239,9 @@ public class MPSImageEuclideanDistanceTransform extends MPSUnaryImageKernel {
     @Generated
     @Selector("setSearchLimitRadius:")
     public native void setSearchLimitRadius(float value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -434,4 +434,9 @@ public class MPSNNOptimizerStochasticGradientDescent extends MPSNNOptimizer {
     @Generated
     @Selector("useNesterovMomentum")
     public native boolean useNesterovMomentum();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

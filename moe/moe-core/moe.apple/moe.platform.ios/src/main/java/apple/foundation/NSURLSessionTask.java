@@ -479,4 +479,9 @@ public class NSURLSessionTask extends NSObject implements NSCopying, NSProgressR
     @Generated
     @Selector("setPrefersIncrementalDelivery:")
     public native void setPrefersIncrementalDelivery(boolean value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

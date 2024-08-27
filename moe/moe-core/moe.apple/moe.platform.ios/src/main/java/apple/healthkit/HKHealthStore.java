@@ -47,6 +47,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.uikit.UIViewController;
 
 /**
  * HKHealthStore
@@ -192,7 +193,12 @@ public class HKHealthStore extends NSObject {
      * be saved for you. Note that the sample will be saved without an HKDevice.
      * 
      * The workout provided must be one that has already been saved to HealthKit.
+     * 
+     * API-Since: 8.0
+     * Deprecated-Since: 17.0
+     * Deprecated-Message: Use HKWorkoutBuilder
      */
+    @Deprecated
     @Generated
     @Selector("addSamples:toWorkout:completion:")
     public native void addSamplesToWorkoutCompletion(@NotNull NSArray<? extends HKSample> samples,
@@ -758,6 +764,8 @@ public class HKHealthStore extends NSObject {
      * access with each prompt. The success parameter of the completion indicates whether prompting the user
      * completed successfully and was not cancelled. It does NOT indicate whether the application was granted
      * authorization.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("requestPerObjectReadAuthorizationForType:predicate:completion:")
@@ -770,5 +778,117 @@ public class HKHealthStore extends NSObject {
     public interface Block_requestPerObjectReadAuthorizationForTypePredicateCompletion {
         @Generated
         void call_requestPerObjectReadAuthorizationForTypePredicateCompletion(boolean success, @Nullable NSError error);
+    }
+
+    /**
+     * [@property] authorizationViewControllerPresenter
+     * 
+     * The view controller from which HealthKit authorization sheets will be presented
+     * 
+     * This property can be set before requesting authorization or running a query like HKDocumentQuery for a better
+     * user-experience. Since this property will ensure to infer the correct hosting view controller to show the
+     * authorization sheet.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("authorizationViewControllerPresenter")
+    @Nullable
+    public native UIViewController authorizationViewControllerPresenter();
+
+    /**
+     * [@property] authorizationViewControllerPresenter
+     * 
+     * The view controller from which HealthKit authorization sheets will be presented
+     * 
+     * This property can be set before requesting authorization or running a query like HKDocumentQuery for a better
+     * user-experience. Since this property will ensure to infer the correct hosting view controller to show the
+     * authorization sheet.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("setAuthorizationViewControllerPresenter:")
+    public native void setAuthorizationViewControllerPresenter_unsafe(@Nullable UIViewController value);
+
+    /**
+     * [@property] authorizationViewControllerPresenter
+     * 
+     * The view controller from which HealthKit authorization sheets will be presented
+     * 
+     * This property can be set before requesting authorization or running a query like HKDocumentQuery for a better
+     * user-experience. Since this property will ensure to infer the correct hosting view controller to show the
+     * authorization sheet.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    public void setAuthorizationViewControllerPresenter(@Nullable UIViewController value) {
+        Object __old = authorizationViewControllerPresenter();
+        if (value != null) {
+            org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
+        }
+        setAuthorizationViewControllerPresenter_unsafe(value);
+        if (__old != null) {
+            org.moe.natj.objc.ObjCRuntime.dissociateObjCObject(this, __old);
+        }
+    }
+
+    /**
+     * [@property] workoutSessionMirroringStartHandler
+     * 
+     * Called when a session has started mirroring.
+     * 
+     * This property should always be assigned a value promptly after your app is launched,
+     * to ensure it is always observing for incoming mirrored workout sessions.
+     * If your app is not active when a mirrored session starts, it will be launched in the background and given a
+     * one-time
+     * permission to start a Live Activity from the background.
+     * The assigned block will be executed on an arbitrary background queue.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("setWorkoutSessionMirroringStartHandler:")
+    public native void setWorkoutSessionMirroringStartHandler(
+            @ObjCBlock(name = "call_setWorkoutSessionMirroringStartHandler") @Nullable Block_setWorkoutSessionMirroringStartHandler value);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_setWorkoutSessionMirroringStartHandler {
+        @Generated
+        void call_setWorkoutSessionMirroringStartHandler(@NotNull HKWorkoutSession arg0);
+    }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
+
+    /**
+     * [@property] workoutSessionMirroringStartHandler
+     * 
+     * Called when a session has started mirroring.
+     * 
+     * This property should always be assigned a value promptly after your app is launched,
+     * to ensure it is always observing for incoming mirrored workout sessions.
+     * If your app is not active when a mirrored session starts, it will be launched in the background and given a
+     * one-time
+     * permission to start a Live Activity from the background.
+     * The assigned block will be executed on an arbitrary background queue.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("workoutSessionMirroringStartHandler")
+    @ObjCBlock(name = "call_workoutSessionMirroringStartHandler_ret")
+    @Nullable
+    public native Block_workoutSessionMirroringStartHandler_ret workoutSessionMirroringStartHandler();
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_workoutSessionMirroringStartHandler_ret {
+        @Generated
+        void call_workoutSessionMirroringStartHandler_ret(@NotNull HKWorkoutSession arg0);
     }
 }

@@ -283,4 +283,9 @@ public class INBookRestaurantReservationIntent extends INIntent implements NSCop
             @NotNull INRestaurant restaurant, @NotNull NSDateComponents bookingDateComponents, @NUInt long partySize,
             @Nullable String bookingIdentifier, @Nullable INRestaurantGuest guest,
             @Nullable INRestaurantOffer selectedOffer, @Nullable String guestProvidedSpecialRequestText);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

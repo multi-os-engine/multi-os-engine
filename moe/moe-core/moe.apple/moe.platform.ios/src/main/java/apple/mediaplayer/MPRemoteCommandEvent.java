@@ -175,4 +175,9 @@ public class MPRemoteCommandEvent extends NSObject {
     @Generated
     @Selector("timestamp")
     public native double timestamp();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

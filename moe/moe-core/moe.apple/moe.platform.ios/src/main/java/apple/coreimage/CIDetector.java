@@ -47,8 +47,6 @@ import org.jetbrains.annotations.Nullable;
  * This class potentially holds onto a lot of state. Hence it may be beneficial from a performance perspective to re-use
  * the same CIDetector instance. Specifying a CIContext when creating a detector may have an impact on performance since
  * this context may be used when analyzing an image.
- * 
- * API-Since: 5.0
  */
 @Generated
 @Library("CoreImage")
@@ -217,4 +215,9 @@ public class CIDetector extends NSObject {
     @Generated
     @Selector("init")
     public native CIDetector init();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

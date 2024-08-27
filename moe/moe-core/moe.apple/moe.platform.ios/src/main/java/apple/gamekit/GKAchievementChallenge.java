@@ -43,9 +43,6 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-/**
- * API-Since: 6.0
- */
 @Generated
 @Library("GameKit")
 @Runtime(ObjCRuntime.class)
@@ -190,4 +187,9 @@ public class GKAchievementChallenge extends GKChallenge {
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

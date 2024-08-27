@@ -332,4 +332,9 @@ public class GLKSkyboxEffect extends NSObject implements GLKNamedEffect {
     @Generated
     @Selector("zSize")
     public native float zSize();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

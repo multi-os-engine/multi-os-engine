@@ -79,9 +79,6 @@ import org.jetbrains.annotations.Nullable;
  * 
  * When the browser view controller is dismissed, it will stop looking
  * for nearby peers.
- * 
- * 
- * API-Since: 7.0
  */
 @Generated
 @Library("MultipeerConnectivity")
@@ -312,4 +309,9 @@ public class MCBrowserViewController extends UIViewController implements MCNearb
     @Generated
     @Selector("setMinimumNumberOfPeers:")
     public native void setMinimumNumberOfPeers(@NUInt long value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

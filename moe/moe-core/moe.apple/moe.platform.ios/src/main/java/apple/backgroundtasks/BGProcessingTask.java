@@ -25,7 +25,22 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
- * A background task used to perform deferrable processing.
+ * A time-consuming processing task that runs while the app is in the
+ * background.
+ * 
+ * Use processing tasks for long data updates, processing data, and app
+ * maintenance. Although processing tasks can run for minutes, the system can
+ * interrupt the process. Add an expiration handler by setting
+ * ``BGTask/expirationHandler`` for any required cleanup.
+ * 
+ * Executing processing tasks requires setting the `processing`
+ * <doc://com.apple.documentation/documentation/bundleresources/information_property_list/uibackgroundmodes>
+ * capability. For information on setting this capability, see
+ * ``BGTaskScheduler``.
+ * 
+ * Processing tasks run only when the device is idle. The system terminates any
+ * background processing tasks running when the user starts using the device.
+ * Background refresh tasks are not affected.
  * 
  * API-Since: 13.0
  */
@@ -146,4 +161,9 @@ public class BGProcessingTask extends BGTask {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -379,4 +379,9 @@ public class SCNGeometrySource extends NSObject implements NSSecureCoding {
     @Selector("vectorCount")
     @NInt
     public native long vectorCount();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

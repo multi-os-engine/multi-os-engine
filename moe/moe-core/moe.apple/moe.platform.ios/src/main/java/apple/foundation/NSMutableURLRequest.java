@@ -712,4 +712,9 @@ public class NSMutableURLRequest extends NSURLRequest {
     @Generated
     @Selector("setRequiresDNSSECValidation:")
     public native void setRequiresDNSSECValidation(boolean value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -236,4 +236,9 @@ public class HMAccessoryBrowser extends NSObject {
     @Generated
     @Selector("stopSearchingForNewAccessories")
     public native void stopSearchingForNewAccessories();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

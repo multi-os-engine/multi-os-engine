@@ -44,14 +44,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
- * CKContainer
- * 
- * A CKContainer, and its CKDatabases, are the main entry points into the CloudKit framework.
- * 
- * Several methods in CloudKit accept completion handlers to indicate when they're completed.
- * All CKOperation subclasses include progress and completion blocks to report significant events in their lifecycles.
- * Each of these handlers and blocks is invoked on a non-main serial queue. The receiver is responsible for handling the
- * message on a different queue or thread if it is required.
+ * This class should not be subclassed. If it is, Sendable may no longer apply.
  * 
  * API-Since: 8.0
  */
@@ -235,7 +228,10 @@ public class CKContainer extends NSObject {
      * methods
      * 
      * API-Since: 10.0
+     * Deprecated-Since: 17.0
+     * Deprecated-Message: No longer supported. Please see Sharing CloudKit Data with Other iCloud Users.
      */
+    @Deprecated
     @Generated
     @Selector("discoverAllIdentitiesWithCompletionHandler:")
     public native void discoverAllIdentitiesWithCompletionHandler(
@@ -250,7 +246,10 @@ public class CKContainer extends NSObject {
      * -based alternative to this method
      * 
      * API-Since: 10.0
+     * Deprecated-Since: 17.0
+     * Deprecated-Message: No longer supported. Please see Sharing CloudKit Data with Other iCloud Users.
      */
+    @Deprecated
     @Generated
     @Selector("discoverUserIdentityWithEmailAddress:completionHandler:")
     public native void discoverUserIdentityWithEmailAddressCompletionHandler(@NotNull String email,
@@ -265,7 +264,10 @@ public class CKContainer extends NSObject {
      * -based alternative to this method
      * 
      * API-Since: 10.0
+     * Deprecated-Since: 17.0
+     * Deprecated-Message: No longer supported. Please see Sharing CloudKit Data with Other iCloud Users.
      */
+    @Deprecated
     @Generated
     @Selector("discoverUserIdentityWithPhoneNumber:completionHandler:")
     public native void discoverUserIdentityWithPhoneNumberCompletionHandler(@NotNull String phoneNumber,
@@ -279,7 +281,10 @@ public class CKContainer extends NSObject {
      * CKDiscoverUserIdentitiesOperation is the more configurable, @c CKOperation -based alternative to this method
      * 
      * API-Since: 10.0
+     * Deprecated-Since: 17.0
+     * Deprecated-Message: No longer supported. Please see Sharing CloudKit Data with Other iCloud Users.
      */
+    @Deprecated
     @Generated
     @Selector("discoverUserIdentityWithUserRecordID:completionHandler:")
     public native void discoverUserIdentityWithUserRecordIDCompletionHandler(@NotNull CKRecordID userRecordID,
@@ -369,6 +374,12 @@ public class CKContainer extends NSObject {
     @Selector("publicCloudDatabase")
     public native CKDatabase publicCloudDatabase();
 
+    /**
+     * API-Since: 8.0
+     * Deprecated-Since: 17.0
+     * Deprecated-Message: No longer supported. Please see Sharing CloudKit Data with Other iCloud Users.
+     */
+    @Deprecated
     @Generated
     @Selector("requestApplicationPermission:completionHandler:")
     public native void requestApplicationPermissionCompletionHandler(@NUInt long applicationPermission,
@@ -382,6 +393,12 @@ public class CKContainer extends NSObject {
     @Selector("sharedCloudDatabase")
     public native CKDatabase sharedCloudDatabase();
 
+    /**
+     * API-Since: 8.0
+     * Deprecated-Since: 17.0
+     * Deprecated-Message: No longer supported. Please see Sharing CloudKit Data with Other iCloud Users.
+     */
+    @Deprecated
     @Generated
     @Selector("statusForApplicationPermission:completionHandler:")
     public native void statusForApplicationPermissionCompletionHandler(@NUInt long applicationPermission,
@@ -503,4 +520,9 @@ public class CKContainer extends NSObject {
         void call_statusForApplicationPermissionCompletionHandler(@NInt long applicationPermissionStatus,
                 @Nullable NSError error);
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

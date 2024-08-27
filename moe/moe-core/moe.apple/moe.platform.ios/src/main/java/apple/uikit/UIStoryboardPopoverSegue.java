@@ -181,4 +181,9 @@ public class UIStoryboardPopoverSegue extends UIStoryboardSegue {
     @Generated
     @Selector("popoverController")
     public native UIPopoverController popoverController();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

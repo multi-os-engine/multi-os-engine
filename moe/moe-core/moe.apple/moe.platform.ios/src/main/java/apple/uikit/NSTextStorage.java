@@ -540,4 +540,37 @@ public class NSTextStorage extends NSMutableAttributedString implements NSSecure
     @Selector("textStorageObserver")
     @MappedReturn(ObjCObjectMapper.class)
     public native NSTextStorageObserving textStorageObserver();
+
+    @Generated
+    @Variadic()
+    @Selector("initWithFormat:options:locale:context:")
+    public native NSTextStorage initWithFormatOptionsLocaleContext(@NotNull NSAttributedString format,
+            @NUInt long options, @Nullable NSLocale locale, @NotNull NSDictionary<String, ?> context,
+            Object... varargs);
+
+    @Generated
+    @Selector("initWithFormat:options:locale:context:arguments:")
+    public native NSTextStorage initWithFormatOptionsLocaleContextArguments(@NotNull NSAttributedString format,
+            @NUInt long options, @Nullable NSLocale locale, @NotNull NSDictionary<String, ?> context,
+            BytePtr arguments);
+
+    @Generated
+    @Variadic()
+    @Selector("localizedAttributedStringWithFormat:context:")
+    @NotNull
+    public static native NSTextStorage localizedAttributedStringWithFormatContext(@NotNull NSAttributedString format,
+            @NotNull NSDictionary<String, ?> context, Object... varargs);
+
+    @Generated
+    @Variadic()
+    @Selector("localizedAttributedStringWithFormat:options:context:")
+    @NotNull
+    public static native NSTextStorage localizedAttributedStringWithFormatOptionsContext(
+            @NotNull NSAttributedString format, @NUInt long options, @NotNull NSDictionary<String, ?> context,
+            Object... varargs);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

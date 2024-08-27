@@ -12,6 +12,9 @@ import org.moe.natj.objc.ann.Selector;
 import apple.corefoundation.struct.CGPoint;
 import org.jetbrains.annotations.NotNull;
 
+/**
+ * API-Since: 13.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)

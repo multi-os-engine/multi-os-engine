@@ -283,4 +283,63 @@ public class CASpringAnimation extends CABasicAnimation {
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    /**
+     * Whether true overdamping is allowed (otherwise it is treated as critically
+     * damped). Defaults to false.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("allowsOverdamping")
+    public native boolean allowsOverdamping();
+
+    /**
+     * How bouncy the spring is. A value of 0 indicates no bounces (a critically
+     * damped spring), positive values indicate increasing amounts of bounce (with
+     * typical values being between 0.0 and 1.0), and negative values indicate
+     * overdamped springs (with typical values being between 0.0 and -1.0).
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("bounce")
+    @NFloat
+    public native double bounce();
+
+    /**
+     * Creates a spring animation with coefficients computed from the specified
+     * perceptual duration and bounce. A spring animation created with this
+     * initializer will have allowsOverdamping set to true (so will use overdamping
+     * when a negative bounce is specified).
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("initWithPerceptualDuration:bounce:")
+    public native CASpringAnimation initWithPerceptualDurationBounce(double perceptualDuration, @NFloat double bounce);
+
+    /**
+     * The perceptual duration, which defines the pace of the spring.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("perceptualDuration")
+    public native double perceptualDuration();
+
+    /**
+     * Whether true overdamping is allowed (otherwise it is treated as critically
+     * damped). Defaults to false.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("setAllowsOverdamping:")
+    public native void setAllowsOverdamping(boolean value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

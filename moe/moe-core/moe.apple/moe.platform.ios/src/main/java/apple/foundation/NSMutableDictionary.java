@@ -1051,4 +1051,9 @@ public class NSMutableDictionary<_KeyType, _ObjectType> extends NSDictionary<_Ke
     public native NSDictionary<String, _ObjectType> initWithContentsOfURLError(@NotNull NSURL url,
             @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
+
 }

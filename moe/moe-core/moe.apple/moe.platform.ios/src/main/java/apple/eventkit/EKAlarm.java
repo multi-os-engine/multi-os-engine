@@ -50,8 +50,6 @@ import org.jetbrains.annotations.Nullable;
  * 
  * The EKAlarm class represents alarms on an event. An alarm can be relative (e.g. 15 mins before)
  * or absolute (specific time).
- * 
- * API-Since: 4.0
  */
 @Generated
 @Library("EventKit")
@@ -299,4 +297,9 @@ public class EKAlarm extends EKObject implements NSCopying {
     @Generated
     @Selector("structuredLocation")
     public native EKStructuredLocation structuredLocation();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

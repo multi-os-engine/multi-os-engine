@@ -157,4 +157,20 @@ public final class BNNSActivationFunction {
      * API-Since: 15.0
      */
     @Generated public static final int BNNSActivationFunctionSiLU = 0x0000001F;
+    /**
+     * API-Since: 16.4
+     */
+    @Generated public static final int BNNSActivationFunctionReLU6 = 0x00000020;
+    /**
+     * API-Since: 16.4
+     */
+    @Generated public static final int BNNSActivationFunctionErf = 0x00000021;
+    /**
+     * API-Since: 16.4
+     */
+    @Generated public static final int BNNSActivationFunctionGELU = 0x00000022;
+    /**
+     * API-Since: 16.4
+     */
+    @Generated public static final int BNNSActivationFunctionGELUApproximationSigmoid = 0x00000023;
 }

@@ -181,4 +181,9 @@ public class MTLRenderPassColorAttachmentDescriptor extends MTLRenderPassAttachm
     @Generated
     @Selector("setClearColor:")
     public native void setClearColor(@ByValue MTLClearColor value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

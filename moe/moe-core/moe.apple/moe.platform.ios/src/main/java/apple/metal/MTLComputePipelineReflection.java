@@ -178,4 +178,9 @@ public class MTLComputePipelineReflection extends NSObject {
     @Generated
     @Selector("bindings")
     public native NSArray<?> bindings();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

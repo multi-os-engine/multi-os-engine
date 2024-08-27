@@ -60,8 +60,6 @@ import org.jetbrains.annotations.Nullable;
  * 
  * [@note] To remove properties when saving a mutable contact, set string properties and array properties to empty
  * values. Set other properties to nil.
- * 
- * API-Since: 9.0
  */
 @Generated
 @Library("Contacts")
@@ -571,4 +569,9 @@ public class CNMutableContact extends CNContact {
     @Generated
     @Selector("predicateForContactsMatchingPhoneNumber:")
     public static native NSPredicate predicateForContactsMatchingPhoneNumber(@NotNull CNPhoneNumber phoneNumber);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

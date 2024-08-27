@@ -242,4 +242,9 @@ public class SKCloudServiceSetupViewController extends UIViewController {
         @Generated
         void call_loadWithOptionsCompletionHandler(boolean result, @Nullable NSError error);
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

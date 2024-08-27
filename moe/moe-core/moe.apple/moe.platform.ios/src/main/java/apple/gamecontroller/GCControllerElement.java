@@ -198,6 +198,8 @@ public class GCControllerElement extends NSObject {
      * 
      * @see preferredSystemGestureState
      * @see GCSystemGestureState
+     * 
+     *      API-Since: 14.0
      */
     @Generated
     @Selector("isBoundToSystemGesture")
@@ -207,6 +209,8 @@ public class GCControllerElement extends NSObject {
      * The element's localized name, taking input remapping into account.
      * 
      * [@note] In almost all instances, you should use this over unmappedLocalizedName in your UI.
+     * 
+     * API-Since: 14.0
      */
     @Nullable
     @Generated
@@ -223,6 +227,8 @@ public class GCControllerElement extends NSObject {
      * streaming apps) where it is preferrable to disable system gestures.
      * 
      * @see boundToSystemGesture
+     * 
+     *      API-Since: 14.0
      */
     @Generated
     @Selector("preferredSystemGestureState")
@@ -233,6 +239,8 @@ public class GCControllerElement extends NSObject {
      * The element's localized name, taking input remapping into account.
      * 
      * [@note] In almost all instances, you should use this over unmappedLocalizedName in your UI.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setLocalizedName:")
@@ -248,6 +256,8 @@ public class GCControllerElement extends NSObject {
      * streaming apps) where it is preferrable to disable system gestures.
      * 
      * @see boundToSystemGesture
+     * 
+     *      API-Since: 14.0
      */
     @Generated
     @Selector("setPreferredSystemGestureState:")
@@ -257,6 +267,8 @@ public class GCControllerElement extends NSObject {
      * The element's SF Symbols name, taking input remapping into account.
      * 
      * [@note] In almost all instances, you should use this over unmappedSfSymbolsName in your UI.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setSfSymbolsName:")
@@ -267,6 +279,8 @@ public class GCControllerElement extends NSObject {
      * 
      * [@note] Use this in your games own remapping UI, or when you need to prompt a user that a given button has no
      * mapping (localizedName is nil).
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setUnmappedLocalizedName:")
@@ -277,6 +291,8 @@ public class GCControllerElement extends NSObject {
      * 
      * [@note] Use this in your games own remapping UI, or when you need to prompt a user that a given button has no
      * mapping (sfSymbolsName is nil).
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setUnmappedSfSymbolsName:")
@@ -286,6 +302,8 @@ public class GCControllerElement extends NSObject {
      * The element's SF Symbols name, taking input remapping into account.
      * 
      * [@note] In almost all instances, you should use this over unmappedSfSymbolsName in your UI.
+     * 
+     * API-Since: 14.0
      */
     @Nullable
     @Generated
@@ -297,6 +315,8 @@ public class GCControllerElement extends NSObject {
      * 
      * [@note] Use this in your games own remapping UI, or when you need to prompt a user that a given button has no
      * mapping (localizedName is nil).
+     * 
+     * API-Since: 14.0
      */
     @Nullable
     @Generated
@@ -308,9 +328,16 @@ public class GCControllerElement extends NSObject {
      * 
      * [@note] Use this in your games own remapping UI, or when you need to prompt a user that a given button has no
      * mapping (sfSymbolsName is nil).
+     * 
+     * API-Since: 14.0
      */
     @Nullable
     @Generated
     @Selector("unmappedSfSymbolsName")
     public native String unmappedSfSymbolsName();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

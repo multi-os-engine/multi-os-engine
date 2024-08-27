@@ -197,4 +197,9 @@ public class UITextSelectionRect extends NSObject {
     @Selector("writingDirection")
     @NInt
     public native long writingDirection();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

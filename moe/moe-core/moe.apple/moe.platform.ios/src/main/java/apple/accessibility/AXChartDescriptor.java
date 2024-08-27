@@ -332,4 +332,9 @@ public class AXChartDescriptor extends NSObject implements NSCopying {
     @Generated
     @Selector("yAxis")
     public native AXNumericDataAxisDescriptor yAxis();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -201,4 +201,9 @@ public class MIDICIProfileState extends NSObject implements NSSecureCoding {
     @Generated
     @Selector("midiChannel")
     public native byte midiChannel();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

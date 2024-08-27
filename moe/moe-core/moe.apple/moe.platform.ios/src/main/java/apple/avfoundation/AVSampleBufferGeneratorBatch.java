@@ -38,6 +38,7 @@ import org.jetbrains.annotations.Nullable;
  * makeBatch] to create an AVSampleBufferGeneratorBatch.
  * See -[AVSampleBufferGeneratorBatch createSampleBufferForRequest: addingToBatch: error:] to create a CMSampleBuffer,
  * defer I/O for its data, and build up a batch.
+ * Subclasses of this type that are used from Swift must fulfill the requirements of a Sendable type.
  * 
  * API-Since: 16.0
  */
@@ -190,4 +191,9 @@ public class AVSampleBufferGeneratorBatch extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

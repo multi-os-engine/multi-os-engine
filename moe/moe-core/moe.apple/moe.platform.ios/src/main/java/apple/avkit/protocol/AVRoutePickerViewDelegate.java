@@ -14,6 +14,8 @@ import org.jetbrains.annotations.NotNull;
  * [@protocol] AVRoutePickerViewDelegate
  * 
  * Defines an interface for delegates of AVRoutePickerView.
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("AVKit")

@@ -34,6 +34,7 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.avfoundation.AVCaptureDeferredPhotoProxy;
 
 /**
  * [@protocol] AVCapturePhotoCaptureDelegate
@@ -329,6 +330,41 @@ public interface AVCapturePhotoCaptureDelegate {
     @Selector("captureOutput:didFinishProcessingPhoto:error:")
     default void captureOutputDidFinishProcessingPhotoError(@NotNull AVCapturePhotoOutput output,
             @NotNull AVCapturePhoto photo, @Nullable NSError error) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    /**
+     * captureOutput:didFinishCapturingDeferredPhotoProxy:error:
+     * 
+     * A callback fired just after the photo proxy has been taken.
+     * 
+     * Delegates are required to implement this method if they opt in for deferred photo processing, otherwise an
+     * NSInvalidArgumentException will be thrown from the -[AVCapturePhotoOutput capturePhotoWithSettings:delegate:]
+     * method.
+     * 
+     * API-Since: 17.0
+     * 
+     * @param output
+     *                           The calling instance of AVCapturePhotoOutput.
+     * @param deferredPhotoProxy
+     *                           The AVCaptureDeferredPhotoProxy instance which contains a proxy CVPixelBuffer as a
+     *                           placeholder for the final image. The fileDataRepresentation from this object may be
+     *                           used with PHAssetCreation to eventually produce the final, processed photo into the
+     *                           user's Photo Library. The in-memory proxy fileDataRepresentation should be added to the
+     *                           photo library as quickly as possible after receipt to ensure that the photo library can
+     *                           begin background processing and also so that the intermediates are not removed by a
+     *                           periodic clean-up job looking for abandoned intermediates produced by using the
+     *                           deferred photo processing APIs.
+     * 
+     * @param error
+     *                           An error indicating what went wrong if the photo proxy or any of the underlying
+     *                           intermediate files couldn't be created.
+     */
+    @Generated
+    @IsOptional
+    @Selector("captureOutput:didFinishCapturingDeferredPhotoProxy:error:")
+    default void captureOutputDidFinishCapturingDeferredPhotoProxyError(@NotNull AVCapturePhotoOutput output,
+            @Nullable AVCaptureDeferredPhotoProxy deferredPhotoProxy, @Nullable NSError error) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

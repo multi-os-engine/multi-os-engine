@@ -1600,7 +1600,7 @@ public class NSString extends NSObject implements NSCopying, NSMutableCopying, N
     /**
      * API-Since: 2.0
      * Deprecated-Since: 2.0
-     * Deprecated-Message: Use -writeToFile:atomically:error: instead
+     * Deprecated-Message: Use -writeToFile:atomically:encoding:error: instead
      */
     @Generated
     @Deprecated
@@ -1615,7 +1615,7 @@ public class NSString extends NSObject implements NSCopying, NSMutableCopying, N
     /**
      * API-Since: 2.0
      * Deprecated-Since: 2.0
-     * Deprecated-Message: Use -writeToURL:atomically:error: instead
+     * Deprecated-Message: Use -writeToURL:atomically:encoding:error: instead
      */
     @Generated
     @Deprecated
@@ -1927,4 +1927,9 @@ public class NSString extends NSObject implements NSCopying, NSMutableCopying, N
     public static native NSString stringWithValidatedFormatValidFormatSpecifiersError(@NotNull String format,
             @NotNull String validFormatSpecifiers, @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error,
             Object... varargs);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -313,4 +313,9 @@ public class UIPageViewController extends UIViewController {
         @Generated
         void call_setViewControllersDirectionAnimatedCompletion(boolean finished);
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

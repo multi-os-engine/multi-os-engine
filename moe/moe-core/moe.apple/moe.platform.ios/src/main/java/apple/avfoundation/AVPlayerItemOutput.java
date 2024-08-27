@@ -247,4 +247,9 @@ public class AVPlayerItemOutput extends NSObject {
     @Generated
     @Selector("suppressesPlayerRendering")
     public native boolean suppressesPlayerRendering();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

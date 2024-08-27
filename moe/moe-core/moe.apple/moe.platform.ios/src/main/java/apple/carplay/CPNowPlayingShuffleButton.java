@@ -29,6 +29,8 @@ import org.jetbrains.annotations.Nullable;
 
 /**
  * A now playing button that indicates the current shuffle mode for your app.
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("CarPlay")
@@ -166,4 +168,9 @@ public class CPNowPlayingShuffleButton extends CPNowPlayingButton {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

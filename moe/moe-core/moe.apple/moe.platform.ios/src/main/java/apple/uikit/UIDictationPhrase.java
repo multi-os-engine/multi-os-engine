@@ -175,4 +175,9 @@ public class UIDictationPhrase extends NSObject {
     @Generated
     @Selector("text")
     public native String text();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

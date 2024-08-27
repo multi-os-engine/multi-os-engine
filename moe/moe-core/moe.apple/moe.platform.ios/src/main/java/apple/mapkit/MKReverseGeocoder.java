@@ -44,14 +44,6 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-/**
- * MKReverseGeocoder is now deprecated.
- * Use CLGeocoder in CoreLocation instead.
- * 
- * API-Since: 3.0
- * Deprecated-Since: 5.0
- */
-@Deprecated
 @Generated
 @Library("MapKit")
 @Runtime(ObjCRuntime.class)
@@ -262,4 +254,9 @@ public class MKReverseGeocoder extends NSObject {
     @Deprecated
     @Selector("start")
     public native void start();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -287,4 +287,9 @@ public class CPPointOfInterestTemplate extends CPTemplate implements CPBarButton
     @Generated
     @Selector("trailingNavigationBarButtons")
     public native NSArray<? extends CPBarButton> trailingNavigationBarButtons();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

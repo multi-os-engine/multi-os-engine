@@ -823,7 +823,7 @@ public interface UIApplicationDelegate {
      * Called when the system, due to a user interaction or a request from the application itself, removes one or more
      * representation from the -[UIApplication openSessions] set
      * If sessions are discarded while the application is not running, this method is called shortly after the
-     * applications next launch.
+     * application's next launch.
      * 
      * API-Since: 13.0
      */

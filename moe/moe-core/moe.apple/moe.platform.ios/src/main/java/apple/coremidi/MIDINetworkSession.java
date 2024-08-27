@@ -268,4 +268,9 @@ public class MIDINetworkSession extends NSObject {
     @Generated
     @Selector("sourceEndpoint")
     public native int sourceEndpoint();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

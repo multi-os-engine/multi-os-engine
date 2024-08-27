@@ -45,6 +45,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.opaque.dispatch_queue_t;
 
 /**
  * API-Since: 10.0
@@ -267,7 +268,7 @@ public class CXProvider extends NSObject {
     @Generated
     @Selector("setDelegate:queue:")
     public native void setDelegateQueue(@Nullable @Mapped(ObjCObjectMapper.class) CXProviderDelegate delegate,
-            @Nullable NSObject queue);
+            @Nullable dispatch_queue_t queue);
 
     @Runtime(ObjCRuntime.class)
     @Generated
@@ -293,4 +294,9 @@ public class CXProvider extends NSObject {
         @Generated
         void call_reportNewIncomingVoIPPushPayloadCompletion(@Nullable NSError arg0);
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

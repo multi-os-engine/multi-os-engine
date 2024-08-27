@@ -32,7 +32,8 @@ import org.jetbrains.annotations.Nullable;
  * model. Depending on the model the returned
  * observation is either a VNClassificationObservation for classifier models, VNPixelBufferObservations for
  * image-to-image models, VNRecognizedObjectObservation for object recognition models or VNCoreMLFeatureValueObservation
- * for everything else.
+ * for everything else. All -[VNObservation confidence] values are forwarded from relevant models as is, and do not
+ * conform to a common [0, 1] range rule
  * 
  * API-Since: 11.0
  */
@@ -218,4 +219,9 @@ public class VNCoreMLRequest extends VNImageBasedRequest {
     @Generated
     @Selector("supportedRevisions")
     public static native NSIndexSet supportedRevisions();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

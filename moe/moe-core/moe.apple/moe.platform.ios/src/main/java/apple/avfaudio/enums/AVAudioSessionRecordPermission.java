@@ -22,7 +22,19 @@ public final class AVAudioSessionRecordPermission {
     private AVAudioSessionRecordPermission() {
     }
 
-    @Generated @NUInt public static final long Undetermined = 0x00000000756E6474L;
-    @Generated @NUInt public static final long Denied = 0x0000000064656E79L;
-    @Generated @NUInt public static final long Granted = 0x0000000067726E74L;
+    /**
+     * API-Since: 8.0
+     * Deprecated-Since: 17.0
+     */
+    @Deprecated @Generated @NUInt public static final long Undetermined = 0x00000000756E6474L;
+    /**
+     * API-Since: 8.0
+     * Deprecated-Since: 17.0
+     */
+    @Deprecated @Generated @NUInt public static final long Denied = 0x0000000064656E79L;
+    /**
+     * API-Since: 8.0
+     * Deprecated-Since: 17.0
+     */
+    @Deprecated @Generated @NUInt public static final long Granted = 0x0000000067726E74L;
 }

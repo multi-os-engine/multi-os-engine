@@ -292,4 +292,9 @@ public class SNClassifySoundRequest extends NSObject implements SNRequest {
     @Generated
     @Selector("windowDurationConstraint")
     public native SNTimeDurationConstraint windowDurationConstraint();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

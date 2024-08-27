@@ -231,4 +231,9 @@ public class UIDocumentMenuViewController extends UIViewController {
         @Generated
         void call_addOptionWithTitleImageOrderHandler();
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

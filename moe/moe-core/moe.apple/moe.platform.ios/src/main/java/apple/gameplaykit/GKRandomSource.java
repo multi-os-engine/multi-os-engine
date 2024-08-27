@@ -57,8 +57,6 @@ import org.jetbrains.annotations.Nullable;
  * @see GKLinearCongruentialRandomSource
  * @see GKMersenneTwisterRandomSource
  * @see GKRandomSource.systemRandom
- * 
- *      API-Since: 9.0
  */
 @Generated
 @Library("GameplayKit")
@@ -257,4 +255,9 @@ public class GKRandomSource extends NSObject implements GKRandom, NSSecureCoding
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

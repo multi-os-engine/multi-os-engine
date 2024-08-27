@@ -527,4 +527,9 @@ public class HKQuantitySeriesSampleQuery extends HKQuery {
     @Selector("predicateForWorkoutsWithOperatorType:quantityType:sumQuantity:")
     public static native NSPredicate predicateForWorkoutsWithOperatorTypeQuantityTypeSumQuantity(
             @NUInt long operatorType, @NotNull HKQuantityType quantityType, @NotNull HKQuantity sumQuantity);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

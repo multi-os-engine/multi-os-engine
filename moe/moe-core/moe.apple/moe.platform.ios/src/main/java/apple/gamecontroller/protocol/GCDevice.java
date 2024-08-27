@@ -1,6 +1,5 @@
 package apple.gamecontroller.protocol;
 
-import apple.NSObject;
 import apple.gamecontroller.GCPhysicalInputProfile;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
@@ -10,6 +9,7 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.opaque.dispatch_queue_t;
 
 /**
  * API-Since: 14.0
@@ -37,7 +37,7 @@ public interface GCDevice {
     @NotNull
     @Generated
     @Selector("handlerQueue")
-    NSObject handlerQueue();
+    dispatch_queue_t handlerQueue();
 
     /**
      * Gets the physical input profile for the device.
@@ -59,8 +59,8 @@ public interface GCDevice {
     GCPhysicalInputProfile physicalInputProfile();
 
     /**
-     * The product category the controller belongs to. This is useful for setting appropriate UI elements based on what
-     * type of device is connected.
+     * The product category the device belongs to. This is useful for setting appropriate UI elements based on what type
+     * of device is connected.
      * 
      * @see GCProductCategories.h
      * 
@@ -88,7 +88,7 @@ public interface GCDevice {
      */
     @Generated
     @Selector("setHandlerQueue:")
-    void setHandlerQueue(@NotNull NSObject value);
+    void setHandlerQueue(@NotNull dispatch_queue_t value);
 
     /**
      * A vendor supplied name. May be nil, and is not guaranteed to be unique. This should not be used as a key in a

@@ -214,4 +214,9 @@ public class MDLTextureFilter extends NSObject {
     @Selector("tWrapMode")
     @NUInt
     public native long tWrapMode();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

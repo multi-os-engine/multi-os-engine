@@ -434,4 +434,9 @@ public class NSPersistentCloudKitContainer extends NSPersistentContainer {
         void call_shareManagedObjectsToShareCompletion(@Nullable NSSet<? extends NSManagedObjectID> sharedObjectIDs,
                 @Nullable CKShare share, @Nullable CKContainer cloudKitContainer, @Nullable NSError sharingError);
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

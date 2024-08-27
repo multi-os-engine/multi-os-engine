@@ -207,4 +207,9 @@ public class UIPress extends NSObject {
     @Generated
     @Selector("key")
     public native UIKey key();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

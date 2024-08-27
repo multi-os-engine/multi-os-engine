@@ -223,4 +223,9 @@ public class UIDeferredMenuElement extends UIMenuElement {
         void call_elementWithUncachedProvider(
                 @NotNull @ObjCBlock(name = "call_Block_elementWithUncachedProvider") Block_Block_elementWithUncachedProvider completion);
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

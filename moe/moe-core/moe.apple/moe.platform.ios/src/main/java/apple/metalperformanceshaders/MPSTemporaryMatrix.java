@@ -266,4 +266,9 @@ public class MPSTemporaryMatrix extends MPSMatrix {
     @Selector("initWithDevice:descriptor:")
     public native MPSTemporaryMatrix initWithDeviceDescriptor(@NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device,
             @NotNull MPSMatrixDescriptor descriptor);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

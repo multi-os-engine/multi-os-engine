@@ -332,4 +332,9 @@ public class HMCharacteristic extends NSObject {
         @Generated
         void call_writeValueCompletionHandler(@Nullable NSError error);
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

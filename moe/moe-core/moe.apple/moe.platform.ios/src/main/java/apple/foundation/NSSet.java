@@ -467,4 +467,9 @@ public class NSSet<_ObjectType> extends NSObject implements NSCopying, NSMutable
         boolean call_objectsWithOptionsPassingTest(@NotNull @Mapped(ObjCObjectMapper.class) Object obj,
                 @NotNull BoolPtr stop);
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

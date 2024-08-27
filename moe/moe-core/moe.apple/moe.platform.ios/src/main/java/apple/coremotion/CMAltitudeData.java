@@ -44,11 +44,6 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
- * CMAltitudeData
- * 
- * Discussion:
- * Contains a single altimeter measurement.
- * 
  * API-Since: 8.0
  */
 @Generated
@@ -204,4 +199,9 @@ public class CMAltitudeData extends CMLogItem {
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

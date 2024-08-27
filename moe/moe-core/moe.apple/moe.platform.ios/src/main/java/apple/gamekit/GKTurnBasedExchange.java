@@ -44,9 +44,6 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-/**
- * API-Since: 7.0
- */
 @Generated
 @Library("GameKit")
 @Runtime(ObjCRuntime.class)
@@ -282,4 +279,9 @@ public class GKTurnBasedExchange extends NSObject {
         @Generated
         void call_replyWithLocalizableMessageKeyArgumentsDataCompletionHandler(@Nullable NSError error);
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

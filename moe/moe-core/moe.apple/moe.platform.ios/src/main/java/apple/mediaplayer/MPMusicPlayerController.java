@@ -441,4 +441,9 @@ public class MPMusicPlayerController extends NSObject implements MPMediaPlayback
     @Generated
     @Selector("prependQueueDescriptor:")
     public native void prependQueueDescriptor(@NotNull MPMusicPlayerQueueDescriptor descriptor);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

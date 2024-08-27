@@ -231,4 +231,9 @@ public class HKFHIRVersion extends NSObject implements NSCopying, NSSecureCoding
     @Selector("versionFromVersionString:error:")
     public static native HKFHIRVersion versionFromVersionStringError(@NotNull String versionString,
             @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> errorOut);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

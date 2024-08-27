@@ -220,4 +220,9 @@ public class UNNotificationResponse extends NSObject implements NSCopying, NSSec
     @Generated
     @Selector("targetScene")
     public native UIScene targetScene();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

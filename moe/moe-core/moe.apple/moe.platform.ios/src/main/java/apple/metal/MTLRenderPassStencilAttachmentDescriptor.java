@@ -201,4 +201,9 @@ public class MTLRenderPassStencilAttachmentDescriptor extends MTLRenderPassAttac
     @Selector("stencilResolveFilter")
     @NUInt
     public native long stencilResolveFilter();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

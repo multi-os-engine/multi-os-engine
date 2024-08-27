@@ -14,7 +14,9 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
- * A protocol for delegates of AVAudioRecorder
+ * [@protocol] AVAudioRecorderDelegate
+ * 
+ * A protocol for delegates of AVAudioRecorder.
  * 
  * API-Since: 3.0
  */
@@ -24,11 +26,16 @@ import org.jetbrains.annotations.Nullable;
 @ObjCProtocolName("AVAudioRecorderDelegate")
 public interface AVAudioRecorderDelegate {
     /**
+     * audioRecorderBeginInterruption:
+     * 
      * audioRecorderBeginInterruption: is called when the audio session has been interrupted while the recorder was
      * recording. The recorded file will be closed.
      * 
+     * Deprecated - use AVAudioSession instead.
+     * 
      * API-Since: 2.2
      * Deprecated-Since: 8.0
+     * Deprecated-Message: Deprecated - use AVAudioSession instead
      */
     @Generated
     @IsOptional
@@ -39,8 +46,11 @@ public interface AVAudioRecorderDelegate {
     }
 
     /**
-     * audioRecorderDidFinishRecording:successfully: is called when a recording has been finished or stopped. This
-     * method is NOT called if the recorder is stopped due to an interruption.
+     * audioRecorderDidFinishRecording:successfully:
+     * 
+     * This callback method is called when a recording has been finished or stopped.
+     * 
+     * This method is NOT called if the recorder is stopped due to an interruption.
      */
     @Generated
     @IsOptional
@@ -50,7 +60,11 @@ public interface AVAudioRecorderDelegate {
     }
 
     /**
-     * if an error occurs while encoding it will be reported to the delegate.
+     * audioRecorderEncodeErrorDidOccur:error:
+     * 
+     * This callback method is called when an error occurs while encoding.
+     * 
+     * If an error occurs while encoding it will be reported to the delegate.
      */
     @Generated
     @IsOptional
@@ -60,11 +74,16 @@ public interface AVAudioRecorderDelegate {
     }
 
     /**
+     * audioRecorderEndInterruption:
+     * 
      * audioRecorderEndInterruption: is called when the preferred method, audioRecorderEndInterruption:withFlags:, is
      * not implemented.
      * 
+     * Deprecated - use AVAudioSession instead.
+     * 
      * API-Since: 2.2
      * Deprecated-Since: 6.0
+     * Deprecated-Message: Deprecated - use AVAudioSession instead
      */
     @Generated
     @IsOptional
@@ -75,8 +94,16 @@ public interface AVAudioRecorderDelegate {
     }
 
     /**
+     * audioRecorderEndInterruption:withFlags:
+     * 
+     * audioRecorderEndInterruption:withFlags: is called when the audio session interruption has ended and this recorder
+     * had been interrupted while recording.
+     * 
+     * Deprecated - use AVAudioSession instead.
+     * 
      * API-Since: 4.0
      * Deprecated-Since: 6.0
+     * Deprecated-Message: Deprecated - use AVAudioSession instead
      */
     @Generated
     @IsOptional
@@ -87,12 +114,16 @@ public interface AVAudioRecorderDelegate {
     }
 
     /**
+     * audioRecorderEndInterruption:withOptions:
+     * 
      * audioRecorderEndInterruption:withOptions: is called when the audio session interruption has ended and this
      * recorder had been interrupted while recording.
-     * Currently the only flag is AVAudioSessionInterruptionFlags_ShouldResume.
+     * 
+     * Currently the only flag is AVAudioSessionInterruptionFlags_ShouldResume. Deprecated - use AVAudioSession instead.
      * 
      * API-Since: 6.0
      * Deprecated-Since: 8.0
+     * Deprecated-Message: Deprecated - use AVAudioSession instead
      */
     @Generated
     @IsOptional

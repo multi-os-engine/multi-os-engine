@@ -33,9 +33,6 @@ import apple.corefoundation.struct.CGPoint;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-/**
- * API-Since: 11.0
- */
 @Generated
 @Library("PDFKit")
 @Runtime(ObjCRuntime.class)
@@ -599,4 +596,9 @@ public class PDFDocument extends NSObject implements NSCopying {
     @Selector("accessPermissions")
     @NUInt
     public native long accessPermissions();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

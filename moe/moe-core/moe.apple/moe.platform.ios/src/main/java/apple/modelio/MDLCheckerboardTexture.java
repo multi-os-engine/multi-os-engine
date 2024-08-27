@@ -218,4 +218,9 @@ public class MDLCheckerboardTexture extends MDLTexture {
     @Selector("textureNamed:assetResolver:")
     public static native MDLCheckerboardTexture textureNamedAssetResolver(@NotNull String name,
             @NotNull @Mapped(ObjCObjectMapper.class) MDLAssetResolver resolver);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

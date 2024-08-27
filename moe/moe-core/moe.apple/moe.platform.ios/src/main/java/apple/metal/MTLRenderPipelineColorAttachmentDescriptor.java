@@ -303,4 +303,9 @@ public class MTLRenderPipelineColorAttachmentDescriptor extends NSObject impleme
     @Selector("writeMask")
     @NUInt
     public native long writeMask();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

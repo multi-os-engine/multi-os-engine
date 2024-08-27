@@ -294,4 +294,9 @@ public class PHCollectionList extends PHCollection {
     @Generated
     @Selector("startDate")
     public native NSDate startDate();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -167,4 +167,9 @@ public class AVCaptureBracketedStillImageSettings extends NSObject {
     @Generated
     @Selector("init")
     public native AVCaptureBracketedStillImageSettings init();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -288,4 +288,9 @@ public class NSURLSessionStreamTask extends NSURLSessionTask {
         @Generated
         void call_writeDataTimeoutCompletionHandler(@Nullable NSError error);
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

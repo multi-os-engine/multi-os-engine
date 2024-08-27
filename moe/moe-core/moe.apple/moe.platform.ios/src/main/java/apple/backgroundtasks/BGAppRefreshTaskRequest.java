@@ -25,11 +25,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
- * A request to briefly launch your app to keep its contents up to date.
- * 
- * Schedule a refresh task request to ask that the system launch your app briefly so that you can download data and keep
- * your app's contents up-to-date. The system will fulfill this request intelligently based on system conditions and app
- * usage.
+ * A request to launch your app in the background to execute a short refresh task.
  * 
  * API-Since: 13.0
  */
@@ -103,6 +99,12 @@ public class BGAppRefreshTaskRequest extends BGTaskRequest {
     @Selector("init")
     public native BGAppRefreshTaskRequest init();
 
+    /**
+     * Return a new refresh task request for the specified identifier.
+     * 
+     * - Parameters:
+     * - identifier: The string identifier of the refresh task associated with the request.
+     */
     @Generated
     @Selector("initWithIdentifier:")
     public native BGAppRefreshTaskRequest initWithIdentifier(@NotNull String identifier);
@@ -154,4 +156,9 @@ public class BGAppRefreshTaskRequest extends BGTaskRequest {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

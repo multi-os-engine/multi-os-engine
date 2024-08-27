@@ -281,4 +281,9 @@ public class PHAssetCollectionChangeRequest extends PHChangeRequest {
     @Generated
     @Selector("title")
     public native String title();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

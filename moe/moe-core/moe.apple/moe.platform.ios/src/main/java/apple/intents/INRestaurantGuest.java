@@ -263,4 +263,9 @@ public class INRestaurantGuest extends INPerson {
             @NotNull INPersonHandle personHandle, @Nullable NSPersonNameComponents nameComponents,
             @Nullable String displayName, @Nullable INImage image, @Nullable String contactIdentifier,
             @Nullable String customIdentifier, boolean isMe, @NInt long suggestionType);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

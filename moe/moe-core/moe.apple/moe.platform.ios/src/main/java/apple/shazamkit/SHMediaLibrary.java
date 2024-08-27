@@ -30,11 +30,12 @@ import org.jetbrains.annotations.Nullable;
  * [@c] SHMediaLibrary represents the user's synced Shazam library.
  * 
  * You can add new @c SHMediaItem instances to the user's library.
- * Before using any @c SHMediaLibrary method, you must obtain permission from the user to use their Media Library by
- * calling - [MPMediaLibrary requestAuthorization:].
  * 
  * API-Since: 15.0
+ * Deprecated-Since: 100000.0
+ * Deprecated-Message: Use SHLibrary instead
  */
+@Deprecated
 @Generated
 @Library("ShazamKit")
 @Runtime(ObjCRuntime.class)
@@ -186,4 +187,9 @@ public class SHMediaLibrary extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

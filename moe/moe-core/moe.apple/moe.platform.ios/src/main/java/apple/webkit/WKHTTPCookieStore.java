@@ -222,4 +222,49 @@ public class WKHTTPCookieStore extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * Get whether cookies are allowed.
+     * 
+     * @param completionHandler A block to invoke with the value of whether cookies are allowed.
+     * 
+     *                          API-Since: 17.0
+     */
+    @Generated
+    @Selector("getCookiePolicy:")
+    public native void getCookiePolicy(
+            @ObjCBlock(name = "call_getCookiePolicy") @NotNull Block_getCookiePolicy completionHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_getCookiePolicy {
+        @Generated
+        void call_getCookiePolicy(@NInt long arg0);
+    }
+
+    /**
+     * Set whether cookies are allowed.
+     * 
+     * @param policy            A value indicating whether cookies are allowed. The default value is
+     *                          WKCookiePolicyAllow.
+     * @param completionHandler A block to invoke once the cookie policy has been set.
+     * 
+     *                          API-Since: 17.0
+     */
+    @Generated
+    @Selector("setCookiePolicy:completionHandler:")
+    public native void setCookiePolicyCompletionHandler(@NInt long policy,
+            @ObjCBlock(name = "call_setCookiePolicyCompletionHandler") @Nullable Block_setCookiePolicyCompletionHandler completionHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_setCookiePolicyCompletionHandler {
+        @Generated
+        void call_setCookiePolicyCompletionHandler();
+    }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

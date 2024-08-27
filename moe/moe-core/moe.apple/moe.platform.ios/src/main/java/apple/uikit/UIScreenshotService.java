@@ -188,4 +188,9 @@ public class UIScreenshotService extends NSObject {
     @Generated
     @Selector("windowScene")
     public native UIWindowScene windowScene();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

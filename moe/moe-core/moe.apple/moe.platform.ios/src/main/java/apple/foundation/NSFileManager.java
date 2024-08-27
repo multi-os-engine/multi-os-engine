@@ -939,4 +939,9 @@ public class NSFileManager extends NSObject {
     public native boolean trashItemAtURLResultingItemURLError(@NotNull NSURL url,
             @Nullable @ReferenceInfo(type = NSURL.class) Ptr<NSURL> outResultingURL,
             @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

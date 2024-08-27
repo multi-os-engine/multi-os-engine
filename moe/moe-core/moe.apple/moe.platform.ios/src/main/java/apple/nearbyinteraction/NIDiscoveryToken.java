@@ -28,6 +28,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.nearbyinteraction.protocol.NIDeviceCapability;
 
 /**
  * A type used to uniquely discover and identify a device in a nearby interaction session.
@@ -176,4 +177,22 @@ public class NIDiscoveryToken extends NSObject implements NSCopying, NSSecureCod
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * Get the protocol that describes nearby interaction capabilities of the device that generated this token.
+     * 
+     * Detailed description on the capability protocol is in NIDeviceCapability.h.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("deviceCapabilities")
+    @MappedReturn(ObjCObjectMapper.class)
+    @NotNull
+    public native NIDeviceCapability deviceCapabilities();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

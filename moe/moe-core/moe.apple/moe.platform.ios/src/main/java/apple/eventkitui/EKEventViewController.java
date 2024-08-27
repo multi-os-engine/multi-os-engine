@@ -46,9 +46,6 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-/**
- * API-Since: 4.0
- */
 @Generated
 @Library("EventKitUI")
 @Runtime(ObjCRuntime.class)
@@ -293,4 +290,9 @@ public class EKEventViewController extends UIViewController {
     @Generated
     @Selector("setEvent:")
     public native void setEvent(EKEvent value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

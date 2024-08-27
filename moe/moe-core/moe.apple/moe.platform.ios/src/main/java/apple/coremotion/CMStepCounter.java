@@ -60,13 +60,7 @@ import org.jetbrains.annotations.Nullable;
  * startStepCountingUpdatesToQueue:withHandler was called and a timestamp
  * associated with the latest stepcount determination. Step count updates can be stopped
  * by either calling stopStepCountingUpdates or upon CMStepCounter deallocation.
- * 
- * 
- * API-Since: 7.0
- * Deprecated-Since: 8.0
- * Deprecated-Message: Use CMPedometer instead
  */
-@Deprecated
 @Generated
 @Library("CoreMotion")
 @Runtime(ObjCRuntime.class)
@@ -252,4 +246,9 @@ public class CMStepCounter extends NSObject {
         void call_startStepCountingUpdatesToQueueUpdateOnWithHandler(@NInt long numberOfSteps,
                 @NotNull NSDate timestamp, @Nullable NSError error);
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -246,4 +246,9 @@ public class NSUbiquitousKeyValueStore extends NSObject {
     @Generated
     @Selector("synchronize")
     public native boolean synchronize();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

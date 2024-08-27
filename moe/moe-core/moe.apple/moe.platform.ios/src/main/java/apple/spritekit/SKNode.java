@@ -880,4 +880,9 @@ public class SKNode extends UIResponder implements NSCopying, NSSecureCoding, UI
     @IsOptional
     @Selector("isTransparentFocusItem")
     public native boolean isTransparentFocusItem();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

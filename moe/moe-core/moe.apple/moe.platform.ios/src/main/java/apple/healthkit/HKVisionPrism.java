@@ -280,4 +280,9 @@ public class HKVisionPrism extends NSObject implements NSSecureCoding, NSCopying
     @Selector("verticalBase")
     @NInt
     public native long verticalBase();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

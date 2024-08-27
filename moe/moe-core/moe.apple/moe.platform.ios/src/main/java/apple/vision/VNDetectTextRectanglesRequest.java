@@ -194,4 +194,9 @@ public class VNDetectTextRectanglesRequest extends VNImageBasedRequest {
     @Generated
     @Selector("results")
     public native NSArray<? extends VNTextObservation> results();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

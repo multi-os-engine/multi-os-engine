@@ -205,6 +205,8 @@ public class CKQueryOperation extends CKDatabaseOperation {
      * errors keyed off of @c CKPartialErrorsByItemIDKey. These errors are repeats of those sent back in previous @c
      * recordMatchedBlock invocations
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
+     * This block may share mutable state with other blocks assigned to this operation, but any such mutable state
+     * should not be concurrently used outside of blocks assigned to this operation.
      */
     @Nullable
     @Generated
@@ -218,6 +220,8 @@ public class CKQueryOperation extends CKDatabaseOperation {
      * The callbacks will happen in the order that the results were sorted in.
      * If the replacement callback @c recordMatchedBlock is set, this callback block is ignored.
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
+     * This block may share mutable state with other blocks assigned to this operation, but any such mutable state
+     * should not be concurrently used outside of blocks assigned to this operation.
      * 
      * API-Since: 8.0
      * Deprecated-Since: 15.0
@@ -272,6 +276,8 @@ public class CKQueryOperation extends CKDatabaseOperation {
      * errors keyed off of @c CKPartialErrorsByItemIDKey. These errors are repeats of those sent back in previous @c
      * recordMatchedBlock invocations
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
+     * This block may share mutable state with other blocks assigned to this operation, but any such mutable state
+     * should not be concurrently used outside of blocks assigned to this operation.
      */
     @Generated
     @Selector("setQueryCompletionBlock:")
@@ -284,6 +290,8 @@ public class CKQueryOperation extends CKDatabaseOperation {
      * The callbacks will happen in the order that the results were sorted in.
      * If the replacement callback @c recordMatchedBlock is set, this callback block is ignored.
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
+     * This block may share mutable state with other blocks assigned to this operation, but any such mutable state
+     * should not be concurrently used outside of blocks assigned to this operation.
      * 
      * API-Since: 8.0
      * Deprecated-Since: 15.0
@@ -366,6 +374,8 @@ public class CKQueryOperation extends CKDatabaseOperation {
      * The callbacks will happen in the order that the results were sorted in. If a record fails in post-processing
      * (say, a network failure materializing a @c CKAsset record field), the per-record error will be passed here.
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
+     * This block may share mutable state with other blocks assigned to this operation, but any such mutable state
+     * should not be concurrently used outside of blocks assigned to this operation.
      * 
      * API-Since: 15.0
      */
@@ -388,6 +398,8 @@ public class CKQueryOperation extends CKDatabaseOperation {
      * The callbacks will happen in the order that the results were sorted in. If a record fails in post-processing
      * (say, a network failure materializing a @c CKAsset record field), the per-record error will be passed here.
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
+     * This block may share mutable state with other blocks assigned to this operation, but any such mutable state
+     * should not be concurrently used outside of blocks assigned to this operation.
      * 
      * API-Since: 15.0
      */
@@ -402,4 +414,9 @@ public class CKQueryOperation extends CKDatabaseOperation {
         @Generated
         void call_setRecordMatchedBlock(@NotNull CKRecordID arg0, @Nullable CKRecord arg1, @Nullable NSError arg2);
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

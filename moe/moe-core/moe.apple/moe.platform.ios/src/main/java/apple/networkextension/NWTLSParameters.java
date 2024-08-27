@@ -263,4 +263,9 @@ public class NWTLSParameters extends NSObject {
     @Generated
     @Selector("setTLSSessionID:")
     public native void setTLSSessionID(@Nullable NSData value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

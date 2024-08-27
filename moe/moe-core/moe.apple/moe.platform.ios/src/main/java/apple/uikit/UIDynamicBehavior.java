@@ -216,4 +216,9 @@ public class UIDynamicBehavior extends NSObject {
         @Generated
         void call_setAction();
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

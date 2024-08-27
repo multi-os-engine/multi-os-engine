@@ -364,4 +364,9 @@ public class MDLTexture extends NSObject implements MDLNamed {
     @Selector("textureNamed:assetResolver:")
     public static native MDLTexture textureNamedAssetResolver(@NotNull String name,
             @NotNull @Mapped(ObjCObjectMapper.class) MDLAssetResolver resolver);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

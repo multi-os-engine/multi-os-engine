@@ -615,4 +615,9 @@ public class NSDateFormatter extends NSFormatter {
     @Generated
     @Selector("weekdaySymbols")
     public native NSArray<String> weekdaySymbols();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -508,4 +508,9 @@ public class UIListContentConfiguration extends NSObject implements UIContentCon
     @Generated
     @Selector("prominentInsetGroupedHeaderConfiguration")
     public static native UIListContentConfiguration prominentInsetGroupedHeaderConfiguration();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

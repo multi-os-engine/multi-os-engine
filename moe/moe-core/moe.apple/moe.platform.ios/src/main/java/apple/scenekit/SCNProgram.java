@@ -437,4 +437,9 @@ public class SCNProgram extends NSObject implements NSCopying, NSSecureCoding {
                 @NotNull SCNNode node, @NotNull @Mapped(ObjCObjectMapper.class) Object shadable,
                 @NotNull SCNRenderer renderer);
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

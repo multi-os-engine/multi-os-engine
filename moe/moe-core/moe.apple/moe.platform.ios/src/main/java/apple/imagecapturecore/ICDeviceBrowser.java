@@ -397,4 +397,9 @@ public class ICDeviceBrowser extends NSObject {
     @Generated
     @Selector("setBrowsedDeviceTypeMask:")
     public native void setBrowsedDeviceTypeMask(@NUInt long value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

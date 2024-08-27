@@ -23,6 +23,8 @@ public final class DeviceCheck {
     }
 
     /**
+     * The error domain for errors associated with DeviceCheck APIs.
+     * 
      * API-Since: 11.0
      */
     @NotNull

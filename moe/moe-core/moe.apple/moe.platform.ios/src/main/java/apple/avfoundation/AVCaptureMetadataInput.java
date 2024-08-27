@@ -240,4 +240,9 @@ public class AVCaptureMetadataInput extends AVCaptureInput {
     @Selector("initWithFormatDescription:clock:")
     public native AVCaptureMetadataInput initWithFormatDescriptionClock(@NotNull CMFormatDescriptionRef desc,
             @NotNull CMClockRef clock);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

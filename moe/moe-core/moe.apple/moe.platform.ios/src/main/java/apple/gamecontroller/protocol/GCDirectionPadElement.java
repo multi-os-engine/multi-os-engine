@@ -12,12 +12,12 @@ import org.jetbrains.annotations.NotNull;
 
 /**
  * An object conforming to \c GCDirectionPadElement represents a four-way
- * directional control with one button on each point.
+ * directional control element.
  * 
- * A direction pad element contains a common grouping of 2 axis inputs where the
- * input can also be interpreted as 2 sets of mutually exclusive button pairs.
- * Only one button in each pair, {up, down} and {left, right}, can be pressed at
- * any one time.
+ * A direction pad element contains a common grouping of 2 axis inputs, which can
+ * also be interpreted as 2 sets of mutually exclusive button pairs. Only one
+ * button in each pair, {up, down} and {left, right}, can be pressed at any
+ * given time.
  * 
  * API-Since: 16.0
  */

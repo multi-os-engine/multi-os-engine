@@ -53,8 +53,6 @@ import org.jetbrains.annotations.Nullable;
  * 
  * This formatter handles international ordering and delimiting of the contact name components. This includes applying
  * the user defaults when appropriate.
- * 
- * API-Since: 9.0
  */
 @Generated
 @Library("Contacts")
@@ -325,4 +323,9 @@ public class CNContactFormatter extends NSFormatter implements NSSecureCoding {
     @Selector("descriptorForRequiredKeysForNameOrder")
     @MappedReturn(ObjCObjectMapper.class)
     public static native CNKeyDescriptor descriptorForRequiredKeysForNameOrder();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

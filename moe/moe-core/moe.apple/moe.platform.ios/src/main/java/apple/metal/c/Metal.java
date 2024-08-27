@@ -459,4 +459,26 @@ public final class Metal {
     @Generated public static final double MTLResourceCPUCacheModeShift = 0.0;
     @Generated public static final double MTLResourceStorageModeShift = 4.0;
     @Generated public static final double MTLResourceHazardTrackingModeShift = 8.0;
+    /**
+     * when a MTLVertexBufferLayoutDescriptor has its stride set to this value,
+     * the stride will be dynamic and must be set explicitly when binding a buffer
+     * to a render command encoder.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated @NUInt public static final long MTLBufferLayoutStrideDynamic = org.moe.natj.general.NatJ.is64Bit() ?
+            0xFFFFFFFFFFFFFFFFL :
+            0x00000000FFFFFFFFL;
+    /**
+     * When calling functions with an `attributeStrides:` parameter on a render
+     * or compute command encoder, this value must be provided for the binding
+     * points that are either not part of the set of MTLBufferLayoutDescriptor,
+     * or whose stride values in the descriptor is not set to
+     * `MTLBufferLayoutStrideDynamic`
+     * 
+     * API-Since: 17.0
+     */
+    @Generated @NUInt public static final long MTLAttributeStrideStatic = org.moe.natj.general.NatJ.is64Bit() ?
+            0xFFFFFFFFFFFFFFFFL :
+            0x00000000FFFFFFFFL;
 }

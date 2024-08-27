@@ -206,4 +206,9 @@ public class CPAssistantCellConfiguration extends NSObject implements NSSecureCo
     @Selector("visibility")
     @NInt
     public native long visibility();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

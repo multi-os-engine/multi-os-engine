@@ -252,4 +252,9 @@ public class EAGLContext extends NSObject {
     @Generated
     @Selector("presentRenderbuffer:afterMinimumDuration:")
     public native boolean presentRenderbufferAfterMinimumDuration(@NUInt long target, double duration);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

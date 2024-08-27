@@ -44,9 +44,6 @@ import org.jetbrains.annotations.Nullable;
  * CBCentral
  * 
  * Represents a remote central.
- * 
- * 
- * API-Since: 6.0
  */
 @Generated
 @Library("CoreBluetooth")
@@ -177,4 +174,9 @@ public class CBCentral extends CBPeer {
     @Selector("maximumUpdateValueLength")
     @NUInt
     public native long maximumUpdateValueLength();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

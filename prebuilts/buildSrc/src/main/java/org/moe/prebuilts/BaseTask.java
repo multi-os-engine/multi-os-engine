@@ -29,6 +29,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.nio.file.Files;
 
 abstract class BaseTask extends DefaultTask {
 
@@ -68,7 +69,12 @@ abstract class BaseTask extends DefaultTask {
         try {
             executeImpl();
         } catch (Throwable e) {
-            System.err.println("Error log available at " + logFile.getAbsolutePath());
+            System.err.println("Full rror log available at " + logFile.getAbsolutePath());
+            getProject().getLogger().error("--------- COMMAND LOG START ---------");
+            try {
+                getProject().getLogger().error(Files.readString(logFile.toPath()));
+            } catch (IOException ignored) {}
+            getProject().getLogger().error("--------- COMMAND LOG END ---------");
             throw e;
         } finally {
             try {

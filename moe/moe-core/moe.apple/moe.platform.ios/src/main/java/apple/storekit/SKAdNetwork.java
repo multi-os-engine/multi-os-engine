@@ -247,4 +247,9 @@ public class SKAdNetwork extends NSObject {
         @Generated
         void call_updatePostbackConversionValueCompletionHandler(@Nullable NSError error);
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

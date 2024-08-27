@@ -25,6 +25,10 @@ import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.map.ObjCStringMapper;
 import org.jetbrains.annotations.NotNull;
+import apple.foundation.NSDecimalNumber;
+import org.moe.natj.c.ann.CFunction;
+import org.moe.natj.general.ann.Mapped;
+import org.moe.natj.objc.ann.ObjCBlock;
 
 @Generated
 @Library("PassKit")
@@ -447,7 +451,10 @@ public final class PassKit {
 
     /**
      * API-Since: 16.0
+     * Deprecated-Since: 17.0
+     * Deprecated-Message: Use PKPaymentNetworkPagoBancomat instead.
      */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -488,4 +495,70 @@ public final class PassKit {
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String PKIdentityErrorDomain();
+
+    /**
+     * Checks if a Pay Later Merchandising information can be displayed for the given values
+     * - Parameters:
+     * - amount: The users bag price or item pricing
+     * - currencyCode: The ISO 4217 code for the country or region of the merchant’s principle place of business.
+     * - completion: The block that is called when the eligibility result is calculated
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @CFunction
+    public static native void PKPayLaterValidateAmount(NSDecimalNumber amount,
+            @Mapped(ObjCStringMapper.class) String currencyCode,
+            @ObjCBlock(name = "call_PKPayLaterValidateAmount") Block_PKPayLaterValidateAmount completion);
+
+    @Runtime(CRuntime.class)
+    @Generated
+    public interface Block_PKPayLaterValidateAmount {
+        @Generated
+        void call_PKPayLaterValidateAmount(boolean eligible);
+    }
+
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String PKPaymentNetworkPagoBancomat();
+
+    /**
+     * API-Since: 16.4
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String PKPaymentNetworkPostFinance();
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String PKPaymentNetworkTmoney();
+
+    /**
+     * PKDisbursementErrorDomain is used for errors with in-app disbursements.
+     * You create your own PKDisbursementErrors and return them to indicate problems with a transfer.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String PKDisbursementErrorDomain();
+
+    /**
+     * a PKContactField the error relates to. Use with PKDisbursementRecipientContactInvalidError
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String PKDisbursementErrorContactFieldUserInfoKey();
 }

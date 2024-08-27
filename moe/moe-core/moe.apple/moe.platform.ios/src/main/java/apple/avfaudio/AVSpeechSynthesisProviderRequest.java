@@ -202,4 +202,9 @@ public class AVSpeechSynthesisProviderRequest extends NSObject implements NSSecu
     @Generated
     @Selector("voice")
     public native AVSpeechSynthesisProviderVoice voice();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

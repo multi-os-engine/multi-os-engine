@@ -199,4 +199,9 @@ public class HKWheelchairUseObject extends NSObject implements NSCopying, NSSecu
     @Selector("wheelchairUse")
     @NInt
     public native long wheelchairUse();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

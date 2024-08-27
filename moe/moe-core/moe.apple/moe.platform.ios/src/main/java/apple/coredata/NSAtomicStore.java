@@ -278,4 +278,9 @@ public class NSAtomicStore extends NSPersistentStore {
     @Generated
     @Selector("willRemoveCacheNodes:")
     public native void willRemoveCacheNodes(@NotNull NSSet<? extends NSAtomicStoreCacheNode> cacheNodes);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

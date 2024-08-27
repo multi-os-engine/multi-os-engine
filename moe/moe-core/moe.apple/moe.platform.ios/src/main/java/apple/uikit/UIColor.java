@@ -1061,4 +1061,9 @@ public class UIColor extends NSObject implements NSSecureCoding, NSCopying, NSIt
     @Generated
     @Selector("tintColor")
     public static native UIColor tintColor();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

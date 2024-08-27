@@ -201,4 +201,9 @@ public class MPSCNNConvolutionTransposeNode extends MPSCNNConvolutionNode {
     public static native MPSCNNConvolutionTransposeNode nodeWithSourceConvolutionGradientStateWeights(
             @NotNull MPSNNImageNode sourceNode, @Nullable MPSCNNConvolutionGradientStateNode convolutionGradientState,
             @NotNull @Mapped(ObjCObjectMapper.class) MPSCNNConvolutionDataSource weights);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

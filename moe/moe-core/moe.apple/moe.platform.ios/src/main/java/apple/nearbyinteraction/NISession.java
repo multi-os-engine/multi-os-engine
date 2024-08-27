@@ -27,6 +27,7 @@ import apple.arkit.ARSession;
 import apple.nearbyinteraction.protocol.NIDeviceCapability;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.opaque.dispatch_queue_t;
 
 /**
  * Nearby interaction session.
@@ -115,7 +116,7 @@ public class NISession extends NSObject {
     @Nullable
     @Generated
     @Selector("delegateQueue")
-    public native NSObject delegateQueue();
+    public native dispatch_queue_t delegateQueue();
 
     @Generated
     @Selector("description")
@@ -248,7 +249,7 @@ public class NISession extends NSObject {
      */
     @Generated
     @Selector("setDelegateQueue:")
-    public native void setDelegateQueue(@Nullable NSObject value);
+    public native void setDelegateQueue(@Nullable dispatch_queue_t value);
 
     @Generated
     @Selector("setVersion:")
@@ -297,4 +298,9 @@ public class NISession extends NSObject {
     @Generated
     @Selector("setARSession:")
     public native void setARSession(@NotNull ARSession session);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

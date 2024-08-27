@@ -60,8 +60,6 @@ import org.jetbrains.annotations.Nullable;
  * grade of membership. The rules may use the grade of membership to predicate their actions and in such a
  * manner create fuzzy logic. The fuzzy logic Zadeh operators are available on the system itself in order
  * to query multiple facts for combined membership grade.
- * 
- * API-Since: 9.0
  */
 @Generated
 @Library("GameplayKit")
@@ -383,4 +381,9 @@ public class GKRuleSystem extends NSObject {
     @Generated
     @Selector("state")
     public native NSMutableDictionary<?, ?> state();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -30,7 +30,7 @@ public final class NSSearchPathDomainMask {
      */
     @Generated @NUInt public static final long LocalDomainMask = 0x0000000000000002L;
     /**
-     * publically available location in the local area network --- place to install items available on the network
+     * publicly available location in the local area network --- place to install items available on the network
      * (/Network)
      */
     @Generated @NUInt public static final long NetworkDomainMask = 0x0000000000000004L;

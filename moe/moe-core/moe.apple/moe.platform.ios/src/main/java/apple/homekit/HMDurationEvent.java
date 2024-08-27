@@ -30,6 +30,10 @@ import org.jetbrains.annotations.Nullable;
 /**
  * This class is used to represent a duration of time.
  * 
+ * [@note] Characteristics turned on by the trigger will be turned off after the duration
+ * Supported characteristics are [HMCharacteristicTypePowerState, HMCharacteristicTypeActive]
+ * The duration event immediately ends if the characteristics are changed or updated during this period
+ * 
  * API-Since: 11.0
  */
 @Generated
@@ -185,4 +189,9 @@ public class HMDurationEvent extends HMTimeEvent implements NSCopying, NSMutable
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

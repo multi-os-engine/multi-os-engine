@@ -45,9 +45,6 @@ import org.jetbrains.annotations.Nullable;
  * CBDescriptor
  * 
  * Represents a characteristic's descriptor.
- * 
- * 
- * API-Since: 5.0
  */
 @Generated
 @Library("CoreBluetooth")
@@ -188,4 +185,9 @@ public class CBDescriptor extends CBAttribute {
     @Selector("value")
     @MappedReturn(ObjCObjectMapper.class)
     public native Object value();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -80,4 +80,8 @@ public final class BNNSReduceFunction {
      * API-Since: 16.0
      */
     @Generated public static final int BNNSReduceFunctionNone = 0x0000000F;
+    /**
+     * API-Since: 16.4
+     */
+    @Generated public static final int BNNSReduceFunctionLogSum = 0x00000010;
 }

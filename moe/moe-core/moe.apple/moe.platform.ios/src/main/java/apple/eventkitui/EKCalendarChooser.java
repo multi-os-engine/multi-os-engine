@@ -263,4 +263,9 @@ public class EKCalendarChooser extends UIViewController {
     @Generated
     @Selector("showsDoneButton")
     public native boolean showsDoneButton();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

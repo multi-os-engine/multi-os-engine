@@ -199,4 +199,9 @@ public class RPBroadcastMP4ClipHandler extends RPBroadcastHandler {
     @Selector("processMP4ClipWithURL:setupInfo:finished:")
     public native void processMP4ClipWithURLSetupInfoFinished(@Nullable NSURL mp4ClipURL,
             @Nullable NSDictionary<String, ? extends NSObject> setupInfo, boolean finished);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

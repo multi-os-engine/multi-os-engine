@@ -38,9 +38,6 @@ import org.jetbrains.annotations.Nullable;
  * [@discsussion]
  * Each subclass is sufficient to recreate the symbol exactly as seen or to be used with a custom parser. Subclasses of
  * CIBarcodeDescriptor are defined for each code type to contain the formal specification of each symbology.
- * 
- * 
- * API-Since: 11.0
  */
 @Generated
 @Library("CoreImage")
@@ -184,4 +181,9 @@ public class CIBarcodeDescriptor extends NSObject implements NSSecureCoding, NSC
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

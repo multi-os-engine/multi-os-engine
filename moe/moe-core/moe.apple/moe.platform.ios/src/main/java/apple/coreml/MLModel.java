@@ -182,7 +182,7 @@ public class MLModel extends NSObject {
     public static native MLModel new_objc();
 
     /**
-     * All models can predict on a specific set of input features.
+     * Convenience method to run a prediction synchronously with default prediction options.
      */
     @Nullable
     @Generated
@@ -193,7 +193,13 @@ public class MLModel extends NSObject {
             @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
-     * Prediction with explicit options
+     * Run a prediction on a model synchronously
+     * 
+     * [@returns] The output features from the prediction
+     * 
+     * @param input   The input features to make a prediction from
+     * @param options Prediction options to modify how the prediction is run
+     * @param error   The out parameter for error when nil is returned. On success, it is nil
      */
     @Nullable
     @Generated
@@ -360,4 +366,69 @@ public class MLModel extends NSObject {
         @Generated
         void call_loadModelAssetConfigurationCompletionHandler(@Nullable MLModel model, @Nullable NSError error);
     }
+
+    /**
+     * The list of available compute devices for CoreML.
+     * 
+     * Use the method to get the list of compute devices that MLModel's prediction can use.
+     * 
+     * Some compute devices on the hardware are exclusive to the domain ML frameworks such as Vision and SoundAnalysis
+     * and
+     * not available to CoreML. See also `MLComputeDevice.allComputeDevices`.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("availableComputeDevices")
+    @NotNull
+    public static native NSArray<?> availableComputeDevices();
+
+    /**
+     * Convenience method to run a prediction asynchronously with default prediction options.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("predictionFromFeatures:completionHandler:")
+    public native void predictionFromFeaturesCompletionHandler(
+            @Mapped(ObjCObjectMapper.class) @NotNull MLFeatureProvider input,
+            @ObjCBlock(name = "call_predictionFromFeaturesCompletionHandler") @NotNull Block_predictionFromFeaturesCompletionHandler completionHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_predictionFromFeaturesCompletionHandler {
+        @Generated
+        void call_predictionFromFeaturesCompletionHandler(@Mapped(ObjCObjectMapper.class) @Nullable Object output,
+                @Nullable NSError error);
+    }
+
+    /**
+     * Run a prediction on a model asynchronously.
+     * 
+     * @param input             The input features to make a prediction from
+     * @param options           Prediction options to modify how the prediction is run
+     * @param completionHandler A block that will be invoked once the prediction has completed successfully or
+     *                          unsuccessfully. On success, it is invoked with a valid model output. On failure, it is
+     *                          invoked with a nil output and NSError
+     * 
+     *                          API-Since: 17.0
+     */
+    @Generated
+    @Selector("predictionFromFeatures:options:completionHandler:")
+    public native void predictionFromFeaturesOptionsCompletionHandler(
+            @Mapped(ObjCObjectMapper.class) @NotNull MLFeatureProvider input, @NotNull MLPredictionOptions options,
+            @ObjCBlock(name = "call_predictionFromFeaturesOptionsCompletionHandler") @NotNull Block_predictionFromFeaturesOptionsCompletionHandler completionHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_predictionFromFeaturesOptionsCompletionHandler {
+        @Generated
+        void call_predictionFromFeaturesOptionsCompletionHandler(
+                @Mapped(ObjCObjectMapper.class) @Nullable Object output, @Nullable NSError error);
+    }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

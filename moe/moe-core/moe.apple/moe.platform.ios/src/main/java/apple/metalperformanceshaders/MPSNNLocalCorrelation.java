@@ -295,4 +295,9 @@ public class MPSNNLocalCorrelation extends MPSNNReduceBinary {
     @Selector("windowInY")
     @NUInt
     public native long windowInY();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

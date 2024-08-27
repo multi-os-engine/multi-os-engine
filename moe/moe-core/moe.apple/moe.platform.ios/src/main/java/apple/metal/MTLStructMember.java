@@ -209,4 +209,9 @@ public class MTLStructMember extends NSObject {
     @Generated
     @Selector("textureReferenceType")
     public native MTLTextureReferenceType textureReferenceType();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

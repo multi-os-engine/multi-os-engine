@@ -218,4 +218,9 @@ public class CMPedometerEvent extends NSObject implements NSSecureCoding, NSCopy
     @Selector("type")
     @NInt
     public native long type();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -199,4 +199,9 @@ public class UIFocusSystem extends NSObject {
     @Generated
     @Selector("updateFocusIfNeeded")
     public native void updateFocusIfNeeded();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

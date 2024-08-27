@@ -237,4 +237,9 @@ public class UIContextMenuInteraction extends NSObject implements UIInteraction 
         @Generated
         UIMenu call_updateVisibleMenuWithBlock(@NotNull UIMenu visibleMenu);
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

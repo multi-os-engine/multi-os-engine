@@ -328,4 +328,9 @@ public class UICollectionViewFlowLayout extends UICollectionViewLayout {
     @Generated
     @Selector("setSectionInsetReference:")
     public native void setSectionInsetReference(@NInt long value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

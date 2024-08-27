@@ -347,4 +347,9 @@ public class UIDynamicItemBehavior extends UIDynamicBehavior {
     @Generated
     @Selector("setResistance:")
     public native void setResistance(@NFloat double value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -195,4 +195,9 @@ public class VNFaceLandmarkRegion extends NSObject implements NSCopying, NSSecur
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

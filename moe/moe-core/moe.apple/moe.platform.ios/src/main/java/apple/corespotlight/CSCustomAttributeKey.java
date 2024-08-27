@@ -47,8 +47,6 @@ import org.jetbrains.annotations.Nullable;
 
 /**
  * CSCustomAttributeKey allows you to specify a custom attribute as well as various other properties of that attribute.
- * 
- * API-Since: 9.0
  */
 @Generated
 @Library("CoreSpotlight")
@@ -241,4 +239,9 @@ public class CSCustomAttributeKey extends NSObject implements NSCopying, NSSecur
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -486,4 +486,9 @@ public class MFMessageComposeViewController extends UINavigationController {
     @Generated
     @Selector("insertCollaborationItemProvider:")
     public native boolean insertCollaborationItemProvider(@NotNull NSItemProvider itemProvider);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

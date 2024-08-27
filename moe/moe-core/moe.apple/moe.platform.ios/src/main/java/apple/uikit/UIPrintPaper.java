@@ -187,4 +187,9 @@ public class UIPrintPaper extends NSObject {
     @Selector("printableRect")
     @ByValue
     public native CGRect printableRect();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

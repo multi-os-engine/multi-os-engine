@@ -333,4 +333,9 @@ public class MIDICISession extends NSObject {
         void call_setProfileSpecificDataHandler(@NotNull MIDICISession session, byte channel,
                 @NotNull MIDICIProfile profile, @NotNull NSData profileSpecificData);
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

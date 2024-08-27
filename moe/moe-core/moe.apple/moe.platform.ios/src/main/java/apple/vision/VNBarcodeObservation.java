@@ -29,6 +29,7 @@ import apple.corefoundation.struct.CGPoint;
 import apple.corefoundation.struct.CGRect;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.foundation.NSData;
 
 /**
  * VNBarcodeObservation
@@ -204,9 +205,88 @@ public class VNBarcodeObservation extends VNRectangleObservation {
     public static native VNBarcodeObservation observationWithRequestRevisionBoundingBox(@NUInt long requestRevision,
             @ByValue CGRect boundingBox);
 
+    @Deprecated
     @Generated
     @Selector("rectangleObservationWithRequestRevision:topLeft:bottomLeft:bottomRight:topRight:")
     public static native VNBarcodeObservation rectangleObservationWithRequestRevisionTopLeftBottomLeftBottomRightTopRight(
             @NUInt long requestRevision, @ByValue CGPoint topLeft, @ByValue CGPoint bottomLeft,
             @ByValue CGPoint bottomRight, @ByValue CGPoint topRight);
+
+    /**
+     * A boolean indicating if the barcode is color inverted
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("isColorInverted")
+    public native boolean isColorInverted();
+
+    /**
+     * Boolean indicating if the barcode carries any GS1 application specific data
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("isGS1DataCarrier")
+    public native boolean isGS1DataCarrier();
+
+    /**
+     * The raw data representation of the barcode's payload if available.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("payloadData")
+    @Nullable
+    public native NSData payloadData();
+
+    @Generated
+    @Selector("rectangleObservationWithRequestRevision:topLeft:topRight:bottomRight:bottomLeft:")
+    public static native VNBarcodeObservation rectangleObservationWithRequestRevisionTopLeftTopRightBottomRightBottomLeft(
+            @NUInt long requestRevision, @ByValue CGPoint topLeft, @ByValue CGPoint topRight,
+            @ByValue CGPoint bottomRight, @ByValue CGPoint bottomLeft);
+
+    /**
+     * Represents the supplemental composite type. Currently, this can only refer to the composite flag of the 2D
+     * symbology as part of a GS1 composite symbology.
+     * This attribute only exists when the primary descriptor is the 1D symbology of a GS1 composite symbology, and of
+     * which a valid 2D counterpart has been coalesced into.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("supplementalCompositeType")
+    @NInt
+    public native long supplementalCompositeType();
+
+    /**
+     * Decode the supplemental code in the descriptor as a string value. Note: this property might be expensive the
+     * first time it is accessed
+     * When non-NULL, and if the descriptor has supplemental raw payload data, the pointee will be set to the decoded
+     * supplemental payload raw data value.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("supplementalPayloadData")
+    @Nullable
+    public native NSData supplementalPayloadData();
+
+    /**
+     * Decode the supplemental code in the descriptor as a string value. Note: this property might be expensive the
+     * first time it is accessed
+     * When non-NULL, and if the descriptor has supplemental raw payload data, the pointee will be set to the decoded
+     * supplemental payload string value.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("supplementalPayloadString")
+    @Nullable
+    public native String supplementalPayloadString();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

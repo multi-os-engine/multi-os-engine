@@ -171,4 +171,9 @@ public class HMCameraSource extends NSObject {
     @Generated
     @Selector("aspectRatio")
     public native double aspectRatio();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -224,4 +224,9 @@ public class AVAssetDownloadTask extends NSURLSessionTask {
     @Generated
     @Selector("options")
     public native NSDictionary<String, ?> options();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

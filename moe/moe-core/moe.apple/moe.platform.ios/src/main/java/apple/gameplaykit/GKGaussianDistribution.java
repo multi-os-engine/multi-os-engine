@@ -49,8 +49,6 @@ import org.jetbrains.annotations.Nullable;
  * Note that a gaussian distribution's unbounded behavior beyond 3 deviations is undesired,
  * thus this distribution deviates nominally by modifying the bounds to 3 deviations.
  * Thus values within 3 deviations actually make up 100% of the distribution.
- * 
- * API-Since: 9.0
  */
 @Generated
 @Library("GameplayKit")
@@ -234,4 +232,9 @@ public class GKGaussianDistribution extends GKRandomDistribution {
     @Generated
     @Selector("mean")
     public native float mean();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

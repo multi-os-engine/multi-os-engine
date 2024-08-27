@@ -35,8 +35,6 @@ import org.jetbrains.annotations.Nullable;
  * 
  * Retrieve a voice by specifying the language code your text should be spoken in, or by using voiceWithIdentifier
  * for a known voice identifier.
- * 
- * API-Since: 7.0
  */
 @Generated
 @Library("AVFAudio")
@@ -272,4 +270,17 @@ public class AVSpeechSynthesisVoice extends NSObject implements NSSecureCoding {
     @Generated
     @Selector("voiceWithLanguage:")
     public static native AVSpeechSynthesisVoice voiceWithLanguage(@Nullable String languageCode);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("voiceTraits")
+    @NUInt
+    public native long voiceTraits();
 }

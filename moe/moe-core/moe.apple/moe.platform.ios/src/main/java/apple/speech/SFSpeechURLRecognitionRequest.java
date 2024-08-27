@@ -175,4 +175,9 @@ public class SFSpeechURLRecognitionRequest extends SFSpeechRecognitionRequest {
     @Generated
     @Selector("initWithURL:")
     public native SFSpeechURLRecognitionRequest initWithURL(@NotNull NSURL URL);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

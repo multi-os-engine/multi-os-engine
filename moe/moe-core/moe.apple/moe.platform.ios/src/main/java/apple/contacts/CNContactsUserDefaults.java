@@ -44,8 +44,6 @@ import org.jetbrains.annotations.Nullable;
  * The user defaults for contacts.
  * 
  * [@note] This class is not thread safe.
- * 
- * API-Since: 9.0
  */
 @Generated
 @Library("Contacts")
@@ -179,4 +177,9 @@ public class CNContactsUserDefaults extends NSObject {
     @Selector("sortOrder")
     @NInt
     public native long sortOrder();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -42,6 +42,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.opaque.dispatch_queue_t;
 
 /**
  * AVCaptureAudioDataOutput
@@ -218,7 +219,7 @@ public class AVCaptureAudioDataOutput extends AVCaptureOutput {
     @Nullable
     @Generated
     @Selector("sampleBufferCallbackQueue")
-    public native NSObject sampleBufferCallbackQueue();
+    public native dispatch_queue_t sampleBufferCallbackQueue();
 
     /**
      * [@property] sampleBufferDelegate
@@ -266,5 +267,10 @@ public class AVCaptureAudioDataOutput extends AVCaptureOutput {
     @Selector("setSampleBufferDelegate:queue:")
     public native void setSampleBufferDelegateQueue(
             @Nullable @Mapped(ObjCObjectMapper.class) AVCaptureAudioDataOutputSampleBufferDelegate sampleBufferDelegate,
-            @Nullable NSObject sampleBufferCallbackQueue);
+            @Nullable dispatch_queue_t sampleBufferCallbackQueue);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

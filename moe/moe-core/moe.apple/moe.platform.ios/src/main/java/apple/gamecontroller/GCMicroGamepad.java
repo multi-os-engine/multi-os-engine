@@ -322,4 +322,9 @@ public class GCMicroGamepad extends GCPhysicalInputProfile {
     @Generated
     @Selector("setStateFromMicroGamepad:")
     public native void setStateFromMicroGamepad(@NotNull GCMicroGamepad microGamepad);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

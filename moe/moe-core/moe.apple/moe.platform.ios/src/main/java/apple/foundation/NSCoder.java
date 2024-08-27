@@ -750,4 +750,9 @@ public class NSCoder extends NSObject {
     public native NSDictionary<?, ?> decodeDictionaryWithKeysOfClassesObjectsOfClassesForKey(
             @NotNull NSSet<? extends Class> keyClasses, @NotNull NSSet<? extends Class> objectClasses,
             @NotNull String key);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

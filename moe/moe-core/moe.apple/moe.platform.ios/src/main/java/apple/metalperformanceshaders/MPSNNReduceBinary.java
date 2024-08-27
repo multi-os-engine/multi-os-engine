@@ -294,4 +294,9 @@ public class MPSNNReduceBinary extends MPSCNNBinaryKernel {
     @Generated
     @Selector("setSecondaryOffset:")
     public native void setSecondaryOffset(@ByValue MPSOffset value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

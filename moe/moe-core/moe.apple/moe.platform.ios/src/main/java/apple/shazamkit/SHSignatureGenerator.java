@@ -71,7 +71,7 @@ public class SHSignatureGenerator extends NSObject {
      * SHSignature
      * produced. Passing the @c AVAudioTime is not required but recommended, it allows the generator to detect when the
      * audio is not contiguous.
-     * This method will throw an exception if the audio format is not PCM in one of the following sample rates: 48000,
+     * This method only accepts PCM audio formats. The following sample rates are recommended but not required: 48000,
      * 44100, 32000, 16000.
      * 
      * @param time   Where in the stream the audio represents
@@ -207,4 +207,9 @@ public class SHSignatureGenerator extends NSObject {
         @Generated
         void call_generateSignatureFromAssetCompletionHandler(@Nullable SHSignature signature, @Nullable NSError error);
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

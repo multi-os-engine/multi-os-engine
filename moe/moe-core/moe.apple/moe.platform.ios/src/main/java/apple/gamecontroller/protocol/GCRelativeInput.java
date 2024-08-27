@@ -11,6 +11,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.foundation.NSSet;
 
 /**
  * An object conforming to \c GCRelativeInput represents an input that reports
@@ -104,4 +105,15 @@ public interface GCRelativeInput {
         void call_setDeltaDidChangeHandler(@NotNull @Mapped(ObjCObjectMapper.class) Object arg0,
                 @NotNull @Mapped(ObjCObjectMapper.class) Object arg1, float arg2);
     }
+
+    /**
+     * An object describing the physical action(s) the user performs to manipulate
+     * this input.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("sources")
+    @NotNull
+    NSSet<?> sources();
 }

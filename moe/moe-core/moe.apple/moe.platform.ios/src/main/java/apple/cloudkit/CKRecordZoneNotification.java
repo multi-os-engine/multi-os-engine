@@ -42,30 +42,6 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
- * CKRecordZoneNotification
- * 
- * [@c] notificationType == @c CKNotificationTypeRecordZone
- * When properties must be dropped (see @c isPruned), here's the order of importance. The most important properties are
- * first, they'll be the last ones to be dropped.
- * - notificationID
- * - badge
- * - alertLocalizationKey
- * - alertLocalizationArgs
- * - alertBody
- * - alertActionLocalizationKey
- * - alertLaunchImage
- * - soundName
- * - content-available
- * - recordZoneID
- * - containerIdentifier
- * - subscriptionOwnerUserRecordID
- * - titleLocalizationKey
- * - titleLocalizationArgs
- * - title
- * - subtitleLocalizationKey
- * - subtitleLocalizationArgs
- * - subtitle
- * 
  * API-Since: 8.0
  */
 @Generated
@@ -203,4 +179,9 @@ public class CKRecordZoneNotification extends CKNotification {
     @Generated
     @Selector("recordZoneID")
     public native CKRecordZoneID recordZoneID();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

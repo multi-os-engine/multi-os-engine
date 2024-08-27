@@ -47,9 +47,6 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-/**
- * API-Since: 10.0
- */
 @Generated
 @Library("GameplayKit")
 @Runtime(ObjCRuntime.class)
@@ -288,4 +285,9 @@ public class GKDecisionTree extends NSObject implements NSSecureCoding {
     @Generated
     @Selector("initWithURL:error:")
     public native GKDecisionTree initWithURLError(@NotNull NSURL url, @Nullable NSError error);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

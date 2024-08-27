@@ -213,4 +213,9 @@ public class UICollectionViewCompositionalLayoutConfiguration extends NSObject i
     @Generated
     @Selector("setContentInsetsReference:")
     public native void setContentInsetsReference(@NInt long value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

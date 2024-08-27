@@ -239,4 +239,9 @@ public class INSetSeatSettingsInCarIntent extends INIntent {
             @Nullable NSNumber enableHeating, @Nullable NSNumber enableCooling, @Nullable NSNumber enableMassage,
             @NInt long seat, @Nullable NSNumber level, @NInt long relativeLevelSetting,
             @Nullable INSpeakableString carName);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

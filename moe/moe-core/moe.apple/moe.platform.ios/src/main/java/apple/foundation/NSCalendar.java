@@ -880,4 +880,9 @@ public class NSCalendar extends NSObject implements NSCopying, NSSecureCoding {
         void call_enumerateDatesStartingAfterDateMatchingComponentsOptionsUsingBlock(@Nullable NSDate date,
                 boolean exactMatch, @NotNull BoolPtr stop);
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

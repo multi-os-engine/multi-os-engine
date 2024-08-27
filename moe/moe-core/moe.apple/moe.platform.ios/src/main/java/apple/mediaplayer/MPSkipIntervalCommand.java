@@ -176,4 +176,9 @@ public class MPSkipIntervalCommand extends MPRemoteCommand {
     @Generated
     @Selector("setPreferredIntervals:")
     public native void setPreferredIntervals(@NotNull NSArray<? extends NSNumber> value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

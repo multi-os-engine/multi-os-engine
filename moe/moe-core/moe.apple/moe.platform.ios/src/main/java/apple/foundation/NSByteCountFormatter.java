@@ -387,4 +387,9 @@ public class NSByteCountFormatter extends NSFormatter {
     @Selector("stringFromMeasurement:countStyle:")
     public static native String stringFromMeasurementCountStyle(
             @NotNull NSMeasurement<NSUnitInformationStorage> measurement, @NInt long countStyle);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -375,4 +375,9 @@ public class UNNotificationContent extends NSObject implements NSCopying, NSMuta
     @Generated
     @Selector("filterCriteria")
     public native String filterCriteria();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

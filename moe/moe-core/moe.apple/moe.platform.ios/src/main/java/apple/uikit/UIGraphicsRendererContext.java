@@ -197,4 +197,9 @@ public class UIGraphicsRendererContext extends NSObject {
     @Generated
     @Selector("strokeRect:blendMode:")
     public native void strokeRectBlendMode(@ByValue CGRect rect, int blendMode);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

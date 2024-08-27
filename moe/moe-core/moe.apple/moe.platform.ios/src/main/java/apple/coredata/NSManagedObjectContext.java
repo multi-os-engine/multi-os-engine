@@ -735,4 +735,9 @@ public class NSManagedObjectContext extends NSObject implements NSCoding, NSLock
     @Generated
     @Selector("transactionAuthor")
     public native String transactionAuthor();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

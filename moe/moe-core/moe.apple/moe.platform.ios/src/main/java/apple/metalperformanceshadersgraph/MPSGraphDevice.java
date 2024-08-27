@@ -33,7 +33,7 @@ import org.jetbrains.annotations.Nullable;
 @Library("MetalPerformanceShadersGraph")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class MPSGraphDevice extends NSObject {
+public class MPSGraphDevice extends MPSGraphObject {
     static {
         NatJ.register();
     }
@@ -91,10 +91,11 @@ public class MPSGraphDevice extends NSObject {
     public static native String description_static();
 
     /**
-     * Creates a Metal MPSGraphDevice from a MTLDevice
+     * Creates a device from given metal device.
      * 
-     * @param metalDevice MTLDevice to create an MPSGraphDevice from
-     * @return A valid MPSGraphDevice
+     * - Parameters:
+     * - metalDevice: `MTLDevice` to create an MPSGraphDevice from.
+     * - Returns: A valid device.
      */
     @Generated
     @Selector("deviceWithMTLDevice:")
@@ -133,9 +134,7 @@ public class MPSGraphDevice extends NSObject {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
-     * [@property] metalDevice
-     * 
-     * if deviceType GPU then returns MTLDevice or nil
+     * If device type is Metal then returns the corresponding MTLDevice else nil.
      */
     @Nullable
     @Generated
@@ -165,7 +164,7 @@ public class MPSGraphDevice extends NSObject {
     public static native Class superclass_static();
 
     /**
-     * [@property] type
+     * Device of the MPSGraphDevice.
      */
     @Generated
     @Selector("type")
@@ -175,4 +174,9 @@ public class MPSGraphDevice extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

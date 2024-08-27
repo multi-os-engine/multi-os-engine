@@ -241,4 +241,37 @@ public class UISpringTimingParameters extends NSObject implements UITimingCurveP
     @Selector("timingCurveType")
     @NInt
     public native long timingCurveType();
+
+    /**
+     * Equivalent to initWithDuration:bounce:initialVelocity: where the velocity
+     * is the zero-vector.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("initWithDuration:bounce:")
+    public native UISpringTimingParameters initWithDurationBounce(double duration, @NFloat double bounce);
+
+    /**
+     * Similar to initWithMass:stiffness:damping:initialVelocity: except this
+     * creates a set of parameters that is specified by perceptual duration and
+     * bounce. The `duration` specified here is a perceptual duration that
+     * defines the pace of the spring. This is approximately equal to the settling
+     * duration, but for very bouncy springs, will be the duration of the period of
+     * oscillation for the spring. When `bounce` is 0, there are no bounces,
+     * positive values indicate increasing amounts of bounciness up to a maximum of
+     * 1.0 (corresponding to undamped oscillation), and negative values indicate
+     * overdamped springs with a minimum value of -1.0.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("initWithDuration:bounce:initialVelocity:")
+    public native UISpringTimingParameters initWithDurationBounceInitialVelocity(double duration, @NFloat double bounce,
+            @ByValue CGVector velocity);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -234,4 +234,9 @@ public class NEAppProxyUDPFlow extends NEAppProxyFlow {
         @Generated
         void call_writeDatagramsSentByEndpointsCompletionHandler(@Nullable NSError error);
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

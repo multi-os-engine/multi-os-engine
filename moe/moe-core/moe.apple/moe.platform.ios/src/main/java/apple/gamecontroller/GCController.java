@@ -41,6 +41,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.opaque.dispatch_queue_t;
 
 /**
  * Controllers are available to an application that links to GameController.framework. There are 2 ways to access
@@ -304,7 +305,7 @@ public class GCController extends NSObject implements GCDevice {
     @NotNull
     @Generated
     @Selector("handlerQueue")
-    public native NSObject handlerQueue();
+    public native dispatch_queue_t handlerQueue();
 
     @Generated
     @Selector("init")
@@ -394,7 +395,7 @@ public class GCController extends NSObject implements GCDevice {
 
     @Generated
     @Selector("setHandlerQueue:")
-    public native void setHandlerQueue(@NotNull NSObject value);
+    public native void setHandlerQueue(@NotNull dispatch_queue_t value);
 
     /**
      * A player index for the controller, defaults to GCControllerPlayerIndexUnset.
@@ -613,4 +614,19 @@ public class GCController extends NSObject implements GCDevice {
     @Generated
     @Selector("shouldMonitorBackgroundEvents")
     public static native boolean shouldMonitorBackgroundEvents();
+
+    /**
+     * Gets the input profile for the controller.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("input")
+    @NotNull
+    public native GCControllerLiveInput input();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

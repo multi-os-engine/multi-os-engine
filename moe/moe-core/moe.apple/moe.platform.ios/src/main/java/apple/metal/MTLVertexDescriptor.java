@@ -190,4 +190,9 @@ public class MTLVertexDescriptor extends NSObject implements NSCopying {
     @Generated
     @Selector("reset")
     public native void reset();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

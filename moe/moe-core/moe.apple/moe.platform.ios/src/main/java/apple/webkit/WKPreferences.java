@@ -190,7 +190,7 @@ public class WKPreferences extends NSObject implements NSSecureCoding {
     /**
      * API-Since: 8.0
      * Deprecated-Since: 14.0
-     * Deprecated-Message: Use WKWebPagePreferences.allowsContentJavaScript to disable content JavaScript on a
+     * Deprecated-Message: Use WKWebpagePreferences.allowsContentJavaScript to disable content JavaScript on a
      * per-navigation basis
      */
     @Deprecated
@@ -221,7 +221,7 @@ public class WKPreferences extends NSObject implements NSSecureCoding {
     /**
      * API-Since: 8.0
      * Deprecated-Since: 14.0
-     * Deprecated-Message: Use WKWebPagePreferences.allowsContentJavaScript to disable content JavaScript on a
+     * Deprecated-Message: Use WKWebpagePreferences.allowsContentJavaScript to disable content JavaScript on a
      * per-navigation basis
      */
     @Deprecated
@@ -333,4 +333,54 @@ public class WKPreferences extends NSObject implements NSSecureCoding {
     @Generated
     @Selector("setSiteSpecificQuirksModeEnabled:")
     public native void setSiteSpecificQuirksModeEnabled(boolean value);
+
+    /**
+     * Specify the scheduling policy for the web view when it is inactive
+     * and detached from the view hierarchy. Web views are not considered idle when playing media or loading web pages.
+     * A suspended web view will pause JavaScript execution and page layout.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("inactiveSchedulingPolicy")
+    @NInt
+    public native long inactiveSchedulingPolicy();
+
+    /**
+     * Specify the scheduling policy for the web view when it is inactive
+     * and detached from the view hierarchy. Web views are not considered idle when playing media or loading web pages.
+     * A suspended web view will pause JavaScript execution and page layout.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("setInactiveSchedulingPolicy:")
+    public native void setInactiveSchedulingPolicy(@NInt long value);
+
+    /**
+     * A Boolean value indicating whether the web view should include backgrounds when printing.
+     * 
+     * The default value is `NO`.
+     * 
+     * API-Since: 16.4
+     */
+    @Generated
+    @Selector("setShouldPrintBackgrounds:")
+    public native void setShouldPrintBackgrounds(boolean value);
+
+    /**
+     * A Boolean value indicating whether the web view should include backgrounds when printing.
+     * 
+     * The default value is `NO`.
+     * 
+     * API-Since: 16.4
+     */
+    @Generated
+    @Selector("shouldPrintBackgrounds")
+    public native boolean shouldPrintBackgrounds();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

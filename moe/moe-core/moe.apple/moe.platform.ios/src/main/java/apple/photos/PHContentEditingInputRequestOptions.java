@@ -248,4 +248,9 @@ public class PHContentEditingInputRequestOptions extends NSObject {
         @Generated
         void call_setProgressHandler(double arg0, @NotNull BoolPtr arg1);
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

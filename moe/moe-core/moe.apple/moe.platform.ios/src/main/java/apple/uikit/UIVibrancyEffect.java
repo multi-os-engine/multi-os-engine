@@ -241,4 +241,9 @@ public class UIVibrancyEffect extends UIVisualEffect {
     @Generated
     @Selector("widgetEffectForVibrancyStyle:")
     public static native UIVibrancyEffect widgetEffectForVibrancyStyle(@NInt long vibrancyStyle);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

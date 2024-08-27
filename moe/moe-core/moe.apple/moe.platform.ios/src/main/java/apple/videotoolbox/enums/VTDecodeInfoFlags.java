@@ -19,7 +19,22 @@ package apple.videotoolbox.enums;
 import org.moe.natj.general.ann.Generated;
 
 /**
+ * [@enum] VTDecodeInfoFlags
+ * 
  * Informational status for decoding -- non-error flags
+ * 
+ * [@constant] kVTDecodeInfo_Asynchronous
+ * The kVTDecodeInfo_Asynchronous bit may be set if the decode ran asynchronously.
+ * [@constant] kVTDecodeInfo_FrameDropped
+ * The kVTDecodeInfo_FrameDropped bit may be set if the frame was dropped.
+ * [@constant] kVTDecodeInfo_ImageBufferModifiable
+ * If the kVTDecodeInfo_ImageBufferModifiable bit is set, it is safe for the client to modify the imageBuffer.
+ * [@constant] kVTDecodeInfo_SkippedLeadingFrameDropped
+ * The kVTDecodeInfo_SkippedLeadingFrameDropped may be set if a leading frame after a sync frame is dropped.
+ * This can happen when a seek to a sync frame is initiated and, due to frame reordering, there are leading
+ * frames following the sync frame that cannot be decoded due to missing references. Dropping these frames
+ * has no impact to playback since the non-decodeable frames will not be rendered.
+ * If kVTDecodeInfo_SkippedLeadingFrameDropped is set, kVTDecodeInfo_FrameDropped will also be set.
  */
 @Generated
 public final class VTDecodeInfoFlags {
@@ -30,4 +45,6 @@ public final class VTDecodeInfoFlags {
     @Generated
     private VTDecodeInfoFlags() {
     }
+
+    @Generated public static final int SkippedLeadingFrameDropped = 0x00000008;
 }

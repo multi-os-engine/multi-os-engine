@@ -30,7 +30,11 @@ import org.moe.natj.general.ann.NInt;
  * The user cannot change this application’s status, possibly due to
  * active restrictions such as parental controls being in place.
  * [@constant] EKAuthorizationStatusDenied The user explicitly denied access to the service for this application.
- * [@constant] EKAuthorizationStatusAuthorized This application is authorized to access the service.
+ * 
+ * [@constant] EKAuthorizationStatusWriteOnly This application is authorized to save new items.
+ * [@constant] EKAuthorizationStatusFullAccess This application is authorized to read or modify all data for the
+ * service.
+ * [@constant] EKAuthorizationStatusAuthorized (Deprecated) This application is authorized to access the service.
  * 
  * API-Since: 6.0
  */
@@ -50,10 +54,21 @@ public final class EKAuthorizationStatus {
     @Generated @NInt public static final long Denied = 0x0000000000000002L;
     /**
      * API-Since: 6.0
+     * Deprecated-Since: 17.0
+     * Deprecated-Message: Check for full access or write only access
      */
-    @Generated @NInt public static final long Authorized = 0x0000000000000003L;
+    @Deprecated @Generated @NInt public static final long Authorized = 0x0000000000000003L;
 
     @Generated
     private EKAuthorizationStatus() {
     }
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated @NInt public static final long FullAccess = 0x0000000000000003L;
+    /**
+     * API-Since: 17.0
+     */
+    @Generated @NInt public static final long WriteOnly = 0x0000000000000004L;
 }

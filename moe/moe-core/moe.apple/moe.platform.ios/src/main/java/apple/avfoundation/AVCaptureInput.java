@@ -185,4 +185,9 @@ public class AVCaptureInput extends NSObject {
     @Generated
     @Selector("ports")
     public native NSArray<? extends AVCaptureInputPort> ports();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

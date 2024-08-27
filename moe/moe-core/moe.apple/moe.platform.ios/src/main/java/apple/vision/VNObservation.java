@@ -97,7 +97,8 @@ public class VNObservation extends NSObject implements NSCopying, NSSecureCoding
     public static native Class classForKeyedUnarchiver();
 
     /**
-     * The level of confidence normalized to [0, 1] where 1 is most confident
+     * The level of confidence normalized to [0, 1] where 1 is most confident. The only exception is results coming from
+     * VNCoreMLRequest, where confidence values are forwarded as is from relevant CoreML models
      * 
      * Confidence can always be returned as 1.0 if confidence is not supported or has no meaning
      */
@@ -220,4 +221,9 @@ public class VNObservation extends NSObject implements NSCopying, NSSecureCoding
     @Selector("timeRange")
     @ByValue
     public native CMTimeRange timeRange();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

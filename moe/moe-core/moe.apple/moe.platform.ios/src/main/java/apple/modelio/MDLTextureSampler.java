@@ -187,4 +187,9 @@ public class MDLTextureSampler extends NSObject {
     @Generated
     @Selector("transform")
     public native MDLTransform transform();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

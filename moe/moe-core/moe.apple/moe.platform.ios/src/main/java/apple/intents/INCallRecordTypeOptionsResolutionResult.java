@@ -191,4 +191,9 @@ public class INCallRecordTypeOptionsResolutionResult extends INIntentResolutionR
     @Generated
     @Selector("unsupportedWithReason:")
     public static native INCallRecordTypeOptionsResolutionResult unsupportedWithReason(@NInt long reason);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

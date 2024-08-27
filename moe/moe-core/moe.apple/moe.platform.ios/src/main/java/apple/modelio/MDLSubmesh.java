@@ -343,4 +343,9 @@ public class MDLSubmesh extends NSObject implements MDLNamed {
     @Generated
     @Selector("topology")
     public native MDLSubmeshTopology topology();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

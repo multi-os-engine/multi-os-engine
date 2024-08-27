@@ -390,4 +390,9 @@ public class UICollectionLayoutListConfiguration extends NSObject implements NSC
     @Generated
     @Selector("setSeparatorConfiguration:")
     public native void setSeparatorConfiguration(@NotNull UIListSeparatorConfiguration value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

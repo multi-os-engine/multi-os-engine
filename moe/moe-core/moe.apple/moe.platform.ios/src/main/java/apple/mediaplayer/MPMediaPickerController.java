@@ -46,9 +46,6 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
- * MPMediaPickerController is a UIViewController for visually selecting media items.
- * To display it, present it modally on an existing view controller.
- * 
  * API-Since: 3.0
  */
 @Generated
@@ -283,4 +280,9 @@ public class MPMediaPickerController extends UIViewController {
     @Generated
     @Selector("showsItemsWithProtectedAssets")
     public native boolean showsItemsWithProtectedAssets();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -289,4 +289,9 @@ public class AUAudioUnitBusArray extends NSObject implements NSFastEnumeration {
     @Selector("setBusCount:error:")
     public native boolean setBusCountError(@NUInt long count,
             @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

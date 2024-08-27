@@ -255,4 +255,9 @@ public class NSPersistentContainer extends NSObject {
         @Generated
         void call_performBackgroundTask(@NotNull NSManagedObjectContext arg0);
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

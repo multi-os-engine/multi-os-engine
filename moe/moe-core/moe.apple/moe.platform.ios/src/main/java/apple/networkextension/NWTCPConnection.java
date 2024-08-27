@@ -425,4 +425,9 @@ public class NWTCPConnection extends NSObject {
         @Generated
         void call_writeCompletionHandler(@Nullable NSError error);
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

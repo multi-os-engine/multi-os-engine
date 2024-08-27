@@ -23,6 +23,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.opaque.dispatch_queue_t;
 
 /**
  * MTLSharedEventListener
@@ -95,7 +96,7 @@ public class MTLSharedEventListener extends NSObject {
     @NotNull
     @Generated
     @Selector("dispatchQueue")
-    public native NSObject dispatchQueue();
+    public native dispatch_queue_t dispatchQueue();
 
     @Generated
     @Selector("hash")
@@ -108,7 +109,7 @@ public class MTLSharedEventListener extends NSObject {
 
     @Generated
     @Selector("initWithDispatchQueue:")
-    public native MTLSharedEventListener initWithDispatchQueue(@NotNull NSObject dispatchQueue);
+    public native MTLSharedEventListener initWithDispatchQueue(@NotNull dispatch_queue_t dispatchQueue);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -157,4 +158,9 @@ public class MTLSharedEventListener extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

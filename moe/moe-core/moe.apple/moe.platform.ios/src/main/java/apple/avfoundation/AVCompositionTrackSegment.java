@@ -270,4 +270,9 @@ public class AVCompositionTrackSegment extends AVAssetTrackSegment {
     @Generated
     @Selector("sourceURL")
     public native NSURL sourceURL();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

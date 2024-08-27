@@ -236,4 +236,9 @@ public class ADClient extends NSObject {
         void call_requestAttributionDetailsWithBlock(
                 @Nullable NSDictionary<String, ? extends NSObject> attributionDetails, @Nullable NSError error);
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

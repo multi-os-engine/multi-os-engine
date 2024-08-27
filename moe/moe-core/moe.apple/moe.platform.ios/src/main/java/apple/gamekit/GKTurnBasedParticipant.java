@@ -48,8 +48,6 @@ import org.jetbrains.annotations.Nullable;
  * 
  * By default turn based events will badge your app. To opt out of this add GKGameCenterBadgingDisabled with a boolean
  * value of YES to your info plist
- * 
- * API-Since: 5.0
  */
 @Generated
 @Library("GameKit")
@@ -192,7 +190,6 @@ public class GKTurnBasedParticipant extends NSObject {
      * 
      * API-Since: 5.0
      * Deprecated-Since: 8.0
-     * Deprecated-Message: use player
      */
     @Nullable
     @Generated
@@ -216,4 +213,9 @@ public class GKTurnBasedParticipant extends NSObject {
     @Generated
     @Selector("timeoutDate")
     public native NSDate timeoutDate();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

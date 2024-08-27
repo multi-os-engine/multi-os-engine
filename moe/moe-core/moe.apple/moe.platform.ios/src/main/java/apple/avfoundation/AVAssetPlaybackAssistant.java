@@ -30,6 +30,8 @@ import org.jetbrains.annotations.Nullable;
  * 
  * AVAssetPlaybackAssistant provides playback information for an asset.
  * 
+ * Subclasses of this type that are used from Swift must fulfill the requirements of a Sendable type.
+ * 
  * API-Since: 16.0
  */
 @Generated
@@ -188,4 +190,9 @@ public class AVAssetPlaybackAssistant extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

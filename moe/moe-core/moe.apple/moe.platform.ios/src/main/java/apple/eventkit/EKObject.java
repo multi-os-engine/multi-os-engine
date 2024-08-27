@@ -40,9 +40,6 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-/**
- * API-Since: 13.0
- */
 @Generated
 @Library("EventKit")
 @Runtime(ObjCRuntime.class)
@@ -194,4 +191,9 @@ public class EKObject extends NSObject {
     @Generated
     @Selector("rollback")
     public native void rollback();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

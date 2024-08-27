@@ -27,6 +27,7 @@ import org.moe.natj.general.ann.ReferenceInfo;
 import org.moe.natj.general.ptr.Ptr;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.opaque.os_log_t;
 
 /**
  * MXMetricManager
@@ -161,7 +162,7 @@ public class MXMetricManager extends NSObject {
     @NotNull
     @Generated
     @Selector("makeLogHandleWithCategory:")
-    public static native NSObject makeLogHandleWithCategory(@NotNull String category);
+    public static native os_log_t makeLogHandleWithCategory(@NotNull String category);
 
     @Generated
     @Owned
@@ -280,4 +281,9 @@ public class MXMetricManager extends NSObject {
     @Selector("finishExtendedLaunchMeasurementForTaskID:error:")
     public static native boolean finishExtendedLaunchMeasurementForTaskIDError(@NotNull String taskID,
             @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -246,4 +246,9 @@ public class SKPaymentTransaction extends NSObject {
     @Selector("transactionState")
     @NInt
     public native long transactionState();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

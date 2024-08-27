@@ -211,4 +211,9 @@ public class UIMotionEffect extends NSObject implements NSCopying, NSCoding {
     @Generated
     @Selector("keyPathsAndRelativeValuesForViewerOffset:")
     public native NSDictionary<String, ?> keyPathsAndRelativeValuesForViewerOffset(@ByValue UIOffset viewerOffset);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

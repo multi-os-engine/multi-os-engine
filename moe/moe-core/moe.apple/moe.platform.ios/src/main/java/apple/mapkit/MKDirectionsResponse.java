@@ -40,9 +40,6 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-/**
- * API-Since: 7.0
- */
 @Generated
 @Library("MapKit")
 @Runtime(ObjCRuntime.class)
@@ -178,4 +175,9 @@ public class MKDirectionsResponse extends NSObject {
     @Generated
     @Selector("source")
     public native MKMapItem source();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

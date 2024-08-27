@@ -305,4 +305,9 @@ public class PKAddPaymentPassRequestConfiguration extends NSObject {
     @Selector("style")
     @NInt
     public native long style();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

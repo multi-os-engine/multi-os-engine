@@ -27,8 +27,6 @@ import org.jetbrains.annotations.Nullable;
 /**
  * An Xcode quicklook of this object will show a graph visualization of the render
  * with detailed timing information.
- * 
- * API-Since: 11.0
  */
 @Generated
 @Library("CoreImage")
@@ -172,4 +170,18 @@ public class CIRenderInfo extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * This property will return how much time a render spent compiling kernels.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("kernelCompileTime")
+    public native double kernelCompileTime();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

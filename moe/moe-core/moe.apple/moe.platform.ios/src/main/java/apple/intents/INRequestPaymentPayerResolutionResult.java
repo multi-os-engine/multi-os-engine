@@ -198,4 +198,9 @@ public class INRequestPaymentPayerResolutionResult extends INPersonResolutionRes
     @Generated
     @Selector("unsupportedWithReason:")
     public static native INRequestPaymentPayerResolutionResult unsupportedWithReason(@NInt long reason);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

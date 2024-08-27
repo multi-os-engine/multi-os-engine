@@ -45,18 +45,6 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
- * CMMotionActivityManager
- * 
- * Discussion:
- * CMMotionActivityManager allows access to the activity of the device.
- * Activities can be retrieved in one of two ways:
- * 
- * 1. Via a query specifying a time range from which an array of
- * activities will be returned.
- * 
- * 2. By providing a queue and a block to startActivityUpdatesToQueue:withHandler:
- * which will provide live activity updates to a running application.
- * 
  * API-Since: 7.0
  */
 @Generated
@@ -265,4 +253,9 @@ public class CMMotionActivityManager extends NSObject {
     @Selector("authorizationStatus")
     @NInt
     public static native long authorizationStatus();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

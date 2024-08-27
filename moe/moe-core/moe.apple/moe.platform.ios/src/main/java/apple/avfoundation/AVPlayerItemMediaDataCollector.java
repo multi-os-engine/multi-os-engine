@@ -57,6 +57,8 @@ import org.jetbrains.annotations.Nullable;
  * • addMediaDataCollector:
  * • removeMediaDataCollector:
  * 
+ * Subclasses of this type that are used from Swift must fulfill the requirements of a Sendable type.
+ * 
  * API-Since: 9.3
  */
 @Generated
@@ -176,4 +178,9 @@ public class AVPlayerItemMediaDataCollector extends NSObject {
     @Generated
     @Selector("init")
     public native AVPlayerItemMediaDataCollector init();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

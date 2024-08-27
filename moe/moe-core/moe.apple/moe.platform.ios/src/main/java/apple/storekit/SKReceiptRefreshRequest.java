@@ -176,4 +176,9 @@ public class SKReceiptRefreshRequest extends SKRequest {
     @Generated
     @Selector("receiptProperties")
     public native NSDictionary<String, ?> receiptProperties();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

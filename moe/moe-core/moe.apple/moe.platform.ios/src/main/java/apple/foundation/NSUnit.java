@@ -197,4 +197,9 @@ public class NSUnit extends NSObject implements NSCopying, NSSecureCoding {
     @Generated
     @Selector("symbol")
     public native String symbol();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

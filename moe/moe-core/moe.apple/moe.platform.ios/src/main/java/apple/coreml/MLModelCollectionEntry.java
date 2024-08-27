@@ -30,7 +30,10 @@ import org.jetbrains.annotations.Nullable;
  * Information about a model in a model collection.
  * 
  * API-Since: 14.0
+ * Deprecated-Since: 100000.0
+ * Deprecated-Message: Use Background Assets or NSURLSession instead.
  */
+@Deprecated
 @Generated
 @Library("CoreML")
 @Runtime(ObjCRuntime.class)
@@ -114,6 +117,12 @@ public class MLModelCollectionEntry extends NSObject {
     @Selector("instancesRespondToSelector:")
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
+    /**
+     * API-Since: 14.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Use Background Assets or NSURLSession instead.
+     */
+    @Deprecated
     @Generated
     @Selector("isEqualToModelCollectionEntry:")
     public native boolean isEqualToModelCollectionEntry(@NotNull MLModelCollectionEntry entry);
@@ -127,11 +136,23 @@ public class MLModelCollectionEntry extends NSObject {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    /**
+     * API-Since: 14.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Use Background Assets or NSURLSession instead.
+     */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("modelIdentifier")
     public native String modelIdentifier();
 
+    /**
+     * API-Since: 14.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Use Background Assets or NSURLSession instead.
+     */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("modelURL")
@@ -162,4 +183,9 @@ public class MLModelCollectionEntry extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

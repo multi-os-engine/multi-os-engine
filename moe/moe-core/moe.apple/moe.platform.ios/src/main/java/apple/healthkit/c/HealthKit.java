@@ -907,7 +907,7 @@ public final class HealthKit {
     public static native String HKMetadataKeySwimmingStrokeStyle();
 
     /**
-     * Scalar(Count), Discrete
+     * count, Discrete (Arithmetic)
      * 
      * API-Since: 8.0
      */
@@ -918,7 +918,7 @@ public final class HealthKit {
     public static native String HKQuantityTypeIdentifierBodyMassIndex();
 
     /**
-     * Scalar(Percent, 0.0 - 1.0), Discrete
+     * %, Discrete (Arithmetic)
      * 
      * API-Since: 8.0
      */
@@ -929,7 +929,7 @@ public final class HealthKit {
     public static native String HKQuantityTypeIdentifierBodyFatPercentage();
 
     /**
-     * Length, Discrete
+     * m, Discrete (Arithmetic)
      * 
      * API-Since: 8.0
      */
@@ -940,7 +940,7 @@ public final class HealthKit {
     public static native String HKQuantityTypeIdentifierHeight();
 
     /**
-     * Mass, Discrete
+     * kg, Discrete (Arithmetic)
      * 
      * API-Since: 8.0
      */
@@ -951,7 +951,7 @@ public final class HealthKit {
     public static native String HKQuantityTypeIdentifierBodyMass();
 
     /**
-     * Mass, Discrete
+     * kg, Discrete (Arithmetic)
      * 
      * API-Since: 8.0
      */
@@ -962,7 +962,7 @@ public final class HealthKit {
     public static native String HKQuantityTypeIdentifierLeanBodyMass();
 
     /**
-     * Scalar(Count), Cumulative
+     * count, Cumulative
      * 
      * API-Since: 8.0
      */
@@ -973,7 +973,7 @@ public final class HealthKit {
     public static native String HKQuantityTypeIdentifierStepCount();
 
     /**
-     * Length, Cumulative
+     * m, Cumulative
      * 
      * API-Since: 8.0
      */
@@ -984,7 +984,7 @@ public final class HealthKit {
     public static native String HKQuantityTypeIdentifierDistanceWalkingRunning();
 
     /**
-     * Length, Cumulative
+     * m, Cumulative
      * 
      * API-Since: 8.0
      */
@@ -995,7 +995,7 @@ public final class HealthKit {
     public static native String HKQuantityTypeIdentifierDistanceCycling();
 
     /**
-     * Length, Cumulative
+     * m, Cumulative
      * 
      * API-Since: 10.0
      */
@@ -1006,7 +1006,7 @@ public final class HealthKit {
     public static native String HKQuantityTypeIdentifierDistanceWheelchair();
 
     /**
-     * Energy, Cumulative
+     * kcal, Cumulative
      * 
      * API-Since: 8.0
      */
@@ -1017,7 +1017,7 @@ public final class HealthKit {
     public static native String HKQuantityTypeIdentifierBasalEnergyBurned();
 
     /**
-     * Energy, Cumulative
+     * kcal, Cumulative
      * 
      * API-Since: 8.0
      */
@@ -1028,7 +1028,7 @@ public final class HealthKit {
     public static native String HKQuantityTypeIdentifierActiveEnergyBurned();
 
     /**
-     * Scalar(Count), Cumulative
+     * count, Cumulative
      * 
      * API-Since: 8.0
      */
@@ -1039,7 +1039,7 @@ public final class HealthKit {
     public static native String HKQuantityTypeIdentifierFlightsClimbed();
 
     /**
-     * Scalar(Count), Cumulative
+     * count, Cumulative
      * 
      * API-Since: 8.0
      */
@@ -1050,7 +1050,7 @@ public final class HealthKit {
     public static native String HKQuantityTypeIdentifierNikeFuel();
 
     /**
-     * Time Cumulative
+     * min, Cumulative
      * 
      * API-Since: 9.3
      */
@@ -1061,7 +1061,7 @@ public final class HealthKit {
     public static native String HKQuantityTypeIdentifierAppleExerciseTime();
 
     /**
-     * Scalar(Count), Cumulative
+     * count, Cumulative
      * 
      * API-Since: 10.0
      */
@@ -1072,7 +1072,7 @@ public final class HealthKit {
     public static native String HKQuantityTypeIdentifierPushCount();
 
     /**
-     * Length, Cumulative
+     * m, Cumulative
      * 
      * API-Since: 10.0
      */
@@ -1083,7 +1083,7 @@ public final class HealthKit {
     public static native String HKQuantityTypeIdentifierDistanceSwimming();
 
     /**
-     * Scalar(Count), Cumulative
+     * count, Cumulative
      * 
      * API-Since: 10.0
      */
@@ -1094,7 +1094,7 @@ public final class HealthKit {
     public static native String HKQuantityTypeIdentifierSwimmingStrokeCount();
 
     /**
-     * Scalar(Count)/Time, Discrete
+     * count/s, Discrete (Temporally Weighted)
      * 
      * API-Since: 8.0
      */
@@ -1105,7 +1105,7 @@ public final class HealthKit {
     public static native String HKQuantityTypeIdentifierHeartRate();
 
     /**
-     * Temperature, Discrete
+     * degC, Discrete (Arithmetic)
      * 
      * API-Since: 8.0
      */
@@ -1116,7 +1116,7 @@ public final class HealthKit {
     public static native String HKQuantityTypeIdentifierBodyTemperature();
 
     /**
-     * Basal Body Temperature, Discrete
+     * degC, Discrete (Arithmetic)
      * 
      * API-Since: 9.0
      */
@@ -1127,7 +1127,7 @@ public final class HealthKit {
     public static native String HKQuantityTypeIdentifierBasalBodyTemperature();
 
     /**
-     * Pressure, Discrete
+     * mmHg, Discrete (Arithmetic)
      * 
      * API-Since: 8.0
      */
@@ -1138,7 +1138,7 @@ public final class HealthKit {
     public static native String HKQuantityTypeIdentifierBloodPressureSystolic();
 
     /**
-     * Pressure, Discrete
+     * mmHg, Discrete (Arithmetic)
      * 
      * API-Since: 8.0
      */
@@ -1149,7 +1149,7 @@ public final class HealthKit {
     public static native String HKQuantityTypeIdentifierBloodPressureDiastolic();
 
     /**
-     * Scalar(Count)/Time, Discrete
+     * count/s, Discrete (Arithmetic)
      * 
      * API-Since: 8.0
      */
@@ -1160,7 +1160,7 @@ public final class HealthKit {
     public static native String HKQuantityTypeIdentifierRespiratoryRate();
 
     /**
-     * Scalar(Percent, 0.0 - 1.0), Discrete
+     * %, Discrete (Arithmetic)
      * 
      * API-Since: 8.0
      */
@@ -1171,7 +1171,7 @@ public final class HealthKit {
     public static native String HKQuantityTypeIdentifierOxygenSaturation();
 
     /**
-     * Scalar(Percent, 0.0 - 1.0), Discrete
+     * %, Discrete (Arithmetic)
      * 
      * API-Since: 8.0
      */
@@ -1182,7 +1182,7 @@ public final class HealthKit {
     public static native String HKQuantityTypeIdentifierPeripheralPerfusionIndex();
 
     /**
-     * Mass/Volume, Discrete
+     * mg/dL, Discrete (Arithmetic)
      * 
      * API-Since: 8.0
      */
@@ -1193,7 +1193,7 @@ public final class HealthKit {
     public static native String HKQuantityTypeIdentifierBloodGlucose();
 
     /**
-     * Scalar(Count), Cumulative
+     * count, Cumulative
      * 
      * API-Since: 8.0
      */
@@ -1204,7 +1204,7 @@ public final class HealthKit {
     public static native String HKQuantityTypeIdentifierNumberOfTimesFallen();
 
     /**
-     * Conductance, Discrete
+     * S, Discrete (Arithmetic)
      * 
      * API-Since: 8.0
      */
@@ -1215,7 +1215,7 @@ public final class HealthKit {
     public static native String HKQuantityTypeIdentifierElectrodermalActivity();
 
     /**
-     * Scalar(Count), Cumulative
+     * count, Cumulative
      * 
      * API-Since: 8.0
      */
@@ -1226,7 +1226,7 @@ public final class HealthKit {
     public static native String HKQuantityTypeIdentifierInhalerUsage();
 
     /**
-     * Scalar(Percent, 0.0 - 1.0), Discrete
+     * %, Discrete (Arithmetic)
      * 
      * API-Since: 8.0
      */
@@ -1237,7 +1237,7 @@ public final class HealthKit {
     public static native String HKQuantityTypeIdentifierBloodAlcoholContent();
 
     /**
-     * Volume, Discrete
+     * L, Discrete (Arithmetic)
      * 
      * API-Since: 8.0
      */
@@ -1248,7 +1248,7 @@ public final class HealthKit {
     public static native String HKQuantityTypeIdentifierForcedVitalCapacity();
 
     /**
-     * Volume, Discrete
+     * L, Discrete (Arithmetic)
      * 
      * API-Since: 8.0
      */
@@ -1259,7 +1259,7 @@ public final class HealthKit {
     public static native String HKQuantityTypeIdentifierForcedExpiratoryVolume1();
 
     /**
-     * Volume/Time, Discrete
+     * L/min, Discrete (Arithmetic)
      * 
      * API-Since: 8.0
      */
@@ -1270,7 +1270,7 @@ public final class HealthKit {
     public static native String HKQuantityTypeIdentifierPeakExpiratoryFlowRate();
 
     /**
-     * Mass, Cumulative
+     * g, Cumulative
      * 
      * API-Since: 8.0
      */
@@ -1281,7 +1281,7 @@ public final class HealthKit {
     public static native String HKQuantityTypeIdentifierDietaryFatTotal();
 
     /**
-     * Mass, Cumulative
+     * g, Cumulative
      * 
      * API-Since: 8.0
      */
@@ -1292,7 +1292,7 @@ public final class HealthKit {
     public static native String HKQuantityTypeIdentifierDietaryFatPolyunsaturated();
 
     /**
-     * Mass, Cumulative
+     * g, Cumulative
      * 
      * API-Since: 8.0
      */
@@ -1303,7 +1303,7 @@ public final class HealthKit {
     public static native String HKQuantityTypeIdentifierDietaryFatMonounsaturated();
 
     /**
-     * Mass, Cumulative
+     * g, Cumulative
      * 
      * API-Since: 8.0
      */
@@ -1314,7 +1314,7 @@ public final class HealthKit {
     public static native String HKQuantityTypeIdentifierDietaryFatSaturated();
 
     /**
-     * Mass, Cumulative
+     * g, Cumulative
      * 
      * API-Since: 8.0
      */
@@ -1325,7 +1325,7 @@ public final class HealthKit {
     public static native String HKQuantityTypeIdentifierDietaryCholesterol();
 
     /**
-     * Mass, Cumulative
+     * g, Cumulative
      * 
      * API-Since: 8.0
      */
@@ -1336,7 +1336,7 @@ public final class HealthKit {
     public static native String HKQuantityTypeIdentifierDietarySodium();
 
     /**
-     * Mass, Cumulative
+     * g, Cumulative
      * 
      * API-Since: 8.0
      */
@@ -1347,7 +1347,7 @@ public final class HealthKit {
     public static native String HKQuantityTypeIdentifierDietaryCarbohydrates();
 
     /**
-     * Mass, Cumulative
+     * g, Cumulative
      * 
      * API-Since: 8.0
      */
@@ -1358,7 +1358,7 @@ public final class HealthKit {
     public static native String HKQuantityTypeIdentifierDietaryFiber();
 
     /**
-     * Mass, Cumulative
+     * g, Cumulative
      * 
      * API-Since: 8.0
      */
@@ -1369,7 +1369,7 @@ public final class HealthKit {
     public static native String HKQuantityTypeIdentifierDietarySugar();
 
     /**
-     * Energy, Cumulative
+     * kcal, Cumulative
      * 
      * API-Since: 8.0
      */
@@ -1380,7 +1380,7 @@ public final class HealthKit {
     public static native String HKQuantityTypeIdentifierDietaryEnergyConsumed();
 
     /**
-     * Mass, Cumulative
+     * g, Cumulative
      * 
      * API-Since: 8.0
      */
@@ -1391,7 +1391,7 @@ public final class HealthKit {
     public static native String HKQuantityTypeIdentifierDietaryProtein();
 
     /**
-     * Mass, Cumulative
+     * g, Cumulative
      * 
      * API-Since: 8.0
      */
@@ -1402,7 +1402,7 @@ public final class HealthKit {
     public static native String HKQuantityTypeIdentifierDietaryVitaminA();
 
     /**
-     * Mass, Cumulative
+     * g, Cumulative
      * 
      * API-Since: 8.0
      */
@@ -1413,7 +1413,7 @@ public final class HealthKit {
     public static native String HKQuantityTypeIdentifierDietaryVitaminB6();
 
     /**
-     * Mass, Cumulative
+     * g, Cumulative
      * 
      * API-Since: 8.0
      */
@@ -1424,7 +1424,7 @@ public final class HealthKit {
     public static native String HKQuantityTypeIdentifierDietaryVitaminB12();
 
     /**
-     * Mass, Cumulative
+     * g, Cumulative
      * 
      * API-Since: 8.0
      */
@@ -1435,7 +1435,7 @@ public final class HealthKit {
     public static native String HKQuantityTypeIdentifierDietaryVitaminC();
 
     /**
-     * Mass, Cumulative
+     * g, Cumulative
      * 
      * API-Since: 8.0
      */
@@ -1446,7 +1446,7 @@ public final class HealthKit {
     public static native String HKQuantityTypeIdentifierDietaryVitaminD();
 
     /**
-     * Mass, Cumulative
+     * g, Cumulative
      * 
      * API-Since: 8.0
      */
@@ -1457,7 +1457,7 @@ public final class HealthKit {
     public static native String HKQuantityTypeIdentifierDietaryVitaminE();
 
     /**
-     * Mass, Cumulative
+     * g, Cumulative
      * 
      * API-Since: 8.0
      */
@@ -1468,7 +1468,7 @@ public final class HealthKit {
     public static native String HKQuantityTypeIdentifierDietaryVitaminK();
 
     /**
-     * Mass, Cumulative
+     * g, Cumulative
      * 
      * API-Since: 8.0
      */
@@ -1479,7 +1479,7 @@ public final class HealthKit {
     public static native String HKQuantityTypeIdentifierDietaryCalcium();
 
     /**
-     * Mass, Cumulative
+     * g, Cumulative
      * 
      * API-Since: 8.0
      */
@@ -1490,7 +1490,7 @@ public final class HealthKit {
     public static native String HKQuantityTypeIdentifierDietaryIron();
 
     /**
-     * Mass, Cumulative
+     * g, Cumulative
      * 
      * API-Since: 8.0
      */
@@ -1501,7 +1501,7 @@ public final class HealthKit {
     public static native String HKQuantityTypeIdentifierDietaryThiamin();
 
     /**
-     * Mass, Cumulative
+     * g, Cumulative
      * 
      * API-Since: 8.0
      */
@@ -1512,7 +1512,7 @@ public final class HealthKit {
     public static native String HKQuantityTypeIdentifierDietaryRiboflavin();
 
     /**
-     * Mass, Cumulative
+     * g, Cumulative
      * 
      * API-Since: 8.0
      */
@@ -1523,7 +1523,7 @@ public final class HealthKit {
     public static native String HKQuantityTypeIdentifierDietaryNiacin();
 
     /**
-     * Mass, Cumulative
+     * g, Cumulative
      * 
      * API-Since: 8.0
      */
@@ -1534,7 +1534,7 @@ public final class HealthKit {
     public static native String HKQuantityTypeIdentifierDietaryFolate();
 
     /**
-     * Mass, Cumulative
+     * g, Cumulative
      * 
      * API-Since: 8.0
      */
@@ -1545,7 +1545,7 @@ public final class HealthKit {
     public static native String HKQuantityTypeIdentifierDietaryBiotin();
 
     /**
-     * Mass, Cumulative
+     * g, Cumulative
      * 
      * API-Since: 8.0
      */
@@ -1556,7 +1556,7 @@ public final class HealthKit {
     public static native String HKQuantityTypeIdentifierDietaryPantothenicAcid();
 
     /**
-     * Mass, Cumulative
+     * g, Cumulative
      * 
      * API-Since: 8.0
      */
@@ -1567,7 +1567,7 @@ public final class HealthKit {
     public static native String HKQuantityTypeIdentifierDietaryPhosphorus();
 
     /**
-     * Mass, Cumulative
+     * g, Cumulative
      * 
      * API-Since: 8.0
      */
@@ -1578,7 +1578,7 @@ public final class HealthKit {
     public static native String HKQuantityTypeIdentifierDietaryIodine();
 
     /**
-     * Mass, Cumulative
+     * g, Cumulative
      * 
      * API-Since: 8.0
      */
@@ -1589,7 +1589,7 @@ public final class HealthKit {
     public static native String HKQuantityTypeIdentifierDietaryMagnesium();
 
     /**
-     * Mass, Cumulative
+     * g, Cumulative
      * 
      * API-Since: 8.0
      */
@@ -1600,7 +1600,7 @@ public final class HealthKit {
     public static native String HKQuantityTypeIdentifierDietaryZinc();
 
     /**
-     * Mass, Cumulative
+     * g, Cumulative
      * 
      * API-Since: 8.0
      */
@@ -1611,7 +1611,7 @@ public final class HealthKit {
     public static native String HKQuantityTypeIdentifierDietarySelenium();
 
     /**
-     * Mass, Cumulative
+     * g, Cumulative
      * 
      * API-Since: 8.0
      */
@@ -1622,7 +1622,7 @@ public final class HealthKit {
     public static native String HKQuantityTypeIdentifierDietaryCopper();
 
     /**
-     * Mass, Cumulative
+     * g, Cumulative
      * 
      * API-Since: 8.0
      */
@@ -1633,7 +1633,7 @@ public final class HealthKit {
     public static native String HKQuantityTypeIdentifierDietaryManganese();
 
     /**
-     * Mass, Cumulative
+     * g, Cumulative
      * 
      * API-Since: 8.0
      */
@@ -1644,7 +1644,7 @@ public final class HealthKit {
     public static native String HKQuantityTypeIdentifierDietaryChromium();
 
     /**
-     * Mass, Cumulative
+     * g, Cumulative
      * 
      * API-Since: 8.0
      */
@@ -1655,7 +1655,7 @@ public final class HealthKit {
     public static native String HKQuantityTypeIdentifierDietaryMolybdenum();
 
     /**
-     * Mass, Cumulative
+     * g, Cumulative
      * 
      * API-Since: 8.0
      */
@@ -1666,7 +1666,7 @@ public final class HealthKit {
     public static native String HKQuantityTypeIdentifierDietaryChloride();
 
     /**
-     * Mass, Cumulative
+     * g, Cumulative
      * 
      * API-Since: 8.0
      */
@@ -1677,7 +1677,7 @@ public final class HealthKit {
     public static native String HKQuantityTypeIdentifierDietaryPotassium();
 
     /**
-     * Mass, Cumulative
+     * g, Cumulative
      * 
      * API-Since: 8.0
      */
@@ -1688,7 +1688,7 @@ public final class HealthKit {
     public static native String HKQuantityTypeIdentifierDietaryCaffeine();
 
     /**
-     * Volume, Cumulative
+     * mL, Cumulative
      * 
      * API-Since: 9.0
      */
@@ -1699,7 +1699,7 @@ public final class HealthKit {
     public static native String HKQuantityTypeIdentifierDietaryWater();
 
     /**
-     * Scalar(Count), Discrete
+     * , Discrete (Arithmetic)
      * 
      * API-Since: 9.0
      */
@@ -1765,7 +1765,7 @@ public final class HealthKit {
     public static native String HKCategoryTypeIdentifierMenstrualFlow();
 
     /**
-     * (Spotting) HKCategoryValue
+     * HKCategoryValue
      * 
      * API-Since: 9.0
      */
@@ -1853,6 +1853,8 @@ public final class HealthKit {
     public static native String HKCharacteristicTypeIdentifierWheelchairUse();
 
     /**
+     * Heart
+     * 
      * API-Since: 8.0
      */
     @NotNull
@@ -1862,6 +1864,8 @@ public final class HealthKit {
     public static native String HKCorrelationTypeIdentifierBloodPressure();
 
     /**
+     * Other
+     * 
      * API-Since: 8.0
      */
     @NotNull
@@ -1871,6 +1875,8 @@ public final class HealthKit {
     public static native String HKCorrelationTypeIdentifierFood();
 
     /**
+     * Clinical Documents
+     * 
      * API-Since: 10.0
      */
     @NotNull
@@ -1880,9 +1886,7 @@ public final class HealthKit {
     public static native String HKDocumentTypeIdentifierCDA();
 
     /**
-     * ------------------------------
-     * HKWorkoutType Identifier
-     * ------------------------------
+     * Fitness
      * 
      * API-Since: 8.0
      */
@@ -2026,7 +2030,7 @@ public final class HealthKit {
     public static native String HKMetadataKeyVO2MaxTestType();
 
     /**
-     * Length, Discrete
+     * m, Discrete (Arithmetic)
      * 
      * API-Since: 11.0
      */
@@ -2037,7 +2041,7 @@ public final class HealthKit {
     public static native String HKQuantityTypeIdentifierWaistCircumference();
 
     /**
-     * ml/(kg*min) Discrete
+     * ml/(kg*min), Discrete (Arithmetic)
      * 
      * API-Since: 11.0
      */
@@ -2048,7 +2052,7 @@ public final class HealthKit {
     public static native String HKQuantityTypeIdentifierVO2Max();
 
     /**
-     * Scalar(Count)/Time, Discrete
+     * count/min, Discrete (Arithmetic)
      * 
      * API-Since: 11.0
      */
@@ -2059,7 +2063,7 @@ public final class HealthKit {
     public static native String HKQuantityTypeIdentifierRestingHeartRate();
 
     /**
-     * Scalar(Count)/Time, Discrete
+     * count/min, Discrete (Arithmetic)
      * 
      * API-Since: 11.0
      */
@@ -2070,7 +2074,7 @@ public final class HealthKit {
     public static native String HKQuantityTypeIdentifierWalkingHeartRateAverage();
 
     /**
-     * Time (ms), Discrete
+     * ms, Discrete (Arithmetic)
      * 
      * API-Since: 11.0
      */
@@ -2081,7 +2085,7 @@ public final class HealthKit {
     public static native String HKQuantityTypeIdentifierHeartRateVariabilitySDNN();
 
     /**
-     * Pharmacology (IU) Cumulative
+     * IU, Cumulative
      * 
      * API-Since: 11.0
      */
@@ -2092,9 +2096,7 @@ public final class HealthKit {
     public static native String HKQuantityTypeIdentifierInsulinDelivery();
 
     /**
-     * --------------------------------
-     * HKSeriesSample Identifiers
-     * --------------------------------
+     * Fitness
      * 
      * API-Since: 11.0
      */
@@ -2223,7 +2225,7 @@ public final class HealthKit {
     public static native String HKPredicateKeyPathClinicalRecordFHIRResourceType();
 
     /**
-     * Length, Cumulative
+     * m, Cumulative
      * 
      * API-Since: 11.2
      */
@@ -2234,7 +2236,7 @@ public final class HealthKit {
     public static native String HKQuantityTypeIdentifierDistanceDownhillSnowSports();
 
     /**
-     * Time, Cumulative
+     * min, Cumulative
      * 
      * API-Since: 13.0
      */
@@ -2245,7 +2247,7 @@ public final class HealthKit {
     public static native String HKQuantityTypeIdentifierAppleStandTime();
 
     /**
-     * Pressure, DiscreteEquivalentContinuousLevel
+     * dBASPL, Discrete (Equivalent Continuous Level)
      * 
      * API-Since: 13.0
      */
@@ -2256,7 +2258,7 @@ public final class HealthKit {
     public static native String HKQuantityTypeIdentifierEnvironmentalAudioExposure();
 
     /**
-     * Pressure, DiscreteEquivalentContinuousLevel
+     * dBASPL, Discrete (Equivalent Continuous Level)
      * 
      * API-Since: 13.0
      */
@@ -2300,7 +2302,9 @@ public final class HealthKit {
     public static native String HKCategoryTypeIdentifierIrregularHeartRhythmEvent();
 
     /**
-     * HKCategoryValueAudioExposureEvent
+     * ----------------
+     * Deprecated
+     * ----------------
      * 
      * API-Since: 13.0
      * Deprecated-Since: 14.0
@@ -2324,6 +2328,8 @@ public final class HealthKit {
     public static native String HKCategoryTypeIdentifierToothbrushingEvent();
 
     /**
+     * Heart
+     * 
      * API-Since: 13.0
      */
     @NotNull
@@ -3091,7 +3097,7 @@ public final class HealthKit {
     public static native String HKFHIRResourceTypeMedicationRequest();
 
     /**
-     * m/s, Discrete
+     * m/s, Discrete (Arithmetic)
      * 
      * API-Since: 14.0
      */
@@ -3102,7 +3108,7 @@ public final class HealthKit {
     public static native String HKQuantityTypeIdentifierWalkingSpeed();
 
     /**
-     * Scalar(Percent, 0.0 - 1.0), Discrete
+     * %, Discrete (Arithmetic)
      * 
      * API-Since: 14.0
      */
@@ -3113,7 +3119,7 @@ public final class HealthKit {
     public static native String HKQuantityTypeIdentifierWalkingDoubleSupportPercentage();
 
     /**
-     * Scalar(Percent, 0.0 - 1.0), Discrete
+     * %, Discrete (Arithmetic)
      * 
      * API-Since: 14.0
      */
@@ -3124,7 +3130,7 @@ public final class HealthKit {
     public static native String HKQuantityTypeIdentifierWalkingAsymmetryPercentage();
 
     /**
-     * Length, Discrete
+     * m, Discrete (Arithmetic)
      * 
      * API-Since: 14.0
      */
@@ -3135,7 +3141,7 @@ public final class HealthKit {
     public static native String HKQuantityTypeIdentifierWalkingStepLength();
 
     /**
-     * Length, Discrete
+     * m, Discrete (Arithmetic)
      * 
      * API-Since: 14.0
      */
@@ -3146,7 +3152,7 @@ public final class HealthKit {
     public static native String HKQuantityTypeIdentifierSixMinuteWalkTestDistance();
 
     /**
-     * m/s, Discrete
+     * m/s, Discrete (Arithmetic)
      * 
      * API-Since: 14.0
      */
@@ -3157,7 +3163,7 @@ public final class HealthKit {
     public static native String HKQuantityTypeIdentifierStairAscentSpeed();
 
     /**
-     * m/s), Discrete
+     * m/s, Discrete (Arithmetic)
      * 
      * API-Since: 14.0
      */
@@ -3442,7 +3448,7 @@ public final class HealthKit {
     public static native HKQuantity HKAppleWalkingSteadinessMaximumQuantityForClassification(@NInt long classification);
 
     /**
-     * Time, Cumulative
+     * min, Cumulative
      * 
      * API-Since: 14.5
      */
@@ -3453,7 +3459,7 @@ public final class HealthKit {
     public static native String HKQuantityTypeIdentifierAppleMoveTime();
 
     /**
-     * Scalar(Percent, 0.0 - 1.0), Discrete
+     * %, Discrete (Arithmetic)
      * 
      * API-Since: 15.0
      */
@@ -3464,7 +3470,7 @@ public final class HealthKit {
     public static native String HKQuantityTypeIdentifierAppleWalkingSteadiness();
 
     /**
-     * Scalar(Count), Cumulative
+     * count, Cumulative
      * 
      * API-Since: 15.0
      */
@@ -3530,6 +3536,8 @@ public final class HealthKit {
     public static native String HKCategoryTypeIdentifierContraceptive();
 
     /**
+     * HKCategoryValueLowCardioFitnessEvent
+     * 
      * API-Since: 14.3
      */
     @NotNull
@@ -3668,7 +3676,7 @@ public final class HealthKit {
     public static native String HKPredicateKeyPathWorkoutActivity();
 
     /**
-     * Temperature, Discrete
+     * degC, Discrete (Arithmetic)
      * 
      * API-Since: 16.0
      */
@@ -3679,7 +3687,7 @@ public final class HealthKit {
     public static native String HKQuantityTypeIdentifierAppleSleepingWristTemperature();
 
     /**
-     * Length, Discrete
+     * m, Discrete (Arithmetic)
      * 
      * API-Since: 16.0
      */
@@ -3690,7 +3698,7 @@ public final class HealthKit {
     public static native String HKQuantityTypeIdentifierRunningStrideLength();
 
     /**
-     * Length, Discrete
+     * cm, Discrete (Arithmetic)
      * 
      * API-Since: 16.0
      */
@@ -3701,7 +3709,7 @@ public final class HealthKit {
     public static native String HKQuantityTypeIdentifierRunningVerticalOscillation();
 
     /**
-     * Time, Discrete
+     * ms, Discrete (Arithmetic)
      * 
      * API-Since: 16.0
      */
@@ -3712,7 +3720,7 @@ public final class HealthKit {
     public static native String HKQuantityTypeIdentifierRunningGroundContactTime();
 
     /**
-     * Power Discrete
+     * W, Discrete (Arithmetic)
      * 
      * API-Since: 16.0
      */
@@ -3723,7 +3731,7 @@ public final class HealthKit {
     public static native String HKQuantityTypeIdentifierRunningPower();
 
     /**
-     * m/s, Discrete
+     * m/s, Discrete (Arithmetic)
      * 
      * API-Since: 16.0
      */
@@ -3734,7 +3742,7 @@ public final class HealthKit {
     public static native String HKQuantityTypeIdentifierRunningSpeed();
 
     /**
-     * Scalar(Count)/Time, Discrete
+     * count/min, Discrete (Arithmetic)
      * 
      * API-Since: 16.0
      */
@@ -3745,7 +3753,7 @@ public final class HealthKit {
     public static native String HKQuantityTypeIdentifierHeartRateRecoveryOneMinute();
 
     /**
-     * Scalar(Percent, 0.0 - 1.0), Discrete
+     * %, Discrete (Temporally Weighted)
      * 
      * API-Since: 16.0
      */
@@ -3756,7 +3764,7 @@ public final class HealthKit {
     public static native String HKQuantityTypeIdentifierAtrialFibrillationBurden();
 
     /**
-     * Length, Discrete
+     * m, Discrete (Arithmetic)
      * 
      * API-Since: 16.0
      */
@@ -3767,7 +3775,7 @@ public final class HealthKit {
     public static native String HKQuantityTypeIdentifierUnderwaterDepth();
 
     /**
-     * Temperature, Discrete
+     * degC, Discrete (Arithmetic)
      * 
      * API-Since: 16.0
      */
@@ -3822,9 +3830,7 @@ public final class HealthKit {
     public static native String HKCategoryTypeIdentifierInfrequentMenstrualCycles();
 
     /**
-     * -----------------------------------
-     * HKVisionPrescription Identifier
-     * -----------------------------------
+     * Body Measurements
      * 
      * API-Since: 16.0
      */
@@ -4143,4 +4149,216 @@ public final class HealthKit {
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String HKPredicateKeyPathWorkoutActivityAverageQuantity();
+
+    /**
+     * API-Since: 16.4
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String HKFHIRResourceTypeDiagnosticReport();
+
+    /**
+     * API-Since: 16.4
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String HKFHIRResourceTypeDocumentReference();
+
+    /**
+     * count/min, Discrete (Arithmetic)
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String HKQuantityTypeIdentifierCyclingCadence();
+
+    /**
+     * W, Discrete (Arithmetic)
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String HKQuantityTypeIdentifierCyclingFunctionalThresholdPower();
+
+    /**
+     * W, Discrete (Arithmetic)
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String HKQuantityTypeIdentifierCyclingPower();
+
+    /**
+     * m/s, Discrete (Arithmetic)
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String HKQuantityTypeIdentifierCyclingSpeed();
+
+    /**
+     * kcal/(kg*hr), Discrete (Arithmetic)
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String HKQuantityTypeIdentifierPhysicalEffort();
+
+    /**
+     * dBASPL, Discrete (Equivalent Continuous Level)
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String HKQuantityTypeIdentifierEnvironmentalSoundReduction();
+
+    /**
+     * min, Cumulative
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String HKQuantityTypeIdentifierTimeInDaylight();
+
+    /**
+     * A type identifier for records that represent clinical notes.
+     * 
+     * API-Since: 16.4
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String HKClinicalTypeIdentifierClinicalNoteRecord();
+
+    /**
+     * [@constant] HKMetadataKeyAppleFitnessPlusSession
+     * 
+     * Represents whether or not a workout is a Fitness+ workout.
+     * 
+     * The expected value type is an NSNumber containing a BOOL value.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String HKMetadataKeyAppleFitnessPlusSession();
+
+    /**
+     * [@constant] HKMetadataKeyWaterSalinity
+     * 
+     * Represents the water salinity for an underwater depth or water temperature sample.
+     * 
+     * The expected value type is an NSNumber containing a HKWaterSalinity value.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String HKMetadataKeyWaterSalinity();
+
+    /**
+     * [@constant] HKMetadataKeyHeadphoneGain
+     * 
+     * Represents the headphone gain associated with a Headphone audio exposure event.
+     * 
+     * The expected value is an HKQuantity whose value is the gain
+     * associated with the event measured in decibels in A-weighted Sound Pressure Level units.
+     * 
+     * API-Since: 16.4
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String HKMetadataKeyHeadphoneGain();
+
+    /**
+     * [@constant] HKMetadataKeyCyclingFunctionalThresholdPowerTestType
+     * 
+     * Represents the test used to determine a Cycling Functional Threshold Power value.
+     * 
+     * The expected value type is an NSNumber containing a HKCyclingFunctionalThresholdPowerTestType value.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String HKMetadataKeyCyclingFunctionalThresholdPowerTestType();
+
+    /**
+     * [@constant] HKMetadataKeyActivityType
+     * 
+     * Represents the activity type related to the sample
+     * 
+     * The expected value type is an NSNumber containing a HKWorkoutActivityType value.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String HKMetadataKeyActivityType();
+
+    /**
+     * [@constant] HKMetadataKeyPhysicalEffortEstimationType
+     * 
+     * Represents the estimation type used to create the Physical Effort Sample
+     * 
+     * The expected value type is an NSNumber containing a HKPhysicalEffortEstimationType value.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String HKMetadataKeyPhysicalEffortEstimationType();
+
+    /**
+     * [@constant] HKMetadataKeyMaximumLightIntensity
+     * 
+     * Represents maximum intensity of light for an outdoor time sample.
+     * 
+     * The expected value type is an HKQuantity expressed in HKUnit Lux.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String HKMetadataKeyMaximumLightIntensity();
 }

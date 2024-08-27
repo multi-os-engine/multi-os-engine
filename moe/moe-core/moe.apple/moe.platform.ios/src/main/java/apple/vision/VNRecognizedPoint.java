@@ -203,4 +203,9 @@ public class VNRecognizedPoint extends VNDetectedPoint {
     @Generated
     @Selector("zeroPoint")
     public static native VNPoint zeroPoint();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

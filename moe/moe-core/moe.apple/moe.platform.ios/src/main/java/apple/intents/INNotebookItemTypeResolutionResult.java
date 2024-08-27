@@ -201,4 +201,9 @@ public class INNotebookItemTypeResolutionResult extends INIntentResolutionResult
     @Generated
     @Selector("unsupportedWithReason:")
     public static native INNotebookItemTypeResolutionResult unsupportedWithReason(@NInt long reason);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

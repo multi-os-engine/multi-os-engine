@@ -211,4 +211,24 @@ public class ASAuthorizationPlatformPublicKeyCredentialAssertionRequest extends 
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("largeBlob")
+    @Nullable
+    public native ASAuthorizationPublicKeyCredentialLargeBlobAssertionInput largeBlob();
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("setLargeBlob:")
+    public native void setLargeBlob(@Nullable ASAuthorizationPublicKeyCredentialLargeBlobAssertionInput value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

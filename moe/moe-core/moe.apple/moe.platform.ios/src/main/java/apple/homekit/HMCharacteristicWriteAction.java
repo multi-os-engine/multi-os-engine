@@ -218,4 +218,9 @@ public class HMCharacteristicWriteAction<_TargetValueType> extends HMAction {
         @Generated
         void call_updateTargetValueCompletionHandler(@Nullable NSError error);
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

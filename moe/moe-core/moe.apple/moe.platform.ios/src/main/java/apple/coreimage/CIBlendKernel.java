@@ -41,8 +41,6 @@ import org.jetbrains.annotations.Nullable;
  * be the new destination color.
  * The kernel should not call sample(), samplerCoord(), or samplerTransform().
  * The function must return a vec4 pixel color.
- * 
- * API-Since: 11.0
  */
 @Generated
 @Library("CoreImage")
@@ -456,4 +454,9 @@ public class CIBlendKernel extends CIColorKernel {
     @Selector("kernelsWithMetalString:error:")
     public static native NSArray<? extends CIKernel> kernelsWithMetalStringError(@NotNull String source,
             @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

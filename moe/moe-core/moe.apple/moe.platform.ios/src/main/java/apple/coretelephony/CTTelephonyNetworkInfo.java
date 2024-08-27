@@ -49,8 +49,6 @@ import org.jetbrains.annotations.Nullable;
  * 
  * Discussion:
  * The CTTelephonyNetworkInfo object is your entry point to the telephony service.
- * 
- * API-Since: 4.0
  */
 @Generated
 @Library("CoreTelephony")
@@ -297,7 +295,10 @@ public class CTTelephonyNetworkInfo extends NSObject {
      * home cellular service provider. The key to the dictionary is an NSString representing the service.
      * 
      * API-Since: 12.0
+     * Deprecated-Since: 16.0
+     * Deprecated-Message: Deprecated with no replacement
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("serviceSubscriberCellularProviders")
@@ -315,7 +316,10 @@ public class CTTelephonyNetworkInfo extends NSObject {
      * to obtain the new information.
      * 
      * API-Since: 12.0
+     * Deprecated-Since: 16.0
+     * Deprecated-Message: Deprecated with no replacement
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("serviceSubscriberCellularProvidersDidUpdateNotifier")
@@ -364,7 +368,10 @@ public class CTTelephonyNetworkInfo extends NSObject {
      * to obtain the new information.
      * 
      * API-Since: 12.0
+     * Deprecated-Since: 16.0
+     * Deprecated-Message: Deprecated with no replacement
      */
+    @Deprecated
     @Generated
     @Selector("setServiceSubscriberCellularProvidersDidUpdateNotifier:")
     public native void setServiceSubscriberCellularProvidersDidUpdateNotifier(
@@ -376,4 +383,9 @@ public class CTTelephonyNetworkInfo extends NSObject {
         @Generated
         void call_setServiceSubscriberCellularProvidersDidUpdateNotifier(@NotNull String arg0);
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

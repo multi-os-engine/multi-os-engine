@@ -71,6 +71,7 @@ import apple.corefoundation.struct.CGRect;
 import apple.corefoundation.struct.CGSize;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.uikit.protocol.UILetterformAwareAdjusting;
 
 /**
  * API-Since: 2.0
@@ -79,8 +80,9 @@ import org.jetbrains.annotations.Nullable;
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class UITextView extends UIScrollView implements UITextInput, UIContentSizeCategoryAdjusting, UITextDraggable,
-        UITextDroppable, UITextPasteConfigurationSupporting, UIFindInteractionDelegate, UITextSearching {
+public class UITextView extends UIScrollView implements UITextInput, UIContentSizeCategoryAdjusting,
+        UILetterformAwareAdjusting, UITextDraggable, UITextDroppable, UITextPasteConfigurationSupporting,
+        UIFindInteractionDelegate, UITextSearching {
     static {
         NatJ.register();
     }
@@ -678,8 +680,10 @@ public class UITextView extends UIScrollView implements UITextInput, UIContentSi
     public native void setSecureTextEntry(boolean value);
 
     /**
-     * toggle selectability, which controls the ability of the user to select content and interact with URLs &
+     * Toggle selectability, which controls the ability of the user to select content and interact with URLs &
      * attachments. On tvOS this also makes the text view focusable.
+     * By default, text item interaction follows selectable if the text item methods on UITextViewDelegate are not
+     * implemented; otherwise, they follow the result of the specified delegate methods.
      * 
      * API-Since: 7.0
      */
@@ -688,8 +692,10 @@ public class UITextView extends UIScrollView implements UITextInput, UIContentSi
     public native boolean isSelectable();
 
     /**
-     * toggle selectability, which controls the ability of the user to select content and interact with URLs &
+     * Toggle selectability, which controls the ability of the user to select content and interact with URLs &
      * attachments. On tvOS this also makes the text view focusable.
+     * By default, text item interaction follows selectable if the text item methods on UITextViewDelegate are not
+     * implemented; otherwise, they follow the result of the specified delegate methods.
      * 
      * API-Since: 7.0
      */
@@ -1512,4 +1518,55 @@ public class UITextView extends UIScrollView implements UITextInput, UIContentSi
     @Selector("willPresentEditMenuWithAnimator:")
     public native void willPresentEditMenuWithAnimator(
             @NotNull @Mapped(ObjCObjectMapper.class) UIEditMenuInteractionAnimating animator);
+
+    @Generated
+    @Selector("animateWithSpringDuration:bounce:initialSpringVelocity:delay:options:animations:completion:")
+    public static native void animateWithSpringDurationBounceInitialSpringVelocityDelayOptionsAnimationsCompletion(
+            double duration, @NFloat double bounce, @NFloat double velocity, double delay, @NUInt long options,
+            @ObjCBlock(name = "call_animateWithSpringDurationBounceInitialSpringVelocityDelayOptionsAnimationsCompletion_5") @NotNull UIView.Block_animateWithSpringDurationBounceInitialSpringVelocityDelayOptionsAnimationsCompletion_5 animations,
+            @ObjCBlock(name = "call_animateWithSpringDurationBounceInitialSpringVelocityDelayOptionsAnimationsCompletion_6") @Nullable UIView.Block_animateWithSpringDurationBounceInitialSpringVelocityDelayOptionsAnimationsCompletion_6 completion);
+
+    /**
+     * The border style for the text field.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("borderStyle")
+    @NInt
+    public native long borderStyle();
+
+    @Generated
+    @IsOptional
+    @Selector("inlinePredictionType")
+    @NInt
+    public native long inlinePredictionType();
+
+    /**
+     * The border style for the text field.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("setBorderStyle:")
+    public native void setBorderStyle(@NInt long value);
+
+    @Generated
+    @IsOptional
+    @Selector("setInlinePredictionType:")
+    public native void setInlinePredictionType(@NInt long value);
+
+    @Generated
+    @Selector("setSizingRule:")
+    public native void setSizingRule(@NInt long value);
+
+    @Generated
+    @Selector("sizingRule")
+    @NInt
+    public native long sizingRule();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

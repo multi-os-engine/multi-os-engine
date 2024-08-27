@@ -262,4 +262,9 @@ public class INSearchForNotebookItemsIntent extends INIntent {
     @Selector("temporalEventTriggerTypes")
     @NUInt
     public native long temporalEventTriggerTypes();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

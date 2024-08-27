@@ -29,6 +29,8 @@ import org.jetbrains.annotations.Nullable;
  * 
  * Abstract superclass for playback commands
  * 
+ * Subclasses of this type that are used from Swift must fulfill the requirements of a Sendable type.
+ * 
  * API-Since: 15.0
  */
 @Generated
@@ -179,4 +181,9 @@ public class AVDelegatingPlaybackCoordinatorPlaybackControlCommand extends NSObj
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

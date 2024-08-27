@@ -279,4 +279,9 @@ public class MPMediaPlaylist extends MPMediaItemCollection {
     @Generated
     @Selector("cloudGlobalID")
     public native String cloudGlobalID();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

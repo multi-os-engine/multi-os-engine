@@ -52,8 +52,6 @@ import org.jetbrains.annotations.Nullable;
  * or resolving WebAssembly compilations. By default, a virtual machine will use the run loop
  * of the thread it was initialized on. Currently, there is no API to change a
  * JSVirtualMachine's run loop once it has been initialized.
- * 
- * API-Since: 7.0
  */
 @Generated
 @Library("JavaScriptCore")
@@ -215,4 +213,9 @@ public class JSVirtualMachine extends NSObject {
     @Selector("removeManagedReference:withOwner:")
     public native void removeManagedReferenceWithOwner(@Mapped(ObjCObjectMapper.class) Object object,
             @Mapped(ObjCObjectMapper.class) Object owner);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

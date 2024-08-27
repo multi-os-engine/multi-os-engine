@@ -275,4 +275,9 @@ public class HKVerifiableClinicalRecord extends HKSample {
     @Generated
     @Selector("sourceType")
     public native String sourceType();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

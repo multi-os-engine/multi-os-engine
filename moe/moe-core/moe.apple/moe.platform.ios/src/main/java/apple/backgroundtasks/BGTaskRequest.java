@@ -28,9 +28,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
- * An abstract class that represents a request for the app to be launched in the background to perform work.
- * 
- * Do not instantiate instances of this class directly. Instead, use one of its concrete subclasses.
+ * An abstract class for representing task requests.
  * 
  * API-Since: 13.0
  */
@@ -103,10 +101,13 @@ public class BGTaskRequest extends NSObject implements NSCopying {
     public static native String description_static();
 
     /**
-     * The earliest date at which the task may run.
+     * The earliest date and time at which to run the task.
      * 
-     * Setting this property does not guarantee that the task will begin at the specified date, but only that it will
-     * not begin sooner. If not specified, no start delay is used.
+     * Specify `nil` for no start delay.
+     * 
+     * Setting the property indicates that the background task shouldn’t start any
+     * earlier than this date. However, the system doesn’t guarantee launching the
+     * task at the specified date, but only that it won’t begin sooner.
      */
     @Nullable
     @Generated
@@ -119,7 +120,7 @@ public class BGTaskRequest extends NSObject implements NSCopying {
     public static native long hash_static();
 
     /**
-     * The identifier associated with this request.
+     * The identifier of the task associated with the request.
      */
     @NotNull
     @Generated
@@ -166,10 +167,13 @@ public class BGTaskRequest extends NSObject implements NSCopying {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * The earliest date at which the task may run.
+     * The earliest date and time at which to run the task.
      * 
-     * Setting this property does not guarantee that the task will begin at the specified date, but only that it will
-     * not begin sooner. If not specified, no start delay is used.
+     * Specify `nil` for no start delay.
+     * 
+     * Setting the property indicates that the background task shouldn’t start any
+     * earlier than this date. However, the system doesn’t guarantee launching the
+     * task at the specified date, but only that it won’t begin sooner.
      */
     @Generated
     @Selector("setEarliestBeginDate:")
@@ -187,4 +191,9 @@ public class BGTaskRequest extends NSObject implements NSCopying {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

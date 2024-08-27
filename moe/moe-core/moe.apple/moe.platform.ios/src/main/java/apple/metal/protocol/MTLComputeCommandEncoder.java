@@ -526,4 +526,50 @@ public interface MTLComputeCommandEncoder extends MTLCommandEncoder {
     void setVisibleFunctionTablesWithBufferRange(
             @NotNull @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> visibleFunctionTables,
             @ByValue NSRange range);
+
+    /**
+     * sets kernel buffer at specified index with provided offset and stride.
+     * only call this when the kernel-buffer is part of the stageInputDescriptor
+     * and has set its stride to `MTLBufferLayoutStrideDynamic`
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("setBuffer:offset:attributeStride:atIndex:")
+    void setBufferOffsetAttributeStrideAtIndex(@Mapped(ObjCObjectMapper.class) @NotNull MTLBuffer buffer,
+            @NUInt long offset, @NUInt long stride, @NUInt long index);
+
+    /**
+     * only call this when the buffer-index is part of the stageInputDescriptor
+     * and has set its stride to `MTLBufferLayoutStrideDynamic`
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("setBufferOffset:attributeStride:atIndex:")
+    void setBufferOffsetAttributeStrideAtIndex(@NUInt long offset, @NUInt long stride, @NUInt long index);
+
+    /**
+     * sets an array of kernel buffers with provided offsets and strides with the
+     * given bind point range. Only call this when at least one buffer is part of
+     * the vertexDescriptor, other buffers must set `MTLAttributeStrideStatic`
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("setBuffers:offsets:attributeStrides:withRange:")
+    void setBuffersOffsetsAttributeStridesWithRange(
+            @ReferenceInfo(type = ObjCObject.class) @NotNull Ptr<ObjCObject> buffers, @NotNull ConstNUIntPtr offsets,
+            @NotNull ConstNUIntPtr strides, @ByValue NSRange range);
+
+    /**
+     * only call this when the buffer-index is part of the stageInputDescriptor
+     * and has set its stride to `MTLBufferLayoutStrideDynamic`
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("setBytes:length:attributeStride:atIndex:")
+    void setBytesLengthAttributeStrideAtIndex(@NotNull ConstVoidPtr bytes, @NUInt long length, @NUInt long stride,
+            @NUInt long index);
 }

@@ -42,8 +42,6 @@ import org.jetbrains.annotations.Nullable;
 
 /**
  * Produces a single, constant value at all positions in the space.
- * 
- * API-Since: 10.0
  */
 @Generated
 @Library("GameplayKit")
@@ -179,4 +177,9 @@ public class GKConstantNoiseSource extends GKNoiseSource {
     @Generated
     @Selector("value")
     public native double value();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

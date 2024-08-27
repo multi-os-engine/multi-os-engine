@@ -178,4 +178,9 @@ public class HMAccessoryCategory extends NSObject {
     @Generated
     @Selector("localizedDescription")
     public native String localizedDescription();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

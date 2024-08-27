@@ -49,4 +49,16 @@ public final class NIErrorCode {
      * API-Since: 16.0
      */
     @Generated @NInt public static final long AccessoryPeerDeviceUnavailable = 0xFFFFFFFFFFFFE906L;
+    /**
+     * The NINearbyPeerConfiguration provided is not compatible with the capabilities of the peer device
+     * 
+     * API-Since: 17.0
+     */
+    @Generated @NInt public static final long IncompatiblePeerDevice = 0xFFFFFFFFFFFFE907L;
+    /**
+     * The maximum number of active extended distance measurement sessions was exceeded
+     * 
+     * API-Since: 17.0
+     */
+    @Generated @NInt public static final long ActiveExtendedDistanceSessionsLimitExceeded = 0xFFFFFFFFFFFFE908L;
 }

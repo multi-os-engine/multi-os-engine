@@ -207,4 +207,9 @@ public class WKNavigationAction extends NSObject {
     @Generated
     @Selector("shouldPerformDownload")
     public native boolean shouldPerformDownload();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

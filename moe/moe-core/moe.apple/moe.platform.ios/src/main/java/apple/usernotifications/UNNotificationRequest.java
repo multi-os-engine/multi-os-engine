@@ -223,4 +223,9 @@ public class UNNotificationRequest extends NSObject implements NSCopying, NSSecu
     @Generated
     @Selector("trigger")
     public native UNNotificationTrigger trigger();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

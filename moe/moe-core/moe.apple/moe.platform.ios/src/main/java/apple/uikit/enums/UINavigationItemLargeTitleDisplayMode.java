@@ -24,4 +24,11 @@ public final class UINavigationItemLargeTitleDisplayMode {
      * Never use a larger title when this item is topmost.
      */
     @Generated @NInt public static final long Never = 0x0000000000000002L;
+    /**
+     * Always use a large title when this item is topmost. If there is a back button present, this will revert to
+     * `Always`. Leading & center items will move to the overflow menu if present.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated @NInt public static final long Inline = 0x0000000000000003L;
 }

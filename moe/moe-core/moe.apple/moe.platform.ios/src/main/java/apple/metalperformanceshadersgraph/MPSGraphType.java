@@ -27,13 +27,15 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
+ * Base type class for types on MPSGraph tensors.
+ * 
  * API-Since: 15.0
  */
 @Generated
 @Library("MetalPerformanceShadersGraph")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class MPSGraphType extends NSObject implements NSCopying {
+public class MPSGraphType extends MPSGraphObject implements NSCopying {
     static {
         NatJ.register();
     }
@@ -153,4 +155,9 @@ public class MPSGraphType extends NSObject implements NSCopying {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

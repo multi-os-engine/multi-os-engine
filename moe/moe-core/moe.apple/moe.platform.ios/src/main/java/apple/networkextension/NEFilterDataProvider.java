@@ -287,4 +287,9 @@ public class NEFilterDataProvider extends NEFilterProvider {
     @Generated
     @Selector("init")
     public native NEFilterDataProvider init();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -199,4 +199,9 @@ public class MTLFunctionConstantValues extends NSObject implements NSCopying {
     @Selector("setConstantValues:type:withRange:")
     public native void setConstantValuesTypeWithRange(@NotNull ConstVoidPtr values, @NUInt long type,
             @ByValue NSRange range);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -81,43 +81,14 @@ public class ModuleUtils {
     public static String getModulePath(Module module) {
         String modulePath = ExternalSystemApiUtil.getExternalProjectPath(module);
 
-        if ((modulePath == null) || modulePath.isEmpty()) {
-            if (module.getModuleFile() == null) {
-                module.getProject().save();
-            }
-
-            modulePath = getOption(module, MODULE_PATH_KEY);
-            if ((modulePath == null) || modulePath.isEmpty()) {
-                modulePath = new File(module.getModuleFilePath()).getParent();
-            }
-        }
+        if ((modulePath == null) || modulePath.isEmpty())
+            throw new IllegalStateException("Module path is null or empty for module: " + module);
 
         return modulePath;
     }
 
     public static String getModulePath(Project project, String moduleName) {
         return getModulePath(findModuleByName(project, moduleName));
-    }
-
-    public static String getModuleId(Module module) {
-        String moduleId = ExternalSystemApiUtil.getExternalProjectId(module);
-
-        if ((moduleId == null) || moduleId.isEmpty()) {
-            if (module.getModuleFile() == null) {
-                module.getProject().save();
-            }
-
-            moduleId = getOption(module, MODULE_ID_KEY);
-            if ((moduleId == null) || moduleId.isEmpty()) {
-                moduleId = module.getName();
-            }
-        }
-
-        return moduleId;
-    }
-
-    public static String getModuleId(Project project, String moduleName) {
-        return getModuleId(findModuleByName(project, moduleName));
     }
 
     public static void runInDispatchedThread(@NotNull Runnable runnable) {

@@ -466,4 +466,9 @@ public class NSDateComponents extends NSObject implements NSCopying, NSSecureCod
     @Selector("yearForWeekOfYear")
     @NInt
     public native long yearForWeekOfYear();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

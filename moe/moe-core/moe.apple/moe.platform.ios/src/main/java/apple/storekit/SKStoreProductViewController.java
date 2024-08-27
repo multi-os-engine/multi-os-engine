@@ -262,4 +262,9 @@ public class SKStoreProductViewController extends UIViewController {
         @Generated
         void call_loadProductWithParametersImpressionCompletionBlock(boolean result, @Nullable NSError error);
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

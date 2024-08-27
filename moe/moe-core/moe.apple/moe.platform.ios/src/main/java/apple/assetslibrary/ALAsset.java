@@ -360,4 +360,9 @@ public class ALAsset extends NSObject {
         @Generated
         void call_writeModifiedVideoAtPathToSavedPhotosAlbumCompletionBlock(NSURL assetURL, NSError error);
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

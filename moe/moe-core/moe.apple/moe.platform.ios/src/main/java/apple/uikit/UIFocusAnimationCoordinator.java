@@ -262,4 +262,9 @@ public class UIFocusAnimationCoordinator extends NSObject {
         @Generated
         void call_addCoordinatedUnfocusingAnimationsCompletion_1();
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

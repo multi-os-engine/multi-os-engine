@@ -292,8 +292,7 @@ public final class SensorKit {
      * @/textblock
      *             This steam does not store any raw audio nor any audio or data from other parties.
      * 
-     *             Fetches from this stream return objects of type SFSpeechRecognitionResult as defined in the Speech
-     *             framework.
+     *             Fetches from this stream return objects of type \c SRSpeechMetrics
      * 
      *             API-Since: 15.0
      */
@@ -317,8 +316,7 @@ public final class SensorKit {
      * 
      *             This steam does not store any raw audio nor any audio or data from other parties.
      * 
-     *             Fetches from this stream return objects of type SFSpeechRecognitionResult as defined in the Speech
-     *             framework.
+     *             Fetches from this stream return objects of type \c SRSpeechMetrics
      * 
      *             API-Since: 15.0
      */
@@ -603,7 +601,7 @@ public final class SensorKit {
      * 
      * Ambient pressure sensor stream
      * 
-     * This stream stores simple pressure and temperature masurements including:
+     * This stream stores simple pressure and temperature measurements including:
      * 
      * @textblock
      *            - Pressure and temperature
@@ -620,4 +618,105 @@ public final class SensorKit {
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String SRSensorAmbientPressure();
+
+    /**
+     * [@const] SRSensorMediaEvents
+     * 
+     * Media events sensor stream
+     * 
+     * This stream stores data about user interaction with photo and video content in messaging apps including:
+     * 
+     * @textblock
+     *            - Event type
+     *            - Media identifier
+     * @/textblock
+     *             Fetches from this stream return objects of type SRMediaEvent.
+     * 
+     *             API-Since: 16.4
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String SRSensorMediaEvents();
+
+    /**
+     * [@const] SRSensorWristTemperature
+     * 
+     * Sensor stream for Apple Watch temperatures on wrist while sleeping
+     * 
+     * This stream stores Apple Watch on wrist temperature measurements including:
+     * 
+     * @textblock
+     *            - StartTime
+     *            - Duration of collected temperature measurements
+     *            - version of algorithm
+     *            - Temperature samples
+     * @/textblock
+     * 
+     *             Fetches from this stream return objects of type SRWristTemperatureSession.
+     * 
+     *             API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String SRSensorWristTemperature();
+
+    /**
+     * [@const] SRSensorHeartRate
+     * 
+     * Estimated heart rate
+     * 
+     * Fetches from this stream return objects of type \c CMHighFrequencyHeartRateData
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String SRSensorHeartRate();
+
+    /**
+     * [@const] SRSensorFaceMetrics
+     * 
+     * Sensor stream for face metrics collection
+     * 
+     * This stream stores face metrics including:
+     * 
+     * @textblock
+     *            - algorithm version
+     *            - face description and face expressions
+     *            - data collection session identifier
+     * @/textblock
+     * 
+     *             Fetches from this stream return objects of type SRFaceMetrics.
+     * 
+     *             API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String SRSensorFaceMetrics();
+
+    /**
+     * [@const] SRSensorOdometer
+     * 
+     * Odometer sensor stream
+     * 
+     * This stream stores measurements of your distance and speed
+     * Fetches from this stream return objects of type \c CMOdometerData as defined in the CoreMotion framework.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String SRSensorOdometer();
+
+    @Generated public static final double SR_ARKIT_SUPPORTED = 1.0;
 }

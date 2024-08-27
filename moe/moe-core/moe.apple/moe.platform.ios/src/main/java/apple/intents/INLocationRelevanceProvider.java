@@ -28,9 +28,6 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
- * A relevance provider to indicate relevance at a specific location.
- * [@note] Your app needs Always or When in Use location authorization to use this relevance provider.
- * 
  * API-Since: 12.0
  */
 @Generated
@@ -181,4 +178,9 @@ public class INLocationRelevanceProvider extends INRelevanceProvider {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

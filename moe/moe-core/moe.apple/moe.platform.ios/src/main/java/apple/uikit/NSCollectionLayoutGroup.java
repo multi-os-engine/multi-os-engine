@@ -312,4 +312,9 @@ public class NSCollectionLayoutGroup extends NSCollectionLayoutItem implements N
     @Selector("verticalGroupWithLayoutSize:repeatingSubitem:count:")
     public static native NSCollectionLayoutGroup verticalGroupWithLayoutSizeRepeatingSubitemCount(
             @NotNull NSCollectionLayoutSize layoutSize, @NotNull NSCollectionLayoutItem subitem, @NInt long count);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

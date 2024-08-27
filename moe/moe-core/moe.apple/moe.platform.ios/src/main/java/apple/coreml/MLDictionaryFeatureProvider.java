@@ -218,4 +218,9 @@ public class MLDictionaryFeatureProvider extends NSObject implements MLFeaturePr
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

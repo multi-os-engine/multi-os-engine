@@ -66,4 +66,8 @@ public final class MTLLanguageVersion {
      * API-Since: 16.0
      */
     @Generated @NUInt public static final long Version3_0 = 0x0000000000030000L;
+    /**
+     * API-Since: 17.0
+     */
+    @Generated @NUInt public static final long Version3_1 = 0x0000000000030001L;
 }

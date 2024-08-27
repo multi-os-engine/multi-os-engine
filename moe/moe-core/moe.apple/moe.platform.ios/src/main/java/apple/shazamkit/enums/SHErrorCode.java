@@ -62,7 +62,7 @@ public final class SHErrorCode {
     /**
      * Failed to sync some content to the user's library
      * 
-     * Failed to add some items to the user's library, trying again may result in success
+     * Failed to sync the user's library, trying again may result in success
      * Underlying error may contain more details about the failure
      */
     @Generated @NInt public static final long MediaLibrarySyncFailed = 0x0000000000000190L;
@@ -74,4 +74,12 @@ public final class SHErrorCode {
      * API-Since: 16.0
      */
     @Generated @NInt public static final long InternalError = 0x00000000000001F4L;
+    /**
+     * Failed to fetch @c SHMediaItem
+     * 
+     * There was an error fetching the @c SHMediaItem or the provided @c shazamID is invalid.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated @NInt public static final long MediaItemFetchFailed = 0x0000000000000258L;
 }

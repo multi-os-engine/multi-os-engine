@@ -192,4 +192,9 @@ public class MDLAreaLight extends MDLPhysicallyPlausibleLight {
     @Generated
     @Selector("setAspect:")
     public native void setAspect(float value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

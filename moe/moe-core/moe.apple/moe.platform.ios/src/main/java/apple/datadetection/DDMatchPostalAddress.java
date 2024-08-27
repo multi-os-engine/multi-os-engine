@@ -25,6 +25,13 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
+ * An object that contains a postal address that the data detection system
+ * matches.
+ * 
+ * The DataDetection framework returns a postal address match in a
+ * `DDMatchPostalAddress` object, which optionally contains the matching parts
+ * of a postal address: street, city, state, postal code, and country.
+ * 
  * API-Since: 15.0
  */
 @Generated
@@ -70,6 +77,9 @@ public class DDMatchPostalAddress extends DDMatch {
             @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
             @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    /**
+     * The city name in a postal address.
+     */
     @Nullable
     @Generated
     @Selector("city")
@@ -85,6 +95,9 @@ public class DDMatchPostalAddress extends DDMatch {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * The country or region name in a postal address.
+     */
     @Nullable
     @Generated
     @Selector("country")
@@ -134,6 +147,9 @@ public class DDMatchPostalAddress extends DDMatch {
     @Selector("new")
     public static native DDMatchPostalAddress new_objc();
 
+    /**
+     * The postal code in a postal address.
+     */
     @Nullable
     @Generated
     @Selector("postalCode")
@@ -151,11 +167,17 @@ public class DDMatchPostalAddress extends DDMatch {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * The state name in a postal address.
+     */
     @Nullable
     @Generated
     @Selector("state")
     public native String state();
 
+    /**
+     * The street name in a postal address.
+     */
     @Nullable
     @Generated
     @Selector("street")
@@ -169,4 +191,9 @@ public class DDMatchPostalAddress extends DDMatch {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

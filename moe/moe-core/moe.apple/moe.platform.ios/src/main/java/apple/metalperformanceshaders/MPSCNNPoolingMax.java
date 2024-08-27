@@ -225,4 +225,9 @@ public class MPSCNNPoolingMax extends MPSCNNPooling {
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -324,4 +324,9 @@ public class AVAssetResourceLoadingContentInformationRequest extends NSObject {
     @Generated
     @Selector("setEntireLengthAvailableOnDemand:")
     public native void setEntireLengthAvailableOnDemand(boolean value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -22,7 +22,7 @@ class CollectReflectionConfig(
     private val config: ReflectionConfig,
     private var collectAll: Boolean = false,
     next: ClassVisitor? = null,
-) : ClassVisitor(Opcodes.ASM5, next) {
+) : ClassVisitor(Opcodes.ASM9, next) {
 
     private var skip: Boolean = false
     private var isNatJBindingClass: Boolean = false
@@ -163,7 +163,7 @@ class CollectReflectionConfig(
         private val name: String,
         private val isNatJBindingClass: Boolean,
         next: FieldVisitor?,
-    ) : FieldVisitor(Opcodes.ASM5, next) {
+    ) : FieldVisitor(Opcodes.ASM9, next) {
         private var visit: Boolean = false
 
         override fun visitAnnotation(descriptor: String, visible: Boolean): AnnotationVisitor? {
@@ -193,7 +193,7 @@ class CollectReflectionConfig(
         private val isProtocolClass: Boolean,
         private val isInterfaceDefaultMethod: Boolean,
         next: MethodVisitor?,
-    ) : MethodVisitor(Opcodes.ASM5, next) {
+    ) : MethodVisitor(Opcodes.ASM9, next) {
         private var visit: Boolean = false
 
         private var isOptional: Boolean = false

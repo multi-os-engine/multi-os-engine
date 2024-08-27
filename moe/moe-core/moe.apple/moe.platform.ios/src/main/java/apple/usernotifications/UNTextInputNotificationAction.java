@@ -222,4 +222,9 @@ public class UNTextInputNotificationAction extends UNNotificationAction {
             @NotNull String identifier, @NotNull String title, @NUInt long options,
             @Nullable UNNotificationActionIcon icon, @NotNull String textInputButtonTitle,
             @NotNull String textInputPlaceholder);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

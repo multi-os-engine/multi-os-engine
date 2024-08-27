@@ -25,6 +25,13 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
+ * An object that contains an email address that the data detection system
+ * matches.
+ * 
+ * The DataDetection framework returns an email match in a
+ * `DDMatchEmailAddress` object, which includes an email address, and
+ * optionally a label that categorizes the email address.
+ * 
  * API-Since: 15.0
  */
 @Generated
@@ -88,6 +95,9 @@ public class DDMatchEmailAddress extends DDMatch {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * A string that represents an email address.
+     */
     @NotNull
     @Generated
     @Selector("emailAddress")
@@ -124,6 +134,9 @@ public class DDMatchEmailAddress extends DDMatch {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    /**
+     * A string that categorizes an email address, such as Home or Work.
+     */
     @Nullable
     @Generated
     @Selector("label")
@@ -154,4 +167,9 @@ public class DDMatchEmailAddress extends DDMatch {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -242,4 +242,9 @@ public class INTask extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("priority")
     @NInt
     public native long priority();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

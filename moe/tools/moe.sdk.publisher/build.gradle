@@ -21,7 +21,7 @@ buildscript {
 }
 
 group 'org.multi-os-engine'
-version '2.0.0-SNAPSHOT'
+version '2.0.1-SNAPSHOT'
 
 apply plugin: 'base'
 apply plugin: 'maven-publish'
@@ -252,8 +252,9 @@ publishing {
     }
 }
 
-if (project.hasProperty("signing.keyId")) {
+if (project.hasProperty("signing.gnupg.keyId")) {
     signing {
+        useGpgCmd()
         sign publishing.publications.mavenJava
     }
 }

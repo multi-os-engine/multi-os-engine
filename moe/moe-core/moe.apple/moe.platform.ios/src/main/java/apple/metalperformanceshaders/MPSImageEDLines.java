@@ -235,7 +235,7 @@ public class MPSImageEDLines extends MPSKernel {
     /**
      * Initialize an EDLines kernel on a given device with specified parameters.
      * [@code]
-     * w(i) = 1/sqrt(2*pi*sigma) * exp(-i^2/2*sigma^2)
+     * w(i) = 1/sqrt(2*pi*sigma) * exp(-i^2/(2*sigma^2))
      * [@endcode]
      * If we take cut off at 1% of w(0) (max weight) beyond which weights
      * are considered 0, we have
@@ -443,4 +443,9 @@ public class MPSImageEDLines extends MPSKernel {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

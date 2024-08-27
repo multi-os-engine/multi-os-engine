@@ -235,4 +235,9 @@ public class NEAppProxyTCPFlow extends NEAppProxyFlow {
         @Generated
         void call_writeDataWithCompletionHandler(@Nullable NSError error);
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

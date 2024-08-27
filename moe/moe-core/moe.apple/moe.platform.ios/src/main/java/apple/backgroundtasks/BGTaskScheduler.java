@@ -27,11 +27,14 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.opaque.dispatch_queue_t;
 
 /**
- * BGTaskScheduler
+ * A class for scheduling task requests that launch your app in the background.
  * 
- * The object you use to schedule deferrable work to be done in the background.
+ * Background tasks give your app a way to run code while the app is suspended.
+ * To learn how to register, schedule, and run a background task, see
+ * <doc://com.apple.documentation/documentation/uikit/app_and_environment/scenes/preparing_your_ui_to_run_in_the_background/using_background_tasks_to_update_your_app>.
  * 
  * API-Since: 13.0
  */
@@ -68,7 +71,7 @@ public class BGTaskScheduler extends NSObject {
     public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
-     * Cancel all previously submitted task requests.
+     * Cancel all scheduled task requests.
      */
     @Generated
     @Selector("cancelAllTaskRequests")
@@ -86,9 +89,10 @@ public class BGTaskScheduler extends NSObject {
             @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
     /**
-     * Cancel a previously submitted task request.
+     * Cancel a previously scheduled task request.
      * 
-     * @param identifier The identifier of the previously submitted task request to cancel.
+     * - Parameters:
+     * - identifier: The string identifier of the task request to cancel.
      */
     @Generated
     @Selector("cancelTaskRequestWithIdentifier:")
@@ -113,14 +117,18 @@ public class BGTaskScheduler extends NSObject {
     public static native String description_static();
 
     /**
-     * Returns a list of all task requests that have been submitted but not yet completed.
+     * Request a list of unexecuted scheduled task requests.
      * 
-     * @param completionHandler A block for processing task requests. This block may be executed on a background thread.
-     *                          The block has no return value and takes a single parameter, taskRequests, which is an
-     *                          array of BGTaskRequest objects. If there are no pending requests, this array is empty.
-     *                          The task request objects returned are copies and changing their property values will
-     *                          have no immediate effect. To modify the parameters of a pending task request, submit it
-     *                          again to the scheduler with submitTaskRequest:error:.
+     * - Parameters:
+     * - completionHandler: The completion handler called with the pending tasks.
+     * The handler may execute on a background thread.
+     * 
+     * The handler takes a single parameter `tasksRequests`, an array of `BGTaskRequest`
+     * objects. The array is empty if there are no scheduled tasks.
+     * 
+     * The objects passed in the array are copies of the existing requests. Changing the
+     * attributes of a request has no effect. To change the attributes submit a new
+     * task request using ``BGTaskScheduler/submitTaskRequest:error:``.
      */
     @Generated
     @Selector("getPendingTaskRequestsWithCompletionHandler:")
@@ -171,27 +179,41 @@ public class BGTaskScheduler extends NSObject {
     public static native BGTaskScheduler new_objc();
 
     /**
-     * Register a handler to be called for tasks that launch the app.
+     * Register a launch handler for the task with the associated identifier that’s
+     * executed on the specified queue.
      * 
-     * You must register launch handlers before your application finishes launching. Attempting to register a handler
-     * after launch or multiple handlers for the same identifier is an error. Although you may submit task requests from
-     * some extensions, only the host app will be launched to handle background work.
+     * Every identifier in the
+     * <doc://com.apple.documentation/documentation/bundleresources/information_property_list/bgtaskschedulerpermittedidentifiers>
+     * requires a handler. Registration of all launch handlers must be complete
+     * before the end of
+     * <doc://com.apple.documentation/documentation/uikit/uiapplicationdelegate/1623053-applicationdidfinishlaunching>.
      * 
-     * @param identifier    The identifier for the task that will be handled by the provided launch handler.
-     * @param queue         The queue on which the launch handler and the expiration handler for the task will be
-     *                      called. The queue should be serial to ensure consistent ordering. If you pass nil, handlers
-     *                      will be called on a background queue.
-     * @param launchHandler The block that will be called when the app is launched for the specified task. The block has
-     *                      no return value and takes a single parameter, task, a BGTask object. Assign an expiration
-     *                      handler to the task's expirationHandler property and call setTaskCompletedWithSuccess: when
-     *                      the background work is complete.
-     * @return YES if the handler was registered, or NO if it was not because the provided identifier was not present in
-     *         the BGTaskSchedulerPermittedIdentifiers array in the app's Info.plist.
+     * - Important: Register each task identifier only once. The system kills the
+     * app on the second registration of the same task identifier.
+     * 
+     * - Parameters:
+     * - identifier: A string containing the identifier of the task.
+     * 
+     * - queue: A queue for executing the task. Pass `nil` to use a default
+     * background queue.
+     * 
+     * - launchHandler: The system runs the block of code for the launch handler
+     * when it launches the app in the background. The block takes a single
+     * parameter, a ``BGTask`` object used for assigning an expiration handler and
+     * for setting a completion status. The block has no return value.
+     * 
+     * - Returns: Returns
+     * <doc://com.apple.documentation/documentation/objectivec/yes> if the launch
+     * handler was registered. Returns
+     * <doc://com.apple.documentation/documentation/objectivec/no> if the
+     * identifier isn't included in the
+     * <doc://com.apple.documentation/documentation/bundleresources/information_property_list/bgtaskschedulerpermittedidentifiers>
+     * `Info.plist`.
      */
     @Generated
     @Selector("registerForTaskWithIdentifier:usingQueue:launchHandler:")
     public native boolean registerForTaskWithIdentifierUsingQueueLaunchHandler(@NotNull String identifier,
-            @Nullable NSObject queue,
+            @Nullable dispatch_queue_t queue,
             @NotNull @ObjCBlock(name = "call_registerForTaskWithIdentifierUsingQueueLaunchHandler") Block_registerForTaskWithIdentifierUsingQueueLaunchHandler launchHandler);
 
     @Runtime(ObjCRuntime.class)
@@ -213,20 +235,29 @@ public class BGTaskScheduler extends NSObject {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * The shared background task scheduler instance.
+     */
     @NotNull
     @Generated
     @Selector("sharedScheduler")
     public static native BGTaskScheduler sharedScheduler();
 
     /**
-     * Submit a request to be launched in the background to perform work.
+     * Submit a previously registered background task for execution.
      * 
-     * Submitting a task request with the same identifier as an existing request will replace that request.
+     * Submitting a task request for an unexecuted task that’s already in the queue
+     * replaces the previous task request.
      * 
-     * @param taskRequest The task request object representing the parameters of the background task to be scheduled.
-     * @param error       If an error occurs, upon return contains an error object that indicates why the request was
-     *                    rejected.
-     * @return YES if the request was successfully submitted, NO if there was an error
+     * There can be a total of 1 refresh task and 10 processing tasks scheduled at
+     * any time. Trying to schedule more tasks returns
+     * ``BGTaskSchedulerErrorCode/BGTaskSchedulerErrorCodeTooManyPendingTaskRequests``.
+     * 
+     * - Parameters:
+     * - taskRequest: A background task request object specifying the task
+     * - error: On input, a pointer to an error object. If an error occurs, this pointer is set to an error object
+     * containing the error information. Specify `nil` for this parameter to ignore the error information.
+     * identifier and optional configuration information.
      */
     @Generated
     @Selector("submitTaskRequest:error:")
@@ -241,4 +272,9 @@ public class BGTaskScheduler extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

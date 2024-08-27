@@ -51,7 +51,10 @@ import org.jetbrains.annotations.Nullable;
  * may take some time to complete.
  * 
  * API-Since: 10.0
+ * Deprecated-Since: 17.0
+ * Deprecated-Message: No longer supported. Please see Sharing CloudKit Data with Other iCloud Users.
  */
+@Deprecated
 @Generated
 @Library("CloudKit")
 @Runtime(ObjCRuntime.class)
@@ -171,6 +174,8 @@ public class CKDiscoverAllUserIdentitiesOperation extends CKOperation {
      * 
      * The @code -[NSOperation completionBlock] @endcode will also be called if both are set.
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
+     * This block may share mutable state with other blocks assigned to this operation, but any such mutable state
+     * should not be concurrently used outside of blocks assigned to this operation.
      */
     @Nullable
     @Generated
@@ -187,6 +192,8 @@ public class CKDiscoverAllUserIdentitiesOperation extends CKOperation {
      * 
      * The @code -[NSOperation completionBlock] @endcode will also be called if both are set.
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
+     * This block may share mutable state with other blocks assigned to this operation, but any such mutable state
+     * should not be concurrently used outside of blocks assigned to this operation.
      */
     @Generated
     @Selector("setDiscoverAllUserIdentitiesCompletionBlock:")
@@ -197,6 +204,8 @@ public class CKDiscoverAllUserIdentitiesOperation extends CKOperation {
      * Called once for each successfully-discovered user identity from the device's address book.
      * 
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
+     * This block may share mutable state with other blocks assigned to this operation, but any such mutable state
+     * should not be concurrently used outside of blocks assigned to this operation.
      */
     @Generated
     @Selector("setUserIdentityDiscoveredBlock:")
@@ -207,6 +216,8 @@ public class CKDiscoverAllUserIdentitiesOperation extends CKOperation {
      * Called once for each successfully-discovered user identity from the device's address book.
      * 
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
+     * This block may share mutable state with other blocks assigned to this operation, but any such mutable state
+     * should not be concurrently used outside of blocks assigned to this operation.
      */
     @Nullable
     @Generated
@@ -241,4 +252,9 @@ public class CKDiscoverAllUserIdentitiesOperation extends CKOperation {
         @Generated
         void call_userIdentityDiscoveredBlock_ret(@NotNull CKUserIdentity arg0);
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

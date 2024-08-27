@@ -209,4 +209,9 @@ public class HKSample extends HKObject {
     @Generated
     @Selector("hasUndeterminedDuration")
     public native boolean hasUndeterminedDuration();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

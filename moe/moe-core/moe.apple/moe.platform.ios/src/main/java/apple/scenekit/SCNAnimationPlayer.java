@@ -333,4 +333,9 @@ public class SCNAnimationPlayer extends NSObject implements SCNAnimatable, NSCop
     @Generated
     @Selector("removeAllAnimationsWithBlendOutDuration:")
     public native void removeAllAnimationsWithBlendOutDuration(@NFloat double duration);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

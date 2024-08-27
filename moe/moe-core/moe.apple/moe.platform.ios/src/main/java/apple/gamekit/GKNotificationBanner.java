@@ -47,7 +47,11 @@ import org.jetbrains.annotations.Nullable;
  * game events, high scores, completed achievements, etc.
  * 
  * API-Since: 5.0
+ * Deprecated-Since: 17.0
+ * Deprecated-Message: Use UNNotificationRequest or provide custom UI instead. This method will become a no-op in a
+ * future version of GameKit.
  */
+@Deprecated
 @Generated
 @Library("GameKit")
 @Runtime(ObjCRuntime.class)
@@ -155,7 +159,11 @@ public class GKNotificationBanner extends NSObject {
 
     /**
      * API-Since: 5.0
+     * Deprecated-Since: 16.1
+     * Deprecated-Message: Use UNNotificationRequest or provide custom UI instead. This method will become a no-op in a
+     * future version of GameKit.
      */
+    @Deprecated
     @Generated
     @Selector("showBannerWithTitle:message:completionHandler:")
     public static native void showBannerWithTitleMessageCompletionHandler(@Nullable String title,
@@ -163,8 +171,12 @@ public class GKNotificationBanner extends NSObject {
             @Nullable @ObjCBlock(name = "call_showBannerWithTitleMessageCompletionHandler") Block_showBannerWithTitleMessageCompletionHandler completionHandler);
 
     /**
-     * API-Since: 6.0
+     * API-Since: 5.0
+     * Deprecated-Since: 16.1
+     * Deprecated-Message: Use UNNotificationRequest or provide custom UI instead. This method will become a no-op in a
+     * future version of GameKit.
      */
+    @Deprecated
     @Generated
     @Selector("showBannerWithTitle:message:duration:completionHandler:")
     public static native void showBannerWithTitleMessageDurationCompletionHandler(@Nullable String title,
@@ -197,4 +209,9 @@ public class GKNotificationBanner extends NSObject {
         @Generated
         void call_showBannerWithTitleMessageDurationCompletionHandler();
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

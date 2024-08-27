@@ -186,4 +186,9 @@ public class UIPointerInteraction extends NSObject implements UIInteraction {
     @Generated
     @Selector("willMoveToView:")
     public native void willMoveToView(@Nullable UIView view);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -323,4 +323,27 @@ public class PHImageRequestOptions extends NSObject implements NSCopying {
         void call_setProgressHandler(double progress, @Nullable NSError error, @NotNull BoolPtr stop,
                 @Nullable NSDictionary<?, ?> info);
     }
+
+    /**
+     * in addition to the initial degraded result, an additional degraded result will be returned if conditions permit
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("allowSecondaryDegradedImage")
+    public native boolean allowSecondaryDegradedImage();
+
+    /**
+     * in addition to the initial degraded result, an additional degraded result will be returned if conditions permit
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("setAllowSecondaryDegradedImage:")
+    public native void setAllowSecondaryDegradedImage(boolean value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

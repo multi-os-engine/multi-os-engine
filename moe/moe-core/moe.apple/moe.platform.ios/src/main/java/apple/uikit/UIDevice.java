@@ -328,4 +328,9 @@ public class UIDevice extends NSObject {
     @Selector("userInterfaceIdiom")
     @NInt
     public native long userInterfaceIdiom();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

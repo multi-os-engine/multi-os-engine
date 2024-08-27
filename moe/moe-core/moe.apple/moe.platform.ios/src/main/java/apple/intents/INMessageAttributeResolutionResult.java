@@ -228,4 +228,9 @@ public class INMessageAttributeResolutionResult extends INIntentResolutionResult
     @Generated
     @Selector("unsupportedWithReason:")
     public static native INMessageAttributeResolutionResult unsupportedWithReason(@NInt long reason);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

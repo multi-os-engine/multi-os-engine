@@ -161,6 +161,9 @@ public class NSCollectionLayoutDimension extends NSObject implements NSCopying {
     @Selector("isAbsolute")
     public native boolean isAbsolute();
 
+    /**
+     * Returns `YES` if the receiver is `estimated` OR `uniformAcrossSiblings`.
+     */
     @Generated
     @Selector("isEstimated")
     public native boolean isEstimated();
@@ -207,4 +210,39 @@ public class NSCollectionLayoutDimension extends NSObject implements NSCopying {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("isUniformAcrossSiblings")
+    public native boolean isUniformAcrossSiblings();
+
+    /**
+     * Items with this dimension type will receive at least as much room as the view requires, and will
+     * grow to match the dimension of the largest estimated sibling in their parent.
+     * When specified on the outermost group for a section, the largest size will be shared across the entire section.
+     * 
+     * Eg: All `NSCollectionLayoutItem`s specified with a `uniformAcrossSiblingsWithEstimate:` `heightDimension` in a
+     * horizontal `NSCollectionLayoutGroup`
+     * will have a height equal to the height of the tallest item in that group.
+     * 
+     * When computing the size for a dimension of this type, the layout will need to retrieve preferred attributes for
+     * all siblings
+     * in its parent, which in `UICollectionView` means creating views for all dependent items. This can be very
+     * expensive, so `uniformAcrossSiblingsWithEstimate` should
+     * only be used in layouts where the number of dependent items is known to be relatively small.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("uniformAcrossSiblingsWithEstimate:")
+    @NotNull
+    public static native NSCollectionLayoutDimension uniformAcrossSiblingsWithEstimate(
+            @NFloat double estimatedDimension);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

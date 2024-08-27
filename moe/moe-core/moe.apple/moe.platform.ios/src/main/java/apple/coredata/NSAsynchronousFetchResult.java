@@ -170,4 +170,9 @@ public class NSAsynchronousFetchResult<_ResultType> extends NSPersistentStoreAsy
     @Generated
     @Selector("init")
     public native NSAsynchronousFetchResult<?> init();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

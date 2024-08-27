@@ -675,4 +675,9 @@ public class SCNGeometry extends NSObject implements SCNAnimatable, SCNBoundingV
     @IsOptional
     @Selector("setMinimumLanguageVersion:")
     public native void setMinimumLanguageVersion(@Nullable NSNumber value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

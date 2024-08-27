@@ -134,6 +134,12 @@ public class HMAction extends NSObject {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    /**
+     * API-Since: 8.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: HMAction is abstract
+     */
+    @Deprecated
     @Generated
     @Owned
     @Selector("new")
@@ -160,6 +166,12 @@ public class HMAction extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 8.0
+     * Deprecated-Since: 16.4
+     * Deprecated-Message: HMAction is abstract
+     */
+    @Deprecated
     @Generated
     @Selector("init")
     public native HMAction init();
@@ -173,4 +185,9 @@ public class HMAction extends NSObject {
     @Generated
     @Selector("uniqueIdentifier")
     public native NSUUID uniqueIdentifier();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

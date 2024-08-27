@@ -221,4 +221,9 @@ public class ARQuickLookPreviewItem extends NSObject implements QLPreviewItem {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -3,6 +3,8 @@ package org.moe.tools.classvalidator
 import org.moe.common.utils.classAndJarInputIterator
 import org.moe.tools.classvalidator.natj.AddMissingAnnotations
 import org.moe.tools.classvalidator.natj.AddMissingNatJRegister
+import org.moe.tools.classvalidator.natj.RewriteChangedBindingClasses
+
 import org.objectweb.asm.ClassReader
 import org.objectweb.asm.ClassVisitor
 import org.objectweb.asm.ClassWriter
@@ -34,6 +36,7 @@ object ClassValidator {
                     next
                         .chain(::AddMissingAnnotations)
                         .chain(::AddMissingNatJRegister)
+                        .let(::RewriteChangedBindingClasses)
                 }
 
                 // Only save modified class

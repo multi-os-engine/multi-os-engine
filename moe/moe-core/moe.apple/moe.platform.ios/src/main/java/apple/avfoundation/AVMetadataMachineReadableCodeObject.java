@@ -219,4 +219,9 @@ public class AVMetadataMachineReadableCodeObject extends AVMetadataObject {
     @Generated
     @Selector("descriptor")
     public native CIBarcodeDescriptor descriptor();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -295,4 +295,9 @@ public class INCallRecord extends NSObject implements NSCopying, NSSecureCoding 
     @Generated
     @Selector("participants")
     public native NSArray<? extends INPerson> participants();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -192,4 +192,9 @@ public class NSMethodSignature extends NSObject {
     @Selector("numberOfArguments")
     @NUInt
     public native long numberOfArguments();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -610,4 +610,9 @@ public class LAContext extends NSObject {
     @Generated
     @Selector("setLocalizedReason:")
     public native void setLocalizedReason(@NotNull String value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

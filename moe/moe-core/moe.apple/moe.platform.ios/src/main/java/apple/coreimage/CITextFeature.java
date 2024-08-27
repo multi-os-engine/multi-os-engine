@@ -43,9 +43,6 @@ import apple.corefoundation.struct.CGRect;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-/**
- * API-Since: 9.0
- */
 @Generated
 @Library("CoreImage")
 @Runtime(ObjCRuntime.class)
@@ -193,4 +190,9 @@ public class CITextFeature extends CIFeature {
     @Selector("topRight")
     @ByValue
     public native CGPoint topRight();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

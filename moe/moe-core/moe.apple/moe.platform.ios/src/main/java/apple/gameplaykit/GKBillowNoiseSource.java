@@ -42,8 +42,6 @@ import org.jetbrains.annotations.Nullable;
 
 /**
  * Billow noise is similar to Perlin noise, with more rounded shapes and clearly-defined transitions beween values.
- * 
- * API-Since: 10.0
  */
 @Generated
 @Library("GameplayKit")
@@ -180,4 +178,9 @@ public class GKBillowNoiseSource extends GKCoherentNoiseSource {
     @Generated
     @Selector("setPersistence:")
     public native void setPersistence(double value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

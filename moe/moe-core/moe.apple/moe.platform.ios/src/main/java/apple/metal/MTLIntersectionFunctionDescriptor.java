@@ -158,4 +158,9 @@ public class MTLIntersectionFunctionDescriptor extends MTLFunctionDescriptor imp
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

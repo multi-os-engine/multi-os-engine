@@ -176,4 +176,9 @@ public class NSEnumerator<_ObjectType> extends NSObject implements NSFastEnumera
     @Selector("nextObject")
     @MappedReturn(ObjCObjectMapper.class)
     public native _ObjectType nextObject();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -216,4 +216,9 @@ public class MTLRenderPipelineFunctionsDescriptor extends NSObject implements NS
     @Generated
     @Selector("vertexAdditionalBinaryFunctions")
     public native NSArray<?> vertexAdditionalBinaryFunctions();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

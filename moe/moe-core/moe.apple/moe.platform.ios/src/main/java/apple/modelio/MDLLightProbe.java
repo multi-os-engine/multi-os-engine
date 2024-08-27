@@ -215,4 +215,9 @@ public class MDLLightProbe extends MDLLight {
     @Selector("sphericalHarmonicsLevel")
     @NUInt
     public native long sphericalHarmonicsLevel();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

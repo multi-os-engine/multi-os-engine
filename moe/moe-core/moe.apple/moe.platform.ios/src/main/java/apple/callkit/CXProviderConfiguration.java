@@ -305,4 +305,9 @@ public class CXProviderConfiguration extends NSObject implements NSCopying {
     @Generated
     @Selector("setIncludesCallsInRecents:")
     public native void setIncludesCallsInRecents(boolean value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

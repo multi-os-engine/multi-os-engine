@@ -737,6 +737,8 @@ public class AVCaptureSession extends NSObject {
      * 
      * This property returns true on iPads that support Stage Manager with an extended display.
      * 
+     * This property returns true on Apple TV.
+     * 
      * This property is key-value observable.
      * 
      * API-Since: 16.0
@@ -797,4 +799,9 @@ public class AVCaptureSession extends NSObject {
     @Generated
     @Selector("synchronizationClock")
     public native CMClockRef synchronizationClock();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

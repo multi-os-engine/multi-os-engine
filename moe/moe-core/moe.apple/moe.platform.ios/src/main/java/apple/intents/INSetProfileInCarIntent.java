@@ -245,4 +245,9 @@ public class INSetProfileInCarIntent extends INIntent {
     public native INSetProfileInCarIntent initWithProfileNumberProfileNameDefaultProfileCarName(
             @Nullable NSNumber profileNumber, @Nullable String profileName, @Nullable NSNumber defaultProfile,
             @Nullable INSpeakableString carName);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

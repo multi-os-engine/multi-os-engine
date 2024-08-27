@@ -310,4 +310,9 @@ public class VNImageRegistrationRequest extends VNTargetedImageRequest {
     public native VNImageRegistrationRequest initWithTargetedCMSampleBufferOrientationOptionsCompletionHandler(
             @NotNull CMSampleBufferRef sampleBuffer, int orientation, @NotNull NSDictionary<String, ?> options,
             @Nullable @ObjCBlock(name = "call_initWithTargetedCMSampleBufferOrientationOptionsCompletionHandler") VNTargetedImageRequest.Block_initWithTargetedCMSampleBufferOrientationOptionsCompletionHandler completionHandler);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

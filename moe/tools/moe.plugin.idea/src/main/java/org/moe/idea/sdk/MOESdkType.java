@@ -68,7 +68,7 @@ public class MOESdkType extends JavaDependentSdkType implements JavaSdkType {
         return sdk.getSdkType() == getInstance();
     }
 
-    public static final LanguageLevel REQUIRED_JAVA_LANGUAGE_LEVEL = LanguageLevel.JDK_1_8;
+    public static final LanguageLevel REQUIRED_JAVA_LANGUAGE_LEVEL = LanguageLevel.JDK_11;
 
     /** The minimum JDK version that's required to run MOE */
     public static final JavaSdkVersion MIN_JDK_VERSION = JavaSdkVersion.JDK_1_8;

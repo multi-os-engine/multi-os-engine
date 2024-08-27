@@ -386,4 +386,9 @@ public class UIAttachmentBehavior extends UIDynamicBehavior {
     @Generated
     @Selector("setLength:")
     public native void setLength(@NFloat double value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

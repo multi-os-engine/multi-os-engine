@@ -33,8 +33,6 @@ import org.jetbrains.annotations.Nullable;
  * AVSpeechSynthesizer allows speaking of speech utterances with a basic queuing mechanism.
  * 
  * Create an instance of AVSpeechSynthesizer to start generating synthesized speech by using AVSpeechUtterance objects.
- * 
- * API-Since: 7.0
  */
 @Generated
 @Library("AVFAudio")
@@ -325,4 +323,52 @@ public class AVSpeechSynthesizer extends NSObject {
         void call_writeUtteranceToBufferCallbackToMarkerCallback_2(
                 @NotNull NSArray<? extends AVSpeechSynthesisMarker> markers);
     }
+
+    /**
+     * Returns your app's current authorization to use personal voices.
+     * 
+     * The user can reject your app's request to use personal voices, but your request can also be denied if personal
+     * voices are not supported on the device. The app can also change your app's authorization status at any time from
+     * the Settings app.
+     * 
+     * [@Returns]
+     * The app's current authorization status value. For a list of values, see
+     * AVSpeechSynthesisPersonalVoiceAuthorizationStatus.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("personalVoiceAuthorizationStatus")
+    @NUInt
+    public static native long personalVoiceAuthorizationStatus();
+
+    /**
+     * Asks the user to allow your app to use personal voices for speech synthesis
+     * 
+     * Call this method before performing any other tasks associated with speech synthesis using personal voices. This
+     * method executes asynchronously, returning shortly after you call it. At some point later, the system calls the
+     * provided handler block with the results.
+     * 
+     * When your app's authorization status is PersonalVoiceAuthorizationStatus.notDetermined, this method causes the
+     * system to prompt the user to grant or deny permission for your app to use personal voices. The user's response is
+     * saved so that future calls to this method do not prompt the user again.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("requestPersonalVoiceAuthorizationWithCompletionHandler:")
+    public static native void requestPersonalVoiceAuthorizationWithCompletionHandler(
+            @ObjCBlock(name = "call_requestPersonalVoiceAuthorizationWithCompletionHandler") @NotNull Block_requestPersonalVoiceAuthorizationWithCompletionHandler handler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_requestPersonalVoiceAuthorizationWithCompletionHandler {
+        @Generated
+        void call_requestPersonalVoiceAuthorizationWithCompletionHandler(@NUInt long status);
+    }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

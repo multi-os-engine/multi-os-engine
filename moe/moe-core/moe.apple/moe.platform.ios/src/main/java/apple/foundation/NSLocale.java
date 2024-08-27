@@ -331,7 +331,9 @@ public class NSLocale extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * API-Since: 10.0
+     * Deprecated-Since: 100000.0
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("countryCode")
@@ -537,4 +539,33 @@ public class NSLocale extends NSObject implements NSCopying, NSSecureCoding {
     @Generated
     @Selector("variantCode")
     public native String variantCode();
+
+    /**
+     * Returns the identifier for the language part of the locale. For example, returns "en-US" for "en_US@rg=gbzzzz"
+     * locale.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("languageIdentifier")
+    @NotNull
+    public native String languageIdentifier();
+
+    /**
+     * Returns the region code of the locale.
+     * If the `rg` subtag is present, the value of the subtag will be used. For example, returns "GB" for
+     * "en_US@rg=gbzzzz" locale.
+     * If the `localeIdentifier` doesn’t contain a region, returns `nil`.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("regionCode")
+    @Nullable
+    public native String regionCode();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

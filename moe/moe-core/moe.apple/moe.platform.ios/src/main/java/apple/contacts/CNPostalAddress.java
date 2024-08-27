@@ -50,8 +50,6 @@ import org.jetbrains.annotations.Nullable;
  * An immutable value object representing a postal address.
  * 
  * CNPostalAddress is thread safe.
- * 
- * API-Since: 9.0
  */
 @Generated
 @Library("Contacts")
@@ -259,4 +257,9 @@ public class CNPostalAddress extends NSObject implements NSCopying, NSMutableCop
     @Generated
     @Selector("subLocality")
     public native String subLocality();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -303,4 +303,9 @@ public class AVCaptureOutput extends NSObject {
     @Selector("transformedMetadataObjectForMetadataObject:connection:")
     public native AVMetadataObject transformedMetadataObjectForMetadataObjectConnection(
             @NotNull AVMetadataObject metadataObject, @NotNull AVCaptureConnection connection);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

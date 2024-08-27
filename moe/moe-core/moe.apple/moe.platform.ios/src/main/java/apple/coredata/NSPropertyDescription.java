@@ -381,4 +381,9 @@ public class NSPropertyDescription extends NSObject implements NSCoding, NSCopyi
     @Generated
     @Selector("versionHashModifier")
     public native String versionHashModifier();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -37,6 +37,8 @@ import org.jetbrains.annotations.Nullable;
  * 
  * Discussion:
  * Datum representing an update comprising of temperature, and temperature uncertainty
+ * 
+ * API-Since: 16.0
  */
 @Generated
 @Library("CoreMotion")
@@ -195,4 +197,9 @@ public class CMWaterTemperature extends NSObject implements NSSecureCoding, NSCo
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

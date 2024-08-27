@@ -399,4 +399,9 @@ public class AVMutableVideoCompositionLayerInstruction extends AVVideoCompositio
     @Generated
     @Selector("trackID")
     public native int trackID();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

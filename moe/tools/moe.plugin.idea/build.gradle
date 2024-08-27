@@ -15,7 +15,7 @@ limitations under the License.
 */
 
 plugins {
-    id "org.jetbrains.intellij" version "1.14.1"
+    id "org.jetbrains.intellij" version "1.16.0"
     id "org.jetbrains.kotlin.jvm"
 }
 
@@ -23,11 +23,11 @@ apply plugin: 'idea'
 apply plugin: 'maven-publish'
 
 group 'org.multi-os-engine'
-version '1.5.3-SNAPSHOT'
+version '1.5.3'
 
 java {
     toolchain {
-        languageVersion = JavaLanguageVersion.of(11)
+        languageVersion = JavaLanguageVersion.of(17)
     }
 }
 
@@ -39,7 +39,9 @@ def PLUGIN_NAME = 'moe_intellij_plugin'
 //}
 
 intellij {
-    version = 'IC-212.5712.43'
+    // to test with Android Studio, use:
+    // version = 'AI-231.9392.1.2311.11076708'
+    version = 'IC-2022.2'
     plugins = ['com.intellij.gradle', 'com.intellij.java']
     pluginName = PLUGIN_NAME
     downloadSources = false

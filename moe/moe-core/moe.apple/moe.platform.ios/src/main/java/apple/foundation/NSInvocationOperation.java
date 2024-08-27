@@ -179,4 +179,9 @@ public class NSInvocationOperation extends NSOperation {
     @Selector("result")
     @MappedReturn(ObjCObjectMapper.class)
     public native Object result();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

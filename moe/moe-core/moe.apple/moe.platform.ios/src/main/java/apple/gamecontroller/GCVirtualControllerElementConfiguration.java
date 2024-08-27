@@ -28,7 +28,6 @@ import org.jetbrains.annotations.Nullable;
 /**
  * GCVirtualControllerElementConfiguration
  * 
- * 
  * API-Since: 15.0
  */
 @Generated
@@ -195,4 +194,9 @@ public class GCVirtualControllerElementConfiguration extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -250,4 +250,9 @@ public class NSEnergyFormatter extends NSFormatter {
     @Selector("unitStyle")
     @NInt
     public native long unitStyle();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

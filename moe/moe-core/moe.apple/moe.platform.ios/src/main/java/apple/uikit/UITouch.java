@@ -356,4 +356,9 @@ public class UITouch extends NSObject {
     @Generated
     @Selector("window")
     public native UIWindow window();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

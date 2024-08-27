@@ -545,4 +545,9 @@ public class HKWorkoutBuilder extends NSObject {
     @Generated
     @Selector("workoutActivities")
     public native NSArray<? extends HKWorkoutActivity> workoutActivities();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

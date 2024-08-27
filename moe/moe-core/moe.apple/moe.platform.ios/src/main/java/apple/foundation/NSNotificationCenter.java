@@ -208,6 +208,11 @@ public class NSNotificationCenter extends NSObject {
     @Generated
     public interface Block_addObserverForNameObjectQueueUsingBlock {
         @Generated
-        void call_addObserverForNameObjectQueueUsingBlock(@NotNull NSNotification note);
+        void call_addObserverForNameObjectQueueUsingBlock(@NotNull NSNotification notification);
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

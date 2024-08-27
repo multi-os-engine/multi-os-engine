@@ -182,4 +182,9 @@ public class UICollectionViewUpdateItem extends NSObject {
     @Selector("updateAction")
     @NInt
     public native long updateAction();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -723,4 +723,9 @@ public class UITableViewController extends UIViewController implements UITableVi
     @Selector("tableView:performPrimaryActionForRowAtIndexPath:")
     public native void tableViewPerformPrimaryActionForRowAtIndexPath(@NotNull UITableView tableView,
             @NotNull NSIndexPath indexPath);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

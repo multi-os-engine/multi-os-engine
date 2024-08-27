@@ -225,7 +225,12 @@ public class HMTrigger extends NSObject {
 
     /**
      * The date that this trigger was most recently fired.
+     * 
+     * API-Since: 8.0
+     * Deprecated-Since: 17.0
+     * Deprecated-Message: No longer supported
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("lastFireDate")
@@ -302,4 +307,9 @@ public class HMTrigger extends NSObject {
         @Generated
         void call_updateNameCompletionHandler(@Nullable NSError error);
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

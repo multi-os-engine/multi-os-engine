@@ -29,6 +29,8 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.io.Reader;
+import java.io.Writer;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -350,7 +352,11 @@ public class Bindings implements Iterable<AbstractBinding>, IJsonAdapter {
         if (target == null) {
             throw new NullPointerException();
         }
-        final PrintWriter writer = new PrintWriter(target);
+        save(new PrintWriter(target));
+    }
+
+    public void save(Writer writer) throws IOException {
+
         try {
             JsonWriter jsonWriter = new JsonWriter(writer);
             jsonWriter.setLenient(true);
@@ -371,7 +377,10 @@ public class Bindings implements Iterable<AbstractBinding>, IJsonAdapter {
         if (source == null) {
             throw new NullPointerException();
         }
-        final FileReader reader = new FileReader(source);
+        load(new FileReader(source));
+    }
+
+    public void load(Reader reader) throws IOException {
         try {
             JsonParser parser = new JsonParser();
             setJsonObject(parser.parse(reader).getAsJsonObject());

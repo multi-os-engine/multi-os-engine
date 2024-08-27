@@ -23,9 +23,7 @@ public final class AVRouting {
     }
 
     /**
-     * [@constant] AVCustomRoutingControllerAuthorizedRoutesDidChangeNotification
-     * 
-     * Posted when the value of authorizedRoutes changes.
+     * A notification the system posts when the list of authorized routes changes.
      * 
      * API-Since: 16.0
      */

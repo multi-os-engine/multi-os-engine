@@ -463,4 +463,9 @@ public class NSDateComponentsFormatter extends NSFormatter {
     @Generated
     @Selector("setReferenceDate:")
     public native void setReferenceDate(@Nullable NSDate value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

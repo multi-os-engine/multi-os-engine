@@ -125,11 +125,6 @@ public class CLLocationManager extends NSObject {
     public static native String debugDescription_static();
 
     /**
-     * deferredLocationUpdatesAvailable
-     * 
-     * Discussion:
-     * Returns YES if the device supports deferred location updates, otherwise NO.
-     * 
      * API-Since: 6.0
      * Deprecated-Since: 13.0
      * Deprecated-Message: You can remove calls to this method
@@ -305,39 +300,6 @@ public class CLLocationManager extends NSObject {
     public native long activityType();
 
     /**
-     * allowDeferredLocationUpdatesUntilTraveled:timeout:
-     * 
-     * Discussion:
-     * Indicate that the application will allow the location manager to defer
-     * location updates until an exit criterion is met. This may allow the
-     * device to enter a low-power state in which updates are held for later
-     * delivery. Once an exit condition is met, the location manager will
-     * continue normal updates until this method is invoked again.
-     * 
-     * Exit conditions, distance and timeout, can be specified using the constants
-     * CLLocationDistanceMax and CLTimeIntervalMax, respectively, if you are
-     * trying to achieve an unlimited distance or timeout.
-     * 
-     * The CLLocationManagerDelegate will continue to receive normal updates as
-     * long as the application remains in the foreground. While the process is
-     * in the background, the device may be able to enter a low-power state for
-     * portions of the specified distance and time interval. While in this
-     * state, locations will be coalesced for later delivery.
-     * 
-     * Location updates will be deferred as much as is reasonable to save
-     * power. If another process is using location, the device may not enter a
-     * low-power state and instead updates will continue normally. Deferred
-     * updates may be interspersed with normal updates if the device exits and
-     * re-enters a low-power state.
-     * 
-     * All location updates, including deferred updates, will be delivered via
-     * the delegate callback locationManager:didUpdateLocations:
-     * 
-     * When deferred updates have ended, the manager will invoke the delegate
-     * callback locationManagerDidFinishDeferredUpdates:withError:. An error
-     * will be returned if the manager will not defer updates and the exit
-     * criteria have not been met.
-     * 
      * API-Since: 6.0
      * Deprecated-Since: 13.0
      * Deprecated-Message: You can remove calls to this method
@@ -348,29 +310,6 @@ public class CLLocationManager extends NSObject {
     public native void allowDeferredLocationUpdatesUntilTraveledTimeout(double distance, double timeout);
 
     /**
-     * allowsBackgroundLocationUpdates
-     * 
-     * Discussion:
-     * By default, this is NO for applications linked against iOS 9.0 or later,
-     * regardless of minimum deployment target.
-     * 
-     * With UIBackgroundModes set to include "location" in Info.plist, you must
-     * also set this property to YES at runtime whenever calling
-     * -startUpdatingLocation with the intent to continue in the background.
-     * 
-     * Setting this property to YES when UIBackgroundModes does not include
-     * "location" is a fatal error.
-     * 
-     * Resetting this property to NO is equivalent to omitting "location" from
-     * the UIBackgroundModes value. Access to location is still permitted
-     * whenever the application is running (ie not suspended), and has
-     * sufficient authorization (ie it has WhenInUse authorization and is in
-     * use, or it has Always authorization). However, the app will still be
-     * subject to the usual task suspension rules.
-     * 
-     * See -requestWhenInUseAuthorization and -requestAlwaysAuthorization for
-     * more details on possible authorization values.
-     * 
      * API-Since: 9.0
      */
     @Generated
@@ -399,12 +338,6 @@ public class CLLocationManager extends NSObject {
     public native double desiredAccuracy();
 
     /**
-     * disallowDeferredLocationUpdates
-     * 
-     * Discussion:
-     * Disallow deferred location updates if previously enabled. Any outstanding
-     * updates will be sent and regular location updates will resume.
-     * 
      * API-Since: 6.0
      * Deprecated-Since: 13.0
      * Deprecated-Message: You can remove calls to this method
@@ -415,11 +348,6 @@ public class CLLocationManager extends NSObject {
     public native void disallowDeferredLocationUpdates();
 
     /**
-     * dismissHeadingCalibrationDisplay
-     * 
-     * Discussion:
-     * Dismiss the heading calibration immediately.
-     * 
      * API-Since: 3.0
      */
     @Generated
@@ -439,11 +367,6 @@ public class CLLocationManager extends NSObject {
     public native double distanceFilter();
 
     /**
-     * heading
-     * 
-     * Discussion:
-     * Returns the latest heading update received, or nil if none is available.
-     * 
      * API-Since: 4.0
      */
     @Nullable
@@ -452,11 +375,6 @@ public class CLLocationManager extends NSObject {
     public native CLHeading heading();
 
     /**
-     * headingAvailable
-     * 
-     * Discussion:
-     * Deprecated. Use +headingAvailable instead.
-     * 
      * API-Since: 3.0
      * Deprecated-Since: 4.0
      */
@@ -466,13 +384,6 @@ public class CLLocationManager extends NSObject {
     public native boolean headingAvailable();
 
     /**
-     * headingFilter
-     * 
-     * Discussion:
-     * Specifies the minimum amount of change in degrees needed for a heading service update. Client will not
-     * be notified of updates less than the stated filter value. Pass in kCLHeadingFilterNone to be
-     * notified of all updates. By default, 1 degree is used.
-     * 
      * API-Since: 3.0
      */
     @Generated
@@ -480,14 +391,6 @@ public class CLLocationManager extends NSObject {
     public native double headingFilter();
 
     /**
-     * headingOrientation
-     * 
-     * Discussion:
-     * Specifies a physical device orientation from which heading calculation should be referenced. By default,
-     * CLDeviceOrientationPortrait is used. CLDeviceOrientationUnknown, CLDeviceOrientationFaceUp, and
-     * CLDeviceOrientationFaceDown are ignored.
-     * 
-     * 
      * API-Since: 4.0
      */
     @Generated
@@ -510,11 +413,6 @@ public class CLLocationManager extends NSObject {
     public native CLLocation location();
 
     /**
-     * locationServicesEnabled
-     * 
-     * Discussion:
-     * Deprecated. Use +locationServicesEnabled instead.
-     * 
      * API-Since: 2.0
      * Deprecated-Since: 4.0
      */
@@ -524,14 +422,6 @@ public class CLLocationManager extends NSObject {
     public native boolean locationServicesEnabled();
 
     /**
-     * maximumRegionMonitoringDistance
-     * 
-     * Discussion:
-     * the maximum region size, in terms of a distance from a central point, that the framework can support.
-     * Attempts to register a region larger than this will generate a kCLErrorRegionMonitoringFailure.
-     * This value may vary based on the hardware features of the device, as well as on dynamically changing resource
-     * constraints.
-     * 
      * API-Since: 4.0
      */
     @Generated
@@ -539,13 +429,6 @@ public class CLLocationManager extends NSObject {
     public native double maximumRegionMonitoringDistance();
 
     /**
-     * monitoredRegions
-     * 
-     * Discussion:
-     * Retrieve a set of objects for the regions that are currently being monitored. If any location manager
-     * has been instructed to monitor a region, during this or previous launches of your application, it will
-     * be present in this set.
-     * 
      * API-Since: 4.0
      */
     @NotNull
@@ -567,15 +450,6 @@ public class CLLocationManager extends NSObject {
     public native boolean pausesLocationUpdatesAutomatically();
 
     /**
-     * purpose
-     * 
-     * Discussion:
-     * Allows the application to specify what location will be used for in their app. This
-     * will be displayed along with the standard Location permissions dialogs. This property will need to be
-     * set prior to calling startUpdatingLocation.
-     * 
-     * Deprecated. Set the purpose string in Info.plist using key NSLocationUsageDescription.
-     * 
      * API-Since: 3.2
      * Deprecated-Since: 6.0
      * Deprecated-Message: Set the purpose string in Info.plist using key NSLocationUsageDescription
@@ -587,11 +461,6 @@ public class CLLocationManager extends NSObject {
     public native String purpose();
 
     /**
-     * rangedRegions
-     * 
-     * Discussion:
-     * Retrieve a set of objects representing the regions for which this location manager is actively providing ranging.
-     * 
      * API-Since: 7.0
      * Deprecated-Since: 13.0
      * Deprecated-Message: Use -rangedBeaconConstraints
@@ -603,43 +472,6 @@ public class CLLocationManager extends NSObject {
     public native NSSet<? extends CLRegion> rangedRegions();
 
     /**
-     * requestAlwaysAuthorization
-     * 
-     * Discussion:
-     * When -authorizationStatus == kCLAuthorizationStatusNotDetermined,
-     * calling this method will start the process of requesting "always"
-     * authorization from the user. Any authorization change as a result of
-     * the prompt will be reflected via the usual delegate callback:
-     * -locationManager:didChangeAuthorizationStatus:.
-     * 
-     * If possible, perform this call in response to direct user request for a
-     * location-based service so that the reason for the prompt will be clear,
-     * and the utility of a one-time grant is maximized.
-     * 
-     * If received, "always" authorization grants access to the user's location
-     * via any CLLocationManager API. In addition, monitoring APIs may launch
-     * your app into the background when they detect an event. Even if killed by
-     * the user, launch events triggered by monitoring APIs will cause a
-     * relaunch.
-     * 
-     * "Always" authorization presents a significant risk to user privacy, and
-     * as such requesting it is discouraged unless background launch behavior
-     * is genuinely required. Do not call +requestAlwaysAuthorization unless
-     * you think users will thank you for doing so.
-     * 
-     * An application which currently has "when-in-use" authorization and has
-     * never before requested "always" authorization may use this method to
-     * request "always" authorization one time only. Otherwise, if
-     * -authorizationStatus != kCLAuthorizationStatusNotDetermined, (ie
-     * generally after the first call) this method will do nothing.
-     * 
-     * If your app is not currently in use, this method will do nothing.
-     * 
-     * Both the NSLocationAlwaysAndWhenInUseUsageDescription and
-     * NSLocationWhenInUseUsageDescription keys must be specified in your
-     * Info.plist; otherwise, this method will do nothing, as your app will be
-     * assumed not to support Always authorization.
-     * 
      * API-Since: 8.0
      */
     @Generated
@@ -675,14 +507,10 @@ public class CLLocationManager extends NSObject {
     public native void requestLocation();
 
     /**
-     * requestStateForRegion:
-     * 
-     * Discussion:
-     * Asynchronously retrieve the cached state of the specified region. The state is returned to the delegate via
-     * locationManager:didDetermineState:forRegion:.
-     * 
-     * API-Since: 7.0
+     * API-Since: 5.0
+     * Deprecated-Since: 100000.0
      */
+    @Deprecated
     @Generated
     @Selector("requestStateForRegion:")
     public native void requestStateForRegion(@NotNull CLRegion region);
@@ -741,29 +569,6 @@ public class CLLocationManager extends NSObject {
     public native void setActivityType(@NInt long value);
 
     /**
-     * allowsBackgroundLocationUpdates
-     * 
-     * Discussion:
-     * By default, this is NO for applications linked against iOS 9.0 or later,
-     * regardless of minimum deployment target.
-     * 
-     * With UIBackgroundModes set to include "location" in Info.plist, you must
-     * also set this property to YES at runtime whenever calling
-     * -startUpdatingLocation with the intent to continue in the background.
-     * 
-     * Setting this property to YES when UIBackgroundModes does not include
-     * "location" is a fatal error.
-     * 
-     * Resetting this property to NO is equivalent to omitting "location" from
-     * the UIBackgroundModes value. Access to location is still permitted
-     * whenever the application is running (ie not suspended), and has
-     * sufficient authorization (ie it has WhenInUse authorization and is in
-     * use, or it has Always authorization). However, the app will still be
-     * subject to the usual task suspension rules.
-     * 
-     * See -requestWhenInUseAuthorization and -requestAlwaysAuthorization for
-     * more details on possible authorization values.
-     * 
      * API-Since: 9.0
      */
     @Generated
@@ -814,13 +619,6 @@ public class CLLocationManager extends NSObject {
     public native void setDistanceFilter(double value);
 
     /**
-     * headingFilter
-     * 
-     * Discussion:
-     * Specifies the minimum amount of change in degrees needed for a heading service update. Client will not
-     * be notified of updates less than the stated filter value. Pass in kCLHeadingFilterNone to be
-     * notified of all updates. By default, 1 degree is used.
-     * 
      * API-Since: 3.0
      */
     @Generated
@@ -828,14 +626,6 @@ public class CLLocationManager extends NSObject {
     public native void setHeadingFilter(double value);
 
     /**
-     * headingOrientation
-     * 
-     * Discussion:
-     * Specifies a physical device orientation from which heading calculation should be referenced. By default,
-     * CLDeviceOrientationPortrait is used. CLDeviceOrientationUnknown, CLDeviceOrientationFaceUp, and
-     * CLDeviceOrientationFaceDown are ignored.
-     * 
-     * 
      * API-Since: 4.0
      */
     @Generated
@@ -856,15 +646,6 @@ public class CLLocationManager extends NSObject {
     public native void setPausesLocationUpdatesAutomatically(boolean value);
 
     /**
-     * purpose
-     * 
-     * Discussion:
-     * Allows the application to specify what location will be used for in their app. This
-     * will be displayed along with the standard Location permissions dialogs. This property will need to be
-     * set prior to calling startUpdatingLocation.
-     * 
-     * Deprecated. Set the purpose string in Info.plist using key NSLocationUsageDescription.
-     * 
      * API-Since: 3.2
      * Deprecated-Since: 6.0
      * Deprecated-Message: Set the purpose string in Info.plist using key NSLocationUsageDescription
@@ -875,19 +656,10 @@ public class CLLocationManager extends NSObject {
     public native void setPurpose(@Nullable String value);
 
     /**
-     * startMonitoringForRegion:
-     * 
-     * Discussion:
-     * Start monitoring the specified region.
-     * 
-     * If a region of the same type with the same identifier is already being monitored for this application,
-     * it will be removed from monitoring. For circular regions, the region monitoring service will prioritize
-     * regions by their size, favoring smaller regions over larger regions.
-     * 
-     * This is done asynchronously and may not be immediately reflected in monitoredRegions.
-     * 
      * API-Since: 5.0
+     * Deprecated-Since: 100000.0
      */
+    @Deprecated
     @Generated
     @Selector("startMonitoringForRegion:")
     public native void startMonitoringForRegion(@NotNull CLRegion region);
@@ -919,15 +691,6 @@ public class CLLocationManager extends NSObject {
     public native void startMonitoringForRegionDesiredAccuracy(@NotNull CLRegion region, double accuracy);
 
     /**
-     * startMonitoringSignificantLocationChanges
-     * 
-     * Discussion:
-     * Start monitoring significant location changes. The behavior of this service is not affected by the
-     * desiredAccuracy
-     * or distanceFilter properties. Locations will be delivered through the same delegate callback as the standard
-     * location service.
-     * 
-     * 
      * API-Since: 4.0
      */
     @Generated
@@ -935,17 +698,6 @@ public class CLLocationManager extends NSObject {
     public native void startMonitoringSignificantLocationChanges();
 
     /**
-     * startMonitoringVisits
-     * 
-     * Discussion:
-     * Begin monitoring for visits. All CLLLocationManagers allocated by your
-     * application, both current and future, will deliver detected visits to
-     * their delegates. This will continue until -stopMonitoringVisits is sent
-     * to any such CLLocationManager, even across application relaunch events.
-     * 
-     * Detected visits are sent to the delegate's -locationManager:didVisit:
-     * method.
-     * 
      * API-Since: 8.0
      */
     @Generated
@@ -953,11 +705,6 @@ public class CLLocationManager extends NSObject {
     public native void startMonitoringVisits();
 
     /**
-     * startRangingBeaconsInRegion:
-     * 
-     * Discussion:
-     * Start calculating ranges for beacons in the specified region.
-     * 
      * API-Since: 7.0
      * Deprecated-Since: 13.0
      * Deprecated-Message: Use -startRangingBeaconsSatisfyingConstraint:
@@ -968,11 +715,6 @@ public class CLLocationManager extends NSObject {
     public native void startRangingBeaconsInRegion(@NotNull CLBeaconRegion region);
 
     /**
-     * startUpdatingHeading
-     * 
-     * Discussion:
-     * Start updating heading.
-     * 
      * API-Since: 3.0
      */
     @Generated
@@ -990,28 +732,15 @@ public class CLLocationManager extends NSObject {
     public native void startUpdatingLocation();
 
     /**
-     * stopMonitoringForRegion:
-     * 
-     * Discussion:
-     * Stop monitoring the specified region. It is valid to call stopMonitoringForRegion: for a region that was
-     * registered
-     * for monitoring with a different location manager object, during this or previous launches of your application.
-     * 
-     * This is done asynchronously and may not be immediately reflected in monitoredRegions.
-     * 
-     * API-Since: 4.0
+     * API-Since: 5.0
+     * Deprecated-Since: 100000.0
      */
+    @Deprecated
     @Generated
     @Selector("stopMonitoringForRegion:")
     public native void stopMonitoringForRegion(@NotNull CLRegion region);
 
     /**
-     * stopMonitoringSignificantLocationChanges
-     * 
-     * Discussion:
-     * Stop monitoring significant location changes.
-     * 
-     * 
      * API-Since: 4.0
      */
     @Generated
@@ -1019,15 +748,6 @@ public class CLLocationManager extends NSObject {
     public native void stopMonitoringSignificantLocationChanges();
 
     /**
-     * stopMonitoringVisits
-     * 
-     * Discussion:
-     * Stop monitoring for visits. To resume visit monitoring, send
-     * -startMonitoringVisits.
-     * 
-     * Note that stopping and starting are asynchronous operations and may not
-     * immediately reflect in delegate callback patterns.
-     * 
      * API-Since: 8.0
      */
     @Generated
@@ -1035,11 +755,6 @@ public class CLLocationManager extends NSObject {
     public native void stopMonitoringVisits();
 
     /**
-     * stopRangingBeaconsInRegion:
-     * 
-     * Discussion:
-     * Stop calculating ranges for the specified region.
-     * 
      * API-Since: 7.0
      * Deprecated-Since: 13.0
      * Deprecated-Message: Use -stopRangingBeaconsSatisfyingConstraint:
@@ -1050,11 +765,6 @@ public class CLLocationManager extends NSObject {
     public native void stopRangingBeaconsInRegion(@NotNull CLBeaconRegion region);
 
     /**
-     * stopUpdatingHeading
-     * 
-     * Discussion:
-     * Stop updating heading.
-     * 
      * API-Since: 3.0
      */
     @Generated
@@ -1120,11 +830,6 @@ public class CLLocationManager extends NSObject {
     public native boolean showsBackgroundLocationIndicator();
 
     /**
-     * rangedBeaconConstraints
-     * 
-     * Discussion:
-     * Retrieve a set of beacon constraints for which this location manager is actively providing ranging.
-     * 
      * API-Since: 13.0
      */
     @NotNull
@@ -1133,13 +838,6 @@ public class CLLocationManager extends NSObject {
     public native NSSet<? extends CLBeaconIdentityConstraint> rangedBeaconConstraints();
 
     /**
-     * startRangingBeaconsSatisfyingConstraint:
-     * 
-     * Discussion:
-     * Start producing ranging measurements for beacons that satisfy
-     * the provided constraint. Ranging will continue until you pass
-     * an equivalent constraint to stopRangingBeaconsSatisfyingConstraint:.
-     * 
      * API-Since: 13.0
      */
     @Generated
@@ -1147,11 +845,6 @@ public class CLLocationManager extends NSObject {
     public native void startRangingBeaconsSatisfyingConstraint(@NotNull CLBeaconIdentityConstraint constraint);
 
     /**
-     * stopRangingBeaconsSatisfyingConstraint:
-     * 
-     * Discussion:
-     * Stop an earlier beacon ranging request. See startRangingBeaconsSatisfyingConstraint:.
-     * 
      * API-Since: 13.0
      */
     @Generated
@@ -1287,13 +980,6 @@ public class CLLocationManager extends NSObject {
     }
 
     /**
-     * startMonitoringLocationPushes
-     * 
-     * Discussion:
-     * Request an Apple Push Notification service token to be used to send location pushes. Incoming location pushes
-     * launch the app's Location Push Service Extension. Requires the com.apple.developer.location.push entitlement.
-     * 
-     * 
      * API-Since: 15.0
      */
     @Generated
@@ -1309,15 +995,14 @@ public class CLLocationManager extends NSObject {
     }
 
     /**
-     * stopMonitoringLocationPushes
-     * 
-     * Discussion:
-     * Stop monitoring for location pushes.
-     * 
-     * 
      * API-Since: 15.0
      */
     @Generated
     @Selector("stopMonitoringLocationPushes")
     public native void stopMonitoringLocationPushes();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

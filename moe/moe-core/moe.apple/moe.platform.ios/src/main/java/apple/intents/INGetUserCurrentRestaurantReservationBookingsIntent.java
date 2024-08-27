@@ -258,4 +258,9 @@ public class INGetUserCurrentRestaurantReservationBookingsIntent extends INInten
     public native INGetUserCurrentRestaurantReservationBookingsIntent initWithRestaurantReservationIdentifierMaximumNumberOfResultsEarliestBookingDateForResults(
             @Nullable INRestaurant restaurant, @Nullable String reservationIdentifier,
             @Nullable NSNumber maximumNumberOfResults, @Nullable NSDate earliestBookingDateForResults);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

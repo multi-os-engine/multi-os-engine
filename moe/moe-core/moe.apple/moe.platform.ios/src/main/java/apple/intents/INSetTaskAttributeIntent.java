@@ -217,4 +217,9 @@ public class INSetTaskAttributeIntent extends INIntent {
     @Generated
     @Selector("taskTitle")
     public native INSpeakableString taskTitle();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

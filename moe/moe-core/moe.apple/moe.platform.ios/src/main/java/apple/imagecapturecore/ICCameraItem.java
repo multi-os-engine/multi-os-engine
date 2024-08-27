@@ -402,4 +402,9 @@ public class ICCameraItem extends NSObject {
     @Generated
     @Selector("wasAddedAfterContentCatalogCompleted")
     public native boolean wasAddedAfterContentCatalogCompleted();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

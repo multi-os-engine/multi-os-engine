@@ -380,7 +380,7 @@ public class AVAsset extends NSObject implements NSCopying, AVAsynchronousKeyVal
      * 
      * Assets containing protected content may not be playable without successful authorization, even if the value of
      * the "playable" property is YES. See the properties in the AVAssetUsability category for details on how such an
-     * asset may be used. On OS X, clients can use the interfaces in AVPlayerItemProtectedContentAdditions.h to request
+     * asset may be used. On macOS, clients can use the interfaces in AVPlayerItemProtectedContentAdditions.h to request
      * authorization to play the asset.
      * 
      * API-Since: 4.2
@@ -1028,4 +1028,9 @@ public class AVAsset extends NSObject implements NSCopying, AVAsynchronousKeyVal
         void call_loadTracksWithMediaTypeCompletionHandler(@Nullable NSArray<? extends AVAssetTrack> arg0,
                 @Nullable NSError arg1);
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

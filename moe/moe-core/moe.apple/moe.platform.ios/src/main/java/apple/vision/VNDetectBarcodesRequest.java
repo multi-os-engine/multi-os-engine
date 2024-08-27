@@ -234,4 +234,27 @@ public class VNDetectBarcodesRequest extends VNImageBasedRequest {
     @Selector("supportedSymbologiesAndReturnError:")
     public native NSArray<String> supportedSymbologiesAndReturnError(
             @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+
+    /**
+     * An option to coalesce multiple codes if applicable based on the symbology
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("coalesceCompositeSymbologies")
+    public native boolean coalesceCompositeSymbologies();
+
+    /**
+     * An option to coalesce multiple codes if applicable based on the symbology
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("setCoalesceCompositeSymbologies:")
+    public native void setCoalesceCompositeSymbologies(boolean value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

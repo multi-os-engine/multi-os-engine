@@ -177,4 +177,9 @@ public class UIMotionEffectGroup extends UIMotionEffect {
     @Generated
     @Selector("setMotionEffects:")
     public native void setMotionEffects(@Nullable NSArray<? extends UIMotionEffect> value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

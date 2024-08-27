@@ -221,4 +221,9 @@ public class NSUUID extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("compare:")
     @NInt
     public native long compare(@NotNull NSUUID otherUUID);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

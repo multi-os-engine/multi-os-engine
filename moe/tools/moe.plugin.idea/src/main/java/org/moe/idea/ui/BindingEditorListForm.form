@@ -77,35 +77,30 @@
           <component id="7e8f7" class="javax.swing.JButton" binding="addButton">
             <constraints/>
             <properties>
-              <icon value="general/add.png"/>
               <toolTipText value="Add"/>
             </properties>
           </component>
           <component id="dda18" class="javax.swing.JButton" binding="removeButton">
             <constraints/>
             <properties>
-              <icon value="general/remove.png"/>
               <toolTipText value="Remove"/>
             </properties>
           </component>
           <component id="14ce" class="javax.swing.JButton" binding="upButton" default-binding="true">
             <constraints/>
             <properties>
-              <icon value="actions/moveUp.png"/>
               <toolTipText value="Move Up"/>
             </properties>
           </component>
           <component id="6632e" class="javax.swing.JButton" binding="downButton" default-binding="true">
             <constraints/>
             <properties>
-              <icon value="actions/moveDown.png"/>
               <toolTipText value="Move Down"/>
             </properties>
           </component>
           <component id="c6a16" class="javax.swing.JButton" binding="actionsButton">
             <constraints/>
             <properties>
-              <icon value="general/gearPlain.png"/>
               <text value=""/>
               <toolTipText value="Actions"/>
             </properties>

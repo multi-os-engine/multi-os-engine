@@ -235,4 +235,9 @@ public class TKTokenWatcher extends NSObject {
     @Generated
     @Selector("tokenInfoForTokenID:")
     public native TKTokenWatcherTokenInfo tokenInfoForTokenID(@NotNull String tokenID);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

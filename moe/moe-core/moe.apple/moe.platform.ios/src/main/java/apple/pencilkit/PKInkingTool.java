@@ -241,4 +241,19 @@ public class PKInkingTool extends PKTool {
     @Generated
     @Selector("ink")
     public native PKInk ink();
+
+    /**
+     * The PencilKit version required to use this inking tool.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("requiredContentVersion")
+    @NInt
+    public native long requiredContentVersion();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -291,4 +291,9 @@ public class NEEvaluateConnectionRule extends NSObject implements NSSecureCoding
     @Generated
     @Selector("useDNSServers")
     public native NSArray<String> useDNSServers();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

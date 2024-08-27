@@ -176,4 +176,31 @@ public class WKPDFConfiguration extends NSObject implements NSCopying {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * A Boolean value indicating whether the PDF should allow transparent backgrounds.
+     * 
+     * The default value is `NO`.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("allowTransparentBackground")
+    public native boolean allowTransparentBackground();
+
+    /**
+     * A Boolean value indicating whether the PDF should allow transparent backgrounds.
+     * 
+     * The default value is `NO`.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("setAllowTransparentBackground:")
+    public native void setAllowTransparentBackground(boolean value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

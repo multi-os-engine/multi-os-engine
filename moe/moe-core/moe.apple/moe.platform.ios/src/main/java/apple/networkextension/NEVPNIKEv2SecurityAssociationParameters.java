@@ -183,7 +183,8 @@ public class NEVPNIKEv2SecurityAssociationParameters extends NSObject implements
     /**
      * [@property] diffieHellmanGroup
      * 
-     * The Diffie Hellman group used by the Security Association. Default is NEVPNIKEv2DiffieHellmanGroup2.
+     * The Diffie Hellman group used by the Security Association. Default is NEVPNIKEv2DiffieHellmanGroup14 starting in
+     * macOS 11, iOS 14, and tvOS 17. Prior to that the default was NEVPNIKEv2DiffieHellmanGroup2.
      * 
      * API-Since: 8.0
      */
@@ -199,8 +200,10 @@ public class NEVPNIKEv2SecurityAssociationParameters extends NSObject implements
     /**
      * [@property] encryptionAlgorithm
      * 
-     * The algorithm used by the Security Association to encrypt and decrypt data. Default is
-     * NEVPNIKEv2EncryptionAlgorithm3DES.
+     * The algorithm used by the Security Association to encrypt and decrypt data. On macOS and iOS, the default is
+     * NEVPNIKEv2EncryptionAlgorithmAES256 starting in macOS 11 and iOS 14.
+     * Prior to that the default was NEVPNIKEv2EncryptionAlgorithm3DES. On tvOS, the default is
+     * NEVPNIKEv2EncryptionAlgorithmAES256GCM.
      * 
      * API-Since: 8.0
      */
@@ -220,9 +223,10 @@ public class NEVPNIKEv2SecurityAssociationParameters extends NSObject implements
     /**
      * [@property] integrityAlgorithm
      * 
-     * The algorithm used by the Security Association to verify the integrity of data. Default is
-     * NEVPNIKEv2IntegrityAlgorithmSHA96. The IKE psedo-random function algorithm will be inferred based on the
-     * integrity algorithm.
+     * The algorithm used by the Security Association to verify the integrity of data. The IKE psedo-random function
+     * algorithm will be inferred based on the integrity algorithm.
+     * Default is NEVPNIKEv2IntegrityAlgorithmSHA256 starting in macOS 11, iOS 14, and tvOS 17. Prior to that the
+     * default was NEVPNIKEv2IntegrityAlgorithmSHA96.
      * 
      * API-Since: 8.0
      */
@@ -247,7 +251,8 @@ public class NEVPNIKEv2SecurityAssociationParameters extends NSObject implements
     /**
      * [@property] diffieHellmanGroup
      * 
-     * The Diffie Hellman group used by the Security Association. Default is NEVPNIKEv2DiffieHellmanGroup2.
+     * The Diffie Hellman group used by the Security Association. Default is NEVPNIKEv2DiffieHellmanGroup14 starting in
+     * macOS 11, iOS 14, and tvOS 17. Prior to that the default was NEVPNIKEv2DiffieHellmanGroup2.
      * 
      * API-Since: 8.0
      */
@@ -258,8 +263,10 @@ public class NEVPNIKEv2SecurityAssociationParameters extends NSObject implements
     /**
      * [@property] encryptionAlgorithm
      * 
-     * The algorithm used by the Security Association to encrypt and decrypt data. Default is
-     * NEVPNIKEv2EncryptionAlgorithm3DES.
+     * The algorithm used by the Security Association to encrypt and decrypt data. On macOS and iOS, the default is
+     * NEVPNIKEv2EncryptionAlgorithmAES256 starting in macOS 11 and iOS 14.
+     * Prior to that the default was NEVPNIKEv2EncryptionAlgorithm3DES. On tvOS, the default is
+     * NEVPNIKEv2EncryptionAlgorithmAES256GCM.
      * 
      * API-Since: 8.0
      */
@@ -270,9 +277,10 @@ public class NEVPNIKEv2SecurityAssociationParameters extends NSObject implements
     /**
      * [@property] integrityAlgorithm
      * 
-     * The algorithm used by the Security Association to verify the integrity of data. Default is
-     * NEVPNIKEv2IntegrityAlgorithmSHA96. The IKE psedo-random function algorithm will be inferred based on the
-     * integrity algorithm.
+     * The algorithm used by the Security Association to verify the integrity of data. The IKE psedo-random function
+     * algorithm will be inferred based on the integrity algorithm.
+     * Default is NEVPNIKEv2IntegrityAlgorithmSHA256 starting in macOS 11, iOS 14, and tvOS 17. Prior to that the
+     * default was NEVPNIKEv2IntegrityAlgorithmSHA96.
      * 
      * API-Since: 8.0
      */
@@ -298,4 +306,9 @@ public class NEVPNIKEv2SecurityAssociationParameters extends NSObject implements
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

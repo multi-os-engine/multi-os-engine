@@ -31,6 +31,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.opaque.dispatch_queue_t;
 
 /**
  * API-Since: 10.3
@@ -195,7 +196,7 @@ public class AVContentKeySession extends NSObject {
     @Nullable
     @Generated
     @Selector("delegateQueue")
-    public native NSObject delegateQueue();
+    public native dispatch_queue_t delegateQueue();
 
     @Generated
     @Selector("description")
@@ -417,7 +418,7 @@ public class AVContentKeySession extends NSObject {
     @Generated
     @Selector("setDelegate:queue:")
     public native void setDelegateQueue(@Nullable @Mapped(ObjCObjectMapper.class) AVContentKeySessionDelegate delegate,
-            @Nullable NSObject delegateQueue);
+            @Nullable dispatch_queue_t delegateQueue);
 
     @Generated
     @Selector("setVersion:")
@@ -515,4 +516,9 @@ public class AVContentKeySession extends NSObject {
         void call_invalidatePersistableContentKeyOptionsCompletionHandler(@Nullable NSData secureTokenData,
                 @Nullable NSError error);
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

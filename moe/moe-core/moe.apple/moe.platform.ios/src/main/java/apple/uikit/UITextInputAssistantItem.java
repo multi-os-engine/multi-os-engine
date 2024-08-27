@@ -206,4 +206,9 @@ public class UITextInputAssistantItem extends NSObject {
     @Generated
     @Selector("trailingBarButtonGroups")
     public native NSArray<? extends UIBarButtonItemGroup> trailingBarButtonGroups();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

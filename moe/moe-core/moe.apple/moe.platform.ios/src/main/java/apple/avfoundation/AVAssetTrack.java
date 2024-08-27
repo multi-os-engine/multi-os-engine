@@ -704,4 +704,9 @@ public class AVAssetTrack extends NSObject implements NSCopying, AVAsynchronousK
     @Generated
     @Selector("makeSampleCursorWithPresentationTimeStamp:")
     public native AVSampleCursor makeSampleCursorWithPresentationTimeStamp(@ByValue CMTime presentationTimeStamp);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

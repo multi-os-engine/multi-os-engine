@@ -48,8 +48,6 @@ import org.jetbrains.annotations.Nullable;
 
 /**
  * SKRange object used to define a range of allowable values
- * 
- * API-Since: 8.0
  */
 @Generated
 @Library("SpriteKit")
@@ -272,4 +270,9 @@ public class SKRange extends NSObject implements NSSecureCoding, NSCopying {
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

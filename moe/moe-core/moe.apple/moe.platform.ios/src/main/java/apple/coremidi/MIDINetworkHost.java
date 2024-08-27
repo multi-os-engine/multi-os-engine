@@ -228,4 +228,9 @@ public class MIDINetworkHost extends NSObject {
     @Selector("port")
     @NUInt
     public native long port();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

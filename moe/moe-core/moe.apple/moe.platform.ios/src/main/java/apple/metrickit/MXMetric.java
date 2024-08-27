@@ -215,4 +215,9 @@ public class MXMetric extends NSObject implements NSSecureCoding {
     @Generated
     @Selector("dictionaryRepresentation")
     public native NSDictionary<?, ?> dictionaryRepresentation();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -209,6 +209,8 @@ public class CKOperation extends NSOperation {
      * 
      * Once this callback is called the operation will continue running even if the current process exits.
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
+     * This block may share mutable state with other blocks assigned to this operation, but any such mutable state
+     * should not be concurrently used outside of blocks assigned to this operation.
      * 
      * API-Since: 9.3
      */
@@ -256,6 +258,8 @@ public class CKOperation extends NSOperation {
      * 
      * Once this callback is called the operation will continue running even if the current process exits.
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
+     * This block may share mutable state with other blocks assigned to this operation, but any such mutable state
+     * should not be concurrently used outside of blocks assigned to this operation.
      * 
      * API-Since: 9.3
      */
@@ -360,4 +364,9 @@ public class CKOperation extends NSOperation {
     @Generated
     @Selector("setGroup:")
     public native void setGroup(@Nullable CKOperationGroup value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

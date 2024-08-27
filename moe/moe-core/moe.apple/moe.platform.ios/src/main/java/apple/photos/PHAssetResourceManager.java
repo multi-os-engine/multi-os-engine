@@ -224,4 +224,9 @@ public class PHAssetResourceManager extends NSObject {
         @Generated
         void call_writeDataForAssetResourceToFileOptionsCompletionHandler(@Nullable NSError error);
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

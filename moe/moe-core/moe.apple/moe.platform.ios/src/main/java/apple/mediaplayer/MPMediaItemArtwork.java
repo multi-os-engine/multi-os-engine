@@ -220,4 +220,9 @@ public class MPMediaItemArtwork extends NSObject {
         @Generated
         UIImage call_initWithBoundsSizeRequestHandler(@ByValue CGSize size);
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

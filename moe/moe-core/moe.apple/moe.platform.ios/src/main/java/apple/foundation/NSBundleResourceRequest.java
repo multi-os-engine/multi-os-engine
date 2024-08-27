@@ -303,4 +303,9 @@ public class NSBundleResourceRequest extends NSObject implements NSProgressRepor
         @Generated
         void call_conditionallyBeginAccessingResourcesWithCompletionHandler(boolean resourcesAvailable);
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

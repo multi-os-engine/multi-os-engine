@@ -395,4 +395,9 @@ public class UIAccessibilityCustomAction extends NSObject {
     @Generated
     @Selector("setImage:")
     public native void setImage(@Nullable UIImage value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

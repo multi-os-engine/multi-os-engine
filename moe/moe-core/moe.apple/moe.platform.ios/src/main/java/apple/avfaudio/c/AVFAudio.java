@@ -339,7 +339,6 @@ public final class AVFAudio {
     public static native String AVSampleRateConverterAlgorithm_MinimumPhase();
 
     /**
-     * input port types
      * Line level input on a dock connector
      * 
      * API-Since: 6.0
@@ -677,6 +676,7 @@ public final class AVFAudio {
     /**
      * Appropriate for applications that wish to minimize the effect of system-supplied signal
      * processing for input and/or output audio signals.
+     * This mode disables some dynamics processing on input and output resulting in a lower output playback level.
      * 
      * API-Since: 5.0
      */
@@ -1454,4 +1454,96 @@ public final class AVFAudio {
     @Generated public static final double AVAUDIOENGINE_HAVE_AUAUDIOUNIT = 1.0;
     @Generated public static final double AVAUDIOUNIT_HAVE_AUDIOUNIT = 1.0;
     @Generated public static final double AVAUDIOUNITCOMPONENT_HAVE_AUDIOCOMPONENT = 1.0;
+
+    /**
+     * input port types
+     * Continuity microphone for appletv.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVAudioSessionPortContinuityMicrophone();
+
+    /**
+     * Notification sent to registered listeners when the resolved rendering mode changes.
+     * 
+     * API-Since: 17.2
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String AVAudioSessionRenderingModeChangeNotification();
+
+    /**
+     * Notification sent to registered listeners when the rendering capabilities change.
+     * 
+     * API-Since: 17.2
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String AVAudioSessionRenderingCapabilitiesChangeNotification();
+
+    /**
+     * keys for AVAudioSessionRenderingModeChangeNotification
+     * Contains a payload of NSInteger representing the new resolved rendering mode
+     * 
+     * API-Since: 17.2
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String AVAudioSessionRenderingModeNewRenderingModeKey();
+
+    /**
+     * Posted when available voices for speech synthesis on the system have changed. For example, if new 3rd party
+     * voices are available through a downloaded app, or if a new personal voice is available and the app is authorized
+     * to access personal voices.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String AVSpeechSynthesisAvailableVoicesDidChangeNotification();
+
+    /**
+     * Notification sent to registered listeners when the application's input is muted
+     * or unmuted.
+     * 
+     * Check the notification's userInfo dictionary for the mute state AVAudioApplicationInputMuteStateKey
+     * which will have a boolean value 0 for unmuted or value 1 for muted.
+     * [@note] this notification will only be dispatched for state changes when there is an active record session (i.e.
+     * record or playAndRecord category).
+     * Setting the `inputMuted` state while the record session is not active is allowed and will be stored, but it will
+     * not trigger a notification for the
+     * state change. When the record session subsequently goes active, the `inputMuted` state will be applied, and this
+     * notification will be dispatched
+     * with the latest input muted state.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String AVAudioApplicationInputMuteStateChangeNotification();
+
+    /**
+     * Keys for AVAudioApplicationInputMuteStateChangeNotification
+     * Value is NSNumber type with boolean value 0 for unmuted or value 1 for muted (samples zeroed out)
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String AVAudioApplicationMuteStateKey();
 }

@@ -181,4 +181,9 @@ public class UIAccessibilityCustomRotorSearchPredicate extends NSObject {
     @Generated
     @Selector("setSearchDirection:")
     public native void setSearchDirection(@NInt long value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

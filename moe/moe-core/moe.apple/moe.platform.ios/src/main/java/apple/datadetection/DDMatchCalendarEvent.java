@@ -27,6 +27,13 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
+ * An object that represents a calendar date or date range that the data
+ * detection system matches.
+ * 
+ * The DataDetection framework returns a calendar event match in a
+ * `DDMatchCalendarEvent` object, which has only a beginning date, only an end
+ * date, or both a beginning date and an end date.
+ * 
  * API-Since: 15.0
  */
 @Generated
@@ -90,11 +97,17 @@ public class DDMatchCalendarEvent extends DDMatch {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * A date that represents the end of the event.
+     */
     @Nullable
     @Generated
     @Selector("endDate")
     public native NSDate endDate();
 
+    /**
+     * The time zone for the event’s end date.
+     */
     @Nullable
     @Generated
     @Selector("endTimeZone")
@@ -122,6 +135,9 @@ public class DDMatchCalendarEvent extends DDMatch {
     @Selector("instancesRespondToSelector:")
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
+    /**
+     * A Boolean value that indicates whether the event is an all-day event.
+     */
     @Generated
     @Selector("isAllDay")
     public native boolean isAllDay();
@@ -152,11 +168,17 @@ public class DDMatchCalendarEvent extends DDMatch {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * A date that represents the start of the event.
+     */
     @Nullable
     @Generated
     @Selector("startDate")
     public native NSDate startDate();
 
+    /**
+     * The time zone for the event’s start date.
+     */
     @Nullable
     @Generated
     @Selector("startTimeZone")
@@ -170,4 +192,9 @@ public class DDMatchCalendarEvent extends DDMatch {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

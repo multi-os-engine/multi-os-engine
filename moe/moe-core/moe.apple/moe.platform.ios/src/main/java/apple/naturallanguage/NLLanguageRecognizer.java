@@ -32,8 +32,6 @@ import org.jetbrains.annotations.Nullable;
  * set of language candidates with probabilities. It is also possible to constrain the identification by specifying
  * either a list of hints about known prior probabilities for languages, or a list of constraint languages into which
  * the predictions are constrained to fall, or both.
- * 
- * API-Since: 12.0
  */
 @Generated
 @Library("NaturalLanguage")
@@ -248,4 +246,9 @@ public class NLLanguageRecognizer extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

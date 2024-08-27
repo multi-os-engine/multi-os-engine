@@ -253,4 +253,9 @@ public class NSExtensionItem extends NSObject implements NSCopying, NSSecureCodi
     @Generated
     @Selector("userInfo")
     public native NSDictionary<?, ?> userInfo();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

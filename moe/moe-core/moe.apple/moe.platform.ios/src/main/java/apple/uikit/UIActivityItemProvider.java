@@ -47,9 +47,6 @@ import apple.corefoundation.struct.CGSize;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-/**
- * API-Since: 6.0
- */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -243,4 +240,9 @@ public class UIActivityItemProvider extends NSOperation implements UIActivityIte
     @Selector("activityViewControllerLinkMetadata:")
     public native LPLinkMetadata activityViewControllerLinkMetadata(
             @NotNull UIActivityViewController activityViewController);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

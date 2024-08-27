@@ -224,4 +224,9 @@ public class PKContact extends NSObject {
     @Generated
     @Selector("supplementarySubLocality")
     public native String supplementarySubLocality();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

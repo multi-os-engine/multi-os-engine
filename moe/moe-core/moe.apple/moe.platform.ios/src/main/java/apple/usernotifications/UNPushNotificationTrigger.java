@@ -178,4 +178,9 @@ public class UNPushNotificationTrigger extends UNNotificationTrigger {
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

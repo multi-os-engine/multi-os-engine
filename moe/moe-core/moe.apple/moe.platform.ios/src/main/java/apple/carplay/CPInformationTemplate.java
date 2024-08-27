@@ -25,6 +25,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.carplay.protocol.CPBarButtonProviding;
 
 /**
  * API-Since: 14.0
@@ -33,7 +34,7 @@ import org.jetbrains.annotations.Nullable;
 @Library("CarPlay")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class CPInformationTemplate extends CPTemplate {
+public class CPInformationTemplate extends CPTemplate implements CPBarButtonProviding {
     static {
         NatJ.register();
     }
@@ -246,4 +247,36 @@ public class CPInformationTemplate extends CPTemplate {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("backButton")
+    @Nullable
+    public native CPBarButton backButton();
+
+    @Generated
+    @Selector("leadingNavigationBarButtons")
+    @NotNull
+    public native NSArray<? extends CPBarButton> leadingNavigationBarButtons();
+
+    @Generated
+    @Selector("setBackButton:")
+    public native void setBackButton(@Nullable CPBarButton value);
+
+    @Generated
+    @Selector("setLeadingNavigationBarButtons:")
+    public native void setLeadingNavigationBarButtons(@NotNull NSArray<? extends CPBarButton> value);
+
+    @Generated
+    @Selector("setTrailingNavigationBarButtons:")
+    public native void setTrailingNavigationBarButtons(@NotNull NSArray<? extends CPBarButton> value);
+
+    @Generated
+    @Selector("trailingNavigationBarButtons")
+    @NotNull
+    public native NSArray<? extends CPBarButton> trailingNavigationBarButtons();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -460,4 +460,9 @@ public class CPPointOfInterest extends NSObject implements NSSecureCoding {
     @Generated
     @Selector("setSelectedPinImage:")
     public native void setSelectedPinImage(@Nullable UIImage value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

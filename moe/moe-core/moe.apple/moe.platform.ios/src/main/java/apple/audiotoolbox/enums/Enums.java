@@ -2434,4 +2434,17 @@ public final class Enums {
     @Generated public static final int kNewTimePitchParam_EnableTransientPreservation = 0x00000007;
     @Generated public static final int kAudioUnitProperty_MIDIOutputBufferSizeHint = 0x00000042;
     @Generated public static final int kAUParameterListener_AnyParameter = 0xFFFFFFFF;
+    /**
+     * API-Since: 17.0
+     */
+    @Generated public static final int kAUVoiceIOProperty_OtherAudioDuckingConfiguration = 0x0000083C;
+    @Generated public static final int kAudioUnitErr_ComponentManagerNotSupported = 0xFFFEFB4C;
+    @Generated public static final int kAudioCodecPropertyAdjustCompressionProfile = 0x5E70726F;
+    @Generated public static final int kAudioCodecPropertyAdjustTargetLevelConstant = 0x5E746C63;
+    @Generated public static final int kAudioCodecPropertyAdjustTargetLevel = 0x5E70746C;
+    @Generated public static final int kDynamicRangeCompressionProfile_None = 0x00000000;
+    @Generated public static final int kDynamicRangeCompressionProfile_LateNight = 0x00000001;
+    @Generated public static final int kDynamicRangeCompressionProfile_NoisyEnvironment = 0x00000002;
+    @Generated public static final int kDynamicRangeCompressionProfile_LimitedPlaybackRange = 0x00000003;
+    @Generated public static final int kDynamicRangeCompressionProfile_GeneralCompression = 0x00000006;
 }

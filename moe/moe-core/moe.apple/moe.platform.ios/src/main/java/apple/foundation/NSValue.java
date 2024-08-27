@@ -514,4 +514,9 @@ public class NSValue extends NSObject implements NSCopying, NSSecureCoding {
     @Generated
     @Selector("valueWithCMVideoDimensions:")
     public static native NSValue valueWithCMVideoDimensions(@ByValue CMVideoDimensions dimensions);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

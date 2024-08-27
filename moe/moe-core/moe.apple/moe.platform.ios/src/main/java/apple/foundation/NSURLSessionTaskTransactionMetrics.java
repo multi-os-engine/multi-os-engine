@@ -538,4 +538,9 @@ public class NSURLSessionTaskTransactionMetrics extends NSObject {
     @Selector("domainResolutionProtocol")
     @NInt
     public native long domainResolutionProtocol();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -612,4 +612,9 @@ public class UISearchController extends UIViewController implements UIViewContro
     @Generated
     @Selector("setSearchSuggestions:")
     public native void setSearchSuggestions(@Nullable NSArray<?> value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

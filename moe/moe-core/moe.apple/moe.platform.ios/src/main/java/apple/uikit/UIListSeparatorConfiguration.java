@@ -304,4 +304,9 @@ public class UIListSeparatorConfiguration extends NSObject implements NSCopying,
     @Generated
     @Selector("visualEffect")
     public native UIVisualEffect visualEffect();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

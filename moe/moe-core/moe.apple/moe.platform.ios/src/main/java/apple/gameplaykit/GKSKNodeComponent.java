@@ -47,8 +47,6 @@ import org.jetbrains.annotations.Nullable;
 
 /**
  * A component that encapsulates a SpriteKit node.
- * 
- * API-Since: 10.0
  */
 @Generated
 @Library("GameplayKit")
@@ -228,4 +226,9 @@ public class GKSKNodeComponent extends GKComponent implements GKAgentDelegate {
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

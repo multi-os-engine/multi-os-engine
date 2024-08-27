@@ -170,4 +170,9 @@ public class MTLStructType extends MTLType {
     @Generated
     @Selector("members")
     public native NSArray<? extends MTLStructMember> members();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

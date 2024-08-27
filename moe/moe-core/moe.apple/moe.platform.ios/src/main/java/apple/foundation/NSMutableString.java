@@ -594,4 +594,9 @@ public class NSMutableString extends NSString {
     public static native NSMutableString stringWithValidatedFormatValidFormatSpecifiersError(@NotNull String format,
             @NotNull String validFormatSpecifiers, @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error,
             Object... varargs);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -43,8 +43,6 @@ import org.jetbrains.annotations.Nullable;
 
 /**
  * Used to track a file being transferred.
- * 
- * API-Since: 9.0
  */
 @Generated
 @Library("WatchConnectivity")
@@ -184,4 +182,9 @@ public class WCSessionFileTransfer extends NSObject {
     @Generated
     @Selector("progress")
     public native NSProgress progress();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

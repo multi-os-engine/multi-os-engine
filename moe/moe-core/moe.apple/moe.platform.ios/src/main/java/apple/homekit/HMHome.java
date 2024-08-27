@@ -898,4 +898,9 @@ public class HMHome extends NSObject {
         @Generated
         NSXPCConnection call_matterControllerXPCConnectBlock_ret();
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

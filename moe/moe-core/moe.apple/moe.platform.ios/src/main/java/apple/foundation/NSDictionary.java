@@ -1255,4 +1255,9 @@ public class NSDictionary<_KeyType, _ObjectType> extends NSObject implements NSC
     @Selector("writeToURL:error:")
     public native boolean writeToURLError(@NotNull NSURL url,
             @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

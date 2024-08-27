@@ -211,4 +211,9 @@ public class NSConditionLock extends NSObject implements NSLocking {
     @Generated
     @Selector("unlockWithCondition:")
     public native void unlockWithCondition(@NInt long condition);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

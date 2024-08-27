@@ -16,6 +16,7 @@ limitations under the License.
 
 package org.moe.idea.ui;
 
+import com.intellij.icons.AllIcons;
 import com.intellij.openapi.module.Module;
 import com.intellij.openapi.ui.DialogWrapper;
 import com.intellij.ui.DocumentAdapter;
@@ -60,6 +61,12 @@ public class BindingEditorListForm extends JPanel {
     private boolean inited = false;
 
     public BindingEditorListForm() {
+        addButton.setIcon(AllIcons.General.Add);
+        removeButton.setIcon(AllIcons.General.Remove);
+        upButton.setIcon(AllIcons.Actions.MoveUp);
+        downButton.setIcon(AllIcons.Actions.MoveDown);
+        actionsButton.setIcon(AllIcons.General.GearPlain);
+
         this.bindingList = new ArrayList<AbstractBinding>();
         this.listModel = new DefaultListModel();
         bindingsList.setModel(listModel);
@@ -231,6 +238,7 @@ public class BindingEditorListForm extends JPanel {
 
         String path = bindings.getOutputDirectory();
 
+        // set sensible defaults and save
         if (path == null || path.isEmpty()) {
             path = "src/main/java";
             bindings.setOutputDirectory(path);
@@ -238,6 +246,7 @@ public class BindingEditorListForm extends JPanel {
         }
         outputDirectoryTextField.setText(path);
 
+        // set sensible defaults and save
         String platform = bindings.getPlatform();
         if (platform == null || platform.isEmpty()) {
             platform = Bindings.PLATFORM_IOS;

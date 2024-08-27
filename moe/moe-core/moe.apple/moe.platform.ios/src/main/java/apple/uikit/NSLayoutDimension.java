@@ -223,4 +223,9 @@ public class NSLayoutDimension extends NSLayoutAnchor<NSLayoutDimension> {
     @Generated
     @Selector("init")
     public native NSLayoutDimension init();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

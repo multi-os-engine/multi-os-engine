@@ -41,6 +41,7 @@ public interface UIViewControllerPreviewingDelegate {
     /**
      * API-Since: 9.0
      * Deprecated-Since: 13.0
+     * Deprecated-Message: UIViewControllerPreviewing is deprecated. Please use UIContextMenuInteraction.
      */
     @Deprecated
     @Generated
@@ -54,6 +55,7 @@ public interface UIViewControllerPreviewingDelegate {
      * 
      * API-Since: 9.0
      * Deprecated-Since: 13.0
+     * Deprecated-Message: UIViewControllerPreviewing is deprecated. Please use UIContextMenuInteraction.
      */
     @Nullable
     @Deprecated

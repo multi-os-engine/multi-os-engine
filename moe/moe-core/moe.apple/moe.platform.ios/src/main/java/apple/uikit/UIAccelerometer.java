@@ -206,4 +206,9 @@ public class UIAccelerometer extends NSObject {
     @Generated
     @Selector("updateInterval")
     public native double updateInterval();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

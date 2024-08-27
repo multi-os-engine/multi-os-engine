@@ -249,4 +249,45 @@ public class PHPickerViewController extends UIViewController {
     @Selector("moveAssetWithIdentifier:afterAssetWithIdentifier:")
     public native void moveAssetWithIdentifierAfterAssetWithIdentifier(@NotNull String identifier,
             @Nullable String afterIdentifier);
+
+    /**
+     * Scrolls content to the initial position if possible.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("scrollToInitialPosition")
+    public native void scrollToInitialPosition();
+
+    /**
+     * Updates the picker using the configuration.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("updatePickerUsingConfiguration:")
+    public native void updatePickerUsingConfiguration(@NotNull PHPickerUpdateConfiguration configuration);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
+
+    /**
+     * Zooms in content if possible.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("zoomIn")
+    public native void zoomIn();
+
+    /**
+     * Zooms out content if possible.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("zoomOut")
+    public native void zoomOut();
 }

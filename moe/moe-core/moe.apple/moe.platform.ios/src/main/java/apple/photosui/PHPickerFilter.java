@@ -307,4 +307,9 @@ public class PHPickerFilter extends NSObject implements NSCopying {
     @Generated
     @Selector("timelapseVideosFilter")
     public static native PHPickerFilter timelapseVideosFilter();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

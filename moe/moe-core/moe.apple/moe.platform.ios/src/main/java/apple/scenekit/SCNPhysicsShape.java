@@ -253,4 +253,9 @@ public class SCNPhysicsShape extends NSObject implements NSCopying, NSSecureCodi
     @Generated
     @Selector("transforms")
     public native NSArray<? extends NSValue> transforms();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

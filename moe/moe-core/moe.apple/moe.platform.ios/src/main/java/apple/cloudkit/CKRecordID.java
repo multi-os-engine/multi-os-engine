@@ -211,4 +211,9 @@ public class CKRecordID extends NSObject implements NSSecureCoding, NSCopying {
     @Generated
     @Selector("zoneID")
     public native CKRecordZoneID zoneID();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

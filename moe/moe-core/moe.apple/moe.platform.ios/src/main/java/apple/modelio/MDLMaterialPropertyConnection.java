@@ -188,4 +188,9 @@ public class MDLMaterialPropertyConnection extends NSObject implements MDLNamed 
     @Generated
     @Selector("setName:")
     public native void setName(@NotNull String value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

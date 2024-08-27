@@ -532,4 +532,9 @@ public class INGetCarPowerLevelStatusIntentResponse extends INIntentResponse {
     @Generated
     @Selector("setMinimumBatteryCapacity:")
     public native void setMinimumBatteryCapacity(@Nullable NSMeasurement<NSUnitEnergy> value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

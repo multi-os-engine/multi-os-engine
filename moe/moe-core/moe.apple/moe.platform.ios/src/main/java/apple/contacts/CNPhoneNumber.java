@@ -49,8 +49,6 @@ import org.jetbrains.annotations.Nullable;
  * An immutable value object representing a phone number.
  * 
  * CNPhoneNumber is thread safe.
- * 
- * API-Since: 9.0
  */
 @Generated
 @Library("Contacts")
@@ -222,4 +220,9 @@ public class CNPhoneNumber extends NSObject implements NSCopying, NSSecureCoding
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

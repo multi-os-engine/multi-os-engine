@@ -49,9 +49,6 @@ import apple.corefoundation.struct.CGRect;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-/**
- * API-Since: 7.0
- */
 @Generated
 @Library("MapKit")
 @Runtime(ObjCRuntime.class)
@@ -259,4 +256,9 @@ public class MKOverlayRenderer extends NSObject {
     @Generated
     @Selector("setBlendMode:")
     public native void setBlendMode(int value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

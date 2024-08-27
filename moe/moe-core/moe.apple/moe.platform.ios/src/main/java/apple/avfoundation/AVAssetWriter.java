@@ -557,6 +557,9 @@ public class AVAssetWriter extends NSObject {
      * successfully opened and played up to multiples of the specified time interval. The default value of this property
      * is kCMTimeInvalid, which indicates that movie fragments should not be used.
      * 
+     * When using movie fragments, for best writing performance to external storage devices, set the
+     * movieFragmentInterval to 10 seconds or greater.
+     * 
      * This property cannot be set after writing has started.
      */
     @Generated
@@ -667,6 +670,9 @@ public class AVAssetWriter extends NSObject {
      * When movie fragments are used, a partially written asset whose writing is unexpectedly interrupted can be
      * successfully opened and played up to multiples of the specified time interval. The default value of this property
      * is kCMTimeInvalid, which indicates that movie fragments should not be used.
+     * 
+     * When using movie fragments, for best writing performance to external storage devices, set the
+     * movieFragmentInterval to 10 seconds or greater.
      * 
      * This property cannot be set after writing has started.
      */
@@ -1106,4 +1112,46 @@ public class AVAssetWriter extends NSObject {
     @Generated
     @Selector("setProducesCombinableFragments:")
     public native void setProducesCombinableFragments(boolean value);
+
+    /**
+     * [@property] initialMovieFragmentInterval
+     * 
+     * For file types that support movie fragments, specifies the interval at which initial movie fragment should be
+     * written.
+     * 
+     * This property is irrelevant if the movieFragmentInterval property is not set. The default value is
+     * kCMTimeInvalid, which indicates that the interval for initial movie fragment is same as the one specified by
+     * movieFragmentInterval property.
+     * 
+     * This property cannot be set after writing has started.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("initialMovieFragmentInterval")
+    @ByValue
+    public native CMTime initialMovieFragmentInterval();
+
+    /**
+     * [@property] initialMovieFragmentInterval
+     * 
+     * For file types that support movie fragments, specifies the interval at which initial movie fragment should be
+     * written.
+     * 
+     * This property is irrelevant if the movieFragmentInterval property is not set. The default value is
+     * kCMTimeInvalid, which indicates that the interval for initial movie fragment is same as the one specified by
+     * movieFragmentInterval property.
+     * 
+     * This property cannot be set after writing has started.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("setInitialMovieFragmentInterval:")
+    public native void setInitialMovieFragmentInterval(@ByValue CMTime value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

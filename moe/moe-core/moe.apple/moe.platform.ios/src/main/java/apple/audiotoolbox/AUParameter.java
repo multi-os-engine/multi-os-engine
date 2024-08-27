@@ -326,4 +326,9 @@ public class AUParameter extends AUParameterNode implements NSSecureCoding {
     @Generated
     @Selector("valueStrings")
     public native NSArray<String> valueStrings();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

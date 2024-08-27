@@ -168,4 +168,9 @@ public class INExtension extends NSObject implements INIntentHandlerProviding {
     @Generated
     @Selector("init")
     public native INExtension init();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

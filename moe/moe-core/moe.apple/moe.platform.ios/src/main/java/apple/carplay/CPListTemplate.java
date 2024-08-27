@@ -456,4 +456,9 @@ public class CPListTemplate extends CPTemplate implements CPBarButtonProviding {
     @Generated
     @Selector("setAssistantCellConfiguration:")
     public native void setAssistantCellConfiguration(@Nullable CPAssistantCellConfiguration value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

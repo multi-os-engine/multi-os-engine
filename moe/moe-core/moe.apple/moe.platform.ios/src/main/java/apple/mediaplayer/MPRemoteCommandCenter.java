@@ -295,4 +295,9 @@ public class MPRemoteCommandCenter extends NSObject {
     @Generated
     @Selector("togglePlayPauseCommand")
     public native MPRemoteCommand togglePlayPauseCommand();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

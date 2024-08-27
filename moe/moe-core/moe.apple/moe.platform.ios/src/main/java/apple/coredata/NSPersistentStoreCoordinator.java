@@ -494,4 +494,29 @@ public class NSPersistentStoreCoordinator extends NSObject implements NSLocking 
     @Generated
     @Selector("currentPersistentHistoryTokenFromStores:")
     public native NSPersistentHistoryToken currentPersistentHistoryTokenFromStores(@Nullable NSArray<?> stores);
+
+    /**
+     * Finish deferred work from lightweight migration
+     * 
+     * API-Since: 14.0
+     */
+    @Generated
+    @Selector("finishDeferredLightweightMigration:")
+    public native boolean finishDeferredLightweightMigration(
+            @ReferenceInfo(type = NSError.class) @Nullable Ptr<NSError> error);
+
+    /**
+     * Finish deferred work from lightweight migration for a single table
+     * 
+     * API-Since: 14.0
+     */
+    @Generated
+    @Selector("finishDeferredLightweightMigrationTask:")
+    public native boolean finishDeferredLightweightMigrationTask(
+            @ReferenceInfo(type = NSError.class) @Nullable Ptr<NSError> error);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

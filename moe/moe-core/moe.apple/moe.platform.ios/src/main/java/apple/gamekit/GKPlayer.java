@@ -43,9 +43,6 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-/**
- * API-Since: 4.1
- */
 @Generated
 @Library("GameKit")
 @Runtime(ObjCRuntime.class)
@@ -151,7 +148,6 @@ public class GKPlayer extends GKBasePlayer {
      * 
      * API-Since: 4.1
      * Deprecated-Since: 14.5
-     * Deprecated-Message: use GKLocalPlayer.loadFriendsWithIdentifiers to load a friend's GKPlayer object.
      */
     @Deprecated
     @Generated
@@ -223,7 +219,6 @@ public class GKPlayer extends GKBasePlayer {
      * 
      * API-Since: 4.1
      * Deprecated-Since: 8.0
-     * Deprecated-Message: use -[GKLocalPlayer loadFriendPlayers...]
      */
     @Generated
     @Deprecated
@@ -241,7 +236,7 @@ public class GKPlayer extends GKBasePlayer {
     /**
      * API-Since: 4.1
      * Deprecated-Since: 13.0
-     * Deprecated-Message: use the teamPlayerID property to identify a player
+     * Deprecated-Message: Use either the gamePlayerID or teamPlayerID property to identify a player.
      */
     @NotNull
     @Deprecated
@@ -303,4 +298,9 @@ public class GKPlayer extends GKBasePlayer {
     @Generated
     @Selector("isInvitable")
     public native boolean isInvitable();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

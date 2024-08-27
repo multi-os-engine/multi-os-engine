@@ -220,4 +220,9 @@ public class INPersonHandle extends NSObject implements NSCopying, NSSecureCodin
     @Generated
     @Selector("value")
     public native String value();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

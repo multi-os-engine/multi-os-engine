@@ -202,4 +202,9 @@ public class EASession extends NSObject {
     @Generated
     @Selector("protocolString")
     public native String protocolString();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

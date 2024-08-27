@@ -340,4 +340,9 @@ public class AVCapturePhotoBracketSettings extends AVCapturePhotoSettings {
     public static native AVCapturePhotoBracketSettings photoSettingsWithRawPixelFormatTypeRawFileTypeProcessedFormatProcessedFileType(
             int rawPixelFormatType, @Nullable String rawFileType, @Nullable NSDictionary<String, ?> processedFormat,
             @Nullable String processedFileType);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

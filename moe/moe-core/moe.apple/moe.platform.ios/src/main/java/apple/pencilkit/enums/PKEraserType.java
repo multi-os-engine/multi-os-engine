@@ -11,4 +11,8 @@ public final class PKEraserType {
 
     @Generated @NInt public static final long Vector = 0x0000000000000000L;
     @Generated @NInt public static final long Bitmap = 0x0000000000000001L;
+    /**
+     * API-Since: 16.4
+     */
+    @Generated @NInt public static final long FixedWidthBitmap = 0x0000000000000002L;
 }

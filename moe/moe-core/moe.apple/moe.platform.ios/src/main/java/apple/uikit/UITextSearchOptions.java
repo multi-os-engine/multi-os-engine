@@ -160,4 +160,9 @@ public class UITextSearchOptions extends NSObject {
     @Selector("wordMatchMethod")
     @NInt
     public native long wordMatchMethod();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

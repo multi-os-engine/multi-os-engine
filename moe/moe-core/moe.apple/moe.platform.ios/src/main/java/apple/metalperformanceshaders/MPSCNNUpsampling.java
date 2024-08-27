@@ -213,4 +213,9 @@ public class MPSCNNUpsampling extends MPSCNNKernel {
     @Generated
     @Selector("alignCorners")
     public native boolean alignCorners();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -288,4 +288,9 @@ public class NEVPNConnection extends NSObject {
         @Generated
         void call_fetchLastDisconnectErrorWithCompletionHandler(@Nullable NSError arg0);
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

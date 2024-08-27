@@ -42,8 +42,6 @@ import org.jetbrains.annotations.Nullable;
 
 /**
  * GKInvite represents an accepted game invite, it is used to create a GKMatchmakerViewController
- * 
- * API-Since: 4.1
  */
 @Generated
 @Library("GameKit")
@@ -168,7 +166,6 @@ public class GKInvite extends NSObject {
      * 
      * API-Since: 4.1
      * Deprecated-Since: 8.0
-     * Deprecated-Message: This property is obsolete, use sender instead
      */
     @NotNull
     @Generated
@@ -206,4 +203,9 @@ public class GKInvite extends NSObject {
     @Generated
     @Selector("sender")
     public native GKPlayer sender();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

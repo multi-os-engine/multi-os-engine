@@ -212,4 +212,9 @@ public class INCarSignalOptionsResolutionResult extends INIntentResolutionResult
     @Generated
     @Selector("unsupportedWithReason:")
     public static native INCarSignalOptionsResolutionResult unsupportedWithReason(@NInt long reason);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

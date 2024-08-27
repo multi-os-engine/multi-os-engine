@@ -190,4 +190,9 @@ public class WKSecurityOrigin extends NSObject {
     @Generated
     @Selector("protocol")
     public native String protocol();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

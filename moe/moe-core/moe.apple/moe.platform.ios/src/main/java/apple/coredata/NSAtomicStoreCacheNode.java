@@ -223,4 +223,9 @@ public class NSAtomicStoreCacheNode extends NSObject {
     @Selector("valueForKey:")
     @MappedReturn(ObjCObjectMapper.class)
     public native Object valueForKey(@NotNull String key);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

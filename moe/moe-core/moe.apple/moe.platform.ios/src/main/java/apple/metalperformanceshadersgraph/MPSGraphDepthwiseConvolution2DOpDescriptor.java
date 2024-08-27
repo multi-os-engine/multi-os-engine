@@ -27,13 +27,22 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
+ * This is a class that defines parameters for a 2d depthwise convolution operation.
+ * 
+ * A `MPSGraphDepthwiseConvolution2DOpDescriptor` defines constant parameters for 2d depthwise convolutions.
+ * Use this class with ``MPSGraph/depthwiseConvolution2DWithSourceTensor:weightsTensor:descriptor:name:``,
+ * ``MPSGraph/depthwiseConvolution2DDataGradientWithIncomingGradientTensor:weightsTensor:outputShape:descriptor:name:``
+ * and
+ * ``MPSGraph/depthwiseConvolution2DWeightsGradientWithIncomingGradientTensor:sourceTensor:outputShape:descriptor:name:``
+ * methods.
+ * 
  * API-Since: 14.0
  */
 @Generated
 @Library("MetalPerformanceShadersGraph")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class MPSGraphDepthwiseConvolution2DOpDescriptor extends NSObject implements NSCopying {
+public class MPSGraphDepthwiseConvolution2DOpDescriptor extends MPSGraphObject implements NSCopying {
     static {
         NatJ.register();
     }
@@ -89,6 +98,11 @@ public class MPSGraphDepthwiseConvolution2DOpDescriptor extends NSObject impleme
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(@Nullable VoidPtr zone);
 
+    /**
+     * The data layout of the input data (in forward pass).
+     * 
+     * See: ``MPSGraphTensorNamedDataLayout``.
+     */
     @Generated
     @Selector("dataLayout")
     @NUInt
@@ -102,11 +116,36 @@ public class MPSGraphDepthwiseConvolution2DOpDescriptor extends NSObject impleme
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * Creates a 2d depthwise convolution descriptor with given properties and default values.
+     * 
+     * - Parameters:
+     * - dataLayout: See `dataLayout` property.
+     * - weightsLayout: See `weightsLayout` property.
+     * - Returns: The descriptor on autoreleasepool.
+     */
     @Generated
     @Selector("descriptorWithDataLayout:weightsLayout:")
     public static native MPSGraphDepthwiseConvolution2DOpDescriptor descriptorWithDataLayoutWeightsLayout(
             @NUInt long dataLayout, @NUInt long weightsLayout);
 
+    /**
+     * Creates a 2d depthwise convolution descriptor with given values.
+     * 
+     * - Parameters:
+     * - strideInX: See `strideInX` property.
+     * - strideInY: See `strideInY` property.
+     * - dilationRateInX: See `dilationRateInX` property.
+     * - dilationRateInY: See `dilationRateInY` property.
+     * - paddingLeft: See `paddingLeft` property.
+     * - paddingRight: See `paddingRight` property.
+     * - paddingTop: See `paddingTop` property.
+     * - paddingBottom: See `paddingBottom` property.
+     * - paddingStyle: See `paddingStyle` property.
+     * - dataLayout: See `dataLayout` property.
+     * - weightsLayout: See `weightsLayout` property.
+     * - Returns: The descriptor on autoreleasepool.
+     */
     @Generated
     @Selector("descriptorWithStrideInX:strideInY:dilationRateInX:dilationRateInY:paddingLeft:paddingRight:paddingTop:paddingBottom:paddingStyle:dataLayout:weightsLayout:")
     public static native MPSGraphDepthwiseConvolution2DOpDescriptor descriptorWithStrideInXStrideInYDilationRateInXDilationRateInYPaddingLeftPaddingRightPaddingTopPaddingBottomPaddingStyleDataLayoutWeightsLayout(
@@ -115,7 +154,7 @@ public class MPSGraphDepthwiseConvolution2DOpDescriptor extends NSObject impleme
             @NUInt long paddingStyle, @NUInt long dataLayout, @NUInt long weightsLayout);
 
     /**
-     * !< Default = 1
+     * The dilation rate for X (Width) dimension. Default value: 1.
      */
     @Generated
     @Selector("dilationRateInX")
@@ -123,7 +162,7 @@ public class MPSGraphDepthwiseConvolution2DOpDescriptor extends NSObject impleme
     public native long dilationRateInX();
 
     /**
-     * !< Default = 1
+     * The dilation rate for Y (Height) dimension. Default value: 1.
      */
     @Generated
     @Selector("dilationRateInY")
@@ -167,7 +206,7 @@ public class MPSGraphDepthwiseConvolution2DOpDescriptor extends NSObject impleme
     public static native MPSGraphDepthwiseConvolution2DOpDescriptor new_objc();
 
     /**
-     * !< Default = 0 - ignored if paddingStyle != explicit
+     * The explicit padding value for Y (Height) dimension operation adds after the data. Default value: 0.
      */
     @Generated
     @Selector("paddingBottom")
@@ -175,7 +214,7 @@ public class MPSGraphDepthwiseConvolution2DOpDescriptor extends NSObject impleme
     public native long paddingBottom();
 
     /**
-     * !< Default = 0 - ignored if paddingStyle != explicit
+     * The explicit padding value for X (Width) dimension the operation adds before the data. Default value: 0.
      */
     @Generated
     @Selector("paddingLeft")
@@ -183,7 +222,7 @@ public class MPSGraphDepthwiseConvolution2DOpDescriptor extends NSObject impleme
     public native long paddingLeft();
 
     /**
-     * !< Default = 0 - ignored if paddingStyle != explicit
+     * The explicit padding value for X (Width) dimension operation adds after the data. Default value: 0.
      */
     @Generated
     @Selector("paddingRight")
@@ -191,7 +230,7 @@ public class MPSGraphDepthwiseConvolution2DOpDescriptor extends NSObject impleme
     public native long paddingRight();
 
     /**
-     * !< Default = MPSGraphPaddingStyleExplicit
+     * The padding style for the operation. Default value: `MPSGraphPaddingStyleExplicit`.
      */
     @Generated
     @Selector("paddingStyle")
@@ -199,7 +238,7 @@ public class MPSGraphDepthwiseConvolution2DOpDescriptor extends NSObject impleme
     public native long paddingStyle();
 
     /**
-     * !< Default = 0 - ignored if paddingStyle != explicit
+     * The explicit padding value for Y (Height) dimension operation adds before the data. Default value: 0.
      */
     @Generated
     @Selector("paddingTop")
@@ -214,73 +253,89 @@ public class MPSGraphDepthwiseConvolution2DOpDescriptor extends NSObject impleme
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * The data layout of the input data (in forward pass).
+     * 
+     * See: ``MPSGraphTensorNamedDataLayout``.
+     */
     @Generated
     @Selector("setDataLayout:")
     public native void setDataLayout(@NUInt long value);
 
     /**
-     * !< Default = 1
+     * The dilation rate for X (Width) dimension. Default value: 1.
      */
     @Generated
     @Selector("setDilationRateInX:")
     public native void setDilationRateInX(@NUInt long value);
 
     /**
-     * !< Default = 1
+     * The dilation rate for Y (Height) dimension. Default value: 1.
      */
     @Generated
     @Selector("setDilationRateInY:")
     public native void setDilationRateInY(@NUInt long value);
 
+    /**
+     * Sets the explicit padding values.
+     * 
+     * Note: this method also sets `paddingStyle` to `MPSGraphPaddingStyleExplicit` (see ``MPSGraphPaddingStyle``).
+     * 
+     * - Parameters:
+     * - paddingLeft: See `paddingLeft` property.
+     * - paddingRight: See `paddingRight` property.
+     * - paddingTop: See `paddingTop` property.
+     * - paddingBottom: See `paddingBottom` property.
+     */
     @Generated
     @Selector("setExplicitPaddingWithPaddingLeft:paddingRight:paddingTop:paddingBottom:")
     public native void setExplicitPaddingWithPaddingLeftPaddingRightPaddingTopPaddingBottom(@NUInt long paddingLeft,
             @NUInt long paddingRight, @NUInt long paddingTop, @NUInt long paddingBottom);
 
     /**
-     * !< Default = 0 - ignored if paddingStyle != explicit
+     * The explicit padding value for Y (Height) dimension operation adds after the data. Default value: 0.
      */
     @Generated
     @Selector("setPaddingBottom:")
     public native void setPaddingBottom(@NUInt long value);
 
     /**
-     * !< Default = 0 - ignored if paddingStyle != explicit
+     * The explicit padding value for X (Width) dimension the operation adds before the data. Default value: 0.
      */
     @Generated
     @Selector("setPaddingLeft:")
     public native void setPaddingLeft(@NUInt long value);
 
     /**
-     * !< Default = 0 - ignored if paddingStyle != explicit
+     * The explicit padding value for X (Width) dimension operation adds after the data. Default value: 0.
      */
     @Generated
     @Selector("setPaddingRight:")
     public native void setPaddingRight(@NUInt long value);
 
     /**
-     * !< Default = MPSGraphPaddingStyleExplicit
+     * The padding style for the operation. Default value: `MPSGraphPaddingStyleExplicit`.
      */
     @Generated
     @Selector("setPaddingStyle:")
     public native void setPaddingStyle(@NUInt long value);
 
     /**
-     * !< Default = 0 - ignored if paddingStyle != explicit
+     * The explicit padding value for Y (Height) dimension operation adds before the data. Default value: 0.
      */
     @Generated
     @Selector("setPaddingTop:")
     public native void setPaddingTop(@NUInt long value);
 
     /**
-     * !< Default = 1
+     * The stride for X (Width) dimension. Default value: 1.
      */
     @Generated
     @Selector("setStrideInX:")
     public native void setStrideInX(@NUInt long value);
 
     /**
-     * !< Default = 1
+     * The stride for Y (Height) dimension. Default value: 1.
      */
     @Generated
     @Selector("setStrideInY:")
@@ -291,14 +346,16 @@ public class MPSGraphDepthwiseConvolution2DOpDescriptor extends NSObject impleme
     public static native void setVersion_static(@NInt long aVersion);
 
     /**
-     * !< NOTE: 'O' index is channel multiplier index
+     * The data layout of the weights.
+     * 
+     * NOTE: 'O' index is channel multiplier index. See: ``MPSGraphTensorNamedDataLayout``.
      */
     @Generated
     @Selector("setWeightsLayout:")
     public native void setWeightsLayout(@NUInt long value);
 
     /**
-     * !< Default = 1
+     * The stride for X (Width) dimension. Default value: 1.
      */
     @Generated
     @Selector("strideInX")
@@ -306,7 +363,7 @@ public class MPSGraphDepthwiseConvolution2DOpDescriptor extends NSObject impleme
     public native long strideInX();
 
     /**
-     * !< Default = 1
+     * The stride for Y (Height) dimension. Default value: 1.
      */
     @Generated
     @Selector("strideInY")
@@ -323,10 +380,17 @@ public class MPSGraphDepthwiseConvolution2DOpDescriptor extends NSObject impleme
     public static native long version_static();
 
     /**
-     * !< NOTE: 'O' index is channel multiplier index
+     * The data layout of the weights.
+     * 
+     * NOTE: 'O' index is channel multiplier index. See: ``MPSGraphTensorNamedDataLayout``.
      */
     @Generated
     @Selector("weightsLayout")
     @NUInt
     public native long weightsLayout();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -481,4 +481,9 @@ public class UIFieldBehavior extends UIDynamicBehavior {
         CGVector call_fieldWithEvaluationBlock(@NotNull UIFieldBehavior field, @ByValue CGPoint position,
                 @ByValue CGVector velocity, @NFloat double mass, @NFloat double charge, double deltaTime);
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

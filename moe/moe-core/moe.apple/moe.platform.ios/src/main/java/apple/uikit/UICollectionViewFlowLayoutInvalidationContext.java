@@ -190,4 +190,9 @@ public class UICollectionViewFlowLayoutInvalidationContext extends UICollectionV
     @Generated
     @Selector("setInvalidateFlowLayoutDelegateMetrics:")
     public native void setInvalidateFlowLayoutDelegateMetrics(boolean value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

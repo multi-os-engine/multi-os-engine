@@ -47,12 +47,6 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
- * CLHeading
- * 
- * Discussion:
- * Represents a vector pointing to magnetic North constructed from axis component values x, y, and z. An accuracy of the
- * heading calculation is also provided along with timestamp information.
- * 
  * API-Since: 3.0
  */
 @Generated
@@ -278,4 +272,9 @@ public class CLHeading extends NSObject implements NSCopying, NSSecureCoding {
     @Generated
     @Selector("z")
     public native double z();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

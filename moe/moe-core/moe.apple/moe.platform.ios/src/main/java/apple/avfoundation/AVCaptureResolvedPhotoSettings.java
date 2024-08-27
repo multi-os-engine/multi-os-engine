@@ -421,4 +421,37 @@ public class AVCaptureResolvedPhotoSettings extends NSObject {
     @Generated
     @Selector("isContentAwareDistortionCorrectionEnabled")
     public native boolean isContentAwareDistortionCorrectionEnabled();
+
+    /**
+     * [@property] deferredPhotoProxyDimensions
+     * 
+     * The resolved dimensions of the AVCaptureDeferredPhotoProxy when opting in to deferred photo delivery. See
+     * AVCaptureDeferredPhotoProxy.
+     * 
+     * If you don't opt in to deferred photo delivery, deferredPhotoProxyDimensions resolve to { 0, 0 }. When an
+     * AVCaptureDeferredPhotoProxy is returned, the photoDimensions property of this object represents the dimensions of
+     * the final photo.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("deferredPhotoProxyDimensions")
+    @ByValue
+    public native CMVideoDimensions deferredPhotoProxyDimensions();
+
+    /**
+     * [@property] fastCapturePrioritizationEnabled
+     * 
+     * Indicates whether fast capture prioritization will be employed when capturing the photo.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("isFastCapturePrioritizationEnabled")
+    public native boolean isFastCapturePrioritizationEnabled();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

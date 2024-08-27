@@ -214,4 +214,9 @@ public class INRestaurantReservation extends INReservation implements NSCopying,
             @Nullable NSArray<? extends INReservationAction> actions, @Nullable NSURL URL,
             @NotNull INDateComponentsRange reservationDuration, @Nullable NSNumber partySize,
             @NotNull CLPlacemark restaurantLocation);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

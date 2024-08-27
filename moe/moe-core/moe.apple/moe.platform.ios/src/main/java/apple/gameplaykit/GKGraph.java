@@ -47,8 +47,6 @@ import org.jetbrains.annotations.Nullable;
 
 /**
  * Representation of a directed graph of GKGraphNodes
- * 
- * API-Since: 9.0
  */
 @Generated
 @Library("GameplayKit")
@@ -257,4 +255,9 @@ public class GKGraph extends NSObject implements NSCopying, NSSecureCoding {
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

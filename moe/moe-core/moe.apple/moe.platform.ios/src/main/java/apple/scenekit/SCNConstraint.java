@@ -325,4 +325,9 @@ public class SCNConstraint extends NSObject implements NSCopying, NSSecureCoding
     @Generated
     @Selector("removeAllAnimationsWithBlendOutDuration:")
     public native void removeAllAnimationsWithBlendOutDuration(@NFloat double duration);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

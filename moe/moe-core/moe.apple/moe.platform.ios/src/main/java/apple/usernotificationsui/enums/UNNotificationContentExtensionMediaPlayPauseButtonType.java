@@ -20,19 +20,39 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
 /**
+ * Constants indicating the type of media button to display.
+ * 
  * API-Since: 10.0
  */
 @Generated
 public final class UNNotificationContentExtensionMediaPlayPauseButtonType {
     /**
+     * No media button.
+     * 
+     * Specify this option when you don't want a media button. This is the
+     * default option.
+     * 
      * API-Since: 10.0
      */
     @Generated @NUInt public static final long None = 0x0000000000000000L;
     /**
+     * A standard play/pause button.
+     * 
+     * This button is always visible. When tapped, its appearance changes
+     * between the play and pause icons and triggers the appropriate play and
+     * pause actions.
+     * 
      * API-Since: 10.0
      */
     @Generated @NUInt public static final long Default = 0x0000000000000001L;
     /**
+     * A partially transparent play/pause button that is layered on top of your
+     * media content.
+     * 
+     * This button draws a play icon over the content initially. When playback
+     * begins, the button disappears. Tapping the content again pauses playback and
+     * displays the play button again.
+     * 
      * API-Since: 10.0
      */
     @Generated @NUInt public static final long Overlay = 0x0000000000000002L;

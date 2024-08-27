@@ -30,6 +30,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.opaque.dispatch_queue_t;
 
 /**
  * AVSampleBufferAudioRenderer
@@ -232,7 +233,7 @@ public class AVSampleBufferAudioRenderer extends NSObject implements AVQueuedSam
 
     @Generated
     @Selector("requestMediaDataWhenReadyOnQueue:usingBlock:")
-    public native void requestMediaDataWhenReadyOnQueueUsingBlock(@NotNull NSObject queue,
+    public native void requestMediaDataWhenReadyOnQueueUsingBlock(@NotNull dispatch_queue_t queue,
             @NotNull @ObjCBlock(name = "call_requestMediaDataWhenReadyOnQueueUsingBlock") AVQueuedSampleBufferRendering.Block_requestMediaDataWhenReadyOnQueueUsingBlock block);
 
     @Generated
@@ -403,4 +404,9 @@ public class AVSampleBufferAudioRenderer extends NSObject implements AVQueuedSam
     @Generated
     @Selector("setAllowedAudioSpatializationFormats:")
     public native void setAllowedAudioSpatializationFormats(@NUInt long value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -9,6 +9,10 @@
     ]]></description>
 
     <change-notes><![CDATA[
+      1.5.3<br>
+      - Improve SDK management<br>
+      - Set GraalVM JDK as SDK<br>
+      <br>
       1.5.2<br>
       - Improve SDK management<br>
       - Fix "Module SDK not configured or it's not a valid JDK" issue<br>
@@ -62,7 +66,7 @@
     ]]></change-notes>
 
     <!-- please see https://plugins.jetbrains.com/docs/intellij/build-number-ranges.html for description -->
-    <idea-version since-build="212"/>
+    <idea-version since-build="222.3345.118"/>
 
     <!-- please see http://confluence.jetbrains.com/display/IDEADEV/Plugin+Compatibility+with+IntelliJ+Platform+Products
          on how to target different products -->

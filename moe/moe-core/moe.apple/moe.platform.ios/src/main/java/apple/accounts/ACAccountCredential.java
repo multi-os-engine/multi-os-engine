@@ -197,4 +197,9 @@ public class ACAccountCredential extends NSObject {
     @Generated
     @Selector("setOauthToken:")
     public native void setOauthToken(String value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

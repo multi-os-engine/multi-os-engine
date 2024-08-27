@@ -189,4 +189,9 @@ public class ACAccountType extends NSObject {
     @Generated
     @Selector("init")
     public native ACAccountType init();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

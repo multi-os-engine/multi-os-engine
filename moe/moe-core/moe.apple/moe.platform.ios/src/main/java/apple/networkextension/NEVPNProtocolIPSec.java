@@ -314,4 +314,9 @@ public class NEVPNProtocolIPSec extends NEVPNProtocol {
     @Generated
     @Selector("useExtendedAuthentication")
     public native boolean useExtendedAuthentication();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

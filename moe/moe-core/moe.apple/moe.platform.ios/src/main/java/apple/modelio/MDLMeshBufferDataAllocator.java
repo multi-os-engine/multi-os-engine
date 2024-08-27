@@ -207,4 +207,9 @@ public class MDLMeshBufferDataAllocator extends NSObject implements MDLMeshBuffe
     @MappedReturn(ObjCObjectMapper.class)
     public native MDLMeshBufferZone newZoneForBuffersWithSizeAndType(@NotNull NSArray<? extends NSNumber> sizes,
             @NotNull NSArray<? extends NSNumber> types);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

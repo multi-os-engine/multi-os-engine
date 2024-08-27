@@ -27,7 +27,10 @@ import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 15.0
+ * Deprecated-Since: 17.0
+ * Deprecated-Message: Use NSTermOfAddress instead
  */
+@Deprecated
 @Generated
 @Library("Foundation")
 @Runtime(ObjCRuntime.class)
@@ -224,4 +227,9 @@ public class NSMorphologyCustomPronoun extends NSObject implements NSCopying, NS
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

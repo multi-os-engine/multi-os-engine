@@ -8,9 +8,10 @@ import org.moe.natj.general.ann.NInt;
  * 
  * Specifies the kind of environmental audio exposure event associated with the sample.
  * 
- * [@constant] HKCategoryValueEnvironmentalAudioExposureEventMomentaryLimit This constant defines environmental events
- * associated
- * with the user being exposed to a loud environment during a short timespan.
+ * [@constant] HKCategoryValueEnvironmentalAudioExposureEventMomentaryLimit This constant defines environmental
+ * events associated with the user being
+ * exposed to a loud environment during a
+ * short timespan.
  * 
  * API-Since: 14.0
  */

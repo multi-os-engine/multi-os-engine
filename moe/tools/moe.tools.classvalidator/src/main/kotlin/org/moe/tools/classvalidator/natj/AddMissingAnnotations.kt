@@ -12,7 +12,7 @@ import java.lang.reflect.AnnotatedElement
 
 class AddMissingAnnotations(
     next: ClassVisitor?
-) : ClassModifier(Opcodes.ASM5, next) {
+) : ClassModifier(Opcodes.ASM9, next) {
     private var skip: Boolean = false
     private var superName: String? = null
     private var interfaces: Array<out String>? = null
@@ -50,7 +50,7 @@ class AddMissingAnnotations(
             AnnotationHelper(it, true)
         }
 
-        return object : MethodVisitor(Opcodes.ASM5, visitor) {
+        return object : MethodVisitor(Opcodes.ASM9, visitor) {
             var isVisiting = true
 
             override fun visitAnnotation(descriptor: String, visible: Boolean): AnnotationVisitor? {

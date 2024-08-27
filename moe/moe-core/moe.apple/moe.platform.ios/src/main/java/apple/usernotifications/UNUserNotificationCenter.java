@@ -356,4 +356,9 @@ public class UNUserNotificationCenter extends NSObject {
         @Generated
         void call_setBadgeCountWithCompletionHandler(@Nullable NSError error);
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -60,7 +60,7 @@ import org.jetbrains.annotations.Nullable;
  * Connections involving audio expose an array of AVCaptureAudioChannel objects, which can be used for monitoring
  * levels.
  * 
- * Connections involving video expose video specific properties, such as videoMirrored and videoOrientation.
+ * Connections involving video expose video specific properties, such as videoMirrored and videoRotationAngle.
  * 
  * API-Since: 4.0
  */
@@ -503,9 +503,13 @@ public class AVCaptureConnection extends NSObject {
      * 
      * Indicates whether the connection supports setting the videoOrientation property.
      * 
-     * This property is only applicable to AVCaptureConnection instances involving video. In such connections, the
-     * videoOrientation property may only be set if -isVideoOrientationSupported returns YES.
+     * This property is deprecated. Use -isVideoRotationAngleSupported: instead.
+     * 
+     * API-Since: 4.0
+     * Deprecated-Since: 17.0
+     * Deprecated-Message: Use -isVideoRotationAngleSupported: instead
      */
+    @Deprecated
     @Generated
     @Selector("isVideoOrientationSupported")
     public native boolean isVideoOrientationSupported();
@@ -706,12 +710,13 @@ public class AVCaptureConnection extends NSObject {
      * 
      * Indicates whether the video flowing through the connection should be rotated to a given orientation.
      * 
-     * This property is only applicable to AVCaptureConnection instances involving video. If
-     * -isVideoOrientationSupported returns YES, videoOrientation may be set to rotate the video buffers being consumed
-     * by the connection's output. Note that setting videoOrientation does not necessarily result in a physical rotation
-     * of video buffers. For instance, a video connection to an AVCaptureMovieFileOutput handles orientation using a
-     * Quicktime track matrix. In the AVCaptureStillImageOutput, orientation is handled using Exif tags.
+     * This property is deprecated. Use -videoRotationAngle instead.
+     * 
+     * API-Since: 4.0
+     * Deprecated-Since: 17.0
+     * Deprecated-Message: Use -videoRotationAngle instead
      */
+    @Deprecated
     @Generated
     @Selector("setVideoOrientation:")
     public native void setVideoOrientation(@NInt long value);
@@ -806,12 +811,13 @@ public class AVCaptureConnection extends NSObject {
      * 
      * Indicates whether the video flowing through the connection should be rotated to a given orientation.
      * 
-     * This property is only applicable to AVCaptureConnection instances involving video. If
-     * -isVideoOrientationSupported returns YES, videoOrientation may be set to rotate the video buffers being consumed
-     * by the connection's output. Note that setting videoOrientation does not necessarily result in a physical rotation
-     * of video buffers. For instance, a video connection to an AVCaptureMovieFileOutput handles orientation using a
-     * Quicktime track matrix. In the AVCaptureStillImageOutput, orientation is handled using Exif tags.
+     * This property is deprecated. Use -videoRotationAngle instead.
+     * 
+     * API-Since: 4.0
+     * Deprecated-Since: 17.0
+     * Deprecated-Message: Use -videoRotationAngle instead
      */
+    @Deprecated
     @Generated
     @Selector("videoOrientation")
     @NInt
@@ -903,4 +909,69 @@ public class AVCaptureConnection extends NSObject {
     @Generated
     @Selector("setCameraIntrinsicMatrixDeliveryEnabled:")
     public native void setCameraIntrinsicMatrixDeliveryEnabled(boolean value);
+
+    /**
+     * isVideoRotationAngleSupported:
+     * 
+     * Returns whether the connection supports the given rotation angle in degrees.
+     * 
+     * The connection's videoRotationAngle property can only be set to a certain angle if this method returns YES for
+     * that angle. Only rotation angles of 0, 90, 180 and 270 are supported.
+     * 
+     * @param videoRotationAngle
+     *                           A video rotation angle to be checked.
+     * @return
+     *         YES if the connection supports the given video rotation angle, NO otherwise.
+     */
+    @Generated
+    @Selector("isVideoRotationAngleSupported:")
+    public native boolean isVideoRotationAngleSupported(@NFloat double videoRotationAngle);
+
+    /**
+     * [@property] videoRotationAngle
+     * 
+     * Indicates whether the video flowing through the connection should be rotated with a given angle in degrees.
+     * 
+     * This property is only applicable to AVCaptureConnection instances involving video or depth.
+     * -setVideoRotationAngle: throws an NSInvalidArgumentException if set to an unsupported value (see
+     * -isVideoRotationAngleSupported:). Note that setting videoRotationAngle does not necessarily result in physical
+     * rotation of video buffers. For instance, a video connection to an AVCaptureMovieFileOutput handles orientation
+     * using a Quicktime track matrix. In the AVCapturePhotoOutput, orientation is handled using Exif tags. And the
+     * AVCaptureVideoPreviewLayer applies transforms to its contents to perform rotations. However, the
+     * AVCaptureVideoDataOutput and AVCaptureDepthDataOutput do output physically rotated video buffers. Setting a video
+     * rotation angle for an output that does physically rotate buffers requires a lengthy configuration of the capture
+     * render pipeline and should be done before calling -[AVCaptureSession startRunning].
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("setVideoRotationAngle:")
+    public native void setVideoRotationAngle(@NFloat double value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
+
+    /**
+     * [@property] videoRotationAngle
+     * 
+     * Indicates whether the video flowing through the connection should be rotated with a given angle in degrees.
+     * 
+     * This property is only applicable to AVCaptureConnection instances involving video or depth.
+     * -setVideoRotationAngle: throws an NSInvalidArgumentException if set to an unsupported value (see
+     * -isVideoRotationAngleSupported:). Note that setting videoRotationAngle does not necessarily result in physical
+     * rotation of video buffers. For instance, a video connection to an AVCaptureMovieFileOutput handles orientation
+     * using a Quicktime track matrix. In the AVCapturePhotoOutput, orientation is handled using Exif tags. And the
+     * AVCaptureVideoPreviewLayer applies transforms to its contents to perform rotations. However, the
+     * AVCaptureVideoDataOutput and AVCaptureDepthDataOutput do output physically rotated video buffers. Setting a video
+     * rotation angle for an output that does physically rotate buffers requires a lengthy configuration of the capture
+     * render pipeline and should be done before calling -[AVCaptureSession startRunning].
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("videoRotationAngle")
+    @NFloat
+    public native double videoRotationAngle();
 }

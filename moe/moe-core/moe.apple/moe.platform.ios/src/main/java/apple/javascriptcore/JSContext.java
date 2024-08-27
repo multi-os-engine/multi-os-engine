@@ -343,7 +343,7 @@ public class JSContext extends NSObject {
     /**
      * [@property]
      * 
-     * Name of the JSContext. Exposed when remote debugging the context.
+     * Name of the JSContext. Exposed when inspecting the context.
      * 
      * API-Since: 8.0
      */
@@ -398,7 +398,7 @@ public class JSContext extends NSObject {
     /**
      * [@property]
      * 
-     * Name of the JSContext. Exposed when remote debugging the context.
+     * Name of the JSContext. Exposed when inspecting the context.
      * 
      * API-Since: 8.0
      */
@@ -435,4 +435,31 @@ public class JSContext extends NSObject {
         @Generated
         void call_setExceptionHandler(JSContext arg0, JSValue arg1);
     }
+
+    /**
+     * [@property]
+     * 
+     * Controls whether this @link JSContext @/link is inspectable in Web Inspector. The default value is NO.
+     * 
+     * API-Since: 16.4
+     */
+    @Generated
+    @Selector("isInspectable")
+    public native boolean isInspectable();
+
+    /**
+     * [@property]
+     * 
+     * Controls whether this @link JSContext @/link is inspectable in Web Inspector. The default value is NO.
+     * 
+     * API-Since: 16.4
+     */
+    @Generated
+    @Selector("setInspectable:")
+    public native void setInspectable(boolean value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

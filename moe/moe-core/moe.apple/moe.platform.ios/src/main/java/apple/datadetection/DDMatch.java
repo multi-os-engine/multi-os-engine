@@ -25,6 +25,13 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
+ * A base class for common types of data that the data detection system
+ * matches.
+ * 
+ * The DataDetection framework returns results in objects that are subclasses
+ * of `DDMatch`, which are specific to the type of matching data. Each object
+ * contains the matched string.
+ * 
  * API-Since: 15.0
  */
 @Generated
@@ -119,6 +126,13 @@ public class DDMatch extends NSObject {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    /**
+     * A substring that the data detection system identifies from an original
+     * string as a common type of data.
+     * 
+     * Use `DDMatch` subclasses that the data detection system provides for a
+     * semantic interpretation of this string.
+     */
     @NotNull
     @Generated
     @Selector("matchedString")
@@ -149,4 +163,9 @@ public class DDMatch extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

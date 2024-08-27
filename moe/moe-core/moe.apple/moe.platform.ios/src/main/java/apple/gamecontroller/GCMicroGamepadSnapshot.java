@@ -194,4 +194,9 @@ public class GCMicroGamepadSnapshot extends GCMicroGamepad {
     @Generated
     @Selector("snapshotData")
     public native NSData snapshotData();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

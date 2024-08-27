@@ -8,8 +8,9 @@ import org.moe.natj.general.ann.NInt;
  * 
  * Specifies the type of cardio fitness event.
  * 
- * [@constant] HKCategoryValueLowCardioFitnessEventLowFitness This constant defines an event where a VO2Max measurement
- * was recorded that falls into the "Low" fitness classification
+ * [@constant] HKCategoryValueLowCardioFitnessEventLowFitness This constant defines an event where a VO2Max
+ * measurement was recorded that falls into the "Low"
+ * fitness classification
  * 
  * API-Since: 14.3
  */

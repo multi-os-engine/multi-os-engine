@@ -23,6 +23,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.foundation.NSDate;
 
 /**
  * API-Since: 14.0
@@ -158,4 +159,43 @@ public class SRWristDetection extends NSObject {
     @Selector("wristLocation")
     @NInt
     public native long wristLocation();
+
+    /**
+     * [@property] offWristDate
+     * 
+     * Start date of the recent off-wrist state.
+     * 
+     * - When the state changes from off-wrist to on-wrist, onWristDate would be updated to the current date, and
+     * offWristDate would remain the same.
+     * - When the state changes from on-wrist to off-wrist, offWristDate would be updated to the current date, and
+     * onWristDate would remain the same.
+     * 
+     * API-Since: 16.4
+     */
+    @Generated
+    @Selector("offWristDate")
+    @Nullable
+    public native NSDate offWristDate();
+
+    /**
+     * [@property] onWristDate
+     * 
+     * Start date of the recent on-wrist state.
+     * 
+     * - When the state changes from off-wrist to on-wrist, onWristDate would be updated to the current date, and
+     * offWristDate would remain the same.
+     * - When the state changes from on-wrist to off-wrist, offWristDate would be updated to the current date, and
+     * onWristDate would remain the same.
+     * 
+     * API-Since: 16.4
+     */
+    @Generated
+    @Selector("onWristDate")
+    @Nullable
+    public native NSDate onWristDate();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

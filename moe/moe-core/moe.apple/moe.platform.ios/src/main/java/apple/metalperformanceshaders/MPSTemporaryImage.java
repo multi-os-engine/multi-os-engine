@@ -447,4 +447,9 @@ public class MPSTemporaryImage extends MPSImage {
     public static native MPSTemporaryImage temporaryImageWithCommandBufferTextureDescriptorFeatureChannels(
             @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
             @NotNull MTLTextureDescriptor textureDescriptor, @NUInt long featureChannels);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

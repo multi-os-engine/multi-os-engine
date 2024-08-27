@@ -168,4 +168,25 @@ public class INAnswerCallIntent extends INIntent {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * The audio route to answer the call on.
+     */
+    @Generated
+    @Selector("audioRoute")
+    @NInt
+    public native long audioRoute();
+
+    /**
+     * The identifier of the call that the user wishes to answer.
+     */
+    @Generated
+    @Selector("callIdentifier")
+    @Nullable
+    public native String callIdentifier();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

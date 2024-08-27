@@ -38,6 +38,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.opaque.dispatch_queue_t;
 
 /**
  * API-Since: 2.0
@@ -277,24 +278,7 @@ public class NSOperationQueue extends NSObject implements NSProgressReporting {
      */
     @Generated
     @Selector("setUnderlyingQueue:")
-    public native void setUnderlyingQueue_unsafe(@Nullable NSObject value);
-
-    /**
-     * actually retain
-     * 
-     * API-Since: 8.0
-     */
-    @Generated
-    public void setUnderlyingQueue(@Nullable NSObject value) {
-        Object __old = underlyingQueue();
-        if (value != null) {
-            org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
-        }
-        setUnderlyingQueue_unsafe(value);
-        if (__old != null) {
-            org.moe.natj.objc.ObjCRuntime.dissociateObjCObject(this, __old);
-        }
-    }
+    public native void setUnderlyingQueue(@Nullable dispatch_queue_t value);
 
     /**
      * actually retain
@@ -304,7 +288,7 @@ public class NSOperationQueue extends NSObject implements NSProgressReporting {
     @Nullable
     @Generated
     @Selector("underlyingQueue")
-    public native NSObject underlyingQueue();
+    public native dispatch_queue_t underlyingQueue();
 
     @Generated
     @Selector("waitUntilAllOperationsAreFinished")
@@ -346,4 +330,9 @@ public class NSOperationQueue extends NSObject implements NSProgressReporting {
     @Generated
     @Selector("progress")
     public native NSProgress progress();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

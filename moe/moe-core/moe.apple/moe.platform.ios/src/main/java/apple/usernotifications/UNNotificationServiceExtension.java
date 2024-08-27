@@ -186,4 +186,9 @@ public class UNNotificationServiceExtension extends NSObject {
         @Generated
         void call_didReceiveNotificationRequestWithContentHandler(@NotNull UNNotificationContent contentToDeliver);
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

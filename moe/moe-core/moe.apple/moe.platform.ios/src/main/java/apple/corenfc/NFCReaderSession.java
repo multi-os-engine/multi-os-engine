@@ -24,6 +24,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.opaque.dispatch_queue_t;
 
 /**
  * NFCReaderSession
@@ -192,7 +193,7 @@ public class NFCReaderSession extends NSObject implements apple.corenfc.protocol
     @NotNull
     @Generated
     @Selector("sessionQueue")
-    public native NSObject sessionQueue();
+    public native dispatch_queue_t sessionQueue();
 
     @Generated
     @Selector("setAlertMessage:")
@@ -210,4 +211,9 @@ public class NFCReaderSession extends NSObject implements apple.corenfc.protocol
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

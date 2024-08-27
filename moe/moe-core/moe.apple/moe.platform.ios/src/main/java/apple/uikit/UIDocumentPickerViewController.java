@@ -355,4 +355,9 @@ public class UIDocumentPickerViewController extends UIViewController {
     @Selector("initForOpeningContentTypes:asCopy:")
     public native UIDocumentPickerViewController initForOpeningContentTypesAsCopy(
             @NotNull NSArray<? extends UTType> contentTypes, boolean asCopy);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

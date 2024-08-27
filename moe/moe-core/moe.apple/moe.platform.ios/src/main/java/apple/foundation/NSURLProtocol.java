@@ -427,4 +427,9 @@ public class NSURLProtocol extends NSObject {
     @Generated
     @Selector("task")
     public native NSURLSessionTask task();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

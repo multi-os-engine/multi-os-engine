@@ -344,4 +344,9 @@ public class SCNSkinner extends NSObject implements NSSecureCoding {
             org.moe.natj.objc.ObjCRuntime.dissociateObjCObject(this, __old);
         }
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

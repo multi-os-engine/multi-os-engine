@@ -46,9 +46,6 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-/**
- * API-Since: 7.0
- */
 @Generated
 @Library("MapKit")
 @Runtime(ObjCRuntime.class)
@@ -350,4 +347,9 @@ public class MKOverlayPathRenderer extends MKOverlayRenderer {
     @Generated
     @Selector("shouldRasterize")
     public native boolean shouldRasterize();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

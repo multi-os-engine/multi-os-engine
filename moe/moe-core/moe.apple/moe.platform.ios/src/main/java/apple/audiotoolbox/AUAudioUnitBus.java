@@ -492,4 +492,9 @@ public class AUAudioUnitBus extends NSObject {
     @Generated
     @Selector("shouldAllocateBuffer")
     public native boolean shouldAllocateBuffer();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

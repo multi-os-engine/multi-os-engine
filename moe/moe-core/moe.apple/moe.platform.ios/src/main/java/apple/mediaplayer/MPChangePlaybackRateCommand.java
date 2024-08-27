@@ -178,4 +178,9 @@ public class MPChangePlaybackRateCommand extends MPRemoteCommand {
     @Generated
     @Selector("supportedPlaybackRates")
     public native NSArray<? extends NSNumber> supportedPlaybackRates();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

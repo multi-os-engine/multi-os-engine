@@ -46,7 +46,10 @@ import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 9.0
+ * Deprecated-Since: 13.0
+ * Deprecated-Message: Please use UIContextMenuInteraction.
  */
+@Deprecated
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -202,4 +205,9 @@ public class UIPreviewAction extends NSObject implements NSCopying, UIPreviewAct
         @Generated
         void call_handler_ret(@NotNull @Mapped(ObjCObjectMapper.class) Object arg0, @NotNull UIViewController arg1);
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

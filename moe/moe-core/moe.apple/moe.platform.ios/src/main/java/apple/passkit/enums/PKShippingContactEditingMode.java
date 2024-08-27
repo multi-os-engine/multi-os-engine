@@ -12,12 +12,13 @@ public final class PKShippingContactEditingMode {
     private PKShippingContactEditingMode() {
     }
 
-    /**
-     * API-Since: 15.0
-     */
     @Generated @NUInt public static final long Enabled = 0x0000000000000001L;
     /**
      * API-Since: 15.0
      */
     @Generated @NUInt public static final long StorePickup = 0x0000000000000002L;
+    /**
+     * API-Since: 15.0
+     */
+    @Generated @NUInt public static final long Available = 0x0000000000000001L;
 }

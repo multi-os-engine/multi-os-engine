@@ -27,13 +27,18 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
+ * This class defines parameters for a stencil operation.
+ * 
+ * Use this descriptor with the following ``MPSGraph`` methods:
+ * - ``MPSGraph/stencilWithSourceTensor:weightsTensor:descriptor:name:``.
+ * 
  * API-Since: 15.0
  */
 @Generated
 @Library("MetalPerformanceShadersGraph")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class MPSGraphStencilOpDescriptor extends NSObject implements NSCopying {
+public class MPSGraphStencilOpDescriptor extends MPSGraphObject implements NSCopying {
     static {
         NatJ.register();
     }
@@ -61,6 +66,10 @@ public class MPSGraphStencilOpDescriptor extends NSObject implements NSCopying {
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
+    /**
+     * The property that determines which values to use for padding the input tensor.
+     * Default value: `MPSGraphPaddingModeZero`.
+     */
     @Generated
     @Selector("boundaryMode")
     @NInt
@@ -103,14 +112,11 @@ public class MPSGraphStencilOpDescriptor extends NSObject implements NSCopying {
     public static native String description_static();
 
     /**
-     * stencil operation descriptor
+     * Creates a stencil operation descriptor with default values.
      * 
-     * Stencil operation descriptor with a user specified paddingStyle.
-     * Default values for everything else.
-     * 
-     * @param paddingStyle Determines how many values to pad the inpur Tensor with.
-     * 
-     * @return A valid MPSGraphStencilOpDescriptor object
+     * - Parameters:
+     * - paddingStyle: See `paddingStyle` property.
+     * - Returns: A valid MPSGraphStencilOpDescriptor object
      */
     @Generated
     @Selector("descriptorWithPaddingStyle:")
@@ -152,15 +158,26 @@ public class MPSGraphStencilOpDescriptor extends NSObject implements NSCopying {
     @Selector("new")
     public static native MPSGraphStencilOpDescriptor new_objc();
 
+    /**
+     * The padding value for `boundaryMode = MPSGraphPaddingModeConstant`.
+     * Default value: 0.
+     */
     @Generated
     @Selector("paddingConstant")
     public native float paddingConstant();
 
+    /**
+     * The property that defines what kind of padding to apply to the stencil operation.
+     * Default value: `MPSGraphPaddingStyleExplicit`.
+     */
     @Generated
     @Selector("paddingStyle")
     @NUInt
     public native long paddingStyle();
 
+    /**
+     * The reduction mode to use within the stecil window. Default value: `MPSGraphReductionModeSum`.
+     */
     @Generated
     @Selector("reductionMode")
     @NUInt
@@ -174,18 +191,33 @@ public class MPSGraphStencilOpDescriptor extends NSObject implements NSCopying {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * The property that determines which values to use for padding the input tensor.
+     * Default value: `MPSGraphPaddingModeZero`.
+     */
     @Generated
     @Selector("setBoundaryMode:")
     public native void setBoundaryMode(@NInt long value);
 
+    /**
+     * The padding value for `boundaryMode = MPSGraphPaddingModeConstant`.
+     * Default value: 0.
+     */
     @Generated
     @Selector("setPaddingConstant:")
     public native void setPaddingConstant(float value);
 
+    /**
+     * The property that defines what kind of padding to apply to the stencil operation.
+     * Default value: `MPSGraphPaddingStyleExplicit`.
+     */
     @Generated
     @Selector("setPaddingStyle:")
     public native void setPaddingStyle(@NUInt long value);
 
+    /**
+     * The reduction mode to use within the stecil window. Default value: `MPSGraphReductionModeSum`.
+     */
     @Generated
     @Selector("setReductionMode:")
     public native void setReductionMode(@NUInt long value);
@@ -202,4 +234,9 @@ public class MPSGraphStencilOpDescriptor extends NSObject implements NSCopying {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

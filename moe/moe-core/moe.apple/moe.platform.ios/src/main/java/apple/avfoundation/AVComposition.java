@@ -380,4 +380,9 @@ public class AVComposition extends AVAsset implements NSMutableCopying {
     @Generated
     @Selector("unusedTrackID")
     public native int unusedTrackID();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -7,7 +7,9 @@ import org.moe.natj.general.ann.NUInt;
  * Options for the MPSRayIntersector bounding box intersection test type property
  * 
  * API-Since: 12.0
+ * Deprecated-Since: 17.0
  */
+@Deprecated
 @Generated
 public final class MPSBoundingBoxIntersectionTestType {
     @Generated
@@ -25,8 +27,9 @@ public final class MPSBoundingBoxIntersectionTestType {
      * and above.
      * 
      * API-Since: 12.0
+     * Deprecated-Since: 17.0
      */
-    @Generated @NUInt public static final long Default = 0x0000000000000000L;
+    @Deprecated @Generated @NUInt public static final long Default = 0x0000000000000000L;
     /**
      * This intersection test is potentially slower than
      * MPSBoundingBoxIntersectionTestTypeFast but does not generate false negatives for
@@ -37,8 +40,9 @@ public final class MPSBoundingBoxIntersectionTestType {
      * direction and use the fast intersection test type.
      * 
      * API-Since: 12.0
+     * Deprecated-Since: 17.0
      */
-    @Generated @NUInt public static final long AxisAligned = 0x0000000000000001L;
+    @Deprecated @Generated @NUInt public static final long AxisAligned = 0x0000000000000001L;
     /**
      * This intersection test is potentially faster than
      * MPSBoundingBoxIntersectionTestTypeAxisAligned but can generate false negatives for
@@ -48,6 +52,7 @@ public final class MPSBoundingBoxIntersectionTestType {
      * projections can generate these rays.
      * 
      * API-Since: 13.0
+     * Deprecated-Since: 17.0
      */
-    @Generated @NUInt public static final long Fast = 0x0000000000000002L;
+    @Deprecated @Generated @NUInt public static final long Fast = 0x0000000000000002L;
 }

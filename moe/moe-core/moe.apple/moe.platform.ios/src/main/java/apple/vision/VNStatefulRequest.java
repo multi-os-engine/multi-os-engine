@@ -112,7 +112,7 @@ public class VNStatefulRequest extends VNImageBasedRequest {
     /**
      * The reciprocal of maximum rate at which buffers will be processed.
      * 
-     * The request will not process buffers that fall within the requestFrameAnalysisSpacing after it has performed the
+     * The request will not process buffers that fall within the `frameAnalysisSpacing` after it has performed the
      * analysis. The analysis is not done by wall time but by analysis of of the time stamps of the samplebuffers being
      * processed.
      */
@@ -199,16 +199,6 @@ public class VNStatefulRequest extends VNImageBasedRequest {
     @Selector("new")
     public static native VNStatefulRequest new_objc();
 
-    /**
-     * API-Since: 14.0
-     * Deprecated-Since: 14.0
-     */
-    @Deprecated
-    @Generated
-    @Selector("requestFrameAnalysisSpacing")
-    @ByValue
-    public native CMTime requestFrameAnalysisSpacing();
-
     @Generated
     @Selector("resolveClassMethod:")
     public static native boolean resolveClassMethod(SEL sel);
@@ -234,4 +224,9 @@ public class VNStatefulRequest extends VNImageBasedRequest {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

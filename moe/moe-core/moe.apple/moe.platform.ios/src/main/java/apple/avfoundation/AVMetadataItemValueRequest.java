@@ -194,4 +194,9 @@ public class AVMetadataItemValueRequest extends NSObject {
     @Generated
     @Selector("respondWithValue:")
     public native void respondWithValue(@NotNull @Mapped(ObjCObjectMapper.class) Object value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

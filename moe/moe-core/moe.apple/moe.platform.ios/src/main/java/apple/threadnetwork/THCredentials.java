@@ -30,6 +30,11 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
+ * A class that contains credentials for a Thread network.
+ * 
+ * A Thread network defines parameters that all connected devices use.
+ * ``THCredentials`` provides these parameters.
+ * 
  * API-Since: 15.0
  */
 @Generated
@@ -47,7 +52,7 @@ public class THCredentials extends NSObject implements NSSecureCoding {
     }
 
     /**
-     * PSKc : A 16 byte value. e.g. 0eec92e950c4cbc6966d32613f08efe0
+     * The sixteen byte Thread network pre-shared key for the Commissioner.
      */
     @Nullable
     @Generated
@@ -59,7 +64,13 @@ public class THCredentials extends NSObject implements NSSecureCoding {
     public static native boolean accessInstanceVariablesDirectly();
 
     /**
-     * Active Operational Data Set in Bytes.
+     * The essential operational parameters for the Thread network.
+     * 
+     * The framework parses this property, then extracts and sets
+     * ``THCredentials/channel``, ``THCredentials/extendedPANID``,
+     * ``THCredentials/networkKey``, ``THCredentials/networkName``,
+     * ``THCredentials/panID``, and ``THCredentials/PSKC`` when you call
+     * ``THClient/storeCredentialsForBorderAgent:activeOperationalDataSet:completion:``.
      */
     @Nullable
     @Generated
@@ -81,7 +92,10 @@ public class THCredentials extends NSObject implements NSSecureCoding {
     public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
-     * extendedPANID : Active Thread Network Border Agent Identifier
+     * The identifer of an active Thread network Border Agent.
+     * 
+     * This property’s value is the MAC Extended Address, a random identifier that
+     * the active Thread network border router generates.
      */
     @Nullable
     @Generated
@@ -100,7 +114,7 @@ public class THCredentials extends NSObject implements NSSecureCoding {
             @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
     /**
-     * channel : Thread network channel
+     * The Thread network radio channel.
      */
     @Generated
     @Selector("channel")
@@ -117,7 +131,7 @@ public class THCredentials extends NSObject implements NSSecureCoding {
     public static native Class classForKeyedUnarchiver();
 
     /**
-     * Metadata
+     * The date and time that the framework stored the credential in the database.
      */
     @Nullable
     @Generated
@@ -137,7 +151,7 @@ public class THCredentials extends NSObject implements NSSecureCoding {
     public native void encodeWithCoder(@NotNull NSCoder coder);
 
     /**
-     * extendedPANID : Thread Network extended PAN ID
+     * The Thread network extended PAN identifier.
      */
     @Nullable
     @Generated
@@ -179,13 +193,16 @@ public class THCredentials extends NSObject implements NSSecureCoding {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    /**
+     * The date and time that the framework updated the credential in the database.
+     */
     @Nullable
     @Generated
     @Selector("lastModificationDate")
     public native NSDate lastModificationDate();
 
     /**
-     * networkKey : A 16 byte value. e.g. 7dd5b9bffe1285f27e78898658aa88f4
+     * The sixteen byte Thread network key.
      */
     @Nullable
     @Generated
@@ -193,7 +210,7 @@ public class THCredentials extends NSObject implements NSSecureCoding {
     public native NSData networkKey();
 
     /**
-     * networkName : Thread Network name
+     * The Thread network name.
      */
     @Nullable
     @Generated
@@ -206,7 +223,7 @@ public class THCredentials extends NSObject implements NSSecureCoding {
     public static native THCredentials new_objc();
 
     /**
-     * PANID : A 2 byte value. e.g. 308f
+     * The two byte Thead network PAN identifier.
      */
     @Nullable
     @Generated
@@ -222,7 +239,7 @@ public class THCredentials extends NSObject implements NSSecureCoding {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * channel : Thread network channel
+     * The Thread network radio channel.
      */
     @Generated
     @Selector("setChannel:")
@@ -250,4 +267,9 @@ public class THCredentials extends NSObject implements NSSecureCoding {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

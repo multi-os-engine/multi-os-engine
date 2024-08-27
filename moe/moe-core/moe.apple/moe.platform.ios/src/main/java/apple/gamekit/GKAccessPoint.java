@@ -205,7 +205,7 @@ public class GKAccessPoint extends NSObject {
     }
 
     /**
-     * Set this property to true if you wish to show the highlights for most recent acheivement, current rank on default
+     * Set this property to true if you wish to show the highlights for most recent achievement, current rank on default
      * leaderboard, etc
      */
     @Generated
@@ -222,7 +222,7 @@ public class GKAccessPoint extends NSObject {
     public static native GKAccessPoint shared();
 
     /**
-     * Set this property to true if you wish to show the highlights for most recent acheivement, current rank on default
+     * Set this property to true if you wish to show the highlights for most recent achievement, current rank on default
      * leaderboard, etc
      */
     @Generated
@@ -236,7 +236,7 @@ public class GKAccessPoint extends NSObject {
     /**
      * this lets the developer trigger the access point as if the user had touched it. This is useful for games that use
      * controllers or the remote on AppleTV. the argument lets you specify a specific state (default, profile,
-     * acheivements, leaderboards) for GameCenterViewController
+     * achievements, leaderboards) for GameCenterViewController
      */
     @Generated
     @Selector("triggerAccessPointWithHandler:")
@@ -266,4 +266,9 @@ public class GKAccessPoint extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

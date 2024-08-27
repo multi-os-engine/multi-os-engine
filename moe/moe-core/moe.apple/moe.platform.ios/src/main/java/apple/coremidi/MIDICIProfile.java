@@ -206,4 +206,9 @@ public class MIDICIProfile extends NSObject implements NSSecureCoding {
     @Generated
     @Selector("initWithData:")
     public native MIDICIProfile initWithData(@NotNull NSData data);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

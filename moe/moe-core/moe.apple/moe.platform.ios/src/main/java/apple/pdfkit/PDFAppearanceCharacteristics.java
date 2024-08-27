@@ -28,9 +28,6 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-/**
- * API-Since: 11.0
- */
 @Generated
 @Library("PDFKit")
 @Runtime(ObjCRuntime.class)
@@ -279,4 +276,9 @@ public class PDFAppearanceCharacteristics extends NSObject implements NSCopying 
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

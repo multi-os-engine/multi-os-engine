@@ -264,4 +264,9 @@ public class NSRunLoop extends NSObject {
         @Generated
         void call_performInModesBlock();
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

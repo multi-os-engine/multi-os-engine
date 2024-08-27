@@ -50,8 +50,6 @@ import org.jetbrains.annotations.Nullable;
 
 /**
  * GKAchievement represents a game achievement that the player has started or completely achieved.
- * 
- * API-Since: 4.1
  */
 @Generated
 @Library("GameKit")
@@ -222,7 +220,9 @@ public class GKAchievement extends NSObject implements NSCoding, NSSecureCoding 
 
     /**
      * API-Since: 8.0
+     * Deprecated-Since: 17.0
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("challengeComposeControllerWithMessage:players:completionHandler:")
@@ -231,12 +231,10 @@ public class GKAchievement extends NSObject implements NSCoding, NSSecureCoding 
             @Nullable @ObjCBlock(name = "call_challengeComposeControllerWithMessagePlayersCompletionHandler") Block_challengeComposeControllerWithMessagePlayersCompletionHandler completionHandler);
 
     /**
-     * rb= GameKit.unavailableForTVOS
+     * This method is obsolete. Calling this method does nothing and will return nil **
      * 
      * API-Since: 7.0
      * Deprecated-Since: 8.0
-     * Deprecated-Message: This is never invoked and its implementation does nothing, pass GKPlayers to
-     * challengeComposeControllerWithMessage:players: instead
      */
     @Nullable
     @Generated
@@ -278,7 +276,6 @@ public class GKAchievement extends NSObject implements NSCoding, NSSecureCoding 
      * 
      * API-Since: 7.0
      * Deprecated-Since: 8.0
-     * Deprecated-Message: This is never invoked and its implementation does nothing, use initWithIdentifier:player:
      */
     @Generated
     @Deprecated
@@ -305,7 +302,6 @@ public class GKAchievement extends NSObject implements NSCoding, NSSecureCoding 
     /**
      * API-Since: 4.1
      * Deprecated-Since: 6.0
-     * Deprecated-Message: Use isHidden on the GKAchievementDescription class instead
      */
     @Generated
     @Deprecated
@@ -317,8 +313,6 @@ public class GKAchievement extends NSObject implements NSCoding, NSSecureCoding 
      * 
      * API-Since: 6.0
      * Deprecated-Since: 7.0
-     * Deprecated-Message: This is never invoked and its implementation does nothing, pass GKPlayers to
-     * challengeComposeControllerWithMessage:players:completionHandler: and present the view controller instead
      */
     @Generated
     @Deprecated
@@ -355,7 +349,6 @@ public class GKAchievement extends NSObject implements NSCoding, NSSecureCoding 
      * 
      * API-Since: 7.0
      * Deprecated-Since: 8.0
-     * Deprecated-Message: This will return a null string, use player instead
      */
     @Nullable
     @Generated
@@ -366,7 +359,6 @@ public class GKAchievement extends NSObject implements NSCoding, NSSecureCoding 
     /**
      * API-Since: 4.1
      * Deprecated-Since: 7.0
-     * Deprecated-Message: Use +reportAchievements:withCompletionHandler:
      */
     @Generated
     @Deprecated
@@ -379,8 +371,6 @@ public class GKAchievement extends NSObject implements NSCoding, NSSecureCoding 
      * 
      * API-Since: 6.0
      * Deprecated-Since: 8.0
-     * Deprecated-Message: This is never invoked and its implementation does nothing, pass GKPlayers to
-     * selectChallengeablePlayers:
      */
     @Generated
     @Deprecated
@@ -506,4 +496,27 @@ public class GKAchievement extends NSObject implements NSCoding, NSSecureCoding 
         void call_selectChallengeablePlayersWithCompletionHandler(
                 @Nullable NSArray<? extends GKPlayer> challengeablePlayers, @Nullable NSError error);
     }
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("challengeComposeControllerWithMessage:players:completion:")
+    @NotNull
+    public native UIViewController challengeComposeControllerWithMessagePlayersCompletion(@Nullable String message,
+            @NotNull NSArray<? extends GKPlayer> players,
+            @ObjCBlock(name = "call_challengeComposeControllerWithMessagePlayersCompletion") @Nullable Block_challengeComposeControllerWithMessagePlayersCompletion completionHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_challengeComposeControllerWithMessagePlayersCompletion {
+        @Generated
+        void call_challengeComposeControllerWithMessagePlayersCompletion(@NotNull UIViewController composeController,
+                boolean didIssueChallenge, @Nullable NSArray<? extends GKPlayer> sentPlayers);
+    }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

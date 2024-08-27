@@ -82,4 +82,41 @@ public final class Accessibility {
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String AXMFiHearingDevicePairedUUIDsDidChangeNotification();
+
+    /**
+     * Returns whether the system setting to prefer horizontal text is enabled for languages that support both vertical
+     * and horizontal text layout.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @CFunction
+    public static native boolean AXPrefersHorizontalTextLayout();
+
+    /**
+     * Returns whether the system setting for displaying animations in an animated image is on or off.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @CFunction
+    public static native boolean AXAnimatedImagesEnabled();
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String AXPrefersHorizontalTextLayoutDidChangeNotification();
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String AXAnimatedImagesEnabledDidChangeNotification();
 }

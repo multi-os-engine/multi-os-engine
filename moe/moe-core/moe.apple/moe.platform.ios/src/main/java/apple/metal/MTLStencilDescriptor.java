@@ -241,4 +241,9 @@ public class MTLStencilDescriptor extends NSObject implements NSCopying {
     @Generated
     @Selector("writeMask")
     public native int writeMask();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

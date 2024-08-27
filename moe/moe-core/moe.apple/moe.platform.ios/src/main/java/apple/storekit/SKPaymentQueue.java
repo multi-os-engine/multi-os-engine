@@ -366,4 +366,9 @@ public class SKPaymentQueue extends NSObject {
     @Generated
     @Selector("transactionObservers")
     public native NSArray<?> transactionObservers();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

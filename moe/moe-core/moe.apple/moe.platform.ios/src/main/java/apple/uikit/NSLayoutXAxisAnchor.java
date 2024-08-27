@@ -204,4 +204,9 @@ public class NSLayoutXAxisAnchor extends NSLayoutAnchor<NSLayoutXAxisAnchor> {
     @Selector("constraintLessThanOrEqualToSystemSpacingAfterAnchor:multiplier:")
     public native NSLayoutConstraint constraintLessThanOrEqualToSystemSpacingAfterAnchorMultiplier(
             @NotNull NSLayoutXAxisAnchor anchor, @NFloat double multiplier);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

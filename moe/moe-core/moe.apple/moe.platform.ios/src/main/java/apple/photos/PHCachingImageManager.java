@@ -216,4 +216,9 @@ public class PHCachingImageManager extends PHImageManager {
     public native void stopCachingImagesForAssetsTargetSizeContentModeOptions(
             @NotNull NSArray<? extends PHAsset> assets, @ByValue CGSize targetSize, @NInt long contentMode,
             @Nullable PHImageRequestOptions options);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -49,8 +49,6 @@ import org.jetbrains.annotations.Nullable;
  * Contains related information for a specific contact property.
  * 
  * CNContactProperty is used by the CNContactPicker to return the user's selected property.
- * 
- * API-Since: 9.0
  */
 @Generated
 @Library("Contacts")
@@ -232,4 +230,9 @@ public class CNContactProperty extends NSObject implements NSCopying, NSSecureCo
     @Selector("value")
     @MappedReturn(ObjCObjectMapper.class)
     public native Object value();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

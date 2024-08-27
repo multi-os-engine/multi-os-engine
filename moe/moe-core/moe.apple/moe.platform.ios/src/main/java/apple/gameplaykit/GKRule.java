@@ -48,8 +48,6 @@ import org.jetbrains.annotations.Nullable;
  * state storage.
  * 
  * @see GKRuleSystem.state
- * 
- *      API-Since: 9.0
  */
 @Generated
 @Library("GameplayKit")
@@ -257,4 +255,9 @@ public class GKRule extends NSObject {
         @Generated
         void call_ruleWithBlockPredicateAction_1(@NotNull GKRuleSystem arg0);
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

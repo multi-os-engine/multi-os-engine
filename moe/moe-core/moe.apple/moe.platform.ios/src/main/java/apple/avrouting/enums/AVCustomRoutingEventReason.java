@@ -4,12 +4,7 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
 /**
- * [@constant] AVCustomRoutingEventReasonActivate
- * Represents an activation event, e.g. a user selected a route in the picker.
- * [@constant] AVCustomRoutingEventReasonDeactivate
- * Represents a deactivation event, e.g. a user deselected a route in the picker.
- * [@constant] AVCustomRoutingEventReasonReactivate
- * Represents a reactivation event, e.g. a route that is already authorized is selected by the user.
+ * Values that indicate the reason for a routing event.
  */
 @Generated
 public final class AVCustomRoutingEventReason {
@@ -17,7 +12,16 @@ public final class AVCustomRoutingEventReason {
     private AVCustomRoutingEventReason() {
     }
 
+    /**
+     * A value that indicates that a user selects a route in the picker.
+     */
     @Generated @NInt public static final long Activate = 0x0000000000000000L;
+    /**
+     * A value that indicates that a user deselects a route in the picker.
+     */
     @Generated @NInt public static final long Deactivate = 0x0000000000000001L;
+    /**
+     * A value that indicates to reactivate a route a user authorized previously.
+     */
     @Generated @NInt public static final long Reactivate = 0x0000000000000002L;
 }

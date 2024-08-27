@@ -295,4 +295,9 @@ public class CPMessageListItem extends NSObject implements CPListTemplateItem {
     @Generated
     @Selector("setEnabled:")
     public native void setEnabled(boolean value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

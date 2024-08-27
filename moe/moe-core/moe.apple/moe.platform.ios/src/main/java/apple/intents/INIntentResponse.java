@@ -210,4 +210,9 @@ public class INIntentResponse extends NSObject implements NSCopying, NSSecureCod
     @Generated
     @Selector("setUserActivity:")
     public native void setUserActivity(@Nullable NSUserActivity value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -72,9 +72,6 @@ import org.jetbrains.annotations.Nullable;
  * 
  * See Bonjour APIs https://developer.apple.com/bonjour/ for more
  * information about service types.
- * 
- * 
- * API-Since: 7.0
  */
 @Generated
 @Library("MultipeerConnectivity")
@@ -263,4 +260,9 @@ public class MCNearbyServiceBrowser extends NSObject {
     @Generated
     @Selector("stopBrowsingForPeers")
     public native void stopBrowsingForPeers();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -286,4 +286,9 @@ public class CATiledLayer extends CALayer {
     @Selector("cornerCurveExpansionFactor:")
     @NFloat
     public static native double cornerCurveExpansionFactor(@NotNull String curve);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

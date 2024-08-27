@@ -201,4 +201,9 @@ public class INPaymentAccountResolutionResult extends INIntentResolutionResult {
     @Generated
     @Selector("unsupportedWithReason:")
     public static native INPaymentAccountResolutionResult unsupportedWithReason(@NInt long reason);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

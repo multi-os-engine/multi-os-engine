@@ -181,4 +181,9 @@ public class CABTMIDILocalPeripheralViewController extends UIViewController {
     @Selector("initWithNibName:bundle:")
     public native CABTMIDILocalPeripheralViewController initWithNibNameBundle(@Nullable String nibNameOrNil,
             @Nullable NSBundle nibBundleOrNil);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

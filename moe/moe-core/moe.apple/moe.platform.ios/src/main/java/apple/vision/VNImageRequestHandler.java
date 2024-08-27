@@ -33,6 +33,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.avfoundation.AVDepthData;
 
 /**
  * Performs requests on a single image.
@@ -400,4 +401,55 @@ public class VNImageRequestHandler extends NSObject {
     @Selector("initWithCMSampleBuffer:orientation:options:")
     public native VNImageRequestHandler initWithCMSampleBufferOrientationOptions(
             @NotNull CMSampleBufferRef sampleBuffer, int orientation, @NotNull NSDictionary<String, ?> options);
+
+    /**
+     * Creates a VNImageRequestHandler to be used for performing requests against the image buffer contained in the
+     * CMSampleBufferRef
+     * 
+     * [@note] CMSampleBuffers can contain metadata like camera intrinsics that will be used by algorithms supporting it
+     * unless overwritten by the options.
+     * [@note] Because CoreImage is unable to render certain pixel formats in the iOS simulator, request results may not
+     * be accurate in those cases.
+     * 
+     * API-Since: 17.0
+     * 
+     * @param sampleBuffer A CMSampleBuffer containing the imageBuffer that will be used for performing the requests.
+     *                     Not all types of sample buffers are supported. They need to contain a CVImageBuffer, be valid
+     *                     and ready.
+     * @param depthData    An AVDepthData instance associated with the pixelBuffer
+     * @param orientation  The orientation of the image and depth buffers based on the EXIF specification. For details
+     *                     see kCGImagePropertyOrientation. The value has to be an integer from 1 to 8. This supersedes
+     *                     every other orientation information and should match for both buffers.
+     * @param options      A dictionary with options specifying auxiliary information for the buffer/image
+     */
+    @Generated
+    @Selector("initWithCMSampleBuffer:depthData:orientation:options:")
+    public native VNImageRequestHandler initWithCMSampleBufferDepthDataOrientationOptions(
+            @NotNull CMSampleBufferRef sampleBuffer, @NotNull AVDepthData depthData, int orientation,
+            @NotNull NSDictionary<String, ?> options);
+
+    /**
+     * initWithCVPixelBuffer:depthData:orientation:options creates a VNImageRequestHandler to be used for performing
+     * requests against the image passed in as buffer with depth information.
+     * 
+     * @param pixelBuffer A CVPixelBuffer containing the image to be used for performing the requests. The content of
+     *                    the buffer cannot be modified for the lifetime of the VNImageRequestHandler.
+     * @param depthData   An AVDepthData instance associated with the pixelBuffer
+     * @param orientation The orientation of the image and depth buffers based on the EXIF specification. For details
+     *                    see kCGImagePropertyOrientation. The value has to be an integer from 1 to 8. This supersedes
+     *                    every other orientation information and should match for both buffers.
+     * @param options     A dictionary with options specifying auxiliary information for the buffer/image
+     * 
+     *                    API-Since: 17.0
+     */
+    @Generated
+    @Selector("initWithCVPixelBuffer:depthData:orientation:options:")
+    public native VNImageRequestHandler initWithCVPixelBufferDepthDataOrientationOptions(
+            @NotNull CVBufferRef pixelBuffer, @NotNull AVDepthData depthData, int orientation,
+            @NotNull NSDictionary<String, ?> options);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

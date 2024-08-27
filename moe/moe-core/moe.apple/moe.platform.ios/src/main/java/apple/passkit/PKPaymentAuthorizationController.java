@@ -268,4 +268,48 @@ public class PKPaymentAuthorizationController extends NSObject {
         @Generated
         void call_presentWithCompletion(boolean success);
     }
+
+    /**
+     * Initialize the controller with a request to send money to a user.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("initWithDisbursementRequest:")
+    public native PKPaymentAuthorizationController initWithDisbursementRequest(@NotNull PKDisbursementRequest request);
+
+    /**
+     * Determine whether this device can process disbursement requests.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("supportsDisbursements")
+    public static native boolean supportsDisbursements();
+
+    /**
+     * Determine whether this device can process disbursement requests using specific payment network brands.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("supportsDisbursementsUsingNetworks:")
+    public static native boolean supportsDisbursementsUsingNetworks(@NotNull NSArray<String> supportedNetworks);
+
+    /**
+     * Determine whether this device can process disbursements to cards issued in any of the indicated regions using the
+     * specified networks and capabilities bitmask.
+     * supportedRegions is a list of ISO 3166 country codes. Duplicates are ignored.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("supportsDisbursementsUsingNetworks:capabilities:")
+    public static native boolean supportsDisbursementsUsingNetworksCapabilities(
+            @NotNull NSArray<String> supportedNetworks, @NUInt long capabilties);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

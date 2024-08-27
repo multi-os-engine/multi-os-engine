@@ -516,4 +516,9 @@ public class NSExpression extends NSObject implements NSSecureCoding, NSCopying 
         Object call_expressionForBlockArguments(@Nullable @Mapped(ObjCObjectMapper.class) Object evaluatedObject,
                 @NotNull NSArray<? extends NSExpression> expressions, @Nullable NSMutableDictionary<?, ?> context);
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

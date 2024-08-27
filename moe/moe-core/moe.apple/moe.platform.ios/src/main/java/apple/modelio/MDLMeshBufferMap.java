@@ -193,4 +193,9 @@ public class MDLMeshBufferMap extends NSObject {
         @Generated
         void call_initWithBytesDeallocator();
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

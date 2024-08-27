@@ -260,4 +260,9 @@ public class UIDocumentProperties extends NSObject {
     @Generated
     @Selector("wantsIconRepresentation")
     public native boolean wantsIconRepresentation();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

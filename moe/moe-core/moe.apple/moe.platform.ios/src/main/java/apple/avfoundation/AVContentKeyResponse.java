@@ -31,6 +31,8 @@ import org.jetbrains.annotations.Nullable;
  * AVContentKeyResponse is used to represent the data returned from the key server when requesting a key for decrypting
  * content.
  * 
+ * Subclasses of this type that are used from Swift must fulfill the requirements of a Sendable type.
+ * 
  * API-Since: 10.3
  */
 @Generated
@@ -214,4 +216,9 @@ public class AVContentKeyResponse extends NSObject {
     @Selector("contentKeyResponseWithAuthorizationTokenData:")
     public static native AVContentKeyResponse contentKeyResponseWithAuthorizationTokenData(
             @NotNull NSData authorizationTokenData);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

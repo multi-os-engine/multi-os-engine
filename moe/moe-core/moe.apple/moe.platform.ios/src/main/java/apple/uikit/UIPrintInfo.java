@@ -270,4 +270,9 @@ public class UIPrintInfo extends NSObject implements NSCopying, NSCoding {
     @Generated
     @Selector("setPrinterID:")
     public native void setPrinterID(@Nullable String value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

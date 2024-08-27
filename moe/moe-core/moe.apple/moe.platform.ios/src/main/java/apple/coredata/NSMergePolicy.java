@@ -259,4 +259,9 @@ public class NSMergePolicy extends NSObject {
     public native boolean resolveOptimisticLockingVersionConflictsError(
             @NotNull NSArray<? extends NSMergeConflict> list,
             @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

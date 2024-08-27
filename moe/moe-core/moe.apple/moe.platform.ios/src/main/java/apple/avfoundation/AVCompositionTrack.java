@@ -237,4 +237,9 @@ public class AVCompositionTrack extends AVAssetTrack {
     @Selector("samplePresentationTimeForTrackTime:")
     @ByValue
     public native CMTime samplePresentationTimeForTrackTime(@ByValue CMTime trackTime);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

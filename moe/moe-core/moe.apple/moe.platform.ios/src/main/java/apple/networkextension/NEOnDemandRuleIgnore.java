@@ -186,4 +186,9 @@ public class NEOnDemandRuleIgnore extends NEOnDemandRule {
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -44,8 +44,6 @@ import org.jetbrains.annotations.Nullable;
 /**
  * A random distribution is a random source itself with a specific mapping from the input source to the output values.
  * The distribution is uniform, meaning there is no bias towards any of the possible outcomes.
- * 
- * API-Since: 9.0
  */
 @Generated
 @Library("GameplayKit")
@@ -259,4 +257,9 @@ public class GKRandomDistribution extends NSObject implements GKRandom {
     @Selector("numberOfPossibleOutcomes")
     @NUInt
     public native long numberOfPossibleOutcomes();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

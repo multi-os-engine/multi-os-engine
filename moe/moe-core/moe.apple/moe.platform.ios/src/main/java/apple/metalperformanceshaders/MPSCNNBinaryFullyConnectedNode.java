@@ -256,4 +256,9 @@ public class MPSCNNBinaryFullyConnectedNode extends MPSCNNBinaryConvolutionNode 
             @Nullable ConstFloatPtr outputBiasTerms, @Nullable ConstFloatPtr outputScaleTerms,
             @Nullable ConstFloatPtr inputBiasTerms, @Nullable ConstFloatPtr inputScaleTerms, @NUInt long type,
             @NUInt long flags);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

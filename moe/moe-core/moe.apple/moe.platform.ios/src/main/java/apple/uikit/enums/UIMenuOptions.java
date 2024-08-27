@@ -30,4 +30,10 @@ public final class UIMenuOptions {
      * API-Since: 15.0
      */
     @Generated @NUInt public static final long SingleSelection = 0x0000000000000020L;
+    /**
+     * Indicates that this menu should be rendered as a palette.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated @NUInt public static final long DisplayAsPalette = 0x0000000000000080L;
 }

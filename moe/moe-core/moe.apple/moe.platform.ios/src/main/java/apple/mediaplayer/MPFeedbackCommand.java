@@ -216,4 +216,9 @@ public class MPFeedbackCommand extends MPRemoteCommand {
     @Generated
     @Selector("setLocalizedTitle:")
     public native void setLocalizedTitle(@NotNull String value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

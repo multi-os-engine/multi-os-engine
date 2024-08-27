@@ -28,6 +28,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.opaque.dispatch_queue_t;
 
 /**
  * NFCTagReaderSession
@@ -184,7 +185,8 @@ public class NFCTagReaderSession extends NFCReaderSession {
     @Generated
     @Selector("initWithPollingOption:delegate:queue:")
     public native NFCTagReaderSession initWithPollingOptionDelegateQueue(@NInt long pollingOption,
-            @NotNull @Mapped(ObjCObjectMapper.class) NFCTagReaderSessionDelegate delegate, @Nullable NSObject queue);
+            @NotNull @Mapped(ObjCObjectMapper.class) NFCTagReaderSessionDelegate delegate,
+            @Nullable dispatch_queue_t queue);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -254,4 +256,9 @@ public class NFCTagReaderSession extends NFCReaderSession {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

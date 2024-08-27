@@ -376,4 +376,9 @@ public class MPSImageDescriptor extends NSObject implements NSCopying {
     @Owned
     @Selector("copyWithZone:")
     public native MPSImageDescriptor copyWithZone(@Nullable VoidPtr zone);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

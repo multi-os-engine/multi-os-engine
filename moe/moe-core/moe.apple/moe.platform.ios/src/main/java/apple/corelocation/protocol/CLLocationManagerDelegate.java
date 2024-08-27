@@ -49,11 +49,6 @@ import org.jetbrains.annotations.Nullable;
 @ObjCProtocolName("CLLocationManagerDelegate")
 public interface CLLocationManagerDelegate {
     /**
-     * locationManager:didChangeAuthorizationStatus:
-     * 
-     * Discussion:
-     * Invoked when the authorization status changes for this application.
-     * 
      * API-Since: 4.2
      * Deprecated-Since: 14.0
      */
@@ -245,13 +240,6 @@ public interface CLLocationManagerDelegate {
     }
 
     /**
-     * locationManager:didVisit:
-     * 
-     * Discussion:
-     * Invoked when the CLLocationManager determines that the device has visited
-     * a location, if visit monitoring is currently started (possibly from a
-     * prior launch).
-     * 
      * API-Since: 8.0
      */
     @Generated
@@ -325,12 +313,6 @@ public interface CLLocationManagerDelegate {
     }
 
     /**
-     * locationManagerShouldDisplayHeadingCalibration:
-     * 
-     * Discussion:
-     * Invoked when a new heading is available. Return YES to display heading calibration info. The display
-     * will remain until heading is calibrated, unless dismissed early via dismissHeadingCalibrationDisplay.
-     * 
      * API-Since: 3.0
      */
     @Generated

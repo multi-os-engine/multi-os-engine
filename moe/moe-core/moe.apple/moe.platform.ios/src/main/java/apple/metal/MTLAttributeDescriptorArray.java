@@ -169,4 +169,9 @@ public class MTLAttributeDescriptorArray extends NSObject {
     @Generated
     @Selector("setObject:atIndexedSubscript:")
     public native void setObjectAtIndexedSubscript(@Nullable MTLAttributeDescriptor attributeDesc, @NUInt long index);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

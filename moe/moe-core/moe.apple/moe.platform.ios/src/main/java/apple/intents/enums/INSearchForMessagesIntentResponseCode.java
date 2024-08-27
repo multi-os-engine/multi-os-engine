@@ -61,4 +61,8 @@ public final class INSearchForMessagesIntentResponseCode {
      * API-Since: 10.0
      */
     @Generated @NInt public static final long FailureMessageTooManyResults = 0x0000000000000007L;
+    /**
+     * API-Since: 17.0
+     */
+    @Generated @NInt public static final long FailureRequiringInAppAuthentication = 0x0000000000000008L;
 }

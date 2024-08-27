@@ -338,4 +338,19 @@ public class NSCollectionLayoutSection extends NSObject implements NSCopying {
     @Selector("supplementaryContentInsetsReference")
     @NInt
     public native long supplementaryContentInsetsReference();
+
+    /**
+     * Properties to configure the orthogonal scrolling section.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("orthogonalScrollingProperties")
+    @NotNull
+    public native UICollectionLayoutSectionOrthogonalScrollingProperties orthogonalScrollingProperties();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -227,4 +227,9 @@ public class AVCaptureDeviceDiscoverySession extends NSObject {
     @Generated
     @Selector("supportedMultiCamDeviceSets")
     public native NSArray<? extends NSSet<? extends AVCaptureDevice>> supportedMultiCamDeviceSets();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

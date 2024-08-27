@@ -25,6 +25,8 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
+ * The configuration for this device.
+ * 
  * API-Since: 14.0
  */
 @Generated
@@ -88,6 +90,10 @@ public class STScreenTimeConfiguration extends NSObject {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * A Boolean that indicates whether the device is currently enforcing child
+     * restrictions.
+     */
     @Generated
     @Selector("enforcesChildRestrictions")
     public native boolean enforcesChildRestrictions();
@@ -148,4 +154,9 @@ public class STScreenTimeConfiguration extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

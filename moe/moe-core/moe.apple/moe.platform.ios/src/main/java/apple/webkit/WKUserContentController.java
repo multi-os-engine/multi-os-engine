@@ -370,4 +370,9 @@ public class WKUserContentController extends NSObject implements NSSecureCoding 
     @Selector("removeScriptMessageHandlerForName:contentWorld:")
     public native void removeScriptMessageHandlerForNameContentWorld(@NotNull String name,
             @NotNull WKContentWorld contentWorld);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

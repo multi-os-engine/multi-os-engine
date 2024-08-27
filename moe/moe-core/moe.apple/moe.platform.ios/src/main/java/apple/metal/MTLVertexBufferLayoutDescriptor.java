@@ -196,4 +196,9 @@ public class MTLVertexBufferLayoutDescriptor extends NSObject implements NSCopyi
     @Selector("stride")
     @NUInt
     public native long stride();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

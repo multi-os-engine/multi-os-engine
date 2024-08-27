@@ -29,7 +29,7 @@ import org.jetbrains.annotations.Nullable;
 /**
  * A request for generating a feature print of an image.
  * 
- * This request will produce a VNFeaturePrintObservation object.
+ * This request will produce a `VNFeaturePrintObservation` object.
  * 
  * API-Since: 13.0
  */
@@ -113,7 +113,7 @@ public class VNGenerateImageFeaturePrintRequest extends VNImageBasedRequest {
      * Determine what type of croping and scaling action should be applied to the image before generating the feature
      * print.
      * 
-     * The default value for this property is VNImageCropAndScaleOptionScaleFill.
+     * The default value for this property is `VNImageCropAndScaleOptionScaleFill`.
      */
     @Generated
     @Selector("imageCropAndScaleOption")
@@ -168,7 +168,7 @@ public class VNGenerateImageFeaturePrintRequest extends VNImageBasedRequest {
      * Determine what type of croping and scaling action should be applied to the image before generating the feature
      * print.
      * 
-     * The default value for this property is VNImageCropAndScaleOptionScaleFill.
+     * The default value for this property is `VNImageCropAndScaleOptionScaleFill`.
      */
     @Generated
     @Selector("setImageCropAndScaleOption:")
@@ -193,10 +193,15 @@ public class VNGenerateImageFeaturePrintRequest extends VNImageBasedRequest {
     public static native long version_static();
 
     /**
-     * VNFeaturePrintObservation results.
+     * `VNFeaturePrintObservation` results.
      */
     @Nullable
     @Generated
     @Selector("results")
     public native NSArray<? extends VNFeaturePrintObservation> results();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

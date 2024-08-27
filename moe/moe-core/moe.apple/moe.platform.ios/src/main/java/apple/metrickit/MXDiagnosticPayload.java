@@ -283,4 +283,9 @@ public class MXDiagnosticPayload extends NSObject implements NSSecureCoding {
     @Generated
     @Selector("appLaunchDiagnostics")
     public native NSArray<? extends MXAppLaunchDiagnostic> appLaunchDiagnostics();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

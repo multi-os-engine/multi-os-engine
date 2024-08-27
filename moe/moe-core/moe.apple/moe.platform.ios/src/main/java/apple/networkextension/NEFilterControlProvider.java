@@ -319,4 +319,9 @@ public class NEFilterControlProvider extends NEFilterProvider {
         @Generated
         void call_handleRemediationForFlowCompletionHandler(@NotNull NEFilterControlVerdict arg0);
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

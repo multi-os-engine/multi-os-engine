@@ -175,4 +175,9 @@ public class MPChangeShuffleModeCommandEvent extends MPRemoteCommandEvent {
     @Selector("shuffleType")
     @NInt
     public native long shuffleType();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

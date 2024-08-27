@@ -180,4 +180,9 @@ public class MPChangeShuffleModeCommand extends MPRemoteCommand {
     @Generated
     @Selector("setCurrentShuffleType:")
     public native void setCurrentShuffleType(@NInt long value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -62,8 +62,6 @@ public final class UISplitViewControllerDisplayMode {
     /**
      * Supplementary column overlaid on Secondary column for UISplitViewControllerStyleTripleColumn, Primary overlaid
      * otherwise
-     * 
-     * API-Since: 8.0
      */
     @Generated @NInt public static final long OneOverSecondary = 0x0000000000000003L;
     /**

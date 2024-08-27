@@ -190,4 +190,9 @@ public class INTaskStatusResolutionResult extends INIntentResolutionResult {
     @Generated
     @Selector("unsupportedWithReason:")
     public static native INTaskStatusResolutionResult unsupportedWithReason(@NInt long reason);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

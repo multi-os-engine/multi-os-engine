@@ -28,7 +28,7 @@ import com.intellij.openapi.fileEditor.FileEditorState;
 import com.intellij.openapi.fileEditor.FileEditorStateLevel;
 import com.intellij.openapi.fileEditor.impl.text.TextEditorProvider;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.util.Key;
+import com.intellij.openapi.util.UserDataHolderBase;
 import com.intellij.openapi.vfs.LocalFileSystem;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.VirtualFileListener;
@@ -48,7 +48,7 @@ import java.io.File;
 
 import javax.swing.JComponent;
 
-public class XcodeEditor implements VirtualFileListener, FileEditor {
+public class XcodeEditor extends UserDataHolderBase implements VirtualFileListener, FileEditor {
 
     private static final Logger LOG = LoggerFactory.getLogger(XcodeEditor.class);
 
@@ -160,17 +160,6 @@ public class XcodeEditor implements VirtualFileListener, FileEditor {
         TextEditorProvider.getInstance().disposeEditor(this);
     }
 
-    @Nullable
-    @Override
-    public <T> T getUserData(@NotNull Key<T> key) {
-        return null;
-    }
-
-    @Override
-    public <T> void putUserData(@NotNull Key<T> key, @Nullable T t) {
-
-    }
-
     @Override
     public @NotNull VirtualFile getFile() {
         return myFile;
@@ -210,7 +199,7 @@ public class XcodeEditor implements VirtualFileListener, FileEditor {
         String root = virtualFile.getParent().getParent().getPath();
         File mainInfoPlist = getFileFromXcodeConfiguration(root, xcodeEditorManager.getInfoMainPlist());
 
-        VirtualFile mainInfoVirtualFile = project.getBaseDir().getFileSystem().findFileByPath(mainInfoPlist.getAbsolutePath());
+        VirtualFile mainInfoVirtualFile = virtualFile.getFileSystem().findFileByPath(mainInfoPlist.getAbsolutePath());
         this.mainInfoPlistDocument = fileDocumentManager.getDocument(mainInfoVirtualFile);
         try {
             this.mainInfoPlistManager = new InfoPlistManager(mainInfoPlistDocument.getText());

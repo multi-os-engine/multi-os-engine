@@ -302,4 +302,9 @@ public class MTLAccelerationStructureGeometryDescriptor extends NSObject impleme
     @Generated
     @Selector("setPrimitiveDataStride:")
     public native void setPrimitiveDataStride(@NUInt long value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

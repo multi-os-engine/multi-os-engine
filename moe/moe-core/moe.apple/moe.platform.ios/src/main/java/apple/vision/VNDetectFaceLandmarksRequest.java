@@ -221,4 +221,9 @@ public class VNDetectFaceLandmarksRequest extends VNImageBasedRequest implements
     @Generated
     @Selector("results")
     public native NSArray<? extends VNFaceObservation> results();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

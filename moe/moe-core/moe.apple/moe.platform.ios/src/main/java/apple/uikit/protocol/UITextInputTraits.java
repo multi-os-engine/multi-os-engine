@@ -333,4 +333,29 @@ public interface UITextInputTraits {
     default void setPasswordRules(@Nullable UITextInputPasswordRules value) {
         throw new java.lang.UnsupportedOperationException();
     }
+
+    /**
+     * default is UITextInlinePredictionTypeDefault
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @IsOptional
+    @Selector("inlinePredictionType")
+    @NInt
+    default long inlinePredictionType() {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    /**
+     * default is UITextInlinePredictionTypeDefault
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @IsOptional
+    @Selector("setInlinePredictionType:")
+    default void setInlinePredictionType(@NInt long value) {
+        throw new java.lang.UnsupportedOperationException();
+    }
 }

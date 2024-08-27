@@ -263,4 +263,9 @@ public class GKCompositeBehavior extends GKBehavior {
     @Generated
     @Selector("weightForBehavior:")
     public native float weightForBehavior(@NotNull GKBehavior behavior);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

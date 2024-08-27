@@ -61,6 +61,7 @@ import apple.corefoundation.struct.CGPoint;
 import apple.corefoundation.struct.CGRect;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.moe.natj.objc.ann.ObjCBlock;
 
 /**
  * API-Since: 2.0
@@ -1406,7 +1407,7 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
      * -is<Key>, in that order. If such a method is found it is invoked. If the type of the method's result is an object
      * pointer type the result is simply returned. If the type of the result is one of the scalar types supported by
      * NSNumber conversion is done and an NSNumber is returned. Otherwise, conversion is done and an NSValue is returned
-     * (new in Mac OS 10.5: results of arbitrary type are converted to NSValues, not just NSPoint, NRange, NSRect, and
+     * (new in Mac OS 10.5: results of arbitrary type are converted to NSValues, not just NSPoint, NSRange, NSRect, and
      * NSSize).
      * 2 (introduced in Mac OS 10.7). Otherwise (no simple accessor method is found), searches the class of the receiver
      * for methods whose names match the patterns -countOf<Key> and -indexIn<Key>OfObject: and -objectIn<Key>AtIndex:
@@ -1858,4 +1859,1241 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
     @Generated
     @Selector("setAccessibilityUserInputLabels:")
     public native void setAccessibilityUserInputLabels(NSArray<String> value);
+
+    /**
+     * Actions
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("accessibilityActivateBlock")
+    @ObjCBlock(name = "call_accessibilityActivateBlock_ret")
+    @Nullable
+    public native Block_accessibilityActivateBlock_ret accessibilityActivateBlock();
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_accessibilityActivateBlock_ret {
+        @Generated
+        boolean call_accessibilityActivateBlock_ret();
+    }
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("accessibilityActivationPointBlock")
+    @ObjCBlock(name = "call_accessibilityActivationPointBlock_ret")
+    @Nullable
+    public native Block_accessibilityActivationPointBlock_ret accessibilityActivationPointBlock();
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_accessibilityActivationPointBlock_ret {
+        @Generated
+        @ByValue
+        CGPoint call_accessibilityActivationPointBlock_ret();
+    }
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("accessibilityAttributedHintBlock")
+    @ObjCBlock(name = "call_accessibilityAttributedHintBlock_ret")
+    @Nullable
+    public native Block_accessibilityAttributedHintBlock_ret accessibilityAttributedHintBlock();
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_accessibilityAttributedHintBlock_ret {
+        @Generated
+        @Nullable
+        NSAttributedString call_accessibilityAttributedHintBlock_ret();
+    }
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("accessibilityAttributedLabelBlock")
+    @ObjCBlock(name = "call_accessibilityAttributedLabelBlock_ret")
+    @Nullable
+    public native Block_accessibilityAttributedLabelBlock_ret accessibilityAttributedLabelBlock();
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_accessibilityAttributedLabelBlock_ret {
+        @Generated
+        @Nullable
+        NSAttributedString call_accessibilityAttributedLabelBlock_ret();
+    }
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("accessibilityAttributedUserInputLabelsBlock")
+    @ObjCBlock(name = "call_accessibilityAttributedUserInputLabelsBlock_ret")
+    @Nullable
+    public native Block_accessibilityAttributedUserInputLabelsBlock_ret accessibilityAttributedUserInputLabelsBlock();
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_accessibilityAttributedUserInputLabelsBlock_ret {
+        @Generated
+        @Nullable
+        NSArray<? extends NSAttributedString> call_accessibilityAttributedUserInputLabelsBlock_ret();
+    }
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("accessibilityAttributedValueBlock")
+    @ObjCBlock(name = "call_accessibilityAttributedValueBlock_ret")
+    @Nullable
+    public native Block_accessibilityAttributedValueBlock_ret accessibilityAttributedValueBlock();
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_accessibilityAttributedValueBlock_ret {
+        @Generated
+        @Nullable
+        NSAttributedString call_accessibilityAttributedValueBlock_ret();
+    }
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("accessibilityContainerTypeBlock")
+    @ObjCBlock(name = "call_accessibilityContainerTypeBlock_ret")
+    @Nullable
+    public native Block_accessibilityContainerTypeBlock_ret accessibilityContainerTypeBlock();
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_accessibilityContainerTypeBlock_ret {
+        @Generated
+        @NInt
+        long call_accessibilityContainerTypeBlock_ret();
+    }
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("accessibilityCustomActionsBlock")
+    @ObjCBlock(name = "call_accessibilityCustomActionsBlock_ret")
+    @Nullable
+    public native Block_accessibilityCustomActionsBlock_ret accessibilityCustomActionsBlock();
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_accessibilityCustomActionsBlock_ret {
+        @Generated
+        @Nullable
+        NSArray<? extends UIAccessibilityCustomAction> call_accessibilityCustomActionsBlock_ret();
+    }
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("accessibilityCustomRotorsBlock")
+    @ObjCBlock(name = "call_accessibilityCustomRotorsBlock_ret")
+    @Nullable
+    public native Block_accessibilityCustomRotorsBlock_ret accessibilityCustomRotorsBlock();
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_accessibilityCustomRotorsBlock_ret {
+        @Generated
+        @Nullable
+        NSArray<? extends UIAccessibilityCustomRotor> call_accessibilityCustomRotorsBlock_ret();
+    }
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("accessibilityDecrementBlock")
+    @ObjCBlock(name = "call_accessibilityDecrementBlock_ret")
+    @Nullable
+    public native Block_accessibilityDecrementBlock_ret accessibilityDecrementBlock();
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_accessibilityDecrementBlock_ret {
+        @Generated
+        void call_accessibilityDecrementBlock_ret();
+    }
+
+    /**
+     * Configure how VoiceOver interacts with direct touch areas.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("accessibilityDirectTouchOptions")
+    @NUInt
+    public native long accessibilityDirectTouchOptions();
+
+    /**
+     * Navigating elements
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("accessibilityElementsBlock")
+    @ObjCBlock(name = "call_accessibilityElementsBlock_ret")
+    @Nullable
+    public native Block_accessibilityElementsBlock_ret accessibilityElementsBlock();
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_accessibilityElementsBlock_ret {
+        @Generated
+        @Nullable
+        NSArray<?> call_accessibilityElementsBlock_ret();
+    }
+
+    /**
+     * Configuring behavior
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("accessibilityElementsHiddenBlock")
+    @ObjCBlock(name = "call_accessibilityElementsHiddenBlock_ret")
+    @Nullable
+    public native Block_accessibilityElementsHiddenBlock_ret accessibilityElementsHiddenBlock();
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_accessibilityElementsHiddenBlock_ret {
+        @Generated
+        boolean call_accessibilityElementsHiddenBlock_ret();
+    }
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("accessibilityFrameBlock")
+    @ObjCBlock(name = "call_accessibilityFrameBlock_ret")
+    @Nullable
+    public native Block_accessibilityFrameBlock_ret accessibilityFrameBlock();
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_accessibilityFrameBlock_ret {
+        @Generated
+        @ByValue
+        CGRect call_accessibilityFrameBlock_ret();
+    }
+
+    /**
+     * Defining accessibility text and language
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("accessibilityHeaderElementsBlock")
+    @ObjCBlock(name = "call_accessibilityHeaderElementsBlock_ret")
+    @Nullable
+    public native Block_accessibilityHeaderElementsBlock_ret accessibilityHeaderElementsBlock();
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_accessibilityHeaderElementsBlock_ret {
+        @Generated
+        @Nullable
+        NSArray<?> call_accessibilityHeaderElementsBlock_ret();
+    }
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("accessibilityHintBlock")
+    @ObjCBlock(name = "call_accessibilityHintBlock_ret")
+    @Nullable
+    public native Block_accessibilityHintBlock_ret accessibilityHintBlock();
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_accessibilityHintBlock_ret {
+        @Generated
+        @Nullable
+        String call_accessibilityHintBlock_ret();
+    }
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("accessibilityIdentifierBlock")
+    @ObjCBlock(name = "call_accessibilityIdentifierBlock_ret")
+    @Nullable
+    public native Block_accessibilityIdentifierBlock_ret accessibilityIdentifierBlock();
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_accessibilityIdentifierBlock_ret {
+        @Generated
+        @Nullable
+        String call_accessibilityIdentifierBlock_ret();
+    }
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("accessibilityIncrementBlock")
+    @ObjCBlock(name = "call_accessibilityIncrementBlock_ret")
+    @Nullable
+    public native Block_accessibilityIncrementBlock_ret accessibilityIncrementBlock();
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_accessibilityIncrementBlock_ret {
+        @Generated
+        void call_accessibilityIncrementBlock_ret();
+    }
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("accessibilityLabelBlock")
+    @ObjCBlock(name = "call_accessibilityLabelBlock_ret")
+    @Nullable
+    public native Block_accessibilityLabelBlock_ret accessibilityLabelBlock();
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_accessibilityLabelBlock_ret {
+        @Generated
+        @Nullable
+        String call_accessibilityLabelBlock_ret();
+    }
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("accessibilityLanguageBlock")
+    @ObjCBlock(name = "call_accessibilityLanguageBlock_ret")
+    @Nullable
+    public native Block_accessibilityLanguageBlock_ret accessibilityLanguageBlock();
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_accessibilityLanguageBlock_ret {
+        @Generated
+        @Nullable
+        String call_accessibilityLanguageBlock_ret();
+    }
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("accessibilityMagicTapBlock")
+    @ObjCBlock(name = "call_accessibilityMagicTapBlock_ret")
+    @Nullable
+    public native Block_accessibilityMagicTapBlock_ret accessibilityMagicTapBlock();
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_accessibilityMagicTapBlock_ret {
+        @Generated
+        boolean call_accessibilityMagicTapBlock_ret();
+    }
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("accessibilityNavigationStyleBlock")
+    @ObjCBlock(name = "call_accessibilityNavigationStyleBlock_ret")
+    @Nullable
+    public native Block_accessibilityNavigationStyleBlock_ret accessibilityNavigationStyleBlock();
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_accessibilityNavigationStyleBlock_ret {
+        @Generated
+        @NInt
+        long call_accessibilityNavigationStyleBlock_ret();
+    }
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("accessibilityPathBlock")
+    @ObjCBlock(name = "call_accessibilityPathBlock_ret")
+    @Nullable
+    public native Block_accessibilityPathBlock_ret accessibilityPathBlock();
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_accessibilityPathBlock_ret {
+        @Generated
+        @Nullable
+        UIBezierPath call_accessibilityPathBlock_ret();
+    }
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("accessibilityPerformEscapeBlock")
+    @ObjCBlock(name = "call_accessibilityPerformEscapeBlock_ret")
+    @Nullable
+    public native Block_accessibilityPerformEscapeBlock_ret accessibilityPerformEscapeBlock();
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_accessibilityPerformEscapeBlock_ret {
+        @Generated
+        boolean call_accessibilityPerformEscapeBlock_ret();
+    }
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("accessibilityRespondsToUserInteractionBlock")
+    @ObjCBlock(name = "call_accessibilityRespondsToUserInteractionBlock_ret")
+    @Nullable
+    public native Block_accessibilityRespondsToUserInteractionBlock_ret accessibilityRespondsToUserInteractionBlock();
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_accessibilityRespondsToUserInteractionBlock_ret {
+        @Generated
+        boolean call_accessibilityRespondsToUserInteractionBlock_ret();
+    }
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("accessibilityShouldGroupAccessibilityChildrenBlock")
+    @ObjCBlock(name = "call_accessibilityShouldGroupAccessibilityChildrenBlock_ret")
+    @Nullable
+    public native Block_accessibilityShouldGroupAccessibilityChildrenBlock_ret accessibilityShouldGroupAccessibilityChildrenBlock();
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_accessibilityShouldGroupAccessibilityChildrenBlock_ret {
+        @Generated
+        boolean call_accessibilityShouldGroupAccessibilityChildrenBlock_ret();
+    }
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("accessibilityTextualContextBlock")
+    @ObjCBlock(name = "call_accessibilityTextualContextBlock_ret")
+    @Nullable
+    public native Block_accessibilityTextualContextBlock_ret accessibilityTextualContextBlock();
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_accessibilityTextualContextBlock_ret {
+        @Generated
+        @Nullable
+        String call_accessibilityTextualContextBlock_ret();
+    }
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("accessibilityTraitsBlock")
+    @ObjCBlock(name = "call_accessibilityTraitsBlock_ret")
+    @Nullable
+    public native Block_accessibilityTraitsBlock_ret accessibilityTraitsBlock();
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_accessibilityTraitsBlock_ret {
+        @Generated
+        long call_accessibilityTraitsBlock_ret();
+    }
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("accessibilityUserInputLabelsBlock")
+    @ObjCBlock(name = "call_accessibilityUserInputLabelsBlock_ret")
+    @Nullable
+    public native Block_accessibilityUserInputLabelsBlock_ret accessibilityUserInputLabelsBlock();
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_accessibilityUserInputLabelsBlock_ret {
+        @Generated
+        @Nullable
+        NSArray<String> call_accessibilityUserInputLabelsBlock_ret();
+    }
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("accessibilityValueBlock")
+    @ObjCBlock(name = "call_accessibilityValueBlock_ret")
+    @Nullable
+    public native Block_accessibilityValueBlock_ret accessibilityValueBlock();
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_accessibilityValueBlock_ret {
+        @Generated
+        @Nullable
+        String call_accessibilityValueBlock_ret();
+    }
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("accessibilityViewIsModalBlock")
+    @ObjCBlock(name = "call_accessibilityViewIsModalBlock_ret")
+    @Nullable
+    public native Block_accessibilityViewIsModalBlock_ret accessibilityViewIsModalBlock();
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_accessibilityViewIsModalBlock_ret {
+        @Generated
+        boolean call_accessibilityViewIsModalBlock_ret();
+    }
+
+    /**
+     * If an element has the UIAccessibilityTraitSupportsZoom trait, it must also implement
+     * the following methods. The point is the center point in the coordinate space of the
+     * corresponding view. For example, if an element allows an expand gesture that modifies the
+     * view in some way, you may implement accessibilityZoomInAtPoint so that VoiceOver's zoom in
+     * custom action will receive the same behavior. If your implementation successfully handles
+     * zooming, return YES, otherwise return NO.
+     * default == NO
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("accessibilityZoomInAtPoint:")
+    public native boolean accessibilityZoomInAtPoint(@ByValue CGPoint point);
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("accessibilityZoomOutAtPoint:")
+    public native boolean accessibilityZoomOutAtPoint(@ByValue CGPoint point);
+
+    /**
+     * An array of container elements similar to accessibilityElements but specific for automation.
+     * This can be used to modify the children in the accessibility tree for automation.
+     * If not set, automationElements will default first to accessibilityElements if it’s not an accessibility element.
+     * If there are no accessibilityElements and the view is an accessibility element, it will return the list of
+     * subviews that have accessibilityIdentifier.
+     * Otherwise, the default will be an empty array.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("automationElements")
+    @Nullable
+    public native NSArray<?> automationElements();
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("automationElementsBlock")
+    @ObjCBlock(name = "call_automationElementsBlock_ret")
+    @Nullable
+    public native Block_automationElementsBlock_ret automationElementsBlock();
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_automationElementsBlock_ret {
+        @Generated
+        @Nullable
+        NSArray<?> call_automationElementsBlock_ret();
+    }
+
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 2.0
+     * Deprecated-Message: Legacy KVC API
+     */
+    @Generated
+    @Deprecated
+    @Selector("handleQueryWithUnboundKey:")
+    @MappedReturn(ObjCObjectMapper.class)
+    @Nullable
+    public native Object handleQueryWithUnboundKey(@NotNull String key);
+
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 2.0
+     * Deprecated-Message: Legacy KVC API
+     */
+    @Generated
+    @Deprecated
+    @Selector("handleTakeValue:forUnboundKey:")
+    public native void handleTakeValueForUnboundKey(@Mapped(ObjCObjectMapper.class) @Nullable Object value,
+            @NotNull String key);
+
+    /**
+     * Basic accessibility
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("isAccessibilityElementBlock")
+    @ObjCBlock(name = "call_isAccessibilityElementBlock_ret")
+    @Nullable
+    public native Block_isAccessibilityElementBlock_ret isAccessibilityElementBlock();
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_isAccessibilityElementBlock_ret {
+        @Generated
+        boolean call_isAccessibilityElementBlock_ret();
+    }
+
+    /**
+     * Actions
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("setAccessibilityActivateBlock:")
+    public native void setAccessibilityActivateBlock(
+            @ObjCBlock(name = "call_setAccessibilityActivateBlock") @Nullable Block_setAccessibilityActivateBlock value);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_setAccessibilityActivateBlock {
+        @Generated
+        boolean call_setAccessibilityActivateBlock();
+    }
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("setAccessibilityActivationPointBlock:")
+    public native void setAccessibilityActivationPointBlock(
+            @ObjCBlock(name = "call_setAccessibilityActivationPointBlock") @Nullable Block_setAccessibilityActivationPointBlock value);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_setAccessibilityActivationPointBlock {
+        @Generated
+        @ByValue
+        CGPoint call_setAccessibilityActivationPointBlock();
+    }
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("setAccessibilityAttributedHintBlock:")
+    public native void setAccessibilityAttributedHintBlock(
+            @ObjCBlock(name = "call_setAccessibilityAttributedHintBlock") @Nullable Block_setAccessibilityAttributedHintBlock value);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_setAccessibilityAttributedHintBlock {
+        @Generated
+        @Nullable
+        NSAttributedString call_setAccessibilityAttributedHintBlock();
+    }
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("setAccessibilityAttributedLabelBlock:")
+    public native void setAccessibilityAttributedLabelBlock(
+            @ObjCBlock(name = "call_setAccessibilityAttributedLabelBlock") @Nullable Block_setAccessibilityAttributedLabelBlock value);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_setAccessibilityAttributedLabelBlock {
+        @Generated
+        @Nullable
+        NSAttributedString call_setAccessibilityAttributedLabelBlock();
+    }
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("setAccessibilityAttributedUserInputLabelsBlock:")
+    public native void setAccessibilityAttributedUserInputLabelsBlock(
+            @ObjCBlock(name = "call_setAccessibilityAttributedUserInputLabelsBlock") @Nullable Block_setAccessibilityAttributedUserInputLabelsBlock value);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_setAccessibilityAttributedUserInputLabelsBlock {
+        @Generated
+        @Nullable
+        NSArray<? extends NSAttributedString> call_setAccessibilityAttributedUserInputLabelsBlock();
+    }
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("setAccessibilityAttributedValueBlock:")
+    public native void setAccessibilityAttributedValueBlock(
+            @ObjCBlock(name = "call_setAccessibilityAttributedValueBlock") @Nullable Block_setAccessibilityAttributedValueBlock value);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_setAccessibilityAttributedValueBlock {
+        @Generated
+        @Nullable
+        NSAttributedString call_setAccessibilityAttributedValueBlock();
+    }
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("setAccessibilityContainerTypeBlock:")
+    public native void setAccessibilityContainerTypeBlock(
+            @ObjCBlock(name = "call_setAccessibilityContainerTypeBlock") @Nullable Block_setAccessibilityContainerTypeBlock value);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_setAccessibilityContainerTypeBlock {
+        @Generated
+        @NInt
+        long call_setAccessibilityContainerTypeBlock();
+    }
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("setAccessibilityCustomActionsBlock:")
+    public native void setAccessibilityCustomActionsBlock(
+            @ObjCBlock(name = "call_setAccessibilityCustomActionsBlock") @Nullable Block_setAccessibilityCustomActionsBlock value);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_setAccessibilityCustomActionsBlock {
+        @Generated
+        @Nullable
+        NSArray<? extends UIAccessibilityCustomAction> call_setAccessibilityCustomActionsBlock();
+    }
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("setAccessibilityCustomRotorsBlock:")
+    public native void setAccessibilityCustomRotorsBlock(
+            @ObjCBlock(name = "call_setAccessibilityCustomRotorsBlock") @Nullable Block_setAccessibilityCustomRotorsBlock value);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_setAccessibilityCustomRotorsBlock {
+        @Generated
+        @Nullable
+        NSArray<? extends UIAccessibilityCustomRotor> call_setAccessibilityCustomRotorsBlock();
+    }
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("setAccessibilityDecrementBlock:")
+    public native void setAccessibilityDecrementBlock(
+            @ObjCBlock(name = "call_setAccessibilityDecrementBlock") @Nullable Block_setAccessibilityDecrementBlock value);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_setAccessibilityDecrementBlock {
+        @Generated
+        void call_setAccessibilityDecrementBlock();
+    }
+
+    /**
+     * Configure how VoiceOver interacts with direct touch areas.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("setAccessibilityDirectTouchOptions:")
+    public native void setAccessibilityDirectTouchOptions(@NUInt long value);
+
+    /**
+     * Navigating elements
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("setAccessibilityElementsBlock:")
+    public native void setAccessibilityElementsBlock(
+            @ObjCBlock(name = "call_setAccessibilityElementsBlock") @Nullable Block_setAccessibilityElementsBlock value);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_setAccessibilityElementsBlock {
+        @Generated
+        @Nullable
+        NSArray<?> call_setAccessibilityElementsBlock();
+    }
+
+    /**
+     * Configuring behavior
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("setAccessibilityElementsHiddenBlock:")
+    public native void setAccessibilityElementsHiddenBlock(
+            @ObjCBlock(name = "call_setAccessibilityElementsHiddenBlock") @Nullable Block_setAccessibilityElementsHiddenBlock value);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_setAccessibilityElementsHiddenBlock {
+        @Generated
+        boolean call_setAccessibilityElementsHiddenBlock();
+    }
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("setAccessibilityFrameBlock:")
+    public native void setAccessibilityFrameBlock(
+            @ObjCBlock(name = "call_setAccessibilityFrameBlock") @Nullable Block_setAccessibilityFrameBlock value);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_setAccessibilityFrameBlock {
+        @Generated
+        @ByValue
+        CGRect call_setAccessibilityFrameBlock();
+    }
+
+    /**
+     * Defining accessibility text and language
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("setAccessibilityHeaderElementsBlock:")
+    public native void setAccessibilityHeaderElementsBlock(
+            @ObjCBlock(name = "call_setAccessibilityHeaderElementsBlock") @Nullable Block_setAccessibilityHeaderElementsBlock value);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_setAccessibilityHeaderElementsBlock {
+        @Generated
+        @Nullable
+        NSArray<?> call_setAccessibilityHeaderElementsBlock();
+    }
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("setAccessibilityHintBlock:")
+    public native void setAccessibilityHintBlock(
+            @ObjCBlock(name = "call_setAccessibilityHintBlock") @Nullable Block_setAccessibilityHintBlock value);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_setAccessibilityHintBlock {
+        @Generated
+        @Nullable
+        String call_setAccessibilityHintBlock();
+    }
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("setAccessibilityIdentifierBlock:")
+    public native void setAccessibilityIdentifierBlock(
+            @ObjCBlock(name = "call_setAccessibilityIdentifierBlock") @Nullable Block_setAccessibilityIdentifierBlock value);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_setAccessibilityIdentifierBlock {
+        @Generated
+        @Nullable
+        String call_setAccessibilityIdentifierBlock();
+    }
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("setAccessibilityIncrementBlock:")
+    public native void setAccessibilityIncrementBlock(
+            @ObjCBlock(name = "call_setAccessibilityIncrementBlock") @Nullable Block_setAccessibilityIncrementBlock value);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_setAccessibilityIncrementBlock {
+        @Generated
+        void call_setAccessibilityIncrementBlock();
+    }
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("setAccessibilityLabelBlock:")
+    public native void setAccessibilityLabelBlock(
+            @ObjCBlock(name = "call_setAccessibilityLabelBlock") @Nullable Block_setAccessibilityLabelBlock value);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_setAccessibilityLabelBlock {
+        @Generated
+        @Nullable
+        String call_setAccessibilityLabelBlock();
+    }
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("setAccessibilityLanguageBlock:")
+    public native void setAccessibilityLanguageBlock(
+            @ObjCBlock(name = "call_setAccessibilityLanguageBlock") @Nullable Block_setAccessibilityLanguageBlock value);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_setAccessibilityLanguageBlock {
+        @Generated
+        @Nullable
+        String call_setAccessibilityLanguageBlock();
+    }
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("setAccessibilityMagicTapBlock:")
+    public native void setAccessibilityMagicTapBlock(
+            @ObjCBlock(name = "call_setAccessibilityMagicTapBlock") @Nullable Block_setAccessibilityMagicTapBlock value);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_setAccessibilityMagicTapBlock {
+        @Generated
+        boolean call_setAccessibilityMagicTapBlock();
+    }
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("setAccessibilityNavigationStyleBlock:")
+    public native void setAccessibilityNavigationStyleBlock(
+            @ObjCBlock(name = "call_setAccessibilityNavigationStyleBlock") @Nullable Block_setAccessibilityNavigationStyleBlock value);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_setAccessibilityNavigationStyleBlock {
+        @Generated
+        @NInt
+        long call_setAccessibilityNavigationStyleBlock();
+    }
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("setAccessibilityPathBlock:")
+    public native void setAccessibilityPathBlock(
+            @ObjCBlock(name = "call_setAccessibilityPathBlock") @Nullable Block_setAccessibilityPathBlock value);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_setAccessibilityPathBlock {
+        @Generated
+        @Nullable
+        UIBezierPath call_setAccessibilityPathBlock();
+    }
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("setAccessibilityPerformEscapeBlock:")
+    public native void setAccessibilityPerformEscapeBlock(
+            @ObjCBlock(name = "call_setAccessibilityPerformEscapeBlock") @Nullable Block_setAccessibilityPerformEscapeBlock value);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_setAccessibilityPerformEscapeBlock {
+        @Generated
+        boolean call_setAccessibilityPerformEscapeBlock();
+    }
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("setAccessibilityRespondsToUserInteractionBlock:")
+    public native void setAccessibilityRespondsToUserInteractionBlock(
+            @ObjCBlock(name = "call_setAccessibilityRespondsToUserInteractionBlock") @Nullable Block_setAccessibilityRespondsToUserInteractionBlock value);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_setAccessibilityRespondsToUserInteractionBlock {
+        @Generated
+        boolean call_setAccessibilityRespondsToUserInteractionBlock();
+    }
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("setAccessibilityShouldGroupAccessibilityChildrenBlock:")
+    public native void setAccessibilityShouldGroupAccessibilityChildrenBlock(
+            @ObjCBlock(name = "call_setAccessibilityShouldGroupAccessibilityChildrenBlock") @Nullable Block_setAccessibilityShouldGroupAccessibilityChildrenBlock value);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_setAccessibilityShouldGroupAccessibilityChildrenBlock {
+        @Generated
+        boolean call_setAccessibilityShouldGroupAccessibilityChildrenBlock();
+    }
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("setAccessibilityTextualContextBlock:")
+    public native void setAccessibilityTextualContextBlock(
+            @ObjCBlock(name = "call_setAccessibilityTextualContextBlock") @Nullable Block_setAccessibilityTextualContextBlock value);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_setAccessibilityTextualContextBlock {
+        @Generated
+        @Nullable
+        String call_setAccessibilityTextualContextBlock();
+    }
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("setAccessibilityTraitsBlock:")
+    public native void setAccessibilityTraitsBlock(
+            @ObjCBlock(name = "call_setAccessibilityTraitsBlock") @Nullable Block_setAccessibilityTraitsBlock value);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_setAccessibilityTraitsBlock {
+        @Generated
+        long call_setAccessibilityTraitsBlock();
+    }
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("setAccessibilityUserInputLabelsBlock:")
+    public native void setAccessibilityUserInputLabelsBlock(
+            @ObjCBlock(name = "call_setAccessibilityUserInputLabelsBlock") @Nullable Block_setAccessibilityUserInputLabelsBlock value);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_setAccessibilityUserInputLabelsBlock {
+        @Generated
+        @Nullable
+        NSArray<String> call_setAccessibilityUserInputLabelsBlock();
+    }
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("setAccessibilityValueBlock:")
+    public native void setAccessibilityValueBlock(
+            @ObjCBlock(name = "call_setAccessibilityValueBlock") @Nullable Block_setAccessibilityValueBlock value);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_setAccessibilityValueBlock {
+        @Generated
+        @Nullable
+        String call_setAccessibilityValueBlock();
+    }
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("setAccessibilityViewIsModalBlock:")
+    public native void setAccessibilityViewIsModalBlock(
+            @ObjCBlock(name = "call_setAccessibilityViewIsModalBlock") @Nullable Block_setAccessibilityViewIsModalBlock value);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_setAccessibilityViewIsModalBlock {
+        @Generated
+        boolean call_setAccessibilityViewIsModalBlock();
+    }
+
+    /**
+     * An array of container elements similar to accessibilityElements but specific for automation.
+     * This can be used to modify the children in the accessibility tree for automation.
+     * If not set, automationElements will default first to accessibilityElements if it’s not an accessibility element.
+     * If there are no accessibilityElements and the view is an accessibility element, it will return the list of
+     * subviews that have accessibilityIdentifier.
+     * Otherwise, the default will be an empty array.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("setAutomationElements:")
+    public native void setAutomationElements(@Nullable NSArray<?> value);
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("setAutomationElementsBlock:")
+    public native void setAutomationElementsBlock(
+            @ObjCBlock(name = "call_setAutomationElementsBlock") @Nullable Block_setAutomationElementsBlock value);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_setAutomationElementsBlock {
+        @Generated
+        @Nullable
+        NSArray<?> call_setAutomationElementsBlock();
+    }
+
+    /**
+     * Basic accessibility
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("setIsAccessibilityElementBlock:")
+    public native void setIsAccessibilityElementBlock(
+            @ObjCBlock(name = "call_setIsAccessibilityElementBlock") @Nullable Block_setIsAccessibilityElementBlock value);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_setIsAccessibilityElementBlock {
+        @Generated
+        boolean call_setIsAccessibilityElementBlock();
+    }
+
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 2.0
+     * Deprecated-Message: Legacy KVC API
+     */
+    @Generated
+    @Deprecated
+    @Selector("storedValueForKey:")
+    @MappedReturn(ObjCObjectMapper.class)
+    @Nullable
+    public native Object storedValueForKey(@NotNull String key);
+
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 2.0
+     * Deprecated-Message: Legacy KVC API
+     */
+    @Generated
+    @Deprecated
+    @Selector("takeStoredValue:forKey:")
+    public native void takeStoredValueForKey(@Mapped(ObjCObjectMapper.class) @Nullable Object value,
+            @NotNull String key);
+
+    /**
+     * Methods that were deprecated in Mac OS 10.3. Use the new, more consistently named, methods declared above
+     * instead.
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 2.0
+     * Deprecated-Message: Legacy KVC API
+     */
+    @Generated
+    @Deprecated
+    @Selector("takeValue:forKey:")
+    public native void takeValueForKey(@Mapped(ObjCObjectMapper.class) @Nullable Object value, @NotNull String key);
+
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 2.0
+     * Deprecated-Message: Legacy KVC API
+     */
+    @Generated
+    @Deprecated
+    @Selector("takeValue:forKeyPath:")
+    public native void takeValueForKeyPath(@Mapped(ObjCObjectMapper.class) @Nullable Object value,
+            @NotNull String keyPath);
+
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 2.0
+     * Deprecated-Message: Legacy KVC API
+     */
+    @Generated
+    @Deprecated
+    @Selector("takeValuesFromDictionary:")
+    public native void takeValuesFromDictionary(@NotNull NSDictionary<?, ?> properties);
+
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 2.0
+     * Deprecated-Message: Legacy KVC API
+     */
+    @Generated
+    @Deprecated
+    @Selector("unableToSetNilForKey:")
+    public native void unableToSetNilForKey(@NotNull String key);
+
+    /**
+     * Methods that were deprecated in Mac OS 10.4.
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 2.0
+     * Deprecated-Message: Legacy KVC API
+     */
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
+
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 2.0
+     * Deprecated-Message: Legacy KVC API
+     */
+    @Generated
+    @Deprecated
+    @Selector("valuesForKeys:")
+    @NotNull
+    public native NSDictionary<?, ?> valuesForKeys(@NotNull NSArray<?> keys);
 }

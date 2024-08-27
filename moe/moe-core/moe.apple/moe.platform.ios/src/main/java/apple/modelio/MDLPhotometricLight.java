@@ -236,4 +236,9 @@ public class MDLPhotometricLight extends MDLPhysicallyPlausibleLight {
     @Generated
     @Selector("generateTexture:")
     public native MDLTexture generateTexture(@NUInt long textureSize);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

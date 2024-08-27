@@ -49,8 +49,6 @@ import org.jetbrains.annotations.Nullable;
  * 
  * @see GKNoiseSource
  * @see GKNoiseMap
- * 
- *      API-Since: 10.0
  */
 @Generated
 @Library("GameplayKit")
@@ -392,4 +390,9 @@ public class GKNoise extends NSObject {
     @Generated
     @Selector("setGradientColors:")
     public native void setGradientColors(@NotNull NSDictionary<? extends NSNumber, ? extends UIColor> value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

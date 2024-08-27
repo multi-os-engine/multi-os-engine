@@ -372,4 +372,9 @@ public class GLKEffectPropertyLight extends GLKEffectProperty {
     @Generated
     @Selector("transform")
     public native GLKEffectPropertyTransform transform();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

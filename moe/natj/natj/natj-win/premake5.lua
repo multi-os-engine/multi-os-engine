@@ -14,7 +14,7 @@ solution "NatJ"
    -- Default defines and includes
    filter "language:C++"
       defines { "_WIN32_WINNT=0x0600", "NATJ_EXPORT=1" }
-      forceincludes { "windows.h", "mutex", "./mingw.mutex.h", "./mingw.thread.h" }
+      forceincludes { "windows.h", "mutex", "./mingw.mutex.h" }
       buildoptions "-Wall -Wno-strict-aliasing -Wno-unknown-pragmas -std=c++11"
 
    -- Turn off filtering

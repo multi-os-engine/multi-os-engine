@@ -259,4 +259,9 @@ public class SKMutablePayment extends SKPayment {
     @Generated
     @Selector("setPaymentDiscount:")
     public native void setPaymentDiscount(@Nullable SKPaymentDiscount value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

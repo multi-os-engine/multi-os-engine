@@ -169,4 +169,9 @@ public class HMHomeAccessControl extends HMAccessControl {
     @Generated
     @Selector("isAdministrator")
     public native boolean isAdministrator();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

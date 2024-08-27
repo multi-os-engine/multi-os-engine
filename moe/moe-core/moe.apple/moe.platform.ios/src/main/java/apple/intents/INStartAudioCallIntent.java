@@ -213,4 +213,9 @@ public class INStartAudioCallIntent extends INIntent {
     @Selector("initWithDestinationType:contacts:")
     public native INStartAudioCallIntent initWithDestinationTypeContacts(@NInt long destinationType,
             @Nullable NSArray<? extends INPerson> contacts);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

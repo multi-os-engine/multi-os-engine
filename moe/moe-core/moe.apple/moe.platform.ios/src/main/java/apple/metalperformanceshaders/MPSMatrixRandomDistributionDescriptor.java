@@ -307,4 +307,9 @@ public class MPSMatrixRandomDistributionDescriptor extends NSObject implements N
     @Selector("normalDistributionDescriptorWithMean:standardDeviation:minimum:maximum:")
     public static native MPSMatrixRandomDistributionDescriptor normalDistributionDescriptorWithMeanStandardDeviationMinimumMaximum(
             float mean, float standardDeviation, float minimum, float maximum);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

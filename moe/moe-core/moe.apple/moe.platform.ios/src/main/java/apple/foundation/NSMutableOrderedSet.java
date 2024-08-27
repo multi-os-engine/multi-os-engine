@@ -456,4 +456,9 @@ public class NSMutableOrderedSet<_ObjectType> extends NSOrderedSet<_ObjectType> 
     @Generated
     @Selector("applyDifference:")
     public native void applyDifference(@NotNull NSOrderedCollectionDifference<_ObjectType> difference);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -233,4 +233,9 @@ public class GLKSubmesh extends NSObject {
     @Generated
     @Selector("type")
     public native int type();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

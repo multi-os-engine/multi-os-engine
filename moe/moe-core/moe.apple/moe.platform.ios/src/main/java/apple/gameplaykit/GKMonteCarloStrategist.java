@@ -54,8 +54,6 @@ import org.jetbrains.annotations.Nullable;
  * upwards.
  * It will do this until the budget has been reached, then returning the choice it has deemed best suited for the player
  * in question.
- * 
- * API-Since: 10.0
  */
 @Generated
 @Library("GameplayKit")
@@ -232,4 +230,9 @@ public class GKMonteCarloStrategist extends NSObject implements GKStrategist {
     @Generated
     @Selector("setRandomSource:")
     public native void setRandomSource(@Nullable @Mapped(ObjCObjectMapper.class) GKRandom value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

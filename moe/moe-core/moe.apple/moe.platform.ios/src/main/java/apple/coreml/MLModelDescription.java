@@ -253,4 +253,9 @@ public class MLModelDescription extends NSObject implements NSSecureCoding {
     @Generated
     @Selector("classLabels")
     public native NSArray<?> classLabels();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

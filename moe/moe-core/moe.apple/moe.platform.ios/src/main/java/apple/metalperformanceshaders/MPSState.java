@@ -677,4 +677,9 @@ public class MPSState extends NSObject {
     @Selector("textureInfoAtIndex:")
     @ByValue
     public native MPSStateTextureInfo textureInfoAtIndex(@NUInt long index);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

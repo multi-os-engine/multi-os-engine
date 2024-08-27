@@ -50,8 +50,6 @@ import org.jetbrains.annotations.Nullable;
  * 
  * Messages created with the same session are represented as a single
  * entry in the conversation transcript.
- * 
- * API-Since: 10.0
  */
 @Generated
 @Library("Messages")
@@ -188,4 +186,9 @@ public class MSSession extends NSObject implements NSSecureCoding {
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

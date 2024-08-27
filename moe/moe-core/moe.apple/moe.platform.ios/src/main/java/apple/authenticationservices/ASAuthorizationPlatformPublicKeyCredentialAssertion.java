@@ -197,4 +197,25 @@ public class ASAuthorizationPlatformPublicKeyCredentialAssertion extends NSObjec
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * API-Since: 16.6
+     */
+    @Generated
+    @Selector("attachment")
+    @NInt
+    public native long attachment();
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("largeBlob")
+    @Nullable
+    public native ASAuthorizationPublicKeyCredentialLargeBlobAssertionOutput largeBlob();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

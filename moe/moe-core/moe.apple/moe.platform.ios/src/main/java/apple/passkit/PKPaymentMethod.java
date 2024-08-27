@@ -218,4 +218,9 @@ public class PKPaymentMethod extends NSObject {
     @Generated
     @Selector("secureElementPass")
     public native PKSecureElementPass secureElementPass();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -210,4 +210,16 @@ public final class Enums {
      * The history token passed to NSPersistentChangeRequest was invalid
      */
     @Generated @NInt public static final long NSPersistentHistoryTokenExpiredError = 0x0000000000020C9DL;
+    /**
+     * the referenced model could not be found or instantiated
+     */
+    @Generated @NInt public static final long NSManagedObjectModelReferenceNotFoundError = 0x0000000000020D68L;
+    /**
+     * the metadata of this store file has to be updated to use Staged Migration
+     */
+    @Generated @NInt public static final long NSStagedMigrationFrameworkVersionMismatchError = 0x0000000000020D69L;
+    /**
+     * the migration failed due to migration attempting to migrate backwards
+     */
+    @Generated @NInt public static final long NSStagedMigrationBackwardMigrationError = 0x0000000000020D6AL;
 }

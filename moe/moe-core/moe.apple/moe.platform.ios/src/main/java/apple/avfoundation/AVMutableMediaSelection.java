@@ -182,4 +182,9 @@ public class AVMutableMediaSelection extends AVMediaSelection {
     @Selector("selectMediaOption:inMediaSelectionGroup:")
     public native void selectMediaOptionInMediaSelectionGroup(@Nullable AVMediaSelectionOption mediaSelectionOption,
             @NotNull AVMediaSelectionGroup mediaSelectionGroup);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

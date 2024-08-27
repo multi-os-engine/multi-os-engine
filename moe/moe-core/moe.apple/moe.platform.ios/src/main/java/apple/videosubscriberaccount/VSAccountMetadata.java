@@ -213,4 +213,9 @@ public class VSAccountMetadata extends NSObject {
     @Generated
     @Selector("verificationData")
     public native NSData verificationData();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

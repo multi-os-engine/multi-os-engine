@@ -227,4 +227,9 @@ public class CPNavigationSession extends NSObject {
     @Selector("pauseTripForReason:description:turnCardColor:")
     public native void pauseTripForReasonDescriptionTurnCardColor(@NUInt long reason, @Nullable String description,
             @Nullable UIColor turnCardColor);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

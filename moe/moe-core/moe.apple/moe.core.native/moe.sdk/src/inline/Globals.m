@@ -237,14 +237,6 @@ EXPORT void __natj_inline___sincos(double __x, double * __sinp, double * __cosp)
 	__sincos(__x, __sinp, __cosp);
 }
 
-EXPORT void __natj_inline___sincospif(float __x, float * __sinp, float * __cosp) {
-	__sincospif(__x, __sinp, __cosp);
-}
-
-EXPORT void __natj_inline___sincospi(double __x, double * __sinp, double * __cosp) {
-	__sincospi(__x, __sinp, __cosp);
-}
-
 EXPORT int __natj_inline___sigbits(int __signo) {
 	return __sigbits(__signo);
 }
@@ -279,10 +271,6 @@ EXPORT void __natj_inline__OSWriteInt32(volatile void * base, uintptr_t byteOffs
 
 EXPORT void __natj_inline__OSWriteInt64(volatile void * base, uintptr_t byteOffset, uint64_t data) {
 	_OSWriteInt64(base, byteOffset, data);
-}
-
-EXPORT void __natj_inline__dispatch_object_validate(dispatch_object_t  _Nonnull __strong object) {
-	_dispatch_object_validate(object);
 }
 
 EXPORT dispatch_queue_main_t _Nonnull __natj_inline_dispatch_get_main_queue() {

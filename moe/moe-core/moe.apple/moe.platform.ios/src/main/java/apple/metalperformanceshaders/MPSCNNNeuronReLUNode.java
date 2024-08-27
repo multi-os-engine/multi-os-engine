@@ -182,4 +182,9 @@ public class MPSCNNNeuronReLUNode extends MPSCNNNeuronNode {
     @Selector("nodeWithSource:descriptor:")
     public static native MPSCNNNeuronReLUNode nodeWithSourceDescriptor(@NotNull MPSNNImageNode sourceNode,
             @NotNull MPSNNNeuronDescriptor descriptor);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

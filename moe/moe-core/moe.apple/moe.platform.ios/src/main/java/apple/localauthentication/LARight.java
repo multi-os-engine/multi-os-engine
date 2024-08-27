@@ -25,6 +25,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.uikit.UIWindow;
 
 /**
  * Groups a set of requirements that need to be satisfied in order to grant access to certain resource or operation
@@ -242,4 +243,30 @@ public class LARight extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * Tries to authorize the right.
+     * 
+     * @param localizedReason     Localized explanation for the authorization. Appears in the UI presented to the user.
+     * @param presentationContext Container where the authorization UI will be presented.
+     * @param handler             Completion handler called after the authorization finishses. Returns an error when the
+     *                            authorization fails.
+     */
+    @Generated
+    @Selector("authorizeWithLocalizedReason:inPresentationContext:completion:")
+    public native void authorizeWithLocalizedReasonInPresentationContextCompletion(@NotNull String localizedReason,
+            @NotNull UIWindow presentationContext,
+            @ObjCBlock(name = "call_authorizeWithLocalizedReasonInPresentationContextCompletion") @NotNull Block_authorizeWithLocalizedReasonInPresentationContextCompletion handler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_authorizeWithLocalizedReasonInPresentationContextCompletion {
+        @Generated
+        void call_authorizeWithLocalizedReasonInPresentationContextCompletion(@Nullable NSError arg0);
+    }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

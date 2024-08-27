@@ -187,4 +187,9 @@ public class WKNavigationResponse extends NSObject {
     @Generated
     @Selector("response")
     public native NSURLResponse response();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

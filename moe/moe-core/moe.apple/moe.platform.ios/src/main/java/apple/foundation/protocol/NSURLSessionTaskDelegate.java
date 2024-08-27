@@ -229,4 +229,45 @@ public interface NSURLSessionTaskDelegate extends NSURLSessionDelegate {
     default void URLSessionDidCreateTask(@NotNull NSURLSession session, @NotNull NSURLSessionTask task) {
         throw new java.lang.UnsupportedOperationException();
     }
+
+    /**
+     * Sent for each informational response received except 101 switching protocols.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @IsOptional
+    @Selector("URLSession:task:didReceiveInformationalResponse:")
+    default void URLSessionTaskDidReceiveInformationalResponse(@NotNull NSURLSession session,
+            @NotNull NSURLSessionTask task, @NotNull NSHTTPURLResponse response) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    /**
+     * Tells the delegate if a task requires a new body stream starting from the given offset. This may be
+     * necessary when resuming a failed upload task.
+     * 
+     * - Parameter session: The session containing the task that needs a new body stream from the given offset.
+     * - Parameter task: The task that needs a new body stream.
+     * - Parameter offset: The starting offset required for the body stream.
+     * - Parameter completionHandler: A completion handler that your delegate method should call with the new body
+     * stream.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @IsOptional
+    @Selector("URLSession:task:needNewBodyStreamFromOffset:completionHandler:")
+    default void URLSessionTaskNeedNewBodyStreamFromOffsetCompletionHandler(@NotNull NSURLSession session,
+            @NotNull NSURLSessionTask task, long offset,
+            @ObjCBlock(name = "call_URLSessionTaskNeedNewBodyStreamFromOffsetCompletionHandler") @NotNull Block_URLSessionTaskNeedNewBodyStreamFromOffsetCompletionHandler completionHandler) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_URLSessionTaskNeedNewBodyStreamFromOffsetCompletionHandler {
+        @Generated
+        void call_URLSessionTaskNeedNewBodyStreamFromOffsetCompletionHandler(@Nullable NSInputStream bodyStream);
+    }
 }

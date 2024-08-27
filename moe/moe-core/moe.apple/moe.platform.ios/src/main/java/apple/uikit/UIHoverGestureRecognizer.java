@@ -25,6 +25,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.moe.natj.general.ann.NFloat;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.corefoundation.struct.CGVector;
+import org.moe.natj.general.ann.ByValue;
 
 /**
  * UIHoverGestureRecognizer
@@ -179,4 +181,41 @@ public class UIHoverGestureRecognizer extends UIGestureRecognizer {
     @Selector("zOffset")
     @NFloat
     public native double zOffset();
+
+    /**
+     * The altitude angle of the current device. 0 is returned for devices that don't support altitude.
+     * 
+     * API-Since: 16.4
+     */
+    @Generated
+    @Selector("altitudeAngle")
+    @NFloat
+    public native double altitudeAngle();
+
+    /**
+     * The azimuth angle of the current device in the specified view, or the gesture recognizer's window if nil. 0 is
+     * returned for devices that don't support azimuth.
+     * 
+     * API-Since: 16.4
+     */
+    @Generated
+    @Selector("azimuthAngleInView:")
+    @NFloat
+    public native double azimuthAngleInView(@Nullable UIView view);
+
+    /**
+     * The azimuth unit vector of the current device in the specified view, or the gesture recognizer's window if nil.
+     * An empty vector is returned for devices that don't support azimuth.
+     * 
+     * API-Since: 16.4
+     */
+    @Generated
+    @Selector("azimuthUnitVectorInView:")
+    @ByValue
+    public native CGVector azimuthUnitVectorInView(@Nullable UIView view);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

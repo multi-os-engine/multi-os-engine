@@ -173,4 +173,19 @@ public class PKInk extends NSObject implements NSCopying {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * The PencilKit version required to use this ink.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("requiredContentVersion")
+    @NInt
+    public native long requiredContentVersion();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

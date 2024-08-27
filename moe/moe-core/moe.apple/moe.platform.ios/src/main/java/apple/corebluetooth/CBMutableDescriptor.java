@@ -52,8 +52,6 @@ import org.jetbrains.annotations.Nullable;
  * <code>Client Characteristic
  * Configuration</code> descriptors will be created automatically upon publication of the parent service, depending on
  * the properties of the characteristic itself.
- * 
- * API-Since: 6.0
  */
 @Generated
 @Library("CoreBluetooth")
@@ -180,6 +178,9 @@ public class CBMutableDescriptor extends CBDescriptor {
      * updated dynamically
      * once the parent service has been published.
      * 
+     * 
+     * API-Since: 6.0
+     * 
      * @param UUID  The Bluetooth UUID of the descriptor.
      * @param value The value of the descriptor.
      */
@@ -187,4 +188,9 @@ public class CBMutableDescriptor extends CBDescriptor {
     @Selector("initWithType:value:")
     public native CBMutableDescriptor initWithTypeValue(@NotNull CBUUID UUID,
             @Nullable @Mapped(ObjCObjectMapper.class) Object value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

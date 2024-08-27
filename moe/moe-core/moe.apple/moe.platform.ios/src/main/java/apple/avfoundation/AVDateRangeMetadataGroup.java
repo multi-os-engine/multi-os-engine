@@ -227,4 +227,9 @@ public class AVDateRangeMetadataGroup extends AVMetadataGroup implements NSCopyi
     @Generated
     @Selector("startDate")
     public native NSDate startDate();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

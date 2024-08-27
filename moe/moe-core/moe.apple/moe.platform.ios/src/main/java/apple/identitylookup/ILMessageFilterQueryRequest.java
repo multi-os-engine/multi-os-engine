@@ -193,4 +193,9 @@ public class ILMessageFilterQueryRequest extends NSObject implements NSSecureCod
     @Generated
     @Selector("receiverISOCountryCode")
     public native String receiverISOCountryCode();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -80,4 +80,5 @@ public final class LocalAuthentication {
     @Generated public static final double kLAErrorBiometryNotPaired = -12.0;
     @Generated public static final double kLAErrorBiometryDisconnected = -13.0;
     @Generated public static final double kLAErrorInvalidDimensions = -14.0;
+    @Generated public static final double kLABiometryTypeNone = 0.0;
 }

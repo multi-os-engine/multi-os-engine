@@ -46,6 +46,8 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
+ * This class should not be subclassed. If it is, Sendable may no longer apply.
+ * 
  * API-Since: 8.0
  */
 @Generated
@@ -190,4 +192,9 @@ public class CKServerChangeToken extends NSObject implements NSCopying, NSSecure
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

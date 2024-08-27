@@ -50,9 +50,6 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-/**
- * API-Since: 5.0
- */
 @Generated
 @Library("CoreImage")
 @Runtime(ObjCRuntime.class)
@@ -436,4 +433,9 @@ public class CIColor extends NSObject implements NSSecureCoding, NSCopying {
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

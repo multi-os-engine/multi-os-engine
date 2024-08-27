@@ -13,6 +13,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.opaque.dispatch_queue_t;
 
 /**
  * An objecting conforming to \c GCDevicePhysicalInput provides properties and
@@ -55,14 +56,7 @@ public interface GCDevicePhysicalInput extends GCDevicePhysicalInputState {
      * Set this block to be notified when a value on a element changed. If multiple
      * elements change this block will be called for each element that changed.
      * 
-     * The block is called on the \c handlerQueue configured on the \c device.
-     * 
-     * [@note]
-     * IMPORTANT: It is possible for the value(s) of \c element to change (again)
-     * between when your handler is scheduled for execution and when it actually
-     * executes. This may cause your application to "miss" changes to the element.
-     * If your application needs to track every element state change - as opposed to
-     * just the latest element state - use the methods under "Buffered Input".
+     * The block is called on the \c queue configured for the physical input.
      * 
      * @param element
      *                The element that has been modified.
@@ -156,14 +150,7 @@ public interface GCDevicePhysicalInput extends GCDevicePhysicalInputState {
      * Set this block to be notified when a value on a element changed. If multiple
      * elements change this block will be called for each element that changed.
      * 
-     * The block is called on the \c handlerQueue configured on the \c device.
-     * 
-     * [@note]
-     * IMPORTANT: It is possible for the value(s) of \c element to change (again)
-     * between when your handler is scheduled for execution and when it actually
-     * executes. This may cause your application to "miss" changes to the element.
-     * If your application needs to track every element state change - as opposed to
-     * just the latest element state - use the methods under "Buffered Input".
+     * The block is called on the \c queue configured for the physical input.
      * 
      * @param element
      *                The element that has been modified.
@@ -239,4 +226,35 @@ public interface GCDevicePhysicalInput extends GCDevicePhysicalInputState {
     @Generated
     @Selector("setInputStateQueueDepth:")
     void setInputStateQueueDepth(@NInt long value);
+
+    /**
+     * The dispatch queue that element value change handlers and other callbacks are
+     * submitted on.
+     * 
+     * The default queue is the \c handlerQueue of the associated \c device. Set
+     * this property if your application wants to receive input callbacks on a
+     * different queue. You should set this property before configuring other
+     * callbacks.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("queue")
+    @Nullable
+    dispatch_queue_t queue();
+
+    /**
+     * The dispatch queue that element value change handlers and other callbacks are
+     * submitted on.
+     * 
+     * The default queue is the \c handlerQueue of the associated \c device. Set
+     * this property if your application wants to receive input callbacks on a
+     * different queue. You should set this property before configuring other
+     * callbacks.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("setQueue:")
+    void setQueue(@Nullable dispatch_queue_t value);
 }

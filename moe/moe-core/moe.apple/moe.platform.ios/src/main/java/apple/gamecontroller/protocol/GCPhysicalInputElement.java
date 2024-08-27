@@ -31,7 +31,14 @@ public interface GCPhysicalInputElement {
     NSSet<String> aliases();
 
     /**
-     * The element's localized name.
+     * The element's localized display name.
+     * 
+     * This is the string that your app should display in any on-screen messages
+     * instructing the user to interact with the control. For example:
+     * 
+     * "Press \(buttonA.localizedName) to jump!"
+     * 
+     * Do not cache this value - it can change when the user remaps controls.
      */
     @Nullable
     @Generated
@@ -39,7 +46,7 @@ public interface GCPhysicalInputElement {
     String localizedName();
 
     /**
-     * The element's SF Symbols name.
+     * The SF Symbols name for the element.
      */
     @Nullable
     @Generated

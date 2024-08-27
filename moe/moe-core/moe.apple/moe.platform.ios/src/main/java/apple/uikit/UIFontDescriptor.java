@@ -328,4 +328,9 @@ public class UIFontDescriptor extends NSObject implements NSCopying, NSSecureCod
     @Generated
     @Selector("fontDescriptorWithDesign:")
     public native UIFontDescriptor fontDescriptorWithDesign(@NotNull String design);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

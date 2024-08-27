@@ -192,4 +192,9 @@ public class AVMetadataGroup extends NSObject {
     @Generated
     @Selector("uniqueID")
     public native String uniqueID();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

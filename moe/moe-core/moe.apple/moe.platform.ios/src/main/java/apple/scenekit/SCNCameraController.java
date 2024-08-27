@@ -433,4 +433,9 @@ public class SCNCameraController extends NSObject {
     @Selector("worldUp")
     @ByValue
     public native SCNVector3 worldUp();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

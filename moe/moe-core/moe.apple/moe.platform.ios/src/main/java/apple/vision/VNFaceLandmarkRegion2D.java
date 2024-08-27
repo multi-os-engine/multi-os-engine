@@ -229,4 +229,9 @@ public class VNFaceLandmarkRegion2D extends VNFaceLandmarkRegion {
     @Selector("pointsClassification")
     @NInt
     public native long pointsClassification();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

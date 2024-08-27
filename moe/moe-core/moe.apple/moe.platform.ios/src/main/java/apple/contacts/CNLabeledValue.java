@@ -47,8 +47,6 @@ import org.jetbrains.annotations.Nullable;
 
 /**
  * A contact property that has a value and label.
- * 
- * API-Since: 9.0
  */
 @Generated
 @Library("Contacts")
@@ -267,4 +265,9 @@ public class CNLabeledValue<_ValueType> extends NSObject implements NSCopying, N
     @Selector("value")
     @MappedReturn(ObjCObjectMapper.class)
     public native Object value();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

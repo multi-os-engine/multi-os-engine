@@ -345,4 +345,9 @@ public class NSURLCredentialStorage extends NSObject {
         @Generated
         void call_getDefaultCredentialForProtectionSpaceTaskCompletionHandler(@Nullable NSURLCredential credential);
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

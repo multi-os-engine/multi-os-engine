@@ -254,4 +254,9 @@ public class VSSubscription extends NSObject {
     @Generated
     @Selector("setBillingIdentifier:")
     public native void setBillingIdentifier(@Nullable String value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

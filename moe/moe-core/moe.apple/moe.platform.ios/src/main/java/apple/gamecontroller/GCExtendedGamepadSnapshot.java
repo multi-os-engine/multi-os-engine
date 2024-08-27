@@ -193,4 +193,9 @@ public class GCExtendedGamepadSnapshot extends GCExtendedGamepad {
     @Generated
     @Selector("snapshotData")
     public native NSData snapshotData();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -288,4 +288,68 @@ public class PHPickerConfiguration extends NSObject implements NSCopying {
     @Generated
     @Selector("setSelection:")
     public native void setSelection(@NInt long value);
+
+    /**
+     * Capabilities of the picker that should be disabled. Default is \c PHPickerCapabilitiesNone.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("disabledCapabilities")
+    @NUInt
+    public native long disabledCapabilities();
+
+    /**
+     * Edges of the picker that have no margin between the content and the edge (e.g. without bars in between). Default
+     * is \c NSDirectionalRectEdgeNone.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("edgesWithoutContentMargins")
+    @NUInt
+    public native long edgesWithoutContentMargins();
+
+    /**
+     * The mode of the picker. Default is \c PHPickerModeDefault.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("mode")
+    @NInt
+    public native long mode();
+
+    /**
+     * Capabilities of the picker that should be disabled. Default is \c PHPickerCapabilitiesNone.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("setDisabledCapabilities:")
+    public native void setDisabledCapabilities(@NUInt long value);
+
+    /**
+     * Edges of the picker that have no margin between the content and the edge (e.g. without bars in between). Default
+     * is \c NSDirectionalRectEdgeNone.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("setEdgesWithoutContentMargins:")
+    public native void setEdgesWithoutContentMargins(@NUInt long value);
+
+    /**
+     * The mode of the picker. Default is \c PHPickerModeDefault.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("setMode:")
+    public native void setMode(@NInt long value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

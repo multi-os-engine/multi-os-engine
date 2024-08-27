@@ -271,7 +271,9 @@ import org.jetbrains.annotations.Nullable;
  * from multiple threads as long as each thread uses its own MPSRayIntersector.
  * 
  * API-Since: 12.0
+ * Deprecated-Since: 17.0
  */
+@Deprecated
 @Generated
 @Library("MetalPerformanceShaders")
 @Runtime(ObjCRuntime.class)
@@ -594,4 +596,9 @@ public class MPSAccelerationStructure extends MPSKernel implements NSSecureCodin
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

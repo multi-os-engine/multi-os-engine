@@ -42,32 +42,6 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
- * CKQueryNotification
- * 
- * [@c] notificationType == @c CKNotificationTypeQuery
- * When properties must be dropped (see @c isPruned), here's the order of importance. The most important properties are
- * first, they'll be the last ones to be dropped.
- * - notificationID
- * - badge
- * - alertLocalizationKey
- * - alertLocalizationArgs
- * - alertBody
- * - alertActionLocalizationKey
- * - alertLaunchImage
- * - soundName
- * - content-available
- * - desiredKeys
- * - queryNotificationReason
- * - recordID
- * - containerIdentifier
- * - subscriptionOwnerUserRecordID
- * - titleLocalizationKey
- * - titleLocalizationArgs
- * - title
- * - subtitleLocalizationKey
- * - subtitleLocalizationArgs
- * - subtitle
- * 
  * API-Since: 8.0
  */
 @Generated
@@ -209,7 +183,7 @@ public class CKQueryNotification extends CKNotification {
     /**
      * A set of key->value pairs for creates and updates.
      * 
-     * You request the server fill out this property via the @c desiredKeys property of @c CKNotificationInfo
+     * You request the server fill out this property via the `desiredKeys` property of `CKSubscription.NotificationInfo`
      */
     @Nullable
     @Generated
@@ -220,4 +194,9 @@ public class CKQueryNotification extends CKNotification {
     @Generated
     @Selector("recordID")
     public native CKRecordID recordID();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

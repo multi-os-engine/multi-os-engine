@@ -695,8 +695,6 @@ public class UIImage extends NSObject implements NSSecureCoding, NSItemProviderR
     public native NSArray<String> writableTypeIdentifiersForItemProvider();
 
     /**
-     * currently: white ellipsis on tinted filled circle
-     * 
      * API-Since: 13.0
      */
     @NotNull
@@ -705,8 +703,6 @@ public class UIImage extends NSObject implements NSSecureCoding, NSItemProviderR
     public static native UIImage actionsImage();
 
     /**
-     * currently: white + on green filled circle
-     * 
      * API-Since: 13.0
      */
     @NotNull
@@ -728,8 +724,6 @@ public class UIImage extends NSObject implements NSSecureCoding, NSItemProviderR
     public native double baselineOffsetFromBottom();
 
     /**
-     * currently: white ✓ on tinted filled circle
-     * 
      * API-Since: 13.0
      */
     @NotNull
@@ -862,8 +856,6 @@ public class UIImage extends NSObject implements NSSecureCoding, NSItemProviderR
     public native boolean isSymbolImage();
 
     /**
-     * currently: white - on red filled circle
-     * 
      * API-Since: 13.0
      */
     @NotNull
@@ -872,8 +864,6 @@ public class UIImage extends NSObject implements NSSecureCoding, NSItemProviderR
     public static native UIImage removeImage();
 
     /**
-     * currently: white ✓ on tinted filled and white stroked circle
-     * 
      * API-Since: 13.0
      */
     @NotNull
@@ -1033,4 +1023,28 @@ public class UIImage extends NSObject implements NSSecureCoding, NSItemProviderR
     @Selector("systemImageNamed:variableValue:withConfiguration:")
     public static native UIImage systemImageNamedVariableValueWithConfiguration(@NotNull String name, double value,
             @Nullable UIImageConfiguration configuration);
+
+    /**
+     * Returns a new image that will render within the standard range.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("imageRestrictedToStandardDynamicRange")
+    @NotNull
+    public native UIImage imageRestrictedToStandardDynamicRange();
+
+    /**
+     * Indicates that this image is tagged for display of high dynamic range content.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("isHighDynamicRange")
+    public native boolean isHighDynamicRange();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

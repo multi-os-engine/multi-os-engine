@@ -438,4 +438,9 @@ public class NSURLCache extends NSObject {
     @Selector("initWithMemoryCapacity:diskCapacity:directoryURL:")
     public native NSURLCache initWithMemoryCapacityDiskCapacityDirectoryURL(@NUInt long memoryCapacity,
             @NUInt long diskCapacity, @Nullable NSURL directoryURL);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

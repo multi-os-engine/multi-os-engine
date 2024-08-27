@@ -12,6 +12,7 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.jetbrains.annotations.NotNull;
+import apple.avfaudio.AVSpeechSynthesisMarker;
 
 /**
  * [@protocol] AVSpeechSynthesizerDelegate
@@ -87,6 +88,17 @@ public interface AVSpeechSynthesizerDelegate {
     @Selector("speechSynthesizer:willSpeakRangeOfSpeechString:utterance:")
     default void speechSynthesizerWillSpeakRangeOfSpeechStringUtterance(@NotNull AVSpeechSynthesizer synthesizer,
             @ByValue NSRange characterRange, @NotNull AVSpeechUtterance utterance) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @IsOptional
+    @Selector("speechSynthesizer:willSpeakMarker:utterance:")
+    default void speechSynthesizerWillSpeakMarkerUtterance(@NotNull AVSpeechSynthesizer synthesizer,
+            @NotNull AVSpeechSynthesisMarker marker, @NotNull AVSpeechUtterance utterance) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

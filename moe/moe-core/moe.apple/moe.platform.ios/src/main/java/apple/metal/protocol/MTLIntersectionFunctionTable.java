@@ -92,4 +92,28 @@ public interface MTLIntersectionFunctionTable extends MTLResource {
     @Selector("gpuResourceID")
     @ByValue
     MTLResourceID gpuResourceID();
+
+    /**
+     * Initialize the function at the given index with a curve intersection function
+     * with the given signature which always accepts ray/curve intersections. If this method is
+     * not called and an intersection function is not otherwise set at the given index,
+     * ray/curve intersections will be ignored if a call to the function at the given index
+     * would be required. Ray/curve intersections are always accepted if an intersection
+     * function table is not provided.
+     */
+    @Generated
+    @Selector("setOpaqueCurveIntersectionFunctionWithSignature:atIndex:")
+    void setOpaqueCurveIntersectionFunctionWithSignatureAtIndex(@NUInt long signature, @NUInt long index);
+
+    /**
+     * Initialize the function at the given range with a curve intersection function
+     * with the given signature which always accepts ray/curve intersections. If this method is
+     * not called and an intersection function is not otherwise set at an index in the given range,
+     * ray/curve intersections will be ignored if a call to the function at that index
+     * would be required. Ray/curve intersections are always accepted if an intersection
+     * function table is not provided.
+     */
+    @Generated
+    @Selector("setOpaqueCurveIntersectionFunctionWithSignature:withRange:")
+    void setOpaqueCurveIntersectionFunctionWithSignatureWithRange(@NUInt long signature, @ByValue NSRange range);
 }

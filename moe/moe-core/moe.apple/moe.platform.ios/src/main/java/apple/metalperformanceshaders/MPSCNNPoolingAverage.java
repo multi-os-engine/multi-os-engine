@@ -288,4 +288,9 @@ public class MPSCNNPoolingAverage extends MPSCNNPooling {
     @Selector("zeroPadSizeY")
     @NUInt
     public native long zeroPadSizeY();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

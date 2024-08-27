@@ -1124,7 +1124,7 @@ public final class CoreVideo {
     /**
      * [@function] CVMetalTextureGetTexture
      * 
-     * Returns the Meta MTLTexture object of the CVMetalTextureRef
+     * Returns the Metal MTLTexture object of the CVMetalTextureRef
      * 
      * @param image Target CVMetalTexture
      * @return Metal texture
@@ -2078,7 +2078,7 @@ public final class CoreVideo {
     public static native CFStringRef kCVOpenGLESTextureCacheMaximumTextureAgeKey();
 
     /**
-     * The canonical name for the format. This should bethe same as the codec name you'd use in QT
+     * The canonical name for the format. This should be the same as the codec name you'd use in QT
      * 
      * API-Since: 4.0
      */
@@ -3005,4 +3005,31 @@ public final class CoreVideo {
     @Generated public static final double COREVIDEO_USE_EAGLCONTEXT_CLASS_IN_API = 1.0;
     @Generated public static final double __COREVIDEO_CVMETALTEXTURE_H__ = 1.0;
     @Generated public static final double __COREVIDEO__CVMETALTEXTURECACHE_H__ = 1.0;
+
+    /**
+     * [@constant] kCVImageBufferLogTransferFunctionKey
+     * Indicates that the transfer function or gamma of the content is a log format and identifies the specific log
+     * curve.
+     * 
+     * The value is a CFString holding fully specified reverse DNS identifier.
+     * Content captured in Apple Log will have this key set to kCVImageBufferLogTransferFunction_AppleLog.
+     * [@constant] kCVImageBufferLogTransferFunction_AppleLog
+     * Indicates the Apple Log identifier.
+     * 
+     * You can download the Apple Log Profile White Paper from the Apple Developer Downloads website.
+     * 
+     * API-Since: 17.2
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kCVImageBufferLogTransferFunctionKey();
+
+    /**
+     * API-Since: 17.2
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native CFStringRef kCVImageBufferLogTransferFunction_AppleLog();
 }

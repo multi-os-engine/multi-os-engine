@@ -63,7 +63,7 @@ public class MOEToolWindow implements Disposable {
         window.setToHideOnEmptyContent(true);
         this.window = window;
 
-        ContentFactory contentFactory = ContentFactory.SERVICE.getInstance();
+        ContentFactory contentFactory = ContentFactory.getInstance();
         Content content = contentFactory.createContent(consoleViewImpl.getComponent(), "", false);
         window.getContentManager().addContent(content);
     }

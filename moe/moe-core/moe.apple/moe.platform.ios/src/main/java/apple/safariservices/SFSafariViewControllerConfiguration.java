@@ -62,13 +62,6 @@ public class SFSafariViewControllerConfiguration extends NSObject implements NSC
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
-    /**
-     * Indicates if SFSafariViewController should enable collapsing of the navigation bar and hiding of the bottom
-     * toolbar
-     * when the user scrolls web content.
-     * 
-     * The default value is YES.
-     */
     @Generated
     @Selector("barCollapsingEnabled")
     public native boolean barCollapsingEnabled();
@@ -161,13 +154,6 @@ public class SFSafariViewControllerConfiguration extends NSObject implements NSC
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
-    /**
-     * Indicates if SFSafariViewController should enable collapsing of the navigation bar and hiding of the bottom
-     * toolbar
-     * when the user scrolls web content.
-     * 
-     * The default value is YES.
-     */
     @Generated
     @Selector("setBarCollapsingEnabled:")
     public native void setBarCollapsingEnabled(boolean value);
@@ -194,12 +180,6 @@ public class SFSafariViewControllerConfiguration extends NSObject implements NSC
     public static native long version_static();
 
     /**
-     * An additional button to be shown in SFSafariViewController's toolbar. See @link
-     * SFSafariViewControllerActivityButton @/link for more details.
-     * 
-     * This allows the user to access powerful functionality from your extension without needing to first show the
-     * UIActivityViewController.
-     * 
      * API-Since: 15.0
      */
     @Nullable
@@ -208,12 +188,6 @@ public class SFSafariViewControllerConfiguration extends NSObject implements NSC
     public native SFSafariViewControllerActivityButton activityButton();
 
     /**
-     * An additional button to be shown in SFSafariViewController's toolbar. See @link
-     * SFSafariViewControllerActivityButton @/link for more details.
-     * 
-     * This allows the user to access powerful functionality from your extension without needing to first show the
-     * UIActivityViewController.
-     * 
      * API-Since: 15.0
      */
     @Generated
@@ -242,4 +216,9 @@ public class SFSafariViewControllerConfiguration extends NSObject implements NSC
     @Generated
     @Selector("setEventAttribution:")
     public native void setEventAttribution(@Nullable UIEventAttribution value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

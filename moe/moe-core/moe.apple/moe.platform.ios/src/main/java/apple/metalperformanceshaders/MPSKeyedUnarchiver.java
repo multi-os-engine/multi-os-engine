@@ -334,4 +334,9 @@ public class MPSKeyedUnarchiver extends NSKeyedUnarchiver implements MPSDevicePr
     public static native NSDictionary<?, ?> unarchivedDictionaryWithKeysOfClassesObjectsOfClassesFromDataError(
             @NotNull NSSet<? extends Class> keyClasses, @NotNull NSSet<? extends Class> valueClasses,
             @NotNull NSData data, @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

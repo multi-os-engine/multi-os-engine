@@ -393,4 +393,20 @@ public final class MTLDataType {
      * API-Since: 14.0
      */
     @Generated @NUInt public static final long ULong4 = 0x0000000000000058L;
+    /**
+     * API-Since: 17.0
+     */
+    @Generated @NUInt public static final long BFloat = 0x0000000000000079L;
+    /**
+     * API-Since: 17.0
+     */
+    @Generated @NUInt public static final long BFloat2 = 0x000000000000007AL;
+    /**
+     * API-Since: 17.0
+     */
+    @Generated @NUInt public static final long BFloat3 = 0x000000000000007BL;
+    /**
+     * API-Since: 17.0
+     */
+    @Generated @NUInt public static final long BFloat4 = 0x000000000000007CL;
 }

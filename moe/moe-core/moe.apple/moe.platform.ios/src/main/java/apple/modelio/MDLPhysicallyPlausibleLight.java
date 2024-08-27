@@ -264,4 +264,9 @@ public class MDLPhysicallyPlausibleLight extends MDLLight {
     @Generated
     @Selector("setOuterConeAngle:")
     public native void setOuterConeAngle(float value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

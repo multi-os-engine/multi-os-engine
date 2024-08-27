@@ -219,4 +219,9 @@ public class NSUnitElectricPotentialDifference extends NSDimension implements NS
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

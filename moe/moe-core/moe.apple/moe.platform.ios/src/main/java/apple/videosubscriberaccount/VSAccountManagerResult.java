@@ -169,4 +169,9 @@ public class VSAccountManagerResult extends NSObject {
     @Generated
     @Selector("init")
     public native VSAccountManagerResult init();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

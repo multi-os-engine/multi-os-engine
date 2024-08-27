@@ -172,4 +172,9 @@ public class AVAssetResourceRenewalRequest extends AVAssetResourceLoadingRequest
     @Generated
     @Selector("init")
     public native AVAssetResourceRenewalRequest init();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

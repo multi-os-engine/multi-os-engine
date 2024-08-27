@@ -228,4 +228,9 @@ public class ARPositionalTrackingConfiguration extends ARConfiguration {
     @Generated
     @Selector("recommendedVideoFormatForHighResolutionFrameCapturing")
     public static native ARVideoFormat recommendedVideoFormatForHighResolutionFrameCapturing();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

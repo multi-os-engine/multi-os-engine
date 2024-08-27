@@ -44,8 +44,6 @@ import org.jetbrains.annotations.Nullable;
  * Represents an impassible area in 2D space.
  * Able to be avoided by GKAgent's steering functions
  * GKGraph can generate navigation graphs from a list of obstacles
- * 
- * API-Since: 9.0
  */
 @Generated
 @Library("GameplayKit")
@@ -164,4 +162,9 @@ public class GKObstacle extends NSObject {
     @Generated
     @Selector("init")
     public native GKObstacle init();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

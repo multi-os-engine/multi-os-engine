@@ -45,7 +45,7 @@ public class MOENewModuleAction extends NewModuleAction {
 
         boolean enabled = true;
 
-        Presentation presentation = getTemplatePresentation();
+        Presentation presentation = event.getPresentation();
 
         /*
         Presentation presentation = getTemplatePresentation();

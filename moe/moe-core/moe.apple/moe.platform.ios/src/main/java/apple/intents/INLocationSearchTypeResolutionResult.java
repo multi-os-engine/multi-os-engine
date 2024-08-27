@@ -191,4 +191,9 @@ public class INLocationSearchTypeResolutionResult extends INIntentResolutionResu
     @Generated
     @Selector("unsupportedWithReason:")
     public static native INLocationSearchTypeResolutionResult unsupportedWithReason(@NInt long reason);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

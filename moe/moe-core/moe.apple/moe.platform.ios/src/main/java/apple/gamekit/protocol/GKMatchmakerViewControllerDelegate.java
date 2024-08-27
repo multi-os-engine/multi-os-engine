@@ -76,8 +76,6 @@ public interface GKMatchmakerViewControllerDelegate {
      * 
      * API-Since: 4.1
      * Deprecated-Since: 8.0
-     * Deprecated-Message: This is never invoked and its implementation does nothing, use
-     * matchmakerViewController:didFindHostedPlayers:
      */
     @Generated
     @IsOptional
@@ -91,8 +89,6 @@ public interface GKMatchmakerViewControllerDelegate {
     /**
      * API-Since: 5.0
      * Deprecated-Since: 8.0
-     * Deprecated-Message: This is never invoked and its implementation does nothing, use
-     * matchmakerViewController:hostedPlayerDidAccept:
      */
     @Generated
     @IsOptional

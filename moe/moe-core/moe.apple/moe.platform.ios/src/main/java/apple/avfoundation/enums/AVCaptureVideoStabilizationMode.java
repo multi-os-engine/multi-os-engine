@@ -41,6 +41,10 @@ import org.moe.natj.general.ann.NInt;
  * cinematic stabilization introduces longer latency into the video capture pipeline compared to the
  * AVCaptureVideoStabilizationModeCinematic and consumes more memory, but yields improved stability. It is recommended
  * to use identical or similar min and max frame durations in conjunction with this mode.
+ * [@constant] AVCaptureVideoStabilizationModePreviewOptimized
+ * Indicates that video should be stabilized using the preview optimized stabilization algorithm. Preview stabilization
+ * is a low latency and low power algorithm which is supported only on connections which either have an associated
+ * preview layer or have a preview-sized VideoDataOutput.
  * [@constant] AVCaptureVideoStabilizationModeAuto
  * Indicates that the most appropriate video stabilization mode for the device and format should be chosen.
  * 
@@ -73,4 +77,8 @@ public final class AVCaptureVideoStabilizationMode {
      * API-Since: 13.0
      */
     @Generated @NInt public static final long CinematicExtended = 0x0000000000000003L;
+    /**
+     * API-Since: 17.0
+     */
+    @Generated @NInt public static final long PreviewOptimized = 0x0000000000000004L;
 }

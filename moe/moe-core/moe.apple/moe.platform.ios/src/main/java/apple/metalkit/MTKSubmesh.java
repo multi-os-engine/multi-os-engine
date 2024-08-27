@@ -48,8 +48,6 @@ import org.jetbrains.annotations.Nullable;
  * Container for data that can be rendered in a single draw call. 1:1 mapping to MDLSubmesh. Each submesh contains an
  * index Buffer with which the parents mesh data can be rendered. Actual vertex data resides in the submesh's parent
  * MTKMesh object.
- * 
- * API-Since: 9.0
  */
 @Generated
 @Library("MetalKit")
@@ -253,4 +251,9 @@ public class MTKSubmesh extends NSObject {
     @Generated
     @Selector("setName:")
     public native void setName(@NotNull String value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

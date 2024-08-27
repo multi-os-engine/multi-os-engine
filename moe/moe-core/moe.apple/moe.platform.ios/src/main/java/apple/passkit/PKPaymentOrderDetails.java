@@ -187,4 +187,9 @@ public class PKPaymentOrderDetails extends NSObject {
     @Generated
     @Selector("webServiceURL")
     public native NSURL webServiceURL();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

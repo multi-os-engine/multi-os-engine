@@ -259,4 +259,9 @@ public class NEHotspotHelperCommand extends NSObject {
     @Generated
     @Selector("networkList")
     public native NSArray<? extends NEHotspotNetwork> networkList();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

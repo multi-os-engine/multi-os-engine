@@ -301,4 +301,9 @@ public class INSendMessageIntent extends INIntent implements UNNotificationConte
     @Selector("outgoingMessageType")
     @NInt
     public native long outgoingMessageType();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

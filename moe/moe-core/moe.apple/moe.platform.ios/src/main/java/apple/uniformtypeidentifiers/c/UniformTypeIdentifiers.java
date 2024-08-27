@@ -1879,4 +1879,16 @@ public final class UniformTypeIdentifiers {
     @Generated
     @CVariable()
     public static native UTType UTTypeMakefile();
+
+    /**
+     * \brief An Apple Haptics Audio Pattern file.
+     * 
+     * UTI: com.apple.haptics.ahap
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @NotNull
+    public static native UTType UTTypeAHAP();
 }

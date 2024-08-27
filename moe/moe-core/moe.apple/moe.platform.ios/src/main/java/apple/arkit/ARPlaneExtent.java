@@ -189,4 +189,9 @@ public class ARPlaneExtent extends NSObject implements NSSecureCoding {
     @Generated
     @Selector("width")
     public native float width();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

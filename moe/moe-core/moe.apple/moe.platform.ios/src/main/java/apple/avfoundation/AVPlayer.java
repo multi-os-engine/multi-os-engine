@@ -48,6 +48,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.opaque.dispatch_queue_t;
 
 /**
  * API-Since: 4.0
@@ -236,7 +237,7 @@ public class AVPlayer extends NSObject {
     @Selector("addBoundaryTimeObserverForTimes:queue:usingBlock:")
     @MappedReturn(ObjCObjectMapper.class)
     public native Object addBoundaryTimeObserverForTimesQueueUsingBlock(@NotNull NSArray<? extends NSValue> times,
-            @Nullable NSObject queue,
+            @Nullable dispatch_queue_t queue,
             @NotNull @ObjCBlock(name = "call_addBoundaryTimeObserverForTimesQueueUsingBlock") Block_addBoundaryTimeObserverForTimesQueueUsingBlock block);
 
     /**
@@ -274,7 +275,7 @@ public class AVPlayer extends NSObject {
     @Selector("addPeriodicTimeObserverForInterval:queue:usingBlock:")
     @MappedReturn(ObjCObjectMapper.class)
     public native Object addPeriodicTimeObserverForIntervalQueueUsingBlock(@ByValue CMTime interval,
-            @Nullable NSObject queue,
+            @Nullable dispatch_queue_t queue,
             @NotNull @ObjCBlock(name = "call_addPeriodicTimeObserverForIntervalQueueUsingBlock") Block_addPeriodicTimeObserverForIntervalQueueUsingBlock block);
 
     /**
@@ -300,7 +301,7 @@ public class AVPlayer extends NSObject {
 
     /**
      * Indicates whether the receiver should apply the current selection criteria automatically to AVPlayerItems.
-     * For clients linked against the iOS 7 SDK or later or against the OS X 10.9 SDK or later, the default is YES. For
+     * For clients linked against the iOS 7 SDK or later or against the macOS 10.9 SDK or later, the default is YES. For
      * all others, the default is NO.
      * 
      * By default, AVPlayer applies selection criteria based on system preferences. To override the default criteria for
@@ -339,9 +340,9 @@ public class AVPlayer extends NSObject {
      * AVPlayerWaitingToMinimizeStallsReason will cause the player to attempt playback at the specified rate
      * immediately.
      * 
-     * For clients linked against iOS 10.0 and running on that version or later or linked against OS X 10.12 and running
-     * on that version or later, the default value of this property is YES.
-     * In versions of iOS prior to iOS 10.0 and versions of OS X prior to 10.12, this property is unavailable, and the
+     * For clients linked against iOS 10.0 and running on that version or later or linked against macOS 10.12 and
+     * running on that version or later, the default value of this property is YES.
+     * In versions of iOS prior to iOS 10.0 and versions of macOS prior to 10.12, this property is unavailable, and the
      * behavior of the AVPlayer corresponds to the type of content being played. For streaming content, including HTTP
      * Live Streaming, the AVPlayer acts as if automaticallyWaitsToMinimizeStalling is YES. For file-based content,
      * including file-based content accessed via progressive http download, the AVPlayer acts as if
@@ -966,7 +967,7 @@ public class AVPlayer extends NSObject {
 
     /**
      * Indicates whether the receiver should apply the current selection criteria automatically to AVPlayerItems.
-     * For clients linked against the iOS 7 SDK or later or against the OS X 10.9 SDK or later, the default is YES. For
+     * For clients linked against the iOS 7 SDK or later or against the macOS 10.9 SDK or later, the default is YES. For
      * all others, the default is NO.
      * 
      * By default, AVPlayer applies selection criteria based on system preferences. To override the default criteria for
@@ -1005,9 +1006,9 @@ public class AVPlayer extends NSObject {
      * AVPlayerWaitingToMinimizeStallsReason will cause the player to attempt playback at the specified rate
      * immediately.
      * 
-     * For clients linked against iOS 10.0 and running on that version or later or linked against OS X 10.12 and running
-     * on that version or later, the default value of this property is YES.
-     * In versions of iOS prior to iOS 10.0 and versions of OS X prior to 10.12, this property is unavailable, and the
+     * For clients linked against iOS 10.0 and running on that version or later or linked against macOS 10.12 and
+     * running on that version or later, the default value of this property is YES.
+     * In versions of iOS prior to iOS 10.0 and versions of macOS prior to 10.12, this property is unavailable, and the
      * behavior of the AVPlayer corresponds to the type of content being played. For streaming content, including HTTP
      * Live Streaming, the AVPlayer acts as if automaticallyWaitsToMinimizeStalling is YES. For file-based content,
      * including file-based content accessed via progressive http download, the AVPlayer acts as if
@@ -1129,7 +1130,7 @@ public class AVPlayer extends NSObject {
      * itemTime until the timebase reaches that time.)
      * 
      * Note that setRate:time:atHostTime: is not supported when automaticallyWaitsToMinimizeStalling is YES. For clients
-     * linked against iOS 10.0 and later or OS X 12.0 and later, invoking setRate:time:atHostTime: when
+     * linked against iOS 10.0 and later or macOS 12.0 and later, invoking setRate:time:atHostTime: when
      * automaticallyWaitsToMinimizeStalling is YES will raise an NSInvalidArgument exception. Support for HTTP Live
      * Streaming content requires iOS 11, tvOS 11, macOS 10.13 or later.
      * 
@@ -1524,4 +1525,40 @@ public class AVPlayer extends NSObject {
     @Generated
     @Selector("setDefaultRate:")
     public native void setDefaultRate(float value);
+
+    /**
+     * [@property] videoOutput
+     * 
+     * The video output for this player, if one was set.
+     * 
+     * When an AVPlayerVideoOutput is associated with an AVPlayer, the AVPlayerVideoOutput can then be used to receive
+     * video-related samples during playback.
+     * [@note] If an output is set while AVPlayer has a current item it may cause different data channels to be selected
+     * for that item, which can have a performance impact.
+     * As a result, when possible, it is best to set an output before setting items on an AVPlayer.
+     */
+    @Generated
+    @Selector("setVideoOutput:")
+    public native void setVideoOutput(@Nullable AVPlayerVideoOutput value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
+
+    /**
+     * [@property] videoOutput
+     * 
+     * The video output for this player, if one was set.
+     * 
+     * When an AVPlayerVideoOutput is associated with an AVPlayer, the AVPlayerVideoOutput can then be used to receive
+     * video-related samples during playback.
+     * [@note] If an output is set while AVPlayer has a current item it may cause different data channels to be selected
+     * for that item, which can have a performance impact.
+     * As a result, when possible, it is best to set an output before setting items on an AVPlayer.
+     */
+    @Generated
+    @Selector("videoOutput")
+    @Nullable
+    public native AVPlayerVideoOutput videoOutput();
 }

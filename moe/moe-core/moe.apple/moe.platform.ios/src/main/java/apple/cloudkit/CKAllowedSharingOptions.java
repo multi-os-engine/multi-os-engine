@@ -30,6 +30,8 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
+ * NS_SWIFT_SENDABLE on macos(13.3), macCatalyst(16.4), ios(16.4))
+ * 
  * API-Since: 16.0
  */
 @Generated
@@ -207,4 +209,9 @@ public class CKAllowedSharingOptions extends NSObject implements NSSecureCoding,
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

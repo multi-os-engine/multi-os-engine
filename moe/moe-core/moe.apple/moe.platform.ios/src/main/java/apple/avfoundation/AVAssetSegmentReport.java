@@ -32,6 +32,8 @@ import org.jetbrains.annotations.Nullable;
  * Clients may get an instance of AVAssetSegmentReport through the
  * -assetWriter:didOutputSegmentData:segmentType:segmentReport: delegate method, which is defined in AVAssetWriter.h.
  * 
+ * Subclasses of this type that are used from Swift must fulfill the requirements of a Sendable type.
+ * 
  * API-Since: 14.0
  */
 @Generated
@@ -171,4 +173,9 @@ public class AVAssetSegmentReport extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

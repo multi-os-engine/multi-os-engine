@@ -44,8 +44,6 @@ import org.jetbrains.annotations.Nullable;
 
 /**
  * GKGraphNode coupled with a position on a 2D grid
- * 
- * API-Since: 9.0
  */
 @Generated
 @Library("GameplayKit")
@@ -178,4 +176,9 @@ public class GKGridGraphNode extends GKGraphNode {
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

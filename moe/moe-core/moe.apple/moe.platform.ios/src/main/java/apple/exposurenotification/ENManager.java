@@ -201,11 +201,6 @@ public class ENManager extends NSObject {
         void call_diagnosisKeysAvailableHandler_ret(@NotNull NSArray<? extends ENTemporaryExposureKey> arg0);
     }
 
-    @NotNull
-    @Generated
-    @Selector("dispatchQueue")
-    public native NSObject dispatchQueue();
-
     /**
      * Indicates if Exposure Notification is enabled on the system. KVO may be used to monitor for changes.
      * This will be NO until activateWithCompletionHandler has completed successfully.
@@ -467,10 +462,6 @@ public class ENManager extends NSObject {
         void call_setDiagnosisKeysAvailableHandler(@NotNull NSArray<? extends ENTemporaryExposureKey> arg0);
     }
 
-    @Generated
-    @Selector("setDispatchQueue:")
-    public native void setDispatchQueue(@NotNull NSObject value);
-
     /**
      * Enables or disables Exposure Notification.
      * If not previously authorized, this shows a user dialog for consent to enable Exposure Notification.
@@ -517,4 +508,9 @@ public class ENManager extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

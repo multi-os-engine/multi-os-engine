@@ -509,4 +509,9 @@ public class MTLRenderPassDescriptor extends NSObject implements NSCopying {
     @Generated
     @Selector("sampleBufferAttachments")
     public native MTLRenderPassSampleBufferAttachmentDescriptorArray sampleBufferAttachments();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

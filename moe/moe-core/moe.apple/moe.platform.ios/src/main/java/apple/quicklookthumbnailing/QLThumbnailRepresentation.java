@@ -181,4 +181,9 @@ public class QLThumbnailRepresentation extends NSObject {
     @Selector("contentRect")
     @ByValue
     public native CGRect contentRect();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

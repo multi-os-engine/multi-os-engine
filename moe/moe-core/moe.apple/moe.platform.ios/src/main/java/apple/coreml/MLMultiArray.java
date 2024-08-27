@@ -435,4 +435,9 @@ public class MLMultiArray extends NSObject implements NSSecureCoding {
     @Generated
     @Selector("pixelBuffer")
     public native CVBufferRef pixelBuffer();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

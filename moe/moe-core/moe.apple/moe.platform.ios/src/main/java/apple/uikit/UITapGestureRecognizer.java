@@ -227,4 +227,9 @@ public class UITapGestureRecognizer extends UIGestureRecognizer {
     @Generated
     @Selector("setButtonMaskRequired:")
     public native void setButtonMaskRequired(@NInt long value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

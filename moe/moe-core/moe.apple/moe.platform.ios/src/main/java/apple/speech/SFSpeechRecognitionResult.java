@@ -221,4 +221,9 @@ public class SFSpeechRecognitionResult extends NSObject implements NSCopying, NS
     @Generated
     @Selector("speechRecognitionMetadata")
     public native SFSpeechRecognitionMetadata speechRecognitionMetadata();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -206,4 +206,9 @@ public class MPSCNNUpsamplingBilinear extends MPSCNNUpsampling {
     public native MPSCNNUpsamplingBilinear initWithDeviceIntegerScaleFactorXIntegerScaleFactorYAlignCorners(
             @NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device, @NUInt long integerScaleFactorX,
             @NUInt long integerScaleFactorY, boolean alignCorners);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

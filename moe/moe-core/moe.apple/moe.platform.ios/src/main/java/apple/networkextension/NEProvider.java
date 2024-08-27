@@ -289,4 +289,9 @@ public class NEProvider extends NSObject {
         @Generated
         void call_sleepWithCompletionHandler();
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

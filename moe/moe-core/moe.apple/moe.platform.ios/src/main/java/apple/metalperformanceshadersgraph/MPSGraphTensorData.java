@@ -28,13 +28,10 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
- * MPSGraphTensorData
- * 
  * Representation of a compute datatype
  * 
  * MPSGraphTensorData is how we pass data to an MPSGraph, a reference will be taken to your data and used just in time
  * when MPSGraph is run.
- * 
  * 
  * API-Since: 14.0
  */
@@ -42,7 +39,7 @@ import org.jetbrains.annotations.Nullable;
 @Library("MetalPerformanceShadersGraph")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class MPSGraphTensorData extends NSObject {
+public class MPSGraphTensorData extends MPSGraphObject {
     static {
         NatJ.register();
     }
@@ -92,8 +89,6 @@ public class MPSGraphTensorData extends NSObject {
     public static native Class classForKeyedUnarchiver();
 
     /**
-     * [@property] dataType
-     * 
      * dataType of the tensorData
      */
     @Generated
@@ -109,8 +104,6 @@ public class MPSGraphTensorData extends NSObject {
     public static native String description_static();
 
     /**
-     * [@property] device
-     * 
      * device of the tensorData
      */
     @NotNull
@@ -130,10 +123,10 @@ public class MPSGraphTensorData extends NSObject {
     /**
      * Initialize an MPSGraphTensorData with an MPSMatrix
      * The device of the MPSMatrix will be used to get the MPSDevice for this MPSGraphTensorData.
-     * [@note] If matrix.matrices == 1, then a rank 2 tensor is returned, otherwise rank 3.
      * 
-     * @param matrix MPSMatrix to be used within the MPSGraphTensorData
-     * @return A valid MPSGraphTensorData, or nil if allocation failure.
+     * - Parameters:
+     * - matrix: MPSMatrix to be used within the MPSGraphTensorData
+     * - Returns: A valid MPSGraphTensorData, or nil if allocation failure.
      */
     @Generated
     @Selector("initWithMPSMatrix:")
@@ -143,9 +136,10 @@ public class MPSGraphTensorData extends NSObject {
      * Initialize an MPSGraphTensorData with an MPSMatrix enforcing rank of the result.
      * The device of the MPSMatrix will be used to get the MPSDevice for this MPSGraphTensorData.
      * 
-     * @param matrix MPSMatrix to be used within the MPSGraphTensorData
-     * @param rank   The rank of the resulting TensorData tensor. NOTE: must be within { 1, ... ,16 }.
-     * @return A valid MPSGraphTensorData of given rank, or nil if allocation failure.
+     * - Parameters:
+     * - matrix: MPSMatrix to be used within the MPSGraphTensorData
+     * - rank: The rank of the resulting TensorData tensor. NOTE: must be within { 1, ... ,16 }.
+     * - Returns: A valid MPSGraphTensorData of given rank, or nil if allocation failure.
      */
     @Generated
     @Selector("initWithMPSMatrix:rank:")
@@ -155,8 +149,9 @@ public class MPSGraphTensorData extends NSObject {
      * Initialize an MPSGraphTensorData with an MPSNDArray
      * The device of the MPSNDArray will be used to get the MPSDevice for this MPSGraphTensorData.
      * 
-     * @param ndarray MPSNDArray to be used within the MPSGraphTensorData
-     * @return A valid MPSGraphTensorData, or nil if allocation failure.
+     * - Parameters:
+     * - ndarray: MPSNDArray to be used within the MPSGraphTensorData
+     * - Returns: A valid MPSGraphTensorData, or nil if allocation failure.
      */
     @Generated
     @Selector("initWithMPSNDArray:")
@@ -165,10 +160,10 @@ public class MPSGraphTensorData extends NSObject {
     /**
      * Initialize an MPSGraphTensorData with an MPSVector
      * The device of the MPSVector will be used to get the MPSDevice for this MPSGraphTensorData.
-     * [@note] If vector.vectors == 1, then a rank 1 tensor is returned, otherwise rank 2.
      * 
-     * @param vector MPSVector to be used within the MPSGraphTensorData
-     * @return A valid MPSGraphTensorData, or nil if allocation failure.
+     * - Parameters:
+     * - vector: MPSVector to be used within the MPSGraphTensorData
+     * - Returns: A valid MPSGraphTensorData, or nil if allocation failure.
      */
     @Generated
     @Selector("initWithMPSVector:")
@@ -177,11 +172,11 @@ public class MPSGraphTensorData extends NSObject {
     /**
      * Initialize an MPSGraphTensorData with an MPSVector enforcing rank of the result.
      * The device of the MPSVector will be used to get the MPSDevice for this MPSGraphTensorData.
-     * [@note] If vector.vectors == 1, then a rank 1 tensor is returned, otherwise rank 2.
      * 
-     * @param vector MPSVector to be used within the MPSGraphTensorData
-     * @param rank   The rank of the resulting TensorData tensor. NOTE: must be within { 1, ... ,16 }.
-     * @return A valid MPSGraphTensorData, or nil if allocation failure.
+     * - Parameters:
+     * - vector: MPSVector to be used within the MPSGraphTensorData
+     * - rank: The rank of the resulting TensorData tensor. NOTE: must be within { 1, ... ,16 }.
+     * - Returns: A valid MPSGraphTensorData, or nil if allocation failure.
      */
     @Generated
     @Selector("initWithMPSVector:rank:")
@@ -212,7 +207,7 @@ public class MPSGraphTensorData extends NSObject {
     /**
      * Return an mpsndarray object will copy contents if the contents are not stored in an MPSNDArray
      * 
-     * @return A valid MPSNDArray, or nil if allocation fails.
+     * - Returns: A valid MPSNDArray, or nil if allocation fails.
      */
     @NotNull
     @Generated
@@ -244,4 +239,9 @@ public class MPSGraphTensorData extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

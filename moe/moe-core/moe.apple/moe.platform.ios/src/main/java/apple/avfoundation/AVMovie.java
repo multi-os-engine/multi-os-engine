@@ -561,4 +561,9 @@ public class AVMovie extends AVAsset implements NSCopying, NSMutableCopying {
         void call_loadTracksWithMediaTypeCompletionHandler(@Nullable NSArray<? extends AVMovieTrack> arg0,
                 @Nullable NSError arg1);
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

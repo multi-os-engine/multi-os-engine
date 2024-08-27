@@ -36,6 +36,8 @@ import org.jetbrains.annotations.NotNull;
  * [@protocol] AVPlayerViewControllerDelegate
  * 
  * A protocol for delegates of AVPlayerViewController.
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("AVKit")
@@ -46,6 +48,8 @@ public interface AVPlayerViewControllerDelegate {
      * playerViewController:failedToStartPictureInPictureWithError:
      * 
      * Delegate can implement this method to be notified when Picture in Picture failed to start.
+     * 
+     * API-Since: 9.0
      * 
      * @param playerViewController
      *                             The player view controller.
@@ -64,6 +68,8 @@ public interface AVPlayerViewControllerDelegate {
      * playerViewController:restoreUserInterfaceForPictureInPictureStopWithCompletionHandler:
      * 
      * Delegate can implement this method to restore the user interface before Picture in Picture stops.
+     * 
+     * API-Since: 9.0
      * 
      * @param playerViewController
      *                             The player view controller.
@@ -84,6 +90,8 @@ public interface AVPlayerViewControllerDelegate {
      * 
      * Delegate can implement this method to be notified when Picture in Picture did start.
      * 
+     * API-Since: 9.0
+     * 
      * @param playerViewController
      *                             The player view controller.
      */
@@ -98,6 +106,8 @@ public interface AVPlayerViewControllerDelegate {
      * playerViewControllerDidStopPictureInPicture:
      * 
      * Delegate can implement this method to be notified when Picture in Picture did stop.
+     * 
+     * API-Since: 9.0
      * 
      * @param playerViewController
      *                             The player view controller.
@@ -115,6 +125,8 @@ public interface AVPlayerViewControllerDelegate {
      * Delegate can implement this method and return NO to prevent player view controller from automatically being
      * dismissed when Picture in Picture starts.
      * 
+     * API-Since: 9.0
+     * 
      * @param playerViewController
      *                             The player view controller.
      */
@@ -131,6 +143,8 @@ public interface AVPlayerViewControllerDelegate {
      * 
      * Delegate can implement this method to be notified when Picture in Picture will start.
      * 
+     * API-Since: 9.0
+     * 
      * @param playerViewController
      *                             The player view controller.
      */
@@ -145,6 +159,8 @@ public interface AVPlayerViewControllerDelegate {
      * playerViewControllerWillStopPictureInPicture:
      * 
      * Delegate can implement this method to be notified when Picture in Picture will stop.
+     * 
+     * API-Since: 9.0
      * 
      * @param playerViewController
      *                             The player view controller.

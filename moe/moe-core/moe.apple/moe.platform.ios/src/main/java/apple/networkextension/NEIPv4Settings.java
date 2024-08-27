@@ -288,4 +288,9 @@ public class NEIPv4Settings extends NSObject implements NSSecureCoding, NSCopyin
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

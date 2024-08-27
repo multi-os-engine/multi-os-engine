@@ -336,8 +336,8 @@ public class NSFileProviderManager extends NSObject {
      * In addition to using this method, your application/extension can register for
      * pushes using the PKPushTypeFileProvider push type. Pushes of the form
      * {
-     * container-identifier = "<identifier>"
-     * domain = "<domain identifier>"
+     * "container-identifier": "<identifier>",
+     * "domain": "<domain identifier>"
      * }
      * with a topic of "<your application identifier>.pushkit.fileprovider" will be
      * translated into a call to signalEnumeratorForContainerItemIdentifier:completionHandler:.
@@ -560,11 +560,11 @@ public class NSFileProviderManager extends NSObject {
      * 
      * The global progress exposes the two following data:
      * - Number of items with an ongoing matching kind operation along with the grand total;
-     * - Number of bytes already transfered along with the total amount of bytes to transfer.
+     * - Number of bytes already transferred along with the total amount of bytes to transfer.
      * 
-     * The grand total will only be reset to 0 when there are no operations left. If new operations of the matching kind
-     * arrive while
-     * the global progress is already ongoing, they will just be summed to the existing global progress.
+     * `totalUnitCount` will only be reset when there are no operations left. If new operations of the matching
+     * kind arrive while the global progress is already ongoing, they will just be summed to the existing global
+     * progress.
      * 
      * By default, when no matching kind operations are active, the progress has its values set to 1 and its state set
      * to finished.
@@ -854,4 +854,9 @@ public class NSFileProviderManager extends NSObject {
         @Generated
         void call_waitForStabilizationWithCompletionHandler(@Nullable NSError error);
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

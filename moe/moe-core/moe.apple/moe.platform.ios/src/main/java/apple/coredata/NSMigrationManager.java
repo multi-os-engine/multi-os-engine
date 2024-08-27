@@ -344,4 +344,9 @@ public class NSMigrationManager extends NSObject {
     @Generated
     @Selector("usesStoreSpecificMigrationManager")
     public native boolean usesStoreSpecificMigrationManager();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

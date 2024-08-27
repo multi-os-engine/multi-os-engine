@@ -153,4 +153,9 @@ public class UIWindowSceneDestructionRequestOptions extends UISceneDestructionRe
     @Selector("windowDismissalAnimation")
     @NInt
     public native long windowDismissalAnimation();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

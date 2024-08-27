@@ -231,4 +231,9 @@ public class MDLTransform extends NSObject implements NSCopying, MDLTransformCom
     @Generated
     @Selector("setResetsTransform:")
     public native void setResetsTransform(boolean value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

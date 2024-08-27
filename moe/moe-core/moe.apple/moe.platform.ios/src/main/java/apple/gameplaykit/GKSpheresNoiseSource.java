@@ -42,8 +42,6 @@ import org.jetbrains.annotations.Nullable;
 
 /**
  * Produces 3D spherical noise with an infinite number of spheres-within-spheres of constantly-increasing radius.
- * 
- * API-Since: 10.0
  */
 @Generated
 @Library("GameplayKit")
@@ -179,4 +177,9 @@ public class GKSpheresNoiseSource extends GKNoiseSource {
     @Generated
     @Selector("setFrequency:")
     public native void setFrequency(double value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

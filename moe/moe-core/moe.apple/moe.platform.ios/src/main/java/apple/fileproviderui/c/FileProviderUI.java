@@ -23,6 +23,8 @@ public final class FileProviderUI {
     }
 
     /**
+     * The error domain for errors raised by the File Provider UI extension.
+     * 
      * API-Since: 11.0
      */
     @NotNull

@@ -35,4 +35,10 @@ public final class LABiometryType {
      * API-Since: 11.2
      */
     @Generated @NInt public static final long TypeNone = 0x0000000000000000L;
+    /**
+     * The device supports Optic ID
+     * 
+     * API-Since: 17.0
+     */
+    @Generated @NInt public static final long TypeOpticID = 0x0000000000000004L;
 }

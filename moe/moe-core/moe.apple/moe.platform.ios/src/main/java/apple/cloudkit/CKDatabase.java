@@ -43,6 +43,8 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
+ * This class should not be subclassed. If it is, Sendable may no longer apply.
+ * 
  * API-Since: 8.0
  */
 @Generated
@@ -356,4 +358,9 @@ public class CKDatabase extends NSObject {
         @Generated
         void call_saveSubscriptionCompletionHandler(@Nullable CKSubscription subscription, @Nullable NSError error);
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

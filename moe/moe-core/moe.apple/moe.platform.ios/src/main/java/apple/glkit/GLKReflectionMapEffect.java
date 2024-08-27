@@ -301,4 +301,9 @@ public class GLKReflectionMapEffect extends GLKBaseEffect implements GLKNamedEff
     @Generated
     @Selector("textureCubeMap")
     public native GLKEffectPropertyTexture textureCubeMap();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -238,4 +238,9 @@ public class RPBroadcastSampleHandler extends RPBroadcastHandler {
     @Generated
     @Selector("broadcastAnnotatedWithApplicationInfo:")
     public native void broadcastAnnotatedWithApplicationInfo(@NotNull NSDictionary<?, ?> applicationInfo);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

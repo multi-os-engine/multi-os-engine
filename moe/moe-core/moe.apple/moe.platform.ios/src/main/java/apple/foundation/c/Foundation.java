@@ -7018,4 +7018,133 @@ public final class Foundation {
     @Generated public static final double __FOUNDATION_NSPOINTERFUNCTIONS__ = 1.0;
     @Generated public static final double __FOUNDATION_NSHASHTABLE__ = 1.0;
     @Generated public static final double __FOUNDATION_NSMAPTABLE__ = 1.0;
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String NSInflectionConceptsKey();
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String NSInflectionAgreementArgumentAttributeName();
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String NSInflectionAgreementConceptAttributeName();
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String NSInflectionReferentConceptAttributeName();
+
+    /**
+     * The file system's internal inode identifier for the item. This value is not stable for all file systems or across
+     * all mounts, so it should be used sparingly and not persisted. It is useful, for example, to match URLs from the
+     * URL enumerator with paths from FSEvents. (Read-only, value type NSNumber containing an unsigned long long).
+     * 
+     * API-Since: 16.4
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String NSURLFileIdentifierKey();
+
+    /**
+     * The file is stored in an encrypted format on disk and cannot be accessed until after first unlock after the
+     * device has booted. After this first unlock, your app can access the file even while the device is locked until
+     * access expiry. Access is renewed once the user unlocks the device again.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String NSURLFileProtectionCompleteWhenUserInactive();
+
+    /**
+     * Returns the count of file system objects contained in the directory. This is a count of objects actually stored
+     * in the file system, so excludes virtual items like "." and "..". The property is useful for quickly identifying
+     * an empty directory for backup and syncing. If the URL is not a directory or the file system cannot cheaply
+     * compute the value, `nil` is returned. (Read-only, value type NSNumber)
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String NSURLDirectoryEntryCountKey();
+
+    /**
+     * The name of the file system type. (Read-only, value type NSString)
+     * 
+     * API-Since: 16.4
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String NSURLVolumeTypeNameKey();
+
+    /**
+     * The file system subtype value. (Read-only, value type NSNumber)
+     * 
+     * API-Since: 16.4
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String NSURLVolumeSubtypeKey();
+
+    /**
+     * The volume mounted from location. (Read-only, value type NSString)
+     * 
+     * API-Since: 16.4
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String NSURLVolumeMountFromLocationKey();
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String NSFileProtectionCompleteWhenUserInactive();
+
+    /**
+     * Key in the userInfo dictionary of an NSError received during a failed upload.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String NSURLSessionUploadTaskResumeData();
 }

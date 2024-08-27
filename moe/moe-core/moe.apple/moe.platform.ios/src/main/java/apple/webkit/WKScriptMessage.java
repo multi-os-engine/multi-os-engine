@@ -210,4 +210,9 @@ public class WKScriptMessage extends NSObject {
     @Generated
     @Selector("world")
     public native WKContentWorld world();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

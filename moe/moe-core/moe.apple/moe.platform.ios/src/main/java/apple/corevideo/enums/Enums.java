@@ -193,7 +193,7 @@ public final class Enums {
      */
     @Generated public static final int kCVPixelFormatType_TwoComponent8 = 0x32433038;
     /**
-     * little-endian RGB101010, 2 MSB are zero, wide-gamut (384-895)
+     * little-endian RGB101010, 2 MSB are ignored, wide-gamut (384-895)
      */
     @Generated public static final int kCVPixelFormatType_30RGBLEPackedWideGamut = 0x77333072;
     /**
@@ -475,4 +475,8 @@ public final class Enums {
      * Format is compressed-packed with no padding bits between pixels.
      */
     @Generated public static final int kCVPixelFormatType_Lossless_422YpCbCr10PackedBiPlanarVideoRange = 0x26787632;
+    /**
+     * Component AY'CbCr single precision floating-point 4:4:4:4
+     */
+    @Generated public static final int kCVPixelFormatType_4444AYpCbCrFloat = 0x7234666C;
 }

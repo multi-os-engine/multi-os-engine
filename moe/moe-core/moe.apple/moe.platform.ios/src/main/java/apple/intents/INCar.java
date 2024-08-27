@@ -270,4 +270,9 @@ public class INCar extends NSObject implements NSCopying, NSSecureCoding {
     @Generated
     @Selector("year")
     public native String year();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

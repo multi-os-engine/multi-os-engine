@@ -48,8 +48,6 @@ import org.jetbrains.annotations.Nullable;
  * Formats a postal address.
  * 
  * This formatter handles international formatting of a postal address.
- * 
- * API-Since: 9.0
  */
 @Generated
 @Library("Contacts")
@@ -247,4 +245,9 @@ public class CNPostalAddressFormatter extends NSFormatter {
     @Selector("style")
     @NInt
     public native long style();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

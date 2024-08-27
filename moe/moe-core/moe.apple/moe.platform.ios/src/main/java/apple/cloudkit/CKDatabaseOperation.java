@@ -183,4 +183,9 @@ public class CKDatabaseOperation extends CKOperation {
     @Generated
     @Selector("setDatabase:")
     public native void setDatabase(@Nullable CKDatabase value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

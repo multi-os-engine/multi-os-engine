@@ -113,6 +113,7 @@ public class CADisplayLink extends NSObject {
      * Create a new display link object for the main display. It will
      * invoke the method called 'sel' on 'target', the method has the
      * signature '(void)selector:(CADisplayLink *)sender'.
+     * For macOS, see NSView/NSWindow/NSScreen.displayLink(withTarget:selector:).
      */
     @NotNull
     @Generated
@@ -333,4 +334,9 @@ public class CADisplayLink extends NSObject {
     @Generated
     @Selector("setPreferredFrameRateRange:")
     public native void setPreferredFrameRateRange(@ByValue CAFrameRateRange value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

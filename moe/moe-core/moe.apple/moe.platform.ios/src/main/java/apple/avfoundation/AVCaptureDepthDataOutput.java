@@ -25,6 +25,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.opaque.dispatch_queue_t;
 
 /**
  * AVCaptureDepthDataOutput
@@ -138,7 +139,7 @@ public class AVCaptureDepthDataOutput extends AVCaptureOutput {
     @Nullable
     @Generated
     @Selector("delegateCallbackQueue")
-    public native NSObject delegateCallbackQueue();
+    public native dispatch_queue_t delegateCallbackQueue();
 
     @Generated
     @Selector("description")
@@ -249,7 +250,7 @@ public class AVCaptureDepthDataOutput extends AVCaptureOutput {
     @Selector("setDelegate:callbackQueue:")
     public native void setDelegateCallbackQueue(
             @Nullable @Mapped(ObjCObjectMapper.class) AVCaptureDepthDataOutputDelegate delegate,
-            @Nullable NSObject callbackQueue);
+            @Nullable dispatch_queue_t callbackQueue);
 
     /**
      * [@property] filteringEnabled
@@ -278,4 +279,9 @@ public class AVCaptureDepthDataOutput extends AVCaptureOutput {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

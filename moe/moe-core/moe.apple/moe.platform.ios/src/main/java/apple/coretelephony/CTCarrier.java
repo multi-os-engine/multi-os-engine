@@ -40,12 +40,6 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-/**
- * API-Since: 4.0
- * Deprecated-Since: 16.0
- * Deprecated-Message: Deprecated with no replacement
- */
-@Deprecated
 @Generated
 @Library("CoreTelephony")
 @Runtime(ObjCRuntime.class)
@@ -247,4 +241,9 @@ public class CTCarrier extends NSObject {
     @Generated
     @Selector("mobileNetworkCode")
     public native String mobileNetworkCode();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

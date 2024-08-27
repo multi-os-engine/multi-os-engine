@@ -25,6 +25,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.uikit.protocol.UIHoverEffect;
 
 /**
  * API-Since: 13.4
@@ -33,7 +34,7 @@ import org.jetbrains.annotations.Nullable;
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class UIPointerEffect extends NSObject implements NSCopying {
+public class UIPointerEffect extends NSObject implements NSCopying, UIHoverEffect {
     static {
         NatJ.register();
     }
@@ -170,4 +171,9 @@ public class UIPointerEffect extends NSObject implements NSCopying {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

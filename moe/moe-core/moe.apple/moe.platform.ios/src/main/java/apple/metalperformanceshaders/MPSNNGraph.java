@@ -656,4 +656,9 @@ public class MPSNNGraph extends MPSKernel implements NSCopying, NSSecureCoding {
     @Generated
     @Selector("setFormat:")
     public native void setFormat(@NUInt long value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

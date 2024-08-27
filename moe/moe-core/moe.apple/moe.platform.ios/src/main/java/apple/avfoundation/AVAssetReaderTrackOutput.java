@@ -111,7 +111,7 @@ public class AVAssetReaderTrackOutput extends AVAssetReaderOutput {
      * 
      * For other codecs on OSX, kCVPixelFormatType_422YpCbCr8 is the preferred pixel format for video and is generally
      * the most performant when decoding. If you need to work in the RGB domain then kCVPixelFormatType_32BGRA is
-     * recommended on iOS and kCVPixelFormatType_32ARGB is recommended on OSX.
+     * recommended.
      * 
      * ProRes encoded media can contain up to 12bits/ch. If your source is ProRes encoded and you wish to preserve more
      * than 8bits/ch during decompression then use one of the following pixel formats: kCVPixelFormatType_4444AYpCbCr16,
@@ -284,7 +284,7 @@ public class AVAssetReaderTrackOutput extends AVAssetReaderOutput {
      * 
      * For other codecs on OSX, kCVPixelFormatType_422YpCbCr8 is the preferred pixel format for video and is generally
      * the most performant when decoding. If you need to work in the RGB domain then kCVPixelFormatType_32BGRA is
-     * recommended on iOS and kCVPixelFormatType_32ARGB is recommended on OSX.
+     * recommended.
      * 
      * ProRes encoded media can contain up to 12bits/ch. If your source is ProRes encoded and you wish to preserve more
      * than 8bits/ch during decompression then use one of the following pixel formats: kCVPixelFormatType_4444AYpCbCr16,
@@ -367,4 +367,9 @@ public class AVAssetReaderTrackOutput extends AVAssetReaderOutput {
     @Generated
     @Selector("track")
     public native AVAssetTrack track();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

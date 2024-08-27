@@ -320,4 +320,9 @@ public class NSXMLParser extends NSObject {
     @Generated
     @Selector("systemID")
     public native String systemID();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -286,4 +286,9 @@ public class UICollectionViewDiffableDataSourceSectionSnapshotHandlers<_ItemType
         @Generated
         void call_willExpandItemHandler_ret(@NotNull @Mapped(ObjCObjectMapper.class) Object arg0);
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

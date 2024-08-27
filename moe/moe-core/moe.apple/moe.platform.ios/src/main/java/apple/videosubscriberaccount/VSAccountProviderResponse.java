@@ -188,4 +188,9 @@ public class VSAccountProviderResponse extends NSObject {
     @Generated
     @Selector("status")
     public native String status();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

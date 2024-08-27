@@ -239,4 +239,9 @@ public class NSInvocation extends NSObject {
         @Generated
         void call_invokeUsingIMP();
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -286,4 +286,9 @@ public class MPSCNNLocalContrastNormalizationGradientNode extends MPSNNGradientF
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

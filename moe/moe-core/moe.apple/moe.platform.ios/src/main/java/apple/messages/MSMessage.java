@@ -52,8 +52,6 @@ import org.jetbrains.annotations.Nullable;
  * MSMessage
  * 
  * The MSMessage encapsulates the data to be transferred to remote devices.
- * 
- * API-Since: 10.0
  */
 @Generated
 @Library("Messages")
@@ -413,4 +411,9 @@ public class MSMessage extends NSObject implements NSCopying, NSSecureCoding {
     @Generated
     @Selector("isPending")
     public native boolean isPending();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

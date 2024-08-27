@@ -28,6 +28,10 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.coreml.protocol.MLComputeDeviceProtocol;
+import apple.foundation.NSDictionary;
+import org.moe.natj.general.ann.ReferenceInfo;
+import org.moe.natj.general.ptr.Ptr;
 
 /**
  * VNRequest
@@ -228,7 +232,11 @@ public class VNRequest extends NSObject implements NSCopying {
      * This property, if set to YES, signifies that the request should be performed exclusively on the CPU and not on
      * the GPU. The default value is NO, which signifies that the request is free to leverage the GPU to accelerate any
      * work the request may require.
+     * 
+     * API-Since: 11.0
+     * Deprecated-Since: 17.0
      */
+    @Deprecated
     @Generated
     @Selector("setUsesCPUOnly:")
     public native void setUsesCPUOnly(boolean value);
@@ -245,7 +253,11 @@ public class VNRequest extends NSObject implements NSCopying {
      * This property, if set to YES, signifies that the request should be performed exclusively on the CPU and not on
      * the GPU. The default value is NO, which signifies that the request is free to leverage the GPU to accelerate any
      * work the request may require.
+     * 
+     * API-Since: 11.0
+     * Deprecated-Since: 17.0
      */
+    @Deprecated
     @Generated
     @Selector("usesCPUOnly")
     public native boolean usesCPUOnly();
@@ -317,4 +329,57 @@ public class VNRequest extends NSObject implements NSCopying {
     @Generated
     @Selector("supportedRevisions")
     public static native NSIndexSet supportedRevisions();
+
+    /**
+     * Determine what the currently configured compute device is for a specific compute stage.
+     * 
+     * @param computeStage The compute stage to be introspected.
+     * 
+     * @return The currently assigned compute device, or `nil` if there is no explicit assignment.
+     */
+    @Generated
+    @Selector("computeDeviceForComputeStage:")
+    @MappedReturn(ObjCObjectMapper.class)
+    @Nullable
+    public native MLComputeDeviceProtocol computeDeviceForComputeStage(@NotNull String computeStage);
+
+    /**
+     * Assign a specific compute device for a compute stage.
+     * 
+     * It is important to note that any compute device can be configured for a given compute stage. Only when the
+     * request is performed is the validity of the (compute device / compute stage) assignments checked. Valid compute
+     * devices for a request's compute stages can be obtained via `-supportedComputeStageDevicesAndReturnError:`.
+     * 
+     * @param computeDevice The compute device to assign to the compute stage. Passing nil for this parameter will
+     *                      remove any explicit compute device assignment, allowing Vision to select which device to
+     *                      use.
+     * @param computeStage  The compute stage being configured.
+     */
+    @Generated
+    @Selector("setComputeDevice:forComputeStage:")
+    public native void setComputeDeviceForComputeStage(
+            @Mapped(ObjCObjectMapper.class) @Nullable MLComputeDeviceProtocol computeDevice,
+            @NotNull String computeStage);
+
+    /**
+     * Obtain the collection of compute device per stage that are supported by the request.
+     * 
+     * This method's result is based on the current state of configuration of the target request at the time of the
+     * call.
+     * 
+     * @param error The address of a variable that will be populated with the error that describes the failure. If the
+     *              caller does not require this information, NULL can be passed.
+     * 
+     * @return A dictionary of per-stage supported compute devices, or `nil` if an error occurs.
+     */
+    @Generated
+    @Selector("supportedComputeStageDevicesAndReturnError:")
+    @Nullable
+    public native NSDictionary<String, ? extends NSArray<?>> supportedComputeStageDevicesAndReturnError(
+            @ReferenceInfo(type = NSError.class) @Nullable Ptr<NSError> error);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

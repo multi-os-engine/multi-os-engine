@@ -362,4 +362,9 @@ public class MTLHeapDescriptor extends NSObject implements NSCopying {
     @Selector("sparsePageSize")
     @NInt
     public native long sparsePageSize();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

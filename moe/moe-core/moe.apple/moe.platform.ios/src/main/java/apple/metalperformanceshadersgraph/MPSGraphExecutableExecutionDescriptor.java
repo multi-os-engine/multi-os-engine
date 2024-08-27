@@ -36,7 +36,7 @@ import org.jetbrains.annotations.Nullable;
 @Library("MetalPerformanceShadersGraph")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class MPSGraphExecutableExecutionDescriptor extends NSObject implements NSCopying {
+public class MPSGraphExecutableExecutionDescriptor extends MPSGraphObject implements NSCopying {
     static {
         NatJ.register();
     }
@@ -86,9 +86,7 @@ public class MPSGraphExecutableExecutionDescriptor extends NSObject implements N
     public static native Class classForKeyedUnarchiver();
 
     /**
-     * [@property] completionHandler
-     * 
-     * completionHandler for the graph executable, default value is nil
+     * CompletionHandler for the graph executable, default value is nil.
      */
     @NotNull
     @Generated
@@ -156,9 +154,7 @@ public class MPSGraphExecutableExecutionDescriptor extends NSObject implements N
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * [@property] scheduledHandler
-     * 
-     * scheduledHandler for the graph executable, default value is nil
+     * ScheduledHandler for the graph executable, default value is nil.
      */
     @NotNull
     @Generated
@@ -174,9 +170,7 @@ public class MPSGraphExecutableExecutionDescriptor extends NSObject implements N
     }
 
     /**
-     * [@property] completionHandler
-     * 
-     * completionHandler for the graph executable, default value is nil
+     * CompletionHandler for the graph executable, default value is nil.
      */
     @Generated
     @Selector("setCompletionHandler:")
@@ -191,9 +185,7 @@ public class MPSGraphExecutableExecutionDescriptor extends NSObject implements N
     }
 
     /**
-     * [@property] scheduledHandler
-     * 
-     * scheduledHandler for the graph executable, default value is nil
+     * ScheduledHandler for the graph executable, default value is nil.
      */
     @Generated
     @Selector("setScheduledHandler:")
@@ -212,9 +204,7 @@ public class MPSGraphExecutableExecutionDescriptor extends NSObject implements N
     public static native void setVersion_static(@NInt long aVersion);
 
     /**
-     * [@property] waitUntilCompleted
-     * 
-     * waitUntilCompleted for the graph executable, default value is false
+     * Flag for the graph executable to wait till the execution has completed, default value is false.
      */
     @Generated
     @Selector("setWaitUntilCompleted:")
@@ -230,9 +220,7 @@ public class MPSGraphExecutableExecutionDescriptor extends NSObject implements N
     public static native long version_static();
 
     /**
-     * [@property] waitUntilCompleted
-     * 
-     * waitUntilCompleted for the graph executable, default value is false
+     * Flag for the graph executable to wait till the execution has completed, default value is false.
      */
     @Generated
     @Selector("waitUntilCompleted")
@@ -246,13 +234,14 @@ public class MPSGraphExecutableExecutionDescriptor extends NSObject implements N
     public native Object copyWithZone(@Nullable VoidPtr zone);
 
     /**
-     * Executable signals these shared events at execution stage and immediately proceeds
+     * Executable signals these shared events at execution stage and immediately proceeds.
      * 
-     * @param event          shared event to signal
-     * @param executionStage execution stage to signal event at
-     * @param value          value for shared event to wait on
+     * - Parameters:
+     * - event: Shared event to signal.
+     * - executionStage: Execution stage to signal event at.
+     * - value: Value for shared event to wait on.
      * 
-     *                       API-Since: 16.0
+     * API-Since: 16.0
      */
     @Generated
     @Selector("signalEvent:atExecutionEvent:value:")
@@ -263,12 +252,18 @@ public class MPSGraphExecutableExecutionDescriptor extends NSObject implements N
      * Executable waits on these shared events before scheduling execution on the HW, this does not include encoding
      * which can still continue.
      * 
-     * @param event shared event to wait on
-     * @param value value for shared event to wait on
+     * - Parameters:
+     * - event: Shared event to wait on.
+     * - value: Value for shared event to wait on.
      * 
-     *              API-Since: 16.0
+     * API-Since: 16.0
      */
     @Generated
     @Selector("waitForEvent:value:")
     public native void waitForEventValue(@NotNull @Mapped(ObjCObjectMapper.class) MTLSharedEvent event, long value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

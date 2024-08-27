@@ -382,6 +382,11 @@ public class AVCapturePhotoOutput extends AVCaptureOutput {
      * minExposureDuration and maxExposureDuration values.
      * - For auto exposure brackets, exposureTargetBias value must be within the source device's minExposureTargetBias
      * and maxExposureTargetBias values.
+     * Deferred Photo Delivery rules:
+     * - If the receiver's autoDeferredPhotoDeliveryEnabled is YES, your delegate must respond to
+     * -captureOutput:didFinishCapturingDeferredPhotoProxy:error:.
+     * Color space rules:
+     * - Photo capture is not supported when AVCaptureDevice has selected AVCaptureColorSpace_AppleLog as color space.
      * 
      * @param settings
      *                 An AVCapturePhotoSettings object you have configured. May not be nil.
@@ -1530,4 +1535,305 @@ public class AVCapturePhotoOutput extends AVCaptureOutput {
     @Generated
     @Selector("setPreservesLivePhotoCaptureSuspendedOnSessionStop:")
     public native void setPreservesLivePhotoCaptureSuspendedOnSessionStop(boolean value);
+
+    /**
+     * [@property] captureReadiness
+     * 
+     * A value specifying whether the photo output is ready to respond to new capture requests in a timely manner.
+     * 
+     * This property can be key-value observed to enable and disable shutter button UI depending on whether the output
+     * is ready to capture, which is especially important when the responsiveCaptureEnabled property is YES. When
+     * interacting with AVCapturePhotoOutput on a background queue AVCapturePhotoOutputReadinessCoordinator should
+     * instead be used to observe readiness changes and perform UI updates. Capturing only when the output is ready
+     * limits the number of requests inflight to minimize shutter lag while maintaining the fastest shot to shot time.
+     * When the property returns a value other than Ready the output is not ready to capture and the shutter button
+     * should be disabled to prevent the user from initiating new requests. The output continues to accept requests when
+     * the captureReadiness property returns a value other than Ready, but the request may not be serviced for a longer
+     * period. The visual presentation of the shutter button can be customized based on the readiness value. When the
+     * user rapidly taps the shutter button the property may transition to NotReadyMomentarily for a brief period.
+     * Although the shutter button should be disabled during this period it is short lived enough that dimming or
+     * changing the appearance of the shutter is not recommended as it would be visually distracting to the user. Longer
+     * running capture types like flash or captures with AVCapturePhotoQualityPrioritizationQuality may prevent the
+     * output from capturing for an extended period, indicated by NotReadyWaitingForCapture or
+     * NotReadyWaitingForProcessing, which is appropriate to show by dimming or disabling the shutter button. For
+     * NotReadyWaitingForProcessing it is also appropriate to show a spinner or other indication that the shutter is
+     * busy.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("captureReadiness")
+    @NInt
+    public native long captureReadiness();
+
+    /**
+     * [@property] autoDeferredPhotoDeliveryEnabled
+     * 
+     * Specifies whether automatic deferred photo delivery is enabled.
+     * 
+     * Setting this value to either YES or NO requires a lengthy reconfiguration of the capture pipeline, so you should
+     * set this property before calling -[AVCaptureSession startRunning]. Setting this property to YES throws an
+     * NSInvalidArgumentException if autoDeferredPhotoDeliverySupported is NO.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("isAutoDeferredPhotoDeliveryEnabled")
+    public native boolean isAutoDeferredPhotoDeliveryEnabled();
+
+    /**
+     * [@property] autoDeferredPhotoDeliverySupported
+     * 
+     * Indicates whether the deferred photo delivery feature is supported by the receiver.
+     * 
+     * This property may change as the session's -sessionPreset or source device's -activeFormat change. When deferred
+     * photo delivery is not supported, your capture requests always resolve their
+     * AVCaptureResolvedPhotoSettings.deferredPhotoProxyDimensions to { 0, 0 }. This property is key-value observable.
+     * 
+     * Automatic deferred photo delivery can produce a lightweight photo representation, called a "proxy", at the time
+     * of capture that can later be processed to completion while improving camera responsiveness. When it's appropriate
+     * for the receiver to deliver a photo proxy for deferred processing, the delegate callback
+     * -captureOutput:didFinishCapturingDeferredPhotoProxy:error: will be invoked instead of
+     * -captureOutput:didFinishProcessingPhoto:error:. See the documentation for AVCaptureDeferredPhotoProxy for more
+     * details.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("isAutoDeferredPhotoDeliverySupported")
+    public native boolean isAutoDeferredPhotoDeliverySupported();
+
+    /**
+     * [@property] fastCapturePrioritizationEnabled
+     * 
+     * Specifies whether fast capture prioritization is enabled.
+     * 
+     * This property defaults to NO. This property may only be set to YES if fastCapturePrioritizationSupported is YES,
+     * otherwise an NSInvalidArgumentException is thrown. By setting this property to YES, the photo output prepares
+     * itself to automatically reduce capture quality from the selected AVCapturePhotoQualityPrioritization when needed
+     * to keep up with rapid capture requests. In many cases the slightly reduced quality is preferable to missing the
+     * moment entirely. If you intend to use fast capture prioritization, you should set this property to YES before
+     * calling -[AVCaptureSession startRunning] or within -[AVCaptureSession beginConfiguration] and -[AVCaptureSession
+     * commitConfiguration] while running.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("isFastCapturePrioritizationEnabled")
+    public native boolean isFastCapturePrioritizationEnabled();
+
+    /**
+     * [@property] fastCapturePrioritizationSupported
+     * 
+     * Specifies whether fast capture prioritization is supported.
+     * 
+     * Fast capture prioritization allows capture quality to be automatically reduced from the selected
+     * AVCapturePhotoQualityPrioritization to ensure the photo output can keep up when captures are requested in rapid
+     * succession. Fast capture prioritization is only supported for certain AVCaptureSession sessionPresets and
+     * AVCaptureDevice activeFormats and only when responsiveCaptureEnabled is YES. When switching cameras or formats
+     * this property may change. When this property changes from YES to NO, fastCapturePrioritizationEnabled also
+     * reverts to NO. If you've previously opted in for fast capture prioritization and then change configurations, you
+     * may need to set fastCapturePrioritizationEnabled = YES again.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("isFastCapturePrioritizationSupported")
+    public native boolean isFastCapturePrioritizationSupported();
+
+    /**
+     * [@property] responsiveCaptureEnabled
+     * 
+     * A BOOL value specifying whether the photo output is set up to support responsive capture.
+     * 
+     * This property may only be set to YES if responsiveCaptureSupported is YES, otherwise an
+     * NSInvalidArgumentException is thrown. When responsiveCaptureEnabled is YES the captureReadiness property should
+     * be used to determine whether new capture requests can be serviced in a reasonable time and whether the shutter
+     * control should be available to the user. Responsive capture adds buffering between the capture and photo
+     * processing stages which allows a new capture to start before processing has completed for the previous capture,
+     * so be prepared to handle -captureOutput:willBeginCaptureForResolvedSettings: being called before the
+     * -captureOutput:didFinishProcessingPhoto: for the prior requests. Processed photos continue to be delivered in the
+     * order they were captured. To minimize camera shake from the user's tapping gesture it is recommended that
+     * -capturePhotoWithSettings:delegate: be called as early as possible when handling the touch down event. Enabling
+     * responsive capture allows the fast capture prioritization feature to be used, which further increases capture
+     * rates and reduces preview and recording disruptions. See the fastCapturePrioritizationEnabled property. When
+     * requesting uncompressed output using kCVPixelBufferPixelFormatTypeKey in AVCapturePhotoSetting.format the
+     * AVCapturePhoto's pixelBuffer is allocated from a pool with enough capacity for that request only, and overlap
+     * between capture and processing is disabled. The client must release the AVCapturePhoto and references to the
+     * pixelBuffer before capturing again and the pixelBuffer's IOSurface must also no longer be in use. Changing this
+     * property requires a lengthy reconfiguration of the capture render pipeline, so you should set this property to
+     * YES before calling -[AVCaptureSession startRunning] or within -[AVCaptureSession beginConfiguration] and
+     * -[AVCaptureSession commitConfiguration] while running.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("isResponsiveCaptureEnabled")
+    public native boolean isResponsiveCaptureEnabled();
+
+    /**
+     * [@property] responsiveCaptureSupported
+     * 
+     * A BOOL value specifying whether responsive capture is supported.
+     * 
+     * Enabling responsive capture increases peak and sustained capture rates, and reduces shutter lag at the cost of
+     * additional memory usage by the photo output. This property returns YES if the session's current configuration
+     * allows responsive capture. When switching cameras or formats, enabling depth data delivery, or enabling zero
+     * shutter lag this property may change. Responsive capture is only supported when zero shutter lag is enabled. When
+     * this property changes from YES to NO, responsiveCaptureEnabled also reverts to NO. This property is key-value
+     * observable.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("isResponsiveCaptureSupported")
+    public native boolean isResponsiveCaptureSupported();
+
+    /**
+     * [@property] zeroShutterLagEnabled
+     * 
+     * A BOOL value specifying whether the output is set up to support zero shutter lag.
+     * 
+     * This property may only be set to YES if zeroShutterLagSupported is YES, otherwise an NSInvalidArgumentException
+     * is thrown. For apps linked on or after iOS 17 zero shutter lag is automatically enabled when supported. Enabling
+     * zero shutter lag reduces or eliminates shutter lag when using AVCapturePhotoQualityPrioritizationBalanced or
+     * Quality at the cost of additional memory usage by the photo output. The timestamp of the AVCapturePhoto may be
+     * slightly earlier than when -capturePhotoWithSettings:delegate: was called. To minimize camera shake from the
+     * user's tapping gesture it is recommended that -capturePhotoWithSettings:delegate: be called as early as possible
+     * when handling the touch down event. Zero shutter lag isn't available when using manual exposure or bracketed
+     * capture. Changing this property requires a lengthy reconfiguration of the capture render pipeline, so you should
+     * set this property to YES before calling -[AVCaptureSession startRunning] or within -[AVCaptureSession
+     * beginConfiguration] and -[AVCaptureSession commitConfiguration] while running.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("isZeroShutterLagEnabled")
+    public native boolean isZeroShutterLagEnabled();
+
+    /**
+     * [@property] zeroShutterLagSupported
+     * 
+     * A BOOL value specifying whether zero shutter lag is supported.
+     * 
+     * This property returns YES if the session's current configuration allows zero shutter lag. When switching cameras
+     * or formats, setting depthDataDeliveryEnabled, or setting virtualDeviceConstituentPhotoDeliveryEnabled this
+     * property may change. When this property changes from YES to NO, zeroShutterLagEnabled also reverts to NO. This
+     * property is key-value observable.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("isZeroShutterLagSupported")
+    public native boolean isZeroShutterLagSupported();
+
+    /**
+     * [@property] autoDeferredPhotoDeliveryEnabled
+     * 
+     * Specifies whether automatic deferred photo delivery is enabled.
+     * 
+     * Setting this value to either YES or NO requires a lengthy reconfiguration of the capture pipeline, so you should
+     * set this property before calling -[AVCaptureSession startRunning]. Setting this property to YES throws an
+     * NSInvalidArgumentException if autoDeferredPhotoDeliverySupported is NO.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("setAutoDeferredPhotoDeliveryEnabled:")
+    public native void setAutoDeferredPhotoDeliveryEnabled(boolean value);
+
+    /**
+     * [@property] fastCapturePrioritizationEnabled
+     * 
+     * Specifies whether fast capture prioritization is enabled.
+     * 
+     * This property defaults to NO. This property may only be set to YES if fastCapturePrioritizationSupported is YES,
+     * otherwise an NSInvalidArgumentException is thrown. By setting this property to YES, the photo output prepares
+     * itself to automatically reduce capture quality from the selected AVCapturePhotoQualityPrioritization when needed
+     * to keep up with rapid capture requests. In many cases the slightly reduced quality is preferable to missing the
+     * moment entirely. If you intend to use fast capture prioritization, you should set this property to YES before
+     * calling -[AVCaptureSession startRunning] or within -[AVCaptureSession beginConfiguration] and -[AVCaptureSession
+     * commitConfiguration] while running.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("setFastCapturePrioritizationEnabled:")
+    public native void setFastCapturePrioritizationEnabled(boolean value);
+
+    /**
+     * [@property] fastCapturePrioritizationSupported
+     * 
+     * Specifies whether fast capture prioritization is supported.
+     * 
+     * Fast capture prioritization allows capture quality to be automatically reduced from the selected
+     * AVCapturePhotoQualityPrioritization to ensure the photo output can keep up when captures are requested in rapid
+     * succession. Fast capture prioritization is only supported for certain AVCaptureSession sessionPresets and
+     * AVCaptureDevice activeFormats and only when responsiveCaptureEnabled is YES. When switching cameras or formats
+     * this property may change. When this property changes from YES to NO, fastCapturePrioritizationEnabled also
+     * reverts to NO. If you've previously opted in for fast capture prioritization and then change configurations, you
+     * may need to set fastCapturePrioritizationEnabled = YES again.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("setFastCapturePrioritizationSupported:")
+    public native void setFastCapturePrioritizationSupported(boolean value);
+
+    /**
+     * [@property] responsiveCaptureEnabled
+     * 
+     * A BOOL value specifying whether the photo output is set up to support responsive capture.
+     * 
+     * This property may only be set to YES if responsiveCaptureSupported is YES, otherwise an
+     * NSInvalidArgumentException is thrown. When responsiveCaptureEnabled is YES the captureReadiness property should
+     * be used to determine whether new capture requests can be serviced in a reasonable time and whether the shutter
+     * control should be available to the user. Responsive capture adds buffering between the capture and photo
+     * processing stages which allows a new capture to start before processing has completed for the previous capture,
+     * so be prepared to handle -captureOutput:willBeginCaptureForResolvedSettings: being called before the
+     * -captureOutput:didFinishProcessingPhoto: for the prior requests. Processed photos continue to be delivered in the
+     * order they were captured. To minimize camera shake from the user's tapping gesture it is recommended that
+     * -capturePhotoWithSettings:delegate: be called as early as possible when handling the touch down event. Enabling
+     * responsive capture allows the fast capture prioritization feature to be used, which further increases capture
+     * rates and reduces preview and recording disruptions. See the fastCapturePrioritizationEnabled property. When
+     * requesting uncompressed output using kCVPixelBufferPixelFormatTypeKey in AVCapturePhotoSetting.format the
+     * AVCapturePhoto's pixelBuffer is allocated from a pool with enough capacity for that request only, and overlap
+     * between capture and processing is disabled. The client must release the AVCapturePhoto and references to the
+     * pixelBuffer before capturing again and the pixelBuffer's IOSurface must also no longer be in use. Changing this
+     * property requires a lengthy reconfiguration of the capture render pipeline, so you should set this property to
+     * YES before calling -[AVCaptureSession startRunning] or within -[AVCaptureSession beginConfiguration] and
+     * -[AVCaptureSession commitConfiguration] while running.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("setResponsiveCaptureEnabled:")
+    public native void setResponsiveCaptureEnabled(boolean value);
+
+    /**
+     * [@property] zeroShutterLagEnabled
+     * 
+     * A BOOL value specifying whether the output is set up to support zero shutter lag.
+     * 
+     * This property may only be set to YES if zeroShutterLagSupported is YES, otherwise an NSInvalidArgumentException
+     * is thrown. For apps linked on or after iOS 17 zero shutter lag is automatically enabled when supported. Enabling
+     * zero shutter lag reduces or eliminates shutter lag when using AVCapturePhotoQualityPrioritizationBalanced or
+     * Quality at the cost of additional memory usage by the photo output. The timestamp of the AVCapturePhoto may be
+     * slightly earlier than when -capturePhotoWithSettings:delegate: was called. To minimize camera shake from the
+     * user's tapping gesture it is recommended that -capturePhotoWithSettings:delegate: be called as early as possible
+     * when handling the touch down event. Zero shutter lag isn't available when using manual exposure or bracketed
+     * capture. Changing this property requires a lengthy reconfiguration of the capture render pipeline, so you should
+     * set this property to YES before calling -[AVCaptureSession startRunning] or within -[AVCaptureSession
+     * beginConfiguration] and -[AVCaptureSession commitConfiguration] while running.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("setZeroShutterLagEnabled:")
+    public native void setZeroShutterLagEnabled(boolean value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -132,9 +132,19 @@ public interface NSFileProviderReplicatedExtension extends NSFileProviderEnumera
      * If the imported item is refused by the extension, it should return nil for the
      * createdItem without any error. In that case, the source item will be deleted
      * from disk. In case the item represents a directory, the content will be deleted
-     * recursively. If the extension does not wish to synchronise the item, while still
-     * keeping it on disk, it should still import it locally, but not sync it to its
-     * server, and return a valid createItem object.
+     * recursively.
+     * 
+     * If the extension does not wish to sync the item, while still
+     * keeping the item on disk, on macOS 13.0, iOS 16.0, and later,
+     * it should return `NSFileProviderErrorExcludedFromSync`
+     * on the completion handler. For more details, see the header comment for that
+     * error code.
+     * On earlier versions of macOS, where `NSFileProviderErrorExcludedFromSync` is
+     * unavailable, the extension could choose to respond to FileProvider API calls as
+     * if the item is synced to it's server, but the extension only tracks the item
+     * in it's own local database on the device. The extension must be careful to respond to
+     * all FileProvider API calls as if the file is really synced to it's server, including
+     * enumerations of the parent directory of that item, itemForIdentifier calls, etc.
      * 
      * The progress returned by createItemBasedOnTemplate is expected to include the
      * upload progress of the item and will be presented in the user interface until
@@ -341,9 +351,9 @@ public interface NSFileProviderReplicatedExtension extends NSFileProviderEnumera
      * The system takes ownership of the item and will move it out of the sandbox of
      * the provider.
      * 
-     * If the provider wishes to force materialization of a given item, the provider should use the NSFileCoordinator
-     * API to coordinate a read on the user visible URL of the item, retrieved using
-     * -[NSFileProviderManager getUserVisibleURLForItemIdentifier:completionHandler:]
+     * If the provider wishes to force materialization of a given item, the provider should use
+     * `-[NSFileProviderManager requestDownloadForItemWithIdentifier:requestedRange:completionHandler:]`,
+     * or configure the `-[NSFileProviderItem contentPolicy]`.
      * 
      * The requestedVersion parameter specifies which version should be returned. A nil value
      * means that the latest known version should be returned. Except for the error case, the

@@ -30,7 +30,10 @@ import org.jetbrains.annotations.Nullable;
  * A group normalizaion layer. For more information, refer to https://pytorch.org/docs/stable/nn.html#groupnorm
  * 
  * API-Since: 14.0
+ * Deprecated-Since: 100000.0
+ * Deprecated-Message: Use Metal Performance Shaders Graph or BNNS instead.
  */
+@Deprecated
 @Generated
 @Library("MLCompute")
 @Runtime(ObjCRuntime.class)
@@ -237,4 +240,9 @@ public class MLCGroupNormalizationLayer extends MLCLayer {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

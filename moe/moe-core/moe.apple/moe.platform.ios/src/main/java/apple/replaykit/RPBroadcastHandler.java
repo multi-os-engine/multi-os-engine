@@ -195,4 +195,9 @@ public class RPBroadcastHandler extends NSObject implements NSExtensionRequestHa
     @Generated
     @Selector("updateBroadcastURL:")
     public native void updateBroadcastURL(@NotNull NSURL broadcastURL);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

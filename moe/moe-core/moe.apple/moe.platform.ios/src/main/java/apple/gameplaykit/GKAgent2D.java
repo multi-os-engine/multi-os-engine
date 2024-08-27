@@ -48,8 +48,6 @@ import org.jetbrains.annotations.Nullable;
  * need to match the visual coordinate system of the delegate. One simple case of that is isometric 2D content where the
  * game model is on a flat 2D plane but the visuals are displayed on an angle where one of the logical axes are used for
  * simulated depth as well as some translation in the display plane.
- * 
- * API-Since: 9.0
  */
 @Generated
 @Library("GameplayKit")
@@ -208,4 +206,9 @@ public class GKAgent2D extends GKAgent implements NSSecureCoding {
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -227,4 +227,9 @@ public class NSTextElement extends NSObject {
     @Generated
     @Selector("parentElement")
     public native NSTextElement parentElement();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

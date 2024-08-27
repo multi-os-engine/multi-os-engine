@@ -1466,4 +1466,9 @@ public class AVCapturePhotoSettings extends NSObject implements NSCopying {
     @Generated
     @Selector("setMaxPhotoDimensions:")
     public native void setMaxPhotoDimensions(@ByValue CMVideoDimensions value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

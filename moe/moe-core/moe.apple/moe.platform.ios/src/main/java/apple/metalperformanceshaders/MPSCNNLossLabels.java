@@ -335,4 +335,9 @@ public class MPSCNNLossLabels extends MPSState {
     @Generated
     @Selector("weightsImage")
     public native MPSImage weightsImage();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

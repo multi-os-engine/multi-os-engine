@@ -38,9 +38,6 @@ import apple.corefoundation.struct.CGSize;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-/**
- * API-Since: 11.0
- */
 @Generated
 @Library("PDFKit")
 @Runtime(ObjCRuntime.class)
@@ -442,4 +439,9 @@ public class PDFPage extends NSObject implements NSCopying {
     @Generated
     @Selector("initWithImage:options:")
     public native PDFPage initWithImageOptions(@NotNull UIImage image, @NotNull NSDictionary<String, ?> options);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

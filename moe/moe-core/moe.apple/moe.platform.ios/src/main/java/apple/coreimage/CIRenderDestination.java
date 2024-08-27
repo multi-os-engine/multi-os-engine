@@ -36,9 +36,6 @@ import org.jetbrains.annotations.Nullable;
  * attributes of a render that pertain to the render's destination.
  * It is intended to be used for issuing renders that return to the
  * caller as soon as all the work has been issued but before it completes/
- * 
- * 
- * API-Since: 11.0
  */
 @Generated
 @Library("CoreImage")
@@ -425,4 +422,9 @@ public class CIRenderDestination extends NSObject {
     @Selector("width")
     @NUInt
     public native long width();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -225,4 +225,9 @@ public class UIContextualAction extends NSObject {
                 @NotNull @ObjCBlock(name = "call_Block_handler_ret") Block_Block_handler_ret completionHandler);
     }
 
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
+
 }

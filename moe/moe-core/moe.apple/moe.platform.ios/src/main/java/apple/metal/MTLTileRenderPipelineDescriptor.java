@@ -425,4 +425,9 @@ public class MTLTileRenderPipelineDescriptor extends NSObject implements NSCopyi
     @Generated
     @Selector("supportAddingBinaryFunctions")
     public native boolean supportAddingBinaryFunctions();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

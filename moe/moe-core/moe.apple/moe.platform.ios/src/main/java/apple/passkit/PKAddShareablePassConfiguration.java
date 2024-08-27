@@ -206,4 +206,9 @@ public class PKAddShareablePassConfiguration extends PKAddSecureElementPassConfi
         void call_configurationForPassMetadataPrimaryActionCompletion(
                 @Nullable PKAddShareablePassConfiguration shareableCredentialConfiguration, @Nullable NSError error);
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

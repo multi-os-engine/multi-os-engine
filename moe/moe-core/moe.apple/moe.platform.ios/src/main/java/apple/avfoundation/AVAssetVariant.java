@@ -30,6 +30,7 @@ import org.jetbrains.annotations.Nullable;
  * An AVAssetVariant represents a bit rate variant.
  * Each asset contains a collection of variants that represent a combination of audio, video, text, closed captions, and
  * subtitles for a particular bit rate.
+ * Subclasses of this type that are used from Swift must fulfill the requirements of a Sendable type.
  * 
  * API-Since: 15.0
  */
@@ -188,4 +189,9 @@ public class AVAssetVariant extends NSObject {
     @Generated
     @Selector("videoAttributes")
     public native AVAssetVariantVideoAttributes videoAttributes();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

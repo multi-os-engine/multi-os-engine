@@ -181,7 +181,11 @@ public class VNDetectHumanBodyPoseRequest extends VNImageBasedRequest {
      *                 not need this information, NULL can be passed.
      * @return An array of VNHumanBodyPoseObservationJointName symbols that are supported by the request revision, or
      *         nil if a failure occurs.
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.0
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("supportedJointNamesForRevision:error:")
@@ -196,7 +200,11 @@ public class VNDetectHumanBodyPoseRequest extends VNImageBasedRequest {
      *                 not need this information, NULL can be passed.
      * @return An array of VNHumanBodyPoseObservationJointsGroupName symbols that are supported by the request revision,
      *         or nil if a failure occurs.
+     * 
+     *         API-Since: 14.0
+     *         Deprecated-Since: 17.0
      */
+    @Deprecated
     @Nullable
     @Generated
     @Selector("supportedJointsGroupNamesForRevision:error:")
@@ -212,4 +220,43 @@ public class VNDetectHumanBodyPoseRequest extends VNImageBasedRequest {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * Obtain the collection of human body joint names that are supported by a given request object configured with a
+     * specific revision.
+     * 
+     * @param error The address of a variable that will be populated with an error upon failure. If the caller does not
+     *              need this information, NULL can be passed.
+     * @return An array of VNHumanBodyPoseObservationJointName symbols that are supported by the request revision, or
+     *         nil if a failure occurs.
+     * 
+     *         API-Since: 17.0
+     */
+    @Generated
+    @Selector("supportedJointNamesAndReturnError:")
+    @Nullable
+    public native NSArray<String> supportedJointNamesAndReturnError(
+            @ReferenceInfo(type = NSError.class) @Nullable Ptr<NSError> error);
+
+    /**
+     * Obtain the collection of human body joints group names that are supported by a given request object configured
+     * with a specific revision.
+     * 
+     * @param error The address of a variable that will be populated with an error upon failure. If the caller does not
+     *              need this information, NULL can be passed.
+     * @return An array of VNHumanBodyPoseObservationJointsGroupName symbols that are supported by the request revision,
+     *         or nil if a failure occurs.
+     * 
+     *         API-Since: 17.0
+     */
+    @Generated
+    @Selector("supportedJointsGroupNamesAndReturnError:")
+    @Nullable
+    public native NSArray<String> supportedJointsGroupNamesAndReturnError(
+            @ReferenceInfo(type = NSError.class) @Nullable Ptr<NSError> error);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

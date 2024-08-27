@@ -3820,4 +3820,22 @@ public final class GameController {
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String GCControllerUserCustomizationsDidChangeNotification();
+
+    /**
+     * Gets the name of an arcade button at a certain position.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @CFunction
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String GCInputArcadeButtonName(@NInt long row, @NInt long column);
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String GCProductCategoryArcadeStick();
 }

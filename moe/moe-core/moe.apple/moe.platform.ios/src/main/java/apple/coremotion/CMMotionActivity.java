@@ -44,26 +44,6 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
- * CMMotionActivity
- * 
- * Discussion:
- * An estimate of the user's activity based on the motion of the device.
- * 
- * The activity is exposed as a set of properties, the properties are not
- * mutually exclusive.
- * 
- * For example, if you're in a car stopped at a stop sign the state might
- * look like:
- * stationary = YES, walking = NO, running = NO, automotive = YES
- * 
- * Or a moving vehicle,
- * stationary = NO, walking = NO, running = NO, automotive = YES
- * 
- * Or the device could be in motion but not walking or in a vehicle.
- * stationary = NO, walking = NO, running = NO, automotive = NO.
- * Note in this case all of the properties are NO.
- * 
- * 
  * API-Since: 7.0
  */
 @Generated
@@ -285,4 +265,9 @@ public class CMMotionActivity extends CMLogItem {
     @Generated
     @Selector("walking")
     public native boolean walking();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

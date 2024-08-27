@@ -21,21 +21,30 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * API-Since: 9.0
+ * Deprecated-Since: 17.1
+ * Deprecated-Message: Please use UIContextMenuInteraction.
  */
+@Deprecated
 @Generated
 public final class UIPreviewActionStyle {
     /**
      * API-Since: 9.0
+     * Deprecated-Since: 17.1
+     * Deprecated-Message: Please use UIContextMenuInteraction.
      */
-    @Generated @NInt public static final long Default = 0x0000000000000000L;
+    @Deprecated @Generated @NInt public static final long Default = 0x0000000000000000L;
     /**
      * API-Since: 9.0
+     * Deprecated-Since: 17.1
+     * Deprecated-Message: Please use UIContextMenuInteraction.
      */
-    @Generated @NInt public static final long Selected = 0x0000000000000001L;
+    @Deprecated @Generated @NInt public static final long Selected = 0x0000000000000001L;
     /**
      * API-Since: 9.0
+     * Deprecated-Since: 17.1
+     * Deprecated-Message: Please use UIContextMenuInteraction.
      */
-    @Generated @NInt public static final long Destructive = 0x0000000000000002L;
+    @Deprecated @Generated @NInt public static final long Destructive = 0x0000000000000002L;
 
     @Generated
     private UIPreviewActionStyle() {

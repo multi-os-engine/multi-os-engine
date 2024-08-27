@@ -291,4 +291,9 @@ public class PHFetchResultChangeDetails<_ObjectType> extends NSObject {
         @Generated
         void call_enumerateMovesWithBlock(@NUInt long fromIndex, @NUInt long toIndex);
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

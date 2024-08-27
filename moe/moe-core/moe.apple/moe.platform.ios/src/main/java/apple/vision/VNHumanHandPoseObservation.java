@@ -221,4 +221,9 @@ public class VNHumanHandPoseObservation extends VNRecognizedPointsObservation {
     @Selector("chirality")
     @NInt
     public native long chirality();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -46,6 +46,10 @@ for SDK in $SDKS; do
 	--build="$SDK-pc-linux-gnu" \
 	--with-sysroot="$SYSROOT"
 	PKG_CONFIG_LIBDIR="$__MOE_TARGET/lib/pkgconfig"
+
+  # TODO: REMOVE THIS
+	sed -i '' 's/%:.*//' Makefile
+
 	make -j$(sysctl -n hw.logicalcpu)
 	make install
 done

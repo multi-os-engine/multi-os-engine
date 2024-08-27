@@ -37,8 +37,6 @@ import org.jetbrains.annotations.Nullable;
  * 
  * To start speaking, specify the AVSpeechSynthesisVoice and the string to be spoken, then optionally change the rate,
  * pitch or volume if desired.
- * 
- * API-Since: 7.0
  */
 @Generated
 @Library("AVFAudio")
@@ -355,4 +353,9 @@ public class AVSpeechUtterance extends NSObject implements NSCopying, NSSecureCo
     @Generated
     @Selector("speechUtteranceWithSSMLRepresentation:")
     public static native AVSpeechUtterance speechUtteranceWithSSMLRepresentation(@NotNull String string);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

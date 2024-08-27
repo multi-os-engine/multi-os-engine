@@ -210,4 +210,9 @@ public class UIAlertAction extends NSObject implements NSCopying, UIAccessibilit
     @Generated
     @Selector("setAccessibilityIdentifier:")
     public native void setAccessibilityIdentifier(@Nullable String value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -440,4 +440,9 @@ public class WCSession extends NSObject {
         @Generated
         void call_sendMessageDataReplyHandlerErrorHandler_2(@NotNull NSError error);
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

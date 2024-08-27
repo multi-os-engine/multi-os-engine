@@ -153,4 +153,21 @@ public class SRTextInputSession extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * [@property] sessionIdentifier
+     * 
+     * Unique identifier of keyboard session
+     * 
+     * API-Since: 16.4
+     */
+    @Generated
+    @Selector("sessionIdentifier")
+    @NotNull
+    public native String sessionIdentifier();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

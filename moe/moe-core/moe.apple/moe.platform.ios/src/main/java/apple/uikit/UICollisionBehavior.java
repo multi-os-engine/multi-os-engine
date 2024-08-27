@@ -255,4 +255,9 @@ public class UICollisionBehavior extends UIDynamicBehavior {
     @Generated
     @Selector("translatesReferenceBoundsIntoBoundary")
     public native boolean translatesReferenceBoundsIntoBoundary();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

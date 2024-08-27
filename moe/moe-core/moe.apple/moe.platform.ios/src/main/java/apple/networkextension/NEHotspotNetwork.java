@@ -336,4 +336,9 @@ public class NEHotspotNetwork extends NSObject {
     @Selector("securityType")
     @NInt
     public native long securityType();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

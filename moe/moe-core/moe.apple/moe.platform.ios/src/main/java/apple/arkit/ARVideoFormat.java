@@ -209,4 +209,9 @@ public class ARVideoFormat extends NSObject implements NSCopying {
     @Generated
     @Selector("isVideoHDRSupported")
     public native boolean isVideoHDRSupported();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

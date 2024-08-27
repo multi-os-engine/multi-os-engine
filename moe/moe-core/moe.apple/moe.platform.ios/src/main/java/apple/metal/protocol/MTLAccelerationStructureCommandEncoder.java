@@ -118,7 +118,7 @@ public interface MTLAccelerationStructureCommandEncoder extends MTLCommandEncode
             @NotNull @Mapped(ObjCObjectMapper.class) MTLAccelerationStructure sourceAccelerationStructure,
             @NotNull MTLAccelerationStructureDescriptor descriptor,
             @Nullable @Mapped(ObjCObjectMapper.class) MTLAccelerationStructure destinationAccelerationStructure,
-            @NotNull @Mapped(ObjCObjectMapper.class) MTLBuffer scratchBuffer, @NUInt long scratchBufferOffset);
+            @Nullable @Mapped(ObjCObjectMapper.class) MTLBuffer scratchBuffer, @NUInt long scratchBufferOffset);
 
     /**
      * sampleCountersInBuffer:atSampleIndex:withBarrier:
@@ -314,6 +314,6 @@ public interface MTLAccelerationStructureCommandEncoder extends MTLCommandEncode
             @NotNull @Mapped(ObjCObjectMapper.class) MTLAccelerationStructure sourceAccelerationStructure,
             @NotNull MTLAccelerationStructureDescriptor descriptor,
             @Nullable @Mapped(ObjCObjectMapper.class) MTLAccelerationStructure destinationAccelerationStructure,
-            @NotNull @Mapped(ObjCObjectMapper.class) MTLBuffer scratchBuffer, @NUInt long scratchBufferOffset,
+            @Nullable @Mapped(ObjCObjectMapper.class) MTLBuffer scratchBuffer, @NUInt long scratchBufferOffset,
             @NUInt long options);
 }

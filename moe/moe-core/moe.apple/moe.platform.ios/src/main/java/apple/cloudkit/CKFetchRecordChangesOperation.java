@@ -201,6 +201,8 @@ public class CKFetchRecordChangesOperation extends CKDatabaseOperation {
      * and the client should toss its local cache and re-fetch the changes in this record zone starting with a nil @c
      * previousServerChangeToken.
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
+     * This block may share mutable state with other blocks assigned to this operation, but any such mutable state
+     * should not be concurrently used outside of blocks assigned to this operation.
      */
     @Nullable
     @Generated
@@ -234,8 +236,9 @@ public class CKFetchRecordChangesOperation extends CKDatabaseOperation {
     public native CKServerChangeToken previousServerChangeToken();
 
     /**
-     * ! @discussion Each @c CKOperation instance has a private serial queue. This queue is used for all callback block
-     * invocations.
+     * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
+     * This block may share mutable state with other blocks assigned to this operation, but any such mutable state
+     * should not be concurrently used outside of blocks assigned to this operation.
      */
     @Nullable
     @Generated
@@ -244,8 +247,9 @@ public class CKFetchRecordChangesOperation extends CKDatabaseOperation {
     public native Block_recordChangedBlock_ret recordChangedBlock();
 
     /**
-     * ! @discussion Each @c CKOperation instance has a private serial queue. This queue is used for all callback block
-     * invocations.
+     * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
+     * This block may share mutable state with other blocks assigned to this operation, but any such mutable state
+     * should not be concurrently used outside of blocks assigned to this operation.
      */
     @Nullable
     @Generated
@@ -287,6 +291,8 @@ public class CKFetchRecordChangesOperation extends CKDatabaseOperation {
      * and the client should toss its local cache and re-fetch the changes in this record zone starting with a nil @c
      * previousServerChangeToken.
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
+     * This block may share mutable state with other blocks assigned to this operation, but any such mutable state
+     * should not be concurrently used outside of blocks assigned to this operation.
      */
     @Generated
     @Selector("setFetchRecordChangesCompletionBlock:")
@@ -298,8 +304,9 @@ public class CKFetchRecordChangesOperation extends CKDatabaseOperation {
     public native void setPreviousServerChangeToken(@Nullable CKServerChangeToken value);
 
     /**
-     * ! @discussion Each @c CKOperation instance has a private serial queue. This queue is used for all callback block
-     * invocations.
+     * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
+     * This block may share mutable state with other blocks assigned to this operation, but any such mutable state
+     * should not be concurrently used outside of blocks assigned to this operation.
      */
     @Generated
     @Selector("setRecordChangedBlock:")
@@ -307,8 +314,9 @@ public class CKFetchRecordChangesOperation extends CKDatabaseOperation {
             @Nullable @ObjCBlock(name = "call_setRecordChangedBlock") Block_setRecordChangedBlock value);
 
     /**
-     * ! @discussion Each @c CKOperation instance has a private serial queue. This queue is used for all callback block
-     * invocations.
+     * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
+     * This block may share mutable state with other blocks assigned to this operation, but any such mutable state
+     * should not be concurrently used outside of blocks assigned to this operation.
      */
     @Generated
     @Selector("setRecordWithIDWasDeletedBlock:")
@@ -366,4 +374,9 @@ public class CKFetchRecordChangesOperation extends CKDatabaseOperation {
         @Generated
         void call_setRecordWithIDWasDeletedBlock(@NotNull CKRecordID arg0);
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

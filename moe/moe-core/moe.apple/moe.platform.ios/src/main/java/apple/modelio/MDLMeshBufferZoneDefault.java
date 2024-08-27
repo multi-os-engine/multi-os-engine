@@ -176,4 +176,9 @@ public class MDLMeshBufferZoneDefault extends NSObject implements MDLMeshBufferZ
     @Generated
     @Selector("init")
     public native MDLMeshBufferZoneDefault init();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

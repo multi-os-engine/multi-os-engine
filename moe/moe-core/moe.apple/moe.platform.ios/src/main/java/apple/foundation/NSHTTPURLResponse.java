@@ -265,4 +265,9 @@ public class NSHTTPURLResponse extends NSURLResponse {
     @Generated
     @Selector("valueForHTTPHeaderField:")
     public native String valueForHTTPHeaderField(@NotNull String field);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

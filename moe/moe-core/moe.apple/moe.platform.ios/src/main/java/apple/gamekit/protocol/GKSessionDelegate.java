@@ -32,8 +32,6 @@ import org.jetbrains.annotations.NotNull;
  * 
  * API-Since: 3.0
  * Deprecated-Since: 7.0
- * Deprecated-Message: Use MCSession in association with MCSessionDelegate from the MultipeerConnectivity framework
- * instead
  */
 @Deprecated
 @Generated

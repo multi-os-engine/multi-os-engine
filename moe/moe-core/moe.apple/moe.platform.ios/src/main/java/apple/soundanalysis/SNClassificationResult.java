@@ -186,4 +186,9 @@ public class SNClassificationResult extends NSObject implements SNResult {
     @Generated
     @Selector("classificationForIdentifier:")
     public native SNClassification classificationForIdentifier(@NotNull String identifier);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

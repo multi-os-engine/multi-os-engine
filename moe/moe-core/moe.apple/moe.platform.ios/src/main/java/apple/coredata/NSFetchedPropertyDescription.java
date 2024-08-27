@@ -185,4 +185,9 @@ public class NSFetchedPropertyDescription extends NSPropertyDescription {
     @Generated
     @Selector("setFetchRequest:")
     public native void setFetchRequest(@Nullable NSFetchRequest<?> value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -34,8 +34,6 @@ import org.jetbrains.annotations.Nullable;
 
 /**
  * PDFBorder is not directly an annotation, but instead is a supportive structure common to a few annotations.
- * 
- * API-Since: 11.0
  */
 @Generated
 @Library("PDFKit")
@@ -232,4 +230,9 @@ public class PDFBorder extends NSObject implements NSCopying, NSCoding {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

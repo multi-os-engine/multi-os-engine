@@ -318,4 +318,9 @@ public class NSRegularExpression extends NSObject implements NSCopying, NSSecure
         void call_enumerateMatchesInStringOptionsRangeUsingBlock(@Nullable NSTextCheckingResult result,
                 @NUInt long flags, @NotNull BoolPtr stop);
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

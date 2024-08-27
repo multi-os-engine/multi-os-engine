@@ -17,6 +17,9 @@ import org.moe.natj.general.ann.NUInt;
  * 
  * [@var] AVAudioSessionInterruptionReasonBuiltInMicMuted
  * The audio session was interrupted due to the built-in mic being muted e.g. due to an iPad's Smart Folio being closed.
+ * 
+ * [@var] AVAudioSessionInterruptionReasonRouteDisconnected
+ * The audio session was interrupted due to route getting disconnected.
  */
 @Generated
 public final class AVAudioSessionInterruptionReason {
@@ -32,4 +35,10 @@ public final class AVAudioSessionInterruptionReason {
      */
     @Deprecated @Generated @NUInt public static final long AppWasSuspended = 0x0000000000000001L;
     @Generated @NUInt public static final long BuiltInMicMuted = 0x0000000000000002L;
+    /**
+     * The audio session was interrupted because route was disconnected.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated @NUInt public static final long RouteDisconnected = 0x0000000000000004L;
 }

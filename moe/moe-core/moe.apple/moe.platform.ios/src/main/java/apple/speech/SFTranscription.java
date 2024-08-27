@@ -229,4 +229,9 @@ public class SFTranscription extends NSObject implements NSCopying, NSSecureCodi
     @Generated
     @Selector("speakingRate")
     public native double speakingRate();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

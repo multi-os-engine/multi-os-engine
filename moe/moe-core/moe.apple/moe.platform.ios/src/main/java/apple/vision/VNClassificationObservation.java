@@ -218,4 +218,9 @@ public class VNClassificationObservation extends VNObservation {
     @Generated
     @Selector("hasPrecisionRecallCurve")
     public native boolean hasPrecisionRecallCurve();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

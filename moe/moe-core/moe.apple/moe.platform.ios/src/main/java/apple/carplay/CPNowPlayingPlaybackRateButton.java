@@ -30,6 +30,8 @@ import org.jetbrains.annotations.Nullable;
 /**
  * A now playing button that shows the current playback rate and allows
  * the user to cycle between different playback rates provided by your app.
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("CarPlay")
@@ -167,4 +169,9 @@ public class CPNowPlayingPlaybackRateButton extends CPNowPlayingButton {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

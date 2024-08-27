@@ -43,6 +43,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.corefoundation.struct.CGRect;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.opaque.dispatch_queue_t;
 
 /**
  * AVCaptureMetadataOutput
@@ -216,7 +217,7 @@ public class AVCaptureMetadataOutput extends AVCaptureOutput {
     @Nullable
     @Generated
     @Selector("metadataObjectsCallbackQueue")
-    public native NSObject metadataObjectsCallbackQueue();
+    public native dispatch_queue_t metadataObjectsCallbackQueue();
 
     /**
      * [@property] metadataObjectsDelegate
@@ -295,7 +296,7 @@ public class AVCaptureMetadataOutput extends AVCaptureOutput {
     @Selector("setMetadataObjectsDelegate:queue:")
     public native void setMetadataObjectsDelegateQueue(
             @Nullable @Mapped(ObjCObjectMapper.class) AVCaptureMetadataOutputObjectsDelegate objectsDelegate,
-            @Nullable NSObject objectsCallbackQueue);
+            @Nullable dispatch_queue_t objectsCallbackQueue);
 
     /**
      * [@property] rectOfInterest
@@ -316,4 +317,9 @@ public class AVCaptureMetadataOutput extends AVCaptureOutput {
     @Generated
     @Selector("setRectOfInterest:")
     public native void setRectOfInterest(@ByValue CGRect value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

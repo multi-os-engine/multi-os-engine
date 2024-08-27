@@ -51,8 +51,6 @@ import org.jetbrains.annotations.Nullable;
  * MTKMesh
  * 
  * Container for vertex data of a mesh and submeshes to render it.
- * 
- * API-Since: 9.0
  */
 @Generated
 @Library("MetalKit")
@@ -290,4 +288,9 @@ public class MTKMesh extends NSObject {
     @Generated
     @Selector("vertexDescriptor")
     public native MDLVertexDescriptor vertexDescriptor();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

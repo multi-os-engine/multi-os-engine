@@ -201,4 +201,9 @@ public class INTemporalEventTriggerResolutionResult extends INIntentResolutionRe
     @Generated
     @Selector("unsupportedWithReason:")
     public static native INTemporalEventTriggerResolutionResult unsupportedWithReason(@NInt long reason);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

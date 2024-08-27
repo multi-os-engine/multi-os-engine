@@ -295,4 +295,9 @@ public class NSURLResponse extends NSObject implements NSSecureCoding, NSCopying
     @Generated
     @Selector("textEncodingName")
     public native String textEncodingName();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

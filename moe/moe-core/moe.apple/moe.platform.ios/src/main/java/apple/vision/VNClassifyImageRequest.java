@@ -218,4 +218,9 @@ public class VNClassifyImageRequest extends VNImageBasedRequest {
     @Selector("supportedIdentifiersAndReturnError:")
     public native NSArray<String> supportedIdentifiersAndReturnError(
             @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

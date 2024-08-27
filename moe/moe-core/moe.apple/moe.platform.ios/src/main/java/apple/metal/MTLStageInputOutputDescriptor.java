@@ -214,4 +214,9 @@ public class MTLStageInputOutputDescriptor extends NSObject implements NSCopying
     @Generated
     @Selector("setIndexType:")
     public native void setIndexType(@NUInt long value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

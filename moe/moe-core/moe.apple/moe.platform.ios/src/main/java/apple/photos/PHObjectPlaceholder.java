@@ -165,4 +165,9 @@ public class PHObjectPlaceholder extends PHObject {
     @Generated
     @Selector("init")
     public native PHObjectPlaceholder init();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

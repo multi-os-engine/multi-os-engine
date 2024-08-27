@@ -50,8 +50,6 @@ import org.jetbrains.annotations.Nullable;
  * Contact vCard support.
  * 
  * This converts between a contact and its vCard representation.
- * 
- * API-Since: 9.0
  */
 @Generated
 @Library("Contacts")
@@ -219,4 +217,9 @@ public class CNContactVCardSerialization extends NSObject {
     @Generated
     @Selector("init")
     public native CNContactVCardSerialization init();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

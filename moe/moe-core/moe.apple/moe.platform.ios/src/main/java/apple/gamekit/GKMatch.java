@@ -46,12 +46,11 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.foundation.NSDictionary;
 
 /**
  * GKMatch represents an active networking sessions between players. It handles network communications and can report
  * player connection status. All matches are created by a GKMatchmaker.
- * 
- * API-Since: 4.1
  */
 @Generated
 @Library("GameKit")
@@ -172,8 +171,6 @@ public class GKMatch extends NSObject {
      * 
      * API-Since: 6.0
      * Deprecated-Since: 8.0
-     * Deprecated-Message: This is never invoked and its implementation does nothing, use
-     * chooseBestHostingPlayerWithCompletionHandler:
      */
     @Generated
     @Deprecated
@@ -224,7 +221,6 @@ public class GKMatch extends NSObject {
      * 
      * API-Since: 4.1
      * Deprecated-Since: 8.0
-     * Deprecated-Message: This is never invoked and its implementation does nothing, use players instead.
      */
     @Nullable
     @Generated
@@ -272,8 +268,6 @@ public class GKMatch extends NSObject {
      * 
      * API-Since: 4.1
      * Deprecated-Since: 8.0
-     * Deprecated-Message: This is never invoked and its implementation does nothing, use
-     * sendData:toPlayers:dataMode:error:
      */
     @Generated
     @Deprecated
@@ -341,4 +335,17 @@ public class GKMatch extends NSObject {
         @Generated
         void call_rematchWithCompletionHandler(@Nullable GKMatch match, @Nullable NSError error);
     }
+
+    /**
+     * API-Since: 17.2
+     */
+    @Generated
+    @Selector("playerProperties")
+    @Nullable
+    public native NSDictionary<? extends GKPlayer, ?> playerProperties();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

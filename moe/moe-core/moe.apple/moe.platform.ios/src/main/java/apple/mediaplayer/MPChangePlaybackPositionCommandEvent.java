@@ -167,4 +167,9 @@ public class MPChangePlaybackPositionCommandEvent extends MPRemoteCommandEvent {
     @Generated
     @Selector("positionTime")
     public native double positionTime();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

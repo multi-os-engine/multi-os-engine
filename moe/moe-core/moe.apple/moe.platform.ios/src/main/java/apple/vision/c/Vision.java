@@ -335,13 +335,16 @@ public final class Vision {
      */
     @Generated @NUInt public static final long VNRequestRevisionUnspecified = 0x0000000000000000L;
     /**
+     * Classification with a taxonomy of 1,303 possible identifiers.
+     * 
      * API-Since: 13.0
      */
     @Generated @NUInt public static final long VNClassifyImageRequestRevision1 = 0x0000000000000001L;
     /**
      * API-Since: 12.0
+     * Deprecated-Since: 17.0
      */
-    @Generated @NUInt public static final long VNDetectBarcodesRequestRevision1 = 0x0000000000000001L;
+    @Deprecated @Generated @NUInt public static final long VNDetectBarcodesRequestRevision1 = 0x0000000000000001L;
     /**
      * API-Since: 12.0
      * Deprecated-Since: 16.0
@@ -398,6 +401,8 @@ public final class Vision {
      */
     @Generated @NUInt public static final long VNGenerateObjectnessBasedSaliencyImageRequestRevision1 = 0x0000000000000001L;
     /**
+     * The feature print produced by the `VNClassifyImageRequestRevision1` classifier.
+     * 
      * API-Since: 13.0
      */
     @Generated @NUInt public static final long VNGenerateImageFeaturePrintRequestRevision1 = 0x0000000000000001L;
@@ -1496,4 +1501,627 @@ public final class Vision {
      * API-Since: 16.0
      */
     @Generated @NUInt public static final long VNGenerateOpticalFlowRequestRevision2 = 0x0000000000000002L;
+
+    /**
+     * The stage of a request where the main functionality is being performed.
+     * 
+     * All requests will have this compute stage.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String VNComputeStageMain();
+
+    /**
+     * A compute stage for additional analysis and/or conversion of the data produced by the `VNComputeStageMain`.
+     * 
+     * This is an optional compute stage that some requests may expose.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String VNComputeStagePostProcessing();
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String VNBarcodeSymbologyMSIPlessey();
+
+    /**
+     * Head
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String VNAnimalBodyPoseObservationJointNameLeftEarTop();
+
+    /**
+     * Head
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String VNAnimalBodyPoseObservationJointNameRightEarTop();
+
+    /**
+     * Head
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String VNAnimalBodyPoseObservationJointNameLeftEarMiddle();
+
+    /**
+     * Head
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String VNAnimalBodyPoseObservationJointNameRightEarMiddle();
+
+    /**
+     * Head
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String VNAnimalBodyPoseObservationJointNameLeftEarBottom();
+
+    /**
+     * Head
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String VNAnimalBodyPoseObservationJointNameRightEarBottom();
+
+    /**
+     * Head
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String VNAnimalBodyPoseObservationJointNameLeftEye();
+
+    /**
+     * Head
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String VNAnimalBodyPoseObservationJointNameRightEye();
+
+    /**
+     * Head
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String VNAnimalBodyPoseObservationJointNameNose();
+
+    /**
+     * Trunk
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String VNAnimalBodyPoseObservationJointNameNeck();
+
+    /**
+     * Forelegs
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String VNAnimalBodyPoseObservationJointNameLeftFrontElbow();
+
+    /**
+     * Forelegs
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String VNAnimalBodyPoseObservationJointNameRightFrontElbow();
+
+    /**
+     * Forelegs
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String VNAnimalBodyPoseObservationJointNameLeftFrontKnee();
+
+    /**
+     * Forelegs
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String VNAnimalBodyPoseObservationJointNameRightFrontKnee();
+
+    /**
+     * Forelegs
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String VNAnimalBodyPoseObservationJointNameLeftFrontPaw();
+
+    /**
+     * Forelegs
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String VNAnimalBodyPoseObservationJointNameRightFrontPaw();
+
+    /**
+     * Hindlegs
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String VNAnimalBodyPoseObservationJointNameLeftBackElbow();
+
+    /**
+     * Hindlegs
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String VNAnimalBodyPoseObservationJointNameRightBackElbow();
+
+    /**
+     * Hindlegs
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String VNAnimalBodyPoseObservationJointNameLeftBackKnee();
+
+    /**
+     * Hindlegs
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String VNAnimalBodyPoseObservationJointNameRightBackKnee();
+
+    /**
+     * Hindlegs
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String VNAnimalBodyPoseObservationJointNameLeftBackPaw();
+
+    /**
+     * Hindlegs
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String VNAnimalBodyPoseObservationJointNameRightBackPaw();
+
+    /**
+     * Tail
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String VNAnimalBodyPoseObservationJointNameTailTop();
+
+    /**
+     * Tail
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String VNAnimalBodyPoseObservationJointNameTailMiddle();
+
+    /**
+     * Tail
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String VNAnimalBodyPoseObservationJointNameTailBottom();
+
+    /**
+     * Nose, eyes and ears
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String VNAnimalBodyPoseObservationJointsGroupNameHead();
+
+    /**
+     * Neck
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String VNAnimalBodyPoseObservationJointsGroupNameTrunk();
+
+    /**
+     * Front left/right elbows, knees and paws
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String VNAnimalBodyPoseObservationJointsGroupNameForelegs();
+
+    /**
+     * Back left/right elbows, knees and paws
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String VNAnimalBodyPoseObservationJointsGroupNameHindlegs();
+
+    /**
+     * Top, middle, bottom parts of tail
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String VNAnimalBodyPoseObservationJointsGroupNameTail();
+
+    /**
+     * All
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String VNAnimalBodyPoseObservationJointsGroupNameAll();
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String VNHumanBodyPose3DObservationJointNameRoot();
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String VNHumanBodyPose3DObservationJointNameRightHip();
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String VNHumanBodyPose3DObservationJointNameRightKnee();
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String VNHumanBodyPose3DObservationJointNameRightAnkle();
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String VNHumanBodyPose3DObservationJointNameLeftHip();
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String VNHumanBodyPose3DObservationJointNameLeftKnee();
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String VNHumanBodyPose3DObservationJointNameLeftAnkle();
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String VNHumanBodyPose3DObservationJointNameSpine();
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String VNHumanBodyPose3DObservationJointNameCenterShoulder();
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String VNHumanBodyPose3DObservationJointNameCenterHead();
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String VNHumanBodyPose3DObservationJointNameTopHead();
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String VNHumanBodyPose3DObservationJointNameLeftShoulder();
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String VNHumanBodyPose3DObservationJointNameLeftElbow();
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String VNHumanBodyPose3DObservationJointNameLeftWrist();
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String VNHumanBodyPose3DObservationJointNameRightShoulder();
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String VNHumanBodyPose3DObservationJointNameRightElbow();
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String VNHumanBodyPose3DObservationJointNameRightWrist();
+
+    /**
+     * center head, and top of head
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String VNHumanBodyPose3DObservationJointsGroupNameHead();
+
+    /**
+     * shoulders, spine, and hips
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String VNHumanBodyPose3DObservationJointsGroupNameTorso();
+
+    /**
+     * left shoulder, left elbow, and left wrist
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String VNHumanBodyPose3DObservationJointsGroupNameLeftArm();
+
+    /**
+     * right shoulder, right elbow, and right wrist
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String VNHumanBodyPose3DObservationJointsGroupNameRightArm();
+
+    /**
+     * left ankle, left knee, and left hip
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String VNHumanBodyPose3DObservationJointsGroupNameLeftLeg();
+
+    /**
+     * right ankle, right knee, and right hip
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String VNHumanBodyPose3DObservationJointsGroupNameRightLeg();
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String VNHumanBodyPose3DObservationJointsGroupNameAll();
+
+    /**
+     * API-Since: 14.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    @NotNull
+    public static native String VNRecognizedPoint3DGroupKeyAll();
+
+    /**
+     * The same taxonomy as `VNClassifyImageRequestRevision1` but with improved accuracy, reduced latency and memory
+     * utilization.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated @NUInt public static final long VNClassifyImageRequestRevision2 = 0x0000000000000002L;
+    /**
+     * expands set of detected symbologies, improves accuracy, offers supplemental payloads,
+     * adds inverted color support, and may produce observations outside image bounds in comparision to prior revisions
+     * 
+     * API-Since: 17.0
+     */
+    @Generated @NUInt public static final long VNDetectBarcodesRequestRevision4 = 0x0000000000000004L;
+    /**
+     * The revision shows better correlation with human judgement on a larger and more diverse dataset. It is also more
+     * stable with respect to minor image variations.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated @NUInt public static final long VNDetectFaceCaptureQualityRequestRevision3 = 0x0000000000000003L;
+    /**
+     * Improved accuracy, reduced latency and memory utilization.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated @NUInt public static final long VNGenerateAttentionBasedSaliencyImageRequestRevision2 = 0x0000000000000002L;
+    /**
+     * Improved accuracy, reduced latency and memory utilization.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated @NUInt public static final long VNGenerateObjectnessBasedSaliencyImageRequestRevision2 = 0x0000000000000002L;
+    /**
+     * The feature print produced by the `VNClassifyImageRequestRevision2` classifier.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated @NUInt public static final long VNGenerateImageFeaturePrintRequestRevision2 = 0x0000000000000002L;
+    /**
+     * API-Since: 17.0
+     */
+    @Generated @NUInt public static final long VNGenerateForegroundInstanceMaskRequestRevision1 = 0x0000000000000001L;
+    /**
+     * API-Since: 17.0
+     */
+    @Generated @NUInt public static final long VNGeneratePersonInstanceMaskRequestRevision1 = 0x0000000000000001L;
+    /**
+     * API-Since: 17.0
+     */
+    @Generated @NUInt public static final long VNTrackTranslationalImageRegistrationRequestRevision1 = 0x0000000000000001L;
+    /**
+     * API-Since: 17.0
+     */
+    @Generated @NUInt public static final long VNTrackHomographicImageRegistrationRequestRevision1 = 0x0000000000000001L;
+    /**
+     * API-Since: 17.0
+     */
+    @Generated @NUInt public static final long VNTrackOpticalFlowRequestRevision1 = 0x0000000000000001L;
+    /**
+     * API-Since: 17.0
+     */
+    @Generated @NUInt public static final long VNDetectAnimalBodyPoseRequestRevision1 = 0x0000000000000001L;
+    /**
+     * API-Since: 17.0
+     */
+    @Generated @NUInt public static final long VNDetectHumanBodyPose3DRequestRevision1 = 0x0000000000000001L;
 }

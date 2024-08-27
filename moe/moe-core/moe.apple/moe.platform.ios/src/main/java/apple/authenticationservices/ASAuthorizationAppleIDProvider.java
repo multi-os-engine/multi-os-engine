@@ -177,4 +177,9 @@ public class ASAuthorizationAppleIDProvider extends NSObject implements ASAuthor
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

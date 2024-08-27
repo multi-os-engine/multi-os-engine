@@ -461,4 +461,37 @@ public class NSMutableAttributedString extends NSAttributedString {
     @Selector("localizedAttributedStringWithFormat:options:")
     public static native NSMutableAttributedString localizedAttributedStringWithFormatOptions(
             @NotNull NSAttributedString format, @NUInt long options, Object... varargs);
+
+    @Generated
+    @Variadic()
+    @Selector("initWithFormat:options:locale:context:")
+    public native NSMutableAttributedString initWithFormatOptionsLocaleContext(@NotNull NSAttributedString format,
+            @NUInt long options, @Nullable NSLocale locale, @NotNull NSDictionary<String, ?> context,
+            Object... varargs);
+
+    @Generated
+    @Selector("initWithFormat:options:locale:context:arguments:")
+    public native NSMutableAttributedString initWithFormatOptionsLocaleContextArguments(
+            @NotNull NSAttributedString format, @NUInt long options, @Nullable NSLocale locale,
+            @NotNull NSDictionary<String, ?> context, BytePtr arguments);
+
+    @Generated
+    @Variadic()
+    @Selector("localizedAttributedStringWithFormat:context:")
+    @NotNull
+    public static native NSMutableAttributedString localizedAttributedStringWithFormatContext(
+            @NotNull NSAttributedString format, @NotNull NSDictionary<String, ?> context, Object... varargs);
+
+    @Generated
+    @Variadic()
+    @Selector("localizedAttributedStringWithFormat:options:context:")
+    @NotNull
+    public static native NSMutableAttributedString localizedAttributedStringWithFormatOptionsContext(
+            @NotNull NSAttributedString format, @NUInt long options, @NotNull NSDictionary<String, ?> context,
+            Object... varargs);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

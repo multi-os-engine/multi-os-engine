@@ -1579,4 +1579,38 @@ public class WKWebView extends UIView {
     @Selector("setMinimumViewportInset:maximumViewportInset:")
     public native void setMinimumViewportInsetMaximumViewportInset(@ByValue UIEdgeInsets minimumViewportInset,
             @ByValue UIEdgeInsets maximumViewportInset);
+
+    @Generated
+    @Selector("animateWithSpringDuration:bounce:initialSpringVelocity:delay:options:animations:completion:")
+    public static native void animateWithSpringDurationBounceInitialSpringVelocityDelayOptionsAnimationsCompletion(
+            double duration, @NFloat double bounce, @NFloat double velocity, double delay, @NUInt long options,
+            @ObjCBlock(name = "call_animateWithSpringDurationBounceInitialSpringVelocityDelayOptionsAnimationsCompletion_5") @NotNull UIView.Block_animateWithSpringDurationBounceInitialSpringVelocityDelayOptionsAnimationsCompletion_5 animations,
+            @ObjCBlock(name = "call_animateWithSpringDurationBounceInitialSpringVelocityDelayOptionsAnimationsCompletion_6") @Nullable UIView.Block_animateWithSpringDurationBounceInitialSpringVelocityDelayOptionsAnimationsCompletion_6 completion);
+
+    /**
+     * Controls whether this @link WKWebView @/link is inspectable in Web Inspector.
+     * 
+     * The default value is NO.
+     * 
+     * API-Since: 16.4
+     */
+    @Generated
+    @Selector("isInspectable")
+    public native boolean isInspectable();
+
+    /**
+     * Controls whether this @link WKWebView @/link is inspectable in Web Inspector.
+     * 
+     * The default value is NO.
+     * 
+     * API-Since: 16.4
+     */
+    @Generated
+    @Selector("setInspectable:")
+    public native void setInspectable(boolean value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

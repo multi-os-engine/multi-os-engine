@@ -276,4 +276,9 @@ public class NSMutableSet<_ObjectType> extends NSSet<_ObjectType> {
     @Generated
     @Selector("unionSet:")
     public native void unionSet(@NotNull NSSet<_ObjectType> otherSet);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -272,4 +272,9 @@ public class UIDynamicAnimator extends NSObject {
     @Generated
     @Selector("updateItemUsingCurrentState:")
     public native void updateItemUsingCurrentState(@NotNull @Mapped(ObjCObjectMapper.class) UIDynamicItem item);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

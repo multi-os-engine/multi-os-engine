@@ -60,12 +60,12 @@ EXPORT MTLClearColor __natj_inline_MTLClearColorMake(double red, double green, d
 	return MTLClearColorMake(red, green, blue, alpha);
 }
 
-EXPORT MTLIndirectCommandBufferExecutionRange __natj_inline_MTLIndirectCommandBufferExecutionRangeMake(uint32_t location, uint32_t length) {
-	return MTLIndirectCommandBufferExecutionRangeMake(location, length);
-}
-
 EXPORT MTLPackedFloat3 __natj_inline_MTLPackedFloat3Make(float x, float y, float z) {
 	return MTLPackedFloat3Make(x, y, z);
+}
+
+EXPORT MTLIndirectCommandBufferExecutionRange __natj_inline_MTLIndirectCommandBufferExecutionRangeMake(uint32_t location, uint32_t length) {
+	return MTLIndirectCommandBufferExecutionRangeMake(location, length);
 }
 
 

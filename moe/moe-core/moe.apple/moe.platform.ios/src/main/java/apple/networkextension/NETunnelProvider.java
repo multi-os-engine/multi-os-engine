@@ -297,4 +297,9 @@ public class NETunnelProvider extends NEProvider {
         @Generated
         void call_setTunnelNetworkSettingsCompletionHandler(@Nullable NSError error);
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

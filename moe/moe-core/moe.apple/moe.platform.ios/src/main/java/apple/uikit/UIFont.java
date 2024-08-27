@@ -402,4 +402,9 @@ public class UIFont extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("systemFontOfSize:weight:width:")
     public static native UIFont systemFontOfSizeWeightWidth(@NFloat double fontSize, @NFloat double weight,
             @NFloat double width);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

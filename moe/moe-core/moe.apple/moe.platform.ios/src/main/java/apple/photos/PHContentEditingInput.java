@@ -285,4 +285,9 @@ public class PHContentEditingInput extends NSObject {
     @Selector("playbackStyle")
     @NInt
     public native long playbackStyle();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

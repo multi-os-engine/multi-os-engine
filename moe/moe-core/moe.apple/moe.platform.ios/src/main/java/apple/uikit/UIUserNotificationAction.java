@@ -261,4 +261,9 @@ public class UIUserNotificationAction extends NSObject implements NSCopying, NSM
     @Generated
     @Selector("title")
     public native String title();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

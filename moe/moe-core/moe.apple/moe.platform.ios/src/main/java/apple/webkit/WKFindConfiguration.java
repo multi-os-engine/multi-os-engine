@@ -209,4 +209,9 @@ public class WKFindConfiguration extends NSObject implements NSCopying {
     @Generated
     @Selector("wraps")
     public native boolean wraps();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

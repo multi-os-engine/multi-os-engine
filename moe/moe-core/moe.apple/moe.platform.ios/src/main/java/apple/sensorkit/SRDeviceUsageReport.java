@@ -191,11 +191,6 @@ public class SRDeviceUsageReport extends NSObject {
     @NInt
     public native long totalUnlocks();
 
-    @Generated
-    @Selector("version")
-    @NInt
-    public static native long version_static();
-
     /**
      * Usage time of web domains per category
      * 
@@ -205,4 +200,19 @@ public class SRDeviceUsageReport extends NSObject {
     @Generated
     @Selector("webUsageByCategory")
     public native NSDictionary<String, ? extends NSArray<? extends SRWebUsage>> webUsageByCategory();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
+
+    /**
+     * Version of the algorithm used to produce the report
+     * 
+     * API-Since: 16.4
+     */
+    @Generated
+    @Selector("version")
+    @NotNull
+    public native String version();
 }

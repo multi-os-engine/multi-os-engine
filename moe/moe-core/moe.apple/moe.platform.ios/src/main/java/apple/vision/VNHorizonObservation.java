@@ -198,4 +198,9 @@ public class VNHorizonObservation extends VNObservation {
     @Selector("transformForImageWidth:height:")
     @ByValue
     public native CGAffineTransform transformForImageWidthHeight(@NUInt long width, @NUInt long height);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

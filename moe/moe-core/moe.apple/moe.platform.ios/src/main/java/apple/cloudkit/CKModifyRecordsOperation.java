@@ -202,6 +202,8 @@ public class CKModifyRecordsOperation extends CKDatabaseOperation {
      * This call happens as soon as the server has seen all record changes, and may be invoked while the server is
      * processing the side effects of those changes.
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
+     * This block may share mutable state with other blocks assigned to this operation, but any such mutable state
+     * should not be concurrently used outside of blocks assigned to this operation.
      */
     @Nullable
     @Generated
@@ -214,6 +216,8 @@ public class CKModifyRecordsOperation extends CKDatabaseOperation {
      * 
      * Will not be invoked if @c perRecordSaveBlock is set.
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
+     * This block may share mutable state with other blocks assigned to this operation, but any such mutable state
+     * should not be concurrently used outside of blocks assigned to this operation.
      * 
      * API-Since: 8.0
      * Deprecated-Since: 15.0
@@ -232,6 +236,8 @@ public class CKModifyRecordsOperation extends CKDatabaseOperation {
      * reported for records that contain assets.
      * It is possible for progress to regress when a retry is automatically triggered.
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
+     * This block may share mutable state with other blocks assigned to this operation, but any such mutable state
+     * should not be concurrently used outside of blocks assigned to this operation.
      */
     @Nullable
     @Generated
@@ -250,7 +256,12 @@ public class CKModifyRecordsOperation extends CKDatabaseOperation {
     public native NSArray<? extends CKRecord> recordsToSave();
 
     /**
-     * The default value is @c CKRecordSaveIfServerRecordUnchanged.
+     * Determines what data is sent to the server and whether the save should succeed even if the record on the server
+     * has changed.
+     * 
+     * The default value is @c CKRecordSaveIfServerRecordUnchanged, which is the recommended value for regular use.
+     * A @c CKShare record is always treated as @c CKRecordSaveIfServerRecordUnchanged, regardless of the @c savePolicy
+     * specified.
      */
     @Generated
     @Selector("savePolicy")
@@ -289,6 +300,8 @@ public class CKModifyRecordsOperation extends CKDatabaseOperation {
      * This call happens as soon as the server has seen all record changes, and may be invoked while the server is
      * processing the side effects of those changes.
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
+     * This block may share mutable state with other blocks assigned to this operation, but any such mutable state
+     * should not be concurrently used outside of blocks assigned to this operation.
      */
     @Generated
     @Selector("setModifyRecordsCompletionBlock:")
@@ -300,6 +313,8 @@ public class CKModifyRecordsOperation extends CKDatabaseOperation {
      * 
      * Will not be invoked if @c perRecordSaveBlock is set.
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
+     * This block may share mutable state with other blocks assigned to this operation, but any such mutable state
+     * should not be concurrently used outside of blocks assigned to this operation.
      * 
      * API-Since: 8.0
      * Deprecated-Since: 15.0
@@ -317,6 +332,8 @@ public class CKModifyRecordsOperation extends CKDatabaseOperation {
      * reported for records that contain assets.
      * It is possible for progress to regress when a retry is automatically triggered.
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
+     * This block may share mutable state with other blocks assigned to this operation, but any such mutable state
+     * should not be concurrently used outside of blocks assigned to this operation.
      */
     @Generated
     @Selector("setPerRecordProgressBlock:")
@@ -332,7 +349,12 @@ public class CKModifyRecordsOperation extends CKDatabaseOperation {
     public native void setRecordsToSave(@Nullable NSArray<? extends CKRecord> value);
 
     /**
-     * The default value is @c CKRecordSaveIfServerRecordUnchanged.
+     * Determines what data is sent to the server and whether the save should succeed even if the record on the server
+     * has changed.
+     * 
+     * The default value is @c CKRecordSaveIfServerRecordUnchanged, which is the recommended value for regular use.
+     * A @c CKShare record is always treated as @c CKRecordSaveIfServerRecordUnchanged, regardless of the @c savePolicy
+     * specified.
      */
     @Generated
     @Selector("setSavePolicy:")
@@ -386,6 +408,8 @@ public class CKModifyRecordsOperation extends CKDatabaseOperation {
      * Called on success or failure of a record deletion
      * 
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
+     * This block may share mutable state with other blocks assigned to this operation, but any such mutable state
+     * should not be concurrently used outside of blocks assigned to this operation.
      * 
      * API-Since: 15.0
      */
@@ -409,6 +433,8 @@ public class CKModifyRecordsOperation extends CKDatabaseOperation {
      * Following a save failure due to a per-item error (@c CKErrorServerRecordChanged, for example), this callback will
      * be invoked with a nil @c record, and a nonnull @c error
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
+     * This block may share mutable state with other blocks assigned to this operation, but any such mutable state
+     * should not be concurrently used outside of blocks assigned to this operation.
      * 
      * API-Since: 15.0
      */
@@ -429,6 +455,8 @@ public class CKModifyRecordsOperation extends CKDatabaseOperation {
      * Called on success or failure of a record deletion
      * 
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
+     * This block may share mutable state with other blocks assigned to this operation, but any such mutable state
+     * should not be concurrently used outside of blocks assigned to this operation.
      * 
      * API-Since: 15.0
      */
@@ -451,6 +479,8 @@ public class CKModifyRecordsOperation extends CKDatabaseOperation {
      * Following a save failure due to a per-item error (@c CKErrorServerRecordChanged, for example), this callback will
      * be invoked with a nil @c record, and a nonnull @c error
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
+     * This block may share mutable state with other blocks assigned to this operation, but any such mutable state
+     * should not be concurrently used outside of blocks assigned to this operation.
      * 
      * API-Since: 15.0
      */
@@ -465,4 +495,9 @@ public class CKModifyRecordsOperation extends CKDatabaseOperation {
         @Generated
         void call_setPerRecordSaveBlock(@NotNull CKRecordID arg0, @Nullable CKRecord arg1, @Nullable NSError arg2);
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

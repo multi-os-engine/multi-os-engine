@@ -116,4 +116,8 @@ public final class INMessageType {
      * API-Since: 12.0
      */
     @Generated @NInt public static final long Link = 0x0000000000000019L;
+    /**
+     * API-Since: 17.0
+     */
+    @Generated @NInt public static final long Reaction = 0x000000000000001AL;
 }

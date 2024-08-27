@@ -180,4 +180,9 @@ public class PKPaymentPass extends PKSecureElementPass {
     @Selector("initWithData:error:")
     public native PKPaymentPass initWithDataError(@NotNull NSData data,
             @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

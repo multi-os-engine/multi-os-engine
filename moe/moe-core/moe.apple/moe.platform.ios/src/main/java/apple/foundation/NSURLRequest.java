@@ -542,4 +542,9 @@ public class NSURLRequest extends NSObject implements NSSecureCoding, NSCopying,
     @Generated
     @Selector("requiresDNSSECValidation")
     public native boolean requiresDNSSECValidation();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -174,4 +174,9 @@ public class NSPersistentCloudKitContainerOptions extends NSObject {
     @Generated
     @Selector("setDatabaseScope:")
     public native void setDatabaseScope(@NInt long value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

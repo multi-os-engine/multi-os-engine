@@ -41,6 +41,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.uikit.protocol.UIEditMenuInteractionAnimating;
 
 /**
  * A class conforming to the WKUIDelegate protocol provides methods for
@@ -435,5 +436,38 @@ public interface WKUIDelegate {
     public interface Block_webViewShowLockdownModeFirstUseMessageCompletionHandler {
         @Generated
         void call_webViewShowLockdownModeFirstUseMessageCompletionHandler(@NInt long arg0);
+    }
+
+    /**
+     * Called when the web view is about to dismiss its edit menu.
+     * 
+     * @param webView  The web view displaying the menu.
+     * @param animator Dismissal animator. Add animations to this object to run them alongside the dismissal transition.
+     * 
+     *                 API-Since: 16.4
+     */
+    @Generated
+    @IsOptional
+    @Selector("webView:willDismissEditMenuWithAnimator:")
+    default void webViewWillDismissEditMenuWithAnimator(@NotNull WKWebView webView,
+            @Mapped(ObjCObjectMapper.class) @NotNull UIEditMenuInteractionAnimating animator) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    /**
+     * Called when the web view is about to present its edit menu.
+     * 
+     * @param webView  The web view displaying the menu.
+     * @param animator Appearance animator. Add animations to this object to run them alongside the appearance
+     *                 transition.
+     * 
+     *                 API-Since: 16.4
+     */
+    @Generated
+    @IsOptional
+    @Selector("webView:willPresentEditMenuWithAnimator:")
+    default void webViewWillPresentEditMenuWithAnimator(@NotNull WKWebView webView,
+            @Mapped(ObjCObjectMapper.class) @NotNull UIEditMenuInteractionAnimating animator) {
+        throw new java.lang.UnsupportedOperationException();
     }
 }

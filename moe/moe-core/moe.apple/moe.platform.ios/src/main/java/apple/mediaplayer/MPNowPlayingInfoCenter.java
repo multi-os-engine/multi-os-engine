@@ -214,4 +214,9 @@ public class MPNowPlayingInfoCenter extends NSObject {
     @Generated
     @Selector("setPlaybackState:")
     public native void setPlaybackState(@NUInt long value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -25,10 +25,12 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.corefoundation.struct.CGPoint;
+import org.moe.natj.general.ann.ByValue;
+import org.moe.natj.general.ann.NFloat;
 
 /**
  * GCVirtualController
- * 
  * 
  * API-Since: 15.0
  */
@@ -173,6 +175,11 @@ public class GCVirtualController extends NSObject {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    /**
+     * Changes the GCVirtualControllerElementConfiguration on a per element basis. Only applicable when the
+     * GCVirtualController is not hidden and its
+     * UI is being drawn by the system.
+     */
     @Generated
     @Selector("updateConfigurationForElement:configuration:")
     public native void updateConfigurationForElementConfiguration(@NotNull String element,
@@ -202,4 +209,28 @@ public class GCVirtualController extends NSObject {
     @Selector("virtualControllerWithConfiguration:")
     public static native GCVirtualController virtualControllerWithConfiguration(
             @NotNull GCVirtualControllerConfiguration configuration);
+
+    /**
+     * Sets the (x,y) position for a GCControllerDirectionPad element (D-Pads as well as Joysticks). X and Y values are
+     * clamped to the range (-1.0 - 1.0).
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("setPosition:forDirectionPadElement:")
+    public native void setPositionForDirectionPadElement(@ByValue CGPoint position, @NotNull String element);
+
+    /**
+     * Sets the value for a GCControllerButton element. Values are clamped to the range (0.0 - 1.0).
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("setValue:forButtonElement:")
+    public native void setValueForButtonElement(@NFloat double value, @NotNull String element);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

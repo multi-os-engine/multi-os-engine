@@ -197,4 +197,9 @@ public class UIReferenceLibraryViewController extends UIViewController {
     @Generated
     @Selector("initWithTerm:")
     public native UIReferenceLibraryViewController initWithTerm(@NotNull String term);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

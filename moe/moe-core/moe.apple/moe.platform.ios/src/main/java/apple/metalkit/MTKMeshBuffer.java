@@ -54,8 +54,6 @@ import org.jetbrains.annotations.Nullable;
  * 
  * Memory backing these buffer are Metal buffers. Model I/O will load index and vertex data from from a model asset
  * directly in to the Metal buffer.
- * 
- * API-Since: 9.0
  */
 @Generated
 @Library("MetalKit")
@@ -244,4 +242,9 @@ public class MTKMeshBuffer extends NSObject implements MDLMeshBuffer, MDLNamed {
     @Selector("zone")
     @MappedReturn(ObjCObjectMapper.class)
     public native MDLMeshBufferZone zone();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

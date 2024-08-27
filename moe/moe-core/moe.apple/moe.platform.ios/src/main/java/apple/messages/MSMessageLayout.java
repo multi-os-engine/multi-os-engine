@@ -47,8 +47,6 @@ import org.jetbrains.annotations.Nullable;
  * 
  * The MSMessageLayout is an abstract base for classes that define a messages presentation in the conversation
  * transcript.
- * 
- * API-Since: 10.0
  */
 @Generated
 @Library("Messages")
@@ -174,4 +172,9 @@ public class MSMessageLayout extends NSObject implements NSCopying {
     @Generated
     @Selector("init")
     public native MSMessageLayout init();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

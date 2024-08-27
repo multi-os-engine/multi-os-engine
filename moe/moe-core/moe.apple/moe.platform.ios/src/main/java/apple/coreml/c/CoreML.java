@@ -9,6 +9,8 @@ import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.map.ObjCStringMapper;
 import org.jetbrains.annotations.NotNull;
+import apple.foundation.NSArray;
+import org.moe.natj.c.ann.CFunction;
 
 @Generated
 @Library("CoreML")
@@ -108,10 +110,28 @@ public final class CoreML {
      * Notification posted when the model collection has changed.
      * 
      * API-Since: 14.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Use Background Assets or NSURLSession instead.
      */
+    @Deprecated
     @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MLModelCollectionDidChangeNotification();
+
+    /**
+     * Returns an array containing all compute devices.
+     * 
+     * The returned array contains all compute devices that are accessible. If a compute
+     * device becomes inaccessible for some reason (for e.g. if an external GPU is unplugged)
+     * then the subsequent call to`MLAllComputeDevices` will return an array without the compute device.
+     * 
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @CFunction
+    @NotNull
+    public static native NSArray<?> MLAllComputeDevices();
 }

@@ -44,8 +44,6 @@ import org.jetbrains.annotations.Nullable;
 
 /**
  * GKGraphNode coupled with a 3D position
- * 
- * API-Since: 10.0
  */
 @Generated
 @Library("GameplayKit")
@@ -178,4 +176,9 @@ public class GKGraphNode3D extends GKGraphNode {
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

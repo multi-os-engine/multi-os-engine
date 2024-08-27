@@ -356,4 +356,9 @@ public class NSDiffableDataSourceSnapshot<_SectionIdentifierType, _ItemIdentifie
     @Generated
     @Selector("reloadedSectionIdentifiers")
     public native NSArray<_SectionIdentifierType> reloadedSectionIdentifiers();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

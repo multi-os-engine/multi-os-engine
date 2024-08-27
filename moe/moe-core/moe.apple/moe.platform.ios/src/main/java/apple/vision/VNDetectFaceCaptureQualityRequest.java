@@ -191,4 +191,9 @@ public class VNDetectFaceCaptureQualityRequest extends VNImageBasedRequest imple
     @Generated
     @Selector("results")
     public native NSArray<? extends VNFaceObservation> results();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

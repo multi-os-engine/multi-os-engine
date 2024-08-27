@@ -209,4 +209,9 @@ public class NSPropertyMapping extends NSObject {
     @Generated
     @Selector("valueExpression")
     public native NSExpression valueExpression();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

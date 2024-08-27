@@ -315,4 +315,9 @@ public class MTLInstanceAccelerationStructureDescriptor extends MTLAccelerationS
     @Generated
     @Selector("setMotionTransformCount:")
     public native void setMotionTransformCount(@NUInt long value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

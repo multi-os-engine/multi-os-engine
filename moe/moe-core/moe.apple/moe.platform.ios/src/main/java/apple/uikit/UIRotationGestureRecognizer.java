@@ -198,4 +198,9 @@ public class UIRotationGestureRecognizer extends UIGestureRecognizer {
     @Generated
     @Selector("initWithCoder:")
     public native UIRotationGestureRecognizer initWithCoder(@NotNull NSCoder coder);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

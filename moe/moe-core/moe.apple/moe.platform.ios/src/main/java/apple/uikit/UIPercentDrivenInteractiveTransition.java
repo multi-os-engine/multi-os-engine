@@ -291,4 +291,9 @@ public class UIPercentDrivenInteractiveTransition extends NSObject implements UI
     @Generated
     @Selector("wantsInteractiveStart")
     public native boolean wantsInteractiveStart();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

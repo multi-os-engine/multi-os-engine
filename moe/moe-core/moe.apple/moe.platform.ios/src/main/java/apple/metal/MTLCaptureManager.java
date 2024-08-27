@@ -280,4 +280,9 @@ public class MTLCaptureManager extends NSObject {
     @Generated
     @Selector("supportsDestination:")
     public native boolean supportsDestination(@NInt long destination);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -46,8 +46,6 @@ import org.jetbrains.annotations.Nullable;
 
 /**
  * The MSStickerBrowserViewController class creates a controller object that manages a MSStickerBrowserView.
- * 
- * API-Since: 10.0
  */
 @Generated
 @Library("Messages")
@@ -223,4 +221,9 @@ public class MSStickerBrowserViewController extends UIViewController implements 
     @Selector("stickerSize")
     @NInt
     public native long stickerSize();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

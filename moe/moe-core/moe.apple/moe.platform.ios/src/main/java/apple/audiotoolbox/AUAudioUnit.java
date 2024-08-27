@@ -17,7 +17,6 @@ limitations under the License.
 package apple.audiotoolbox;
 
 import apple.NSObject;
-import apple.OS_os_workgroup;
 import apple.audiotoolbox.opaque.AudioComponent;
 import apple.audiotoolbox.struct.AudioComponentDescription;
 import apple.avfaudio.AVAudioFormat;
@@ -66,6 +65,8 @@ import apple.audiotoolbox.protocol.AUMessageChannel;
 import org.moe.natj.general.ann.MappedReturn;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.audiotoolbox.struct.AudioUnitRenderContext;
+import apple.opaque.os_workgroup_t;
 
 /**
  * AUAudioUnit
@@ -1982,7 +1983,7 @@ public class AUAudioUnit extends NSObject {
     @NotNull
     @Generated
     @Selector("osWorkgroup")
-    public native OS_os_workgroup osWorkgroup();
+    public native os_workgroup_t osWorkgroup();
 
     /**
      * [@property] renderContextObserver
@@ -2006,13 +2007,17 @@ public class AUAudioUnit extends NSObject {
     @Generated
     public interface Block_renderContextObserver_ret {
         @Generated
-        void call_renderContextObserver_ret(@NotNull VoidPtr context);
+        void call_renderContextObserver_ret(
+                @UncertainArgument("Options: reference, array Fallback: reference") @NotNull AudioUnitRenderContext context);
     }
 
     /**
      * [@property] AudioUnitMIDIProtocol
      * 
      * The MIDI protocol used by the Audio Unit for receiving MIDIEventList data.
+     * 
+     * Subclassers should override to return the desired protocol in which the Audio Unit wants
+     * to receive input MIDI data, otherwise the Audio Unit will default to receiving legacy MIDI.
      * 
      * All translatable messages will be converted (if necessary) to this protocol prior to delivery
      * to the Audio Unit.
@@ -2045,7 +2050,7 @@ public class AUAudioUnit extends NSObject {
      * 
      * Host should setup in the following order:
      * - Set hostMIDIProtocol
-     * - Set MIDIOutputEventBlock
+     * - Set MIDIOutputEventListBlock
      * - Call allocateRenderResourcesAndReturnError
      * 
      * This is bridged to the v2 API property kAudioUnitProperty_MIDIOutputEventListCallback.
@@ -2075,7 +2080,20 @@ public class AUAudioUnit extends NSObject {
      * from the Audio Unit. This should be set prior to initialization, all translatable messages
      * will be converted (if necessary) to this property's protocol prior to delivery to the host.
      * 
+     * Host should setup in the following order:
+     * - Set hostMIDIProtocol
+     * - Set MIDIOutputEventListBlock
+     * - Call allocateRenderResourcesAndReturnError
+     * 
      * This is bridged to the v2 API property kAudioUnitProperty_HostMIDIProtocol.
+     * 
+     * Notes:
+     * - If overriding this property, subclassers must call [super setHostMIDIProtocol:]
+     * - hostMIDIProtocol should be set before attempting to query AudioUnitMIDIProtocol
+     * or calling allocateRenderResourcesAndReturnError to allow Audio Units to
+     * optionally match their input MIDI protocol to the desired host protocol and prevent
+     * protocol conversion.
+     * 
      * 
      * API-Since: 15.0
      */
@@ -2135,7 +2153,20 @@ public class AUAudioUnit extends NSObject {
      * from the Audio Unit. This should be set prior to initialization, all translatable messages
      * will be converted (if necessary) to this property's protocol prior to delivery to the host.
      * 
+     * Host should setup in the following order:
+     * - Set hostMIDIProtocol
+     * - Set MIDIOutputEventListBlock
+     * - Call allocateRenderResourcesAndReturnError
+     * 
      * This is bridged to the v2 API property kAudioUnitProperty_HostMIDIProtocol.
+     * 
+     * Notes:
+     * - If overriding this property, subclassers must call [super setHostMIDIProtocol:]
+     * - hostMIDIProtocol should be set before attempting to query AudioUnitMIDIProtocol
+     * or calling allocateRenderResourcesAndReturnError to allow Audio Units to
+     * optionally match their input MIDI protocol to the desired host protocol and prevent
+     * protocol conversion.
+     * 
      * 
      * API-Since: 15.0
      */
@@ -2163,7 +2194,7 @@ public class AUAudioUnit extends NSObject {
      * 
      * Host should setup in the following order:
      * - Set hostMIDIProtocol
-     * - Set MIDIOutputEventBlock
+     * - Set MIDIOutputEventListBlock
      * - Call allocateRenderResourcesAndReturnError
      * 
      * This is bridged to the v2 API property kAudioUnitProperty_MIDIOutputEventListCallback.
@@ -2237,4 +2268,9 @@ public class AUAudioUnit extends NSObject {
     @Selector("messageChannelFor:")
     @MappedReturn(ObjCObjectMapper.class)
     public native AUMessageChannel messageChannelFor(@NotNull String channelName);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

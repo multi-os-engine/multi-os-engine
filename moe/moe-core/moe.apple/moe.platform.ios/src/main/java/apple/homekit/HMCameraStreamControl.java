@@ -227,4 +227,9 @@ public class HMCameraStreamControl extends HMCameraControl {
     @Selector("streamState")
     @NUInt
     public native long streamState();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

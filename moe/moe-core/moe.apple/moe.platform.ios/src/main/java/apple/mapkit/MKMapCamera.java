@@ -49,9 +49,6 @@ import apple.corefoundation.struct.CGSize;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-/**
- * API-Since: 7.0
- */
 @Generated
 @Library("MapKit")
 @Runtime(ObjCRuntime.class)
@@ -286,4 +283,9 @@ public class MKMapCamera extends NSObject implements NSSecureCoding, NSCopying {
     @Selector("cameraLookingAtMapItem:forViewSize:allowPitch:")
     public static native MKMapCamera cameraLookingAtMapItemForViewSizeAllowPitch(@NotNull MKMapItem mapItem,
             @ByValue CGSize viewSize, boolean allowPitch);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

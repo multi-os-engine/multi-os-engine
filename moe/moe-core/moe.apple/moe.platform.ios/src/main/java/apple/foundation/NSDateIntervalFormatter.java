@@ -280,4 +280,9 @@ public class NSDateIntervalFormatter extends NSFormatter {
     @Generated
     @Selector("timeZone")
     public native NSTimeZone timeZone();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

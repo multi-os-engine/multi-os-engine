@@ -198,4 +198,9 @@ public class UIPinchGestureRecognizer extends UIGestureRecognizer {
     @Generated
     @Selector("initWithCoder:")
     public native UIPinchGestureRecognizer initWithCoder(@NotNull NSCoder coder);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

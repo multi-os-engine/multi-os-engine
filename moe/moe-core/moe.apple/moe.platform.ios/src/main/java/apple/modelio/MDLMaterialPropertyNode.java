@@ -220,4 +220,9 @@ public class MDLMaterialPropertyNode extends NSObject implements MDLNamed {
         @Generated
         void call_setEvaluationFunction(@NotNull MDLMaterialPropertyNode arg0);
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

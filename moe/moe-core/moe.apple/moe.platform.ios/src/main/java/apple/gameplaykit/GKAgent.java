@@ -54,8 +54,6 @@ import org.jetbrains.annotations.Nullable;
  * Values close to 1.0 should be canonical and are expected to yield pleasing results. When applied to visuals
  * these values should be scaled and biased into their target coordinate system and a simple filter on top ensures
  * any noise generated from the steering logic doesn't affect the visual represtentation.
- * 
- * API-Since: 9.0
  */
 @Generated
 @Library("GameplayKit")
@@ -332,4 +330,9 @@ public class GKAgent extends GKComponent implements NSSecureCoding {
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -46,6 +46,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.uikit.protocol.UICGFloatTraitDefinition;
+import apple.uikit.protocol.UINSIntegerTraitDefinition;
+import apple.uikit.protocol.UIObjectTraitDefinition;
 
 /**
  * A trait collection encapsulates the system traits of an interface's environment.
@@ -209,9 +212,12 @@ public class UITraitCollection extends NSObject implements NSCopying, NSSecureCo
             @NotNull String preferredContentSizeCategory);
 
     /**
-     * Returns a trait collection by merging the traits in `traitCollections`. The last trait along any given
-     * axis (e.g. interface usage) will supersede any others.
+     * API-Since: 8.0
+     * Deprecated-Since: 17.0
+     * Deprecated-Message: Use +[UITraitCollection traitCollectionWithTraits:] and -[UITraitCollection
+     * traitCollectionByModifyingTraits:] to create and modify trait collections
      */
+    @Deprecated
     @NotNull
     @Generated
     @Selector("traitCollectionWithTraitsFromCollections:")
@@ -233,6 +239,14 @@ public class UITraitCollection extends NSObject implements NSCopying, NSSecureCo
     @NInt
     public static native long version_static();
 
+    /**
+     * This deprecated method considers system traits only.
+     * 
+     * API-Since: 8.0
+     * Deprecated-Since: 17.0
+     * Deprecated-Message: Compare values for specific traits in the trait collections instead
+     */
+    @Deprecated
     @Generated
     @Selector("containsTraitsInCollection:")
     public native boolean containsTraitsInCollection(@Nullable UITraitCollection trait);
@@ -508,4 +522,163 @@ public class UITraitCollection extends NSObject implements NSCopying, NSSecureCo
     @Selector("traitCollectionWithToolbarItemPresentationSize:")
     public static native UITraitCollection traitCollectionWithToolbarItemPresentationSize(
             @NInt long toolbarItemPresentationSize);
+
+    @Generated
+    @Selector("changedTraitsFromTraitCollection:")
+    @NotNull
+    public native NSSet<?> changedTraitsFromTraitCollection(@Nullable UITraitCollection traitCollection);
+
+    /**
+     * The imageDynamicRange determines how HDR images will render in the given trait environment. SDR images are
+     * unaffected.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("imageDynamicRange")
+    @NInt
+    public native long imageDynamicRange();
+
+    @Generated
+    @Selector("objectForTrait:")
+    @MappedReturn(ObjCObjectMapper.class)
+    @Nullable
+    public native apple.protocol.NSObject objectForTrait(
+            @Mapped(ObjCObjectMapper.class) @NotNull UIObjectTraitDefinition trait);
+
+    /**
+     * Scene capture state represents whether a scene is currently being mirrored or recorded.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("sceneCaptureState")
+    @NInt
+    public native long sceneCaptureState();
+
+    @Generated
+    @Selector("systemTraitsAffectingColorAppearance")
+    @NotNull
+    public static native NSArray<?> systemTraitsAffectingColorAppearance();
+
+    @Generated
+    @Selector("systemTraitsAffectingImageLookup")
+    @NotNull
+    public static native NSArray<?> systemTraitsAffectingImageLookup();
+
+    @Generated
+    @Selector("traitCollectionByModifyingTraits:")
+    @NotNull
+    public native UITraitCollection traitCollectionByModifyingTraits(
+            @ObjCBlock(name = "call_traitCollectionByModifyingTraits") @NotNull Block_traitCollectionByModifyingTraits mutations);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_traitCollectionByModifyingTraits {
+        @Generated
+        void call_traitCollectionByModifyingTraits(@Mapped(ObjCObjectMapper.class) @NotNull Object mutableTraits);
+    }
+
+    @Generated
+    @Selector("traitCollectionByReplacingCGFloatValue:forTrait:")
+    @NotNull
+    public native UITraitCollection traitCollectionByReplacingCGFloatValueForTrait(@NFloat double value,
+            @Mapped(ObjCObjectMapper.class) @NotNull UICGFloatTraitDefinition trait);
+
+    @Generated
+    @Selector("traitCollectionByReplacingNSIntegerValue:forTrait:")
+    @NotNull
+    public native UITraitCollection traitCollectionByReplacingNSIntegerValueForTrait(@NInt long value,
+            @Mapped(ObjCObjectMapper.class) @NotNull UINSIntegerTraitDefinition trait);
+
+    @Generated
+    @Selector("traitCollectionByReplacingObject:forTrait:")
+    @NotNull
+    public native UITraitCollection traitCollectionByReplacingObjectForTrait(
+            @Mapped(ObjCObjectMapper.class) @Nullable apple.protocol.NSObject object,
+            @Mapped(ObjCObjectMapper.class) @NotNull UIObjectTraitDefinition trait);
+
+    @Generated
+    @Selector("traitCollectionWithCGFloatValue:forTrait:")
+    @NotNull
+    public static native UITraitCollection traitCollectionWithCGFloatValueForTrait(@NFloat double value,
+            @Mapped(ObjCObjectMapper.class) @NotNull UICGFloatTraitDefinition trait);
+
+    /**
+     * Construct a new trait collection with the given image content dynamic range.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("traitCollectionWithImageDynamicRange:")
+    @NotNull
+    public static native UITraitCollection traitCollectionWithImageDynamicRange(@NInt long imageDynamicRange);
+
+    @Generated
+    @Selector("traitCollectionWithNSIntegerValue:forTrait:")
+    @NotNull
+    public static native UITraitCollection traitCollectionWithNSIntegerValueForTrait(@NInt long value,
+            @Mapped(ObjCObjectMapper.class) @NotNull UINSIntegerTraitDefinition trait);
+
+    @Generated
+    @Selector("traitCollectionWithObject:forTrait:")
+    @NotNull
+    public static native UITraitCollection traitCollectionWithObjectForTrait(
+            @Mapped(ObjCObjectMapper.class) @Nullable apple.protocol.NSObject object,
+            @Mapped(ObjCObjectMapper.class) @NotNull UIObjectTraitDefinition trait);
+
+    /**
+     * Construct a new trait collection with the given scene capture state.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("traitCollectionWithSceneCaptureState:")
+    @NotNull
+    public static native UITraitCollection traitCollectionWithSceneCaptureState(@NInt long sceneCaptureState);
+
+    @Generated
+    @Selector("traitCollectionWithTraits:")
+    @NotNull
+    public static native UITraitCollection traitCollectionWithTraits(
+            @ObjCBlock(name = "call_traitCollectionWithTraits") @NotNull Block_traitCollectionWithTraits mutations);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_traitCollectionWithTraits {
+        @Generated
+        void call_traitCollectionWithTraits(@Mapped(ObjCObjectMapper.class) @NotNull Object mutableTraits);
+    }
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("traitCollectionWithTypesettingLanguage:")
+    @NotNull
+    public static native UITraitCollection traitCollectionWithTypesettingLanguage(@NotNull String language);
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("typesettingLanguage")
+    @NotNull
+    public native String typesettingLanguage();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
+
+    @Generated
+    @Selector("valueForCGFloatTrait:")
+    @NFloat
+    public native double valueForCGFloatTrait(@Mapped(ObjCObjectMapper.class) @NotNull UICGFloatTraitDefinition trait);
+
+    @Generated
+    @Selector("valueForNSIntegerTrait:")
+    @NInt
+    public native long valueForNSIntegerTrait(
+            @Mapped(ObjCObjectMapper.class) @NotNull UINSIntegerTraitDefinition trait);
 }

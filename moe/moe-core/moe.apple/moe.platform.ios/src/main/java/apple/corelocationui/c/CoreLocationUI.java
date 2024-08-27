@@ -21,14 +21,14 @@ public final class CoreLocationUI {
     }
 
     /**
-     * ! Project version number for CoreLocationUI.
+     * The project version number for CoreLocationUI.
      */
     @Generated
     @CVariable()
     public static native double CoreLocationUIVersionNumber();
 
     /**
-     * ! Project version string for CoreLocationUI.
+     * The project version string for CoreLocationUI.
      */
     @Generated
     @CVariable()

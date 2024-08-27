@@ -179,4 +179,9 @@ public class CNChangeHistoryEvent extends NSObject implements NSCopying, NSSecur
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -165,4 +165,9 @@ public class MPSCNNGroupNormalizationNode extends MPSNNFilterNode implements MPS
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -44,8 +44,6 @@ import org.jetbrains.annotations.Nullable;
 
 /**
  * A 3D specialization of an agent that moves on a 3-axis logical coordinate system.
- * 
- * API-Since: 9.0
  */
 @Generated
 @Library("GameplayKit")
@@ -200,4 +198,9 @@ public class GKAgent3D extends GKAgent {
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

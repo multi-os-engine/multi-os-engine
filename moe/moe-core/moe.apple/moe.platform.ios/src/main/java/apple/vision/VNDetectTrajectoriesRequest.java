@@ -330,4 +330,9 @@ public class VNDetectTrajectoriesRequest extends VNStatefulRequest {
     @Selector("targetFrameTime")
     @ByValue
     public native CMTime targetFrameTime();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

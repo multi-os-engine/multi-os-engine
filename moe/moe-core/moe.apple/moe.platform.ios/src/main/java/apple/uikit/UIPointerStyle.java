@@ -33,7 +33,7 @@ import org.jetbrains.annotations.Nullable;
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class UIPointerStyle extends NSObject implements NSCopying {
+public class UIPointerStyle extends UIHoverStyle implements NSCopying {
     static {
         NatJ.register();
     }
@@ -215,4 +215,18 @@ public class UIPointerStyle extends NSObject implements NSCopying {
     @Generated
     @Selector("systemPointerStyle")
     public static native UIPointerStyle systemPointerStyle();
+
+    @Generated
+    @Selector("automaticStyle")
+    @NotNull
+    public static native UIPointerStyle automaticStyle();
+
+    @Generated
+    @Selector("styleWithShape:")
+    public static native UIPointerStyle styleWithShape(@Nullable UIShape shape);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

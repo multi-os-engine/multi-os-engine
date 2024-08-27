@@ -230,4 +230,9 @@ public class UNNotificationAttachment extends NSObject implements NSCopying, NSS
     @Generated
     @Selector("type")
     public native String type();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

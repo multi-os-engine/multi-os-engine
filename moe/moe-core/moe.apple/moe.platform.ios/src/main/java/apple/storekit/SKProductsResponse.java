@@ -180,4 +180,9 @@ public class SKProductsResponse extends NSObject {
     @Generated
     @Selector("products")
     public native NSArray<? extends SKProduct> products();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

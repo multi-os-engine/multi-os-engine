@@ -23,8 +23,16 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.opaque.dispatch_queue_t;
 
 /**
+ * The object you use to observe changes to the current configuration.
+ * 
+ * Use this class to start and stop observing the current configuration. For
+ * example, you can opt to disable private browsing in your web browser’s view
+ * controller when ``STScreenTimeConfiguration/enforcesChildRestrictions`` is
+ * `true`.
+ * 
  * API-Since: 14.0
  */
 @Generated
@@ -81,9 +89,7 @@ public class STScreenTimeConfigurationObserver extends NSObject {
     public static native Class classForKeyedUnarchiver();
 
     /**
-     * The current Screen Time configuration.
-     * 
-     * The configuration's properties are automatically updated via KVO on the update queue.
+     * The configuration being observed.
      */
     @Nullable
     @Generated
@@ -107,9 +113,16 @@ public class STScreenTimeConfigurationObserver extends NSObject {
     @Selector("init")
     public native STScreenTimeConfigurationObserver init();
 
+    /**
+     * Creates a configuration observer that reports updates on the queue you
+     * specify.
+     * 
+     * - Parameters:
+     * - updateQueue: The queue on which to report updates.
+     */
     @Generated
     @Selector("initWithUpdateQueue:")
-    public native STScreenTimeConfigurationObserver initWithUpdateQueue(@NotNull NSObject updateQueue);
+    public native STScreenTimeConfigurationObserver initWithUpdateQueue(@NotNull dispatch_queue_t updateQueue);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -150,10 +163,16 @@ public class STScreenTimeConfigurationObserver extends NSObject {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * Starts observing changes to the current configuration.
+     */
     @Generated
     @Selector("startObserving")
     public native void startObserving();
 
+    /**
+     * Stops observing changes to the current configuration.
+     */
     @Generated
     @Selector("stopObserving")
     public native void stopObserving();
@@ -166,4 +185,9 @@ public class STScreenTimeConfigurationObserver extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

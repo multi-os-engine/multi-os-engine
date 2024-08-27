@@ -26,6 +26,11 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.foundation.NSCoder;
+import apple.foundation.protocol.NSCopying;
+import apple.foundation.protocol.NSSecureCoding;
+import org.moe.natj.general.ann.MappedReturn;
+import org.moe.natj.objc.ann.ProtocolClassMethod;
 
 /**
  * HKWorkoutActivity
@@ -38,7 +43,7 @@ import org.jetbrains.annotations.Nullable;
 @Library("HealthKit")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class HKWorkoutActivity extends NSObject {
+public class HKWorkoutActivity extends NSObject implements NSSecureCoding, NSCopying {
     static {
         NatJ.register();
     }
@@ -280,4 +285,34 @@ public class HKWorkoutActivity extends NSObject {
     @Generated
     @Selector("workoutEvents")
     public native NSArray<? extends HKWorkoutEvent> workoutEvents();
+
+    @Generated
+    @Owned
+    @Selector("copyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    @NotNull
+    public native Object copyWithZone(@Nullable VoidPtr zone);
+
+    @Generated
+    @Selector("encodeWithCoder:")
+    public native void encodeWithCoder(@NotNull NSCoder coder);
+
+    @Generated
+    @Selector("initWithCoder:")
+    public native HKWorkoutActivity initWithCoder(@NotNull NSCoder coder);
+
+    @Generated
+    @Selector("supportsSecureCoding")
+    public static native boolean supportsSecureCoding();
+
+    @Generated
+    @ProtocolClassMethod("supportsSecureCoding")
+    public boolean _supportsSecureCoding() {
+        return supportsSecureCoding();
+    }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

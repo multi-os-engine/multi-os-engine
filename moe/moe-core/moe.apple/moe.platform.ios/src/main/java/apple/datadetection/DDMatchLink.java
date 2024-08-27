@@ -26,6 +26,12 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
+ * An object that contains a web link that the data detection system matches.
+ * 
+ * The DataDetection framework returns a link match in a `DDMatchLink` object, which contains a
+ * <doc://com.apple.documentation/documentation/foundation/url> (Swift) or
+ * <doc://com.apple.documentation/documentation/foundation/nsurl> (Objective-C).
+ * 
  * API-Since: 15.0
  */
 @Generated
@@ -42,6 +48,9 @@ public class DDMatchLink extends DDMatch {
         super(peer);
     }
 
+    /**
+     * An address for a web resource, such as a webpage or image.
+     */
     @NotNull
     @Generated
     @Selector("URL")
@@ -150,4 +159,9 @@ public class DDMatchLink extends DDMatch {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -219,4 +219,9 @@ public class INTemperatureResolutionResult extends INIntentResolutionResult {
     @Generated
     @Selector("unsupportedWithReason:")
     public static native INTemperatureResolutionResult unsupportedWithReason(@NInt long reason);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

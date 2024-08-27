@@ -45,9 +45,6 @@ import apple.corefoundation.struct.CGRect;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-/**
- * API-Since: 9.0
- */
 @Generated
 @Library("CoreImage")
 @Runtime(ObjCRuntime.class)
@@ -249,4 +246,9 @@ public class CIFilterShape extends NSObject implements NSCopying {
     @Generated
     @Selector("unionWithRect:")
     public native CIFilterShape unionWithRect(@ByValue CGRect r);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -253,4 +253,9 @@ public class NSCountedSet<_ObjectType> extends NSMutableSet<_ObjectType> {
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

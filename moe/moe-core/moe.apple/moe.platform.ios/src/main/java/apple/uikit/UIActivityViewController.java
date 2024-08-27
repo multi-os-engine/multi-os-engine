@@ -45,9 +45,6 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-/**
- * API-Since: 6.0
- */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -309,4 +306,9 @@ public class UIActivityViewController extends UIViewController {
     @Generated
     @Selector("setAllowsProminentActivity:")
     public native void setAllowsProminentActivity(boolean value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

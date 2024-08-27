@@ -231,4 +231,9 @@ public class MPNowPlayingInfoLanguageOption extends NSObject {
     @Generated
     @Selector("languageTag")
     public native String languageTag();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

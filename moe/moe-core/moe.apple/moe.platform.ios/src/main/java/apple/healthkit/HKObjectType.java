@@ -284,6 +284,8 @@ public class HKObjectType extends NSObject implements NSSecureCoding, NSCopying 
      * requiresPerObjectAuthorization
      * 
      * Returns YES if the authorization for the object type needs to be requested on per object basis.
+     * 
+     * API-Since: 16.0
      */
     @Generated
     @Selector("requiresPerObjectAuthorization")
@@ -296,4 +298,9 @@ public class HKObjectType extends NSObject implements NSSecureCoding, NSCopying 
     @Generated
     @Selector("visionPrescriptionType")
     public static native HKPrescriptionType visionPrescriptionType();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

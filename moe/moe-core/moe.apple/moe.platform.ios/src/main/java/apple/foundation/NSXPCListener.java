@@ -250,4 +250,9 @@ public class NSXPCListener extends NSObject {
     @Generated
     @Selector("activate")
     public native void activate();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

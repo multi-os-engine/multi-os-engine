@@ -170,4 +170,9 @@ public class UIPressesEvent extends UIEvent {
     @Generated
     @Selector("pressesForGestureRecognizer:")
     public native NSSet<? extends UIPress> pressesForGestureRecognizer(@NotNull UIGestureRecognizer gesture);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

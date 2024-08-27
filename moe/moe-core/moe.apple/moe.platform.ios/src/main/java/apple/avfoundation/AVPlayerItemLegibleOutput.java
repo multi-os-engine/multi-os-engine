@@ -42,6 +42,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.opaque.dispatch_queue_t;
 
 /**
  * AVPlayerItemLegibleOutput
@@ -204,7 +205,7 @@ public class AVPlayerItemLegibleOutput extends AVPlayerItemOutput {
     @Nullable
     @Generated
     @Selector("delegateQueue")
-    public native NSObject delegateQueue();
+    public native dispatch_queue_t delegateQueue();
 
     @Generated
     @Selector("init")
@@ -269,7 +270,7 @@ public class AVPlayerItemLegibleOutput extends AVPlayerItemOutput {
     @Selector("setDelegate:queue:")
     public native void setDelegateQueue(
             @Nullable @Mapped(ObjCObjectMapper.class) AVPlayerItemLegibleOutputPushDelegate delegate,
-            @Nullable NSObject delegateQueue);
+            @Nullable dispatch_queue_t delegateQueue);
 
     /**
      * [@property] textStylingResolution
@@ -303,4 +304,9 @@ public class AVPlayerItemLegibleOutput extends AVPlayerItemOutput {
     @Generated
     @Selector("textStylingResolution")
     public native String textStylingResolution();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

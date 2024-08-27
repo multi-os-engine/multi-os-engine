@@ -321,4 +321,9 @@ public class CLSDataStore extends NSObject {
         @Generated
         void call_fetchActivityForURLCompletion(@Nullable CLSActivity activity, @Nullable NSError error);
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -271,4 +271,9 @@ public class MPMediaLibrary extends NSObject implements NSSecureCoding {
         @Generated
         void call_requestAuthorization(@NInt long status);
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

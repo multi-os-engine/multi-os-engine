@@ -31,6 +31,8 @@ import org.jetbrains.annotations.Nullable;
  * 
  * A playback command requesting playback with specific timing.
  * 
+ * Subclasses of this type that are used from Swift must fulfill the requirements of a Sendable type.
+ * 
  * API-Since: 15.0
  */
 @Generated
@@ -190,4 +192,9 @@ public class AVDelegatingPlaybackCoordinatorPlayCommand extends AVDelegatingPlay
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

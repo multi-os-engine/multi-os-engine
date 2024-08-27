@@ -40,11 +40,10 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.foundation.NSDictionary;
 
 /**
  * GKMatchRequest represents the parameters needed to create the match.
- * 
- * API-Since: 4.1
  */
 @Generated
 @Library("GameKit")
@@ -199,7 +198,6 @@ public class GKMatchRequest extends NSObject {
     /**
      * API-Since: 6.0
      * Deprecated-Since: 8.0
-     * Deprecated-Message: use recipientResponseHandler
      */
     @Nullable
     @Generated
@@ -248,7 +246,6 @@ public class GKMatchRequest extends NSObject {
      * 
      * API-Since: 4.1
      * Deprecated-Since: 8.0
-     * Deprecated-Message: This property is obsolete, use recipients instead
      */
     @Nullable
     @Generated
@@ -300,7 +297,6 @@ public class GKMatchRequest extends NSObject {
     /**
      * API-Since: 6.0
      * Deprecated-Since: 8.0
-     * Deprecated-Message: use recipientResponseHandler
      */
     @Generated
     @Deprecated
@@ -345,7 +341,6 @@ public class GKMatchRequest extends NSObject {
      * 
      * API-Since: 4.1
      * Deprecated-Since: 8.0
-     * Deprecated-Message: This property is obsolete, use recipients instead
      */
     @Generated
     @Deprecated
@@ -406,7 +401,6 @@ public class GKMatchRequest extends NSObject {
      * 
      * API-Since: 13.0
      * Deprecated-Since: 14.0
-     * Deprecated-Message: Set the matchmakingMode of GKMatchmakerViewController instead.
      */
     @Deprecated
     @Generated
@@ -420,10 +414,52 @@ public class GKMatchRequest extends NSObject {
      * 
      * API-Since: 13.0
      * Deprecated-Since: 14.0
-     * Deprecated-Message: Set the matchmakingMode of GKMatchmakerViewController instead.
      */
     @Deprecated
     @Generated
     @Selector("setRestrictToAutomatch:")
     public native void setRestrictToAutomatch(boolean value);
+
+    /**
+     * The name of the queue, if rule-based matchmaking is used.
+     * 
+     * API-Since: 17.2
+     */
+    @Generated
+    @Selector("queueName")
+    @Nullable
+    public native String queueName();
+
+    /**
+     * The recipient specific match properties, if rule-based matchmaking is used when inviting players.
+     * 
+     * API-Since: 17.2
+     */
+    @Generated
+    @Selector("recipientProperties")
+    @Nullable
+    public native NSDictionary<? extends GKPlayer, ?> recipientProperties();
+
+    /**
+     * The name of the queue, if rule-based matchmaking is used.
+     * 
+     * API-Since: 17.2
+     */
+    @Generated
+    @Selector("setQueueName:")
+    public native void setQueueName(@Nullable String value);
+
+    /**
+     * The recipient specific match properties, if rule-based matchmaking is used when inviting players.
+     * 
+     * API-Since: 17.2
+     */
+    @Generated
+    @Selector("setRecipientProperties:")
+    public native void setRecipientProperties(@Nullable NSDictionary<? extends GKPlayer, ?> value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

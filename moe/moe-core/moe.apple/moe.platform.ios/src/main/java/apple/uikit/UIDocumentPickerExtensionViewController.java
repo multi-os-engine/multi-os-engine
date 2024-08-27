@@ -241,4 +241,9 @@ public class UIDocumentPickerExtensionViewController extends UIViewController {
     @Generated
     @Selector("validTypes")
     public native NSArray<String> validTypes();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

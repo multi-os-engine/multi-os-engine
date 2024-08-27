@@ -571,4 +571,9 @@ public class MPSCNNConvolutionTranspose extends MPSCNNKernel {
     public native MPSCNNConvolutionTransposeGradientState temporaryResultStateForCommandBufferSourceImageSourceStatesDestinationImage(
             @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, @NotNull MPSImage sourceImage,
             @Nullable NSArray<? extends MPSState> sourceStates, @NotNull MPSImage destinationImage);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

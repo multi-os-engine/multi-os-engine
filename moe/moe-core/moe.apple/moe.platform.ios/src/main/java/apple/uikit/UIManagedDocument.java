@@ -283,4 +283,9 @@ public class UIManagedDocument extends UIDocument {
             @NotNull @Mapped(ObjCObjectMapper.class) Object content, @NotNull NSURL absoluteURL,
             @Nullable NSURL absoluteOriginalContentsURL,
             @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

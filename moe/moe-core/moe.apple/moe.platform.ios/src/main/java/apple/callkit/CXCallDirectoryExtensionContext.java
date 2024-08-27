@@ -285,4 +285,9 @@ public class CXCallDirectoryExtensionContext extends NSExtensionContext {
     @Generated
     @Selector("removeIdentificationEntryWithPhoneNumber:")
     public native void removeIdentificationEntryWithPhoneNumber(long phoneNumber);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

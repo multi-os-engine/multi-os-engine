@@ -205,4 +205,9 @@ public class MPSCNNNeuronPReLU extends MPSCNNNeuron {
     @Selector("initWithDevice:neuronDescriptor:")
     public native MPSCNNNeuronPReLU initWithDeviceNeuronDescriptor(
             @NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device, @NotNull MPSNNNeuronDescriptor neuronDescriptor);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

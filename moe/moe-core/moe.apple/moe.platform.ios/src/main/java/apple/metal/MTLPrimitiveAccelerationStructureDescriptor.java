@@ -263,4 +263,9 @@ public class MTLPrimitiveAccelerationStructureDescriptor extends MTLAcceleration
     @Generated
     @Selector("setMotionStartTime:")
     public native void setMotionStartTime(float value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

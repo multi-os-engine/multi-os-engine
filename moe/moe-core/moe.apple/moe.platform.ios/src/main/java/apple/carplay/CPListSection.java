@@ -281,4 +281,9 @@ public class CPListSection extends NSObject implements NSSecureCoding {
     @Generated
     @Selector("setHeaderImage:")
     public native void setHeaderImage(@Nullable UIImage value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

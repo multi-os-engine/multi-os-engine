@@ -24,28 +24,38 @@ import org.moe.natj.general.ann.NInt;
  * 
  * [@constant] CKRecordSaveIfServerRecordUnchanged
  * 
- * Locally-edited keys are sent to the server.
- * If the record on the server has been modified, fail the write and return an error. A CKShare's participants array is
- * always treated as @c CKRecordSaveIfServerRecordUnchanged, regardless of the @c savePolicy of the operation that
- * modifies the share.
+ * Locally edited keys are sent to the server, updating the record if the server record has not been modified. This is
+ * the default and recommended save policy for regular use.
+ * This policy compares the record change tag with the server record, and may return @c CKErrorServerRecordChanged if
+ * the server record has been modified, for example by another device.
+ * Note: A @c CKShare record is always treated as @c CKRecordSaveIfServerRecordUnchanged, regardless of the @c
+ * savePolicy of the operation that modifies the share.
  * 
  * [@constant] CKRecordSaveChangedKeys
  * 
- * Locally-edited keys are written to the server.
- * Any previously committed change to the server, for example by other devices, will be overwritten by the locally
- * changed value.
- * This policy does not compare the record change tag and therefore will never return @c CKErrorServerRecordChanged
+ * Locally edited keys are written to the server, updating the record even if the server record has been modified.
+ * Note: This policy should be used with care, as it can overwrite changes made by other devices.
+ * Any previously committed change to the server, for example by other devices, will always be overwritten by the
+ * locally changed value.
+ * Note: A @c CKShare record is always treated as @c CKRecordSaveIfServerRecordUnchanged, regardless of the @c
+ * savePolicy of the operation that modifies the share.
+ * For non-CKShare records, this policy does not compare the record change tag and therefore will not return @c
+ * CKErrorServerRecordChanged
  * 
  * [@constant] CKRecordSaveAllKeys
  * 
- * All local keys are written to the server.
- * Any previously committed change to the server, for example by other devices, will be overwritten by the local value.
+ * All local keys are written to the server, updating the record even if the server record has been modified.
+ * Note: This policy should be used with care. Any previously committed change to the server, for example by other
+ * devices, will be overwritten by the local value.
  * Keys present only on the server remain unchanged.
  * There are two common ways in which a server record will contain keys not present locally:
- * 1 - Since you've fetched this record, another client has added a new key to the record.
- * 2 - The presence of @c desiredKeys on the fetch / query that returned this record meant that only a portion of the
- * record's keys were downloaded.
- * This policy does not compare the record change tag and therefore will never return @c CKErrorServerRecordChanged.
+ * 1 - Another client may have added a new key to the record since it was fetched.
+ * 2 - If @c desiredKeys was used with the fetch / query that returned this record, only a portion of the record's keys
+ * may have been downloaded.
+ * Note: A @c CKShare record is always treated as @c CKRecordSaveIfServerRecordUnchanged, regardless of the @c
+ * savePolicy of the operation that modifies the share.
+ * For non-CKShare records, this policy does not compare the record change tag and therefore will not return @c
+ * CKErrorServerRecordChanged
  * 
  * API-Since: 8.0
  */

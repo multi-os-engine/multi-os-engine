@@ -554,4 +554,9 @@ public class UIImagePickerController extends UINavigationController implements N
     @Generated
     @Selector("videoExportPreset")
     public native String videoExportPreset();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

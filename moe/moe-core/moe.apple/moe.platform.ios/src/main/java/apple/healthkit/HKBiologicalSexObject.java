@@ -199,4 +199,9 @@ public class HKBiologicalSexObject extends NSObject implements NSCopying, NSSecu
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

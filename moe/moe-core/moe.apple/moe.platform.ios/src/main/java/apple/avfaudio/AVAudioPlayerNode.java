@@ -699,4 +699,9 @@ public class AVAudioPlayerNode extends AVAudioNode implements AVAudioMixing {
     @Generated
     @Selector("volume")
     public native float volume();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

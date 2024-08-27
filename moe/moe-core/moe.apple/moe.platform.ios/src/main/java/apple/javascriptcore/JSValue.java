@@ -63,8 +63,6 @@ import org.jetbrains.annotations.Nullable;
  * (available indirectly via the context property). It is an error to pass a
  * JSValue to a method or property of a JSValue or JSContext originating from a
  * different JSVirtualMachine. Doing so will raise an Objective-C exception.
- * 
- * API-Since: 7.0
  */
 @Generated
 @Library("JavaScriptCore")
@@ -954,4 +952,9 @@ public class JSValue extends NSObject {
     @Generated
     @Selector("valueWithNewSymbolFromDescription:inContext:")
     public static native JSValue valueWithNewSymbolFromDescriptionInContext(String description, JSContext context);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -260,4 +260,9 @@ public class MTLLinkedFunctions extends NSObject implements NSCopying {
     @Generated
     @Selector("setPrivateFunctions:")
     public native void setPrivateFunctions(@Nullable NSArray<?> value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

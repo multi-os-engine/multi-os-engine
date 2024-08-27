@@ -54,8 +54,6 @@ public interface GKInviteEventListener {
      * 
      * API-Since: 7.0
      * Deprecated-Since: 8.0
-     * Deprecated-Message: This method is obsolete. It will never be invoked its implementation does nothing, use
-     * player:didRequestMatchWithRecipients:
      */
     @Generated
     @IsOptional

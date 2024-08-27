@@ -32,8 +32,6 @@ import org.jetbrains.annotations.Nullable;
  * 
  * CIQRCodeDescriptor is a concrete subclass of CIBarcodeDescriptor that defines an abstract representation of a QR code
  * symbol.
- * 
- * API-Since: 11.0
  */
 @Generated
 @Library("CoreImage")
@@ -240,4 +238,9 @@ public class CIQRCodeDescriptor extends CIBarcodeDescriptor {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

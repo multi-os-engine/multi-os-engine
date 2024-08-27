@@ -269,4 +269,9 @@ public class MPSCNNNeuron extends MPSCNNKernel {
     @Generated
     @Selector("neuronType")
     public native int neuronType();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

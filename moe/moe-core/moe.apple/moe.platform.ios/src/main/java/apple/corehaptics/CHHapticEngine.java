@@ -613,4 +613,9 @@ public class CHHapticEngine extends NSObject {
     @Generated
     @Selector("setPlaysAudioOnly:")
     public native void setPlaysAudioOnly(boolean value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

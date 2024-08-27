@@ -256,4 +256,9 @@ public class HKQuantitySample extends HKSample {
     @Selector("count")
     @NInt
     public native long count();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -53,8 +53,6 @@ import org.jetbrains.annotations.Nullable;
 
 /**
  * MKTileOverlay represents a data source for raster image tiles in the spherical mercator projection (EPSG:3857).
- * 
- * API-Since: 7.0
  */
 @Generated
 @Library("MapKit")
@@ -305,4 +303,9 @@ public class MKTileOverlay extends NSObject implements MKOverlay {
         @Generated
         void call_loadTileAtPathResult(@Nullable NSData tileData, @Nullable NSError error);
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

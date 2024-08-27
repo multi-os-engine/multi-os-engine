@@ -420,4 +420,9 @@ public class NSTextCheckingResult extends NSObject implements NSCopying, NSSecur
     @Selector("rangeWithName:")
     @ByValue
     public native NSRange rangeWithName(@NotNull String name);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

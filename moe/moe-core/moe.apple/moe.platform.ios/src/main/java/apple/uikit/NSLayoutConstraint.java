@@ -363,4 +363,9 @@ public class NSLayoutConstraint extends NSObject {
     @Generated
     @Selector("shouldBeArchived")
     public native boolean shouldBeArchived();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

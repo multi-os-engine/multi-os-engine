@@ -197,4 +197,9 @@ public class CPTemplateApplicationScene extends UIScene {
     @Selector("contentStyle")
     @NInt
     public native long contentStyle();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

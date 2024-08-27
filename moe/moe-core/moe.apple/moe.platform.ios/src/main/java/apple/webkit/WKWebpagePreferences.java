@@ -242,4 +242,9 @@ public class WKWebpagePreferences extends NSObject {
     @Generated
     @Selector("setLockdownModeEnabled:")
     public native void setLockdownModeEnabled(boolean value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

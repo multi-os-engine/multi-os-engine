@@ -346,11 +346,6 @@ public class CMMotionManager extends NSObject {
     public native boolean isGyroAvailable();
 
     /**
-     * magnetometerActive
-     * 
-     * Discussion:
-     * Determines whether the CMMotionManager is currently providing magnetometer updates.
-     * 
      * API-Since: 5.0
      */
     @Generated
@@ -358,11 +353,6 @@ public class CMMotionManager extends NSObject {
     public native boolean isMagnetometerActive();
 
     /**
-     * magnetometerAvailable
-     * 
-     * Discussion:
-     * Determines whether magetometer is available.
-     * 
      * API-Since: 5.0
      */
     @Generated
@@ -370,11 +360,6 @@ public class CMMotionManager extends NSObject {
     public native boolean isMagnetometerAvailable();
 
     /**
-     * magnetometerData
-     * 
-     * Discussion:
-     * Returns the latest sample of magnetometer data, or nil if none is available.
-     * 
      * API-Since: 5.0
      */
     @Nullable
@@ -383,18 +368,6 @@ public class CMMotionManager extends NSObject {
     public native CMMagnetometerData magnetometerData();
 
     /**
-     * magnetometerUpdateInterval
-     * 
-     * Discussion:
-     * The interval at which to deliver magnetometer data to the specified
-     * handler once startMagnetometerUpdatesToQueue:withHandler: is called.
-     * The units are in seconds. The value of this property is capped to
-     * certain minimum and maximum values. The maximum value is determined by
-     * the maximum frequency supported by the hardware. If sensitive to the
-     * interval of magnetometer data, an application should always check the
-     * timestamps on the delivered CMMagnetometerData instances to determine the
-     * true update interval.
-     * 
      * API-Since: 5.0
      */
     @Generated
@@ -453,18 +426,6 @@ public class CMMotionManager extends NSObject {
     public native void setGyroUpdateInterval(double value);
 
     /**
-     * magnetometerUpdateInterval
-     * 
-     * Discussion:
-     * The interval at which to deliver magnetometer data to the specified
-     * handler once startMagnetometerUpdatesToQueue:withHandler: is called.
-     * The units are in seconds. The value of this property is capped to
-     * certain minimum and maximum values. The maximum value is determined by
-     * the maximum frequency supported by the hardware. If sensitive to the
-     * interval of magnetometer data, an application should always check the
-     * timestamps on the delivered CMMagnetometerData instances to determine the
-     * true update interval.
-     * 
      * API-Since: 5.0
      */
     @Generated
@@ -606,12 +567,6 @@ public class CMMotionManager extends NSObject {
             @NotNull @ObjCBlock(name = "call_startGyroUpdatesToQueueWithHandler") Block_startGyroUpdatesToQueueWithHandler handler);
 
     /**
-     * startMagnetometerUpdates
-     * 
-     * Discussion:
-     * Starts magnetometer updates with no handler. To receive the latest magnetometer data
-     * when desired, examine the magnetometerData property.
-     * 
      * API-Since: 5.0
      */
     @Generated
@@ -619,11 +574,6 @@ public class CMMotionManager extends NSObject {
     public native void startMagnetometerUpdates();
 
     /**
-     * startMagnetometerUpdatesToQueue:withHandler:
-     * 
-     * Discussion:
-     * Starts magnetometer updates, providing data to the given handler through the given queue.
-     * 
      * API-Since: 5.0
      */
     @Generated
@@ -662,11 +612,6 @@ public class CMMotionManager extends NSObject {
     public native void stopGyroUpdates();
 
     /**
-     * stopMagnetometerUpdates
-     * 
-     * Discussion:
-     * Stops magnetometer updates.
-     * 
      * API-Since: 5.0
      */
     @Generated
@@ -710,4 +655,9 @@ public class CMMotionManager extends NSObject {
         void call_startMagnetometerUpdatesToQueueWithHandler(@Nullable CMMagnetometerData magnetometerData,
                 @Nullable NSError error);
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

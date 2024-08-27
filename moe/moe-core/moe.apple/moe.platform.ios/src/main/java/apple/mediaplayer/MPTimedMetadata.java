@@ -227,4 +227,9 @@ public class MPTimedMetadata extends NSObject {
     @Selector("value")
     @MappedReturn(ObjCObjectMapper.class)
     public native Object value();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -62,9 +62,6 @@ import org.jetbrains.annotations.Nullable;
  * 
  * MCPeerID conforms to NSCopying and can be used as a key in a
  * NSDictionary.
- * 
- * 
- * API-Since: 7.0
  */
 @Generated
 @Library("MultipeerConnectivity")
@@ -217,4 +214,9 @@ public class MCPeerID extends NSObject implements NSCopying, NSSecureCoding {
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

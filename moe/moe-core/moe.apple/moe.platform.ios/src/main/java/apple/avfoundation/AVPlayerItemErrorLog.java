@@ -50,6 +50,8 @@ import org.jetbrains.annotations.Nullable;
  * 
  * An AVPlayerItemErrorLog provides data to identify if, and when, network resource playback failures occured.
  * 
+ * Subclasses of this type that are used from Swift must fulfill the requirements of a Sendable type.
+ * 
  * API-Since: 4.3
  */
 @Generated
@@ -219,4 +221,9 @@ public class AVPlayerItemErrorLog extends NSObject implements NSCopying {
     @Generated
     @Selector("init")
     public native AVPlayerItemErrorLog init();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

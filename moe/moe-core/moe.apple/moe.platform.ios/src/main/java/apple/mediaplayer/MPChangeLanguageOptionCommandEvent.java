@@ -179,4 +179,9 @@ public class MPChangeLanguageOptionCommandEvent extends MPRemoteCommandEvent {
     @Selector("setting")
     @NInt
     public native long setting();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

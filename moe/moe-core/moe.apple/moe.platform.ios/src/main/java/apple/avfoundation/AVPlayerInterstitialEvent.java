@@ -603,4 +603,25 @@ public class AVPlayerInterstitialEvent extends NSObject implements NSCopying {
     @Generated
     @Selector("willPlayOnce")
     public native boolean willPlayOnce();
+
+    /**
+     * [@property] assetListResponse
+     * 
+     * The asset list JSON response as a dictionary, or nil if no asset list response has been loaded for the event.
+     * 
+     * If the AVPlayerInterstitialEvent's templateItems is empty and the assetListResponse is nil, then an asset list
+     * read is expected. If the AVPlayerInterstitialEvent's templateItems is not empty and the assetListResponse is nil,
+     * then an asset list read is not expected.
+     * 
+     * API-Since: 16.4
+     */
+    @Generated
+    @Selector("assetListResponse")
+    @Nullable
+    public native NSDictionary<?, ?> assetListResponse();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

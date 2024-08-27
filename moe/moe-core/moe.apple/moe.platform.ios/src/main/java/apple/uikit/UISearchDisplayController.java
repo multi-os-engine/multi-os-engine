@@ -347,4 +347,9 @@ public class UISearchDisplayController extends NSObject {
     @Generated
     @Selector("setSearchResultsTitle:")
     public native void setSearchResultsTitle(@Nullable String value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

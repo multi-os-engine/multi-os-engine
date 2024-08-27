@@ -215,4 +215,9 @@ public class NSValueTransformer extends NSObject {
     @Selector("transformedValue:")
     @MappedReturn(ObjCObjectMapper.class)
     public native Object transformedValue(@Nullable @Mapped(ObjCObjectMapper.class) Object value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

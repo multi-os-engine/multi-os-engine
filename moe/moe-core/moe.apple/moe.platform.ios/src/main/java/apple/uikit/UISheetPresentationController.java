@@ -386,4 +386,37 @@ public class UISheetPresentationController extends UIPresentationController {
     @Generated
     @Selector("invalidateDetents")
     public native void invalidateDetents();
+
+    /**
+     * Whether the sheet sizes itself for readable content.
+     * When YES, this maps to the behavior of UIModalPresentationPageSheet, where the sheet width follows the readable
+     * width.
+     * When NO, this maps to the behavior of UIModalPresentationFormSheet, where the sheet size follows the presented
+     * view controller's `preferredContentSize`.
+     * Default: YES
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("prefersPageSizing")
+    public native boolean prefersPageSizing();
+
+    /**
+     * Whether the sheet sizes itself for readable content.
+     * When YES, this maps to the behavior of UIModalPresentationPageSheet, where the sheet width follows the readable
+     * width.
+     * When NO, this maps to the behavior of UIModalPresentationFormSheet, where the sheet size follows the presented
+     * view controller's `preferredContentSize`.
+     * Default: YES
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("setPrefersPageSizing:")
+    public native void setPrefersPageSizing(boolean value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

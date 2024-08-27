@@ -180,4 +180,9 @@ public class MPChangeRepeatModeCommand extends MPRemoteCommand {
     @Generated
     @Selector("setCurrentRepeatType:")
     public native void setCurrentRepeatType(@NInt long value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

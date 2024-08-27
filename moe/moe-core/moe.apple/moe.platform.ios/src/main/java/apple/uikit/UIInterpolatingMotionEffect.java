@@ -206,4 +206,9 @@ public class UIInterpolatingMotionEffect extends UIMotionEffect {
     @Selector("type")
     @NInt
     public native long type();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

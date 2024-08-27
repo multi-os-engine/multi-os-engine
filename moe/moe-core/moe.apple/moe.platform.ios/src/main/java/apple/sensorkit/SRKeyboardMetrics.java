@@ -759,11 +759,9 @@ public class SRKeyboardMetrics extends NSObject {
     public native long wordCountForSentimentCategory(@NInt long category);
 
     /**
-     * WARNING!!! Availability for longWordTouchUpDown metrics is not accurate,
-     * since we're introducing these in C which doesn't have an SDK !!!
      * The duration between touch up and touch down of the character keys of all the long words in the session.
      * 
-     * API-Since: 16.0
+     * API-Since: 16.4
      */
     @NotNull
     @Generated
@@ -771,14 +769,28 @@ public class SRKeyboardMetrics extends NSObject {
     public native NSArray<? extends SRKeyboardProbabilityMetric<NSUnitDuration>> longWordTouchUpDown();
 
     /**
-     * WARNING!!! Availability for touchUpDown metrics is not accurate,
-     * since we're introducing these in C which doesn't have an SDK !!!
-     * The duration between touch up to touch down for any key
+     * The duration between touch up and touch down for any key
      * 
-     * API-Since: 16.0
+     * API-Since: 16.4
      */
     @NotNull
     @Generated
     @Selector("touchUpDown")
     public native SRKeyboardProbabilityMetric<NSUnitDuration> touchUpDown();
+
+    /**
+     * The keyboard session identifiers. These are the identifiers of the keyboard sessions that contributed to keyboard
+     * metrics sample to correlate current stream with another stream using the same keyboard session indentifiers
+     * 
+     * API-Since: 16.4
+     */
+    @Generated
+    @Selector("sessionIdentifiers")
+    @NotNull
+    public native NSArray<String> sessionIdentifiers();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

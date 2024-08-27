@@ -268,4 +268,9 @@ public class MTLFunctionDescriptor extends NSObject implements NSCopying {
     @Generated
     @Selector("setBinaryArchives:")
     public native void setBinaryArchives(@Nullable NSArray<?> value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

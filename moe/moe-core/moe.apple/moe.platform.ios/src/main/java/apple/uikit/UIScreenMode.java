@@ -179,4 +179,9 @@ public class UIScreenMode extends NSObject {
     @Selector("size")
     @ByValue
     public native CGSize size();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

@@ -32,7 +32,6 @@ import org.jetbrains.annotations.NotNull;
 /**
  * API-Since: 10.0
  * Deprecated-Since: 12.0
- * Deprecated-Message: Use GKLocalPlayerListener for multiplayer event notifications.
  */
 @Deprecated
 @Generated

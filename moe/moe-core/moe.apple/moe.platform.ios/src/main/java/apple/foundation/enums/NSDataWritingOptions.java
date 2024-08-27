@@ -62,4 +62,9 @@ public final class NSDataWritingOptions {
     @Generated
     private NSDataWritingOptions() {
     }
+
+    /**
+     * API-Since: 17.0
+     */
+    @Generated @NUInt public static final long DataWritingFileProtectionCompleteWhenUserInactive = 0x0000000050000000L;
 }

@@ -552,4 +552,9 @@ public class NSHTTPCookie extends NSObject {
     @Generated
     @Selector("sameSitePolicy")
     public native String sameSitePolicy();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

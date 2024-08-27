@@ -193,4 +193,9 @@ public class UINib extends NSObject {
     @Selector("instantiateWithOwner:options:")
     public native NSArray<?> instantiateWithOwnerOptions(@Nullable @Mapped(ObjCObjectMapper.class) Object ownerOrNil,
             @Nullable NSDictionary<String, ?> optionsOrNil);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

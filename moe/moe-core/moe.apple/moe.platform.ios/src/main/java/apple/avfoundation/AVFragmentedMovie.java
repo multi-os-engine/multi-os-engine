@@ -341,4 +341,9 @@ public class AVFragmentedMovie extends AVMovie implements AVFragmentMinding {
         void call_loadTracksWithMediaTypeCompletionHandler(@Nullable NSArray<? extends AVFragmentedMovieTrack> arg0,
                 @Nullable NSError arg1);
     }
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

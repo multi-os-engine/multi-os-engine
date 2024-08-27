@@ -79,4 +79,8 @@ public final class MTLGPUFamily {
      * API-Since: 16.0
      */
     @Generated @NInt public static final long Metal3 = 0x0000000000001389L;
+    /**
+     * API-Since: 13.0
+     */
+    @Generated @NInt public static final long Apple9 = 0x00000000000003F1L;
 }

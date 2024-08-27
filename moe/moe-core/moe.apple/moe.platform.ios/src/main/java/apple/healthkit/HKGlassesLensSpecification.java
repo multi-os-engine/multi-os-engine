@@ -247,4 +247,9 @@ public class HKGlassesLensSpecification extends HKLensSpecification implements N
     @Generated
     @Selector("vertexDistance")
     public native HKQuantity vertexDistance();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

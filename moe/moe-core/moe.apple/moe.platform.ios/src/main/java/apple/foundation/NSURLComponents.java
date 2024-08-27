@@ -586,4 +586,47 @@ public class NSURLComponents extends NSObject implements NSCopying {
     @Generated
     @Selector("setEncodedHost:")
     public native void setEncodedHost(@Nullable String value);
+
+    /**
+     * Initializes and returns a newly created `NSURLComponents` with a URL string and the option to add (or skip) IDNA-
+     * and percent-encoding of invalid characters.
+     * If `encodingInvalidCharacters` is false, and the URL string is invalid according to RFC 3986, `nil` is returned.
+     * If `encodingInvalidCharacters` is true, `NSURLComponents` will try to encode the string to create a valid URL.
+     * If the URL string is still invalid after encoding, nil is returned.
+     * 
+     * - Parameter URLString: The URL string.
+     * - Parameter encodingInvalidCharacters: True if `NSURLComponents` should try to encode an invalid URL string,
+     * false otherwise.
+     * - Returns: An `NSURLComponents` instance for a valid URL, or `nil` if the URL is invalid.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("componentsWithString:encodingInvalidCharacters:")
+    public static native NSURLComponents componentsWithStringEncodingInvalidCharacters(@NotNull String URLString,
+            boolean encodingInvalidCharacters);
+
+    /**
+     * Initializes an `NSURLComponents` with a URL string and the option to add (or skip) IDNA- and percent-encoding of
+     * invalid characters.
+     * If `encodingInvalidCharacters` is false, and the URL string is invalid according to RFC 3986, `nil` is returned.
+     * If `encodingInvalidCharacters` is true, `NSURLComponents` will try to encode the string to create a valid URL.
+     * If the URL string is still invalid after encoding, `nil` is returned.
+     * 
+     * - Parameter URLString: The URL string.
+     * - Parameter encodingInvalidCharacters: True if `NSURLComponents` should try to encode an invalid URL string,
+     * false otherwise.
+     * - Returns: An `NSURLComponents` instance for a valid URL, or `nil` if the URL is invalid.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("initWithString:encodingInvalidCharacters:")
+    public native NSURLComponents initWithStringEncodingInvalidCharacters(@NotNull String URLString,
+            boolean encodingInvalidCharacters);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

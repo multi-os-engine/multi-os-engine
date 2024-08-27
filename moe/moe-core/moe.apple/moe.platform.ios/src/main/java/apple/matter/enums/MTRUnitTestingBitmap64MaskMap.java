@@ -1,0 +1,30 @@
+package apple.matter.enums;
+
+import org.moe.natj.general.ann.Generated;
+
+/**
+ * API-Since: 16.4
+ */
+@Generated
+public final class MTRUnitTestingBitmap64MaskMap {
+    @Generated
+    private MTRUnitTestingBitmap64MaskMap() {
+    }
+
+    /**
+     * API-Since: 16.4
+     */
+    @Generated public static final long Val1 = 0x0000000000000001L;
+    /**
+     * API-Since: 16.4
+     */
+    @Generated public static final long Val2 = 0x0000000000000002L;
+    /**
+     * API-Since: 16.4
+     */
+    @Generated public static final long Val3 = 0x0000000000000004L;
+    /**
+     * API-Since: 16.4
+     */
+    @Generated public static final long Val4 = 0x4000000000000000L;
+}

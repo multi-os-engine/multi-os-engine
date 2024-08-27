@@ -179,4 +179,9 @@ public class PHObject extends NSObject implements NSCopying {
     @Generated
     @Selector("localIdentifier")
     public native String localIdentifier();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

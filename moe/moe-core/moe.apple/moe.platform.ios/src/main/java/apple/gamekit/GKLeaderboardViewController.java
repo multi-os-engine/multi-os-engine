@@ -51,7 +51,6 @@ import org.jetbrains.annotations.Nullable;
  * 
  * API-Since: 4.1
  * Deprecated-Since: 7.0
- * Deprecated-Message: Use GKGameCenterViewController instead
  */
 @Deprecated
 @Generated
@@ -255,4 +254,9 @@ public class GKLeaderboardViewController extends GKGameCenterViewController {
     @Generated
     @Selector("initWithState:")
     public native GKLeaderboardViewController initWithState(@NInt long state);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

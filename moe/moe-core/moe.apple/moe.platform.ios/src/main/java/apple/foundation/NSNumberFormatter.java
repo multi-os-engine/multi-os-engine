@@ -735,4 +735,9 @@ public class NSNumberFormatter extends NSFormatter {
     @Generated
     @Selector("zeroSymbol")
     public native String zeroSymbol();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

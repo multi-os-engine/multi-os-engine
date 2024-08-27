@@ -15,7 +15,7 @@ import java.lang.reflect.Modifier
  */
 class AddMissingNatJRegister(
     next: ClassVisitor?
-) : ClassModifier(Opcodes.ASM5, next) {
+) : ClassModifier(Opcodes.ASM9, next) {
 
     private var skip: Boolean = false
     private var visit: Boolean = false

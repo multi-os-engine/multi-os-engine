@@ -330,4 +330,9 @@ public class GLKViewController extends UIViewController implements NSCoding, GLK
     @Generated
     @Selector("timeSinceLastUpdate")
     public native double timeSinceLastUpdate();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

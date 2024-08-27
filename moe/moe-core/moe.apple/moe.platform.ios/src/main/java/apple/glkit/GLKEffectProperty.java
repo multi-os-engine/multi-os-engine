@@ -163,4 +163,9 @@ public class GLKEffectProperty extends NSObject {
     @Generated
     @Selector("init")
     public native GLKEffectProperty init();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

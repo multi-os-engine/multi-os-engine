@@ -216,6 +216,8 @@ public class AVCaptureMovieFileOutput extends AVCaptureFileOutput {
      * 
      * Changing the value of this property will not affect the movie fragment interval of the file currently being
      * written, if there is one.
+     * 
+     * For best writing performance on external storage devices, set the movieFragmentInterval to 10 seconds or greater.
      */
     @Generated
     @Selector("movieFragmentInterval")
@@ -290,6 +292,8 @@ public class AVCaptureMovieFileOutput extends AVCaptureFileOutput {
      * 
      * Changing the value of this property will not affect the movie fragment interval of the file currently being
      * written, if there is one.
+     * 
+     * For best writing performance on external storage devices, set the movieFragmentInterval to 10 seconds or greater.
      */
     @Generated
     @Selector("setMovieFragmentInterval:")
@@ -489,4 +493,9 @@ public class AVCaptureMovieFileOutput extends AVCaptureFileOutput {
     @Generated
     @Selector("setPrimaryConstituentDeviceSwitchingBehaviorForRecordingEnabled:")
     public native void setPrimaryConstituentDeviceSwitchingBehaviorForRecordingEnabled(boolean value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

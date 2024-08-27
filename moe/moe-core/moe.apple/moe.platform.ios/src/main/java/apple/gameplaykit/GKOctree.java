@@ -43,8 +43,6 @@ import org.jetbrains.annotations.Nullable;
 /**
  * A tree data structure where each level has 8 children that subdivide a given space into the eight octants.
  * Stores arbitrary NSObject elements via points and boxes.
- * 
- * API-Since: 10.0
  */
 @Generated
 @Library("GameplayKit")
@@ -187,4 +185,9 @@ public class GKOctree<_ElementType> extends NSObject {
     @Generated
     @Selector("removeElement:withNode:")
     public native boolean removeElementWithNode(@NotNull NSObject element, @NotNull GKOctreeNode node);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

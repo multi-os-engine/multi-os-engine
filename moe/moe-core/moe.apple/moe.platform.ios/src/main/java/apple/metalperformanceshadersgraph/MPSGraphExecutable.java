@@ -25,14 +25,12 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import apple.foundation.NSURL;
 
 /**
- * MPSGraphExecutable
+ * Compiled representation of a compute graph executable.
  * 
- * Compiled representation of a compute graph executable
- * 
- * An MPSGraphExecutable is a compiled graph for specific feeds for specific targetTensors and targetOperations
- * 
+ * An MPSGraphExecutable is a compiled graph for specific feeds for specific targetTensors and target operations.
  * 
  * API-Since: 15.0
  */
@@ -40,7 +38,7 @@ import org.jetbrains.annotations.Nullable;
 @Library("MetalPerformanceShadersGraph")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class MPSGraphExecutable extends NSObject {
+public class MPSGraphExecutable extends MPSGraphObject {
     static {
         NatJ.register();
     }
@@ -101,14 +99,14 @@ public class MPSGraphExecutable extends NSObject {
      * Runs the graph for given feeds to return targetTensor values, ensuring all target operations also executed.
      * This call is asynchronous and will return immediately after finishing encoding.
      * 
-     * @param commandBuffer       commandBuffer passed to exectute the graph on, commitAndContinue might be called,
-     *                            please don't rely on underlying MTLCommandBuffer to remain uncommitted
-     * @param inputsArray         Feeds tensorData for the placeholder tensors, same order as arguments of main function
-     * @param resultsArray        Tensors for which the caller wishes MPSGraphTensorData to be returned
-     * @param executionDescriptor ExecutionDescriptor to be passed in and used,
-     * 
-     * @return A valid MPSGraphTensorData array with results synchronized to the CPU memory if
-     *         MPSGraphOptionsSynchronizeResults set.
+     * - Parameters:
+     * - commandBuffer: CommandBuffer passed to exectute the graph on, commitAndContinue might be called, please don't
+     * rely on underlying MTLCommandBuffer to remain uncommitted
+     * - inputsArray: Feeds tensorData for the placeholder tensors, same order as arguments of main function
+     * - resultsArray: Tensors for which the caller wishes MPSGraphTensorData to be returned
+     * - executionDescriptor: ExecutionDescriptor to be passed in and used,
+     * - Returns: A valid MPSGraphTensorData array with results synchronized to the CPU memory if
+     * MPSGraphOptionsSynchronizeResults set.
      */
     @NotNull
     @Generated
@@ -119,9 +117,7 @@ public class MPSGraphExecutable extends NSObject {
             @Nullable MPSGraphExecutableExecutionDescriptor executionDescriptor);
 
     /**
-     * [@property] feedTensors
-     * 
-     * feedTensors for the graph, can be used to order the inputs when executable was created with an MPSGraph
+     * Feed tensors for the graph, can be used to order the inputs when executable was created with an MPSGraph
      */
     @Nullable
     @Generated
@@ -165,9 +161,9 @@ public class MPSGraphExecutable extends NSObject {
     public static native MPSGraphExecutable new_objc();
 
     /**
-     * [@property] options
+     * Options for the graph executable.
      * 
-     * options for the graph, default value is MPSGraphOptionsDefault
+     * Default value is `MPSGraphOptionsDefault`.
      */
     @Generated
     @Selector("options")
@@ -185,13 +181,13 @@ public class MPSGraphExecutable extends NSObject {
      * Runs the graph for given feeds to return targetTensor values, ensuring all target operations also executed.
      * This call is asynchronous and will return immediately.
      * 
-     * @param commandQueue        CommandQueue passed to exectute the graph on
-     * @param inputsArray         Feeds tensorData for the placeholder tensors, same order as arguments of main function
-     * @param resultsArray        Tensors for which the caller wishes MPSGraphTensorData to be returned
-     * @param executionDescriptor ExecutionDescriptor to be passed in and used,
-     * 
-     * @return A valid MPSGraphTensorData array with results synchronized to the CPU memory if
-     *         MPSGraphOptionsSynchronizeResults set.
+     * - Parameters:
+     * - commandQueue: CommandQueue passed to exectute the graph on.
+     * - inputsArray: Feeds tensorData for the placeholder tensors, same order as arguments of main function.
+     * - resultsArray: Tensors for which the caller wishes MPSGraphTensorData to be returned.
+     * - executionDescriptor: ExecutionDescriptor to be passed in and used.
+     * - Returns: A valid MPSGraphTensorData array with results synchronized to the CPU memory if
+     * MPSGraphOptionsSynchronizeResults set.
      */
     @NotNull
     @Generated
@@ -204,14 +200,14 @@ public class MPSGraphExecutable extends NSObject {
 
     /**
      * Runs the graph for given feeds to return targetTensor values, ensuring all target operations also executed.
-     * This call is synchronous and will return on completion of execution
+     * This call is synchronous and will return on completion of execution.
      * 
-     * @param commandQueue CommandQueue passed to exectute the graph on
-     * @param inputsArray  Feeds tensorData for the placeholder tensors, same order as arguments of main function
-     * @param resultsArray Results tensorData for which the caller wishes MPSGraphTensorData to be returned
-     * 
-     * @return A valid MPSGraphTensorData array with results synchronized to the CPU memory if
-     *         MPSGraphOptionsSynchronizeResults set.
+     * - Parameters:
+     * - commandQueue: CommandQueue passed to exectute the graph on.
+     * - inputsArray: Feeds tensorData for the placeholder tensors, same order as arguments of main function.
+     * - resultsArray: Results tensorData for which the caller wishes MPSGraphTensorData to be returned.
+     * - Returns: A valid MPSGraphTensorData array with results synchronized to the CPU memory if
+     * MPSGraphOptionsSynchronizeResults set.
      */
     @NotNull
     @Generated
@@ -223,9 +219,9 @@ public class MPSGraphExecutable extends NSObject {
             @Nullable MPSGraphExecutableExecutionDescriptor executionDescriptor);
 
     /**
-     * [@property] options
+     * Options for the graph executable.
      * 
-     * options for the graph, default value is MPSGraphOptionsDefault
+     * Default value is `MPSGraphOptionsDefault`.
      */
     @Generated
     @Selector("setOptions:")
@@ -237,13 +233,13 @@ public class MPSGraphExecutable extends NSObject {
 
     /**
      * Specialize the MPSGraphExecutable and optimize it, use this method to choose when specialization happens, else it
-     * occurs at encode time automatically
+     * occurs at encode time automatically.
      * 
-     * @param device                optional MPSGraph device to compile with
-     * @param inputTypes            input types
-     * @param compilationDescriptor compilationDescriptor to be used to specialize, since the executable was created
-     *                              with a compilationDescriptor already this one overrides those settings to the extent
-     *                              it can
+     * - Parameters:
+     * - device: optional MPSGraph device to compile with
+     * - inputTypes: input types
+     * - compilationDescriptor: compilationDescriptor to be used to specialize, since the executable was created with a
+     * compilationDescriptor already this one overrides those settings to the extent it can.
      */
     @Generated
     @Selector("specializeWithDevice:inputTypes:compilationDescriptor:")
@@ -256,9 +252,7 @@ public class MPSGraphExecutable extends NSObject {
     public static native Class superclass_static();
 
     /**
-     * [@property] targetTensors
-     * 
-     * targetTensors for the graph, can be used to order the outputs when executable was created with an MPSGraph
+     * Target tensors for the graph, can be used to order the outputs when executable was created with an MPSGraph
      */
     @Nullable
     @Generated
@@ -269,4 +263,57 @@ public class MPSGraphExecutable extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * Get output shapes for a specialized MPSGraphExecutable - in case specialization has not been done yet then
+     * calling this function will specialize for the given input shapes.
+     * 
+     * - Parameters:
+     * - device: optional MPSGraph device to compile with
+     * - inputTypes: input types
+     * - compilationDescriptor: compilationDescriptor to be used to specialize, since the executable was created with a
+     * compilationDescriptor already this one overrides those settings to the extent it can.
+     * 
+     * API-Since: 16.3
+     */
+    @Generated
+    @Selector("getOutputTypesWithDevice:inputTypes:compilationDescriptor:")
+    @Nullable
+    public native NSArray<? extends MPSGraphShapedType> getOutputTypesWithDeviceInputTypesCompilationDescriptor(
+            @Nullable MPSGraphDevice device, @NotNull NSArray<? extends MPSGraphType> inputTypes,
+            @Nullable MPSGraphCompilationDescriptor compilationDescriptor);
+
+    /**
+     * Initialize the MPSGraph executable with the package at the provided url.
+     * 
+     * - Parameters:
+     * - mpsgraphPackageURL: The URL where to read the serialized MPSGraphExecutable.
+     * - compilationDescriptor: Compilation descriptor to be used to specialize, since the executable was created with a
+     * compilationDescriptor already this one overrides those settings to the extent it can.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("initWithMPSGraphPackageAtURL:compilationDescriptor:")
+    public native MPSGraphExecutable initWithMPSGraphPackageAtURLCompilationDescriptor(
+            @NotNull NSURL mpsgraphPackageURL, @Nullable MPSGraphCompilationDescriptor compilationDescriptor);
+
+    /**
+     * Serialize the MPSGraph executable at the provided url.
+     * 
+     * - Parameters:
+     * - url: The URL where to serialize the MPSGraph executable.
+     * - descriptor: The descriptor to be used to serialize the graph.
+     * 
+     * API-Since: 17.0
+     */
+    @Generated
+    @Selector("serializeToMPSGraphPackageAtURL:descriptor:")
+    public native void serializeToMPSGraphPackageAtURLDescriptor(@NotNull NSURL url,
+            @Nullable MPSGraphExecutableSerializationDescriptor descriptor);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

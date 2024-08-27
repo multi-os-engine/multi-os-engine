@@ -172,4 +172,9 @@ public class UISceneSizeRestrictions extends NSObject {
     @Generated
     @Selector("setAllowsFullScreen:")
     public native void setAllowsFullScreen(boolean value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

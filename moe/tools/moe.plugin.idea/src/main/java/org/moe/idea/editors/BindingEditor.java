@@ -17,6 +17,8 @@ limitations under the License.
 package org.moe.idea.editors;
 
 import com.intellij.codeHighlighting.BackgroundEditorHighlighter;
+import com.intellij.openapi.editor.event.DocumentEvent;
+import com.intellij.openapi.editor.event.DocumentListener;
 import com.intellij.openapi.fileEditor.FileDocumentManager;
 import com.intellij.openapi.fileEditor.FileEditor;
 import com.intellij.openapi.fileEditor.FileEditorLocation;
@@ -24,9 +26,8 @@ import com.intellij.openapi.fileEditor.FileEditorState;
 import com.intellij.openapi.fileEditor.FileEditorStateLevel;
 import com.intellij.openapi.fileEditor.impl.text.TextEditorProvider;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.util.Key;
+import com.intellij.openapi.util.UserDataHolderBase;
 import com.intellij.openapi.vfs.VirtualFile;
-import com.intellij.openapi.vfs.VirtualFileListener;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.moe.idea.ui.BindingEditorForm;
@@ -34,17 +35,28 @@ import org.moe.idea.ui.BindingEditorForm;
 import javax.swing.*;
 import java.beans.PropertyChangeListener;
 
-public class BindingEditor implements VirtualFileListener, FileEditor {
+public class BindingEditor extends UserDataHolderBase implements FileEditor, DocumentListener {
 
     @NotNull
     private final VirtualFile myFile;
     @NotNull
     private BindingEditorForm bindingEditorForm;
-    private FileDocumentManager fileDocumentManager;
+    private boolean loadOnSelect = true;
 
     public BindingEditor(@NotNull Project project, @NotNull VirtualFile virtualFile) {
         this.myFile = virtualFile;
         this.bindingEditorForm = new BindingEditorForm(project, virtualFile);
+        FileDocumentManager.getInstance().getDocument(myFile).addDocumentListener(this, this);
+    }
+
+    @Override
+    public void documentChanged(@NotNull DocumentEvent event) {
+        if (getComponent().isShowing()) {
+            bindingEditorForm.documentChanged();
+        }
+        else {
+            loadOnSelect = true;
+        }
     }
 
     @NotNull
@@ -88,7 +100,10 @@ public class BindingEditor implements VirtualFileListener, FileEditor {
 
     @Override
     public void selectNotify() {
-
+        if (loadOnSelect) {
+            loadOnSelect = false;
+            bindingEditorForm.loadBindings();
+        }
     }
 
     @Override
@@ -121,17 +136,6 @@ public class BindingEditor implements VirtualFileListener, FileEditor {
     @Override
     public void dispose() {
         TextEditorProvider.getInstance().disposeEditor(this);
-    }
-
-    @Nullable
-    @Override
-    public <T> T getUserData(@NotNull Key<T> key) {
-        return null;
-    }
-
-    @Override
-    public <T> void putUserData(@NotNull Key<T> key, @Nullable T t) {
-
     }
 
     @Override

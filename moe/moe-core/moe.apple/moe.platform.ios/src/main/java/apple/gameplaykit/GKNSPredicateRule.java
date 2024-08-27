@@ -45,8 +45,6 @@ import org.jetbrains.annotations.Nullable;
 /**
  * A convenient subclass of GKRule that leverages existing NSPRedicate functionality for evaluating the predicate
  * of the rule.
- * 
- * API-Since: 9.0
  */
 @Generated
 @Library("GameplayKit")
@@ -209,4 +207,9 @@ public class GKNSPredicateRule extends GKRule {
     @Generated
     @Selector("predicate")
     public native NSPredicate predicate();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

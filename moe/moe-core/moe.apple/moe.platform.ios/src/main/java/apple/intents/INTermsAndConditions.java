@@ -221,4 +221,9 @@ public class INTermsAndConditions extends NSObject implements NSSecureCoding, NS
     @Generated
     @Selector("termsAndConditionsURL")
     public native NSURL termsAndConditionsURL();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

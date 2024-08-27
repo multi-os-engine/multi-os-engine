@@ -179,4 +179,9 @@ public class UIAcceleration extends NSObject {
     @Generated
     @Selector("z")
     public native double z();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

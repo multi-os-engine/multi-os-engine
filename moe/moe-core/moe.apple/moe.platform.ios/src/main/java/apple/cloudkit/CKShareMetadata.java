@@ -46,6 +46,8 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
+ * NS_SWIFT_SENDABLE on macos(14.0), ios(17.0), tvos(17.0), watchos(10.0)
+ * 
  * API-Since: 10.0
  */
 @Generated
@@ -262,4 +264,9 @@ public class CKShareMetadata extends NSObject implements NSCopying, NSSecureCodi
     @Generated
     @Selector("hierarchicalRootRecordID")
     public native CKRecordID hierarchicalRootRecordID();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

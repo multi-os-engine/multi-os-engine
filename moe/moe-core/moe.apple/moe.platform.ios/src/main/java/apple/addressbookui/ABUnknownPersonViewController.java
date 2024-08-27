@@ -324,4 +324,9 @@ public class ABUnknownPersonViewController extends UIViewController {
     @Selector("unknownPersonViewDelegate")
     @MappedReturn(ObjCObjectMapper.class)
     public native ABUnknownPersonViewControllerDelegate unknownPersonViewDelegate();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

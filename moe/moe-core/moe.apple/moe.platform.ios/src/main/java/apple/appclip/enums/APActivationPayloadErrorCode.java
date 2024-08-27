@@ -4,13 +4,7 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
 /**
- * [@enum] APActivationPayloadErrorCode
- * 
- * Error code of the NSError object passed in completionHandler for location confirmation.
- * [@constant] APActivationPayloadErrorCodeDisallowed The location confirmation request is disallowed by user or system;
- * or the code is not acquired by QR/NFC scanning.
- * [@constant] APActivationPayloadErrorCodeDoesNotMatch The payload passed in by the application doesn't match the
- * payload it was launched with.
+ * Error codes that an App Clip activation payload returns.
  * 
  * API-Since: 14.0
  */
@@ -21,10 +15,15 @@ public final class APActivationPayloadErrorCode {
     }
 
     /**
+     * The user denied location access, or the source of the App Clip
+     * invocation wasn’t from an NFC tag or visual code.
+     * 
      * API-Since: 14.0
      */
     @Generated @NInt public static final long Disallowed = 0x0000000000000001L;
     /**
+     * The provided URL doesn’t match the registered App Clip URL.
+     * 
      * API-Since: 14.0
      */
     @Generated @NInt public static final long DoesNotMatch = 0x0000000000000002L;

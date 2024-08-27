@@ -484,4 +484,9 @@ public class ICDevice extends NSObject {
     @Generated
     @Selector("systemSymbolName")
     public native String systemSymbolName();
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }

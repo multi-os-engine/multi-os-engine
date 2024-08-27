@@ -534,4 +534,9 @@ public class UIBackgroundConfiguration extends NSObject implements NSCopying, NS
     @Generated
     @Selector("setImageContentMode:")
     public native void setImageContentMode(@NInt long value);
+
+    @Generated
+    @Deprecated
+    @Selector("useStoredAccessor")
+    public static native boolean useStoredAccessor();
 }
