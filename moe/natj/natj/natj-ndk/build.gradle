@@ -69,12 +69,12 @@ for (arch in ['arm64-v8a', 'armeabi-v7a', 'mips', 'mips64', 'x86', 'x86_64']) {
     }
 }
 
-buildNative.inputs.files rootProject.file('../../../prebuilts/external/libffi/build/ndk/aarch64/lib/libffi.a')
-buildNative.inputs.files rootProject.file('../../../prebuilts/external/libffi/build/ndk/arm/lib/libffi.a')
-buildNative.inputs.files rootProject.file('../../../prebuilts/external/libffi/build/ndk/mips64el/lib/libffi.a')
-buildNative.inputs.files rootProject.file('../../../prebuilts/external/libffi/build/ndk/mipsel/lib/libffi.a')
-buildNative.inputs.files rootProject.file('../../../prebuilts/external/libffi/build/ndk/x86/lib/libffi.a')
-buildNative.inputs.files rootProject.file('../../../prebuilts/external/libffi/build/ndk/x86_64/lib/libffi.a')
+buildNative.inputs.files rootProject.file('../../prebuilts/external/libffi/build/ndk/aarch64/lib/libffi.a')
+buildNative.inputs.files rootProject.file('../../prebuilts/external/libffi/build/ndk/arm/lib/libffi.a')
+buildNative.inputs.files rootProject.file('../../prebuilts/external/libffi/build/ndk/mips64el/lib/libffi.a')
+buildNative.inputs.files rootProject.file('../../prebuilts/external/libffi/build/ndk/mipsel/lib/libffi.a')
+buildNative.inputs.files rootProject.file('../../prebuilts/external/libffi/build/ndk/x86/lib/libffi.a')
+buildNative.inputs.files rootProject.file('../../prebuilts/external/libffi/build/ndk/x86_64/lib/libffi.a')
 
 buildNative.inputs.files file('jni/Android.mk')
 buildNative.inputs.files file('jni/Application.mk')

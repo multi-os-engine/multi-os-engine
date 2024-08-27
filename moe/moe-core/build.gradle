@@ -28,7 +28,7 @@ allprojects {
 
 ext {
     external = [:]
-    external.prebuilts = file('../../prebuilts').absolutePath
+    external.prebuilts = file('../prebuilts').absolutePath
     external.svm = [:]
     external.svm.root = file('../../svm').absolutePath
     external.svm.mx = file("${external.svm.root}/mx").absolutePath

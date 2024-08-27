@@ -16,7 +16,7 @@ limitations under the License.
 
 for (target in ['ios', 'macos', 'windows', 'ndk', 'linux']) {
     task("prebuild_libffi_$target", type: Exec) {
-        workingDir '../../../prebuilts'
+        workingDir '../../prebuilts'
         executable './gradlew'
         args ":external:libffi:prebuild_$target"
 
