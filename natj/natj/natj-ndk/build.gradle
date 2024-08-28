@@ -64,7 +64,7 @@ String[] outputs = []
 for (arch in ['arm64-v8a', 'armeabi-v7a', 'mips', 'mips64', 'x86', 'x86_64']) {
     for (conf in ['Release', 'Debug']) {
         for (targ in ['natj', 'c++_shared']) {
-            outputs += "build/${conf}/libs/${arch}/lib${targ}.so"
+            outputs += "build/${conf}/libs/${arch}/lib${targ}.so".toString()
         }
     }
 }
