@@ -24,7 +24,6 @@ import org.moe.document.pbxproj.nextstep.Array.Predicate;
 import org.moe.document.pbxproj.nextstep.Dictionary;
 import org.moe.document.pbxproj.nextstep.NextStep;
 import org.moe.document.pbxproj.nextstep.Value;
-import org.moe.generator.project.MOEProjectFabricator;
 
 import java.io.File;
 import java.io.IOException;
@@ -96,14 +95,16 @@ public class XcodeEditorManager {
 
     private void setTragets() {
         Array<PBXObjectRef<PBXNativeTarget>> targets = pbxProject.getOrCreateTargets();
+        this.mainTarget = null;
         for (PBXObjectRef<PBXNativeTarget> target : targets) {
             PBXNativeTarget nativeTarget = target.getReferenced();
             String targetName = nativeTarget.getName();
             if (targetName.endsWith("-Test")) {
                 this.testTarget = nativeTarget;
-            } else {
+            } else if (mainTarget == null) {
                 this.mainTarget = nativeTarget;
             }
+            // else ... we only currently support the first main target, others will be ignored
         }
     }
 

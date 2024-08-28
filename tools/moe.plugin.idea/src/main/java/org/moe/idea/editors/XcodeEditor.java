@@ -178,7 +178,7 @@ public class XcodeEditor extends UserDataHolderBase implements VirtualFileListen
             public void documentChanged(com.intellij.openapi.editor.event.DocumentEvent documentEvent) {
                 reloadXcodeProjectFile();
             }
-        });
+        }, this);
 
         try {
             this.xcodeEditorManager = new XcodeEditorManager(null, xcodeProjectDocument.getText());
@@ -224,7 +224,7 @@ public class XcodeEditor extends UserDataHolderBase implements VirtualFileListen
             public void documentChanged(com.intellij.openapi.editor.event.DocumentEvent documentEvent) {
                 reloadMainInfoPlist();
             }
-        });
+        }, this);
         if (xcodeEditorManager.hasTestTarget()) {
             File testInfoPlist = getFileFromXcodeConfiguration(root, xcodeEditorManager.getInfoTestPlist());
 
@@ -253,7 +253,7 @@ public class XcodeEditor extends UserDataHolderBase implements VirtualFileListen
                 public void documentChanged(com.intellij.openapi.editor.event.DocumentEvent documentEvent) {
                     reloadTestInfoPlist();
                 }
-            });
+            }, this);
         }else {
             LOG.error("No test target provided. Consider to provide one. It needs \"-Test\" at the end of its name.");
         }

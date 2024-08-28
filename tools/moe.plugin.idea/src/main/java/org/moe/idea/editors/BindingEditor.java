@@ -51,6 +51,11 @@ public class BindingEditor extends UserDataHolderBase implements FileEditor, Doc
 
     @Override
     public void documentChanged(@NotNull DocumentEvent event) {
+        // we have some logic in the loading that will try and save some sensible defaults if they are missing,
+        // but if we run this all the time, and we are trying to edit the json, and for example
+        // we want to delete all the text and replace it with another one, it will keep messing with us,
+        // as it will be always loading and always setting defaults when we are just trying to edit some text.
+        // So we only call documentChanged() if we are actually visible on the screen
         if (getComponent().isShowing()) {
             bindingEditorForm.documentChanged();
         }

@@ -90,6 +90,9 @@ public class BindingEditorForm {
     }
 
     public void documentChanged() {
+        // we want to avoid reloading everything on every save as otherwise the UI jumps about constantly,
+        // for example if you add a 2nd binding and have started editing it, it saves as you edit,
+        // but if each save causes a reload, it will select the first binding again, even though you are trying to edit the 2nd one
         if (saveInProgress) return;
         // This method may still hold a writelock, and we are doing a UI update.
         // Avoid deadlocks, break out of writelock psi/thread for UI update.
