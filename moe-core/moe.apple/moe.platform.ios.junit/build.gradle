@@ -41,7 +41,7 @@ dependencies {
     implementation group: 'junit', name: 'junit', version: '4.12'
     included group: 'junit', name: 'junit', version: '4.12'
 
-    implementation files(rootProject.external.natj.jar)
+    implementation "org.moe:natj"
     implementation project(':moe.apple:moe.platform.ios')
 }
 

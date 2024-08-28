@@ -28,10 +28,9 @@ sourceCompatibility = "1.8"
 targetCompatibility = "1.8"
 
 tasks.classes.dependsOn ':ext_natj_ios'
-tasks.classes.dependsOn ':ext_natj_api'
 
 dependencies {
-    implementation files(rootProject.external.natj.jar)
+    implementation "org.moe:natj"
     compileOnly 'org.jetbrains:annotations:23.0.0'
 }
 

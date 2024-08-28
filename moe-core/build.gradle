@@ -32,44 +32,28 @@ ext {
 }
 
 /*
- * PROJECT: moe/natj/natj
+ * PROJECT: moe/natj
  */
 ext {
     external.natj = [:]
-    external.natj.root = file('../natj/natj').absolutePath
-    external.natj.jar = file("${external.natj.root}/build/libs/natj-1.1.5.jar")
+    external.natj.root = file('../natj').absolutePath
     external.natj.sources = file("${external.natj.root}/src/main/java")
     external.natj.jnipath = file("${external.natj.root}/natj-mac/build/xcode/Release")
 }
 for (target in [[name: 'ios', outputs: ["${external.natj.root}/natj-ios/build/xcode/Release-iphoneos/libnatj.a",
                                         "${external.natj.root}/natj-ios/build/xcode/Release-iphonesimulator/libnatj.a"]],
                 [name: 'mac', outputs: ["${external.natj.root}/natj-mac/build/xcode/Release/libnatj.dylib"]],
-                [name: 'win', outputs: ["${external.natj.root}/natj-win/build/Release-Win64/natj.dll"]],
-                [name: 'api', outputs: [external.natj.jar.absolutePath], task: 'jar']]) {
+                [name: 'win', outputs: ["${external.natj.root}/natj-win/build/Release-Win64/natj.dll"]]]) {
     external.natj[target.name] = target.outputs.collect { file(it) }
 
-    task("build_ext_natj_${target.name}", type: Exec) {
-        workingDir external.natj.root
-        executable './gradlew'
-        if (target.task != null) {
-            args "${target.task}"
-        } else {
-            args ":natj-${target.name}:build"
-        }
-
-        def log = file("build/ext_natj_${target.name}.log")
-        mkdir log.parentFile
-        FileOutputStream ostream = new FileOutputStream(log);
-        setErrorOutput(ostream)
-        setStandardOutput(ostream)
-    }
-
     task("ext_natj_${target.name}") {
-        if (project.hasProperty('moe.external.rebuild.natj') ||
-                target.outputs.findAll() { !file(it).exists() }.size() > 0 ||
-                !external.natj.jar.exists()) {
-            dependsOn "build_ext_natj_${target.name}"
-        }
+        dependsOn gradle.includedBuild("natj").task(":natj-${target.name}:build")
+    }
+}
+
+subprojects.each { subproject ->
+    subproject.tasks.matching { it.name == "build" }.configureEach { buildTask ->
+        build.dependsOn buildTask
     }
 }
 

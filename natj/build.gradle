@@ -15,26 +15,8 @@ limitations under the License.
 */
 
 for (target in ['ios', 'macos', 'windows', 'ndk', 'linux']) {
-    task("prebuild_libffi_$target", type: Exec) {
-        workingDir '../../prebuilts'
-        executable './gradlew'
-        args ":external:libffi:prebuild_$target"
-
-        def log = file("build/prebuild_libffi_${target}.log")
-        mkdir log.parentFile
-        FileOutputStream ostream = new FileOutputStream(log);
-        setErrorOutput(ostream)
-        setStandardOutput(ostream)
-        ignoreExitValue = true
-
-        doLast {
-            if (getExecutionResult().get().getExitValue() != 0) {
-                logger.error("--------- COMMAND LOG START ---------")
-                logger.error(log.getText("UTF-8"))
-                logger.error("--------- COMMAND LOG END ---------")
-            }
-            getExecutionResult().get().assertNormalExitValue()
-        }
+    task("prebuild_libffi_$target") {
+        dependsOn gradle.includedBuild("prebuilts").task(":external:libffi:prebuild_$target")
     }
 }
 

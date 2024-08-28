@@ -1,4 +1,1 @@
-includeBuild "moe-core"
-includeBuild "natj"
-includeBuild "prebuilts"
-includeBuild "tools/master"
+includeBuild "tools"

@@ -42,7 +42,7 @@
 		555E7ED8241E7E9F001AC2E4 /* MetalPerformanceShaders.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MetalPerformanceShaders.m; sourceTree = "<group>"; };
 		555E7ED9241E7E9F001AC2E4 /* CoreAudioTypes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreAudioTypes.m; sourceTree = "<group>"; };
 		5586F6BC271BE13700A10696 /* CoreMedia.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreMedia.m; sourceTree = "<group>"; };
-		589215041D9AA0E300F8ACC0 /* jni.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = jni.h; path = ../../../../../natj/natj/src/main/native/include/jni.h; sourceTree = "<group>"; };
+		589215041D9AA0E300F8ACC0 /* jni.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = jni.h; path = ../../../../../natj/src/main/native/include/jni.h; sourceTree = "<group>"; };
 		6D92C47B1B90A67F00D21D3A /* CoreMIDI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreMIDI.m; sourceTree = "<group>"; };
 		D99B124D19F0479D00F6B669 /* AudioToolbox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioToolbox.m; sourceTree = "<group>"; };
 		D99B124E19F0479D00F6B669 /* AVFAudio.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AVFAudio.m; sourceTree = "<group>"; };
@@ -398,7 +398,7 @@
 					"$(SRCROOT)/../android.libnativehelper/build/xcode/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)",
 					"$(SRCROOT)/../android.frameworks.base.core.database/build/xcode/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)",
 					"$(SRCROOT)/../android.frameworks.base.native.binder/build/xcode/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)",
-					"\"$(SRCROOT)/../../../../natj/natj/natj-ios/build/xcode/Debug$(EFFECTIVE_PLATFORM_NAME)\"",
+					"\"$(SRCROOT)/../../../../natj/natj-ios/build/xcode/Debug$(EFFECTIVE_PLATFORM_NAME)\"",
 				);
 				OTHER_LDFLAGS = (
 					"-all_load",
@@ -472,7 +472,7 @@
 					"$(SRCROOT)/../android.libnativehelper/build/xcode/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)",
 					"$(SRCROOT)/../android.frameworks.base.core.database/build/xcode/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)",
 					"$(SRCROOT)/../android.frameworks.base.native.binder/build/xcode/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)",
-					"\"$(SRCROOT)/../../../../natj/natj/natj-ios/build/xcode/Release$(EFFECTIVE_PLATFORM_NAME)\"",
+					"\"$(SRCROOT)/../../../../natj/natj-ios/build/xcode/Release$(EFFECTIVE_PLATFORM_NAME)\"",
 				);
 				OTHER_LDFLAGS = (
 					"-all_load",

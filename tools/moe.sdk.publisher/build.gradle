@@ -40,8 +40,12 @@ projectDeps.each { evaluationDependsOn it }
 mkdir buildDir
 
 task buildDeps {
-    projectDeps.each { dependsOn project(it).tasks.build }
+    projectDeps.each {
+        dependsOn project(it).tasks.build
+    }
 }
+
+tasks.buildDeps.dependsOn(":ext_moe_core")
 
 if (!rootProject.hasProperty('moe.tools.sdk.exclude_mac')) {
     tasks.buildDeps.dependsOn ':ext_natj_mac'

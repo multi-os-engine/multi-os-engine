@@ -32,8 +32,7 @@ if (!rootProject.hasProperty('moe.tools.sdk.exclude_win')) {
 if (!rootProject.hasProperty('moe.tools.sdk.exclude_linux')) {
     tasks.classes.dependsOn ':ext_natj_linux'
 }
-tasks.classes.dependsOn ':ext_natj_api'
 
 dependencies {
-    api files(rootProject.external.natj.jar)
+    api "org.moe:natj"
 }

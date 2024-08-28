@@ -22,7 +22,6 @@ sourceCompatibility = "1.8"
 if (!rootProject.hasProperty('moe.tools.sdk.win_only')) {
     tasks.classes.dependsOn ':ext_natj_mac'
 }
-tasks.classes.dependsOn ':ext_natj_api'
 
 dependencies {
     implementation fileTree(dir: 'lib', include: '*.jar')
@@ -32,7 +31,7 @@ dependencies {
     implementation group: 'org.slf4j', name: 'slf4j-api', version: '1.7.+'
     implementation group: 'org.slf4j', name: 'slf4j-simple', version: '1.7.+'
 
-    implementation files(rootProject.external.natj.jar)
+    implementation "org.moe:natj"
 
     implementation project(':moe.tools.common')
     implementation project(':moe.binding.clang')
