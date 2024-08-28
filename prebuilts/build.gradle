@@ -53,6 +53,7 @@ def brewPath(suffix) {
 }
 
 task linuxCrosscompiler(type: Script) {
+    outputs.dir("build/linux-crosscompiler")
     progress 'Downloading crosscompiler'
     workDir 'linux-crosscompiler'
     if (isAppleSilicon) {
