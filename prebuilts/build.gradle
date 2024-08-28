@@ -16,6 +16,10 @@ limitations under the License.
 
 import org.moe.prebuilts.Script
 
+plugins {
+    id 'org.moe.buildtools'
+}
+
 apply plugin: 'idea'
 
 idea {

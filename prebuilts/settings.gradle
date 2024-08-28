@@ -1,3 +1,5 @@
+includeBuild "../build-tools"
+
 include ':external:libffi'
 include ':external:libimobiledevice:openssl'
 include ':external:libimobiledevice:libplist'

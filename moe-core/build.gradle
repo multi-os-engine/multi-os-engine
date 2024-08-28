@@ -16,6 +16,10 @@ limitations under the License.
 
 import org.moe.prebuilts.Script
 
+plugins {
+    id 'org.moe.buildtools'
+}
+
 apply plugin: 'base'
 
 version '1.10.1-SNAPSHOT'

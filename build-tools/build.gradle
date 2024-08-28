@@ -1,0 +1,12 @@
+plugins {
+    id 'java-gradle-plugin'
+}
+
+gradlePlugin {
+    plugins {
+        buildTools {
+            id = "org.moe.buildtools"
+            implementationClass = "org.moe.prebuilts.BuildTools"
+        }
+    }
+}

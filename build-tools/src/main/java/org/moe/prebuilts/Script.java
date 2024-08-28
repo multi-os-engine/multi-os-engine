@@ -17,7 +17,9 @@ limitations under the License.
 package org.moe.prebuilts;
 
 import org.gradle.api.GradleException;
-import org.gradle.api.tasks.InputDirectory;
+import org.gradle.api.tasks.Input;
+import org.gradle.api.tasks.Internal;
+import org.gradle.api.tasks.Optional;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -33,6 +35,8 @@ public class Script extends BaseTask {
     private String tempWorkDir;
 
     private List<Runnable> runnables = new ArrayList<>();
+
+    private String failureMessage;
 
     @Override
     protected File logFile() {
@@ -78,12 +82,22 @@ public class Script extends BaseTask {
         getProject().file(this.tempWorkDir).mkdirs();
     }
 
-    @InputDirectory
+    @Internal
     public File getWorkDir() {
         if (tempWorkDir == null) {
             throw new GradleException("workDir is not set");
         }
         return getProject().file(tempWorkDir);
+    }
+
+    @Input
+    @Optional
+    public String getFailureMessage() {
+        return failureMessage;
+    }
+
+    public void setFailureMessage(String failureMessage) {
+        this.failureMessage = failureMessage;
     }
 
     public void download(String target, String url) {
@@ -106,15 +120,26 @@ public class Script extends BaseTask {
     }
 
     public void exec(String exec, Iterable<String> args) {
+        final String failureMessage = this.failureMessage;
+        this.failureMessage = null;
         final File workDir = getWorkDir();
         final HashMap<String, String> envMap = new HashMap<>(this.envMap);
-        runnables.add(() -> exec(spec -> {
-            getProject().mkdir(workDir);
-            spec.workingDir(workDir);
+        runnables.add(() -> {
+            try {
+                exec(spec -> {
+                    getProject().mkdir(workDir);
+                    spec.workingDir(workDir);
 
-            spec.setExecutable(exec);
-            spec.args(args);
-            spec.getEnvironment().putAll(envMap);
-        }));
+                    spec.setExecutable(exec);
+                    spec.args(args);
+                    spec.getEnvironment().putAll(envMap);
+                });
+            } catch (Throwable t) {
+                if (failureMessage != null) {
+                    System.err.println(failureMessage);
+                }
+                throw t;
+            }
+        });
     }
 }
