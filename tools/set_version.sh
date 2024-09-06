@@ -23,7 +23,7 @@ COMPONENT="$1"
 VERSION="$2"
 
 TOOL_MASTER_DIR="$(cd "$(dirname "$0")" && pwd)"
-REPO_ROOT_DIR="$TOOL_MASTER_DIR/../../.."
+REPO_ROOT_DIR="$TOOL_MASTER_DIR/../.."
 MOE_DIR="$REPO_ROOT_DIR/moe"
 MOE_CORE_DIR="$MOE_DIR/moe-core"
 MOE_TOOLS_DIR="$MOE_DIR/tools"
