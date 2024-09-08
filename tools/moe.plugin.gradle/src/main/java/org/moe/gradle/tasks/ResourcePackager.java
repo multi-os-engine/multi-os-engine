@@ -35,6 +35,7 @@ import org.moe.gradle.utils.TaskUtils;
 
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.Arrays;
 import java.util.List;
 
 public class ResourcePackager {
@@ -99,8 +100,20 @@ public class ResourcePackager {
 
         Action<Project> configureTask = _project -> {
             // Update settings
-            resourcePackagerTask.getDestinationDirectory().set(project.file(project.getBuildDir().toPath().resolve(out).toFile()));
-            resourcePackagerTask.getArchiveFileName().set("application.jar");
+            try {
+                resourcePackagerTask.getDestinationDirectory().set(project.file(project.getBuildDir().toPath().resolve(out).toFile()));
+                resourcePackagerTask.getArchiveFileName().set("application.jar");
+            }
+            catch (NoSuchMethodError err) {
+                try {
+                    // we must be on a old version of gradle, try the older methods
+                    legacyCall(resourcePackagerTask, "setDestinationDir", project.file(project.getBuildDir().toPath().resolve(out).toFile()));
+                    legacyCall(resourcePackagerTask, "setArchiveName", "application.jar");
+                }
+                catch (Throwable ignored) {
+                    throw err;
+                }
+            }
             resourcePackagerTask.from(project.zipTree(proguardTask.getOutJar()));
             resourcePackagerTask.exclude("**/*.class");
 
@@ -159,5 +172,9 @@ public class ResourcePackager {
                 }
             });
         });
+    }
+
+    private static void legacyCall(Object obj, String method, Object... params) throws Exception {
+        obj.getClass().getMethod(method, Arrays.stream(params).map(Object::getClass).toArray(Class[]::new)).invoke(obj, params);
     }
 }

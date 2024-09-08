@@ -108,7 +108,19 @@ open class Desugar : AbstractBaseTask() {
 
         composeConfigurationFile()
         javaexec { spec ->
-            spec.mainClass.set("-jar")
+            try {
+                spec.mainClass.set("-jar")
+            }
+            catch (ex: NoSuchMethodError) {
+                // old version of gradle, try the old method
+                // spec.main = "-jar"
+                try {
+                    spec::class.members.firstOrNull { it.name == "main" }!!.call(spec, "-jar")
+                }
+                catch (ignored: Throwable) {
+                    throw ex;
+                }
+            }
             spec.args(getProGuardJar().absolutePath, "@" + getComposedCfgFile().absolutePath)
         }
     }
