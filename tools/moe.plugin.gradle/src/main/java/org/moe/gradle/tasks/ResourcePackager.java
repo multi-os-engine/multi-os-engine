@@ -22,6 +22,7 @@ import org.gradle.api.Rule;
 import org.gradle.api.file.CopySpec;
 import org.gradle.api.tasks.SourceSet;
 import org.gradle.api.tasks.bundling.Jar;
+import org.gradle.util.GradleVersion;
 import org.moe.gradle.MoeExtension;
 import org.moe.gradle.MoePlugin;
 import org.moe.gradle.MoeSDK;
@@ -100,19 +101,14 @@ public class ResourcePackager {
 
         Action<Project> configureTask = _project -> {
             // Update settings
-            try {
+            if (GradleVersion.current().compareTo(GradleVersion.version("5.1")) >= 0) {
                 resourcePackagerTask.getDestinationDirectory().set(project.file(project.getBuildDir().toPath().resolve(out).toFile()));
                 resourcePackagerTask.getArchiveFileName().set("application.jar");
             }
-            catch (NoSuchMethodError err) {
-                try {
-                    // we must be on a old version of gradle, try the older methods
-                    legacyCall(resourcePackagerTask, "setDestinationDir", project.file(project.getBuildDir().toPath().resolve(out).toFile()));
-                    legacyCall(resourcePackagerTask, "setArchiveName", "application.jar");
-                }
-                catch (Throwable ignored) {
-                    throw err;
-                }
+            else {
+                // we must be on an old version of gradle, try the older methods
+                legacyCall(resourcePackagerTask, "setDestinationDir", project.file(project.getBuildDir().toPath().resolve(out).toFile()));
+                legacyCall(resourcePackagerTask, "setArchiveName", "application.jar");
             }
             resourcePackagerTask.from(project.zipTree(proguardTask.getOutJar()));
             resourcePackagerTask.exclude("**/*.class");
@@ -174,7 +170,12 @@ public class ResourcePackager {
         });
     }
 
-    private static void legacyCall(Object obj, String method, Object... params) throws Exception {
-        obj.getClass().getMethod(method, Arrays.stream(params).map(Object::getClass).toArray(Class[]::new)).invoke(obj, params);
+    private static void legacyCall(Object obj, String method, Object... params) {
+        try {
+            obj.getClass().getMethod(method, Arrays.stream(params).map(Object::getClass).toArray(Class[]::new)).invoke(obj, params);
+        }
+        catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
 }

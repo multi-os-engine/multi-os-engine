@@ -7,6 +7,7 @@ import org.gradle.api.tasks.InputFiles
 import org.gradle.api.tasks.Internal
 import org.gradle.api.tasks.OutputFile
 import org.gradle.api.tasks.SourceSet
+import org.gradle.util.GradleVersion
 import org.moe.gradle.MoePlugin
 import org.moe.gradle.anns.IgnoreUnused
 import org.moe.gradle.anns.NotNull
@@ -108,18 +109,13 @@ open class Desugar : AbstractBaseTask() {
 
         composeConfigurationFile()
         javaexec { spec ->
-            try {
+            if (GradleVersion.current().compareTo(GradleVersion.version("6.4")) >= 0) {
                 spec.mainClass.set("-jar")
             }
-            catch (ex: NoSuchMethodError) {
-                // old version of gradle, try the old method
-                // spec.main = "-jar"
-                try {
-                    spec::class.members.firstOrNull { it.name == "main" }!!.call(spec, "-jar")
-                }
-                catch (ignored: Throwable) {
-                    throw ex;
-                }
+            else {
+                // old version of gradle, try the old method: spec.main = "-jar"
+                // when deprecated method is removed, we may need to use: spec::class.members.firstOrNull { it.name == "main" }!!.call(spec, "-jar")
+                spec.setMain("-jar")
             }
             spec.args(getProGuardJar().absolutePath, "@" + getComposedCfgFile().absolutePath)
         }
