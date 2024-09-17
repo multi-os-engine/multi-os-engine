@@ -170,13 +170,6 @@ extern "C" int run_moevm(int isDebug, const int jargc, char* const* jargv) {
         NSString* localeStr = [NSLocale.currentLocale.localeIdentifier stringByReplacingOccurrencesOfString:@"_" withString:@"-"];
         [args addObject:[NSString stringWithFormat:@"-Duser.locale=%@", localeStr]];
     }
-
-    NSString* tmpStr =
-        [NSString stringWithFormat:@"-Djava.io.tmpdir=%s", getenv("MOE_TMP_DIR")];
-
-    [args addObject:tmpStr];
-
-
     // Create arguments for classpath
     [args addObject:@CLASSPATH_PREFIX];
     [args addObject:@""];

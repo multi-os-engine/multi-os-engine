@@ -22,6 +22,9 @@ public class IOSLauncher {
         // Args that need to be passed to user main
         String[] realArgs = Arrays.copyOfRange(args, 1, args.length);
 
+        // we set this here to make sure it can be overridden if needed by the app
+        System.setProperty("java.io.tmpdir", System.getenv("MOE_TMP_DIR"));
+
         // Invoke main method
         Method mainMethod;
         try {
