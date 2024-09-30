@@ -281,7 +281,7 @@ public class ProGuard extends AbstractBaseTask {
     private String composeInputFileFilter() {
         StringBuilder sb = new StringBuilder();
         // Add default exclusions
-        sb.append("(!**.framework/**,!**.bundle/**,!module-info.class,!META-INF/MANIFEST.MF");
+        sb.append("(!**.framework/**,!**.bundle/**,!module-info.class,!META-INF/MANIFEST.MF,!META-INF/**.SF");
 
         // Add user specified
         for (String excludeFile : getExcludeFiles()) {
