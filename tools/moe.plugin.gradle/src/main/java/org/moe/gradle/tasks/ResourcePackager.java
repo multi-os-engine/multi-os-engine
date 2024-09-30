@@ -107,8 +107,8 @@ public class ResourcePackager {
             }
             else {
                 // we must be on an old version of gradle, try the older methods
-                legacyCall(resourcePackagerTask, "setDestinationDir", project.file(project.getBuildDir().toPath().resolve(out).toFile()));
-                legacyCall(resourcePackagerTask, "setArchiveName", "application.jar");
+                TaskUtils.legacyCall(resourcePackagerTask, "setDestinationDir", project.file(project.getBuildDir().toPath().resolve(out).toFile()));
+                TaskUtils.legacyCall(resourcePackagerTask, "setArchiveName", "application.jar");
             }
             resourcePackagerTask.from(project.zipTree(proguardTask.getOutJar()));
             resourcePackagerTask.exclude("**/*.class");
@@ -168,14 +168,5 @@ public class ResourcePackager {
                 }
             });
         });
-    }
-
-    private static void legacyCall(Object obj, String method, Object... params) {
-        try {
-            obj.getClass().getMethod(method, Arrays.stream(params).map(Object::getClass).toArray(Class[]::new)).invoke(obj, params);
-        }
-        catch (Exception e) {
-            throw new RuntimeException(e);
-        }
     }
 }

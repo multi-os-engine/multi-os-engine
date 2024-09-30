@@ -57,6 +57,18 @@ public class TaskUtils {
         }
     }
 
+
+    public static void legacyCall(Object obj, String method, Object... params) {
+        Require.nonNull(obj);
+        Require.nonNull(method);
+
+        try {
+            obj.getClass().getMethod(method, Arrays.stream(params).map(Object::getClass).toArray(Class[]::new)).invoke(obj, params);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+
     public static SourceSet getSourceSet(@NotNull AbstractMoePlugin plugin, @NotNull String sourceSetName) {
         Require.nonNull(plugin);
         Require.nonNull(sourceSetName);
