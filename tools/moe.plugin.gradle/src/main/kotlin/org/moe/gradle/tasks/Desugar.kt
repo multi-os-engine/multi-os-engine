@@ -7,6 +7,7 @@ import org.gradle.api.tasks.InputFiles
 import org.gradle.api.tasks.Internal
 import org.gradle.api.tasks.OutputFile
 import org.gradle.api.tasks.SourceSet
+import org.gradle.util.GradleVersion
 import org.moe.gradle.MoePlugin
 import org.moe.gradle.anns.IgnoreUnused
 import org.moe.gradle.anns.NotNull
@@ -108,7 +109,14 @@ open class Desugar : AbstractBaseTask() {
 
         composeConfigurationFile()
         javaexec { spec ->
-            spec.mainClass.set("-jar")
+            if (GradleVersion.current().compareTo(GradleVersion.version("6.4")) >= 0) {
+                spec.mainClass.set("-jar")
+            }
+            else {
+                // old version of gradle, try the old method: spec.main = "-jar"
+                // when deprecated method is removed, we may need to use: spec::class.members.firstOrNull { it.name == "main" }!!.call(spec, "-jar")
+                spec.setMain("-jar")
+            }
             spec.args(getProGuardJar().absolutePath, "@" + getComposedCfgFile().absolutePath)
         }
     }

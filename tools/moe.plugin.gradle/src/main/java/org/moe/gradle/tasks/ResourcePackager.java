@@ -22,6 +22,7 @@ import org.gradle.api.Rule;
 import org.gradle.api.file.CopySpec;
 import org.gradle.api.tasks.SourceSet;
 import org.gradle.api.tasks.bundling.Jar;
+import org.gradle.util.GradleVersion;
 import org.moe.gradle.MoeExtension;
 import org.moe.gradle.MoePlugin;
 import org.moe.gradle.MoeSDK;
@@ -35,6 +36,7 @@ import org.moe.gradle.utils.TaskUtils;
 
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.Arrays;
 import java.util.List;
 
 public class ResourcePackager {
@@ -99,8 +101,15 @@ public class ResourcePackager {
 
         Action<Project> configureTask = _project -> {
             // Update settings
-            resourcePackagerTask.getDestinationDirectory().set(project.file(project.getBuildDir().toPath().resolve(out).toFile()));
-            resourcePackagerTask.getArchiveFileName().set("application.jar");
+            if (GradleVersion.current().compareTo(GradleVersion.version("5.1")) >= 0) {
+                resourcePackagerTask.getDestinationDirectory().set(project.file(project.getBuildDir().toPath().resolve(out).toFile()));
+                resourcePackagerTask.getArchiveFileName().set("application.jar");
+            }
+            else {
+                // we must be on an old version of gradle, try the older methods
+                TaskUtils.legacyCall(resourcePackagerTask, "setDestinationDir", project.file(project.getBuildDir().toPath().resolve(out).toFile()));
+                TaskUtils.legacyCall(resourcePackagerTask, "setArchiveName", "application.jar");
+            }
             resourcePackagerTask.from(project.zipTree(proguardTask.getOutJar()));
             resourcePackagerTask.exclude("**/*.class");
 
