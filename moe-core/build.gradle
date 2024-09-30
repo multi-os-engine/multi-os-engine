@@ -56,8 +56,10 @@ for (target in [[name: 'ios', outputs: ["${external.natj.root}/natj-ios/build/xc
 }
 
 subprojects.each { subproject ->
-    subproject.tasks.matching { it.name == "build" }.configureEach { buildTask ->
-        build.dependsOn buildTask
+    subproject.afterEvaluate {
+        subproject.tasks.matching { it.name == "build" }.all { buildTask ->
+            build.dependsOn buildTask
+        }
     }
 }
 
