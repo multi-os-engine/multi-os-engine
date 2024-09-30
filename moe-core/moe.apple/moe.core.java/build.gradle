@@ -22,6 +22,12 @@ apply plugin: 'java'
 
 def android_path = rootProject.file("../../aosp").absolutePath
 
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(8)
+    }
+}
+
 static def JvmVersionMeets(version) {
     def currentJvm = Jvm.current()
     return version <= Integer.parseInt(currentJvm.javaVersion.majorVersion)
@@ -252,9 +258,7 @@ task coreJavadoc(type: Javadoc) {
     source sourceSets.core.allJava
     destinationDir = file('build/docs/coreJavadoc')
     include "**/*.java"
-    if (JvmVersionMeets(8)) {
-        options.addStringOption('Xdoclint:none', '-quiet')
-    }
+    options.addStringOption('Xdoclint:none', '-quiet')
     options.addStringOption('source', '1.8')
 }
 
