@@ -10,11 +10,19 @@
 
 ### Setup & Generation
 
+* Update framework list
+  ```sh
+    cd <repo>/moe/moe-core/moe.apple/moe.platform.ios/
+    python3 platform_natjgen_updater.py
+    ```
+  On the top of the output you will find a listing of the discovered frameworks and a diff to the previous discovered frameworks.  
+  Make sure, that all deleted frameworks (Existing - Latest) are deprecated, got removed or are internal. If everything is sane, update the `platform.natjgen` file with the output.
+
 * Build NatJGen if necessary
 
     ```sh
-    cd <repo>/moe/tools/master
-    ./gradlew :moe.generator.natjgen:build
+    cd <repo>/moe/
+    ./gradlew :tools:moe.generator.natjgen:build
     ```
 
 * Locate the latest build of the MOE SDK (at the time of writing, this is MOE 1.3). From this directory Clang and NatJ dylibs will be used. Create a local MOE SDK build if necessary.
@@ -35,7 +43,7 @@
     ```
 
 * Run the `remove_deprecated_files.py` to remove deprecated files
-* After the generator completed successfully, run the "spotlessApply" gradle task
+* Run the `spotlessApply` gradle task
 * Review your git diff and revert any changes that are whitespace only, meaning indentation changes and line-breaks
     * NatJGen has a known issue where it will generate the same code but with different indentation
     * Do not commit `moe.apple/moe.platform.ios/typeconfig.out.ngtconf` it is only generated so `moe.apple/moe.platform.ios/typeconfig.ngtconf` can be updated
