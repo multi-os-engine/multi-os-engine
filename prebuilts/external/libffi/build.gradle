@@ -25,6 +25,8 @@ task prebuild_ios(type: Prebuild) {
     targetName 'ios'
     preBuildCopySpec copySpec {
         from('.') {
+            include 'libffi-disable-armv7-ios.patch'
+            include 'libffi-backport-cif-fix.patch'
             include 'moe-prebuild-ios.sh'
         }
     }
@@ -38,6 +40,7 @@ task prebuild_macos(type: Prebuild) {
     targetName 'macos'
     preBuildCopySpec copySpec {
         from('.') {
+            include 'libffi-backport-cif-fix.patch'
             include 'moe-prebuild-macos.sh'
         }
     }
