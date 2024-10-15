@@ -14,8 +14,13 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
+plugins {
+    id("org.gradle.toolchains.foojay-resolver-convention") version "0.8.0"
+}
+
 includeBuild("../build-tools")
 includeBuild("../natj")
+
 // iOS bindings
 include ':moe.apple:moe.platform.ios',
         ':moe.apple:moe.platform.ios.junit'
