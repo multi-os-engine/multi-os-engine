@@ -1609,6 +1609,8 @@ public class ObjCRuntime extends NativeRuntime {
      */
     private static native void terminateWithJavaException(Throwable ex);
 
+    public static native Throwable convertNSExceptionToJavaException(long peer);
+
     private static final Thread.UncaughtExceptionHandler crashHandler = new Thread.UncaughtExceptionHandler() {
         @Override
         public void uncaughtException(Thread thread, Throwable ex) {

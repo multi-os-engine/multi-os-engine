@@ -999,6 +999,10 @@ Java_org_moe_natj_objc_ObjCRuntime_terminateWithJavaException(JNIEnv* env,
                                                               jclass clazz,
                                                               jthrowable ex);
 
+JNIEXPORT jthrowable JNICALL Java_org_moe_natj_objc_ObjCRuntime_convertNSExceptionToJavaException(JNIEnv* env,
+                                                                   jclass clazz,
+                                                                   jlong ex);
+
 }
 
 #endif

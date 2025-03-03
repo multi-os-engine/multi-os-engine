@@ -1136,6 +1136,12 @@ void Java_org_moe_natj_objc_ObjCRuntime_terminateWithJavaException(JNIEnv* env,
   }
 }
 
+jthrowable Java_org_moe_natj_objc_ObjCRuntime_convertNSExceptionToJavaException(JNIEnv* env,
+                                                                   jclass clazz,
+                                                                   jlong ex) {
+  return handleObjCException(env, (void*)ex);
+}
+
 void setCurrentInitTargetOnCurrentThread(jobject target) {
   @autoreleasepool {
     [[[NSThread currentThread] threadDictionary]
