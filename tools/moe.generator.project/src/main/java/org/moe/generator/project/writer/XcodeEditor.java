@@ -240,6 +240,27 @@ public class XcodeEditor extends AbstractXcodeEditor {
         setAsUpToDate();
         cleanupBuildSettings(project);
 
+        // Set deployment target to at least iOS 11.
+        String deploy = getBuildSettingValue(project, "IPHONEOS_DEPLOYMENT_TARGET");
+        boolean deployLow;
+        if (deploy == null || deploy.isEmpty()) {
+            deployLow = true;
+        } else {
+            try {
+                double v = Double.parseDouble(deploy);
+                deployLow = v < 11;
+            } catch (NumberFormatException ex) {
+                ex.printStackTrace();
+                deployLow = true;
+            }
+        }
+        if (deployLow) {
+            setBuildSetting(project, "IPHONEOS_DEPLOYMENT_TARGET", "11.0");
+        }
+
+        // Allow only arm64 for real device
+        setBuildSetting(project, "ARCHS[sdk=iphoneos*]", "arm64");
+
         // Disable i386 build for simulators
         setBuildSetting(project, "EXCLUDED_ARCHS[sdk=iphonesimulator*]", "i386");
         setBuildSetting(project, "EXCLUDED_ARCHS[sdk=iphoneos*]", "armv7");
@@ -287,10 +308,10 @@ public class XcodeEditor extends AbstractXcodeEditor {
             sb.append("${MOE_PROJECT_BUILD_DIR}/moe/").append(sourceSet).append("/xcode/${CONFIGURATION}${EFFECTIVE_PLATFORM_NAME}/llvm_${arch}.o ");
         }
         sb.append(
-                "${MOE_CUSTOM_OTHER_LDFLAGS} "
-                        + "-Wl,-force_load,${MOE_LIB_PATH}/libmoe.a "
-                        + "-lc++ -lpthread -lsqlite3 "
-                        + "-Wl,-framework,Foundation -Wl,-framework,CoreServices"
+            "${MOE_CUSTOM_OTHER_LDFLAGS} "
+                + "-Wl,-force_load,${MOE_LIB_PATH}/libmoe.a "
+                + "-lc++ -lpthread -lsqlite3 "
+                + "-Wl,-framework,Foundation -Wl,-framework,CoreServices"
         );
         setBuildSetting(target, "MOE_OTHER_LDFLAGS", sb.toString());
 
@@ -315,6 +336,9 @@ public class XcodeEditor extends AbstractXcodeEditor {
 
         //Check FRAMEWORK_SEARCH_PATHS
         checkFrameWorkSearchPaths(target);
+
+        //Check HEADER_SEARCH_PATHS
+        checkHeaderSearchPaths(target);
 
         //Check OTHER_LDFLAGS
         checkOtherLDFlags(target);
