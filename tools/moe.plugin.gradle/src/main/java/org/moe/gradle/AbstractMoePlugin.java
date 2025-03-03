@@ -343,7 +343,6 @@ public abstract class AbstractMoePlugin implements Plugin<Project> {
         Arrays.asList("compileJava", "compileTestJava").forEach(name -> {
             Task task = project.getTasks().getByName(name);
             CompileOptions compileOptions = ((JavaCompile) task).getOptions();
-            compileOptions.setBootstrapClasspath(project.files(getSDK().getCoreJar()));
             compileOptions.setFork(true);
         });
 

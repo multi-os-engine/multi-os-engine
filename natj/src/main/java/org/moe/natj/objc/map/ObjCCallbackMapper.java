@@ -20,6 +20,7 @@ import org.moe.natj.general.Mapper;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
 import org.moe.natj.general.ann.Runtime;
+import org.moe.natj.general.mem.Releaser;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.WeakReference;
 import org.moe.natj.objc.ann.ObjCBlock;
@@ -42,13 +43,13 @@ public class ObjCCallbackMapper implements Mapper {
      * Collection used for caching generated native blocks where the Java instance has no cache
      * field.
      */
-    public Map<Object, WeakReference[]> instance2callbacks =
+    public final Map<Object, WeakReference[]> instance2callbacks =
             new WeakHashMap<Object, WeakReference[]>();
 
     /**
      * Collection used for caching data generated for Java blocks.
      */
-    public Map<Class<?>, Long> class2data = new HashMap<Class<?>, Long>();
+    public final Map<Class<?>, Long> class2data = new HashMap<Class<?>, Long>();
 
     /**
      * Cache constructor class used for constructing cache through the NatJ interface.
@@ -78,7 +79,7 @@ public class ObjCCallbackMapper implements Mapper {
     /**
      * Collection for caching the created Java proxy classes and data of native blocks.
      */
-    public Map<Class<?>, NativeBlockInfo> block2blockInfo =
+    public final Map<Class<?>, NativeBlockInfo> block2blockInfo =
             new HashMap<Class<?>, NativeBlockInfo>();
 
     /**
@@ -88,7 +89,7 @@ public class ObjCCallbackMapper implements Mapper {
      * Will remove the weak reference from the Objective-C block object and send release message
      * to the pointed object.
      */
-    private static Pointer.Releaser strongBlockBindingReleaser = new Pointer.Releaser() {
+    private static final Releaser strongBlockBindingReleaser = new Releaser() {
         @Override
         public void release(long peer) {
             ObjCRuntime.lockObject(peer);
@@ -391,7 +392,7 @@ public class ObjCCallbackMapper implements Mapper {
         if (!Proxy.isProxyClass(instance.getClass())
                 || Proxy.getInvocationHandler(instance) == null
                 || !(Proxy.getInvocationHandler(instance) instanceof BlockInvocationHandler)) {
-            long peer = getNativeCallback(instance, name, argTypes, false);
+            long peer = getNativeCallback(null, instance, name, argTypes, false);
             if (peer != 0) {
                 return ObjCRuntime.createStrongPointer(peer, true);
             }
@@ -418,7 +419,7 @@ public class ObjCCallbackMapper implements Mapper {
      * @param toCreate Block should be created
      * @return Pointer to block object
      */
-    private long getNativeCallback(Object instance, String name, java.lang.Class<?>[] argTypes,
+    private long getNativeCallback(Class<?> baseType, Object instance, String name, java.lang.Class<?>[] argTypes,
             boolean toCreate) {
         if (instance == null) {
             return 0;
@@ -432,6 +433,10 @@ public class ObjCCallbackMapper implements Mapper {
             int[] idxRef = new int[1];
             int[] countRef = new int[1];
             method = NatJ.getMethod(cls, name, argTypes, idxRef, countRef);
+            if (method == null && baseType != null) {
+                method = NatJ.getMethod(baseType, name, argTypes, idxRef, countRef);
+                cls = baseType;
+            }
             if (method == null) {
                 return 0;
             }
@@ -524,7 +529,7 @@ public class ObjCCallbackMapper implements Mapper {
             ObjCBlock blck = (ObjCBlock) info.callback;
 
             // The memory management is almost the same as the one explained at the proxies
-            peer = getNativeCallback(instance, blck.name(), blck.argTypes(), true);
+            peer = getNativeCallback(info.type, instance, blck.name(), blck.argTypes(), true);
         } else {
             peer = pointer.getPeer();
             ObjCRuntime.retainObject(peer);

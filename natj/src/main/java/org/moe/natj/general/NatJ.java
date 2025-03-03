@@ -51,6 +51,11 @@ public class NatJ {
     private static final String OS_DARWIN = "Darwin";
 
     /*
+     * Constant for identifying iOS platforms.
+     */
+    private static final String OS_IOS = "iOS";
+
+    /*
      * Constant for identifying Windows platforms.
      */
     private static final String OS_WINDOWS = "Windows";
@@ -66,6 +71,11 @@ public class NatJ {
     private static boolean isDalvik;
 
     /*
+     * Whether current runtime is SubstrateVM.
+     */
+    private static boolean isSubstrateVM;
+
+    /*
      * Dynamic library extension.
      */
     private static String dynlibExt;
@@ -74,7 +84,14 @@ public class NatJ {
      * Returns whether the current platform is Darwin.
      */
     private static boolean isDarwin() {
-        return currentOS == OS_DARWIN;
+        return currentOS == OS_DARWIN || isIOS();
+    }
+
+    /*
+     * Returns whether the current platform is iOS.
+     */
+    private static boolean isIOS() {
+        return currentOS == OS_IOS;
     }
 
     /*
@@ -91,17 +108,31 @@ public class NatJ {
         return isDalvik;
     }
 
+    /*
+     * Returns whether the current runtime is SubstrateVM.
+     */
+    private static boolean isSubstrateVM() {
+        return isSubstrateVM;
+    }
+
+    /**
+     * Whether NatJ is statically linked
+     */
+    private static boolean isStaticLinked() {
+        return isDalvik() || (isIOS() && isSubstrateVM());
+    }
+
     /**
      * Collection for caching runtime objects.
      */
-    private static Map<Class<? extends NativeRuntime>, NativeRuntime> runtimes =
+    private static final Map<Class<? extends NativeRuntime>, NativeRuntime> runtimes =
             new HashMap<Class<? extends NativeRuntime>, NativeRuntime>();
 
     /**
      * Collection used for marking runtimes that are being constructed to keep these runtimes from
      * being constructed multiple times.
      */
-    private static Set<Class<? extends NativeRuntime>> runtimesUnderConstruction =
+    private static final Set<Class<? extends NativeRuntime>> runtimesUnderConstruction =
             new HashSet<Class<? extends NativeRuntime>>();
 
     /**
@@ -115,7 +146,7 @@ public class NatJ {
     /**
      * A placeholder runtime instance, used for registering a runtime as invalid;.
      */
-    private static NativeRuntime invalidRuntime = new NativeRuntime(null, null, null) {
+    private static final NativeRuntime invalidRuntime = new NativeRuntime(null, null, null) {
         @Override
         public void tryToDisposeCallback(Object callback) {
         }
@@ -186,15 +217,19 @@ public class NatJ {
                                 || os_name_lowercase.contains("mac")) {
                             currentOS = OS_DARWIN;
                             dynlibExt = "dylib";
+                        } else if (os_name_lowercase.contains("ios")) {
+                            currentOS = OS_IOS;
+                            dynlibExt = "dylib";
                         } else {
                             dynlibExt = "so";
                         }
 
-                        // In the Dalvik-on-Darwin case NatJ will be statically linked
                         String java_vm_name = props.getProperty("java.vm.name");
                         isDalvik = "Dalvik".equals(java_vm_name);
-                        if (isDalvik()) {
-                            if (isDarwin()) {
+                        isSubstrateVM = java_vm_name.toLowerCase().contains("substrate");
+
+                        if (isStaticLinked()) {
+                            if (isDalvik()) {
                                 System.load("NatJ");
                             } else {
                                 System.loadLibrary("natj");
@@ -406,7 +441,7 @@ public class NatJ {
     /**
      * Collection for caching any resolved library name.
      */
-    private static Map<String, String> resolvedLibraries = new HashMap<String, String>();
+    private static final Map<String, String> resolvedLibraries = new HashMap<String, String>();
 
 
     private static String darwinSystemFrameworkRootDir = null;
@@ -611,7 +646,7 @@ public class NatJ {
     /**
      * Collection for strong references.
      */
-    private static HashMap<Long, Object> strongReferences = new HashMap<Long, Object>();
+    private final static HashMap<Long, Object> strongReferences = new HashMap<Long, Object>();
 
     /**
      * Adds a strong reference.
@@ -660,7 +695,7 @@ public class NatJ {
     /**
      * Collection for weak references.
      */
-    private static HashMap<Long, WeakReference<Object>> weakReferences =
+    private static final HashMap<Long, WeakReference<Object>> weakReferences =
         new HashMap<Long, WeakReference<Object>>();
 
     /**
@@ -959,6 +994,12 @@ public class NatJ {
      * Java one.
      */
     public static class NativeObjectConstructionInfo {
+        /**
+         * The compile-time Java type this native object was converted from.
+         * Only used when calling back to java method from native blocks.
+         */
+        public Class<?> type;
+
         /** Extra information for callbacks. */
         public Object callback;
 
@@ -1129,6 +1170,7 @@ public class NatJ {
             Class<?> mapperClass, Annotation callback, boolean owned, boolean byvalue,
             boolean arg) {
         NativeObjectConstructionInfo info = new NativeObjectConstructionInfo();
+        info.type = type;
         info.owned = owned;
         info.arg = arg;
         info.callback = callback;

@@ -1,10 +1,11 @@
 package org.moe;
 
+import apple.foundation.NSLocale;
+import apple.foundation.NSTimeZone;
 import org.moe.natj.objc.ObjCRuntime;
 
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
-import java.util.Arrays;
+import java.util.Locale;
+import java.util.TimeZone;
 
 /**
  * A launcher class that allows us run extra code before running the actual application.
@@ -16,25 +17,15 @@ public class IOSLauncher {
         // Register the crash hook for main thread
         ObjCRuntime.crashAppWhenExceptionUncaught();
 
-        // Get the user main class
-        String mainClassName = args[0];
+        MOE.init();
 
-        // Args that need to be passed to user main
-        String[] realArgs = Arrays.copyOfRange(args, 1, args.length);
+        // Update default locale
+        String localeTag = NSLocale.currentLocale().localeIdentifier().replace('_', '-');
+        Locale.setDefault(Locale.forLanguageTag(localeTag));
+
+        TimeZone.setDefault(TimeZone.getTimeZone(NSTimeZone.localTimeZone().name()));
 
         // Invoke main method
-        Method mainMethod;
-        try {
-            Class<?> c = Class.forName(mainClassName);
-            mainMethod = c.getDeclaredMethod("main", String[].class);
-        } catch (ClassNotFoundException | NoSuchMethodException e) {
-            throw new RuntimeException("Cannot execute main method from class " + mainClassName, e);
-        }
-        try {
-            mainMethod.invoke(null, (Object) realArgs);
-        } catch (InvocationTargetException e) {
-            // Thrown out the wrapped exception instead
-            throw e.getCause();
-        }
+        MOE.launchMain(args);
     }
 }

@@ -15,12 +15,7 @@ limitations under the License.
 */
 
 
-import org.gradle.internal.jvm.Jvm
-import org.moe.prebuilts.Script
-
 apply plugin: 'java'
-
-def android_path = rootProject.file("../../aosp").absolutePath
 
 java {
     toolchain {
@@ -28,141 +23,15 @@ java {
     }
 }
 
-static def JvmVersionMeets(version) {
-    def currentJvm = Jvm.current()
-    return version <= Integer.parseInt(currentJvm.javaVersion.majorVersion)
-}
-
-/******************************************************************************
- * Conscrypt Generation
- ******************************************************************************/
-
-task generateConscryptFiles {
-    dependsOn ':moe.apple:moe.core.native:android.external.conscrypt:build_generate_macos_macosx_release'
-    def outfile = file('build/conscryptgen/NativeConstants.java')
-    mkdir outfile.parentFile
-    outputs.file(outfile)
-
-    doLast {
-        def conscryptP = project(':moe.apple:moe.core.native:android.external.conscrypt')
-        def generateX = conscryptP.file('build/xcode/Release-macos-macosx/generate').absolutePath
-
-        def log = new ByteArrayOutputStream()
-        exec {
-            commandLine generateX
-            setStandardOutput(log)
-        }
-        outfile.text = log.toString()
-    }
-}
-
-/******************************************************************************
- * SPrep Generation
- ******************************************************************************/
-
-def icuOutputBase = file("build/icugen")
-def icuOutput = new File(icuOutputBase, "android/icu/impl/data/icudt56b")
-
-task icuOutputPrepare {
-    doLast {
-        delete(icuOutput)
-        mkdir(icuOutput)
-    }
-}
-
-task generateSPrepFiles(type: Script, dependsOn: icuOutputPrepare) {
-    dependsOn ':moe.apple:moe.core.native:android.external.icu:build_gensprep_macos_macosx_release'
-    def icuP = project(':moe.apple:moe.core.native:android.external.icu')
-    def gensprepX = icuP.file('build/xcode/Release-macos-macosx/gensprep').absolutePath
-
-    def sprepInput = file("${android_path}/external/icu/icu4c/source/data/sprep").listFiles().findAll {
-        it.name.endsWith('.txt')
-    }
-
-    workDir '.'
-    sprepInput.each { f ->
-        exec gensprepX, '-i', "${android_path}/external/icu/icu4c/source/stubdata",
-                '-d', icuOutput.absolutePath,
-                '-u', '3.2.0',
-                '-m', "${android_path}/external/icu/icu4c/source/data/unidata",
-                '-b', f.name.split('\\.')[0..-2].join('.'),
-                '-s', f.parentFile.absolutePath,
-                f.name
-    }
-}
-
-/******************************************************************************
- * CFU Generation
- ******************************************************************************/
-
-task generateCFUFile(type: Script, dependsOn: icuOutputPrepare) {
-    dependsOn ':moe.apple:moe.core.native:android.external.icu:build_gencfu_macos_macosx_release'
-    def icuP = project(':moe.apple:moe.core.native:android.external.icu')
-    def gencfuX = icuP.file('build/xcode/Release-macos-macosx/gencfu').absolutePath
-
-    def cfuRuleInput = file("${android_path}/external/icu/icu4c/source/data/unidata/confusables.txt")
-    def cfuScriptInput = file("${android_path}/external/icu/icu4c/source/data/unidata/confusablesWholeScript.txt")
-
-    workDir '.'
-    exec gencfuX, '-i', "${android_path}/external/icu/icu4c/source/stubdata",
-            '-r', cfuRuleInput.absolutePath,
-            '-w', cfuScriptInput.absolutePath,
-            '-d', icuOutput.absolutePath,
-            '-o', new File(icuOutput, "confusables.cfu").name
-}
-
-/******************************************************************************
- * ICU Data File Generation
- ******************************************************************************/
-
-task copyICUDataFiles(type: Copy, dependsOn: [generateSPrepFiles, generateCFUFile]) {
-    from(file("${android_path}/external/icu/icu4c/source/data/in/coll/ucadata-implicithan.icu")) {
-        into 'coll'
-        rename { it.replace("-implicithan", "") }
-    }
-
-    file("${android_path}/external/icu/icu4c/source/data/in").listFiles().findAll { it.isFile() }.each {
-        from it
-    }
-
-    into icuOutput
-}
-
-/******************************************************************************
- * Misc
- ******************************************************************************/
-
-def android_java_sources = [
-        "${android_path}/external/bouncycastle/bcprov/src/main/java",
-        "${android_path}/external/conscrypt/src/main/java",
-        "${android_path}/external/conscrypt/src/platform/java",
-        "${android_path}/external/javasqlite/src/main/java",
-        "${android_path}/external/okhttp/android/main/java",
-        "${android_path}/external/okhttp/okhttp/src/main/java",
-        "${android_path}/external/okhttp/okhttp-android-support/src/main/java",
-        "${android_path}/external/okhttp/okhttp-urlconnection/src/main/java",
-        "${android_path}/external/okhttp/okio/okio/src/main/java",
-        "${android_path}/libcore/dalvik/src/main/java",
-        "${android_path}/libcore/dex/src/main/java",
-        "${android_path}/libcore/libart/src/main/java",
-        "${android_path}/libcore/luni/src/main/java",
-        "${android_path}/libcore/xml/src/main/java",
-        "${android_path}/libcore/json/src/main/java",
-        "${android_path}/external/icu/icu4j/main/classes/translit/src",
-        "${android_path}/external/icu/icu4j/main/classes/core/src",
-        "${android_path}/external/icu/icu4j/main/classes/collate/src",
-        tasks.generateConscryptFiles.outputs.files[0].parentFile.absolutePath,
-        icuOutputBase.absolutePath,
-        "${android_path}/frameworks/base/core/java",
+def external_path = rootProject.file("../../external").absolutePath
+def external_java_sources = [
+        "${external_path}/javasqlite/src/main/java",
 ]
 
 sourceSets {
-    core {
+    main {
         java {
-            srcDirs += android_java_sources
-            exclude {
-                it.file.absolutePath.endsWith('okhttp/src/main/java/com/squareup/okhttp/internal/Platform.java')
-            }
+            srcDirs += external_java_sources
         }
         resources {
             srcDirs = java.srcDirs
@@ -170,27 +39,8 @@ sourceSets {
     }
 }
 
-configurations {
-    jarjarJar {}
-}
-
-dependencies {
-    jarjarJar 'com.eed3si9n.jarjar:jarjar:1.8.0'
-}
-
-tasks.compileCoreJava.sourceCompatibility = "1.8"
-tasks.compileCoreJava.targetCompatibility = "1.8"
-tasks.compileCoreJava.dependsOn generateConscryptFiles
-tasks.compileCoreJava.dependsOn copyICUDataFiles
-
-def staticloadProject = project(':moe.apple:moe.core.java:staticload')
-tasks.compileCoreJava.dependsOn ':moe.apple:moe.core.java:staticload:jar'
-staticloadProject.afterEvaluate {
-    def jar = staticloadProject.tasks['jar']
-    tasks.compileCoreJava.options.compilerArgs.addAll(['-Xplugin:org.moe.javacplugin.StaticLoad'])
-    tasks.compileCoreJava.options.annotationProcessorPath = files([jar.archivePath])
-    tasks.compileCoreJava.inputs.files jar.outputs.files
-}
+sourceCompatibility = "1.8"
+targetCompatibility = "1.8"
 
 // Don't run tests with the built-in junit
 test { exclude '**' }
@@ -199,94 +49,49 @@ test { exclude '**' }
  * Core Jar Generation
  ******************************************************************************/
 
-task jarjaredCoreBaseJar(dependsOn: compileCoreJava) {
-    inputs.files sourceSets.core.output
-    outputs.files "build/libs/core/jarjared.jar"
-
-    doLast {
-        ant {
-            taskdef(
-                    name: 'jarjar',
-                    classname: 'com.eed3si9n.jarjar.JarJarTask',
-                    classpath: configurations.jarjarJar.asPath
-            )
-            jarjar(jarfile: outputs.files[0]) {
-                sourceSets.core.output.each {
-                    fileset(dir: it)
-                }
-                rule(pattern: 'com.squareup.**', result: 'com.android.@1')
-                rule(pattern: 'org.conscrypt.**', result: 'com.android.org.conscrypt.@1')
-                rule(pattern: 'org.bouncycastle.**', result: 'com.android.org.bouncycastle.@1')
-                rule(pattern: 'okio.**', result: 'com.android.okio.@1')
-                rule(pattern: 'com.ibm.icu.**', result: 'android.icu.@1')
-            }
-        }
-    }
-}
-
-task coreJar(type: Jar, dependsOn: jarjaredCoreBaseJar) {
+jar {
     archiveBaseName = 'moe-core'
 
-    from zipTree(jarjaredCoreBaseJar.outputs.files[0])
     from { [rootProject.file('LICENSE'), rootProject.file('NOTICE')] }
     getDestinationDirectory().set(file('build/libs/core'))
     from(file('../eula/LICENSE.TXT')) { into 'META-INF' }
     includeEmptyDirs false
 }
 
-task coreSourcesJar(type: Jar, dependsOn: compileCoreJava) {
-    dependsOn ':moe.apple:moe.core.java:generateConscryptFiles', ':moe.apple:moe.core.java:copyICUDataFiles'
+task sourceJar(type: Jar) {
     archiveBaseName = 'moe-core'
     archiveClassifier = 'sources'
 
     from rootProject.file('LICENSE'), rootProject.file('NOTICE')
-    from sourceSets.core.allJava
+    from sourceSets.main.allJava
     getDestinationDirectory().set(file('build/libs/core'))
     from(file('../eula/LICENSE.TXT')) { into 'META-INF' }
     includeEmptyDirs false
 }
 
-def javaDocTitle = "moe.ios.core API"
-
 /******************************************************************************
  * Core Javadoc Jar Generation
  ******************************************************************************/
 
-task coreJavadoc(type: Javadoc) {
-    dependsOn ':moe.apple:moe.core.java:generateConscryptFiles', ':moe.apple:moe.core.java:copyICUDataFiles'
-    title = javaDocTitle
-    source sourceSets.core.allJava
+javadoc {
+    title = "moe.ios.core API"
     destinationDir = file('build/docs/coreJavadoc')
     include "**/*.java"
     options.addStringOption('Xdoclint:none', '-quiet')
     options.addStringOption('source', '1.8')
 }
 
-task coreJavadocJar(type: Jar, dependsOn: coreJavadoc) {
+task javadocJar(type: Jar, dependsOn: javadoc) {
     archiveBaseName = 'moe-core'
     archiveClassifier = 'javadoc'
 
-    from coreJavadoc.destinationDir
+    from javadoc.destinationDir
     from { [rootProject.file('LICENSE'), rootProject.file('NOTICE')] }
     getDestinationDirectory().set(file('build/libs/core'))
     from(file('../eula/LICENSE.TXT')) { into 'META-INF' }
 }
 
-task coreCertificatesZip(type: Zip) {
-    archiveBaseName = 'moe-core'
-    archiveClassifier = 'certificates'
-
-    into('.') {
-        from files("${android_path}/system/ca-certificates/files")
-    }
-    getDestinationDirectory().set(file('build/libs/core'))
-}
-
-processCoreResources.dependsOn(':moe.apple:moe.core.java:copyICUDataFiles')
-
 artifacts {
-    archives coreJar
-    archives coreSourcesJar
-    archives coreJavadocJar
-    archives coreCertificatesZip
+    archives javadocJar
+    archives sourceJar
 }

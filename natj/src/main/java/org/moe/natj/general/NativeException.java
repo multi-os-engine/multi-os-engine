@@ -28,7 +28,7 @@ public abstract class NativeException extends RuntimeException {
     /**
      * The native exception itself.
      */
-    protected NativeObject peer;
+    protected final NativeObject peer;
 
     /**
      * Construct a {@link NativeException} object from a native exception.

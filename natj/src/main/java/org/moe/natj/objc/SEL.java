@@ -35,7 +35,7 @@ public class SEL extends StructObject {
     /**
      * Collection to cached already resolved SEL objects.
      */
-    private static Map<String, Long> resolvedSelectors = new HashMap<String, Long>();
+    private final static Map<String, Long> resolvedSelectors = new HashMap<String, Long>();
 
     /**
      * Resolves a selector by its name using {@link #resolvedSelectors} as cache.

@@ -54,10 +54,16 @@ public class MoeExtension extends AbstractMoeExtension {
     public final RemoteBuildOptions remoteBuildOptions;
 
     @NotNull
+    public final NativeImageOptions nativeImage;
+
+    @NotNull
     private MoePlatform platform = MoePlatform.IOS;
 
     @NotNull
     public final ProGuardOptions proguard;
+
+    @Nullable
+    private String mainClassName = "org.moe.IOSLauncher";
 
     public MoeExtension(@NotNull MoePlugin plugin, @NotNull Instantiator instantiator) {
         super(plugin, instantiator);
@@ -69,6 +75,7 @@ public class MoeExtension extends AbstractMoeExtension {
         this.ipaExport = instantiator.newInstance(IpaExportOptions.class);
         this.remoteBuildOptions = instantiator.newInstance(RemoteBuildOptions.class);
         this.proguard = instantiator.newInstance(ProGuardOptions.class);
+        this.nativeImage = instantiator.newInstance(NativeImageOptions.class);
     }
 
     void setup() {}
@@ -113,6 +120,11 @@ public class MoeExtension extends AbstractMoeExtension {
         Require.nonNull(action).execute(proguard);
     }
 
+    @IgnoreUnused
+    public void nativeImage(Action<NativeImageOptions> action) {
+        Require.nonNull(action).execute(nativeImage);
+    }
+
     @NotNull
     @IgnoreUnused
     public String getPlatform() {
@@ -148,6 +160,17 @@ public class MoeExtension extends AbstractMoeExtension {
     @org.jetbrains.annotations.Nullable
     public File getPlatformJar() {
         return plugin.getSDK().getPlatformJar(platform);
+    }
+
+    @IgnoreUnused
+    @Nullable
+    public String getMainClassName() {
+        return mainClassName;
+    }
+
+    @IgnoreUnused
+    public void setMainClassName(@Nullable String mainClassName) {
+        this.mainClassName = mainClassName;
     }
 
 }

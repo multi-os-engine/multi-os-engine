@@ -1644,6 +1644,7 @@ void handleStartup(JNIEnv* env, const char* name) {
     return;
   }
 
+HANDLE_NATIVE_EXCEPTION_ENTER(env);
   if (!(handleCStartup(env, clazz)
 #ifdef __APPLE__
         || handleObjCStartup(env, clazz)
@@ -1653,8 +1654,11 @@ void handleStartup(JNIEnv* env, const char* name) {
     // then fallback to a simple static initialization.
     forceInitClass(env, clazz);
   }
+  HANDLE_NATIVE_EXCEPTION_EXIT(env);
 
   env->DeleteLocalRef(clazz);
+  
+  THROW_NATIVE_EXCEPTION_TO_JAVA(env);
 }
 
 void forceInitClass(JNIEnv* env, jclass clazz) {
@@ -1736,3 +1740,10 @@ void natj_printJavaStackTrace(JNIEnv *env) {
   }
   env->DeleteLocalRef(cls);
 }
+
+#if STATIC_BUILD
+// JVM8+ require this so System.loadLibrary() works with static linked lib
+extern "C" jint JNI_OnLoad_natj(JavaVM* vm, void* p) {
+  return JNI_VERSION_1_1;
+}
+#endif

@@ -1,0 +1,14 @@
+import org.moe.prebuilts.XcodeBuild
+
+XcodeBuild.createTask(project, "libjvm", "ios", "iphoneos", "Debug")
+        .cond_buildopt(buildfilter.ios.archs, "ARCHS")
+        .cond_buildopt(buildfilter.ios.archs != null, "ONLY_ACTIVE_ARCH", "YES")
+XcodeBuild.createTask(project, "libjvm", "ios", "iphoneos", "Release")
+        .cond_buildopt(buildfilter.ios.archs, "ARCHS")
+        .cond_buildopt(buildfilter.ios.archs != null, "ONLY_ACTIVE_ARCH", "YES")
+XcodeBuild.createTask(project, "libjvm", "ios", "iphonesimulator", "Debug")
+        .cond_buildopt(buildfilter.ios.archs, "ARCHS")
+        .cond_buildopt(buildfilter.ios.archs != null, "ONLY_ACTIVE_ARCH", "YES")
+XcodeBuild.createTask(project, "libjvm", "ios", "iphonesimulator", "Release")
+        .cond_buildopt(buildfilter.ios.archs, "ARCHS")
+        .cond_buildopt(buildfilter.ios.archs != null, "ONLY_ACTIVE_ARCH", "YES")

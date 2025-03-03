@@ -16,6 +16,8 @@ limitations under the License.
 
 package org.moe.gradle.options;
 
+import org.gradle.api.Action;
+import org.gradle.api.tasks.Nested;
 import org.moe.gradle.anns.IgnoreUnused;
 import org.moe.gradle.anns.NotNull;
 import org.moe.gradle.utils.Require;
@@ -49,5 +51,17 @@ public class ResourceOptions {
     @IgnoreUnused
     public void setResourcesFromSourceDirExcludes(@NotNull Collection<String> list) {
         this.resourcesFromSourceDirExcludes = new ArrayList<>(Require.nonNull(list));
+    }
+
+    private ResourceDetectionOptions detectionOptions = new ResourceDetectionOptions();
+
+    @Nested
+    public ResourceDetectionOptions getDetectionOptions() {
+        return detectionOptions;
+    }
+
+    @IgnoreUnused
+    public void autodetection(Action<? super ResourceDetectionOptions> spec) {
+        spec.execute(getDetectionOptions());
     }
 }

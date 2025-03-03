@@ -31,6 +31,7 @@ tasks.classes.dependsOn ':ext_natj_ios'
 
 dependencies {
     implementation "org.moe:natj"
+    compileOnly project(':moe.apple:moe.core.java')
     compileOnly 'org.jetbrains:annotations:23.0.0'
 }
 

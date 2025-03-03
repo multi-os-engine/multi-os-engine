@@ -29,7 +29,7 @@ public class ObjCOpaqueObject extends ObjCObject {
         super(peer);
     }
 
-    public HashMap<java.lang.Class<?>, Proxy> proxies = new HashMap<java.lang.Class<?>, Proxy>();
+    public final HashMap<java.lang.Class<?>, Proxy> proxies = new HashMap<java.lang.Class<?>, Proxy>();
 
     public class ProtocolProxyHandler implements InvocationHandler {
 

@@ -208,6 +208,10 @@ void nativeToJavaMessageHandler(ffi_cif* cif, void* result, void** args,
     LOCK_POINTER(info);
     if (info->cached == false) {
       info->methodId = env->FromReflectedMethod(info->method);
+      // TODO: check if method ID is available.
+      // This will only work properly if the method is added into the JNI config file, which
+      // might be missing then the application will fail at `ffi_call` below with a
+      // EXC_BAD_ACCESS (code=1, address=0x20) error because of the null pointer here.
       buildInfos(env, info->method, true, &info->paramInfos, &info->returnInfo);
       env->DeleteGlobalRef(info->method);
       info->method = NULL;

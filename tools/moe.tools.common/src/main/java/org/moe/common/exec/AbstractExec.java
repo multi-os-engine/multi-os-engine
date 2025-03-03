@@ -45,7 +45,7 @@ public abstract class AbstractExec {
     /**
      * Working directory.
      */
-    protected File workingDir = null;
+    private File workingDir = null;
 
     /**
      * Creates a new AbstractExec instance.
@@ -62,6 +62,14 @@ public abstract class AbstractExec {
      */
     public AbstractExec(String name, File workingDir) {
         this.name = name;
+        this.workingDir = workingDir;
+    }
+
+    public File getWorkingDir() {
+        return workingDir;
+    }
+
+    public void setWorkingDir(File workingDir) {
         this.workingDir = workingDir;
     }
 
