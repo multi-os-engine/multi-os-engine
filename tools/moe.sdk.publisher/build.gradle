@@ -20,6 +20,10 @@ buildscript {
     }
 }
 
+plugins {
+    id "de.undercouch.download" version "5.4.0"
+}
+
 group 'org.multi-os-engine'
 version '2.0.0-SNAPSHOT'
 
@@ -32,17 +36,29 @@ def projectDeps = [
         ':moe.binding.libimobiledevice',
         ':moe.generator.natjgen',
         ':moe.ios.device.launcher',
-        ':proguard:app',
 ]
 
 projectDeps.each { evaluationDependsOn it }
 
 mkdir buildDir
 
+task downloadR8(type: Download) {
+    src 'https://storage.googleapis.com/r8-releases/raw/8.9.26/r8lib.jar'
+    dest "${project.buildDir}/r8/r8lib.jar"
+    overwrite false
+}
+
+task verifyR8(type: Verify, dependsOn: downloadR8) {
+    src downloadR8.dest
+    algorithm 'SHA-256'
+    checksum '9eedf4a7ae6d17339f2f6d9d6ed4765e14eaca1b2592907e93e3f7eb103d1b51'
+}
+
 task buildDeps {
     projectDeps.each {
         dependsOn project(it).tasks.build
     }
+    dependsOn verifyR8
 }
 
 tasks.buildDeps.dependsOn(":ext_moe_core")
@@ -149,8 +165,9 @@ def getSDKCopySpec() {
                 rename 'moe.generator.natjgen.jar', 'wrapnatjgen.jar'
             }
 
-            from buildfiles(':proguard:app', 'libs') {
-                include 'proguard.jar'
+            from files('build/r8/') {
+                include 'r8lib.jar'
+                rename 'r8lib.jar', 'r8.jar'
             }
 
             from files('.') {

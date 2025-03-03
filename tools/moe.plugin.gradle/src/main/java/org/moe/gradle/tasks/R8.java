@@ -50,16 +50,18 @@ import java.nio.file.FileSystems;
 import java.nio.file.Path;
 import java.nio.file.PathMatcher;
 import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
-public class ProGuard extends AbstractBaseTask {
+public class R8 extends AbstractBaseTask {
 
-    private static final Logger LOG = Logging.getLogger(ProGuard.class);
+    private static final Logger LOG = Logging.getLogger(R8.class);
 
-    private static final String CONVENTION_PROGUARD_JAR = "proGuardJar";
+    private static final String CONVENTION_R8_JAR = "r8Jar";
     private static final String CONVENTION_BASE_CFG_FILE = "baseCfgFile";
     private static final String CONVENTION_APPEND_CFG_FILE = "appendCfgFile";
     private static final String CONVENTION_IN_JARS = "inJars";
@@ -72,21 +74,22 @@ public class ProGuard extends AbstractBaseTask {
     private static final String CONVENTION_OBFUSCATION_ENABLED = "obfuscationEnabled";
 
     private static final String CONVENTION_SERIALIZATION_SUPPORT = "serializationSupport";
+    private static final String CONVENTION_DEBUG_ENABLED = "debugEnabled";
 
     private static final String MOE_PROGUARD_INJARS_PROPERTY = "moe.proguard.injars";
 
     @Nullable
-    private Object proGuardJar;
+    private Object r8Jar;
 
     @InputFile
     @NotNull
-    public File getProGuardJar() {
-        return getProject().file(getOrConvention(proGuardJar, CONVENTION_PROGUARD_JAR));
+    public File getR8Jar() {
+        return getProject().file(getOrConvention(r8Jar, CONVENTION_R8_JAR));
     }
 
     @IgnoreUnused
-    public void setProGuardJar(@Nullable Object proGuardJar) {
-        this.proGuardJar = proGuardJar;
+    public void setR8Jar(@Nullable Object r8Jar) {
+        this.r8Jar = r8Jar;
     }
 
     @Nullable
@@ -243,6 +246,19 @@ public class ProGuard extends AbstractBaseTask {
     }
 
     @Nullable
+    private Boolean debugEnabled;
+
+    @IgnoreUnused
+    public void setDebugEnabled(Boolean debugEnabled) {
+        this.debugEnabled = debugEnabled;
+    }
+
+    @Input
+    public boolean isDebugEnabled() {
+        return getOrConvention(debugEnabled, CONVENTION_DEBUG_ENABLED);
+    }
+
+    @Nullable
     private Object mappingFile;
 
     @OutputFile
@@ -276,9 +292,19 @@ public class ProGuard extends AbstractBaseTask {
         }
 
         composeConfigurationFile();
+        ArrayList<String> args = new ArrayList<>(Arrays.asList(getR8Jar().getAbsolutePath(), "--output", getOutJar().getAbsolutePath()));
+        args.addAll(Arrays.asList("--pg-compat", "--classfile", "--lib", getMoePlugin().getGraalVM().getHome().toString(), "--pg-conf", getComposedCfgFile().getAbsolutePath()));
+        if (isDebugEnabled()) {
+            args.add("--debug");
+        } else {
+            args.add("--release");
+        }
+
         javaexec(spec -> {
-            spec.setMain("-jar");
-            spec.args(getProGuardJar().getAbsolutePath(), "@" + getComposedCfgFile().getAbsolutePath());
+            spec.setExecutable(getMoePlugin().getGraalVM().getJavaPath().toFile().getAbsolutePath());
+            spec.getMainClass().set("com.android.tools.r8.R8");
+            spec.classpath(getR8Jar());
+            spec.args(args.toArray());
         });
     }
 
@@ -448,7 +474,7 @@ public class ProGuard extends AbstractBaseTask {
         classValidateTaskDep = classValidateTask;
         dependsOn(classValidateTask);
 
-        addConvention(CONVENTION_PROGUARD_JAR, sdk::getProGuardJar);
+        addConvention(CONVENTION_R8_JAR, sdk::getR8Jar);
         addConvention(CONVENTION_BASE_CFG_FILE, () -> {
             if (ext.proguard.getBaseCfgFile() != null) {
                 return ext.proguard.getBaseCfgFile();
@@ -481,8 +507,7 @@ public class ProGuard extends AbstractBaseTask {
         });
         addConvention(CONVENTION_IN_JARS, () -> {
             final HashSet<Object> jars = new LinkedHashSet<>();
-            jars.add(classValidateTask.getClassesOutputDir());
-            jars.addAll(classValidateTask.getInputFiles().getFiles());
+            jars.addAll(classValidateTask.getOutputJars().getFiles());
 
             return jars;
         });
@@ -491,7 +516,7 @@ public class ProGuard extends AbstractBaseTask {
             final HashSet<Object> jars = new LinkedHashSet<>(
                     // Make JDK runtime libraries available for ProGuard
                     // because we no longer have all basic runtime classes in core jar.
-                    getMoePlugin().getGraalVM().getRuntimeLibraries()
+                    //getMoePlugin().getGraalVM().getRuntimeLibraries()
             );
             jars.addAll(classValidateTask.getClasspathFiles().getFiles());
 
@@ -500,9 +525,10 @@ public class ProGuard extends AbstractBaseTask {
         addConvention(CONVENTION_OUT_JAR, () -> resolvePathInBuildDir(out, "output.jar"));
         addConvention(CONVENTION_COMPOSED_CFG_FILE, () -> resolvePathInBuildDir(out, "configuration.pro"));
         addConvention(CONVENTION_MAPPING_FILE, () -> isCustomisedBaseConfig() || !isObfuscationEnabled() ? null : resolvePathInBuildDir(out, "mapping.txt"));
-        addConvention(CONVENTION_LOG_FILE, () -> resolvePathInBuildDir(out, "ProGuard.log"));
+        addConvention(CONVENTION_LOG_FILE, () -> resolvePathInBuildDir(out, "R8.log"));
         addConvention(CONVENTION_MINIFY_ENABLED, ext.proguard::isMinifyEnabled);
         addConvention(CONVENTION_OBFUSCATION_ENABLED, ext.proguard::isObfuscationEnabled);
         addConvention(CONVENTION_SERIALIZATION_SUPPORT, ext.proguard::isSerializationSupport);
+        addConvention(CONVENTION_DEBUG_ENABLED, () -> mode.equals(Mode.DEBUG));
     }
 }

@@ -22,6 +22,7 @@ import org.gradle.api.Project;
 import org.gradle.api.Task;
 import org.gradle.api.logging.Logger;
 import org.gradle.api.logging.Logging;
+import org.gradle.api.provider.Property;
 import org.gradle.internal.reflect.Instantiator;
 import org.gradle.jvm.toolchain.JavaLanguageVersion;
 import org.gradle.jvm.toolchain.JavaLauncher;
@@ -39,7 +40,7 @@ import org.moe.gradle.tasks.IpaBuild;
 import org.moe.gradle.tasks.Launchers;
 import org.moe.gradle.tasks.NatJGen;
 import org.moe.gradle.tasks.NativeImage;
-import org.moe.gradle.tasks.ProGuard;
+import org.moe.gradle.tasks.R8;
 import org.moe.gradle.tasks.ReflectionCollect;
 import org.moe.gradle.tasks.ResourceCollect;
 import org.moe.gradle.tasks.ResourcePackager;
@@ -50,7 +51,6 @@ import org.moe.gradle.tasks.XcodeBuild;
 import org.moe.gradle.tasks.XcodeInternal;
 import org.moe.gradle.tasks.XcodeProvider;
 import org.moe.gradle.utils.Arch;
-import org.moe.gradle.utils.FileUtils;
 import org.moe.gradle.utils.PropertiesUtil;
 import org.moe.gradle.utils.Require;
 import org.moe.tools.substrate.GraalVM;
@@ -169,7 +169,7 @@ public class MoePlugin extends AbstractMoePlugin {
         installCommonDependencies();
 
         // Install rules
-        addRule(ProGuard.class, "Creates a ProGuarded jar.",
+        addRule(R8.class, "Creates a R8'd jar.",
                 asList(SOURCE_SET, MODE), MoePlugin.this);
         addRule(ClassValidate.class, "Validate classes.",
                 asList(SOURCE_SET, MODE), MoePlugin.this);

@@ -390,13 +390,13 @@ public class TestClassesProvider extends AbstractBaseTask {
         }
     }
 
-    private ProGuard proGuardTaskDep;
+    private R8 r8TaskDep;
 
     @NotNull
     @IgnoreUnused
     @Internal
-    public ProGuard getProGuardTaskDep() {
-        return Require.nonNull(proGuardTaskDep);
+    public R8 getR8TaskDep() {
+        return Require.nonNull(r8TaskDep);
     }
 
     protected final void setupMoeTask(@NotNull SourceSet sourceSet, final @NotNull Mode mode) {
@@ -411,9 +411,9 @@ public class TestClassesProvider extends AbstractBaseTask {
         setDescription("Generates classlist.txt file (sourceset: " + sourceSet.getName() + ", mode: " + mode.name + ").");
 
         // Add dependencies
-        final ProGuard proguardTask = getMoePlugin().getTaskBy(ProGuard.class, sourceSet, mode);
-        proGuardTaskDep = proguardTask;
-        dependsOn(proguardTask);
+        final R8 r8Task = getMoePlugin().getTaskBy(R8.class, sourceSet, mode);
+        r8TaskDep = r8Task;
+        dependsOn(r8Task);
 
         if (!SourceSet.MAIN_SOURCE_SET_NAME.equals(sourceSet.getName())
                 && !SourceSet.TEST_SOURCE_SET_NAME.equals(sourceSet.getName())) {
@@ -421,7 +421,7 @@ public class TestClassesProvider extends AbstractBaseTask {
         }
 
         // Update convention mapping
-        addConvention(CONVENTION_INPUT_FILES, () -> Collections.singletonList(proguardTask.getOutJar()));
+        addConvention(CONVENTION_INPUT_FILES, () -> Collections.singletonList(r8Task.getOutJar()));
         addConvention(CONVENTION_CLASS_LIST_FILE, () -> resolvePathInBuildDir(out, "classlist.txt"));
         addConvention(CONVENTION_REFLECTION_CONFIG_FILE, () -> resolvePathInBuildDir(out, "reflection-config.json"));
         addConvention(CONVENTION_LOG_FILE, () -> resolvePathInBuildDir(out, "TestClassesProvider.log"));

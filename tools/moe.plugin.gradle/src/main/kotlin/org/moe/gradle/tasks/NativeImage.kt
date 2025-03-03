@@ -211,7 +211,7 @@ open class NativeImage : AbstractBaseTask() {
     }
 
     @get:Internal
-    lateinit var proGuardTaskDep: ProGuard
+    lateinit var r8TaskDep: R8
         private set
 
     @get:Internal
@@ -250,9 +250,9 @@ open class NativeImage : AbstractBaseTask() {
         this.platform = platform
 
         // Add dependencies
-        val proGuardTask = moePlugin.getTaskBy(ProGuard::class.java, sourceSet, mode)
-        proGuardTaskDep = proGuardTask
-        dependsOn(proGuardTask)
+        val r8Task = moePlugin.getTaskBy(R8::class.java, sourceSet, mode)
+        r8TaskDep = r8Task
+        dependsOn(r8Task)
         val reflectionCollectTask = moePlugin.getTaskBy(ReflectionCollect::class.java, sourceSet, mode)
         reflectionCollectTaskDep = reflectionCollectTask
         dependsOn(reflectionCollectTask)
@@ -271,7 +271,7 @@ open class NativeImage : AbstractBaseTask() {
 
         // Update convention mapping
         addConvention(CONVENTION_INPUT_FILES) {
-            val files = mutableSetOf(proGuardTask.outJar)
+            val files = mutableSetOf(r8Task.outJar)
 
             when (moeExtension.proguard.levelRaw) {
                 ProGuardOptions.LEVEL_APP -> {
