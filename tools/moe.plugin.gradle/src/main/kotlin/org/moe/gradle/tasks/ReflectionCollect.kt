@@ -132,7 +132,7 @@ open class ReflectionCollect : AbstractBaseTask() {
     }
 
     @get:Internal
-    lateinit var proGuardTaskDep: ProGuard
+    lateinit var r8TaskDep: R8
     private set
 
     protected fun setupMoeTask(
@@ -147,13 +147,13 @@ open class ReflectionCollect : AbstractBaseTask() {
         description = "Collect reflection config (sourceset: ${sourceSet.name}, mode: ${mode.name})."
 
         // Add dependencies
-        val proGuardTask = moePlugin.getTaskBy(ProGuard::class.java, sourceSet, mode)
-        proGuardTaskDep = proGuardTask
-        dependsOn(proGuardTask)
+        val r8Task = moePlugin.getTaskBy(R8::class.java, sourceSet, mode)
+        r8TaskDep = r8Task
+        dependsOn(r8Task)
 
         // Update convention mapping
-        addConvention(CONVENTION_INPUT_FILES) { setOf(proGuardTask.outJar) }
-        addConvention(CONVENTION_CLASSPATH_FILES) { setOf(proGuardTask.libraryJars) }
+        addConvention(CONVENTION_INPUT_FILES) { setOf(r8Task.outJar) }
+        addConvention(CONVENTION_CLASSPATH_FILES) { setOf(r8Task.libraryJars) }
         addConvention(CONVENTION_OUTPUT_DIR) { resolvePathInBuildDir(out) }
         addConvention(CONVENTION_APP_MAIN_CLASS_NAME) {
             try {

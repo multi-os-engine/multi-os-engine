@@ -36,7 +36,6 @@ import org.moe.gradle.utils.TaskUtils;
 
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.Arrays;
 import java.util.List;
 
 public class ResourcePackager {
@@ -96,8 +95,8 @@ public class ResourcePackager {
         resourcePackagerTask.setDescription("Generates application file (sourceset: " + sourceSet.getName() + ", mode: " + mode.name + ").");
 
         // Add dependencies
-        final ProGuard proguardTask = plugin.getTaskBy(ProGuard.class, sourceSet, mode);
-        resourcePackagerTask.dependsOn(proguardTask);
+        final R8 r8Task = plugin.getTaskBy(R8.class, sourceSet, mode);
+        resourcePackagerTask.dependsOn(r8Task);
 
         Action<Project> configureTask = _project -> {
             // Update settings
@@ -110,7 +109,7 @@ public class ResourcePackager {
                 TaskUtils.legacyCall(resourcePackagerTask, "setDestinationDir", project.file(project.getBuildDir().toPath().resolve(out).toFile()));
                 TaskUtils.legacyCall(resourcePackagerTask, "setArchiveName", "application.jar");
             }
-            resourcePackagerTask.from(project.zipTree(proguardTask.getOutJar()));
+            resourcePackagerTask.from(project.zipTree(r8Task.getOutJar()));
             resourcePackagerTask.exclude("**/*.class");
 
             // When using full trim, ProGuard will copy the the resources from the common jar

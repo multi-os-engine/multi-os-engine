@@ -21,7 +21,6 @@ import org.gradle.api.file.ConfigurableFileCollection;
 import org.gradle.api.tasks.Input;
 import org.gradle.api.tasks.InputDirectory;
 import org.gradle.api.tasks.InputFiles;
-import org.gradle.api.tasks.Internal;
 import org.gradle.api.tasks.OutputFile;
 import org.gradle.api.tasks.SourceSet;
 import org.moe.document.pbxproj.PBXBuildFile;
@@ -245,13 +244,13 @@ public class GenerateUIObjCInterfaces extends AbstractBaseTask {
         setDescription("Generates header files for Interface Builder");
 
         // Add dependencies
-        final ProGuard proguardTask = getMoePlugin().getTaskBy(ProGuard.class, sourceSet, mode);
-        dependsOn(proguardTask);
+        final R8 r8Task = getMoePlugin().getTaskBy(R8.class, sourceSet, mode);
+        dependsOn(r8Task);
 
         // Update convention mapping
         addConvention(CONVENTION_INPUT_FILES, () -> {
             final ArrayList<Object> files = new ArrayList<>();
-            files.add(proguardTask.getOutJar());
+            files.add(r8Task.getOutJar());
             if (getMoeExtension().proguard.getLevelRaw() == ProGuardOptions.LEVEL_APP) {
                 files.add(getMoeExtension().getPlatformJar());
             }

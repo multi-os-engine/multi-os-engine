@@ -138,7 +138,7 @@ The SDK's structure must be as follows, otherwise the validation will fail:
    +- preloaded-classes
    +- proguard-full.cfg
    +- proguard.cfg
-   +- proguard.jar
+   +- r8.jar
    +- retrolambda.jar
    +- windows/x86_64/(libeay32|libimobiledevice|natj|ssleay32).dll
    \- wrapnatjgen.jar
@@ -340,7 +340,7 @@ information about what got stripped can be found in the `proguard.log` file whic
 
 #### Task Properties
 
-- `proGuardJar`: path to the `proguard.jar` file.
+- `r8Jar`: path to the `r8.jar` file.
 - `baseCfgFile`: path to the base configuration file.
 - `appendCfgFile`: null or path to to appended configuration file.
 - `minifyEnabled`: whether code minification is enabled. Ignored when `baseCfgFile` is specified.

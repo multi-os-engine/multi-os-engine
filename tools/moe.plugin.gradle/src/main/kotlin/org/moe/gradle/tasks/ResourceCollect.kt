@@ -101,15 +101,15 @@ open class ResourceCollect : AbstractBaseTask() {
         description = "Collect resources config (sourceset: ${sourceSet.name}, mode: ${mode.name})."
 
         // Add dependencies
-        val proGuardTask = moePlugin.getTaskBy(ProGuard::class.java, sourceSet, mode)
-        dependsOn(proGuardTask)
+        val r8Task = moePlugin.getTaskBy(R8::class.java, sourceSet, mode)
+        dependsOn(r8Task)
         val resourceTask =
             moePlugin.getTaskByName<Jar>(MoePlugin.getTaskName(ResourcePackager::class.java, sourceSet, mode))
         dependsOn(resourceTask)
 
         addConvention(CONVENTION_INPUT_FILES) {
             listOfNotNull(
-                proGuardTask.outJar,
+                r8Task.outJar,
                 resourceTask.archiveFile.get(),
             ).toSet()
         }

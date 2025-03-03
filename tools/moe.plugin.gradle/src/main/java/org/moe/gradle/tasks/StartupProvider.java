@@ -136,13 +136,13 @@ public class StartupProvider extends AbstractBaseTask {
         }
     }
 
-    private ProGuard proGuardTaskDep;
+    private R8 r8TaskDep;
 
     @NotNull
     @IgnoreUnused
     @Internal
-    public ProGuard getProGuardTaskDep() {
-        return Require.nonNull(proGuardTaskDep);
+    public R8 getR8TaskDep() {
+        return Require.nonNull(r8TaskDep);
     }
 
     protected final void setupMoeTask(@NotNull SourceSet sourceSet, final @NotNull Mode mode) {
@@ -157,14 +157,14 @@ public class StartupProvider extends AbstractBaseTask {
         setDescription("Generates preregister.txt file (sourceset: " + sourceSet.getName() + ", mode: " + mode.name + ").");
 
         // Add dependencies
-        final ProGuard proguardTask = getMoePlugin().getTaskBy(ProGuard.class, sourceSet, mode);
-        proGuardTaskDep = proguardTask;
-        dependsOn(proguardTask);
+        final R8 r8Task = getMoePlugin().getTaskBy(R8.class, sourceSet, mode);
+        r8TaskDep = r8Task;
+        dependsOn(r8Task);
 
         // Update convention mapping
         addConvention(CONVENTION_INPUT_FILES, () -> {
             final Set<File> files = new HashSet<>();
-            files.add(proguardTask.getOutJar());
+            files.add(r8Task.getOutJar());
             return files;
         });
         addConvention(CONVENTION_PREREGISTER_FILE, () -> resolvePathInBuildDir(out, "preregister.txt"));
