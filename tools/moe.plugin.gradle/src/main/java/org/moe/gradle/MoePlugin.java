@@ -82,11 +82,11 @@ public class MoePlugin extends AbstractMoePlugin {
     private static final String MOE_ARCHS_PROPERTY = "moe.archs";
 
     @NotNull
-    private GraalVM graalVM;
+    private Property<GraalVM> graalVM;
 
     @NotNull
     public GraalVM getGraalVM() {
-        return Require.nonNull(graalVM, "The plugin's 'graalVM' property was null");
+        return Require.nonNull(graalVM.getOrNull(), "The plugin's 'graalVM' property was null");
     }
 
     @NotNull
@@ -123,17 +123,22 @@ public class MoePlugin extends AbstractMoePlugin {
     public void apply(Project project) {
         super.apply(project);
 
-        if (PropertiesUtil.tryGetProperty(project, MOE_GRAALVM_HOME_PROPERTY) != null) {
-            graalVM = new GraalVM(Paths.get(PropertiesUtil.getProperty(project, MOE_GRAALVM_HOME_PROPERTY)));
-        } else {
-            JavaToolchainService toolchains = project.getExtensions().getByType(JavaToolchainService.class);
-            JavaLauncher launcher = toolchains.launcherFor(spec -> {
-                spec.getLanguageVersion().set(JavaLanguageVersion.of(GraalVM.SUPPORTED_JAVA_MAJOR));  // Set as per your GraalVM version
-                spec.getVendor().set(JvmVendorSpec.GRAAL_VM);
-                spec.getImplementation().set(JvmImplementation.VENDOR_SPECIFIC);
-            }).get();
-            graalVM = new GraalVM(launcher.getExecutablePath().getAsFile().getParentFile().getParentFile().toPath());
-        }
+        graalVM = project.getObjects().property(GraalVM.class);
+        graalVM.finalizeValueOnRead();
+
+        graalVM.convention(project.provider(() -> {
+            if (PropertiesUtil.tryGetProperty(project, MOE_GRAALVM_HOME_PROPERTY) != null) {
+                return new GraalVM(Paths.get(PropertiesUtil.getProperty(project, MOE_GRAALVM_HOME_PROPERTY)));
+            } else {
+                JavaToolchainService toolchains = project.getExtensions().getByType(JavaToolchainService.class);
+                JavaLauncher launcher = toolchains.launcherFor(spec -> {
+                    spec.getLanguageVersion().set(JavaLanguageVersion.of(GraalVM.SUPPORTED_JAVA_MAJOR));  // Set as per your GraalVM version
+                    spec.getVendor().set(JvmVendorSpec.GRAAL_VM);
+                    spec.getImplementation().set(JvmImplementation.VENDOR_SPECIFIC);
+                }).get();
+                return new GraalVM(launcher.getExecutablePath().getAsFile().getParentFile().getParentFile().toPath());
+            }
+        }));
 
         // Setup explicit archs
         String archsProp = PropertiesUtil.tryGetProperty(project, MOE_ARCHS_PROPERTY);
