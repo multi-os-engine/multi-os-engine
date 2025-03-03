@@ -22,22 +22,26 @@ import org.gradle.api.Project;
 import org.gradle.api.Task;
 import org.gradle.api.logging.Logger;
 import org.gradle.api.logging.Logging;
-import org.gradle.api.plugins.JavaPlugin;
 import org.gradle.internal.reflect.Instantiator;
+import org.gradle.jvm.toolchain.JavaLanguageVersion;
+import org.gradle.jvm.toolchain.JavaLauncher;
+import org.gradle.jvm.toolchain.JavaToolchainService;
+import org.gradle.jvm.toolchain.JvmImplementation;
+import org.gradle.jvm.toolchain.JvmVendorSpec;
 import org.gradle.tooling.provider.model.ToolingModelBuilderRegistry;
 import org.moe.gradle.anns.NotNull;
 import org.moe.gradle.anns.Nullable;
 import org.moe.gradle.remote.Server;
 import org.moe.gradle.tasks.AbstractBaseTask;
 import org.moe.gradle.tasks.ClassValidate;
-import org.moe.gradle.tasks.Desugar;
-import org.moe.gradle.tasks.Dex;
-import org.moe.gradle.tasks.Dex2Oat;
 import org.moe.gradle.tasks.GenerateUIObjCInterfaces;
 import org.moe.gradle.tasks.IpaBuild;
 import org.moe.gradle.tasks.Launchers;
 import org.moe.gradle.tasks.NatJGen;
+import org.moe.gradle.tasks.NativeImage;
 import org.moe.gradle.tasks.ProGuard;
+import org.moe.gradle.tasks.ReflectionCollect;
+import org.moe.gradle.tasks.ResourceCollect;
 import org.moe.gradle.tasks.ResourcePackager;
 import org.moe.gradle.tasks.StartupProvider;
 import org.moe.gradle.tasks.TestClassesProvider;
@@ -49,9 +53,11 @@ import org.moe.gradle.utils.Arch;
 import org.moe.gradle.utils.FileUtils;
 import org.moe.gradle.utils.PropertiesUtil;
 import org.moe.gradle.utils.Require;
+import org.moe.tools.substrate.GraalVM;
 
 import javax.inject.Inject;
 import java.io.File;
+import java.nio.file.Paths;
 import java.util.Arrays;
 import java.util.Optional;
 import java.util.Set;
@@ -61,7 +67,6 @@ import static java.util.Arrays.asList;
 import static java.util.Collections.emptyList;
 import static java.util.Collections.singletonList;
 import static org.moe.gradle.AbstractMoePlugin.TaskParams.ARCH;
-import static org.moe.gradle.AbstractMoePlugin.TaskParams.ARCH_FAMILY;
 import static org.moe.gradle.AbstractMoePlugin.TaskParams.MODE;
 import static org.moe.gradle.AbstractMoePlugin.TaskParams.PLATFORM;
 import static org.moe.gradle.AbstractMoePlugin.TaskParams.SOURCE_SET;
@@ -73,7 +78,16 @@ public class MoePlugin extends AbstractMoePlugin {
 
     private static final Logger LOG = Logging.getLogger(MoePlugin.class);
 
+    private static final String MOE_GRAALVM_HOME_PROPERTY = "moe.graalvm.home";
     private static final String MOE_ARCHS_PROPERTY = "moe.archs";
+
+    @NotNull
+    private GraalVM graalVM;
+
+    @NotNull
+    public GraalVM getGraalVM() {
+        return Require.nonNull(graalVM, "The plugin's 'graalVM' property was null");
+    }
 
     @NotNull
     private MoeExtension extension;
@@ -109,15 +123,27 @@ public class MoePlugin extends AbstractMoePlugin {
     public void apply(Project project) {
         super.apply(project);
 
+        if (PropertiesUtil.tryGetProperty(project, MOE_GRAALVM_HOME_PROPERTY) != null) {
+            graalVM = new GraalVM(Paths.get(PropertiesUtil.getProperty(project, MOE_GRAALVM_HOME_PROPERTY)));
+        } else {
+            JavaToolchainService toolchains = project.getExtensions().getByType(JavaToolchainService.class);
+            JavaLauncher launcher = toolchains.launcherFor(spec -> {
+                spec.getLanguageVersion().set(JavaLanguageVersion.of(GraalVM.SUPPORTED_JAVA_MAJOR));  // Set as per your GraalVM version
+                spec.getVendor().set(JvmVendorSpec.GRAAL_VM);
+                spec.getImplementation().set(JvmImplementation.VENDOR_SPECIFIC);
+            }).get();
+            graalVM = new GraalVM(launcher.getExecutablePath().getAsFile().getParentFile().getParentFile().toPath());
+        }
+
         // Setup explicit archs
         String archsProp = PropertiesUtil.tryGetProperty(project, MOE_ARCHS_PROPERTY);
         if (archsProp != null) {
             archsProp = archsProp.trim();
             archs = Arrays.stream(archsProp.split(","))
-                .map(String::trim)
-                .filter(it -> !it.isEmpty())
-                .map(Arch::getForName)
-                .collect(Collectors.toSet());
+                    .map(String::trim)
+                    .filter(it -> !it.isEmpty())
+                    .map(Arch::getForName)
+                    .collect(Collectors.toSet());
 
             if (archs.isEmpty()) {
                 archs = null;
@@ -137,26 +163,18 @@ public class MoePlugin extends AbstractMoePlugin {
         // Add common MOE dependencies
         installCommonDependencies();
 
-        // Install java 8 support jars to fix lambda compilation
-        project.getDependencies().add(JavaPlugin.IMPLEMENTATION_CONFIGURATION_NAME,
-            FileUtils.getNameAsArtifact(getSDK().getJava8SupportJar(), getSDK().sdkVersion)
-        );
-
-        project.getDependencies().add(JavaPlugin.TEST_IMPLEMENTATION_CONFIGURATION_NAME,
-            FileUtils.getNameAsArtifact(getSDK().getJava8SupportJar(), getSDK().sdkVersion));
-
         // Install rules
         addRule(ProGuard.class, "Creates a ProGuarded jar.",
                 asList(SOURCE_SET, MODE), MoePlugin.this);
-        addRule(Desugar.class, "Creates a desugared jar.",
-                asList(SOURCE_SET, MODE), MoePlugin.this);
         addRule(ClassValidate.class, "Validate classes.",
                 asList(SOURCE_SET, MODE), MoePlugin.this);
-        addRule(Dex.class, "Creates a Dexed jar.",
+        addRule(ReflectionCollect.class, "Collect reflection config.",
                 asList(SOURCE_SET, MODE), MoePlugin.this);
-        addRule(Dex2Oat.class, "Creates art and oat files.",
-                asList(SOURCE_SET, MODE, ARCH_FAMILY), MoePlugin.this);
         ResourcePackager.addRule(this);
+        addRule(ResourceCollect.class, "Collect resource config.",
+                asList(SOURCE_SET, MODE), MoePlugin.this);
+        addRule(NativeImage.class, "AOT compile using GraalVM native-image.",
+                asList(SOURCE_SET, MODE, ARCH, PLATFORM), MoePlugin.this);
         addRule(TestClassesProvider.class, "Creates the classlist.txt file.",
                 asList(SOURCE_SET, MODE), MoePlugin.this);
         addRule(StartupProvider.class, "Creates the preregister.txt file.",

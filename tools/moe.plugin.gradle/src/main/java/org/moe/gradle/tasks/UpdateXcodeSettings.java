@@ -17,6 +17,7 @@ limitations under the License.
 package org.moe.gradle.tasks;
 
 import org.gradle.api.GradleException;
+import org.gradle.api.tasks.Input;
 import org.moe.document.pbxproj.ProjectException;
 import org.moe.generator.project.writer.XcodeEditor;
 import org.moe.generator.project.writer.XcodeEditor.Settings;
@@ -30,6 +31,11 @@ import java.nio.file.Paths;
 
 public class UpdateXcodeSettings extends AbstractBaseTask {
 
+    @Input
+    public boolean isUseLLVM() {
+        return getMoeExtension().nativeImage.isUseLLVM();
+    }
+
     @Override
     protected void run() {
         XcodeOptions xcode = getMoeExtension().xcode;
@@ -41,6 +47,7 @@ public class UpdateXcodeSettings extends AbstractBaseTask {
         settings.testTarget = xcode.getTestTarget();
         settings.moeProject = getProject().getProjectDir();
         settings.xcodeProject = xcodeFile;
+        settings.useLLVM = getMoeExtension().nativeImage.isUseLLVM();
         try {
             XcodeEditor xcodeEditor = new XcodeEditor(xcodeFile);
             xcodeEditor.update(settings);

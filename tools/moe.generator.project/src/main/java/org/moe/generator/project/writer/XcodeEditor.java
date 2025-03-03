@@ -150,6 +150,8 @@ public class XcodeEditor extends AbstractXcodeEditor {
          */
         public File xcodeProject;
 
+        public boolean useLLVM = true;
+
         /**
          * Validates the fields.
          */
@@ -268,8 +270,6 @@ public class XcodeEditor extends AbstractXcodeEditor {
                 getDebugReleaseMap(moeProjectPath));
         final Map<String, String> MOE_PROJECT_BUILD_DIR_VALUE = getBuildSetting(target, "MOE_PROJECT_BUILD_DIR",
                 getDebugReleaseMap("${MOE_PROJECT_DIR}/build"));
-        final Map<String, String> MOE_COPY_ANDROID_CACERTS_VALUE = getBuildSetting(target, "MOE_COPY_ANDROID_CACERTS",
-                getDebugReleaseMap("NO"));
 
         // Remove all "MOE_" values
         removeMOEPrefixKeys(target);
@@ -277,31 +277,24 @@ public class XcodeEditor extends AbstractXcodeEditor {
         // Add all "MOE_" values
         setBuildSetting(target, "MOE_PROJECT_DIR", MOE_PROJECT_DIR_VALUE);
         setBuildSetting(target, "MOE_PROJECT_BUILD_DIR", MOE_PROJECT_BUILD_DIR_VALUE);
-        setBuildSetting(target, "MOE_SECT_OAT",
-                "-sectcreate __TEXT __oatdata \"${MOE_PROJECT_BUILD_DIR}/moe/" + sourceSet
-                        + "/xcode/${CONFIGURATION}${EFFECTIVE_PLATFORM_NAME}/${arch}.oat\"");
-        setBuildSetting(target, "MOE_SECT_OAT[arch=x86_64]",
-                "-sectcreate __OATDATA __oatdata \"${MOE_PROJECT_BUILD_DIR}/moe/" + sourceSet
-                        + "/xcode/${CONFIGURATION}${EFFECTIVE_PLATFORM_NAME}/${arch}.oat\"");
-        setBuildSetting(target, "MOE_SECT_ART",
-                "-sectcreate __ARTDATA __artdata \"${MOE_PROJECT_BUILD_DIR}/moe/" + sourceSet
-                        + "/xcode/${CONFIGURATION}${EFFECTIVE_PLATFORM_NAME}/${arch}.art\"");
-        setBuildSetting(target, "MOE_OAT_ALIGN", "-Xlinker -sectalign -Xlinker __TEXT -Xlinker __oatdata -Xlinker 0x8000");
-        setBuildSetting(target, "MOE_OAT_ALIGN[arch=x86_64]", "");
-        setBuildSetting(target, "MOE_SEGPROT", "-segprot __ARTDATA rw rw");
-        setBuildSetting(target, "MOE_SEGPROT[arch=x86_64]", "-segprot __OATDATA rwx rx -segprot __ARTDATA rwx rw");
-
-        setBuildSetting(target, "MOE_PAGEZERO", "");
-        setBuildSetting(target, "MOE_PAGEZERO[arch=x86_64]", "-pagezero_size 4096");
 
         setBuildSetting(target, "MOE_SDK_PATH", "${MOE_PROJECT_BUILD_DIR}/moe/sdk");
-        setBuildSetting(target, "MOE_FRAMEWORK_PATH", "${MOE_SDK_PATH}/sdk/${PLATFORM_NAME}");
+        setBuildSetting(target, "MOE_LIB_PATH", "${MOE_SDK_PATH}/sdk/${PLATFORM_NAME}");
 
-        setBuildSetting(target, "MOE_OTHER_LDFLAGS",
-                "${MOE_SECT_OAT} ${MOE_OAT_ALIGN} ${MOE_SECT_ART} ${MOE_SEGPROT} ${MOE_PAGEZERO} ${MOE_CUSTOM_OTHER_LDFLAGS} -lc++ "
-                        + "-framework MOE");
+        StringBuilder sb = new StringBuilder();
+        sb.append("${MOE_PROJECT_BUILD_DIR}/moe/").append(sourceSet).append("/xcode/${CONFIGURATION}${EFFECTIVE_PLATFORM_NAME}/main_${arch}.o ");
+        if (settings.useLLVM) {
+            sb.append("${MOE_PROJECT_BUILD_DIR}/moe/").append(sourceSet).append("/xcode/${CONFIGURATION}${EFFECTIVE_PLATFORM_NAME}/llvm_${arch}.o ");
+        }
+        sb.append(
+                "${MOE_CUSTOM_OTHER_LDFLAGS} "
+                        + "-Wl,-force_load,${MOE_LIB_PATH}/libmoe.a "
+                        + "-lc++ -lpthread -lsqlite3 "
+                        + "-Wl,-framework,Foundation -Wl,-framework,CoreServices"
+        );
+        setBuildSetting(target, "MOE_OTHER_LDFLAGS", sb.toString());
 
-        setBuildSetting(target, "MOE_COPY_ANDROID_CACERTS", MOE_COPY_ANDROID_CACERTS_VALUE);
+        setBuildSetting(target, "MOE_HEADER_SEARCH_PATHS", "${MOE_LIB_PATH}/include");
 
         setBuildSetting(target, "MOE_JAVA_VERSION_OVERRIDE", "");
 
@@ -391,5 +384,31 @@ public class XcodeEditor extends AbstractXcodeEditor {
             throw new RuntimeException("Failed to find group with name '" + groupName + "'");
         }
         return (PBXGroup)objectRef.getReferenced();
+    }
+
+
+    public File getInfoPlist(final String targetName, final String configuration) {
+        PBXNativeTarget t = getTarget(targetName);
+        Map<String, String> s = getBuildSetting(t, "INFOPLIST_FILE", null);
+
+        String f = s.get(configuration);
+        if (f == null) {
+            s = getBuildSetting(project, "INFOPLIST_FILE", null);
+            f = s.get(configuration);
+        }
+
+        if (f == null) {
+            return null;
+        }
+
+        File sourceRoot = projectFile.getSourceRoot();
+        f = f.replaceAll("/", "\\" + File.separator);
+        f = f.replaceAll("\\$\\(SRCROOT\\)", sourceRoot.getAbsolutePath());
+        f = f.replaceAll("\\$\\(TARGET_NAME\\)", targetName);
+        final File file = new File(f);
+        if (file.isAbsolute()) {
+            return file;
+        }
+        return new File(sourceRoot, f);
     }
 }

@@ -420,29 +420,24 @@ public class XcodeBuild extends AbstractBaseTask {
                 excludes.add(xcodeProvider.getLogFile());
                 excludes.add(resolvePathInBuildDir(xcodeProvider.getOutRoot()));
 
-                final Dex2Oat dex2OatTask = xcodeProvider.getDex2OatTaskDep();
-                excludes.add(dex2OatTask.getLogFile());
+                final NativeImage nativeImageTask = xcodeProvider.getNativeImageTaskDep();
+                excludes.add(nativeImageTask.getLogFile());
+                excludes.add(resolvePathInBuildDir(nativeImageTask.getSvmTmpDir()));
 
-                final Dex dexTask = dex2OatTask.getDexTaskDep();
-                excludes.add(dexTask.getDestDir());
-                excludes.add(dexTask.getLogFile());
+                final ReflectionCollect reflectionCollectTask = nativeImageTask.getReflectionCollectTaskDep();
+                excludes.add(reflectionCollectTask.getOutputDir());
+                excludes.add(reflectionCollectTask.getLogFile());
 
-                final ClassValidate classValidateTask = dexTask.getClassValidateTaskDep();
-                excludes.add(classValidateTask.getOutputDir());
-                excludes.add(classValidateTask.getLogFile());
-
-                final Desugar desugarTask = classValidateTask.getDesugarTaskDep();
-                excludes.add(desugarTask.getAppOutJar());
-                excludes.add(desugarTask.getRuntimeOutJar());
-                excludes.add(desugarTask.getComposedCfgFile());
-                excludes.add(desugarTask.getLogFile());
-
-                final ProGuard proGuardTask = desugarTask.getProGuardTaskDep();
+                final ProGuard proGuardTask = reflectionCollectTask.getProGuardTaskDep();
                 excludes.add(proGuardTask.getOutJar());
                 excludes.add(proGuardTask.getComposedCfgFile());
                 excludes.add(proGuardTask.getLogFile());
 
-                final JavaCompile classesTask = proGuardTask.getJavaCompileTaskDep();
+                final ClassValidate classValidateTask = proGuardTask.getClassValidateTaskDep();
+                excludes.add(classValidateTask.getOutputDir());
+                excludes.add(classValidateTask.getLogFile());
+
+                final JavaCompile classesTask = classValidateTask.getJavaCompileTaskDep();
                 if (classesTask != null) {
                     excludes.add(classesTask.getDestinationDir());
                 }

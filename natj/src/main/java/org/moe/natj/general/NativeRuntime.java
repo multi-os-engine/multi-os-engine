@@ -36,22 +36,22 @@ public abstract class NativeRuntime {
     /**
      * Collection for caching mapper objects.
      */
-    private Map<Class<?>, Mapper> class2mapper = new HashMap<Class<?>, Mapper>();
+    private final Map<Class<?>, Mapper> class2mapper = new HashMap<Class<?>, Mapper>();
 
     /**
      * Default mapper for handling objects.
      */
-    protected Mapper objectMapper;
+    protected final Mapper objectMapper;
 
     /**
      * Default mapper for handling strings.
      */
-    protected Mapper stringMapper;
+    protected final Mapper stringMapper;
 
     /**
      * Default mapper for handling callbacks.
      */
-    protected Mapper callbackMapper;
+    protected final Mapper callbackMapper;
 
     /**
      * Constructs a mapper of the given {@code mapperClass} class.
@@ -102,16 +102,22 @@ public abstract class NativeRuntime {
         if (objectMapperClass != null) {
             objectMapper = createMapper(objectMapperClass);
             class2mapper.put(objectMapperClass, objectMapper);
+        } else {
+            objectMapper = null;
         }
 
         if (stringMapperClass != null) {
             stringMapper = createMapper(stringMapperClass);
             class2mapper.put(stringMapperClass, stringMapper);
+        } else {
+            stringMapper = null;
         }
 
         if (callbackMapperClass != null) {
-            callbackMapper = callbackMapperClass == null ? null : createMapper(callbackMapperClass);
+            callbackMapper = createMapper(callbackMapperClass);
             class2mapper.put(callbackMapperClass, callbackMapper);
+        } else {
+            callbackMapper = null;
         }
     }
 

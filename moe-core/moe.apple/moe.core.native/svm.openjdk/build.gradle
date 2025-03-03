@@ -1,0 +1,43 @@
+import org.moe.prebuilts.XcodeBuild
+import org.moe.prebuilts.Script
+
+task('jdk_gensrc', type: Script) {
+    progress 'Fetching boot JDK'
+    rawWorkDir external.svm.mx
+    def bootJDK = file("${external.svm.root}/bootJDK").absolutePath
+    exec "./mx",
+            "-y", "--no-warning",
+            "fetch-jdk",
+            "--java-distribution", "labsjdk-ce-21",
+            "--to", bootJDK,
+            "--alias", "jdk21"
+
+    progress 'Configure jdk'
+    rawWorkDir "${external.svm.openjdk}"
+    def JVMCI_VERSION = "jvmci-23.1-b33"
+    // For whatever reason setting "--with-boot-jdk" does not work
+    env "JAVA_HOME", file(bootJDK + "/jdk21/Contents/Home").absolutePath
+    env 'MX_PYTHON', 'python3'
+    exec "sh", "configure", "--with-conf-name=labsjdk", "--with-version-opt=$JVMCI_VERSION", "--with-version-pre=",
+            "--with-vendor-name=GraalVM Community", "--with-vendor-url=https://www.graalvm.org/", "--with-vendor-bug-url=https://github.com/oracle/graal/issues",
+            "--with-vendor-vm-bug-url=https://github.com/oracle/graal/issues"
+    progress 'Make jdk'
+    exec "make", "CONF_NAME=labsjdk", "graal-builder-image"
+}
+
+XcodeBuild.createTask(project, "libjava", "ios", "iphoneos", "Debug")
+        .cond_buildopt(buildfilter.ios.archs, "ARCHS")
+        .cond_buildopt(buildfilter.ios.archs != null, "ONLY_ACTIVE_ARCH", "YES")
+        .dependsOn('jdk_gensrc')
+XcodeBuild.createTask(project, "libjava", "ios", "iphoneos", "Release")
+        .cond_buildopt(buildfilter.ios.archs, "ARCHS")
+        .cond_buildopt(buildfilter.ios.archs != null, "ONLY_ACTIVE_ARCH", "YES")
+        .dependsOn('jdk_gensrc')
+XcodeBuild.createTask(project, "libjava", "ios", "iphonesimulator", "Debug")
+        .cond_buildopt(buildfilter.ios.archs, "ARCHS")
+        .cond_buildopt(buildfilter.ios.archs != null, "ONLY_ACTIVE_ARCH", "YES")
+        .dependsOn('jdk_gensrc')
+XcodeBuild.createTask(project, "libjava", "ios", "iphonesimulator", "Release")
+        .cond_buildopt(buildfilter.ios.archs, "ARCHS")
+        .cond_buildopt(buildfilter.ios.archs != null, "ONLY_ACTIVE_ARCH", "YES")
+        .dependsOn('jdk_gensrc')

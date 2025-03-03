@@ -18,12 +18,31 @@ package org.moe.natj.objc;
 
 import org.moe.natj.c.CRuntime;
 import org.moe.natj.general.Pointer;
+import org.moe.natj.general.mem.Finalizer;
+import org.moe.natj.general.mem.Releaser;
+import org.moe.natj.general.mem.ReleaserMetadata;
 
 /**
  * Objective-C weak reference holder, used for weak pointers.
  */
 public class WeakReference {
-    private long location;
+    private final ReleaserMetadata peer;
+
+    /**
+     * Releaser for Objective-C weak reference holder.
+     */
+    private static final Releaser weakReferenceReleaser = new Releaser() {
+        @Override
+        public void release(long peer) {
+            ObjCRuntime.destroyWeak(peer);
+            CRuntime.free(peer);
+        }
+
+        @Override
+        public boolean ifFinalizedExternally() {
+            return false;
+        }
+    };
 
     /**
      * Creates an weak reference to an Objective-C object.
@@ -31,16 +50,9 @@ public class WeakReference {
      * @param object The object object to which we want to make the weak reference
      */
     public WeakReference(long object) {
-        location = CRuntime.allocPointer(1);
-        ObjCRuntime.storeWeak(object, location);
-    }
-
-    /**
-     * Cleans up after the weak reference.
-     */
-    protected void finalize() {
-        ObjCRuntime.destroyWeak(location);
-        CRuntime.free(location);
+        peer = new ReleaserMetadata(this, weakReferenceReleaser, CRuntime.allocPointer(1));
+        Finalizer.registerForFinalize(peer);
+        ObjCRuntime.storeWeak(object, peer.getPeer());
     }
 
     /**
@@ -49,7 +61,7 @@ public class WeakReference {
      * @return Strong referenced object pointer loaded by Objective-C runtime
      */
     public Pointer getPeer() {
-        long peer = ObjCRuntime.loadWeak(location);
+        long peer = getNativePeer();
         if (peer == 0) {
             return null;
         }
@@ -65,6 +77,6 @@ public class WeakReference {
      * @return Weak referenced object pointer
      */
     public long getNativePeer() {
-        return ObjCRuntime.loadWeak(location);
+        return ObjCRuntime.loadWeak(peer.getPeer());
     }
 }

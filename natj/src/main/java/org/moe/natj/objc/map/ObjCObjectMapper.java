@@ -22,7 +22,7 @@ import org.moe.natj.general.NatJ.JavaObjectConstructionInfo;
 import org.moe.natj.general.NatJ.NativeObjectConstructionInfo;
 import org.moe.natj.general.NativeObject;
 import org.moe.natj.general.Pointer;
-import org.moe.natj.general.Pointer.Releaser;
+import org.moe.natj.general.mem.Releaser;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.ObjCObject;
@@ -44,12 +44,12 @@ public class ObjCObjectMapper implements Mapper {
     /**
      * Collection for caching Objective-C classes we generate for proxying.
      */
-    private Map<Class<?>, Long> class2addr = new HashMap<Class<?>, Long>();
+    private final Map<Class<?>, Long> class2addr = new HashMap<Class<?>, Long>();
 
     /**
      * Collection for caching the created Objective-C proxy objects.
      */
-    public Map<Object, WeakReference> proxy2addr = new WeakHashMap<Object, WeakReference>();
+    public final Map<Object, WeakReference> proxy2addr = new WeakHashMap<Object, WeakReference>();
 
     /**
      * Class for containing informations needed for native protocol proxies.
@@ -62,7 +62,7 @@ public class ObjCObjectMapper implements Mapper {
     /**
      * Collection for caching the created info of native protocol proxies.
      */
-    public Map<Class<?>, NativeProtocolInfo> type2ProtocolInfo = new HashMap<Class<?>, NativeProtocolInfo>();
+    public final Map<Class<?>, NativeProtocolInfo> type2ProtocolInfo = new HashMap<Class<?>, NativeProtocolInfo>();
 
     /**
      * Releaser for Objective-C binding objects.
@@ -71,7 +71,7 @@ public class ObjCObjectMapper implements Mapper {
      * Will remove the weak reference from the Objective-C object and send release message to the
      * pointed object.
      */
-    private static Releaser strongBindingReleaser = new Releaser() {
+    private static final Releaser strongBindingReleaser = new Releaser() {
         @Override
         public void release(long peer) {
             ObjCRuntime.lockObject(peer);

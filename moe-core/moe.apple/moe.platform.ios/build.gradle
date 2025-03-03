@@ -35,6 +35,7 @@ configurations {
 
 dependencies {
     implementation "org.moe:natj"
+    compileOnly project(':moe.apple:moe.core.java')
     compileOnly 'org.jetbrains:annotations:23.0.0'
     natJGen "org.multi-os-engine:moe.generator.natjgen"
 }

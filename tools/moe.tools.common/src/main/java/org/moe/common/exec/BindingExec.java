@@ -57,7 +57,7 @@ public class BindingExec extends AbstractExec {
         cmds.add("wrapnatjgen.jar");
         applyArguments(cmds);
         ProcessBuilder builder = new ProcessBuilder(cmds);
-        builder.directory(workingDir);
+        builder.directory(getWorkingDir());
 
         return new ExecRunner(builder);
     }

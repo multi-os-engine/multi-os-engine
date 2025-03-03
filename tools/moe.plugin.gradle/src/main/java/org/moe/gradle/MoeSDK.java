@@ -362,17 +362,17 @@ public class MoeSDK {
             validate(FIL, path, "sdk/moe-ios-sources.jar");
 
             if (!isLocalSDK) {
-                validate(DIR, path, "sdk/iphoneos/MOE.framework");
-                validate(DIR, path, "sdk/iphonesimulator/MOE.framework");
+                validate(FIL, path, "sdk/iphoneos/libmoe.a");
+                validate(FIL, path, "sdk/iphoneos/include/MOE/MOE.h");
+                validate(FIL, path, "sdk/iphonesimulator/libmoe.a");
+                validate(FIL, path, "sdk/iphonesimulator/include/MOE/MOE.h");
             }
 
-            validate(FIL | EXE, path, "tools/dex2oat");
-            validate(FIL, path, "tools/dx.jar");
             validate(FIL, path, "tools/ios-device.jar");
-            validate(FIL, path, "tools/java8support.jar");
             validate(DIR, path, "tools/macosx");
             validate(DIR, path, "tools/linux/x86_64");
-            validate(FIL, path, "tools/preloaded-classes");
+            validate(FIL, path, "tools/jni-config-base.json");
+            validate(FIL, path, "tools/reflection-config-base.json");
             validate(FIL, path, "tools/proguard-full.cfg");
             validate(FIL, path, "tools/proguard.cfg");
             validate(FIL, path, "tools/proguard.jar");
@@ -417,12 +417,10 @@ public class MoeSDK {
     private @Nullable File MOE_SDK_IOS_JUNIT_JAVADOC_JAR;
     private @Nullable File MOE_SDK_IOS_JAR;
     private @Nullable File MOE_SDK_IOS_SOURCES_JAR;
-    private @Nullable File MOE_SDK_DEX2OAT_EXEC;
-    private @Nullable File MOE_SDK_DX_JAR;
     private @Nullable File MOE_SDK_IOS_DEVICE_JAR;
-    private @Nullable File MOE_SDK_JAVA8SUPPORT_JAR;
     private @Nullable File MOE_SDK_MACOS_SUPPORT;
-    private @Nullable File MOE_SDK_PRELOADEDCLASSES_FILE;
+    private @Nullable File MOE_SDK_JNICONFIGBASE_FILE;
+    private @Nullable File MOE_SDK_REFLECTIONCONFIGBASE_FILE;
     private @Nullable File MOE_SDK_PROGUARDFULL_CFG;
     private @Nullable File MOE_SDK_PROGUARD_CFG;
     private @Nullable File MOE_SDK_PROGUARD_JAR;
@@ -443,12 +441,10 @@ public class MoeSDK {
         MOE_SDK_IOS_JUNIT_JAR = path.resolve("sdk/moe-ios-junit.jar").toFile();
         MOE_SDK_IOS_JUNIT_SOURCES_JAR = path.resolve("sdk/moe-ios-junit-sources.jar").toFile();
         MOE_SDK_IOS_JUNIT_JAVADOC_JAR = path.resolve("sdk/moe-ios-junit-javadoc.jar").toFile();
-        MOE_SDK_DEX2OAT_EXEC = path.resolve("tools/dex2oat").toFile();
-        MOE_SDK_DX_JAR = path.resolve("tools/dx.jar").toFile();
         MOE_SDK_IOS_DEVICE_JAR = path.resolve("tools/ios-device.jar").toFile();
-        MOE_SDK_JAVA8SUPPORT_JAR = path.resolve("tools/java8support.jar").toFile();
         MOE_SDK_MACOS_SUPPORT = path.resolve("tools/macosx").toFile();
-        MOE_SDK_PRELOADEDCLASSES_FILE = path.resolve("tools/preloaded-classes").toFile();
+        MOE_SDK_JNICONFIGBASE_FILE = path.resolve("tools/jni-config-base.json").toFile();
+        MOE_SDK_REFLECTIONCONFIGBASE_FILE = path.resolve("tools/reflection-config-base.json").toFile();
         MOE_SDK_PROGUARDFULL_CFG = path.resolve("tools/proguard-full.cfg").toFile();
         MOE_SDK_PROGUARD_CFG = path.resolve("tools/proguard.cfg").toFile();
         MOE_SDK_PROGUARD_JAR = path.resolve("tools/proguard.jar").toFile();
@@ -525,23 +521,8 @@ public class MoeSDK {
     }
 
     @NotNull
-    public File getDex2OatExec() {
-        return safeVariable(MOE_SDK_DEX2OAT_EXEC, "MOE_SDK_DEX2OAT_EXEC");
-    }
-
-    @NotNull
-    public File getDxJar() {
-        return safeVariable(MOE_SDK_DX_JAR, "MOE_SDK_DX_JAR");
-    }
-
-    @NotNull
     public File getiOSDeviceJar() {
         return safeVariable(MOE_SDK_IOS_DEVICE_JAR, "MOE_SDK_IOS_DEVICE_JAR");
-    }
-
-    @NotNull
-    public File getJava8SupportJar() {
-        return safeVariable(MOE_SDK_JAVA8SUPPORT_JAR, "MOE_SDK_JAVA8SUPPORT_JAR");
     }
 
     @NotNull
@@ -551,8 +532,13 @@ public class MoeSDK {
     }
 
     @NotNull
-    public File getPreloadedClassesFile() {
-        return safeVariable(MOE_SDK_PRELOADEDCLASSES_FILE, "MOE_SDK_PRELOADEDCLASSES_FILE");
+    public File getJniConfigBaseFile() {
+        return safeVariable(MOE_SDK_JNICONFIGBASE_FILE, "MOE_SDK_JNICONFIGBASE_FILE");
+    }
+
+    @NotNull
+    public File getReflectionConfigBaseFile() {
+        return safeVariable(MOE_SDK_REFLECTIONCONFIGBASE_FILE, "MOE_SDK_REFLECTIONCONFIGBASE_FILE");
     }
 
     @NotNull
