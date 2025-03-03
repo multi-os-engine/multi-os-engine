@@ -552,32 +552,6 @@ public class MTRDeviceController extends NSObject {
             @NotNull NSNumber newNodeID, @ReferenceInfo(type = NSError.class) @Nullable Ptr<NSError> error);
 
     /**
-     * Returns a shared device controller proxy for the controller object over XPC connection.
-     * 
-     * @param controllerID    an implementation specific id in case multiple shared device controllers are available
-     *                        over XPC connection
-     * @param xpcConnectBlock block to connect to an XPC listener serving the shared device controllers in an
-     *                        implementation specific
-     *                        way
-     * 
-     *                        API-Since: 16.4
-     */
-    @Generated
-    @Selector("sharedControllerWithID:xpcConnectBlock:")
-    @NotNull
-    public static native MTRDeviceController sharedControllerWithIDXpcConnectBlock(
-            @Mapped(ObjCObjectMapper.class) @Nullable Object controllerID,
-            @ObjCBlock(name = "call_sharedControllerWithIDXpcConnectBlock") @NotNull Block_sharedControllerWithIDXpcConnectBlock xpcConnectBlock);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_sharedControllerWithIDXpcConnectBlock {
-        @Generated
-        @NotNull
-        NSXPCConnection call_sharedControllerWithIDXpcConnectBlock();
-    }
-
-    /**
      * API-Since: 16.1
      * Deprecated-Since: 16.4
      * Deprecated-Message: Please use sharedControllerWithID:xpcConnectBlock:
