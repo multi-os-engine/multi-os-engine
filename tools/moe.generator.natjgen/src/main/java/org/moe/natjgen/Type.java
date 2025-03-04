@@ -616,7 +616,7 @@ public class Type {
         // Set basic infos
         int typeKind = type.kind();
         alignment = type.getAlignOf();
-        isConst = type.isConstQualifiedType();
+        isConst = type.isConstQualifiedType() || inType.isConstQualifiedType();
         if (!isConst) {
             CXType tmpType = type;
             int tmpTypeKind = typeKind;
