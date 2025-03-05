@@ -19,6 +19,7 @@ plugins {
 }
 
 allprojects {
+    group 'org.multi-os-engine'
     repositories {
         mavenCentral()
     }

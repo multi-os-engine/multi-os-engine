@@ -18,28 +18,18 @@
   On the top of the output you will find a listing of the discovered frameworks and a diff to the previous discovered frameworks.  
   Make sure, that all deleted frameworks (Existing - Latest) are deprecated, got removed or are internal. If everything is sane, update the `platform.natjgen` file with the output.
 
-* Build NatJGen if necessary
+* Build llvm if necessary
 
     ```sh
     cd <repo>/moe/
-    ./gradlew :tools:moe.generator.natjgen:build
+    ./gradlew :prebuilts:llvm
     ```
 
-* Locate the latest build of the MOE SDK (at the time of writing, this is MOE 1.3). From this directory Clang and NatJ dylibs will be used. Create a local MOE SDK build if necessary.
-	
-    ```sh
-    cd ~/.moe/moe-sdk-1.3.0/tools
-    ```
-
-* Run NatJGen with the configuration in moe-core
+* Run NatJGen
 
     ```sh
-    java -cp <repo>/moe/tools/moe.generator.natjgen/build/libs/moe.generator.natjgen.jar \
-        org.moe.natjgen.Main \
-        <repo>/moe/moe-core/moe.apple \
-        moe.platform.ios \
-        <repo>/moe/moe-core/moe.apple/moe.platform.ios/platform.natjgen \
-        > <repo>/moe/moe-core/moe.apple/moe.platform.ios/out.log
+    cd <repo>/moe/
+    ./gradlew :moe-core:moe.apple:moe.platform.ios:generateBindings
     ```
 
 * Run the `remove_deprecated_files.py` to remove deprecated files

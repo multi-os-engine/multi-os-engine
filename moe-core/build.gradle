@@ -55,6 +55,20 @@ for (target in [[name: 'ios', outputs: ["${external.natj.root}/natj-ios/build/xc
     }
 }
 
+/*
+ * PROJECT: external/llvm
+ */
+ext {
+    external.llvm = [:]
+    external.llvm.root = file("${external.prebuilts}/llvm/macos").absolutePath
+    external.llvm.jnipath = file("${external.llvm.root}/lib")
+    external.llvm.macos = file("${external.llvm.root}/lib/libclang.dylib")
+
+    if (!external.llvm.macos.exists()) {
+        logger.warn("WARNING: libclang is missing from $external.llvm.macos.absolutePath")
+    }
+}
+
 subprojects.each { subproject ->
     subproject.afterEvaluate {
         subproject.tasks.matching { it.name == "build" }.all { buildTask ->
