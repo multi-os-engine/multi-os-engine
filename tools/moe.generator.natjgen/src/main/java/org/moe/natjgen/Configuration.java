@@ -1813,7 +1813,7 @@ public class Configuration implements IConfigurationElement {
             break;
             case CXIdxEntityKind.CXIdxEntity_Struct: {
                 String structname = decl.cursor().toString();
-                if (structname == null || structname.length() == 0) {
+                if (structname == null || structname.length() == 0 || decl.cursor().isAnonymous()) {
                     structname = CStructManager.INVALID_NAME;
                 }
                 this.originalName = this.name = structname;
@@ -1823,7 +1823,7 @@ public class Configuration implements IConfigurationElement {
             break;
             case CXIdxEntityKind.CXIdxEntity_Enum: {
                 String enumname = decl.cursor().toString();
-                if (enumname == null || enumname.length() == 0) {
+                if (enumname == null || enumname.length() == 0 || decl.cursor().isAnonymous()) {
                     enumname = CEnumManager.INVALID_NAME;
                 }
                 this.originalName = this.name = enumname;

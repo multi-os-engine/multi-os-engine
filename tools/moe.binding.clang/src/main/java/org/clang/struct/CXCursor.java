@@ -156,4 +156,8 @@ public final class CXCursor extends StructObject {
     public boolean isInlined() {
         return clang.clang_Cursor_isInlined(this) != 0;
     }
+
+    public boolean isAnonymous() {
+        return clang.clang_Cursor_isAnonymous(this) != 0;
+    }
 }
