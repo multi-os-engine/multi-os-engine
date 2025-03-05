@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 import os
 import re
+import sys
 
 
 def main():
     active_files = set()
     p = re.compile('.*(?:Getting compilation unit from |Creating compilation unit at )(.*)$')
-    # 'out.log' is the output of the moe.generator.natjgen.jar
-    with open('out.log') as f:
+    with open(sys.argv[1]) as f:
         for line in f:
             m = p.match(line)
             if m:

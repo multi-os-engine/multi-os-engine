@@ -40,11 +40,19 @@ dependencies {
 }
 
 task generateBindings(type: JavaExec) {
+    def tempFile = file("build/generate_bindings.log")
     classpath configurations.natJGen
     mainClass = "org.moe.natjgen.Main"
     args = [file("../").absolutePath, "moe.platform.ios", file("platform.natjgen").absolutePath]
     systemProperty "java.library.path", rootProject.external.llvm.jnipath.absolutePath +
             File.pathSeparator + rootProject.external.natj.jnipath.absolutePath
+
+    standardOutput = new FileOutputStream(tempFile)
+    doLast {
+        exec {
+            commandLine = ["python3", "remove_deprecated_files.py", tempFile.absolutePath]
+        }
+    }
 }
 
 tasks.javadoc {
