@@ -214,13 +214,14 @@ task llvm(type: Script) {
                 '-DLLVM_BUILD_TOOLS=OFF',
                 '-DLLVM_BUILD_EXAMPLES=OFF',
                 '-DLLVM_ENABLE_PROJECTS=clang',
+                '-DLLVM_ENABLE_ZSTD=OFF',
                 '-G', 'Unix Makefiles',
                 file('../../external/llvm/llvm').absolutePath
     }
 
     progress 'Building LLVM'
-    exec 'make', "-j${Runtime.getRuntime().availableProcessors()}"
-    exec 'make', 'install'
+    exec 'make', "-j${Runtime.getRuntime().availableProcessors()}", "libclang", "libclang-headers"
+    exec 'make', 'install-libclang', 'install-libclang-headers'
 }
 
 task llvmPresence() {
