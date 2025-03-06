@@ -10,20 +10,20 @@
 
 ### Setup & Generation
 
-* Update framework list
-  ```sh
-    cd <repo>/moe/moe-core/moe.apple/moe.platform.ios/
-    python3 platform_natjgen_updater.py
-    ```
-  On the top of the output you will find a listing of the discovered frameworks and a diff to the previous discovered frameworks.  
-  Make sure, that all deleted frameworks (Existing - Latest) are deprecated, got removed or are internal. If everything is sane, update the `platform.natjgen` file with the output.
-
 * Build llvm if necessary
 
     ```sh
     cd <repo>/moe/
     ./gradlew :prebuilts:llvm
     ```
+
+* Update framework list
+  ```sh
+    cd <repo>/moe/
+    ./gradlew :moe-core:moe.apple:moe.platform.ios:updateNatJGenConfig
+    ```
+  Check the output listings of the discovered frameworks and a diff to the previous discovered frameworks.  
+  Make sure, that all deleted frameworks (Existing - Latest) are deprecated, got removed or are internal.
 
 * Run NatJGen
 
@@ -32,13 +32,24 @@
     ./gradlew :moe-core:moe.apple:moe.platform.ios:generateBindings
     ```
 
-* Run the `remove_deprecated_files.py` to remove deprecated files
-* Run the `spotlessApply` gradle task
-* Review your git diff and revert any changes that are whitespace only, meaning indentation changes and line-breaks
-    * NatJGen has a known issue where it will generate the same code but with different indentation
-    * Do not commit `moe.apple/moe.platform.ios/typeconfig.out.ngtconf` it is only generated so `moe.apple/moe.platform.ios/typeconfig.ngtconf` can be updated
-    * Do not commit `moe.apple/moe.platform.ios/out.log`
-    * **DO NOT SKIP THIS STEP** if you plan to update moe-core
+* Remove obsolete files
+
+    ```sh
+    cd <repo>/moe/
+    ./gradlew :moe-core:moe.apple:moe.platform.ios:removeOutdatedBindings
+    ```
+
+* Apply manual fixes
+
+    ```sh
+    cd <repo>/moe/
+    ./gradlew :moe-core:moe.apple:moe.platform.ios:applyManualBindingFixes
+    ```
+  This step may fail, due to bigger changes between SDK versions. In this case, apply the patches manually described below.
+  
+
+* Review your git diff and make sure it's sane
+  * Do not commit `moe.apple/moe.platform.ios/typeconfig.out.ngtconf` it is only generated so `moe.apple/moe.platform.ios/typeconfig.ngtconf` can be updated
 * Run the license_updater.py script from the moe.apple directory to append license headers to new files
 * Also check generated native source files against the native files found in `moe.apple/moe.core.native/moe.sdk/src/inline`
     * License headers will not be present in the new files

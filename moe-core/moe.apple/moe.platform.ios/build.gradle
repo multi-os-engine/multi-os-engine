@@ -39,6 +39,10 @@ dependencies {
     natJGen "org.multi-os-engine:moe.generator.natjgen"
 }
 
+task updateNatJGenConfig(type: Exec) {
+    commandLine = ["python3", "platform_natjgen_updater.py"]
+}
+
 task generateBindings(type: JavaExec) {
     finalizedBy spotlessApply
 
@@ -51,12 +55,17 @@ task generateBindings(type: JavaExec) {
     systemProperty "java.library.path", rootProject.external.llvm.jnipath.absolutePath +
             File.pathSeparator + rootProject.external.natj.jnipath.absolutePath
 
-    standardOutput = new FileOutputStream(tempFile)
-    doLast {
-        exec {
-            commandLine = ["python3", "remove_deprecated_files.py", tempFile.absolutePath]
-        }
+    doFirst {
+        standardOutput = new FileOutputStream(tempFile)
     }
+}
+
+task removeOutdatedBindings(type: Exec) {
+    commandLine = ["python3", "remove_deprecated_files.py", file("build/generate_bindings.log").absolutePath]
+}
+
+task applyManualBindingFixes(type: Exec) {
+    commandLine = ["git", "apply", "fix_manual_binding_changes.patch"]
 }
 
 tasks.javadoc {

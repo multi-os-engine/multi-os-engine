@@ -134,7 +134,9 @@ def main():
     print('Latest:           ', latest_headers)
     print('Existing - Latest:', diff(current_headers, latest_headers))
     print('Latest - Existing:', diff(latest_headers, current_headers))
-    print(generate_source(latest_headers))
+    new_source = generate_source(latest_headers)
+    with open('platform.natjgen', 'w') as f:
+        f.write(new_source)
 
 
 if __name__ == '__main__':
