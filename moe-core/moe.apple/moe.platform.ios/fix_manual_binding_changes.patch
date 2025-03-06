@@ -300,3 +300,39 @@ diff --git a/moe-core/moe.apple/moe.platform.ios/src/main/java/apple/metrickit/M
       */
      @Generated
      @Selector("exceptionReason")
+Index: moe-core/moe.apple/moe.platform.ios/src/main/java/apple/matter/MTRDeviceController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/moe-core/moe.apple/moe.platform.ios/src/main/java/apple/matter/MTRDeviceController.java b/moe-core/moe.apple/moe.platform.ios/src/main/java/apple/matter/MTRDeviceController.java
+--- a/moe-core/moe.apple/moe.platform.ios/src/main/java/apple/matter/MTRDeviceController.java	(revision ec6d6e4f3d2d4ae2eac84d58c8c51c39634cb973)
++++ b/moe-core/moe.apple/moe.platform.ios/src/main/java/apple/matter/MTRDeviceController.java	(date 1741289041851)
+@@ -592,27 +592,6 @@
+         NSXPCConnection call_sharedControllerWithIDXpcConnectBlock();
+     }
+
+-    /**
+-     * API-Since: 16.1
+-     * Deprecated-Since: 16.4
+-     * Deprecated-Message: Please use sharedControllerWithID:xpcConnectBlock:
+-     */
+-    @Generated
+-    @Deprecated
+-    @Selector("sharedControllerWithId:xpcConnectBlock:")
+-    @NotNull
+-    public static native MTRDeviceController sharedControllerWithIdXpcConnectBlock(
+-            @Mapped(ObjCObjectMapper.class) @Nullable Object controllerID,
+-            @ObjCBlock(name = "call_sharedControllerWithIdXpcConnectBlock") @NotNull Block_sharedControllerWithIdXpcConnectBlock xpcConnectBlock);
+-
+-    @Runtime(ObjCRuntime.class)
+-    @Generated
+-    public interface Block_sharedControllerWithIdXpcConnectBlock {
+-        @Generated
+-        @NotNull
+-        NSXPCConnection call_sharedControllerWithIdXpcConnectBlock();
+-    }
+-
+     /**
+      * Shut down the controller. Calls to shutdown after the first one are NO-OPs.
+      * This must be called, either directly or via shutting down the
